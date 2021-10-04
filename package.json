@@ -1,0 +1,22 @@
+{
+  "name": "toktokchiang",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FingertipsSG/TokTokChiang.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FingertipsSG/TokTokChiang/issues"
+  },
+  "homepage": "https://github.com/FingertipsSG/TokTokChiang#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
