@@ -6,7 +6,7 @@ function Navbar() {
 
     function createNewNavbarTab(productName) {
         return (
-            <div className={"navbar--tabs"}>
+            <div className={"navbar--tabs"} onMouseEnter={()=>console.log('oi enter')} onMouseLeave={()=>console.log('oi leave')}>
                 {productName}
             </div>
         )
