@@ -90,7 +90,7 @@
 /* Slideshow */
 
 .slideshow {
-  position: absolute;
+  /* position: absolute; */
   max-width: 100%;
   max-height: 70%;
   left: 0;
