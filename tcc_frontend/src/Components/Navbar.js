@@ -3,14 +3,25 @@ import Logo from "../Assets/Images/toktoklogo.webp";
 import {useState, useEffect} from "react";
 
 function Navbar() {
+    let [wordColor, setWordColor] = useState('black');
 
     function createNewNavbarTab(productName) {
         return (
-            <div className={"navbar--tabs"} onMouseEnter={()=>console.log('oi enter')} onMouseLeave={()=>console.log('oi leave')}>
+            <div className={"navbar--tabs"} 
+              style={{color: wordColor}}
+              onMouseEnter={()=>{
+              }} 
+              onMouseLeave={()=>{
+              }}
+            >
                 {productName}
             </div>
         )
     }
+
+    useEffect(()=>{
+
+    }, [wordColor])
 
     const [productArray, setProductArray] = useState([]);
     useEffect(()=>{
