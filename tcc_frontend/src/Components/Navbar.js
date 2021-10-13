@@ -3,25 +3,21 @@ import Logo from "../Assets/Images/toktoklogo.webp";
 import {useState, useEffect} from "react";
 
 function Navbar() {
-    let [wordColor, setWordColor] = useState('black');
-
     function createNewNavbarTab(productName) {
         return (
             <div className={"navbar--tabs"} 
-              style={{color: wordColor}}
               onMouseEnter={()=>{
               }} 
               onMouseLeave={()=>{
               }}
             >
+              <Link to={`/${productName}`}>
+              {/* <Link to="/products"> */}
                 {productName}
+              </Link>
             </div>
         )
     }
-
-    useEffect(()=>{
-
-    }, [wordColor])
 
     const [productArray, setProductArray] = useState([]);
     useEffect(()=>{

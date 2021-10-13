@@ -8,6 +8,7 @@ import Navbar from "./Components/Navbar";
 import Card from 'react-bootstrap/Card'
 import Logo from "./Assets/Images/toktoklogo.webp";
 import Footer from "./Components/Footer";
+import Products from "./Components/Products"
 
 function App() {
   let fetchUrl = "/api";
@@ -34,10 +35,17 @@ function App() {
         <Navbar />
         <div className="main-container">
           <Switch>
-            <Home />
+            <Route exact path="/(home)?">
+              <Home />
+              <Footer />
+            </Route>
           </Switch>
         </div>
-        <Footer />
+        <Switch>
+          <Route path="/(product)([0-9])+">
+            <Products />
+          </Route>
+        </Switch>
       </BrowserRouter>
     </div>
   );
