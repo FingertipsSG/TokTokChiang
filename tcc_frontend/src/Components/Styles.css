@@ -6,3 +6,24 @@
     margin: 0 50px;
     
 }
+  
+.showSubProducts {
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.hideSubProducts {
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    display: None;
+}
+
+.hoverSubProducts {
+    padding: 5% 15%;
+}
