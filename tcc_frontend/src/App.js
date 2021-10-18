@@ -5,8 +5,6 @@ import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import Login from "./Components/Login";
 import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
-import Card from 'react-bootstrap/Card'
-import Logo from "./Assets/Images/toktoklogo.webp";
 import Footer from "./Components/Footer";
 import Products from "./Components/Products"
 
@@ -37,7 +35,6 @@ function App() {
           <Switch>
             <Route exact path="/(home)?">
               <Home />
-              <Footer />
             </Route>
           </Switch>
         </div>
@@ -46,6 +43,12 @@ function App() {
             <Products />
           </Route>
         </Switch>
+        <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
+        </Switch>
+        <Footer />
       </BrowserRouter>
     </div>
   );

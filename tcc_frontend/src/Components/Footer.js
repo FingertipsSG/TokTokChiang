@@ -8,6 +8,9 @@ function Footer() {
         return (
             <Card className="footerCard">
                 <Card.Img variant="top" src={Logo} />
+                <Card.Body>
+                    {productName}
+                </Card.Body>
             </Card>
         )
     }
