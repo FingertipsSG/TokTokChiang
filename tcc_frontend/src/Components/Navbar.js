@@ -22,22 +22,31 @@ function Navbar() {
           onMouseEnter={(e)=>{
             showSubProducts(e)
           }}   
+          onClick={(e)=>{
+            hideSubProducts(e)
+          }}   
         >
-          <Link to={`/${productName}`}>
+          <Link to={`/${productName}`} className='navbarProductLink'>
             {productName}
           </Link>
         </div>
       )
     }
 
-    let tempArray = productArray.map(linkArray)
+    let navbarProductArray = productArray.map(linkArray)
 
     // To show products when hovering 
     function subProduct(productName) {
       return (
-        <div className="hoverSubProducts">
+        <Link 
+          to={`/${productName}`} 
+          className="hoverSubProducts" 
+          onClick={(e)=>{
+            hideSubProducts(e)
+          }}
+        >
           {productName}_1
-        </div>
+        </Link>
       )
     }
 
@@ -51,7 +60,7 @@ function Navbar() {
                 <img src={Logo} alt="logo" className="navbar--logo" />
               </Link>
             </div>
-            {tempArray}
+            {navbarProductArray}
           </nav>
           <div 
             className={subProducts}

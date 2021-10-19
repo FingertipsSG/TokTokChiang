@@ -75,10 +75,10 @@ function Products() {
     
     return (
         <div classname="Product">
-            <h1>
+            {/* <h1>
                 This is the products page
-            </h1>
-            <div id="section">
+            </h1> */}
+            {/* <div id="section">
                 <SubSection img={Logo} editor={false} />
                 <SubSection editor={true} />
                 <SubSection img={Logo} />
@@ -89,6 +89,18 @@ function Products() {
                 <SubSection editor={true} />
                 <SubSection img={Logo} />
                 <SubSection />
+            </div> */}
+            <div className='imagePlaceHolder'>
+                This is an image 1 placeholder
+            </div>
+            <div className='imagePlaceHolder'>
+                This is an image 2 placeholder
+            </div>
+            <div className='imagePlaceHolder'>
+                This is an image 3 placeholder
+            </div>
+            <div className='imagePlaceHolder'>
+                This is an image 4 placeholder
             </div>
         </div>
     )

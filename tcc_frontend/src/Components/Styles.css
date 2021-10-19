@@ -14,6 +14,9 @@
     background-color: white;
     display: flex;
     justify-content: center;
+    border: 1px;
+    border-top-style: solid;
+    border-color: burlywood;
 }
 
 .hideSubProducts {
@@ -25,5 +28,19 @@
 }
 
 .hoverSubProducts {
-    padding: 5% 15%;
+    padding: 5% 10%;
+    text-decoration: None;
+    color: black;
+}
+
+.imagePlaceHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.navbarProductLink {
+    text-decoration: None;
+    color: black;
 }
