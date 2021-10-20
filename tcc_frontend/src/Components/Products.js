@@ -8,10 +8,34 @@ import Logo from "../Assets/Images/toktoklogo.webp"
 
 function Products() {
     return (
-        <div classname="Admin Product">
-            <h1>
+        <div classname="Product">
+            {/* <h1>
                 This is the products page
-            </h1>
+            </h1> */}
+            {/* <div id="section">
+                <SubSection img={Logo} editor={false} />
+                <SubSection editor={true} />
+                <SubSection img={Logo} />
+                <SubSection />
+            </div>
+            <div id="section">
+                <SubSection img={Logo} editor={false} />
+                <SubSection editor={true} />
+                <SubSection img={Logo} />
+                <SubSection />
+            </div> */}
+            <div className='imagePlaceHolder'>
+                This is an image 1 placeholder
+            </div>
+            <div className='imagePlaceHolder'>
+                This is an image 2 placeholder
+            </div>
+            <div className='imagePlaceHolder'>
+                This is an image 3 placeholder
+            </div>
+            <div className='imagePlaceHolder'>
+                This is an image 4 placeholder
+            </div>
         </div>
     )
 }
