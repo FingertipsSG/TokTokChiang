@@ -7,6 +7,7 @@ import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Products from "./Components/Products"
+import AdminProducts from "./Components/AdminProducts";
 
 function App() {
   let fetchUrl = "/api";
@@ -46,6 +47,11 @@ function App() {
         <Switch>
           <Route path="/login">
             <Login />
+          </Route>
+        </Switch>
+        <Switch>
+          <Route path="/admin/product">
+            <AdminProducts />
           </Route>
         </Switch>
         <Footer />
