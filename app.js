@@ -28,10 +28,9 @@ app.get("/", (req, res) => {
   res.send(helloWorld);
 });
 
-//
+// to fetch latest password for login check
 app.get("/getPassword", (req, res) => {
   pool.getConnection(function (err, connection) {
-    console.log("Connected to RDS DB");
     if (err) throw err;
     connection.query(
       `SELECT password
@@ -44,9 +43,83 @@ app.get("/getPassword", (req, res) => {
           console.log("pw: " + result[0].password);
           res.send(result);
         }
-        //if (fields) console.log(fields);
         connection.release();
       }
     );
+  });
+});
+
+// to post new password (change)
+app.post("/postPassword", (req, res) => {
+  pool.getConnection(function (err, connection) {
+    if (err) throw err;
+    if (req.query.password) {
+      connection.query(
+        `INSERT INTO admin (password)
+        VALUES (${req.query.password})`,
+        function (err, result, fields) {
+          if (err) res.send(err);
+          if (result) {
+            console.log("result: " + JSON.stringify(result));
+            res.send(result);
+          }
+          if (fields) console.log("fields: " + JSON.stringify(fields));
+          connection.release();
+        }
+      );
+    } else {
+      console.log("Missing a parameter");
+    }
+  });
+});
+
+// to fetch all products in_order sequence
+app.get("/getProducts", (req, res) => {
+  pool.getConnection(function (err, connection) {
+    if (err) throw err;
+    connection.query(
+      `SELECT *
+      FROM products
+      ORDER BY in_order ASC`,
+      function (err, result, fields) {
+        if (err) res.send(err);
+        if (result) {
+          console.log("result: " + JSON.stringify(result));
+          res.send(result);
+        }
+        connection.release();
+      }
+    );
+  });
+});
+
+// to post new product (& tab/grid)
+app.post("/postProduct", (req, res) => {
+  pool.getConnection(function (err, connection) {
+    if (err) throw err;
+    if (
+      req.query.product_name &&
+      req.query.product_image &&
+      req.query.mast_image &&
+      req.query.in_order
+    ) {
+      connection.query(
+        `INSERT INTO products 
+        (product_name, product_image, mast_image, in_order)
+        VALUES
+        (${req.query.product_name}, ${req.query.product_image}, ${req.query.mast_image}, ${req.query.in_order})`,
+        function (err, result, fields) {
+          if (err) res.send(err);
+          if (result) {
+            console.log("result: " + JSON.stringify(result));
+            res.send(result);
+          }
+          if (fields) console.log("fields: " + JSON.stringify(fields));
+          connection.release();
+        }
+      );
+    } else {
+      console.log("Missing a parameter");
+    }
   });
 });
