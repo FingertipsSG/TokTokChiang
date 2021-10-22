@@ -3,7 +3,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
-mysql = require("mysql");
+const mysql = require("mysql");
 pool = mysql.createPool({
   connectionLimit: 10,
   host: "toktokchiang-temp.cm1v4ooucggd.ap-southeast-1.rds.amazonaws.com",
@@ -49,17 +49,63 @@ app.get("/getPassword", (req, res) => {
   });
 });
 
+// to hash passwords with 32bit integer math
+const hashCode = (str) => {
+  var hash = 0;
+  if (str.length == 0) {
+    return hash;
+  }
+  for (var i = 0; i < str.length; i++) {
+    var c = str.charCodeAt(i);
+    hash = (hash << 5) - hash + c;
+    hash = hash & hash; // Convert to 32bit integer
+  }
+  return hash;
+};
+
+// to bool on input and latest hashed password
+app.get("/checkPassword", (req, res) => {
+  pool.getConnection(function (err, connection) {
+    if (err) throw err;
+    var stat = false;
+    const inputPwHashed = hashCode(req.query.password);
+    connection.query(
+      `SELECT password
+      FROM admin
+      ORDER BY id DESC
+      LIMIT 1`,
+      function (err, result, fields) {
+        if (err) res.send(false);
+        if (result) {
+          console.log(
+            "input: " + inputPwHashed + " stored: " + result[0].password
+          );
+          stat = inputPwHashed == result[0].password;
+          res.send(stat);
+        }
+        connection.release();
+        return stat;
+      }
+    );
+  });
+});
+
+// latest hashed password: ult!m@T3
+
 // to post new password (change)
 app.post("/postPassword", (req, res) => {
   pool.getConnection(function (err, connection) {
     if (err) throw err;
+    var stat = false;
+    const hashedPw = hashCode(req.query.password);
     if (req.query.password) {
       connection.query(
         `INSERT INTO admin (password)
-        VALUES (${req.query.password})`,
+        VALUES ('${hashedPw}')`,
         function (err, result, fields) {
           if (err) res.send(err);
           if (result) {
+            stat = true;
             console.log("result: " + JSON.stringify(result));
             res.send(result);
           }
@@ -70,6 +116,7 @@ app.post("/postPassword", (req, res) => {
     } else {
       console.log("Missing a parameter");
     }
+    return stat;
   });
 });
 
@@ -97,6 +144,7 @@ app.get("/getProducts", (req, res) => {
 app.post("/postProduct", (req, res) => {
   pool.getConnection(function (err, connection) {
     if (err) throw err;
+    var stat = false;
     if (
       req.query.product_name &&
       req.query.product_image &&
@@ -107,12 +155,13 @@ app.post("/postProduct", (req, res) => {
         `INSERT INTO products 
         (product_name, product_image, mast_image, in_order)
         VALUES
-        (${req.query.product_name}, ${req.query.product_image}, ${req.query.mast_image}, ${req.query.in_order})`,
+        ('${req.query.product_name}', '${req.query.product_image}', '${req.query.mast_image}', '${req.query.in_order}')`,
         function (err, result, fields) {
           if (err) res.send(err);
           if (result) {
             console.log("result: " + JSON.stringify(result));
             res.send(result);
+            stat = true;
           }
           if (fields) console.log("fields: " + JSON.stringify(fields));
           connection.release();
@@ -121,5 +170,6 @@ app.post("/postProduct", (req, res) => {
     } else {
       console.log("Missing a parameter");
     }
+    return stat;
   });
 });
