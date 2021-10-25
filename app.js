@@ -50,7 +50,7 @@ app.get("/getPassword", (req, res) => {
         if (err) res.send(err);
         if (result) {
           console.log("pw: " + result[0].password);
-          res.send(result);
+          res.json(result);
         }
         connection.release();
       }
@@ -92,7 +92,9 @@ app.get("/checkPassword", (req, res) => {
           console.log(
             "input: " + inputPwHashed + " stored: " + result[0].password
           );
-          res.send(inputPwHashed == result[0].password);
+          res.json({
+            status: inputPwHashed == result[0].password,
+          });
         }
         connection.release();
       }
@@ -119,7 +121,7 @@ app.post("/postPassword", (req, res) => {
           if (err) res.send(err);
           if (result) {
             console.log("result: " + JSON.stringify(result));
-            res.send(result);
+            res.json(result);
           }
           if (fields) console.log("fields: " + JSON.stringify(fields));
           connection.release();
@@ -143,7 +145,7 @@ app.get("/getProducts", (req, res) => {
         if (err) res.send(err);
         if (result) {
           console.log("result: " + JSON.stringify(result));
-          res.send(result);
+          res.json(result);
         }
         connection.release();
       }
@@ -177,7 +179,7 @@ app.post("/postProduct", (req, res) => {
           if (err) res.send(err);
           if (result) {
             console.log("result: " + JSON.stringify(result));
-            res.send(result);
+            res.json(result);
           }
           if (fields) console.log("fields: " + JSON.stringify(fields));
           connection.release();
@@ -206,7 +208,7 @@ app.post("/toggleProductActive", (req, res) => {
           if (err) res.send(err);
           if (result) {
             console.log("result: " + JSON.stringify(result));
-            res.send(result);
+            res.json(result);
           }
           if (fields) console.log("fields: " + JSON.stringify(fields));
           connection.release();
