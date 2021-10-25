@@ -10,7 +10,16 @@ pool = mysql.createPool({
   user: "admin",
   password: "password",
   database: "toktokchiang-temp",
+  timeout: 4000,
 });
+
+// constructor for api return
+function api_response(success, status, message, data) {
+  this.success = success; // bool
+  this.status = status; // int
+  this.message = message; // str
+  this.data = data; // obj
+}
 
 // create a GET route api called api
 app.get("/api", (req, res) => {
@@ -28,7 +37,7 @@ app.get("/", (req, res) => {
   res.send(helloWorld);
 });
 
-// to fetch latest password for login check
+// to fetch latest password for login check [temp]
 app.get("/getPassword", (req, res) => {
   pool.getConnection(function (err, connection) {
     if (err) throw err;
@@ -49,7 +58,7 @@ app.get("/getPassword", (req, res) => {
   });
 });
 
-// to hash passwords with 32bit integer math
+// to hash passwords with 32-bit integer math
 const hashCode = (str) => {
   var hash = 0;
   if (str.length == 0) {
@@ -58,16 +67,19 @@ const hashCode = (str) => {
   for (var i = 0; i < str.length; i++) {
     var c = str.charCodeAt(i);
     hash = (hash << 5) - hash + c;
-    hash = hash & hash; // Convert to 32bit integer
+    hash = hash & hash;
   }
   return hash;
 };
 
-// to bool on input and latest hashed password
+/* to get bool on checking hashed password
+{
+  "password": str //raw
+}
+*/
 app.get("/checkPassword", (req, res) => {
   pool.getConnection(function (err, connection) {
     if (err) throw err;
-    var stat = false;
     const inputPwHashed = hashCode(req.query.password);
     connection.query(
       `SELECT password
@@ -80,11 +92,9 @@ app.get("/checkPassword", (req, res) => {
           console.log(
             "input: " + inputPwHashed + " stored: " + result[0].password
           );
-          stat = inputPwHashed == result[0].password;
-          res.send(stat);
+          res.send(inputPwHashed == result[0].password);
         }
         connection.release();
-        return stat;
       }
     );
   });
@@ -92,11 +102,14 @@ app.get("/checkPassword", (req, res) => {
 
 // latest hashed password: ult!m@T3
 
-// to post new password (change)
+/* to post new password (change)
+{
+  "password": str // raw
+}
+*/
 app.post("/postPassword", (req, res) => {
   pool.getConnection(function (err, connection) {
     if (err) throw err;
-    var stat = false;
     const hashedPw = hashCode(req.query.password);
     if (req.query.password) {
       connection.query(
@@ -105,7 +118,6 @@ app.post("/postPassword", (req, res) => {
         function (err, result, fields) {
           if (err) res.send(err);
           if (result) {
-            stat = true;
             console.log("result: " + JSON.stringify(result));
             res.send(result);
           }
@@ -116,11 +128,10 @@ app.post("/postPassword", (req, res) => {
     } else {
       console.log("Missing a parameter");
     }
-    return stat;
   });
 });
 
-// to fetch all products in_order sequence
+// to fetch all products (& tabs/grids) in_order sequence
 app.get("/getProducts", (req, res) => {
   pool.getConnection(function (err, connection) {
     if (err) throw err;
@@ -140,11 +151,17 @@ app.get("/getProducts", (req, res) => {
   });
 });
 
-// to post new product (& tab/grid)
+/* to post new product (& tab/grid)
+{
+  "product_name": str,
+  "product_image": str,
+  "mast_image": str, // img for home page masthead
+  "in_order": int
+}
+*/
 app.post("/postProduct", (req, res) => {
   pool.getConnection(function (err, connection) {
     if (err) throw err;
-    var stat = false;
     if (
       req.query.product_name &&
       req.query.product_image &&
@@ -161,7 +178,6 @@ app.post("/postProduct", (req, res) => {
           if (result) {
             console.log("result: " + JSON.stringify(result));
             res.send(result);
-            stat = true;
           }
           if (fields) console.log("fields: " + JSON.stringify(fields));
           connection.release();
@@ -170,6 +186,34 @@ app.post("/postProduct", (req, res) => {
     } else {
       console.log("Missing a parameter");
     }
-    return stat;
+  });
+});
+
+/* to toggle active status of product/tab
+{
+  "id": int
+}
+*/
+app.post("/toggleProductActive", (req, res) => {
+  pool.getConnection(function (err, connection) {
+    if (err) throw err;
+    if (req.query.id) {
+      connection.query(
+        `UPDATE products
+        SET active = (IF(active = '1', '0', '1'))
+        WHERE id = '${req.query.id}'`,
+        function (err, result, fields) {
+          if (err) res.send(err);
+          if (result) {
+            console.log("result: " + JSON.stringify(result));
+            res.send(result);
+          }
+          if (fields) console.log("fields: " + JSON.stringify(fields));
+          connection.release();
+        }
+      );
+    } else {
+      console.log("Missing a parameter");
+    }
   });
 });
