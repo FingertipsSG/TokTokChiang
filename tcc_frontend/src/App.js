@@ -1,6 +1,6 @@
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from "./Components/Auth/Login";
 import Home from "./Components/Home";
@@ -9,14 +9,15 @@ import Footer from "./Components/Footer";
 import Products from "./Components/Products";
 
 function App() {
-	let fetchUrl = "/api";
-	async function fetchApi(url) {
+	let [products, setProducts] = useState([]);
+	let fetchUrl = "/getProducts";
+	function fetchApi(url) {
 		fetch(url)
 			.then((response) => {
 				return response.json();
 			})
 			.then((data) => {
-				console.log(data);
+				setProducts(data);
 			})
 			.catch(() => {
 				// Do something for an error here
@@ -33,7 +34,7 @@ function App() {
 				<div className="main-container">
 					<Switch>
 						<Route exact path="/(home)?">
-							<Navbar />
+							<Navbar products={products}/>
 							<Home />
 							<Footer />
 						</Route>
@@ -41,7 +42,7 @@ function App() {
 				</div>
 				<Switch>
 					<Route path="/(product)([0-9])+">
-						<Navbar />
+						<Navbar products={products}/>
 						<Products />
 						<Footer />
 					</Route>
