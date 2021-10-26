@@ -279,10 +279,15 @@ app.post("/postSlide", (req, res) => {
   pool.getConnection(function (err, connection) {
     if (err) throw err;
     if (req.query.image && req.query.in_order) {
-      let url = req.query.url == null ? "NULL" : `"${req.query.url}"`;
-      let title = req.query.title == null ? "NULL" : `"${req.query.title}"`;
+      let url =
+        req.query.url == null ? "NULL" : "'" + String(req.query.url) + "'";
+      let title =
+        req.query.title == null ? "NULL" : "'" + String(req.query.title) + "'";
       let description =
-        req.query.description == null ? "NULL" : `"${req.query.description}"`;
+        req.query.description == null
+          ? "NULL"
+          : "'" + String(req.query.description) + "'";
+
       connection.query(
         `INSERT INTO slides 
         (image, url, title, description, in_order)
@@ -315,6 +320,100 @@ app.post("/deleteSlide", (req, res) => {
     if (req.query.id) {
       connection.query(
         `UPDATE slides
+        SET deleted_at = NOW()
+        WHERE id = '${req.query.id}'`,
+        function (err, result, fields) {
+          if (err) res.send(err);
+          if (result) {
+            console.log("result: " + JSON.stringify(result));
+            res.json(result);
+          }
+          if (fields) console.log("fields: " + JSON.stringify(fields));
+          connection.release();
+        }
+      );
+    } else {
+      console.log("Missing a parameter");
+    }
+  });
+});
+
+/* to fetch sections in_order sequence to a product page/tab
+{
+  "product_id": int
+}
+*/
+app.get("/getSections", (req, res) => {
+  pool.getConnection(function (err, connection) {
+    if (err) throw err;
+    connection.query(
+      `SELECT * FROM sections
+      WHERE product_id = ${req.query.product_id}
+      AND deleted_at IS NULL
+      ORDER BY in_order ASC`,
+      function (err, result, fields) {
+        if (err) res.send(err);
+        if (result) {
+          console.log("result: " + JSON.stringify(result));
+          res.json(result);
+        }
+        connection.release();
+      }
+    );
+  });
+});
+
+/* to post new section to product page 
+{
+  "product_id": int, // FK [parent product]
+  "content": str, // optional, default empty [HTML rich-text here]
+  "image": str, // optional, default empty [background-image]
+  "in_order": int
+}
+  */
+app.post("/postSection", (req, res) => {
+  pool.getConnection(function (err, connection) {
+    if (err) throw err;
+    if (req.query.product_id && req.query.in_order) {
+      let content =
+        req.query.content == null
+          ? "NULL"
+          : "'" + String(req.query.content) + "'";
+      let image =
+        req.query.image == null ? "NULL" : "'" + String(req.query.image) + "'";
+
+      connection.query(
+        `INSERT INTO sections 
+        (product_id, content, image, in_order)
+        VALUES
+        (${req.query.product_id}, ${content}, ${image}, ${req.query.in_order})`,
+        function (err, result, fields) {
+          if (err) res.send(err);
+          if (result) {
+            console.log("result: " + JSON.stringify(result));
+            res.json(result);
+          }
+          if (fields) console.log("fields: " + JSON.stringify(fields));
+          connection.release();
+        }
+      );
+    } else {
+      console.log("Missing a parameter");
+    }
+  });
+});
+
+/* to soft-delete a slide from carousel
+{
+  "id": int
+}
+*/
+app.post("/deleteSection", (req, res) => {
+  pool.getConnection(function (err, connection) {
+    if (err) throw err;
+    if (req.query.id) {
+      connection.query(
+        `UPDATE sections
         SET deleted_at = NOW()
         WHERE id = '${req.query.id}'`,
         function (err, result, fields) {
