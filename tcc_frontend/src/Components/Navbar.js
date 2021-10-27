@@ -5,11 +5,23 @@ import {useEffect, useState } from "react";
 
 // eslint-disable-next-line react/prop-types
 function Navbar({ products }) {
+	
+	// eslint-disable-next-line no-unused-vars
+	let [mainProductName, setMainProductName] = 
+		useState(null);
+	// eslint-disable-next-line no-unused-vars
+	let [mainProductId, setMainProductId] = 
+		useState(null);
 
-	const [subProducts, setSubProducts] = useState("hover--hide");
-	const showSubProducts = () => {
+	const [subProducts, setSubProducts] = 
+		useState("hover--hide");
+
+	const showSubProducts = (productName, productId) => {
 		setSubProducts("hover--show");
+		setMainProductName(productName);
+		setMainProductId(productId);
 	};
+
 	const hideSubProducts = () => {
 		setSubProducts("hover--hide");
 	};
@@ -23,9 +35,8 @@ function Navbar({ products }) {
 		let productId = product.id;
 		return (
 			<div 
-				// className={"navbar--tabs"} 
 				onMouseEnter={()=>{
-					showSubProducts();
+					showSubProducts(productName, productId);
 				}}   
 				onClick={()=>{
 					hideSubProducts();
@@ -44,26 +55,24 @@ function Navbar({ products }) {
 		// eslint-disable-next-line react/prop-types
 		tempArray = products.map(linkArray);
 		setProductArray(tempArray);
-	}, [productArray]);
-
-	// let navbarProductArray = productArray.map(linkArray);
+	}, ...productArray);
 
 	// To show products when hovering 
-	function subProduct(productName) {
+	function subProduct(productName, productId) {
 		return (
 			<Link 
-				to={`/${productName}`} 
+				to={`/product${productId}`} 
 				className="hover__link" 
 				onClick={()=>{
 					hideSubProducts();
 				}}
 			>
-				{productName}_1
+				{productName}
 			</Link>
 		);
 	}
 
-	let subProductsArray = productArray.map(subProduct);
+	let subProductsArray = subProduct(mainProductName, mainProductId);
 
 	return (
 		<div>
@@ -77,9 +86,6 @@ function Navbar({ products }) {
 			</nav>
 			<div 
 				className={subProducts}
-				onMouseEnter={()=>{
-					showSubProducts();
-				}} 
 				onMouseLeave={()=>{
 					hideSubProducts();
 				}}
