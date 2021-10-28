@@ -12,30 +12,19 @@ export default class AdminLogin extends Component {
 	}
 
 	handleSubmit() {
-		// const requestOptions = {
-		// 	method: 'POST',
-		// 	headers: { 'Content-Type': 'application/json' },
-		// 	body: JSON.stringify({ "password": password })
-		// };
 		let url = "http://localhost:5000/getPassword?password=" 
 			+ this.state.password ;
-		// async function fetchApi(url, requestOptions) {
-		// fetch(url,requestOptions)
 		fetch(url)
 			.then((response) => {
 				return response.json();
 			})
 			.then((data) => {
 				console.log(data);
-				// if (data.status){
-				// let history = useHistory();
-				// history.push("/admin-products");
 				this.setState({"isLogin": true});
 				this.setState({"data": data});
 				// }
 			})
 			.catch((err) => {
-				// Do something for an error here
 				this.setState({"error": err.message});
 			});
 		// }

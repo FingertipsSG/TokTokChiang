@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import Logo from "../Assets/Images/toktoklogo.webp";
-import {useState } from "react";
+// eslint-disable-next-line no-unused-vars
+import {useEffect, useState } from "react";
 
-function Navbar() {
+// eslint-disable-next-line react/prop-types
+function Navbar({ products }) {
+
 	const [subProducts, setSubProducts] = useState("hover--hide");
 	const showSubProducts = () => {
 		setSubProducts("hover--show");
@@ -12,9 +15,12 @@ function Navbar() {
 	};
 
 	// To populate the nav bar
-	let productArray = ["product1", "product2", "product3"];
+	let [productArray, setProductArray] = 
+		useState([]);
 
-	function linkArray(productName) {
+	function linkArray(product) {
+		let productName = product.product_name;
+		let productId = product.id;
 		return (
 			<div 
 				// className={"navbar--tabs"} 
@@ -25,14 +31,22 @@ function Navbar() {
 					hideSubProducts();
 				}}   
 			>
-				<Link to={`/${productName}`} className='navbar__productLink'>
+				<Link to={`/product${productId}`} 
+					className='navbar__productLink'>
 					{productName}
 				</Link>
 			</div>
 		);
 	}
 
-	let navbarProductArray = productArray.map(linkArray);
+	useEffect(()=>{
+		let tempArray = [];
+		// eslint-disable-next-line react/prop-types
+		tempArray = products.map(linkArray);
+		setProductArray(tempArray);
+	}, [productArray]);
+
+	// let navbarProductArray = productArray.map(linkArray);
 
 	// To show products when hovering 
 	function subProduct(productName) {
@@ -59,7 +73,7 @@ function Navbar() {
 						<img src={Logo} alt="logo" className="navbar__logo" />
 					</Link>
 				</div>
-				{navbarProductArray}
+				{productArray}
 			</nav>
 			<div 
 				className={subProducts}
