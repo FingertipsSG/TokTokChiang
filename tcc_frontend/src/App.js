@@ -20,6 +20,7 @@ function App() {
 			})
 			.then((data) => {
 				setProducts(data);
+				//console.log(products);
 			})
 			.catch(() => {
 				// Do something for an error here
@@ -44,7 +45,7 @@ function App() {
 				</div>
 				<Switch>
 					<Route path="/(product)([0-9])+">
-						<Navbar products={products}/>
+						<Navbar products={products}/>						
 						<Products />
 						<Footer />
 					</Route>
@@ -62,6 +63,11 @@ function App() {
 				<Switch>
 					<Route path="/admin-products">
 						<AdminProducts />
+					</Route>
+				</Switch>
+				<Switch>
+					<Route path="/products">
+						<Products />
 					</Route>
 				</Switch>
 			</BrowserRouter>

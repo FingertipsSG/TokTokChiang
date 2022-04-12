@@ -1,14 +1,14 @@
-import "./footer.css";
 // import { Card, CardGroup } from "react-bootstrap";
 // import Logo from "../Assets/Images/toktoklogo.webp";
 // import { useState, useEffect } from "react";
+import "../Components/css/footer.css";
 import Button from "react-bootstrap/Button";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 
 function Footer() {
 	return (
-		<div style={{ backgroundColor: "#282828" }}>
-			<MDBFooter className="font-small pt-4 mt-4">
+		<div style={{ backgroundColor: "#282828"}}>
+			<MDBFooter className="font-small pt-4">
 				<MDBContainer fluid >
 					<MDBRow>
 						{/* <MDBCol md="6">
@@ -81,7 +81,7 @@ function Footer() {
 							<h3 style={{ color: "white", marginLeft: "180px", marginTop: "40px" }}>8888 8888</h3>
 							<ul>
 								<li>
-									<p style={{ marginLeft: "150px", marginTop: "10px" }}>Monday to Friday 9am-6pm</p>
+									<p style={{ marginLeft: "150px"}}>Monday to Friday 9am-6pm</p>
 								</li>
 								<li>
 									<Button variant="outline-light" style={{ marginLeft: "150px", width: "120px", height: "40px", borderRadius: "0" }}>

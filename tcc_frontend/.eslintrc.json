@@ -24,7 +24,7 @@
         ],
         "linebreak-style": [
             "error",
-            "unix"
+            "windows"
         ],
         "quotes": [
             "error",
@@ -37,13 +37,13 @@
         "react/react-in-jsx-scope": "off",
         "camelcase":  "error",
         "no-console": "warn",
-        "max-len": [
-            "error", 
-            { "code": 80 }
-        ],
-        "no-extra-parens": "error",
-        "no-multi-spaces": "error",
-        "keyword-spacing": "error",
+        // "max-len": [
+        //     "error", 
+        //     { "code": 80 }
+        // ],
+        // "no-extra-parens": "error",
+        // "no-multi-spaces": "error",
+        // "keyword-spacing": "error",
         "key-spacing": [
             "error", 
             {

@@ -1,0 +1,67 @@
+.imagePlaceHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+
+/* Nav Bar*/
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+  }
+  
+.navbar__sticky {
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* box-shadow: 1px 1px 1px #999; */
+    animation: moveDown 0.5s ease-in-out;
+}
+
+.navbar__logo {
+    width: auto;
+    height: 2.5rem;
+    margin-right: 0.5rem;
+    animation: fadeIn 0.7s ease-out;
+}
+
+.navbar__productLink {
+    text-decoration: None;
+    color: black;
+}
+
+/* Nav Bar product links */
+.hover--show {
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    border: 1px;
+    border-top-style: solid;
+    border-color: burlywood;
+}
+
+.hover--hide {
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    display: None;
+}
+
+.hover__link {
+    padding: 5% 5%;
+    text-decoration: None;
+    color: black;
+}

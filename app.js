@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 5000;
+var db = require('./databaseConfig.js');
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 const mysql = require("mysql");
@@ -9,8 +10,14 @@ pool = mysql.createPool({
   host: "toktokchiang-temp.cm1v4ooucggd.ap-southeast-1.rds.amazonaws.com",
   user: "admin",
   password: "password",
-  database: "toktokchiang-temp",
+  database: "toktokchiang",
   timeout: 4000,
+
+  // connectionLimit: 10,
+  // host: "localhost",
+  // user: "root",
+  // password: "ccxj081102",
+  // database: "toktokchiang",
 });
 
 // constructor for api return
@@ -136,9 +143,10 @@ app.get("/getProducts", (req, res) => {
   pool.getConnection(function (err, connection) {
     if (err) throw err;
     connection.query(
-      `SELECT * FROM products
-      WHERE deleted_at IS NULL
-      ORDER BY in_order ASC`,
+      // `SELECT * FROM products
+      // WHERE deleted_at IS NULL
+      // ORDER BY in_order ASC`,
+      'SELECT * FROM products',
       function (err, result, fields) {
         if (err) res.send(err);
         if (result) {
