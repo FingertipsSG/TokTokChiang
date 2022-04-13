@@ -18,7 +18,8 @@
   "homepage": "https://github.com/FingertipsSG/TokTokChiang#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "eslint": "^7.32.0",

@@ -1,3 +1,8 @@
+@font-face {
+    src: url(fonts/AvenirNext.ttf);
+    font-family: AveNext;
+}
+  
 .topTitle {
     font-size: 42px;
     color: #dddddd;
@@ -16,24 +21,23 @@
 .link {
     text-decoration: none;
     color: black;
-    float: right;
-    margin-right: 25px;
+    margin-right: 80px;
+    font-family: AveNext;
+    font-weight: bold;
 }
 
-.linkLast {
+.linkFirst {
     text-decoration: none;
     color: black;
-    float: right;
-    margin-right: 175px;
+    margin-right: 75px;
+    margin-left: 200px;
+    font-family: AveNext;
+    font-weight: bold;
 }
 
 /* Nav Bar*/
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 1rem 1.5rem;
-    position: absolute;
     z-index: 2;
     width: 100%;
   }
@@ -48,46 +52,37 @@
 }
 
 .navbar__logo {
-    /* width: auto;
-    height: 2.5rem; */
-    margin-right: 0.5rem;
     animation: fadeIn 0.7s ease-out;
-    width: 100;
-    height: 100;
-    position: relative;
-    top: 2;
-    left: 2
+    width: 250px;
 }
 
-.navbar__productLink {
-    text-decoration: None;
-    color: black;
+.navbar_img {
+    margin-left: 165px;
 }
 
-/* Nav Bar product links */
-.hover--show {
-    z-index: 2;
-    position: absolute;
-    width: 100%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    border: 1px;
-    border-top-style: solid;
-    border-color: burlywood;
+button.navbar-toggler {
+    border-color: black !important;
+    border: 2px solid;
 }
 
-.hover--hide {
-    z-index: 2;
-    position: absolute;
-    width: 100%;
-    background-color: white;
-    display: None;
+/* collapse style for nav bar */
+
+@media (max-width: 991.98px) { 
+    .navbar_img {
+        margin: 0;
+    }
+
+    .linkFirst {
+        margin: 0;
+    }
+}    
+
+/* hover styles */
+.link:hover {
+    color: #ce2525 !important;
 }
 
-.hover__link {
-    padding: 5% 5%;
-    text-decoration: None;
-    color: black;
+.linkFirst:hover {
+    color: #ce2525 !important;
 }
 
