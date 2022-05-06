@@ -33,7 +33,7 @@ function TopNavBar() {
 							<NavLink to="/products" className="link nav-link">SERVICES</NavLink>
 						</li>
 						<li className="nav-item">
-							<NavLink to="/products" className="link nav-link">CONTACT US</NavLink>
+							<NavLink to="/ContactUs" className="link nav-link">CONTACT US</NavLink>
 						</li>
 					</ul>
 				</div>
