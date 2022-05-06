@@ -2,7 +2,7 @@
     src: url(fonts/AvenirNext.ttf);
     font-family: AveNext;
 }
-  
+
 .topTitle {
     font-size: 42px;
     color: #dddddd;
@@ -20,44 +20,31 @@
 
 .link {
     text-decoration: none;
-    color: black;
-    margin-right: 80px;
-    font-family: AveNext;
-    font-weight: bold;
+    color: black !important;
+    margin-right: 40px;
+    font-family: AveNext;   
+    font-weight: bold !important;
 }
 
 .linkFirst {
     text-decoration: none;
-    color: black;
-    margin-right: 75px;
-    margin-left: 200px;
+    color: black !important; 
+    margin-right: 40px;
     font-family: AveNext;
-    font-weight: bold;
+    font-weight: bold !important;
 }
 
 /* Nav Bar*/
 .navbar {
     padding: 1rem 1.5rem;
-    z-index: 2;
-    width: 100%;
+    position: relative;
+    top: 0px;
   }
-  
-.navbar__sticky {
-    background: #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    /* box-shadow: 1px 1px 1px #999; */
-    animation: moveDown 0.5s ease-in-out;
-}
 
 .navbar__logo {
     animation: fadeIn 0.7s ease-out;
     width: 250px;
-}
-
-.navbar_img {
-    margin-left: 165px;
+    margin-left: 120px;
 }
 
 button.navbar-toggler {
@@ -70,19 +57,26 @@ button.navbar-toggler {
 @media (max-width: 991.98px) { 
     .navbar_img {
         margin: 0;
+        float: left;
     }
 
     .linkFirst {
+        margin: 0;
+    }
+
+    .link {
         margin: 0;
     }
 }    
 
 /* hover styles */
 .link:hover {
-    color: #ce2525 !important;
+    color: #790c15 !important;
+    text-decoration: underline;
 }
 
 .linkFirst:hover {
-    color: #ce2525 !important;
+    color: #790c15 !important;
+    text-decoration: underline;
 }
 

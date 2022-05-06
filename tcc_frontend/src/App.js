@@ -34,18 +34,16 @@ function App() {
 	return (
 		<div className="App">
 			<BrowserRouter>
-				<div className="main-container">
-					<Switch>
-						<Route exact path="/(home)?">
-							<Navbar products={products}/>
-							<Home />
-							{/* <Footer /> */}
-						</Route>
-					</Switch>
-				</div>
+				<Switch>
+					<Route exact path="/(home)?">
+						<Navbar products={products} />
+						<Home />
+						{/* <Footer /> */}
+					</Route>
+				</Switch>
 				<Switch>
 					<Route path="/(product)([0-9])+">
-						<Navbar products={products}/>						
+						<Navbar products={products} />
 						<Products />
 						<Footer />
 					</Route>
