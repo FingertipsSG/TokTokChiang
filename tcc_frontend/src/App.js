@@ -9,6 +9,7 @@ import Footer from "./Components/Footer";
 import Products from "./Components/Products";
 import AdminProducts from "./Components/AdminProducts";
 import AdminLogin from "./Components/AdminLogin";
+import Services from "./Components/Services";
 
 function App() {
 	let [products, setProducts] = useState([]);
@@ -66,6 +67,11 @@ function App() {
 				<Switch>
 					<Route path="/products">
 						<Products />
+					</Route>
+				</Switch>
+				<Switch>
+					<Route path="/services">
+						<Services />
 					</Route>
 				</Switch>
 			</BrowserRouter>
