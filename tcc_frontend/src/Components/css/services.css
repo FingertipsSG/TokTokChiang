@@ -20,7 +20,7 @@ body.services-body {
     /* width: 100%; */
     background-image: url("../../Assets/Images/services.png");
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: contain;
     /* display: block; */
     /* background-color: lightgray; */
 }
