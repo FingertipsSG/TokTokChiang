@@ -39,7 +39,7 @@ function App() {
 						<Route exact path="/(home)?">
 							<Navbar products={products}/>
 							<Home />
-							<Footer />
+							{/* <Footer /> */}
 						</Route>
 					</Switch>
 				</div>

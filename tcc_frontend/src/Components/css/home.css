@@ -1,161 +1,23 @@
 @charset "utf-8";
 
+@font-face {
+    src: url(fonts/AvenirNext.ttf);
+    font-family: AveNext;
+}
+
 .homePage {
     overflow: hidden;
 }
 
-.home {
-    background-color: "#e2e2e2";
+.firstContent {
+    background-image: linear-gradient(to right, #d0d0d0 , #f1f1f1);
 }
 
-a {
-    text-decoration-line: none;
+.firstContentText {
+    font-family: AveNext;
 }
 
-p:nth-child(1) {
-    font-size: 55px;
-    font-weight: bold;
-    color: #4c4c4c;
-    line-height: 45px;
-}
-
-p:nth-child(2) {
-    color: #4c4c4c;
-    line-height: 45px;
-}
-
-/* 3 product styles */
-.display {
-    overflow: hidden;
-    width: 300px;
-    margin: auto;
-    height: 260px;
-}
-
-.displayTitle {
-    text-align: center;
-    font-size: 28px;
-    color: #545454;
-    font-weight: 600;
-}
-
-.displayImg {
-    width: 250px;
-    height: 290px;
-    float: right;
-}
-
-/* top product styles */
-div#ProdA {
-    background-color: #f1e4e4;
-    margin-right: 20px;
-    height: 450px;
-}
-
-div#ProdBC {
-    overflow: hidden;
-    height: 210px;
-    margin-right: 5px;
-}
-
-div#ProdD {
-    background-color: #e4e4f1;
-    height: 225px;
-    margin-top: 10px;
-    overflow: hidden;
-    margin-left: 2px;
-}
-
-a#ProdTitle {
-    font-size: 26px;
-    padding: 15px;
-    color: black;
-}
-
-/* image of product A */
-img.bigDollImg {
-    width: 340px;
-    height: 420px;
-    float: right;
-    position: relative;
-    bottom: 50px;
-}
-
-/* image for product B and C */
-img.miniDollImg {
-    width: 200px;
-    height: 240px;
-    float: right;
-    position: relative;
-    bottom: 20px;
-}
-
-/* image for product D */
-img.mediumDollImg {
-    width: 340px;
-    height: 420px;
-    float: right;
-    position: relative;
-    bottom: 110px;
-}
-
-/*carousel styles*/
-#carousel {
-    height: 600px;
-}
-
-img#carouselpic {
-    float: right;
-    width: 350px;
-    height: 400px;
-    margin-top: 70px;
-    margin-bottom: 100px;
-    margin-right: 350px;
-}
-
-.carouselContent {
-    font-size: 30px;
-    color: black;
-    padding: 150px;
-    line-height: 25px;
-    text-align: left;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    height: 26%;
-    top: 33%;
-    width: 100px;
-    /* filter: invert(100%); */
-}
-
-/* important overrides other styling */
-.carousel-indicators button {
-    height: 12px !important;
-    width: 12px !important;
-    margin: 0 10px !important;
-    border-radius: 100%;
-    background-color: black !important;
-}
-
-.carouselButton {
-    width: 50%;
-}
-
-/* above footer styles */
-.platform {
-    background-color: #f8f9fa;
-}
-
-.emailInput {
-    border: 2px solid #e0e0e0;
-    border-radius: 10px;
-    padding: 15px;
-    width: 100%;
-    font-size: 20px;
-}
-
-#displayTitle {
-    font-size: 30px;
-    font-weight: 600;
+.verticalText {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
 }
