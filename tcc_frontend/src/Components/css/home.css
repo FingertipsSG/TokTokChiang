@@ -5,16 +5,55 @@
     font-family: AveNext;
 }
 
-.homePage {
-    overflow: hidden;
+@font-face {
+    src: url(fonts/AvenirNext-Bold.ttf);
+    font-family: AveNextBold;
 }
 
-.firstContent {
-    background-image: linear-gradient(to right, #d0d0d0 , #f1f1f1);
+@font-face {
+    src: url(fonts/Calibri\ Regular.ttf);
+    font-family: Calibri;
+}
+
+html {
+    height: 100vh;
+    width: auto;
+}
+
+body {
+    min-height: 100%;
+    min-width: auto;
+}
+
+body.homeBody {
+    /* overflow: hidden; */
+    background-image: url("../../Assets/Images/AboutUs.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+.title1 {
+    display: inline;
+    color: #790c15;
+    font-family: AveNextBold;
+    font-size: 36px;
+}
+
+.title2 {
+    display: inline;
+    color: #464749;
+    font-family: AveNextBold;
+    font-size: 36px;
+}
+
+h3 {
+    font-weight: bold;
 }
 
 .firstContentText {
     font-family: AveNext;
+    margin-left: 155px;
 }
 
 .verticalText {

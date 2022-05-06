@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 @font-face {
     src: url(fonts/AvenirNext.ttf);
     font-family: AveNext;
@@ -44,7 +46,7 @@
 .navbar__logo {
     animation: fadeIn 0.7s ease-out;
     width: 250px;
-    margin-left: 120px;
+    margin-left: 60px;
 }
 
 button.navbar-toggler {
