@@ -24,16 +24,16 @@ function TopNavBar() {
 				<div className="collapse navbar-collapse" id="toggler" >
 					<ul className="navbar-nav">
 						<li className="nav-item">
-							<Link to="/products" className="linkFirst nav-link">MASKS  面具</Link>
+							<Link to="/products" className="linkFirst nav-link">About US</Link>
 						</li>
 						<li className="nav-item">
-							<Link to="/products" className="link nav-link">DOLLS  手偶</Link>
+							<Link to="/products" className="link nav-link">SHOP</Link>
 						</li>
 						<li className="nav-item">
-							<Link to="/products" className="link nav-link">FRAMED TOYS  娃娃</Link>
+							<Link to="/products" className="link nav-link">SERVICES</Link>
 						</li>
 						<li className="nav-item">
-							<Link to="/products" className="link nav-link">SHIRTS  T恤</Link>
+							<Link to="/products" className="link nav-link">CONTACT US</Link>
 						</li>
 					</ul>
 				</div>
