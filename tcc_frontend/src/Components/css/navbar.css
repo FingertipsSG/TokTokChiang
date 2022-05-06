@@ -28,14 +28,6 @@
     font-weight: bold !important;
 }
 
-.linkFirst {
-    text-decoration: none;
-    color: black !important; 
-    margin-right: 40px;
-    font-family: AveNext;
-    font-weight: bold !important;
-}
-
 /* Nav Bar*/
 .navbar {
     padding: 1rem 1.5rem;
