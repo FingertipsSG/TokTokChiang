@@ -27,7 +27,7 @@ function TopNavBar() {
 							<NavLink to="/products" className="linkFirst nav-link">ABOUT US</NavLink>
 						</li>
 						<li className="nav-item">
-							<NavLink to="/products" className="link nav-link">SHOP</NavLink>
+							<NavLink to="/Dolls" className="link nav-link">SHOP</NavLink>
 						</li>
 						<li className="nav-item">
 							<NavLink to="/products" className="link nav-link">SERVICES</NavLink>
