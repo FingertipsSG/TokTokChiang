@@ -5,19 +5,85 @@
     font-family: AveNext;
 }
 
-.homePage {
-    overflow: hidden;
+@font-face {
+    src: url(fonts/AvenirNext-Bold.ttf);
+    font-family: AveNextBold;
 }
 
-.firstContent {
-    background-image: linear-gradient(to right, #d0d0d0 , #f1f1f1);
+@font-face {
+    src: url(fonts/Calibri\ Regular.ttf);
+    font-family: Calibri;
+}
+
+html {
+    height: 100vh;
+    width: auto;
+}
+
+body {
+    min-height: 100%;
+    min-width: auto;
+}
+
+body.homeBody {
+    overflow: hidden;
+    background-image: url("../../Assets/Images/AboutUs.png");
+    background-size: 100% 100%;
+
+}
+
+.title1 {
+    display: inline;
+    color: #790c15;
+    font-family: AveNextBold;
+    font-size: 36px;
+}
+
+.title2 {
+    display: inline;
+    color: #464749;
+    font-family: AveNextBold;
+    font-size: 36px;
+}
+
+h3 {
+    font-weight: bold;
 }
 
 .firstContentText {
     font-family: AveNext;
+    margin-left: 92px;
 }
 
-.verticalText {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
+.homeContent {
+    font-family: Calibri;
+    margin-left: 92px;
 }
+
+/* carousel styles */
+img#carouselpic {
+    float: right;
+    width: 70%;
+    margin-right: 100px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    display: none;
+}
+
+/* important overrides other styling */
+.carousel-indicators button {
+    position: relative !important;
+    left: 180px !important;
+    height: 10px !important;
+    width: 10px !important;
+    margin: 0 10px !important;
+    border-radius: 100%;
+    background-color: white !important;
+}
+
+/* .nav-item .home {
+    color: #790c15 !important;
+    font-family: AveNextBold;
+} */
