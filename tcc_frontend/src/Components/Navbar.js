@@ -33,7 +33,7 @@ function TopNavBar() {
 								</a>
 								<div className="dropdown-menu">
 									<Link className="dropdown-item" to="/home">TOK TOK CHIANG</Link>
-									<Link className="dropdown-item" to="/home">LAO SAI TAO YUAN</Link>
+									<Link className="dropdown-item" to="/home2">LAO SAI TAO YUAN</Link>
 								</div>
 							</div>
 						</li>
@@ -43,14 +43,25 @@ function TopNavBar() {
 									SHOP
 								</a>
 								<div className="dropdown-menu">
-									<Link className="dropdown-item" to="/products">MASKS</Link>
+									<Link className="dropdown-item" to="/masks">MASKS</Link>
 									<Link className="dropdown-item" to="/dolls">DOLLS</Link>
-									<Link className="dropdown-item" to="/products">HAND PUPPETS</Link>
+									<Link className="dropdown-item" to="/handpuppets">HAND PUPPETS</Link>
+									<Link className="dropdown-item" to="/tshirts">T-SHIRTS</Link>
+									<Link className="dropdown-item" to="/framed">FRAMED</Link>
 								</div>
 							</div>
-						</li>
+						</li>	
 						<li className="nav-item">
-							<NavLink to="/services" activeClassName="active-link" className="link nav-link">SERVICES</NavLink>
+							<div className="dropdown">
+								<a className="link nav-link shop">
+									SUPPORT
+								</a>
+								<div className="dropdown-menu">
+									<Link className="dropdown-item" to="/services">SERVICE</Link>
+									<Link className="dropdown-item" to="/warranty">WARRANTY</Link>
+									<Link className="dropdown-item" to="/onlinestore">ONLINE STORE</Link>
+								</div>
+							</div>
 						</li>
 						<li className="nav-item">
 							<NavLink to="/contactus" activeClassName="active-link" className="link nav-link">CONTACT US</NavLink>
