@@ -71,12 +71,12 @@ function App() {
 				</Switch>
 				<Switch>
 					<Route path="/ContactUs">
-					 <ContactUs />
-          </Route>
-        <Switch />
-        <Switch>
+					 	<ContactUs />
+					</Route>
+				</Switch>
+        		<Switch>
 					<Route path="/services">
-				  <Services />
+				  		<Services />
 					</Route>
 				</Switch>
 			</BrowserRouter>
