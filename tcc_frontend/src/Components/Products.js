@@ -6,6 +6,7 @@
 // import { convertToHTML } from "draft-convert";
 // import DOMPurify from "dompurify";
 // import Button from "react-bootstrap/Button";
+import Navbar from "../Components/Navbar";
 
 // function SubsectionImage(img) {
 // 	return <div id="image">
@@ -93,7 +94,7 @@ function Products() {
                 <SubSection editor={true} />
                 <SubSection img={Logo} />
                 <SubSection />
-            </div> */}
+            </div> */}<Navbar />
 			<div className='imagePlaceHolder'>
                 This is an image 1 placeholder
 			</div>
