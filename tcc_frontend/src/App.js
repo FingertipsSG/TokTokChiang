@@ -8,6 +8,7 @@ import Footer from "./Components/Footer";
 import Products from "./Components/Products";
 import AdminProducts from "./Components/AdminProducts";
 import AdminLogin from "./Components/AdminLogin";
+import ContactUs from "./Components/ContactUs";
 import Services from "./Components/Services";
 
 function App() {
@@ -69,8 +70,13 @@ function App() {
 					</Route>
 				</Switch>
 				<Switch>
+					<Route path="/ContactUs">
+					 <ContactUs />
+          </Route>
+        <Switch />
+        <Switch>
 					<Route path="/services">
-						<Services />
+				  <Services />
 					</Route>
 				</Switch>
 			</BrowserRouter>
