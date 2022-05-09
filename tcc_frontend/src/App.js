@@ -1,10 +1,9 @@
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from "./Components/Auth/Login";
 import Home from "./Components/Home";
-import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Products from "./Components/Products";
 import AdminProducts from "./Components/AdminProducts";
@@ -12,25 +11,25 @@ import AdminLogin from "./Components/AdminLogin";
 import Services from "./Components/Services";
 
 function App() {
-	let [products, setProducts] = useState([]);
-	let fetchUrl = "/getProducts";
-	function fetchApi(url) {
-		fetch(url)
-			.then((response) => {
-				return response.json();
-			})
-			.then((data) => {
-				setProducts(data);
-				//console.log(products);
-			})
-			.catch(() => {
-				// Do something for an error here
-			});
-	}
+	// let [products, setProducts] = useState([]);
+	// let fetchUrl = "/getProducts";
+	// function fetchApi(url) {
+	// 	fetch(url)
+	// 		.then((response) => {
+	// 			return response.json();
+	// 		})
+	// 		.then((data) => {
+	// 			setProducts(data);
+	// 			//console.log(products);
+	// 		})
+	// 		.catch(() => {
+	// 			// Do something for an error here
+	// 		});
+	// }
 
-	useEffect(() => {
-		fetchApi(fetchUrl);
-	}, []);
+	// useEffect(() => {
+	// 	fetchApi(fetchUrl);
+	// }, []);
 
 	return (
 		<div className="App">
