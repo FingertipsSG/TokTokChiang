@@ -23,17 +23,16 @@ function Home() {
 				<br />
 				<div className="firstContent">
 					<Row>
-						<div className="firstContentText">
-							<h2 className="title1">TOK</h2>
-							<h2 className="title1">	TOK</h2>
-							<h2 className="title2">	CHIANG</h2>
-							<br />
-							<br />
-							<h3> Who Are We </h3>
-						</div>
-					</Row>
-					<Row>
 						<div className="col-lg-6">
+							<div className="firstContentText">
+								<h2 className="title1">TOK</h2>
+								<h2 className="title1">	TOK</h2>
+								<h2 className="title2">	CHIANG</h2>
+								<br />
+								<br />
+								<h3> Who Are We </h3>
+							</div>
+								
 							<p className="homeContent">
 								Nick Shen Weijun, founder of Tok Tok Chiang Opera, believes that Chinese Opera
 								is more than just an art form. Recognising the importance of preserving and keeping
@@ -63,21 +62,21 @@ function Home() {
 							<Carousel variant="dark" className="slide" fade>
 								<Carousel.Item>
 									<img
-										className="col-lg-4  col-sm-12"
+										className="col-lg-6  col-sm-12"
 										id="carouselpic"
 										src={pic1}
 									/>
 								</Carousel.Item>
 								<Carousel.Item>
 									<img
-										className="col-lg-4  col-sm-12"
+										className="col-lg-6  col-sm-12"
 										id="carouselpic"
 										src={pic2}
 									/>
 								</Carousel.Item>
 								<Carousel.Item>
 									<img
-										className="col-lg-4  col-sm-12"
+										className="col-lg-6  col-sm-12"
 										id="carouselpic"
 										src={pic1}
 									/>

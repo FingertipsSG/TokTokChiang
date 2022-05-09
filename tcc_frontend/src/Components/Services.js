@@ -5,13 +5,18 @@ import "../Components/css/services.css";
 import { Container, Row, Col } from "reactstrap";
 import Navbar from "./Navbar";
 import { Table } from "react-bootstrap";
-import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet";
 // import background from "../Assets/Images/services-edited.png";
 // import { Row } from "reactstrap";
 
 function Services() {
     return (
         <html>
+			<head>
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+			</head>
             <body className="services-body">
                 {/* <img src={background} width="10%" className="services-png"/> */}
                 <Navbar />
@@ -19,12 +24,6 @@ function Services() {
                 {/* className="services-png" */}
 
                 <div className="div-float">
-                    <Helmet>
-                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-                    </Helmet>
-
                     <Container>
                         <Row>
                             <Col className=""></Col>

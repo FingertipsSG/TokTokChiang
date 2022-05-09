@@ -12,7 +12,11 @@ import side2 from "../Assets/Images/Other side 1.jpg";
 function Dolls() {
     return (
         <html>
-
+			<head>
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+			</head>
             <body className="dolls-body">
                 <Navbar />
                 <div className="dolls">
@@ -29,7 +33,6 @@ function Dolls() {
                                         <div className="modal-content">
                                             <button className="close-button" type="button" data-dismiss="modal">X</button>
                                             <div className="modal-body">
-
                                                 <Row>
                                                     <Col>
                                                         <img className="popup-image" src={doll1} />
@@ -60,7 +63,6 @@ function Dolls() {
                                                         </p>
                                                         <button type="button" className="shop-here" >Shop Here</button>
                                                     </Col>
-
                                                 </Row>
                                             </div>
                                         </div>
