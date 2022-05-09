@@ -59,7 +59,7 @@ function TopNavBar() {
 								<div className="dropdown-menu">
 									<Link className="dropdown-item" to="/services">SERVICE</Link>
 									<Link className="dropdown-item" to="/warranty">WARRANTY</Link>
-									<Link className="dropdown-item" to="/onlinestore">ONLINE STORE</Link>
+									<Link className="dropdown-item" to="/onlinestores">ONLINE STORE</Link>
 								</div>
 							</div>
 						</li>
