@@ -1,0 +1,102 @@
+@font-face {
+    src: url(fonts/AvenirNext.ttf);
+    font-family: AveNext;
+}
+html{
+  height:100vh;
+  width:auto;
+}
+body{
+  min-height:100vh;
+  width:auto;
+ 
+}
+body.dolls-body{
+    background-image:url("../../Assets/Images/dolls.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    width:100%;
+    height:auto;
+   
+}
+.dolls{
+    margin-left: 300px;
+    margin-top:15px;
+}
+.dolls-image{
+    display:block;
+    width: 180px; 
+    height:180px;
+    box-shadow: 0px 0px 3px 1px #bebebe;
+    object-fit:cover;
+    margin-left: auto;
+    margin-right: auto;   
+
+}
+
+.title{
+    color: #790C15;
+    font-weight:bold;
+    font-size: small;
+    text-align:center;
+    margin-top:15px;
+}
+.price{
+    font-size: small;
+    text-align:center;
+    margin-top:-10px;
+}
+/*popup */
+
+.pop-title{
+    color: #790C15;
+    font-weight:bold;
+    font-size: large;
+    margin-top:15px;
+}
+.pop-price{
+    font-size: medium;
+    margin-top:-10px;
+}
+.shop-here{
+    background-color: #790C15;
+    border: none;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    width:130px;
+    border-radius: 5.67px;
+    float:left;
+}
+button.close-button{
+    border: none;
+    padding: 8px;
+    color:#474747;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    margin-left:1050px;
+    background-color: transparent !important;
+}
+.popup-image{
+    display:block;
+    width: 300px; 
+    height:300px;
+    box-shadow: 0px 0px 3px 1px #bebebe;
+    object-fit:cover;
+    margin-left: auto;
+    margin-right: auto;   
+}
+.small-image{
+    display:block;
+    width: 150px; 
+    height:150px;
+    box-shadow: 0px 0px 3px 1px #bebebe;
+    object-fit:cover;
+    margin-top:20px;
+    
+}

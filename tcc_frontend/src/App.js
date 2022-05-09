@@ -9,6 +9,7 @@ import Products from "./Components/Products";
 import AdminProducts from "./Components/AdminProducts";
 import AdminLogin from "./Components/AdminLogin";
 import ContactUs from "./Components/ContactUs";
+import Dolls from "./Components/Dolls";
 import Services from "./Components/Services";
 
 function App() {
@@ -62,8 +63,8 @@ function App() {
 					</Route>
 				</Switch>
 				<Switch>
-					<Route path="/products">
-						<Products />
+					<Route path="/Dolls">
+						<Dolls />
 					</Route>
 				</Switch>
 				<Switch>
