@@ -14,7 +14,7 @@ function Handpuppets() {
 			</head>
 			<body className="homeBody">
 				<Navbar />
-				<h1 className="comingsoon">COMING SOON!!</h1>
+				<h1 className="comingsoon">COMING SOON</h1>
 			</body>
 		</html>
 	);
