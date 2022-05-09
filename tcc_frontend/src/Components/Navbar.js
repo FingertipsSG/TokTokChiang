@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../Components/css/navbar.css";
 import Logo from "../Assets/Images/toktoklogo.png";
 import { Helmet } from "react-helmet";
@@ -23,23 +23,42 @@ function TopNavBar() {
 				{/* links */}
 				<div className="collapse navbar-collapse justify-content-end" id="toggler" >
 					<ul className="navbar-nav">
-						<li className="nav-item">
+						{/* <li className="nav-item">
 							<NavLink to="/products" className="link nav-link">ABOUT US</NavLink>
+						</li> */}
+						<li className="nav-item">
+							<div className="dropdown">
+								<a className="link nav-link home">
+									ABOUT US
+								</a>
+								<div className="dropdown-menu">
+									<Link className="dropdown-item" to="/home">TOK TOK CHIANG</Link>
+									<Link className="dropdown-item" to="/home">LAO SAI TAO YUAN</Link>
+								</div>
+							</div>
 						</li>
 						<li className="nav-item">
-							<NavLink to="/products" className="link nav-link">SHOP</NavLink>
+							<div className="dropdown">
+								<a className="link nav-link shop">
+									SHOP
+								</a>
+								<div className="dropdown-menu">
+									<Link className="dropdown-item" to="/products">MASKS</Link>
+									<Link className="dropdown-item" to="/products">DOLLS</Link>
+									<Link className="dropdown-item" to="/products">HAND PUPPETS</Link>
+								</div>
+							</div>
 						</li>
 						<li className="nav-item">
-							<NavLink to="/products" className="link nav-link">SERVICES</NavLink>
+							<NavLink to="/products" activeClassName="active-link" className="link nav-link">SERVICES</NavLink>
 						</li>
 						<li className="nav-item">
-							<NavLink to="/products" className="link nav-link">CONTACT US</NavLink>
+							<NavLink to="/products" activeClassName="active-link" className="link nav-link">CONTACT US</NavLink>
 						</li>
 					</ul>
 				</div>
-			</nav>
-
-		</div>
+			</nav >
+		</div >
 	);
 }
 
