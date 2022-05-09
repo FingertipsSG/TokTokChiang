@@ -38,7 +38,7 @@
 .navbar__logo {
     animation: fadeIn 0.7s ease-out;
     width: 250px;
-    margin-left: 60px;
+    margin-left: 40px;
 }
 
 button.navbar-toggler {

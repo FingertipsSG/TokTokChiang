@@ -8,6 +8,8 @@ import Footer from "./Components/Footer";
 import Products from "./Components/Products";
 import AdminProducts from "./Components/AdminProducts";
 import AdminLogin from "./Components/AdminLogin";
+import ContactUs from "./Components/ContactUs";
+import Services from "./Components/Services";
 
 function App() {
 	// let [products, setProducts] = useState([]);
@@ -31,41 +33,54 @@ function App() {
 	// }, []);
 
 	return (
-		<BrowserRouter>
-			<Switch>
-				<Route exact path="/(home)?">
-					{/* <Navbar /> */}
-					<Home />
-				</Route>
-			</Switch>
-			<Switch>
-				<Route path="/(product)([0-9])+">
-					{/* <Navbar /> */}
-					<Products />
-					<Footer />
-				</Route>
-			</Switch>
-			<Switch>
-				<Route path="/login">
-					<Login />
-				</Route>
-			</Switch>
-			<Switch>
-				<Route path="/admin-login">
-					<AdminLogin />
-				</Route>
-			</Switch>
-			<Switch>
-				<Route path="/admin-products">
-					<AdminProducts />
-				</Route>
-			</Switch>
-			<Switch>
-				<Route path="/products">
-					<Products />
-				</Route>
-			</Switch>
-		</BrowserRouter>
+		<div className="App">
+			<BrowserRouter>
+				<Switch>
+					<Route exact path="/(home)?">
+						<Navbar products={products} />
+						<Home />
+						{/* <Footer /> */}
+					</Route>
+				</Switch>
+				<Switch>
+					<Route path="/(product)([0-9])+">
+						<Navbar products={products} />
+						<Products />
+						<Footer />
+					</Route>
+				</Switch>
+				<Switch>
+					<Route path="/login">
+						<Login />
+					</Route>
+				</Switch>
+				<Switch>
+					<Route path="/admin-login">
+						<AdminLogin />
+					</Route>
+				</Switch>
+				<Switch>
+					<Route path="/admin-products">
+						<AdminProducts />
+					</Route>
+				</Switch>
+				<Switch>
+					<Route path="/products">
+						<Products />
+					</Route>
+				</Switch>
+				<Switch>
+					<Route path="/ContactUs">
+					 	<ContactUs />
+					</Route>
+				</Switch>
+        		<Switch>
+					<Route path="/services">
+				  		<Services />
+					</Route>
+				</Switch>
+			</BrowserRouter>
+		</div>
 	);
 }
 
