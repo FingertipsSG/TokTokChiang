@@ -30,7 +30,7 @@ function TopNavBar() {
 							<NavLink to="/products" className="link nav-link">SHOP</NavLink>
 						</li>
 						<li className="nav-item">
-							<NavLink to="/products" className="link nav-link">SERVICES</NavLink>
+							<NavLink to="/services" className="link nav-link">SERVICES</NavLink>
 						</li>
 						<li className="nav-item">
 							<NavLink to="/products" className="link nav-link">CONTACT US</NavLink>
