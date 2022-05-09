@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 @font-face {
     src: url(fonts/AvenirNext.ttf);
     font-family: AveNext;
@@ -26,14 +28,6 @@
     font-weight: bold !important;
 }
 
-.linkFirst {
-    text-decoration: none;
-    color: black !important; 
-    margin-right: 40px;
-    font-family: AveNext;
-    font-weight: bold !important;
-}
-
 /* Nav Bar*/
 .navbar {
     padding: 1rem 1.5rem;
@@ -44,7 +38,7 @@
 .navbar__logo {
     animation: fadeIn 0.7s ease-out;
     width: 250px;
-    margin-left: 120px;
+    margin-left: 40px;
 }
 
 button.navbar-toggler {

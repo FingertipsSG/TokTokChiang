@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+@font-face {
+    src: url(fonts/AvenirNext.ttf);
+    font-family: AveNext;
+}
+
+html {
+    height: 100vh;
+    width: auto;
+}
+
+body {
+    min-height: 100%;
+    min-width: auto;
+}
+
+body.services-body {
+    /* background-color: lightblue; */
+    /* width: 100%; */
+    background-image: url("../../Assets/Images/services.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* display: block; */
+    /* background-color: lightgray; */
+}
+
+/* .services-png {
+    top: 0;
+    left: 0;
+} */
+
+/* .div-float {
+    bottom: 0;
+    right: 0;
+    float: right;
+    position: absolute;
+} */

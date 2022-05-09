@@ -24,13 +24,13 @@ function TopNavBar() {
 				<div className="collapse navbar-collapse justify-content-end" id="toggler" >
 					<ul className="navbar-nav">
 						<li className="nav-item">
-							<NavLink to="/products" className="linkFirst nav-link">ABOUT US</NavLink>
+							<NavLink to="/products" className="link nav-link">ABOUT US</NavLink>
 						</li>
 						<li className="nav-item">
 							<NavLink to="/products" className="link nav-link">SHOP</NavLink>
 						</li>
 						<li className="nav-item">
-							<NavLink to="/products" className="link nav-link">SERVICES</NavLink>
+							<NavLink to="/services" className="link nav-link">SERVICES</NavLink>
 						</li>
 						<li className="nav-item">
 							<NavLink to="/ContactUs" className="link nav-link">CONTACT US</NavLink>
