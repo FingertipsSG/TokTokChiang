@@ -37,14 +37,11 @@ function App() {
 			<BrowserRouter>
 				<Switch>
 					<Route exact path="/(home)?">
-						<Navbar products={products} />
 						<Home />
-						{/* <Footer /> */}
 					</Route>
 				</Switch>
 				<Switch>
 					<Route path="/(product)([0-9])+">
-						<Navbar products={products} />
 						<Products />
 						<Footer />
 					</Route>

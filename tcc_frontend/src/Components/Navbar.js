@@ -50,10 +50,10 @@ function TopNavBar() {
 							</div>
 						</li>
 						<li className="nav-item">
-							<NavLink to="/products" activeClassName="active-link" className="link nav-link">SERVICES</NavLink>
+							<NavLink to="/services" activeClassName="active-link" className="link nav-link">SERVICES</NavLink>
 						</li>
 						<li className="nav-item">
-							<NavLink to="/products" activeClassName="active-link" className="link nav-link">CONTACT US</NavLink>
+							<NavLink to="/contactus" activeClassName="active-link" className="link nav-link">CONTACT US</NavLink>
 						</li>
 					</ul>
 				</div>
