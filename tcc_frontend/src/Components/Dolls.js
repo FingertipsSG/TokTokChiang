@@ -45,7 +45,8 @@ function Dolls() {
       let newDoll = new Doll(
         doll.product_name,
         doll.product_description,
-        doll.product_price
+        doll.product_price,
+        doll.product_image
       );
 
       dollsArr.push(newDoll);
@@ -59,6 +60,19 @@ function Dolls() {
   useEffect(() => {
     getDolls();
   }, []);
+
+  // To convert BLOB to base64 encoded then load the base64 image STEP
+  const convertToBase64 = (imgData) => {
+    const imageBuffer = Buffer.from(imgData);
+    const imageBuffer64 = imageBuffer.toString("base64");
+
+    return imageBuffer64;
+  };
+
+  // open modal STEP
+  const openModal = () => {
+    $("#myModal").modal("show");
+  };
 
   // Function to render content
   // Function to render rows STEP
@@ -80,10 +94,13 @@ function Dolls() {
               data-target="#myModal"
               onClick={() => {
                 setCurDollSelectedIndex({ row: rowIndex, col: colIndex });
-                $("#myModal").modal("show");
+                openModal();
               }}
             >
-              <img className="dolls-image" src={doll1} />
+              <img
+                className="dolls-image"
+                src={`data:image/jpg;base64,${convertToBase64(item.image)}`}
+              />
             </a>
             <p className="title">{item.name}</p>
             <p className="price">${item.price} Incl. GST</p>
@@ -121,53 +138,77 @@ function Dolls() {
                       <div className="modal-body">
                         <Row>
                           <Col>
-                            <img className="popup-image" src={doll1} />
-                            <Row>
-                              <Col>
-                                <img className="small-image" src={side1} />
-                              </Col>
-                              <Col>
-                                <img className="small-image" src={back1} />
-                              </Col>
-                              <Col>
-                                <img className="small-image" src={side2} />
-                              </Col>
-                            </Row>
+                            <img
+                              className="popup-image"
+                              src={`data:image/jpg;base64,${convertToBase64(
+                                dolls[curDollSelectedIndex.row][
+                                  curDollSelectedIndex.col
+                                ].image
+                              )}`}
+                            />
+                            {/* <Row>
+                                <Col>
+                                  <img className="small-image" src={side1} />
+                                </Col>
+                                <Col>
+                                  <img className="small-image" src={back1} />
+                                </Col>
+                                <Col>
+                                  <img className="small-image" src={side2} />
+                                </Col>
+                              </Row> */}
                           </Col>
                           <Col>
-                            <p className="pop-title">
-                              {
-                                dolls[curDollSelectedIndex.row][
-                                  curDollSelectedIndex.col
-                                ].name
-                              }
-                            </p>
-                            <p className="pop-price">
-                              $
-                              {
-                                dolls[curDollSelectedIndex.row][
-                                  curDollSelectedIndex.col
-                                ].price
-                              }{" "}
-                              Incl. GST
-                            </p>
-                            <p>
-                              Xu Xian is a mythological figure in Chinese
-                              folklore.
-                              <br />
-                              He is one of the main characters in the Legend of
-                              the White Snake, one of China`s four greatest folk
-                              tales.
-                              <br />
-                              Size: 15cm
-                              <br />
-                              Weight: 130g
-                              <br />
-                              Material: Resin
-                            </p>
-                            <button type="button" className="shop-here">
-                              Shop Here
-                            </button>
+                            <div>
+                              <div>
+                                <p className="pop-title">
+                                  {
+                                    dolls[curDollSelectedIndex.row][
+                                      curDollSelectedIndex.col
+                                    ].name
+                                  }
+                                </p>
+                              </div>
+                              <div>
+                                <p className="pop-price">
+                                  $
+                                  {
+                                    dolls[curDollSelectedIndex.row][
+                                      curDollSelectedIndex.col
+                                    ].price
+                                  }{" "}
+                                  Incl. GST
+                                </p>
+                              </div>
+                              <div className="pop-text">
+                                <p>
+                                  {
+                                    dolls[curDollSelectedIndex.row][
+                                      curDollSelectedIndex.col
+                                    ].desc.split("\n")[0]
+                                  }
+                                </p>
+                                <p>
+                                  {
+                                    dolls[curDollSelectedIndex.row][
+                                      curDollSelectedIndex.col
+                                    ].desc.split("\n")[1]
+                                  }
+                                </p>
+                                <p>
+                                  {
+                                    dolls[curDollSelectedIndex.row][
+                                      curDollSelectedIndex.col
+                                    ].desc.split("\n")[2]
+                                  }
+                                </p>
+                              </div>
+                              <div>
+                                <button type="button" className="shop-here">
+                                  Shop Here
+                                </button>
+                              </div>
+                            </div>
                           </Col>
                         </Row>
                       </div>

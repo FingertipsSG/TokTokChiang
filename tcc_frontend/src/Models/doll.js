@@ -1,21 +1,10 @@
 class Doll {
-  // Temporary
-  constructor(name, desc, price) {
+  constructor(name, desc, price, image) {
     this.name = name;
     this.desc = desc;
     this.price = price;
+    this.image = image;
   }
-
-  // Future use LEFTOFFAT
-  //     constructor(name, desc, price, image, size, weight, material) {
-  //         this.name = name;
-  //         this.desc = desc;
-  //         this.price = price;
-  //         this.image = image;
-  //         this.size = size;
-  //         this.weight = weight;
-  //         this.material = material;
-  //   }
 }
 
 export default Doll;
