@@ -10,8 +10,6 @@ import { Row } from "reactstrap";
 // import { Helmet } from "react-helmet";
 import Navbar from "../Components/Navbar";
 
-
-
 function Home() {
 	return (
 		<html>
@@ -25,17 +23,16 @@ function Home() {
 				<br />
 				<div className="firstContent">
 					<Row>
-						<div className="firstContentText">
-							<h2 className="title1">TOK</h2>
-							<h2 className="title1">	TOK</h2>
-							<h2 className="title2">	CHIANG</h2>
-							<br />
-							<br />
-							<h3> Who Are We </h3>
-						</div>
-					</Row>
-					<Row>
 						<div className="col-lg-6">
+							<div className="firstContentText">
+								<h2 className="title1">TOK</h2>
+								<h2 className="title1">	TOK</h2>
+								<h2 className="title2">	CHIANG</h2>
+								<br />
+								<br />
+								<h3> Who Are We </h3>
+							</div>
+								
 							<p className="homeContent">
 								Nick Shen Weijun, founder of Tok Tok Chiang Opera, believes that Chinese Opera
 								is more than just an art form. Recognising the importance of preserving and keeping
@@ -65,21 +62,21 @@ function Home() {
 							<Carousel variant="dark" className="slide" fade>
 								<Carousel.Item>
 									<img
-										className="col-lg-4  col-sm-12"
+										className="col-lg-6  col-sm-12"
 										id="carouselpic"
 										src={pic1}
 									/>
 								</Carousel.Item>
 								<Carousel.Item>
 									<img
-										className="col-lg-4  col-sm-12"
+										className="col-lg-6  col-sm-12"
 										id="carouselpic"
 										src={pic2}
 									/>
 								</Carousel.Item>
 								<Carousel.Item>
 									<img
-										className="col-lg-4  col-sm-12"
+										className="col-lg-6  col-sm-12"
 										id="carouselpic"
 										src={pic1}
 									/>
@@ -102,19 +99,6 @@ function Home() {
 						</div>
 					</Row>
 				</div>
-
-					<div className="firstContentText col-lg-3">
-						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-							Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s,
-							when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-						</p>
-						<p> 
-							It was popularised in the 1960s with the release of Letraset
-							sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-							Aldus PageMaker including versions of Lorem Ipsum.
-						</p>
-					</div>
 			</body>
 		</html>
 	);

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../Components/css/navbar.css";
 import Logo from "../Assets/Images/toktoklogo.png";
 import { Helmet } from "react-helmet";
@@ -23,23 +23,53 @@ function TopNavBar() {
 				{/* links */}
 				<div className="collapse navbar-collapse justify-content-end" id="toggler" >
 					<ul className="navbar-nav">
-						<li className="nav-item">
+						{/* <li className="nav-item">
 							<NavLink to="/products" className="link nav-link">ABOUT US</NavLink>
+						</li> */}
+						<li className="nav-item">
+							<div className="dropdown">
+								<a className="link nav-link home">
+									ABOUT US
+								</a>
+								<div className="dropdown-menu">
+									<Link className="dropdown-item" to="/home">TOK TOK CHIANG</Link>
+									<Link className="dropdown-item" to="/home2">LAO SAI TAO YUAN</Link>
+								</div>
+							</div>
 						</li>
 						<li className="nav-item">
-							<NavLink to="/products" className="link nav-link">SHOP</NavLink>
+							<div className="dropdown">
+								<a className="link nav-link shop">
+									SHOP
+								</a>
+								<div className="dropdown-menu">
+									<Link className="dropdown-item" to="/masks">MASKS</Link>
+									<Link className="dropdown-item" to="/dolls">DOLLS</Link>
+									<Link className="dropdown-item" to="/handpuppets">HAND PUPPETS</Link>
+									<Link className="dropdown-item" to="/tshirts">T-SHIRTS</Link>
+									<Link className="dropdown-item" to="/framed">FRAMED</Link>
+								</div>
+							</div>
+						</li>	
+						<li className="nav-item">
+							<div className="dropdown">
+								<a className="link nav-link shop">
+									SUPPORT
+								</a>
+								<div className="dropdown-menu">
+									<Link className="dropdown-item" to="/services">SERVICE</Link>
+									<Link className="dropdown-item" to="/warranty">WARRANTY</Link>
+									<Link className="dropdown-item" to="/onlinestores">ONLINE STORE</Link>
+								</div>
+							</div>
 						</li>
 						<li className="nav-item">
-							<NavLink to="/services" className="link nav-link">SERVICES</NavLink>
-						</li>
-						<li className="nav-item">
-							<NavLink to="/ContactUs" className="link nav-link">CONTACT US</NavLink>
+							<NavLink to="/contactus" activeClassName="active-link" className="link nav-link">CONTACT US</NavLink>
 						</li>
 					</ul>
 				</div>
-			</nav>
-
-		</div>
+			</nav >
+		</div >
 	);
 }
 

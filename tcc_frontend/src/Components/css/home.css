@@ -55,8 +55,13 @@ h3 {
     margin-left: 92px;
 }
 
+.firstContent {
+    margin-left: -30px;
+}
+
 .homeContent {
     font-family: Calibri;
+    font-size: 15px;
     margin-left: 92px;
 }
 
@@ -75,10 +80,21 @@ img#carouselpic {
 /* important overrides other styling */
 .carousel-indicators button {
     position: relative !important;
-    left: 180px !important;
+    left: 10px !important;
     height: 10px !important;
     width: 10px !important;
     margin: 0 10px !important;
     border-radius: 100%;
     background-color: white !important;
 }
+
+.carousel {
+    /* margin-left: -40px;
+    padding-right: 50px; */
+    padding-top: 100px;
+}
+
+/* .nav-item .home {
+    color: #790c15 !important;
+    font-family: AveNextBold;
+} */

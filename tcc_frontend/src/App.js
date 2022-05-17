@@ -4,12 +4,21 @@ import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from "./Components/Auth/Login";
 import Home from "./Components/Home";
-import Footer from "./Components/Footer";
-import Products from "./Components/Products";
+// import Footer from "./Components/Footer";
+// import Products from "./Components/Products";
 import AdminProducts from "./Components/AdminProducts";
 import AdminLogin from "./Components/AdminLogin";
 import ContactUs from "./Components/ContactUs";
+import Dolls from "./Components/Dolls";
 import Services from "./Components/Services";
+import Home2 from "./Components/Home2";
+import Masks from "./Components/Masks";
+import Handpuppets from "./Components/Handpuppets";
+import Tshirts from "./Components/Tshirts";
+import Framed from "./Components/Framed";
+import Warranty from "./Components/Warranty";
+import Onlinestore from "./Components/Onlinestore";
+
 
 function App() {
 	// let [products, setProducts] = useState([]);
@@ -37,16 +46,12 @@ function App() {
 			<BrowserRouter>
 				<Switch>
 					<Route exact path="/(home)?">
-						<Navbar products={products} />
 						<Home />
-						{/* <Footer /> */}
 					</Route>
 				</Switch>
 				<Switch>
-					<Route path="/(product)([0-9])+">
-						<Navbar products={products} />
-						<Products />
-						<Footer />
+					<Route exact path="/home2">
+						<Home2 />
 					</Route>
 				</Switch>
 				<Switch>
@@ -65,18 +70,48 @@ function App() {
 					</Route>
 				</Switch>
 				<Switch>
-					<Route path="/products">
-						<Products />
+					<Route path="/Dolls">
+						<Dolls />
+					</Route>
+				</Switch>
+				<Switch>
+					<Route path="/Masks">
+						<Masks />
+					</Route>
+				</Switch>
+				<Switch>
+					<Route path="/Tshirts">
+						<Tshirts />
+					</Route>
+				</Switch>
+				<Switch>
+					<Route path="/Framed">
+						<Framed />
+					</Route>
+				</Switch>
+				<Switch>
+					<Route path="/Handpuppets">
+						<Handpuppets />
 					</Route>
 				</Switch>
 				<Switch>
 					<Route path="/ContactUs">
-					 <ContactUs />
-          </Route>
-        <Switch />
-        <Switch>
+						<ContactUs />
+					</Route>
+				</Switch>
+				<Switch>
 					<Route path="/services">
-				  <Services />
+						<Services />
+					</Route>
+				</Switch>
+				<Switch>
+					<Route path="/warranty">
+						<Warranty />
+					</Route>
+				</Switch>
+				<Switch>
+					<Route path="/onlinestores">
+						<Onlinestore />
 					</Route>
 				</Switch>
 			</BrowserRouter>

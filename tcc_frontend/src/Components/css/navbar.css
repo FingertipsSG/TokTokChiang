@@ -38,12 +38,17 @@
 .navbar__logo {
     animation: fadeIn 0.7s ease-out;
     width: 250px;
-    margin-left: 40px;
+    margin-left: 30px;
 }
 
 button.navbar-toggler {
     border-color: black !important;
     border: 2px solid;
+}
+
+.active-link {
+    color: #790c15 !important;
+    text-decoration: underline;
 }
 
 /* collapse style for nav bar */
@@ -64,13 +69,16 @@ button.navbar-toggler {
 }    
 
 /* hover styles */
-.link:hover {
-    color: #790c15 !important;
-    text-decoration: underline;
+.dropdown:hover .dropdown-menu {
+    display: block;
 }
 
-.linkFirst:hover {
-    color: #790c15 !important;
-    text-decoration: underline;
+.dropdown-menu {
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-menu:hover .dropdown-item:hover {
+    background-color: #790c15;
+    color: white;
 }
 
