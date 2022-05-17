@@ -14,7 +14,6 @@ import Doll from "../Models/doll";
 function Dolls() {
   // states for data loading STEP
   const [dolls, setDolls] = useState([]);
-  // const [isLoading, setIsLoading] = useState(false);
 
   // final array is converted into a 2D array, so need row and col index NOTE
   const [curDollSelectedIndex, setCurDollSelectedIndex] = useState({
@@ -35,7 +34,6 @@ function Dolls() {
 
   // Get data from backend STEP
   const getDolls = async () => {
-    // setIsLoading(true);
     const res = await Utils.getProducts("dolls", {});
 
     // Keep pushing new doll to dolls array
@@ -53,7 +51,6 @@ function Dolls() {
     });
 
     formatDisplay(dollsArr, 4);
-    // setIsLoading(false);
   };
 
   // To trigger and load data at every first render only STEP
@@ -68,11 +65,6 @@ function Dolls() {
 
     return imageBuffer64;
   };
-
-  // open modal STEP
-  // const openModal = () => {
-  //   $("#myModal").modal("show");
-  // };
 
   // Function to render content
   // Function to render rows STEP
@@ -94,7 +86,6 @@ function Dolls() {
               data-target="#myModal"
               onClick={() => {
                 setCurDollSelectedIndex({ row: rowIndex, col: colIndex });
-                // openModal();
               }}
             >
               <img
