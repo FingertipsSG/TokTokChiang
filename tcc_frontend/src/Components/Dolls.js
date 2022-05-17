@@ -1,10 +1,10 @@
 import "../Components/css/shop.css";
 import { Container, Row, Col } from "react-grid-system";
 import Navbar from "./Navbar";
-import doll1 from "../Assets/Images/doll1.jpg";
-import back1 from "../Assets/Images/Back 1.jpg";
-import side1 from "../Assets/Images/Side1.jpg";
-import side2 from "../Assets/Images/Other side 1.jpg";
+// import doll1 from "../Assets/Images/doll1.jpg";
+// import back1 from "../Assets/Images/Back 1.jpg";
+// import side1 from "../Assets/Images/Side1.jpg";
+// import side2 from "../Assets/Images/Other side 1.jpg";
 
 // To load dolls from database NOTE
 import { Utils } from "../Helper";
@@ -14,7 +14,7 @@ import Doll from "../Models/doll";
 function Dolls() {
   // states for data loading STEP
   const [dolls, setDolls] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   // final array is converted into a 2D array, so need row and col index NOTE
   const [curDollSelectedIndex, setCurDollSelectedIndex] = useState({
@@ -35,13 +35,13 @@ function Dolls() {
 
   // Get data from backend STEP
   const getDolls = async () => {
-    setIsLoading(true);
+    // setIsLoading(true);
     const res = await Utils.getProducts("dolls", {});
 
     // Keep pushing new doll to dolls array
     let dollsArr = [];
 
-    res.forEach((doll, index) => {
+    res.forEach((doll) => {
       let newDoll = new Doll(
         doll.product_name,
         doll.product_description,
@@ -53,7 +53,7 @@ function Dolls() {
     });
 
     formatDisplay(dollsArr, 4);
-    setIsLoading(false);
+    // setIsLoading(false);
   };
 
   // To trigger and load data at every first render only STEP
@@ -70,9 +70,9 @@ function Dolls() {
   };
 
   // open modal STEP
-  const openModal = () => {
-    $("#myModal").modal("show");
-  };
+  // const openModal = () => {
+  //   $("#myModal").modal("show");
+  // };
 
   // Function to render content
   // Function to render rows STEP
@@ -94,7 +94,7 @@ function Dolls() {
               data-target="#myModal"
               onClick={() => {
                 setCurDollSelectedIndex({ row: rowIndex, col: colIndex });
-                openModal();
+                // openModal();
               }}
             >
               <img
