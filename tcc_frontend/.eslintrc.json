@@ -22,10 +22,10 @@
             "error",
             "tab"
         ],
-        "linebreak-style": [
-            "error",
-            "windows"
-        ],
+        // "linebreak-style": [
+        //     "error",
+        //     "windows"
+        // ],
         "quotes": [
             "error",
             "double"
@@ -35,7 +35,7 @@
             "always"
         ],
         "react/react-in-jsx-scope": "off",
-        "camelcase":  "error",
+        "camelcase": "error",
         "no-console": "warn",
         // "max-len": [
         //     "error", 
@@ -45,14 +45,17 @@
         // "no-multi-spaces": "error",
         // "keyword-spacing": "error",
         "key-spacing": [
-            "error", 
+            "error",
             {
                 "multiLine": {
                     "beforeColon": false,
-                    "afterColon":true
+                    "afterColon": true
                 }
             }
         ],
-        "func-call-spacing": ["error", "never"]
+        "func-call-spacing": [
+            "error",
+            "never"
+        ]
     }
 }
