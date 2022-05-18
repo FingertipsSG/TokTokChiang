@@ -1,3 +1,4 @@
+/* common styling */
 @font-face {
   src: url(fonts/AvenirNext.ttf);
   font-family: AveNext;
@@ -10,19 +11,24 @@ body {
   min-height: 100vh;
   width: auto;
 }
-body.dolls-body {
-  background-image: url("../../Assets/Images/dolls.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-attachment: fixed;
-  width: 100%;
-  height: auto;
+
+/* for spinner */
+.centred {
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
-.dolls {
-  margin-left: 300px;
-  margin-top: 15px;
+
+.ant-spin-dot-item {
+  background-color: #790c15;
 }
-.dolls-image {
+
+.shop-container {
+  margin-left: 23%;
+  margin-top: 3%;
+}
+
+.main-image {
   display: block;
   width: 180px;
   height: 180px;
@@ -39,19 +45,21 @@ body.dolls-body {
   text-align: center;
   margin-top: 15px;
 }
+
 .price {
   font-size: small;
   text-align: center;
   margin-top: -10px;
 }
-/*popup */
 
+/*popup */
 .pop-title {
   color: #790c15;
   font-weight: bold;
   font-size: large;
   margin-top: 15px;
 }
+
 .pop-price {
   color: black;
   font-size: medium;
@@ -76,6 +84,14 @@ body.dolls-body {
   border-radius: 5.67px;
   float: left;
 }
+
+.close-button-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
 button.close-button {
   border: none;
   padding: 8px;
@@ -83,9 +99,18 @@ button.close-button {
   text-align: center;
   text-decoration: none;
   font-size: 25px;
-  margin-left: 1050px;
+  margin-left: 90%;
   background-color: transparent !important;
 }
+
+.modal-image-container {
+  max-width: 60%;
+}
+
+.modal-text-container {
+  max-width: 40%;
+}
+
 .popup-image {
   display: block;
   width: 300px;
@@ -95,6 +120,7 @@ button.close-button {
   margin-left: auto;
   margin-right: auto;
 }
+
 .small-image {
   display: block;
   width: 150px;
@@ -102,4 +128,58 @@ button.close-button {
   box-shadow: 0px 0px 3px 1px #bebebe;
   object-fit: cover;
   margin-top: 20px;
+}
+
+body.shop-body {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  background-position: 0px 40px;
+  width: 100%;
+  height: auto;
+}
+
+/* specific to shop type */
+body.dolls-body {
+  background-image: url("../../Assets/Images/dolls.png");
+}
+
+body.masks-body {
+  background-image: url("../../Assets/Images/masks.png");
+}
+
+body.puppets-body {
+  background-image: url("../../Assets/Images/handpuppets.png");
+}
+
+/* potrait */
+@media screen and (orientation: portrait) {
+  /* different screen sizes */
+  @media (max-width: 590px) {
+    body.shop-body {
+      background-size: 100% 40%;
+    }
+  }
+
+  @media (min-width: 590px) and (max-width: 850px) {
+    body.shop-body {
+      background-size: 100% 55%;
+    }
+  }
+
+  @media (min-width: 850px) and (max-width: 991.98px) {
+    body.shop-body {
+      background-size: 100% 70%;
+    }
+  }
+}
+
+/* landscape */
+@media screen and (orientation: landscape) {
+  /* different screen sizes */
+  @media (max-height: 420px) {
+    body.shop-body {
+      background-position: 0px 75px;
+    }
+  }
 }
