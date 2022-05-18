@@ -16,7 +16,7 @@ import Doll from "../Models/doll";
 function Dolls() {
   // states for data loading STEP
   const [dolls, setDolls] = useState([]);
-  // const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   // final array is converted into a 2D array, so need row and col index NOTE
   const [curDollSelectedIndex, setCurDollSelectedIndex] = useState({
