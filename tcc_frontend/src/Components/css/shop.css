@@ -24,8 +24,8 @@ body {
 }
 
 .shop-container {
-  margin-left: 23%;
-  margin-top: 3%;
+  margin-left: 20%;
+  padding: 2%;
 }
 
 .main-image {
@@ -137,6 +137,12 @@ body.shop-body {
   background-position: 0px 40px;
   width: 100%;
   height: auto;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
 }
 
 /* specific to shop type */
