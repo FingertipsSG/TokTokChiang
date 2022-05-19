@@ -92,3 +92,8 @@ img#carouselpic {
     padding-top: 100px;
 }
 
+@media (min-width: 992px) { 
+    html.lstyHtml {
+        overflow: hidden;
+    }
+}
