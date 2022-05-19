@@ -29,6 +29,71 @@ body.lstyBody {
     background-image: url("../../Assets/Images/AboutUs.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-
+    overflow-x: hidden;
 }
 
+.title1 {
+    display: inline;
+    color: #790c15;
+    font-family: AveNextBold;
+    font-size: 36px;
+}
+
+.title2 {
+    display: inline;
+    color: #464749;
+    font-family: AveNextBold;
+    font-size: 36px;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+.firstContentText {
+    font-family: AveNext;
+    margin-left: 92px;
+}
+
+.firstContent {
+    margin-left: -30px;
+}
+
+.lstyContent {
+    font-family: Calibri;
+    font-size: 18px;
+    margin-left: 92px;
+}
+
+/* carousel styles */
+img#carouselpic {
+    float: right;
+    width: 70%;
+    margin-right: 100px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    display: none;
+}
+
+/* important overrides other styling */
+.carousel-indicators button {
+    position: relative !important;
+    left: 10px !important;
+    height: 10px !important;
+    width: 10px !important;
+    margin: 0 10px !important;
+    border-radius: 100%;
+    background-color: white !important;
+}
+
+.carousel {
+    padding-top: 100px;
+}
+
+/* @media (min-width: 992px) { 
+    html.lstyHtml {
+        overflow: hidden;
+    }
+} */
