@@ -33,10 +33,10 @@ function TopNavBar() {
 								</a>
 								<div className="dropdown-menu">
 								<Link className="dropdown-item" to="/home">WHAT WE DO</Link>
-									<Link className="dropdown-item" to="/ttc">TOK TOK CHIANG</Link>
-									<Link className="dropdown-item" to="/lsty">LAO SAI TAO YUAN</Link>
+									<Link className="dropdown-item" to="/TokTokChiang">TOK TOK CHIANG</Link>
+									<Link className="dropdown-item" to="/LaoSaiTaoYuan">LAO SAI TAO YUAN</Link>
 									<Link className="dropdown-item" to="/opera">OPERA</Link>
-									<Link className="dropdown-item" to="/founder">FOUNDER</Link>
+									<Link className="dropdown-item" to="/Founder">FOUNDER</Link>
 								</div>
 							</div>
 						</li>

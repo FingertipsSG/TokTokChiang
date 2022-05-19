@@ -50,12 +50,12 @@ function App() {
 					</Route>
 				</Switch>
 				<Switch>
-					<Route exact path="/lsty">
+					<Route exact path="/LaoSaiTaoYuan">
 						<Lsty />
 					</Route>
 				</Switch>
 				<Switch>
-					<Route exact path="/ttc">
+					<Route exact path="/TokTokChiang">
 						<Ttc />
 					</Route>
 				</Switch>
