@@ -94,7 +94,8 @@ img#carouselpic {
     padding-top: 100px;
 }
 
-/* .nav-item .home {
-    color: #790c15 !important;
-    font-family: AveNextBold;
-} */
+@media (min-width: 992px) { 
+    html.ttcHtml {
+        overflow: hidden;
+    }
+}    

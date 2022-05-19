@@ -15,29 +15,39 @@
     font-family: Calibri;
 }
 
-/* html {
-    height: 100%;
-    width: auto;
-}
-
-body {
-    min-height: 100%;
-    min-width: auto;
-} */
-
-
 .homeContentText {
     font-family: AveNext;
     margin-left: 92px;
+    font-size: 20px;
+}
+
+.homeContent2 {
+    font-family: Calibri;
+    margin-left: 92px;
+    font-size: 16px;
+}
+
+.homeContent {
+    font-family: Calibri;
+    margin-left: 92px;
+    font-size: 16px;
 }
 
 .homePageBody {
     margin-left: -30px;
-    background-image: url("../../Assets/Images/AboutUs.png");
+    background-image: url("../../Assets/Images/comingsoon.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    height: auto;
+    overflow-x: hidden;
 }
 
 .founderPic {
-    border-radius: 30px;
+    width: 38%;
+    margin-left: 80px;
+    margin-top: 100px;
+}
+
+.card-body {
+    box-shadow: 2px 2px #bebebe;
 }
