@@ -32,8 +32,11 @@ function TopNavBar() {
 									ABOUT US
 								</a>
 								<div className="dropdown-menu">
-									<Link className="dropdown-item" to="/home">TOK TOK CHIANG</Link>
-									<Link className="dropdown-item" to="/home2">LAO SAI TAO YUAN</Link>
+								<Link className="dropdown-item" to="/home">WHAT WE DO</Link>
+									<Link className="dropdown-item" to="/ttc">TOK TOK CHIANG</Link>
+									<Link className="dropdown-item" to="/lsty">LAO SAI TAO YUAN</Link>
+									<Link className="dropdown-item" to="/opera">OPERA</Link>
+									<Link className="dropdown-item" to="/founder">FOUNDER</Link>
 								</div>
 							</div>
 						</li>

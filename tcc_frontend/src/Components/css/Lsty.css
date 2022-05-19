@@ -15,29 +15,20 @@
     font-family: Calibri;
 }
 
-/* html {
-    height: 100%;
+html {
+    height: 100vh;
     width: auto;
 }
 
 body {
     min-height: 100%;
     min-width: auto;
-} */
-
-
-.homeContentText {
-    font-family: AveNext;
-    margin-left: 92px;
 }
 
-.homePageBody {
-    margin-left: -30px;
+body.lstyBody {
     background-image: url("../../Assets/Images/AboutUs.png");
-    background-size: 100% 100%;
     background-repeat: no-repeat;
+    background-size: 100% 100%;
+
 }
 
-.founderPic {
-    border-radius: 30px;
-}

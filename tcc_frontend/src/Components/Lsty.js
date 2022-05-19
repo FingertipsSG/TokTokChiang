@@ -1,10 +1,10 @@
 import React from "react";
-import "../Components/css/home2.css";
-import Navbar from "../Components/Navbar";
+import "../Components/css/Lsty.css";
+import Navbar from "./Navbar";
 
 
 
-function Home2() {
+function Lsty() {
 	return (
 		<html>
 			<head>
@@ -12,7 +12,7 @@ function Home2() {
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 			</head>
-			<body className="homeBody">
+			<body className="lstyBody">
 				<Navbar />
 				<h1 className="comingsoon">COMING SOON</h1>
 			</body>
@@ -20,4 +20,4 @@ function Home2() {
 	);
 }
 
-export default Home2;
+export default Lsty;
