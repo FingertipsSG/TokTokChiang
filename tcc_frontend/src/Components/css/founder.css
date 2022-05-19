@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+@font-face {
+    src: url(fonts/AvenirNext.ttf);
+    font-family: AveNext;
+}
+
+@font-face {
+    src: url(fonts/AvenirNext-Bold.ttf);
+    font-family: AveNextBold;
+}
+
+@font-face {
+    src: url(fonts/Calibri\ Regular.ttf);
+    font-family: Calibri;
+}
+
+html {
+    height: 100vh;
+    width: auto;
+}
+
+body {
+    min-height: 100%;
+    min-width: auto;
+}
+
+body.founderBody {
+    background-image: url("../../Assets/Images/AboutUs.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+
+.title1 {
+    display: inline;
+    color: #790c15;
+    font-family: AveNextBold;
+    font-size: 36px;
+}
+
+.title2 {
+    display: inline;
+    color: #464749;
+    font-family: AveNextBold;
+    font-size: 36px;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+.firstContentText {
+    font-family: AveNext;
+    margin-left: 92px;
+}
+
+.founderDiv {
+    margin-left: -30px;
+}
+
+.homeContent {
+    font-family: Calibri;
+    font-size: 15px;
+    margin-left: 92px;
+    
+}
+
+.founderPic{
+    margin-left: 250px;
+    margin-top:15px;
+}
+@media (min-width: 992px) { 
+    html.founderHtml {
+        overflow: hidden;
+    }
+}
