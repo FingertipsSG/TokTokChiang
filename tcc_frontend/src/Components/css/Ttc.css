@@ -61,7 +61,7 @@ h3 {
 
 .homeContent {
     font-family: Calibri;
-    font-size: 15px;
+    font-size: 20px !important;
     margin-left: 92px;
 }
 
@@ -94,6 +94,11 @@ img#carouselpic {
     padding-top: 100px;
 }
 
+@media (min-width: 992px) { 
+    html.ttcHtml {
+        overflow: hidden;
+    }
+}
 /* .nav-item .home {
     color: #790c15 !important;
     font-family: AveNextBold;
