@@ -19,6 +19,7 @@ import Onlinestore from "./Components/Onlinestore";
 import Home from "./Components/Home";
 import Ttc from "./Components/Ttc";
 import Lsty from "./Components/Lsty";
+import Founder from "./Components/Founder";
 
 function App() {
 	// let [products, setProducts] = useState([]);
@@ -50,13 +51,18 @@ function App() {
 					</Route>
 				</Switch>
 				<Switch>
-					<Route exact path="/lsty">
+					<Route exact path="/LaoSaiTaoYuan">
 						<Lsty />
 					</Route>
 				</Switch>
 				<Switch>
-					<Route exact path="/ttc">
+					<Route exact path="/TokTokChiang">
 						<Ttc />
+					</Route>
+				</Switch>
+				<Switch>
+					<Route path="/Founder">
+						<Founder />
 					</Route>
 				</Switch>
 				<Switch>

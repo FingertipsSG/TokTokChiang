@@ -32,10 +32,11 @@ function TopNavBar() {
 									ABOUT US
 								</a>
 								<div className="dropdown-menu">
-									<Link className="dropdown-item" to="/ttc">TOK TOK CHIANG</Link>
-									<Link className="dropdown-item" to="/lsty">LAO SAI TAO YUAN</Link>
-									<Link className="dropdown-item" to="/opera">OPERA</Link>
-									<Link className="dropdown-item" to="/founder">FOUNDER</Link>
+									<Link className="dropdown-item" to="/Founder">OUR FOUNDER</Link>
+									<Link className="dropdown-item" to="/TokTokChiang">TOK TOK CHIANG OPERA</Link>
+									<Link className="dropdown-item" to="/LaoSaiTaoYuan">LAO SAI TAO YUAN</Link>
+									<Link className="dropdown-item" to="/opera">WAYANG</Link>
+
 								</div>
 							</div>
 						</li>
@@ -52,7 +53,7 @@ function TopNavBar() {
 									<Link className="dropdown-item" to="/framed">FRAMED</Link>
 								</div>
 							</div>
-						</li>	
+						</li>
 						<li className="nav-item">
 							<div className="dropdown">
 								<a className="link nav-link shop">
