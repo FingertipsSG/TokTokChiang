@@ -11,7 +11,7 @@ import ProductModal from "./ProductModal";
 // To load dolls from database NOTE
 import { Utils } from "../Helper";
 import React, { useState, useEffect } from "react";
-import Mask from "../Models/mask";
+import Mask from "../Models/Mask";
 
 function Masks() {
   // states for data loading STEP

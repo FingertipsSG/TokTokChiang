@@ -15,7 +15,7 @@ function ProductModal(props) {
     <div id="myModal" className="modal fade" role="dialog">
       <div className="modal-dialog modal-xl">
         <div className="modal-content">
-          <div class="close-button-container">
+          <div className="close-button-container">
             <button className="close-button" type="button" data-dismiss="modal">
               X
             </button>

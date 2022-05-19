@@ -53,7 +53,7 @@ function ShopContainer(props) {
                     >
                       {({ measure }) => {
                         return (
-                          <Row style={style}>
+                          <Row className="renderRow" style={style}>
                             {renderColContent(arrs[index], index, measure)}
                           </Row>
                         );
@@ -74,7 +74,7 @@ function ShopContainer(props) {
     return arr.map((item, colIndex) => {
       return (
         <ResizeObserver key={colIndex} onResize={measure} onPosition={measure}>
-          <Col xs={12} sm={10} md={5} lg={3}>
+          <Col xs={10} sm={9} md={5} lg={3}>
             <div className="imagePlaceHolder">
               <a
                 id="close-image"

@@ -28,10 +28,14 @@ body {
   padding: 2%;
 }
 
+.renderRow {
+  padding: 10px;
+}
+
 .main-image {
   display: block;
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   box-shadow: 0px 0px 3px 1px #bebebe;
   object-fit: cover;
   margin-left: auto;
@@ -156,6 +160,14 @@ body.masks-body {
 
 body.puppets-body {
   background-image: url("../../Assets/Images/handpuppets.png");
+}
+
+body.shirts-body {
+  background-image: url("../../Assets/Images/Tshirts.png");
+}
+
+body.framed-body {
+  background-image: url("../../Assets/Images/Frames.png");
 }
 
 /* potrait */
