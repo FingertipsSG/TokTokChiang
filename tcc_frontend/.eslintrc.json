@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "jest":true
     },
     "extends": [
         "eslint:recommended",
@@ -18,10 +19,13 @@
         "react"
     ],
     "rules": {
-        "indent": [
-            "error",
-            "tab"
+        "react/prop-types": [
+            "off"
         ],
+        // "indent": [
+        //     "error",
+        //     "tab"
+        // ],
         // "linebreak-style": [
         //     "error",
         //     "windows"
@@ -36,7 +40,7 @@
         ],
         "react/react-in-jsx-scope": "off",
         "camelcase": "error",
-        "no-console": "warn",
+        // "no-console": "warn",
         // "max-len": [
         //     "error", 
         //     { "code": 80 }
@@ -44,6 +48,12 @@
         // "no-extra-parens": "error",
         // "no-multi-spaces": "error",
         // "keyword-spacing": "error",
+        "no-unused-vars": [
+            "off"
+            // {
+            //     "varsIgnorePattern": "^h$"
+            // }
+        ],
         "key-spacing": [
             "error",
             {

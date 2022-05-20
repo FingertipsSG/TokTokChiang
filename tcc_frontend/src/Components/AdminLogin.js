@@ -12,7 +12,7 @@ export default class AdminLogin extends Component {
 	}
 
 	handleSubmit() {
-		let url = "http://localhost:5000/getPassword?password=" 
+		let url = "http://localhost:5001/getPassword?password=" 
 			+ this.state.password ;
 		fetch(url)
 			.then((response) => {
