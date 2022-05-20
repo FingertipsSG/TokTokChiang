@@ -101,16 +101,7 @@ function App() {
 						<Services />
 					</Route>
 				</Switch>
-				<Switch>
-					<Route path="/warranty">
-						<Warranty />
-					</Route>
-				</Switch>
-				<Switch>
-					<Route path="/onlinestores">
-						<Onlinestore />
-					</Route>
-				</Switch>
+				
 			</BrowserRouter>
 		</div>
 	);
