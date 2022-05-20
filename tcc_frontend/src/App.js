@@ -20,6 +20,7 @@ import Home from "./Components/Home";
 import Ttc from "./Components/Ttc";
 import Lsty from "./Components/Lsty";
 import Founder from "./Components/Founder";
+import Wayang from "./Components/Wayang";
 
 function App() {
 	// let [products, setProducts] = useState([]);
@@ -63,6 +64,11 @@ function App() {
 				<Switch>
 					<Route path="/Founder">
 						<Founder />
+					</Route>
+				</Switch>
+				<Switch>
+					<Route path="/Wayang">
+						<Wayang />
 					</Route>
 				</Switch>
 				<Switch>

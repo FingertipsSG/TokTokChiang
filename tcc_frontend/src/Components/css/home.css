@@ -22,12 +22,17 @@
 }
 
 .homeContent2 {
-    font-family: Calibri;
     margin-left: 92px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.textContent2 {
+    font-family: Calibri;
     font-size: 16px;
 }
 
-.homeContent {
+.textContent {
     font-family: Calibri;
     margin-left: 92px;
     font-size: 16px;
@@ -42,12 +47,88 @@
     overflow-x: hidden;
 }
 
-.founderPic {
-    width: 38%;
-    margin-left: 80px;
+.homeFounderPic {
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 100px;
 }
 
 .card-body {
     box-shadow: 2px 2px #bebebe;
+}
+
+@media (min-width: 1200px) {
+    .homeFounderPic {
+        width: 40%;
+    }
+}
+
+@media (max-width: 1199.9px) {
+    .homeFounderPic {
+        width: 45%;
+        margin-top: 130px;
+    }
+}
+
+/* below laptop size */
+@media (max-width: 992px){
+    .homeFounderPic {
+        width: 60%;
+        margin-top: 20px;
+    }
+
+    .card-body {
+        padding: 0;
+        margin-bottom: 10px;
+    }
+
+    .textContent {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .homeContent2 {
+        margin: 0;
+    }
+
+    .textContent2 {
+        font-size: 20px;
+        padding: 10px;
+        margin-left: 92px;
+    }
+
+    .homePageBody {
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+    
+}
+
+/* for phone styles */
+@media (max-width: 768px){
+    .textContent{
+        padding: 5px;
+    }
+
+    .textContent2 {
+        padding: 5px;
+        margin-right: 92px;
+        margin-left: 0;
+    }
+
+    .card {
+        width: 55%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .secondHeader {
+        margin-bottom: 30px;
+    }
+
+    .homeContent2 {
+        margin-left: 92px;
+    }
+
+
 }
