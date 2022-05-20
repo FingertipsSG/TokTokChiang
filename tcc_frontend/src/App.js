@@ -23,26 +23,6 @@ import Founder from "./Components/Founder";
 import Wayang from "./Components/Wayang";
 
 function App() {
-	// let [products, setProducts] = useState([]);
-	// let fetchUrl = "/getProducts";
-	// function fetchApi(url) {
-	// 	fetch(url)
-	// 		.then((response) => {
-	// 			return response.json();
-	// 		})
-	// 		.then((data) => {
-	// 			setProducts(data);
-	// 			//console.log(products);
-	// 		})
-	// 		.catch(() => {
-	// 			// Do something for an error here
-	// 		});
-	// }
-
-	// useEffect(() => {
-	// 	fetchApi(fetchUrl);
-	// }, []);
-
 	return (
 		<div className="App">
 			<BrowserRouter>

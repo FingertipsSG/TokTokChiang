@@ -7,12 +7,14 @@ import { postApi } from "../Helper/Utils";
 /*import background from "../Assets/Images/ContactUs.png";*/
 
 function ContactUs() {
+    const [form] = Form.useForm();
 
     const onFinish = (values) => {
         postApi("postEmail", values)
         .then((response) => {
             // console.log("Success:", response);
-            message.success(response.data.message);
+            message.success(response.message);
+            form.resetFields();
         });
     };
     
@@ -22,104 +24,104 @@ function ContactUs() {
 
     return (
         <html>
-            <head>
-				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-			</head>
-            <body className="contactUs-body">
-                <Navbar />
-                <div className="ContactUs">
-                    <h1> Stay Connected With Us</h1>
-                    <p>Feel free to contact us anytime time.<br />We will get back to you as soon as we can!</p>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-                    <Form
-                    name="basic"
-                    labelCol={{
-                        span: 8,
-                    }}
-                    wrapperCol={{
-                        span: 16,
-                    }}
-                    initialValues={{
-                        remember: true,
-                    }}
-                    onFinish={onFinish}
-                    onFinishFailed={onFinishFailed}
-                    autoComplete="off"
-                    >
-                        <Form.Item
-                            label="Name"
-                            name="name"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: "Please input your Name!",
-                                },
-                            ]}
-                        >
-                            <Input />
-                        </Form.Item>
+            <body  className="contactUs-body">
+                <div>
+                    <Navbar />
+                    <div className="ContactUs">
+                        <h1> Stay Connected With Us</h1>
+                        <p>Feel free to contact us anytime time.<br />We will get back to you as soon as we can!</p>
 
-                        <Form.Item
-                            label="Email"
-                            name="email"
-                            rules={[
-                                {
-                                    type: "email",
-                                    message: "The input is not valid E-mail!",
-                                },
-                                {
-                                    required: true,
-                                    message: "Please input your E-mail!",
-                                },
-                            ]}
-                        >
-                            <Input />
-                        </Form.Item>
-
-                        <Form.Item
-                            label="Phone"
-                            name="phone"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: "Please input your phone number!",
-                                },
-                            ]}
-                        >
-                            <Input />
-                        </Form.Item>
-
-                        <Form.Item
-                            label="Message"
-                            name="message"
-                            rules={[
-                            {
-                                required: true,
-                                message: "Please input message",
-                            },
-                            ]}
-                        >
-                            <Input.TextArea showCount maxLength={1000} />
-                        </Form.Item>
-
-                        <Form.Item
-                            wrapperCol={{
-                            offset: 8,
+                        <Form
+                        form={form}
+                        name="basic"
+                        labelCol={{
+                            span: 8,
+                        }}
+                        wrapperCol={{
                             span: 16,
-                            }}
+                        }}
+                        initialValues={{
+                            remember: true,
+                        }}
+                        onFinish={onFinish}
+                        onFinishFailed={onFinishFailed}
+                        autoComplete="off"
                         >
-                            <Button type="primary" htmlType="submit">
-                            Submit
-                            </Button>
-                        </Form.Item>
-                    </Form>
+                            <Form.Item
+                                label="Name"
+                                name="name"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: "Please input your Name!",
+                                    },
+                                ]}
+                            >
+                                <Input />
+                            </Form.Item>
+
+                            <Form.Item
+                                label="Email"
+                                name="email"
+                                rules={[
+                                    {
+                                        type: "email",
+                                        message: "The input is not valid E-mail!",
+                                    },
+                                    {
+                                        required: true,
+                                        message: "Please input your E-mail!",
+                                    },
+                                ]}
+                            >
+                                <Input />
+                            </Form.Item>
+
+                            <Form.Item
+                                label="Phone"
+                                name="phone"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: "Please input your phone number!",
+                                    },
+                                ]}
+                            >
+                                <Input />
+                            </Form.Item>
+
+                            <Form.Item
+                                label="Message"
+                                name="message"
+                                rules={[
+                                {
+                                    required: true,
+                                    message: "Please input message",
+                                },
+                                ]}
+                            >
+                                <Input.TextArea showCount maxLength={1000} />
+                            </Form.Item>
+
+                            <Form.Item
+                                wrapperCol={{
+                                offset: 8,
+                                span: 16,
+                                }}
+                            >
+                                <Button type="primary" htmlType="submit">
+                                Submit
+                                </Button>
+                            </Form.Item>
+                        </Form>
+                    </div>
                 </div>
             </body>
-
         </html>
-
     );
 }
 

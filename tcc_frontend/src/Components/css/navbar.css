@@ -1,84 +1,102 @@
 @charset "utf-8";
 
 @font-face {
-    src: url(fonts/AvenirNext.ttf);
-    font-family: AveNext;
+  src: url(fonts/AvenirNext.ttf);
+  font-family: AveNext;
 }
 
 .topTitle {
-    font-size: 42px;
-    color: #dddddd;
-    font-weight: 900;
-    position: absolute;
-    z-index: -1;
-    left: 70px;
-    bottom: 30px;
+  font-size: 42px;
+  color: #dddddd;
+  font-weight: 900;
+  position: absolute;
+  z-index: -1;
+  left: 70px;
+  bottom: 30px;
 }
 
 .doll {
-    width: 175px; 
-    height: 200px; 
+  width: 175px;
+  height: 200px;
 }
 
 .link {
-    text-decoration: none;
-    color: black !important;
-    margin-right: 40px;
-    font-family: AveNext;   
-    font-weight: bold !important;
+  text-decoration: none;
+  color: black !important;
+  margin-right: 40px;
+  font-family: AveNext;
+  font-weight: bold !important;
 }
 
 /* Nav Bar*/
 .navbar {
-    padding: 1rem 1.5rem;
-    position: relative;
-    top: 0px;
-  }
+  padding: 1rem 1.5rem;
+  position: relative;
+  top: 0px;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 .navbar__logo {
-    animation: fadeIn 0.7s ease-out;
-    width: 250px;
-    margin-left: 30px;
+  animation: fadeIn 0.7s ease-out;
+  margin-left: 30px;
+  width: 80%;
+  height: 100%;
 }
 
 button.navbar-toggler {
-    border-color: black !important;
-    border: 2px solid;
+  width: 15%;
+  height: 35px;
+  border-color: black !important;
+  border: 2px solid;
+}
+.navbar-toggler-icon {
+  width: 75%;
+  height: 85%;
+  max-width: 30px;
+  max-height: 30px;
+  justify-content: center;
+  align-items: center;
 }
 
 .active-link {
-    color: #790c15 !important;
-    text-decoration: underline;
+  color: #790c15 !important;
+  text-decoration: underline;
 }
-
-/* collapse style for nav bar */
-
-@media (max-width: 991.98px) { 
-    .navbar_img {
-        margin: 0;
-        float: left;
-    }
-
-    .linkFirst {
-        margin: 0;
-    }
-
-    .link {
-        margin: 0;
-    }
-}    
 
 /* hover styles */
 .dropdown:hover .dropdown-menu {
-    display: block;
+  display: block;
 }
 
 .dropdown-menu {
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-menu:hover .dropdown-item:hover {
-    background-color: #790c15;
-    color: white;
+  background-color: #790c15;
+  color: white;
 }
 
+/* collapse style for nav bar */
+@media (max-width: 991.98px) {
+  .navbar_img {
+    margin: 0;
+    float: left;
+    width: 85%;
+  }
+
+  .linkFirst {
+    margin: 0;
+  }
+
+  .link {
+    margin: 0;
+  }
+
+  .navbar-nav {
+    background-color: white;
+    padding-left: 10px;
+  }
+}
