@@ -65,7 +65,7 @@ function TopNavBar() {
 							</div>
 						</li>
 						<li className="nav-item">
-							<NavLink to="/contactus" activeClassName="active-link" className="link nav-link">CONTACT US</NavLink>
+							<NavLink to="/contactus" className="link nav-link">CONTACT US</NavLink>
 						</li>
 					</ul>
 				</div>
