@@ -29,7 +29,7 @@ body.lstyBody {
     background-image: url("../../Assets/Images/AboutUs.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    overflow-x: hidden;
+
 }
 
 .title1 {
@@ -63,6 +63,8 @@ h3 {
     font-family: Calibri;
     font-size: 18px;
     margin-left: 92px;
+    height:400px;
+    overflow: auto;
 }
 
 /* carousel styles */
@@ -89,11 +91,63 @@ img#carouselpic {
 }
 
 .carousel {
-    padding-top: 100px;
+    margin-top: 100px;
 }
 
-/* @media (min-width: 992px) { 
+@media (min-width: 992px) { 
     html.lstyHtml {
         overflow: hidden;
     }
-} */
+} 
+/*tablet*/
+@media (max-width: 992px) { 
+    html.lstyHtml {
+        overflow: hidden;
+    }
+    body.lstyBody {
+        background-attachment: fixed;
+        background-size: cover;
+        overflow: hidden;
+    }
+    .lstyContent {
+        font-family: Calibri;
+        font-size: 13px;
+        margin-left: 92px;
+        height:350px;
+        width:80%;
+    }
+    #lstyCarousel{
+        margin-top:-30px; 
+        
+    }
+    img#carouselpic {
+        width: 50%;
+        margin-right:200px;
+        
+    }
+
+} 
+/* phone size*/
+@media (max-width: 768px) { 
+    html.lstyHtml{
+        height:100vh;
+        overflow: hidden;
+    }
+    body.lstyBody {
+        background-attachment: fixed;
+        background-size: cover;
+        overflow: hidden;
+    }
+    .lstyContent {
+        font-family: Calibri;
+        font-size: 13px;
+        margin-left: 92px;
+        height:350px;
+        width:70%;
+        
+    }
+    #lsty{
+       visibility:hidden;  
+      }
+    
+}

@@ -35,26 +35,22 @@ function Lsty() {
 								Founded in 1864, Lao Sai Tao Yuan Teochew Opera Troupe (老赛桃源潮剧团) is among the oldest and one of the few remaining iconic Chinese opera troupes in Singapore with 158 years of history.
 								In the 1920s, when there were over a hundred professional troupes in Singapore, Lao Sai Tao Yuan wielded a strong influence among the Chinese community, boasting hundreds of performers and attracting enormous crowds at its street performances.
 								It was – and still is - not only a feast to the senses but also an accessible form of entertainment for the migrant community Singapore once was.
-							</p>
-							<p className="lstyContent">
-							To this day, Lao Sai Tao Yuan, with its 30 performing artistes and musicians, 
-							prides itself in keeping this Singaporean cultural heritage alive by preserving the traditions and practice so unique to this art form, 
-							giving both Singaporeans and non-Singaporeans alike a glimpse into the history of a country so rich in tradition and culture.
-							</p>
-
-							<p className="lstyContent">
+								<br />
+								To this day, Lao Sai Tao Yuan, with its 30 performing artistes and musicians,
+								prides itself in keeping this Singaporean cultural heritage alive by preserving the traditions and practice so unique to this art form,
+								giving both Singaporeans and non-Singaporeans alike a glimpse into the history of a country so rich in tradition and culture.
+								<br />
 								In 2017, Nick made further efforts to revive and promote this vanishing art form by taking over the helm as the troupe owner of Lao Sai Tao Yuan Teochew Opera Troupe,
 								and he also sought out new performing opportunities and presented Chinese opera in Toyama, Japan, as part of a cultural exchange programme.
-							</p>
-							<p className="lstyContent">
+								<br />
 								In 2018, Nick has successfully put up two Chinese Opera Exhibitions and have been invited to perform in China and Japan.
 								As the next-generation troupe owner of Lao Sai Tao Yuan and an arts advocate, Nick is taking initiative to promote this traditional art to the youths and the world in a bid to preserve its place in the heritage and culture of the ever-changing landscape of Singapore.
 							</p>
 						</div>
-					
+
 
 						<div className="col-lg-6">
-							<Carousel variant="dark" className="slide" fade>
+							<Carousel id="lstyCarousel" variant="dark" className="slide" fade>
 								<Carousel.Item>
 									<img
 										className="col-lg-6  col-sm-12"
@@ -94,7 +90,7 @@ function Lsty() {
 						</div>
 					</Row>
 				</div>
-				<div style={{height: "220px"}}></div>
+				<div style={{ height: "220px" }}></div>
 			</body>
 		</html>
 	);
