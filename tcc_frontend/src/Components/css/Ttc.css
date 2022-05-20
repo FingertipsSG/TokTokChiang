@@ -62,6 +62,8 @@ h3 {
     font-family: Calibri;
     font-size: 20px !important;
     margin-left: 92px;
+    height:400px;
+
 }
 
 /* carousel styles */
@@ -89,13 +91,13 @@ img#carouselpic {
 
 
 
-@media (min-width: 992px) { 
+@media (min-width: 1024px) { 
     html.ttcHtml {
         overflow: hidden;
     }
 }    
 /*tablet*/
-@media (max-width: 992px) { 
+@media (min-width: 768px) and ( max-width:1023px){ 
     html.ttcHtml {
         overflow: hidden;
     }
@@ -120,10 +122,28 @@ img#carouselpic {
         margin-right:200px;
         
     }
+    .title1 {
+        display: inline;
+        color: #790c15;
+        font-family: AveNextBold;
+        font-size: 26px !important;
+    }
+    
+    .title2 {
+        display: inline;
+        color: #464749;
+        font-family: AveNextBold;
+        font-size: 26px !important;
+    }
+    .ttcTitle {
+        color: #464749;
+        font-family: AveNextBold;
+     
+    }
 
 }
 /* phone size*/
-@media (max-width: 768px) { 
+@media (max-width: 767px) { 
     html.ttcHtml{
         height:100vh;
         overflow: hidden;

@@ -94,13 +94,13 @@ img#carouselpic {
     margin-top: 100px;
 }
 
-@media (min-width: 992px) { 
+@media (min-width: 1024px) { 
     html.lstyHtml {
         overflow: hidden;
     }
 } 
 /*tablet*/
-@media (max-width: 992px) { 
+@media (min-width: 768px) and ( max-width:1023px) { 
     html.lstyHtml {
         overflow: hidden;
     }
@@ -128,7 +128,7 @@ img#carouselpic {
 
 } 
 /* phone size*/
-@media (max-width: 768px) { 
+@media (max-width: 767px) { 
     html.lstyHtml{
         height:100vh;
         overflow: hidden;
