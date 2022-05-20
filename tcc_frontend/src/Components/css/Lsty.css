@@ -141,13 +141,24 @@ img#carouselpic {
     .lstyContent {
         font-family: Calibri;
         font-size: 13px;
-        margin-left: 92px;
+        margin-left: 75px;
         height:350px;
-        width:70%;
+        width:75%;
         
     }
     #lsty{
        visibility:hidden;  
       }
+     h2.title1 {
+        display: inline;
+        color: #790c15;
+        font-family: AveNextBold;
+        font-size: 20px !important;
+    }
+    
+    #lstyCarousel{
+        visibility: hidden;
+     }
+    
     
 }
