@@ -21,16 +21,15 @@ html {
 }
 
 body {
-    min-height: 100%;
-    min-width: auto;
-    height: auto;
+    min-height: 100vh;
+    width:auto;
 }
 
 body.founderBody {
-    background-image: url("../../Assets/Images/comingsoon.png");
+    background-image: url("../../Assets/Images/AboutUs.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    overflow-x:hidden;
+    background-attachment: fixed;
 }
 
 .title1 {
@@ -60,17 +59,79 @@ h3 {
     margin-left: -30px;
 }
 
-.homeContent {
+.FounderContent {
     font-family: Calibri;
-    font-size: 15px;
+    font-size: 19px;
     margin-left: 92px;
-    
+    height:400px;
+    overflow: auto;
+}
+.FounderPic{
+    width: 38%;
+    margin-top: 30px;
+    margin-left: 120px;
 }
 
-.founderPic{
-    margin-left: 150px;
-    margin-top:110px;
-    box-shadow: 0px 0px 3px 1px #bebebe;
-    background-color: transparent;
-    padding: 0 !important;
+@media (min-width: 992px) { 
+    html.founderHtml {
+        overflow: hidden;
+    }
+}
+/*tablet*/
+@media (max-width: 992px) { 
+    html.founderHtml {
+        overflow: hidden;
+    }
+    body.founderBody {
+        background-attachment: fixed;
+        background-size: cover;
+        overflow: hidden;
+    }
+    .FounderContent {
+        font-family: Calibri;
+        font-size: 13px;
+        margin-left: 92px;
+        height:350px;
+        width:80%;
+    }
+    .FounderPic{
+        width:75%; 
+        
+    }
+   
+}
+/* phone size*/
+@media (max-width: 768px) { 
+    html.founderHtml{
+        height:100vh;
+        overflow: hidden;
+    }
+    body.founderBody {
+        background-attachment: fixed;
+        background-size: cover;
+        overflow: hidden;
+    }
+    .FounderContent {
+        font-family: Calibri;
+        font-size: 13px;
+        margin-left: 92px;
+        height:350px;
+        width:70%;
+        
+    }
+    .FounderPic{
+       visibility: hidden;
+    }
+    .title1 {
+        display: inline;
+        color: #790c15;
+        font-family: AveNextBold;
+        font-size: 20px;
+    }
+    h2 {
+        
+        color: #464749;
+        font-family: AveNextBold;
+        font-size: 20px;
+    }
 }
