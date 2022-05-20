@@ -16,23 +16,81 @@ body {
 }
 
 body.services-body {
-    /* background-color: lightblue; */
-    /* width: 100%; */
+   
     background-image: url("../../Assets/Images/services.png");
     background-repeat: no-repeat;
-    background-size: contain;
-    /* display: block; */
-    /* background-color: lightgray; */
+    background-size: 100% 100%;
+   
 }
 
-/* .services-png {
-    top: 0;
-    left: 0;
-} */
+th{
+    font-size:22px;
+    color: #790c15;
+}
+td{
+    font-size:18px;
+  
+}
+Table{
+    margin-left:350px;
 
-/* .div-float {
-    bottom: 0;
-    right: 0;
-    float: right;
-    position: absolute;
-} */
+}
+
+@media (min-width: 1024px) { 
+    html.servicesHtml {
+        overflow: hidden;
+        
+    }
+  
+}    
+
+/*tablet*/
+@media (min-width: 768px) and ( max-width:1023px){ 
+    html.servicesHtml {
+        overflow: hidden;
+    }
+    body.services-body {
+        background-image:none;
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-repeat: no-repeat;
+        background-size:cover;
+    }
+    th{
+       font-size:16px;
+    }
+    td{
+        font-size:15px;
+    }
+    .services-row{
+        margin-left:-290px !important;
+        margin-top:100px;
+    }
+  
+}
+
+/* phone size*/
+@media (max-width: 767px) { 
+    html.servicesHtml{
+        height:100vh;
+        overflow: hidden;
+    }
+    body.services-body {
+        background-image:none;
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-attachment: fixed;
+        background-size: cover;
+        overflow: hidden;
+    }
+    th{
+        font-size:10px;
+     }
+     td{
+         font-size:8px;
+     }
+     .services-row{
+        margin-left:-320px !important;
+        margin-top:50px;
+    }
+  
+}
+  
