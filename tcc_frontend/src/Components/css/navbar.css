@@ -65,6 +65,24 @@ button.navbar-toggler {
   text-decoration: underline;
 }
 
+/* collapse style for nav bar */
+
+@media (max-width: 991.98px) { 
+    
+    .navbar_img {
+        margin: 0;
+        float: left;
+    }
+
+    .linkFirst {
+        margin: 0;
+    }
+
+    .link {
+        margin: 0;
+    }
+}    
+
 /* hover styles */
 .dropdown:hover .dropdown-menu {
   display: block;
