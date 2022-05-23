@@ -1,12 +1,9 @@
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-// import { useEffect, useState } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Helmet } from "react-helmet";
+
 import Login from "./Components/Auth/Login";
-// import Footer from "./Components/Footer";
-// import Products from "./Components/Products";
-import AdminProducts from "./Components/AdminProducts";
-import AdminLogin from "./Components/AdminLogin";
 import ContactUs from "./Components/ContactUs";
 import Dolls from "./Components/Dolls";
 import Services from "./Components/Services";
@@ -26,6 +23,15 @@ import Testing from "./Components/Testing";
 function App() {
 	return (
 		<div className="App">
+			<Helmet>
+				<meta charSet="utf-8" />
+				<title>Wayang Shop</title>
+				{/* <link rel="canonical" href="wayangshop.com" /> */}
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+			</Helmet>
+	  
 			<BrowserRouter>
 				<Switch>
 					<Route exact path="/(home)?">
@@ -55,16 +61,6 @@ function App() {
 				<Switch>
 					<Route path="/login">
 						<Login />
-					</Route>
-				</Switch>
-				<Switch>
-					<Route path="/admin-login">
-						<AdminLogin />
-					</Route>
-				</Switch>
-				<Switch>
-					<Route path="/admin-products">
-						<AdminProducts />
 					</Route>
 				</Switch>
 				<Switch>
@@ -107,7 +103,6 @@ function App() {
 						<Testing />
 					</Route>
 				</Switch>
-				
 			</BrowserRouter>
 		</div>
 	);
