@@ -1,23 +1,54 @@
-*{
+@charset "utf-8";
+
+@font-face {
+    src: url(fonts/AvenirNext.ttf);
+    font-family: AveNext;
+}
+
+@font-face {
+    src: url(fonts/AvenirNext-Bold.ttf);
+    font-family: AveNextBold;
+}
+
+@font-face {
+    src: url(fonts/Calibri\ Regular.ttf);
+    font-family: Calibri;
+}
+body, html{
     margin:0;
     padding:0;
-}
-html{
-    height:100vh;
 }
 
 body.testingBody {
     background: url("../../Assets/Images/AboutUs.png");
-    height:150vh;
-    width:auto;
+    top: 0; 
+    height:130vh;
     background-size: cover;
-    object-position: center top;
     background-repeat: no-repeat;
-    background-position: 100% 0%;
+    background-position:100% 100%;    
+    margin:0; 
+    padding:0;
+} 
 
+.Tok {
+    display: inline;
+    color: #790c15;
+    font-family: AveNextBold;
+    font-size: 26px !important;
+}
 
-    
+.Chiang {
+    display: inline;
+    color: #464749;
+    font-family: AveNextBold;
+    font-size: 26px !important;
 }
-Navbar{
-    overflow:auto;
+.testingContent {
+    font-family: Calibri;
+    font-size: 13px;
+    height:350px;
+    width:80%;
 }
+.leftColumn{
+    margin-left:-15px;
+} 
