@@ -60,9 +60,9 @@ h3 {
 
 .ttcContent {
     font-family: Calibri;
-    font-size: 16px !important;
+    font-size: 16px;
     margin-left: 92px;
-    height: 350px;
+    height: 300px;
     overflow: auto;
 
 }
@@ -93,16 +93,42 @@ img#carouselPic {
     margin-right: 20% !important;
 }
 
+/* RESPONSIVE STYLES */
+
+@media (min-width: 1093px) and (max-width: 1223px) {
+    .ttcContent {
+        height: 200px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .carousel {
+        margin-top: 5% !important;
+    }
+}
 
 @media (min-width: 1024px) { 
     html.ttcHtml {
         overflow: hidden;
     }
-}    
+}     
 
-@media (min-width: 991px) and (max-width: 1422px){
+@media (min-width: 1023px) and (max-width : 1076px) {
+    .carousel {
+        margin-top: 20% !important;
+    }
+}
+
+@media (min-width: 991px) and (max-width: 1092px) {
     .ttcContent {
         height: 225px !important;
+    }
+}
+
+/* smaller laptop, bigger than ipad */
+@media (min-width: 991px) and (max-width: 1022px){
+    .carousel {
+        margin-top: 10% !important;
     }
 }
 
@@ -118,13 +144,9 @@ img#carouselPic {
     }
     .ttcContent {
         font-family: Calibri;
-        font-size: 13px;
         margin-left: 92px;
         height:350px;
         width:80%;
-    }
-    #lstyCarousel{
-        margin-top:-30px; 
     }
     img#carouselpic {
         width: 50%;
