@@ -3,7 +3,7 @@ import axios from "axios";
 // get and post API
 
 export async function getApi(endpoint, parameters = {}) {
-  const url = "http://localhost:5000/" + endpoint;
+  const url = "http://localhost:5001/" + endpoint;
   let params = {};
   params.params = parameters;
 
@@ -19,7 +19,7 @@ export async function getApi(endpoint, parameters = {}) {
 }
 
 export async function getProducts(prodType, parameters = {}) {
-  const url = `http://localhost:5000/getProducts?shop=${prodType}`;
+  const url = `http://localhost:5001/getProducts?shop=${prodType}`;
   let params = {};
   params.params = parameters;
 
@@ -35,7 +35,7 @@ export async function getProducts(prodType, parameters = {}) {
 }
 
 export async function postApi(endpoint, parameters = {}) {
-  const url = "http://localhost:5000/" + endpoint;
+  const url = "http://localhost:5001/" + endpoint;
   try {
     const res = await axios.post(url, parameters);
     return res.data;
