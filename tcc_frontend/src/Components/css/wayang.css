@@ -1,4 +1,20 @@
 @charset "utf-8";
+  ::-webkit-scrollbar {
+    width: 7px;
+} 
+
+::-webkit-scrollbar-track {
+border-radius: 12px;
+}  
+
+::-webkit-scrollbar-thumb {
+background: grey; 
+border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: rgb(65, 65, 65); 
+}  
 
 @font-face {
     src: url(fonts/AvenirNext.ttf);
@@ -18,18 +34,16 @@
 .wayangContentTitle {
     font-family: AveNext;
     font-size: 20px;
-}
-
-.wayangBulkContent {
-    font-family: Calibri;
-    font-size: 16px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 80%;
+    margin-left: 8%;
 }
 
 .wayangContent {
-    font-size: 20px;
+    font-family: Calibri;
+    font-size: 16px;
+    max-width: 80%;
+    height: 300px;
+    overflow: auto;
+    margin-left: 8%;
 }
 
 .wayangContentAll {
@@ -38,12 +52,9 @@
 }
 
 .wayangBody {
-    margin-left: -30px;
     background-image: url("../../Assets/Images/AboutUs.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    height: auto;
-    overflow-x: hidden;
 }
 
 .wayangTitle {
@@ -63,14 +74,9 @@
 /* carousel styles */
 
 #wayangCarouselPic {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+    float: right;
     width: 70%;
-}
-
-.wayangCarouselSlide {
-    margin-top: 40px;
+    margin-right: 100px;
 }
 
 .carousel-control-prev,
@@ -80,10 +86,8 @@
 
 /* important overrides other styling */
 .carousel-indicators button {
-    position: relative !important;
-    left: 10px !important;
-    height: 10px !important;
-    width: 10px !important;
+    height: 7px !important;
+    width: 7px !important;
     margin: 0 10px !important;
     border-radius: 100%;
     background-color: white !important;
@@ -91,6 +95,12 @@
 
 /* RESPONSIVE CSS */
 
+
+@media (min-width: 1024px) { 
+    html.wayangHtml {
+        overflow: hidden;
+    }
+}    
 
 @media (min-width: 1640px) {
     #wayangCarouselPic {
@@ -106,10 +116,6 @@
 
 }
 
-@media (min-width: 1301px) and (max-width: 1639px) {
-    #wayangCarouselPic {
-        margin-top: 10%;
-    }}
 
 /* tablet */
 @media (min-width: 768px) and (max-width:1023px){
