@@ -1,25 +1,7 @@
 import axios from "axios";
 
-// get and post API
-
-export async function getApi(endpoint, parameters = {}) {
-  const url = "http://localhost:3000/api/" + endpoint;
-  let params = {};
-  params.params = parameters;
-
-  try {
-    const res = await axios.get(url, params);
-    return res.data;
-  } catch (e) {
-    console.log("[getApi error]");
-    console.log("url: " + url);
-    console.log("params: " + JSON.stringify(params));
-    console.log(e);
-  }
-}
-
 export async function getProducts(prodType, parameters = {}) {
-  const url = `http://localhost:3000/api/getProducts?shop=${prodType}`;
+  const url = `http://localhost:5001/getProducts?shop=${prodType}`;
   let params = {};
   params.params = parameters;
 
@@ -34,13 +16,152 @@ export async function getProducts(prodType, parameters = {}) {
   }
 }
 
+// GET
+export async function getApi(endpoint, parameters = {}) {
+  const url = "http://localhost:5001/" + endpoint;
+  let params = {};
+  params.params = parameters;
+  try {
+    const res = await axios.get(url, params);
+    // console.log(res);
+    if (endpoint === "downloadProductCSV") {
+      return res;
+    }
+    return res.data;
+  } catch (e) {
+    console.log("[getApi error]");
+    console.log("url: " + url);
+    console.log("params: " + JSON.stringify(params));
+    console.log(e);
+    return e;
+  }
+}
+
+// POST
 export async function postApi(endpoint, parameters = {}) {
-  const url = "http://localhost:3000/api/" + endpoint;
+  const url = "http://localhost:5001/" + endpoint;
   try {
     const res = await axios.post(url, parameters);
-    return res.data;
+    return res;
   } catch (e) {
     console.log("[postApi error]");
+    console.log("url: " + url);
+    console.log("params: " + parameters);
+    console.log(e);
+  }
+}
+
+export async function postFormApi(endpoint, parameters = {}) {
+  const url = "http://localhost:5001/" + endpoint;
+  try {
+    const formData = new FormData();
+
+    formData.append("pName", parameters.pName);
+    formData.append("pDesc", parameters.pDesc);
+    formData.append("pPrice", parameters.pPrice);
+    formData.append("pImage", parameters.pImage);
+    formData.append("pUrl", parameters.pUrl);
+    formData.append("shop", parameters.shop);
+
+    // for (let key of formData.entries()) {
+    //   console.log(key[0], key[1]);
+    // }
+
+    // console.log(formData.entries());
+
+    const res = await axios({
+      method: "POST",
+      url: url,
+      data: formData,
+      headers: {
+        "Content-Type": `multipart/form-data`,
+      },
+    });
+
+    return res;
+  } catch (e) {
+    console.log("[postApi error]");
+    console.log("url: " + url);
+    console.log("params: " + parameters);
+    console.log(e);
+  }
+}
+
+// PATCH
+export async function patchApi(endpoint, parameters = {}) {
+  const url = "http://localhost:5001/" + endpoint;
+  try {
+    const res = await axios.patch(url, parameters);
+    return res.data;
+  } catch (e) {
+    console.log("[patchApi error]");
+    console.log("url: " + url);
+    console.log("params: " + parameters);
+    console.log(e);
+  }
+}
+
+export async function editFormApi(endpoint, parameters = {}) {
+  const url = "http://localhost:5001/" + endpoint;
+  try {
+    const formData = new FormData();
+
+    // console.log(parameters)
+    formData.append("pName", parameters.pName);
+    formData.append("pDesc", parameters.pDesc);
+    formData.append("pPrice", parameters.pPrice);
+    formData.append("pImage", parameters.pImage);
+    formData.append("pUrl", parameters.pUrl);
+    formData.append("shop", parameters.shop);
+    formData.append("id", parameters.id);
+
+    // for (let key of formData.entries()) {
+    //   console.log(key[0], key[1]);
+    // }
+
+    // console.log(formData.entries());
+
+    const res = await axios({
+      method: "PATCH",
+      url: url,
+      data: formData,
+      headers: {
+        "Content-Type": `multipart/form-data`,
+      },
+    });
+
+    return res;
+  } catch (e) {
+    console.log("[patchApi error]");
+    console.log("url: " + url);
+    console.log("params: " + parameters);
+    console.log(e);
+  }
+}
+
+// PUT
+export async function putApi(endpoint, parameters = {}) {
+  const url = "http://localhost:5001/" + endpoint;
+  try {
+    const res = await axios.put(url,  parameters );
+    return res;
+  } catch (e) {
+    console.log("[putApi error]");
+    console.log("url: " + url);
+    console.log("params: " + parameters);
+    console.log(e);
+  }
+}
+
+// DELETE
+export async function deleteApi(endpoint, parameters = {}) {
+  const url = "http://localhost:5001/" + endpoint;
+  try {
+    // console.log(parameters);
+    const res = await axios.delete(url, { data: parameters });
+    return res;
+  } catch (e) {
+    console.log("[deleteApi error]");
     console.log("url: " + url);
     console.log("params: " + parameters);
     console.log(e);

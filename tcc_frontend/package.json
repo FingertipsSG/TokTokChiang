@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://fingertipssg.github.io",
   "dependencies": {
+    "@material-ui/lab": "^4.0.0-alpha.61",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -29,7 +30,7 @@
     "react-foundation": "^0.9.7",
     "react-grid-system": "^8.1.4",
     "react-helmet": "^6.1.0",
-    "react-router-dom": "^5.3.0",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "^4.0.3",
     "react-virtualized": "^9.22.3",
     "reactstrap": "^8.10.0",
@@ -62,5 +63,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:3000"
+  "proxy": "http://localhost:5001"
 }

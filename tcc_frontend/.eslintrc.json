@@ -31,8 +31,9 @@
         //     "windows"
         // ],
         "quotes": [
-            "error",
-            "double"
+            // "error",
+            // "double"
+            "off"
         ],
         "semi": [
             "error",
