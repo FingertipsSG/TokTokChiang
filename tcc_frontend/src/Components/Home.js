@@ -1,107 +1,118 @@
 import React from "react";
 import "../Components/css/home.css";
-// import background from "../Assets/Images/AboutUs.png";
-import pic1 from "../Assets/Images/NickShen BianLian.JPG";
-import pic2 from "../Assets/Images/NickShen Warrior WQY01.jpg";
-import Carousel from "react-bootstrap/Carousel";
-// import { Container, Row, Col } from "reactstrap";
-// import Button from "react-bootstrap/Button";
 import { Row } from "reactstrap";
-// import { Helmet } from "react-helmet";
-import Navbar from "../Components/Navbar";
+import founder from "../Assets/Images/NickShen Scholar.jpg";
+import mask from "../Assets/Images/homeMask.jpg";
+import doll from "../Assets/Images/doll1.jpg";
+import puppet from "../Assets/Images/homePuppets.jpg";
+import beard from "../Assets/Images/homeBeard.jpg";
+
+
+import Navbar from "./Navbar";
 
 function Home() {
-	return (
-		<html>
-			<head>
-				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-			</head>
-			<body className="homeBody">
-				<Navbar />
-				<br />
-				<div className="firstContent">
-					<Row>
-						<div className="col-lg-6">
-							<div className="firstContentText">
-								<h2 className="title1">TOK</h2>
-								<h2 className="title1">	TOK</h2>
-								<h2 className="title2">	CHIANG</h2>
-								<br />
-								<br />
-								<h3> Who Are We </h3>
-							</div>
-								
-							<p className="homeContent">
-								Nick Shen Weijun, founder of Tok Tok Chiang Opera, believes that Chinese Opera
-								is more than just an art form. Recognising the importance of preserving and keeping
-								this traditional performing art alive, Nick hopes to impart traditional values and
-								beliefs through the stories portrayed in Chinese opera, to future generations.
-							</p>
-							<p className="homeContent">
-								In 2014, Nick established Tok Tok Chiang Opera, a non-profit entity, as a platform
-								to promote cultural appreciation in Singapore. His dedication to Chinese opera has
-								earned him the Junior Chamber International (JCI)’s Ten Outstanding Young Persons
-								of the World Honouree Award for Cultural Achievement in the same year. Nick made
-								further efforts to revive and strengthen this vanishing art form by taking over the
-								helm as the troupe owner of Lao Sai Tao Yuan, a 155-year-old Teochew Opera Troupe, in 2017.
-							</p>
-							<p className="homeContent">
-								Tok Tok Chiang Opera is taking the initiative to showcase the history and heritage of
-								Singapore&apos;s Chinese street opera, so as to promote this traditional art to the youths
-								and the world in a bid to preserve its place in the heritage and culture of the
-								ever-changing landscape of Singapore.
-							</p>
-						</div>
-						{/* <div className="col-lg-6">
-							<img src={pic1} className="w-75 me-5 sliderPic"/>
-						</div> */}
+    return (
+        <html>
+            <head>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+            </head>
+            <body className="homePageBody">
+                <Navbar />
+                <br />
+                <div>
+                    <Row>
+                        <div className="col-lg-6 col-md-12">
+                            <div className="homeContentText">
+                                <h2 className="title1">ALL ABOUT US</h2>
+                                <br />
+                                <br />
+                                <h3> How We Started? </h3>
+                            </div>
+                            <p className="textContent">
+                                Having been influenced by his grandmother who would routinely read him scripts at bedtime,
+                                and his grandfather as a drummer for a Chinese opera troupe, Nick has lived and breathed
+                                Teochew opera since he was a child and started performing at age 13.
+                            </p>
+                            <p className="textContent">
+                                In 2011, Nick turned his passion for Chinese opera into a purpose and founded Tok Tok Chiang,
+                                a platform where Nick dedicates his efforts in repositioning Chinese opera and culture, changing
+                                perspectives and renewing interest in the audience. With his determination in perfecting this
+                                traditional art form, Nick followed his passion and made an impact. He bagged the Honouree Award
+                                for Cultural Achievement of JCI Ten Outstanding Young Persons of the World Singapore in 2014.
+                            </p>
+                            <p className="textContent">
+                                In 2017, Nick made further efforts to revive and promote this vanishing art form by taking over the
+                                helm as the troupe owner of Lao Sai Tao Yuan, a 158-year-old Teochew Opera Troupe under our non-profit
+                                arm, Tok Tok Chiang Opera Ltd.
+                            </p>
+                        </div>
+                        <img src={founder} className="col-lg-6 col-md-8 homeFounderPic" height={350} />
+                    </Row>
+                    <div className="homeContentText">
+                        <br />
+                        <br />
+                        <h3 className="secondHeader"> What We Sell? </h3>
+                    </div>
 
-						<div className="col-lg-6">
-							<Carousel variant="dark" className="slide" fade>
-								<Carousel.Item>
-									<img
-										className="col-lg-6  col-sm-12"
-										id="carouselpic"
-										src={pic1}
-									/>
-								</Carousel.Item>
-								<Carousel.Item>
-									<img
-										className="col-lg-6  col-sm-12"
-										id="carouselpic"
-										src={pic2}
-									/>
-								</Carousel.Item>
-								<Carousel.Item>
-									<img
-										className="col-lg-6  col-sm-12"
-										id="carouselpic"
-										src={pic1}
-									/>
-								</Carousel.Item>
-								<Carousel.Item>
-									<img
-										className="col-lg-4  col-sm-12"
-										id="carouselpic"
-										src={pic2}
-									/>
-								</Carousel.Item>
-								<Carousel.Item>
-									<img
-										className="col-lg-4  col-sm-12"
-										id="carouselpic"
-										src={pic1}
-									/>
-								</Carousel.Item>
-							</Carousel>
-						</div>
-					</Row>
-				</div>
-			</body>
-		</html>
-	);
+                    <Row className="products justify-content-center">
+                        <div className="col-lg-2 col-md-5">
+                            <div className="card">
+                                <div className="card-body">
+                                    <img src={mask} className="card-img" />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-2 col-md-5">
+                            <div className="card">
+                                <div className="card-body">
+                                    <img src={doll} className="card-img" />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-2 col-md-5">
+                            <div className="card">
+                                <div className="card-body">
+                                    <img src={beard} className="card-img" />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-2 col-md-5">
+                            <div className="card">
+                                <div className="card-body">
+                                    <img src={puppet} className="card-img" />
+                                </div>
+                            </div>
+                        </div>
+                    </Row>
+                    <Row>
+                        <div className="homeContent2 col-lg-6 col-md-12">
+                            <br />
+                            <p className="textContent2">
+                                Having been influenced by his grandmother who would routinely read him scripts at bedtime,
+                                and his grandfather as a drummer for a Chinese opera troupe, Nick has lived and breathed
+                                Teochew opera since he was a child and started performing at age 13.
+                            </p>
+                            <p className="textContent2">
+                                In 2011, Nick turned his passion for Chinese opera into a purpose and founded Tok Tok Chiang,
+                                a platform where Nick dedicates his efforts in repositioning Chinese opera and culture, changing
+                                perspectives and renewing interest in the audience. With his determination in perfecting this
+                                traditional art form, Nick followed his passion and made an impact. He bagged the Honouree Award
+                                for Cultural Achievement of JCI Ten Outstanding Young Persons of the World Singapore in 2014.
+                            </p>
+                            <p className="textContent2">
+                                In 2017, Nick made further efforts to revive and promote this vanishing art form by taking over the
+                                helm as the troupe owner of Lao Sai Tao Yuan, a 158-year-old Teochew Opera Troupe under our non-profit
+                                arm, Tok Tok Chiang Opera Ltd.
+                            </p>
+                            <div style={{ height: "300px" }}></div>
+                        </div>
+                    </Row>
+                </div>
+            </body>
+        </html>
+    );
 }
 
 export default Home;

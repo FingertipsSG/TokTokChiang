@@ -24,6 +24,7 @@
   text-decoration: none;
   color: black !important;
   margin-right: 40px;
+  margin-top: 5%;
   font-family: AveNext;
   font-weight: bold !important;
 }
@@ -41,7 +42,7 @@
 .navbar__logo {
   animation: fadeIn 0.7s ease-out;
   margin-left: 30px;
-  width: 80%;
+  width: 40%;
   height: 100%;
 }
 
@@ -60,10 +61,23 @@ button.navbar-toggler {
   align-items: center;
 }
 
-.active-link {
-  color: #790c15 !important;
-  text-decoration: underline;
-}
+/* collapse style for nav bar */
+
+@media (max-width: 991.98px) { 
+    
+    .navbar_img {
+        margin: 0;
+        float: left;
+    }
+
+    .linkFirst {
+        margin: 0;
+    }
+
+    .link {
+        margin: 0;
+    }
+}    
 
 /* hover styles */
 .dropdown:hover .dropdown-menu {
@@ -74,6 +88,9 @@ button.navbar-toggler {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
+a.link.nav-link:hover {
+  text-decoration: underline;
+}
 .dropdown-menu:hover .dropdown-item:hover {
   background-color: #790c15;
   color: white;

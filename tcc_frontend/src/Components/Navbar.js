@@ -32,8 +32,11 @@ function TopNavBar() {
 									ABOUT US
 								</a>
 								<div className="dropdown-menu">
-									<Link className="dropdown-item" to="/home">TOK TOK CHIANG</Link>
-									<Link className="dropdown-item" to="/home2">LAO SAI TAO YUAN</Link>
+									<Link className="dropdown-item" to="/Founder">OUR FOUNDER</Link>
+									<Link className="dropdown-item" to="/TokTokChiang">TOK TOK CHIANG OPERA</Link>
+									<Link className="dropdown-item" to="/Wayang">TOK TOK CHIANG WAYANG</Link>
+									<Link className="dropdown-item" to="/LaoSaiTaoYuan">LAO SAI TAO YUAN</Link>
+									<Link className="dropdown-item" to="/Testing">Testing</Link>
 								</div>
 							</div>
 						</li>
@@ -50,21 +53,20 @@ function TopNavBar() {
 									<Link className="dropdown-item" to="/framed">FRAMED</Link>
 								</div>
 							</div>
-						</li>	
+						</li>
 						<li className="nav-item">
 							<div className="dropdown">
 								<a className="link nav-link shop">
 									SUPPORT
 								</a>
 								<div className="dropdown-menu">
-									<Link className="dropdown-item" to="/services">SERVICE</Link>
-									<Link className="dropdown-item" to="/warranty">WARRANTY</Link>
-									<Link className="dropdown-item" to="/onlinestores">ONLINE STORE</Link>
+									<Link className="dropdown-item" to="/services">SERVICES</Link>
+
 								</div>
 							</div>
 						</li>
 						<li className="nav-item">
-							<NavLink to="/contactus" activeClassName="active-link" className="link nav-link">CONTACT US</NavLink>
+							<NavLink to="/contactus" className="link nav-link">CONTACT US</NavLink>
 						</li>
 					</ul>
 				</div>
