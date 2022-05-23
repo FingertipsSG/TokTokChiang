@@ -3,6 +3,7 @@ import "../Components/css/contactus.css";
 import Navbar from "../Components/Navbar";
 import { Form, Button, Input, message } from "antd";
 import "antd/dist/antd.css";
+import { Row } from "reactstrap";
 import { postApi } from "../Helper/Utils";
 /*import background from "../Assets/Images/ContactUs.png";*/
 
@@ -23,26 +24,25 @@ function ContactUs() {
     };
 
     return (
-        <html>
+        <html className="contactUsHTML">
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-            <body  className="contactUs-body">
-                <div>
+            <body  className="contactUsBody">
                     <Navbar />
-                    <div className="ContactUs">
-                        <h1> Stay Connected With Us</h1>
+                    <div>
+                    <Row>
+                    <div className="col-lg-4"></div>
+                    <div className="contactUs col-lg-8 col-md-12">
+                        <h1 className="formTitle"> Stay Connected With Us</h1>
                         <p>Feel free to contact us anytime time.<br />We will get back to you as soon as we can!</p>
 
                         <Form
                         form={form}
                         name="basic"
-                        labelCol={{
-                            span: 8,
-                        }}
                         wrapperCol={{
-                            span: 16,
+                            span: 12,
                         }}
                         initialValues={{
                             remember: true,
@@ -52,7 +52,6 @@ function ContactUs() {
                         autoComplete="off"
                         >
                             <Form.Item
-                                label="Name"
                                 name="name"
                                 rules={[
                                     {
@@ -61,11 +60,13 @@ function ContactUs() {
                                     },
                                 ]}
                             >
-                                <Input />
+                                <Input 
+                                    style={{ borderColor: "#9B9B9B", borderWidth: "2px"}}
+                                    placeholder="Name"
+                                />
                             </Form.Item>
 
                             <Form.Item
-                                label="Email"
                                 name="email"
                                 rules={[
                                     {
@@ -78,11 +79,13 @@ function ContactUs() {
                                     },
                                 ]}
                             >
-                                <Input />
+                                <Input 
+                                    style={{ borderColor: "#9B9B9B", borderWidth: "2px"}}
+                                    placeholder="Email"
+                                />
                             </Form.Item>
 
                             <Form.Item
-                                label="Phone"
                                 name="phone"
                                 rules={[
                                     {
@@ -91,11 +94,12 @@ function ContactUs() {
                                     },
                                 ]}
                             >
-                                <Input />
-                            </Form.Item>
+                                <Input 
+                                    style={{ borderColor: "#9B9B9B", borderWidth: "2px"}}
+                                    placeholder="Phone"
+                                />                            </Form.Item>
 
                             <Form.Item
-                                label="Message"
                                 name="message"
                                 rules={[
                                 {
@@ -104,21 +108,25 @@ function ContactUs() {
                                 },
                                 ]}
                             >
-                                <Input.TextArea showCount maxLength={1000} />
+                                <Input.TextArea 
+                                showCount 
+                                maxLength={1000} 
+                                placeholder="Message"
+                             />
                             </Form.Item>
 
                             <Form.Item
                                 wrapperCol={{
-                                offset: 8,
-                                span: 16,
+                                offset: 9,
                                 }}
                             >
-                                <Button type="primary" htmlType="submit">
-                                Submit
+                                <Button type="primary" className="formBtn mt-2" htmlType="submit">
+                                SUBMIT
                                 </Button>
                             </Form.Item>
                         </Form>
                     </div>
+                    </Row>
                 </div>
             </body>
         </html>

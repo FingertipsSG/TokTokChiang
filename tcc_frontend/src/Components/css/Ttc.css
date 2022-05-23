@@ -60,17 +60,18 @@ h3 {
 
 .ttcContent {
     font-family: Calibri;
-    font-size: 20px !important;
+    font-size: 16px !important;
     margin-left: 92px;
-    height:400px;
+    height: 350px;
+    overflow: auto;
 
 }
 
 /* carousel styles */
-img#carouselpic {
-    float: right;
-    width: 70%;
-    margin-right: 100px;
+img#carouselPic {
+        float: right;
+        width: 70%;
+        margin-right: 100px;
 }
 
 .carousel-control-prev,
@@ -80,15 +81,17 @@ img#carouselpic {
 
 /* important overrides other styling */
 .carousel-indicators button {
-    position: relative !important;
-    left: 10px !important;
-    height: 10px !important;
-    width: 10px !important;
+    height: 7px !important;
+    width: 7px !important;
     margin: 0 10px !important;
     border-radius: 100%;
     background-color: white !important;
 }
 
+.carousel-indicators {
+    justify-content: right;
+    margin-right: 20% !important;
+}
 
 
 @media (min-width: 1024px) { 
@@ -168,7 +171,8 @@ img#carouselpic {
     }
     
     .ttcCarousel{
-        visibility:hidden;  
+        visibility:hidden;
+
        }
      .title1 {
         display: inline;
