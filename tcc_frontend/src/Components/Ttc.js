@@ -50,9 +50,6 @@ function Ttc() {
 								Teochew Opera Troupe under the umbrella of this non-profit entity.
 							</p>
 						</div>
-						{/* <div className="col-lg-6">
-							<img src={pic1} className="w-75 me-5 sliderPic"/>
-						</div> */}
 
 						<div className="col-lg-6">
 							<Carousel variant="dark" className="slide ttcCarousel" fade>

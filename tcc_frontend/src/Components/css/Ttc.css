@@ -35,23 +35,20 @@ body.ttcBody {
     display: inline;
     color: #790c15;
     font-family: AveNextBold;
-    font-size: 36px;
+    font-size: 33px;
 }
 
 .title2 {
     display: inline;
     color: #464749;
     font-family: AveNextBold;
-    font-size: 36px;
-}
-
-h3 {
-    font-weight: bold;
+    font-size: 33px;
 }
 
 .firstContentText {
-    font-family: AveNext;
     margin-left: 92px;
+    font-family: AveNext;
+    color: #464749;
 }
 
 .firstContent {
@@ -64,10 +61,13 @@ h3 {
     margin-left: 92px;
     height: 300px;
     overflow: auto;
-
 }
 
 /* carousel styles */
+.carousel {
+    margin-top: 8%;
+}
+
 img#carouselPic {
         float: right;
         width: 70%;
@@ -113,6 +113,15 @@ img#carouselPic {
     }
 }     
 
+@media (min-width: 1224px) and (max-width: 1449px) {
+    .ttcContent {
+        height: 250px;
+    }
+    .carousel {
+        margin-top: 10%;
+    }
+}
+
 @media (min-width: 1023px) and (max-width : 1076px) {
     .carousel {
         margin-top: 20% !important;
@@ -121,14 +130,20 @@ img#carouselPic {
 
 @media (min-width: 991px) and (max-width: 1092px) {
     .ttcContent {
-        height: 225px !important;
+        height: 180px !important;
     }
 }
 
 /* smaller laptop, bigger than ipad */
 @media (min-width: 991px) and (max-width: 1022px){
     .carousel {
-        margin-top: 10% !important;
+        margin-top: 20% !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .carousel {
+        margin-top: 3% !important;
     }
 }
 
@@ -144,6 +159,7 @@ img#carouselPic {
     }
     .ttcContent {
         font-family: Calibri;
+        font-size: 14px;
         margin-left: 92px;
         height:350px;
         width:80%;
@@ -151,25 +167,20 @@ img#carouselPic {
     img#carouselpic {
         width: 50%;
         margin-right:200px;
-        
     }
     .title1 {
         display: inline;
         color: #790c15;
-        font-family: AveNextBold;
-        font-size: 26px !important;
     }
     
     .title2 {
         display: inline;
         color: #464749;
-        font-family: AveNextBold;
-        font-size: 26px !important;
     }
+
     .ttcTitle {
         color: #464749;
         font-family: AveNextBold;
-     
     }
 
 }
@@ -186,7 +197,7 @@ img#carouselPic {
     }
     .ttcContent {
         font-family: Calibri;
-        font-size: 13px;
+        font-size: 14px;
         margin-left: 70px;
         height:350px;
         width: 80%;
@@ -194,7 +205,6 @@ img#carouselPic {
         
     }
     .firstContentText {
-        font-family: AveNext;
         margin-left: 70px !important;
     }
     
@@ -206,18 +216,17 @@ img#carouselPic {
         display: inline;
         color: #790c15;
         font-family: AveNextBold;
-        font-size: 26px !important;
+        font-size: 24px !important;
     }
     
     .title2 {
         display: inline;
         color: #464749;
         font-family: AveNextBold;
-        font-size: 26px !important;
+        font-size: 24px !important;
     }
+
     .ttcTitle {
-        color: #464749;
-        font-family: AveNextBold;
-     
+        font-size: 22px
     }
 }
