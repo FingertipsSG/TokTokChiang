@@ -1,0 +1,17 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+Div.testingDiv {
+    background: url("../../Assets/Images/AboutUs.png");
+    height:100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100%;
+
+    
+}
+Navbar{
+    overflow:auto;
+}

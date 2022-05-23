@@ -21,6 +21,7 @@ import Ttc from "./Components/Ttc";
 import Lsty from "./Components/Lsty";
 import Founder from "./Components/Founder";
 import Wayang from "./Components/Wayang";
+import Testing from "./Components/Testing";
 
 function App() {
 	return (
@@ -99,6 +100,11 @@ function App() {
 				<Switch>
 					<Route path="/services">
 						<Services />
+					</Route>
+				</Switch>
+				<Switch>
+					<Route path="/Testing">
+						<Testing />
 					</Route>
 				</Switch>
 				
