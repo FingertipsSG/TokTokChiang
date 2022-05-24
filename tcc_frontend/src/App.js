@@ -27,8 +27,6 @@ import EmailScreen from "./Screens/ForgetPasswordScreen/EnterEmailScreen";
 import DigitPinScreen from "./Screens/ForgetPasswordScreen/EnterDigitPinScreen";
 import ResetPasswordScreen from "./Screens/ForgetPasswordScreen/ResetPassword";
 
-import Testing from "./Components/Testing";
-
 function App() {
 	return (
 		<div className="App">
@@ -64,8 +62,6 @@ function App() {
 					<Route path="email" element={<EmailScreen />} />
 					<Route path="digitPin" element={<DigitPinScreen />} />
 					<Route path="reset" element={<ResetPasswordScreen />} />
-
-					<Route path="testing" element={<Testing />} />
 				</Routes>
 			</Router>
 		</div>
