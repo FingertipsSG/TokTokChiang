@@ -16,6 +16,31 @@ export async function getProducts(prodType, parameters = {}) {
   }
 }
 
+// Get products - lazy load
+export async function getProductsLazyLoad(startRow, endRow, parameters) {
+  const url = "http://localhost:5001/getProductsLL";
+  try {
+    const res = await axios({
+      method: "POST",
+      url: url,
+      data: JSON.stringify({
+        startRow: startRow,
+        endRow: endRow,
+      }),
+
+      params: parameters,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    return res.data;
+  } catch (e) {
+    console.log("[getApi error]");
+    console.log("url: " + url);
+    console.log(e);
+  }
+}
+
 // GET
 export async function getApi(endpoint, parameters = {}) {
   const url = "http://localhost:5001/" + endpoint;
@@ -143,7 +168,7 @@ export async function editFormApi(endpoint, parameters = {}) {
 export async function putApi(endpoint, parameters = {}) {
   const url = "http://localhost:5001/" + endpoint;
   try {
-    const res = await axios.put(url,  parameters );
+    const res = await axios.put(url, parameters);
     return res;
   } catch (e) {
     console.log("[putApi error]");

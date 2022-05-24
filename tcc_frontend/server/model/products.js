@@ -1,7 +1,7 @@
 var db = require("./databaseConfig.js");
 productsDB = {};
 
-//GET PRODUCTS
+// GET PRODUCTS
 productsDB.getProducts = function (shop, callback) {
   console.log(shop);
   var conn = db.getConnection();
@@ -12,6 +12,30 @@ productsDB.getProducts = function (shop, callback) {
     } else {
       console.log("Connected!");
       var sql = `SELECT * FROM ` + shop;
+      conn.query(sql, function (err, result) {
+        conn.end();
+        if (err) {
+          console.log(err);
+          return callback(err, null);
+        } else {
+          // console.log(result);
+          return callback(null, result);
+        }
+      });
+    }
+  });
+};
+
+// GET PRODUCTS LAZY LOAD
+productsDB.getProductsLL = function (shop, startRow, endRow, callback) {
+  var conn = db.getConnection();
+  conn.connect(function (err) {
+    if (err) {
+      console.log(err);
+      return callback(err, null);
+    } else {
+      console.log("Connected!");
+      var sql = `SELECT * FROM ${shop} LIMIT ${startRow},${endRow};`;
       conn.query(sql, function (err, result) {
         conn.end();
         if (err) {
@@ -207,17 +231,20 @@ productsDB.dropProductTable = function (sName, callback) {
   });
 };
 
-// TO SEARCH 
+// TO SEARCH
 productsDB.searchProducts = function (shop, searchQuery, callback) {
   var conn = db.getConnection();
   conn.connect(function (err) {
     if (err) {
       console.log(err);
       return callback(err, null);
-    }
-    else {
+    } else {
       console.log("Connected!");
-      var sql = "SELECT * FROM " + shop + " WHERE product_name LIKE "+ `'%${searchQuery}%'`;
+      var sql =
+        "SELECT * FROM " +
+        shop +
+        " WHERE product_name LIKE " +
+        `'%${searchQuery}%'`;
       conn.query(sql, function (err, result) {
         conn.end();
         if (err) {
@@ -230,6 +257,6 @@ productsDB.searchProducts = function (shop, searchQuery, callback) {
       });
     }
   });
-}
+};
 
 module.exports = productsDB;

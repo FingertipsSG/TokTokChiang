@@ -2,8 +2,8 @@ const express = require("express");
 
 const fastcsv = require("fast-csv");
 const fs = require("fs");
-var bodyParser=require('body-parser');
-const fileUpload = require('express-fileupload');
+var bodyParser = require("body-parser");
+const fileUpload = require("express-fileupload");
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 var cors = require("cors");
@@ -36,7 +36,7 @@ app.use(urlencodedParser);
 // });
 
 //------------------------------USERS.JS-----------------------------------------------
-//ADD USER 
+//ADD USER
 app.post("/addUser", (req, res) => {
   var username = req.body.uName;
   var password = req.body.uPass;
@@ -101,10 +101,8 @@ app.post("/insertPIN", (req, res) => {
       // console.log("error");
       return res.status(500).send();
     }
-  }
-  );
+  });
 });
-
 
 //DELETE PIN
 app.delete("/deletePIN", (req, res) => {
@@ -118,10 +116,8 @@ app.delete("/deletePIN", (req, res) => {
       // console.log("error");
       return res.status(500).send();
     }
-  }
-  );
+  });
 });
-
 
 //GET PIN
 app.get("/getPIN", (req, res) => {
@@ -133,7 +129,7 @@ app.get("/getPIN", (req, res) => {
       return res.status(401).json({ message: "Incorrect PIN/PIN expired!" });
     }
     if (!err) {
-      return res.status(200).send({message: pin});
+      return res.status(200).send({ message: pin });
     }
     return res.status(500).json({ message: "Internal Server Error" });
   });
@@ -159,7 +155,6 @@ app.patch("/updatePassword", (req, res) => {
     return res.status(500).json({ message: "Internal Server Error" });
   });
 });
-
 
 //GET ALL USER
 app.get("/getUsers", (req, res) => {
@@ -192,11 +187,12 @@ app.post("/login", (req, res) => {
 });
 
 // SEARCH Users
-app.get('/searchUsers', function (req, res) {
+app.get("/searchUsers", function (req, res) {
   var searchQuery = req.query.searchQuery;
-  userDB.searchUsers(searchQuery, function (err, result) {  //
+  userDB.searchUsers(searchQuery, function (err, result) {
+    //
     if (!err) {
-      res.type('json');
+      res.type("json");
       res.status(200);
       res.send(result);
     } else {
@@ -204,7 +200,6 @@ app.get('/searchUsers', function (req, res) {
       res.status(500).send();
     }
   });
-
 });
 
 //EDIT USERS
@@ -215,22 +210,15 @@ app.patch("/editUsers", (req, res) => {
   const role = req.body.uRole;
   const id = req.body.id;
 
-  userDB.editUser(
-    username,
-    password,
-    email,
-    role,
-    id,
-    (err, result) => {
-      if (!err) {
-        console.log(result.affectedRows)
-        return res.status(200).json({ affectedRows: result.changedRows });
-      } else {
-        console.log(err);
-        return res.status(500).send();
-      }
+  userDB.editUser(username, password, email, role, id, (err, result) => {
+    if (!err) {
+      console.log(result.affectedRows);
+      return res.status(200).json({ affectedRows: result.changedRows });
+    } else {
+      console.log(err);
+      return res.status(500).send();
     }
-  );
+  });
 });
 //----------------------------- PRODUCTS.JS ---------------------------------------
 // GET PRODUCTS
@@ -238,6 +226,22 @@ app.get("/getProducts", (req, res) => {
   const shop = req.query.shop;
 
   productsDB.getProducts(shop, (err, result) => {
+    if (!err) {
+      return res.status(200).json(result);
+    } else {
+      console.log(err);
+      return res.status(500).send();
+    }
+  });
+});
+
+// GET PRODUCTS - LAZY LOADING FOR FRONTEND
+app.post("/getProductsLL", (req, res) => {
+  const shop = req.query.shop;
+  const startRow = req.body.startRow;
+  const endRow = req.body.endRow;
+
+  productsDB.getProductsLL(shop, startRow, endRow, (err, result) => {
     if (!err) {
       return res.status(200).json(result);
     } else {
@@ -294,7 +298,7 @@ app.delete("/deleteProduct", (req, res) => {
 //EDIT PRODUCTS
 app.patch("/editProduct", (req, res) => {
   // console.log(req.files)
-  
+
   const productName = req.body.pName;
   const productDesc = req.body.pDesc;
   const productPrice = req.body.pPrice;
@@ -314,7 +318,7 @@ app.patch("/editProduct", (req, res) => {
     (err, result) => {
       if (!err) {
         // console.log(result.affectedRows)
-        return res.status(200).json({ affectedRows : result.affectedRows });
+        return res.status(200).json({ affectedRows: result.affectedRows });
       } else {
         // console.log(err);
         return res.status(500).send();
@@ -352,8 +356,8 @@ app.delete("/dropProductTable", (req, res) => {
 });
 
 var corsForDownloadCSV = {
-  exposedHeader: "Content-Disposition"
-}
+  exposedHeader: "Content-Disposition",
+};
 
 // DOWNLOAD CSV
 app.get("/downloadProductCSV", cors(corsForDownloadCSV), (req, res) => {
@@ -370,7 +374,7 @@ app.get("/downloadProductCSV", cors(corsForDownloadCSV), (req, res) => {
         .on("finish", function () {
           console.log(`Write to ttc_products_${shop}.csv successfully!`);
           // var filename = `ttc_products_${shop}.csv`;
-          var filepath = `./ttc_products_${shop}.csv`
+          var filepath = `./ttc_products_${shop}.csv`;
           res.header("Access-Control-Expose-Headers", "Content-Disposition");
           res.status(200).download(filepath);
         });
@@ -382,13 +386,14 @@ app.get("/downloadProductCSV", cors(corsForDownloadCSV), (req, res) => {
 });
 
 // SEARCH PRODUCTS
-app.get('/search', function (req, res) {
+app.get("/search", function (req, res) {
   var searchQuery = req.query.searchQuery;
   var shop = req.query.shop;
 
-  productsDB.searchProducts(shop, searchQuery, function (err, result) {  //
+  productsDB.searchProducts(shop, searchQuery, function (err, result) {
+    //
     if (!err) {
-      res.type('json');
+      res.type("json");
       res.status(200);
       res.send(result);
     } else {
@@ -396,7 +401,6 @@ app.get('/search', function (req, res) {
       res.status(500).send();
     }
   });
-
 });
 
 //----------------------- SHOPS.JS --------------------------------
@@ -409,7 +413,7 @@ app.get("/getShops", (req, res) => {
       console.log(err);
       return res.status(500).send();
     }
-  })
+  });
 });
 
 //ADD SHOPS
@@ -423,7 +427,7 @@ app.post("/addShop", (req, res) => {
       console.log(err);
       return res.status(500).send();
     }
-  })
+  });
 });
 
 //DELETE SHOPS
@@ -437,7 +441,7 @@ app.delete("/deleteShop", (req, res) => {
       console.log(err);
       return res.status(500).send();
     }
-  })
+  });
 });
 
 //EDIT SHOP
@@ -452,7 +456,7 @@ app.patch("/editShop", (req, res) => {
       console.log(err);
       return res.status(500).send();
     }
-  })
+  });
 });
 
 // ALTER SHOP TABLE NAME
@@ -465,9 +469,10 @@ app.put("/alterTable", (req, res) => {
       return res.status(204).json(result.message);
     } else {
       console.log(err);
-      return res.status(500).send(); o
+      return res.status(500).send();
+      o;
     }
-  })
+  });
 });
 
 //----------------------- SEND EMAIL --------------------------------
@@ -480,8 +485,8 @@ const transporter = nodemailer.createTransport({
   service: "Gmail",
   auth: {
     user: email,
-    pass: "HjF0(*3#"
-  }
+    pass: "HjF0(*3#",
+  },
 });
 
 app.post("/postEmail", (req, res) => {
@@ -490,21 +495,21 @@ app.post("/postEmail", (req, res) => {
 
   var printHtml = (values) => {
     console.log(values);
-    return (`<html>
+    return `<html>
       <p>
       Name: ${values.name}<br />
       Email: ${values.email}<br />
       Contact No: ${values.phone}<br />
       Message: ${values.message}<br />
       </p>
-    </html>`)
-  }
+    </html>`;
+  };
 
   var message = {
     from: email,
     to: email,
     subject: "New Contact Form Response",
-    html: printHtml(values)
+    html: printHtml(values),
   };
 
   // console.log("Message:", message);
@@ -518,7 +523,7 @@ app.post("/postEmail", (req, res) => {
       return res.status(200).send({ message: "Form submitted successfully!" });
     }
   });
-})
+});
 
 //API FOR FORGET PW SEND EMAIL
 app.post("/sendEmailPin", (req, res) => {
@@ -527,7 +532,7 @@ app.post("/sendEmailPin", (req, res) => {
   // console.log("RESEND EMAIL PIN FROM API (Should be same as email/db one): " + values.pin);
 
   var printHtml = (values) => {
-    return (`<html>
+    return `<html>
       <p>
       Hello ${values.email}, <br />  <br />
 
@@ -538,8 +543,8 @@ app.post("/sendEmailPin", (req, res) => {
       TokTokChiang Admin
       </p>
       </html>
-    `)
-  }
+    `;
+  };
 
   var emailContent = {
     from: email,
@@ -561,8 +566,7 @@ app.post("/sendEmailPin", (req, res) => {
       return res.status(200).send({ message: emailContent.time });
     }
   });
-})
-
+});
 
 // app.get("/getImgAsBlob", (req, res) => {
 //   pool.getConnection(function (err, connection) {

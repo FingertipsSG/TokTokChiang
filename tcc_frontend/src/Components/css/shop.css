@@ -19,6 +19,12 @@ body {
   left: 50%;
 }
 
+.loadmore-centred {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .ant-spin-dot-item {
   background-color: #790c15;
 }
