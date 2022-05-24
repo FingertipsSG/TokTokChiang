@@ -39,6 +39,12 @@ Table{
 
 }
 
+@media(min-width: 1230px){
+    body.services-body {
+        height: 120vh;
+    }
+}
+
 @media (min-width: 1024px) { 
     html.servicesHtml {
         overflow-x: hidden;
