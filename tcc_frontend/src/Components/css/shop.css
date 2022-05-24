@@ -1,3 +1,11 @@
+/* coming soon */
+.comingsoon {
+  text-align: center;
+  font-size: 70px;
+  margin-top: 200px;
+  color: #666666;
+}
+
 /* common styling */
 @font-face {
   src: url(fonts/AvenirNext.ttf);
@@ -17,6 +25,12 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
+}
+
+.loadmore-centred {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .ant-spin-dot-item {
@@ -107,6 +121,12 @@ button.close-button {
   background-color: transparent !important;
 }
 
+.modal {
+  position: absolute;
+  left: -10%;
+  top: -5%;
+}
+
 .modal-image-container {
   max-width: 60%;
 }
@@ -144,11 +164,6 @@ body.shop-body {
   overflow: auto;
 }
 
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent; /* make scrollbar transparent */
-}
-
 /* specific to shop type */
 body.dolls-body {
   background-image: url("../../Assets/Images/dolls.png");
@@ -171,11 +186,17 @@ body.framed-body {
 }
 
 /* potrait */
+
 @media screen and (orientation: portrait) {
   /* different screen sizes */
   @media (max-width: 590px) {
     body.shop-body {
       background-size: 100% 40%;
+    }
+
+    .popup-image {
+      width: 200px;
+      height: 200px;
     }
   }
 

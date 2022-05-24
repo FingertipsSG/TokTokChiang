@@ -1,7 +1,6 @@
 import axios from "axios";
 
 // get and post API
-
 export async function getApi(endpoint, parameters = {}) {
   const url = "http://localhost:5000/" + endpoint;
   let params = {};
@@ -30,6 +29,30 @@ export async function getProducts(prodType, parameters = {}) {
     console.log("[getApi error]");
     console.log("url: " + url);
     console.log("params: " + JSON.stringify(params));
+    console.log(e);
+  }
+}
+
+export async function getProductsLazyLoad(startRow, endRow, parameters) {
+  const url = "http://localhost:5000/getProductsLL";
+  try {
+    const res = await axios({
+      method: "POST",
+      url: url,
+      data: JSON.stringify({
+        startRow: startRow,
+        endRow: endRow,
+      }),
+
+      params: parameters,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    return res.data;
+  } catch (e) {
+    console.log("[getApi error]");
+    console.log("url: " + url);
     console.log(e);
   }
 }
