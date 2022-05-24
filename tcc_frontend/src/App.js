@@ -22,6 +22,7 @@ import Framed from "./Components/Framed";
 import LoginScreen from "./Screens/LoginScreen/LoginScreen";
 import HomeScreen from "./Screens/HomeScreen/HomeScreen";
 import ShopScreen from "./Screens/ShopScreen/ShopScreen";
+import UserScreen from "./Screens/UserScreen/UserScreen";
 
 import Testing from "./Components/Testing";
 
@@ -56,6 +57,7 @@ function App() {
 					<Route path="login" element={<LoginScreen />} />
 					<Route path="admin" element={<HomeScreen />} />
 					<Route path="shop" element={<ShopScreen />} />
+					<Route path="users" element={<UserScreen />} />
 
 					<Route path="testing" element={<Testing />} />
 				</Routes>
