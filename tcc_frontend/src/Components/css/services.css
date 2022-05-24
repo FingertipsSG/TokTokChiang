@@ -16,22 +16,21 @@ body {
 }
 
 body.services-body {
-   
     background-image: url("../../Assets/Images/services.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-   
 }
 
-th{
+th {
     font-size:22px;
     color: #790c15;
 }
-td{
+
+td {
     font-size:18px;
-  
 }
-Table{
+
+Table.services-table {
     margin-left:350px;
 
 }
@@ -39,9 +38,7 @@ Table{
 @media (min-width: 1024px) { 
     html.servicesHtml {
         overflow: hidden;
-        
     }
-  
 }    
 
 /*tablet*/
@@ -49,23 +46,26 @@ Table{
     html.servicesHtml {
         overflow: hidden;
     }
+
     body.services-body {
         background-image:none;
         background-image: url("../../Assets/Images/AboutUs.png");
         background-repeat: no-repeat;
         background-size:cover;
     }
-    th{
+
+    th {
        font-size:16px;
     }
-    td{
+
+    td {
         font-size:15px;
     }
-    .services-row{
+
+    .services-row {
         margin-left:-290px !important;
         margin-top:100px;
     }
-  
 }
 
 /* phone size*/
@@ -74,6 +74,7 @@ Table{
         height:100vh;
         overflow: hidden;
     }
+
     body.services-body {
         background-image:none;
         background-image: url("../../Assets/Images/AboutUs.png");
@@ -81,16 +82,18 @@ Table{
         background-size: cover;
         overflow: hidden;
     }
-    th{
+
+    th {
         font-size:10px;
-     }
-     td{
-         font-size:8px;
-     }
-     .services-row{
+    }
+    
+    td {
+        font-size:8px;
+    }
+
+    .services-row {
         margin-left:-320px !important;
         margin-top:50px;
     }
-  
 }
   
