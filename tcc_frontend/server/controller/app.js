@@ -12,6 +12,7 @@ const port = process.env.PORT || 5001;
 
 app.use(express.json());
 app.use(cors());
+app.use(fileUpload());
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 const userDB = require("../model/users.js");
@@ -99,11 +100,16 @@ app.get("/getProducts", (req, res) => {
   // Get details of products and the main image NOTE
   productsDB.getProducts(categoryId, (err, result) => {
     if (!err) {
+      console.log("affected rows are: ", result.affectedRows);
+      // When no data are returned from the query NOTE
       if (result.length === 0) {
-        return res.status(404).send({"Message": "This category does not exist"});
+        return res.status(404).send();
       }
+
+      // When data is returned succesfully NOTE
       return res.status(200).json(result);
     } else {
+      // When error is unclear NOTE
       console.log(err);
       return res.status(500).send();
     }
@@ -117,10 +123,12 @@ app.get("/getOtherImages", (req, res) => {
   // Get the remaining images for the specified product NOTE
   productsDB.getOtherImages(productId, (err, result) => {
     if (!err) {
+      // When no data are returned from the query NOTE
       if (result.length === 0) {
-        console.log({"Message": "This product does not exist"});
-        return res.status(404).send({"Message": "This product does not exist"});
+        return res.status(404).send();
       }
+
+      // When data is returned successfully NOTE
       return res.status(200).json(result);
     } else {
       console.log(err);
@@ -139,8 +147,7 @@ app.post("/getProductsLL", (req, res) => {
 
   productsDB.getProductsLL(categoryId, startRow, endRow, (err, result) => {
     if (result.length === 0) {
-      console.log({"Message": "This product does not exist"});
-      return res.status(404).send({"Message": "This product does not exist"});
+      return res.status(404).send();
     } else if (!err) {
       return res.status(200).json(result);
     } else {
@@ -157,8 +164,7 @@ app.delete("/deleteProduct", (req, res) => {
   productsDB.deleteProduct(productId, (err, result) => {
     if (!err) {
       if (result.affectedRows === 0) {
-        console.log({"Message": "This product does not exist"});
-        return res.status(404).send({"Message": "This product does not exist"});
+        return res.status(404).send();
       }
       return res.status(204).json(result);
     } else {
