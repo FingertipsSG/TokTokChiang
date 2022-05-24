@@ -23,6 +23,9 @@ import LoginScreen from "./Screens/LoginScreen/LoginScreen";
 import HomeScreen from "./Screens/HomeScreen/HomeScreen";
 import ShopScreen from "./Screens/ShopScreen/ShopScreen";
 import UserScreen from "./Screens/UserScreen/UserScreen";
+import EmailScreen from "./Screens/ForgetPasswordScreen/EnterEmailScreen";
+import DigitPinScreen from "./Screens/ForgetPasswordScreen/EnterDigitPinScreen";
+import ResetPasswordScreen from "./Screens/ForgetPasswordScreen/ResetPassword";
 
 import Testing from "./Components/Testing";
 
@@ -58,6 +61,9 @@ function App() {
 					<Route path="admin" element={<HomeScreen />} />
 					<Route path="shop" element={<ShopScreen />} />
 					<Route path="users" element={<UserScreen />} />
+					<Route path="email" element={<EmailScreen />} />
+					<Route path="digitPin" element={<DigitPinScreen />} />
+					<Route path="reset" element={<ResetPasswordScreen />} />
 
 					<Route path="testing" element={<Testing />} />
 				</Routes>
