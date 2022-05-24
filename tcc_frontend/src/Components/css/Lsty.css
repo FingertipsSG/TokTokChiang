@@ -1,4 +1,4 @@
-@charset "utf-8";
+/* @charset "utf-8";
 
 @font-face {
     src: url(fonts/AvenirNext.ttf);
@@ -32,27 +32,8 @@ body.lstyBody {
 
 }
 
-.title1 {
-    display: inline;
-    color: #790c15;
-    font-family: AveNextBold;
-    font-size: 36px;
-}
-
-.title2 {
-    display: inline;
-    color: #464749;
-    font-family: AveNextBold;
-    font-size: 36px;
-}
-
 h3 {
     font-weight: bold;
-}
-
-.firstContentText {
-    font-family: AveNext;
-    margin-left: 92px;
 }
 
 .firstContent {
@@ -63,12 +44,12 @@ h3 {
     font-family: Calibri;
     font-size: 18px;
     margin-left: 92px;
-    height:400px;
+    height:280px;
     overflow: auto;
 }
 
 /* carousel styles */
-img#carouselpic {
+/* img#carouselpic {
     float: right;
     width: 70%;
     margin-right: 100px;
@@ -77,10 +58,10 @@ img#carouselpic {
 .carousel-control-prev,
 .carousel-control-next {
     display: none;
-}
+}  */
 
 /* important overrides other styling */
-.carousel-indicators button {
+/* .carousel-indicators button {
     position: relative !important;
     left: 10px !important;
     height: 10px !important;
@@ -88,19 +69,19 @@ img#carouselpic {
     margin: 0 10px !important;
     border-radius: 100%;
     background-color: white !important;
-}
+} */
 
-.carousel {
-    margin-top: 100px;
-}
+/* .carousel {
+    margin-top: 8%;
+} */
 
-@media (min-width: 1024px) { 
+/* @media (min-width: 1024px) { 
     html.lstyHtml {
         overflow: hidden;
     }
-} 
+}  */
 /*tablet*/
-@media (min-width: 768px) and ( max-width:1023px) { 
+/* @media (min-width: 768px) and ( max-width:1023px) { 
     html.lstyHtml {
         overflow: hidden;
     }
@@ -126,9 +107,9 @@ img#carouselpic {
         
     }
 
-} 
+}  */
 /* phone size*/
-@media (max-width: 767px) { 
+/* @media (max-width: 767px) { 
     html.lstyHtml{
         height:100vh;
         overflow: hidden;
@@ -153,12 +134,163 @@ img#carouselpic {
         display: inline;
         color: #790c15;
         font-family: AveNextBold;
-        font-size: 20px !important;
-    }
+        /* font-size: 20px !important; */
+    /* } 
     
     #lstyCarousel{
         visibility: hidden;
      }
     
     
+} */
+
+body.lstyBody {
+    background-image: url("../../Assets/Images/AboutUs.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
+
+.lstyContent {
+    font-family: Calibri;
+    font-size: 16px;
+    margin-left: 92px;
+    height: 250px;
+    overflow: auto;
+}
+
+img#lstyPic {
+    float: right;
+    width: 70%;
+    margin-right: 100px;
+}
+
+.lstyHeader {
+    display: inline;
+    color: #790c15;
+    font-family: AveNextBold;
+    font-size: 30px;
+}
+
+.lstyCarousel {
+    margin-top: 12%;
+}
+
+/* responsive styles */
+@media (min-width: 1024px) { 
+    html.lstyHtml {
+        overflow: hidden;
+    }
+}     
+
+@media (min-width: 992px) and (max-width: 1002px) {
+    .lstyCarousel {
+        margin-top: 26%;
+    }
+
+    .lstyContent {
+        height: 200px;
+    }
+}
+
+@media (min-width: 1002px) and (max-width: 1022px){
+    .lstyCarousel {
+        margin-top: 19% !important;
+    }
+
+    .lstyContent {
+        height: 180px;
+    }
+}
+
+@media (min-width: 1022px) and (max-width: 1093px) {
+    .lstyCarousel {
+        margin-top: 19%;
+    }
+
+    .lstyContent {
+        height: 200px;
+    }
+}
+
+@media (min-width: 1093px) and (max-width: 1240px) {
+    .lstyCarousel {
+        margin-top: 18%;
+    }
+}
+
+@media (min-width: 1145px) and (max-width: 1330px) {
+    .lstyCarousel {
+        margin-top: 16%;
+    }
+}
+
+@media (min-width: 1224px) and (max-width: 1449px) {
+    .lstyCarousel {
+        margin-top: 15%;
+    }
+}
+
+@media (min-width: 1449px) and (max-width: 1610px) {
+    .lstyCarousel {
+        margin-top: 13%;
+    }
+        
+    .lstyContent {
+        height: 300px;
+    }
+}
+
+@media (min-width:1610px) {
+    .lstyContent {
+        height: 350px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .lstyCarousel {
+        margin-top: 10% !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width:1023px) {
+    html.lstyHtml {
+        overflow: hidden;
+    }
+    body.lstyBody {
+        background-attachment: fixed;
+        background-size: cover;
+        overflow: hidden;
+    }
+
+    .lstyContent {
+        font-size: 14px;
+        margin-left: 92px;
+        width:80%;
+        margin-bottom: 0;
+        height: 260px;
+    }
+}
+
+/* phone size*/
+@media (max-width: 767px) { 
+    html.lstyHtml{
+        height:100vh;
+        overflow: hidden;
+    }
+    body.lstyBody {
+        background-attachment: fixed;
+        background-size: cover;
+        overflow: hidden;
+    }
+    .lstyContent {
+        font-size: 14px;
+        margin-left: 70px;
+        height:350px;
+        width: 80%;
+        overflow:scroll;
+    }
+    
+    .lstyCarousel{
+        visibility:hidden;
+       }
+    }

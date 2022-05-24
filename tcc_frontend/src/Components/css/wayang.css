@@ -162,10 +162,11 @@ background: rgb(65, 65, 65);
     }
 } */
 
-body.wayangBody {
+.wayangBody {
     background-image: url("../../Assets/Images/AboutUs.png");
-    background-repeat: no-repeat;
     background-size: 100% 100%;
+    background-repeat: no-repeat;
+    
 }
 
 .wayangContent {
@@ -250,11 +251,10 @@ img#wayangPic {
         overflow: hidden;
     }
     .wayangContent {
-        font-family: Calibri;
         font-size: 14px;
         margin-left: 92px;
-        height:320px;
         width:80%;
+        height: 280px
     }
 }
 

@@ -23,12 +23,12 @@ function Lsty() {
 					<Row>
 						<div className="col-lg-6">
 							<div className="firstContentText">
-								<h2 className="title1">LAO SAI TAO YUAN</h2>
+								<h2 className="lstyHeader">LAO SAI TAO YUAN</h2>
 								<br />
-								<h2 className="title1">	TEOCHEW OPERA TROUPES</h2>
+								<h2 className="lstyHeader">	TEOCHEW OPERA TROUPES</h2>
 								<br />
 								<br />
-								<h2> 老赛桃源潮剧团 </h2>
+								<h3 className="lstyTitle"> 老赛桃源潮剧团 </h3>
 							</div>
 
 							<p className="lstyContent">
@@ -36,12 +36,15 @@ function Lsty() {
 								In the 1920s, when there were over a hundred professional troupes in Singapore, Lao Sai Tao Yuan wielded a strong influence among the Chinese community, boasting hundreds of performers and attracting enormous crowds at its street performances.
 								It was – and still is - not only a feast to the senses but also an accessible form of entertainment for the migrant community Singapore once was.
 								<br />
+								<br />
 								To this day, Lao Sai Tao Yuan, with its 30 performing artistes and musicians,
 								prides itself in keeping this Singaporean cultural heritage alive by preserving the traditions and practice so unique to this art form,
 								giving both Singaporeans and non-Singaporeans alike a glimpse into the history of a country so rich in tradition and culture.
 								<br />
+								<br />
 								In 2017, Nick made further efforts to revive and promote this vanishing art form by taking over the helm as the troupe owner of Lao Sai Tao Yuan Teochew Opera Troupe,
 								and he also sought out new performing opportunities and presented Chinese opera in Toyama, Japan, as part of a cultural exchange programme.
+								<br />
 								<br />
 								In 2018, Nick has successfully put up two Chinese Opera Exhibitions and have been invited to perform in China and Japan.
 								As the next-generation troupe owner of Lao Sai Tao Yuan and an arts advocate, Nick is taking initiative to promote this traditional art to the youths and the world in a bid to preserve its place in the heritage and culture of the ever-changing landscape of Singapore.
@@ -50,39 +53,39 @@ function Lsty() {
 
 
 						<div className="col-lg-6">
-							<Carousel id="lstyCarousel" variant="dark" className="slide" fade>
+							<Carousel variant="dark" className="slide lstyCarousel" fade>
 								<Carousel.Item>
 									<img
 										className="col-lg-6  col-sm-12"
-										id="carouselpic"
+										id="lstyPic"
 										src={pic1}
 									/>
 								</Carousel.Item>
 								<Carousel.Item>
 									<img
 										className="col-lg-6  col-sm-12"
-										id="carouselpic"
+										id="lstyPic"
 										src={pic2}
 									/>
 								</Carousel.Item>
 								<Carousel.Item>
 									<img
 										className="col-lg-6  col-sm-12"
-										id="carouselpic"
+										id="lstyPic"
 										src={pic1}
 									/>
 								</Carousel.Item>
 								<Carousel.Item>
 									<img
-										className="col-lg-4  col-sm-12"
-										id="carouselpic"
+										className="col-lg-6  col-sm-12"
+										id="lstyPic"
 										src={pic2}
 									/>
 								</Carousel.Item>
 								<Carousel.Item>
 									<img
-										className="col-lg-4  col-sm-12"
-										id="carouselpic"
+										className="col-lg-6  col-sm-12"
+										id="lstyPic"
 										src={pic1}
 									/>
 								</Carousel.Item>
@@ -90,7 +93,6 @@ function Lsty() {
 						</div>
 					</Row>
 				</div>
-				<div style={{ height: "220px" }}></div>
 			</body>
 		</html>
 	);

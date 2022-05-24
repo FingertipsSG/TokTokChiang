@@ -117,3 +117,9 @@ a.link.nav-link:hover {
     padding-left: 10px;
   }
 }
+
+@media (max-width: 767px) { 
+  .navbar__logo {
+    margin-left: 4%;
+  }
+}

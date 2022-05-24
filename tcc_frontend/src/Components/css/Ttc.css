@@ -35,14 +35,14 @@ body.ttcBody {
     display: inline;
     color: #790c15;
     font-family: AveNextBold;
-    font-size: 33px;
+    font-size: 30px;
 }
 
 .title2 {
     display: inline;
     color: #464749;
     font-family: AveNextBold;
-    font-size: 33px;
+    font-size: 30px;
 }
 
 .firstContentText {
@@ -142,13 +142,6 @@ img#carouselPic {
     }
 }
 
-/* smaller laptop, bigger than ipad */
-/* @media (min-width: 991px) and (max-width: 1022px){
-    .carousel {
-        margin-top: 20% !important;
-    }
-} */
-
 @media (min-width: 768px) and (max-width: 991px) {
     .carousel {
         margin-top: 3% !important;
@@ -166,11 +159,10 @@ img#carouselPic {
         overflow: hidden;
     }
     .ttcContent {
-        font-family: Calibri;
         font-size: 14px;
         margin-left: 92px;
-        height:350px;
         width:80%;
+        margin-bottom: 0;
     }
     img#carouselpic {
         width: 50%;
@@ -184,11 +176,6 @@ img#carouselPic {
     .title2 {
         display: inline;
         color: #464749;
-    }
-
-    .ttcTitle {
-        color: #464749;
-        font-family: AveNextBold;
     }
 
 }
@@ -224,17 +211,11 @@ img#carouselPic {
         display: inline;
         color: #790c15;
         font-family: AveNextBold;
-        font-size: 24px !important;
     }
     
     .title2 {
         display: inline;
         color: #464749;
         font-family: AveNextBold;
-        font-size: 24px !important;
-    }
-
-    .ttcTitle {
-        font-size: 22px
     }
 }
