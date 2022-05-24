@@ -106,7 +106,7 @@ function Home() {
                                 helm as the troupe owner of Lao Sai Tao Yuan, a 158-year-old Teochew Opera Troupe under our non-profit
                                 arm, Tok Tok Chiang Opera Ltd.
                             </p>
-                            <div style={{ height: "300px" }}></div>
+                            <div style={{ height: "200px" }}></div>
                         </div>
                     </Row>
                 </div>
