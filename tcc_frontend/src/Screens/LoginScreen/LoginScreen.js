@@ -29,7 +29,7 @@ function LoginScreen() {
         localStorage.setItem("id", JSON.stringify(response.data.id));
 
         if (response.status === 200) {
-          return navigate("/adminportal");
+          return navigate("/admin");
         }
       }).catch((error) => {
         // console.log(error)

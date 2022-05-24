@@ -12,7 +12,7 @@ function CustomNavbar() {
 
   const logOut = () => {
     localStorage.clear();
-    navigate("/admin");
+    navigate("/login");
     window.location.reload();
   };
 
