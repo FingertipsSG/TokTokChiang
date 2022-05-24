@@ -39,7 +39,7 @@ Table{
 
 }
 
-@media(min-width: 1230px){
+@media(min-width: 1344px){
     body.services-body {
         height: 120vh;
     }
