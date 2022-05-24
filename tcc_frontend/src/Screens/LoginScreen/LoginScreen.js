@@ -5,8 +5,7 @@ import AlertTitle from '@material-ui/lab/AlertTitle';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-// import image from '../../Assets/Images/toktoklogo.png';
-const logo = require('../../Assets/Images/toktoklogo.png');
+import logo from '../../Assets/Images/toktoklogo.png';
 
 function LoginScreen() {
     const [details, setDetails] = useState({ username: "", password: "" });
@@ -53,8 +52,7 @@ function LoginScreen() {
         <div className="containForm">
         <form onSubmit={submitHandler} className="form-outer">
           <div className='form-inner'>
-            <div className="logo"></div>
-            <img src={logo} alt="Logo" />
+            <img src={logo} alt="Logo" width={300} height={70}/>
             <h2>Login</h2>
             {(error !== "") ?
               (<Alert severity="error">

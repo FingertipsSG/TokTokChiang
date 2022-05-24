@@ -4,6 +4,7 @@ import "./CustomNavbar.css";
 import { navItems } from '../NavItems/NavItems';
 import CustomButton from '../CustomButton/CustomButton';
 import { useNavigate } from "react-router-dom";
+import logo from '../../../Assets/Images/toktoklogo.png';
 
 function CustomNavbar() {
   // const [dropdown, setDropdown] = useState(false);
@@ -19,8 +20,7 @@ function CustomNavbar() {
     <>
       <nav className="admin-navbar">
         <Link to="/adminportal" className="admin-navbar-logo">
-          {/* <img src={require("../../../Assets/Images/toktoklogo.png")} alt="Logo" /> */}
-          <div className="logo"></div>
+          <img src={logo} alt="Logo" width={300} height={70}/>
         </Link>
         <ul className="admin-nav-items">
           {navItems.map((item) => {
