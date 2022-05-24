@@ -498,7 +498,7 @@ function ShopScreen() {
             rowKey="sID"
             loading={{
               indicator: <Spin size="default"></Spin>,
-              spinning: isTableLoading,
+              spinning: isTableLoading
             }}
           />
         ) : (
@@ -508,7 +508,7 @@ function ShopScreen() {
             rowKey="pID"
             loading={{
               indicator: <Spin size="default"></Spin>,
-              spinning: isTableLoading,
+              spinning: isTableLoading
             }}
           />
         )}
