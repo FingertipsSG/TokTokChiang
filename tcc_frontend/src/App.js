@@ -53,10 +53,9 @@ function App() {
 					<Route path="framed" element={<Framed />} />
 					<Route path="handpuppets" element={<HandPuppets />} />
 
-
 					<Route path="login" element={<LoginScreen />} />
 					<Route path="admin" element={<HomeScreen />} />
-					<Route path="shops" element={<ShopScreen />} />
+					<Route path="shop" element={<ShopScreen />} />
 
 					<Route path="testing" element={<Testing />} />
 				</Routes>
