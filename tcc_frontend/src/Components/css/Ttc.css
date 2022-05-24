@@ -15,20 +15,16 @@
     font-family: Calibri;
 }
 
-html {
-    height: 100vh;
-    width: auto;
+body, html{
+    margin:0;
+    padding:0;
 }
-
-body {
-    min-height: 100%;
-    min-width: auto;
-}
-
 body.ttcBody {
-    background-image: url("../../Assets/Images/AboutUs.png");
+    background: url("../../Assets/Images/AboutUs.png");
+    height:130vh;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-position:100% 100%;  
 }
 
 .title1 {
@@ -101,11 +97,6 @@ img#carouselPic {
     }
 }
 
-/* @media (min-width: 1023px) and (max-width : 1076px) {
-    .carousel {
-        margin-top: 20% !important;
-    }
-} */
 
 @media (min-width: 1093px) and (max-width: 1223px) {
     .ttcContent {
@@ -121,9 +112,9 @@ img#carouselPic {
 
 @media (min-width: 1024px) { 
     html.ttcHtml {
-        overflow: hidden;
+        overflow-x: hidden;
     }
-}     
+}      
 
 @media (min-width: 1224px) and (max-width: 1449px) {
     .ttcContent {
@@ -153,11 +144,7 @@ img#carouselPic {
     html.ttcHtml {
         overflow: hidden;
     }
-    body.ttcBody {
-        background-attachment: fixed;
-        background-size: cover;
-        overflow: hidden;
-    }
+    
     .ttcContent {
         font-size: 14px;
         margin-left: 92px;
@@ -183,11 +170,6 @@ img#carouselPic {
 @media (max-width: 767px) { 
     html.ttcHtml{
         height:100vh;
-        overflow: hidden;
-    }
-    body.ttcBody {
-        background-attachment: fixed;
-        background-size: cover;
         overflow: hidden;
     }
     .ttcContent {
@@ -217,5 +199,16 @@ img#carouselPic {
         display: inline;
         color: #464749;
         font-family: AveNextBold;
+    }
+}
+
+/* Common Size: phone & tablet*/
+@media (max-width: 1023px) { 
+    body.ttcBody {
+        background-attachment: fixed;
+        background-size:cover;
+        background-attachment: fixed;
+        background-position:0;
+     
     }
 }

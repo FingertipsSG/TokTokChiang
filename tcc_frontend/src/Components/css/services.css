@@ -18,27 +18,30 @@ body {
 body.services-body {
    
     background-image: url("../../Assets/Images/services.png");
+    height:130vh;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-position:100% 100%;  
    
 }
 
 th{
-    font-size:22px;
+    font-size:18px;
     color: #790c15;
 }
 td{
-    font-size:18px;
+    font-size:16px;
   
 }
 Table{
-    margin-left:350px;
+    margin-left:25%;
+    margin-top:1.8%;
 
 }
 
 @media (min-width: 1024px) { 
     html.servicesHtml {
-        overflow: hidden;
+        overflow-x: hidden;
         
     }
   
@@ -94,3 +97,27 @@ Table{
   
 }
   
+/* Common Size: phone & tablet*/
+@media (max-width: 1023px) { 
+    body.services-body {
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-attachment: fixed;
+        background-size:cover;
+        background-position:0;
+     
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px){
+    Table{
+        margin-left:53%;
+    
+    }
+}
+
+@media (max-width: 767px) {
+    Table{
+        margin-left:100%;
+    
+    }
+}

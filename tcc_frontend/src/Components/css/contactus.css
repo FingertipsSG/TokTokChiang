@@ -5,9 +5,11 @@
 
 .contactUsBody{
   background-image:url("../../Assets/Images/ContactUs.png");
-  background-size: 100% 100%;
+  height:130vh;
+  background-size: cover;
   background-repeat: no-repeat;
-  overflow-x: hidden;
+  background-position:100% 100%;  
+  overflow-x:hidden;
 }
 
 .contactUs {
@@ -51,31 +53,25 @@ textarea#basic_message {
 }
 
 @media (min-width: 768px) and ( max-width: 1023px) {
-  .contactUsBody {
-    background-image: url("../../Assets/Images/AboutUs.png");
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-attachment: fixed;
-    overflow: hidden;
-  }
-
-  .contactUs {
+    .contactUs {
     margin-left: 25%;
     margin-top: 10%;
   }
 }
-
+/*Phone size*/
 @media (max-width: 767px) { 
-  .contactUsBody {
-    background-image: url("../../Assets/Images/AboutUs.png");
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-attachment: fixed;
-    overflow: hidden;
-  }
-
   .contactUs {
     padding: 10%;
     margin-left: 0;
   }
+}
+
+/* Common Size: phone & tablet*/
+@media (max-width: 1023px) { 
+  body.contactUsBody {
+      background-image: url("../../Assets/Images/AboutUs.png");
+      background-attachment: fixed;
+      background-size:cover;
+      background-position:0; 
+    height:auto; }
 }

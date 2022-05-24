@@ -1,153 +1,15 @@
-/* @charset "utf-8";
-
-@font-face {
-    src: url(fonts/AvenirNext.ttf);
-    font-family: AveNext;
+body, html{
+    margin:0;
+    padding:0;
 }
 
-@font-face {
-    src: url(fonts/AvenirNext-Bold.ttf);
-    font-family: AveNextBold;
-}
-
-@font-face {
-    src: url(fonts/Calibri\ Regular.ttf);
-    font-family: Calibri;
-}
-
-html {
-    height: 100vh;
-    width: auto;
-}
-
-body {
-    min-height: 100%;
-    min-width: auto;
-}
 
 body.lstyBody {
-    background-image: url("../../Assets/Images/AboutUs.png");
+    background: url("../../Assets/Images/AboutUs.png");
+    height:130vh;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
-
-}
-
-h3 {
-    font-weight: bold;
-}
-
-.firstContent {
-    margin-left: -30px;
-}
-
-.lstyContent {
-    font-family: Calibri;
-    font-size: 18px;
-    margin-left: 92px;
-    height:280px;
-    overflow: auto;
-}
-
-/* carousel styles */
-/* img#carouselpic {
-    float: right;
-    width: 70%;
-    margin-right: 100px;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    display: none;
-}  */
-
-/* important overrides other styling */
-/* .carousel-indicators button {
-    position: relative !important;
-    left: 10px !important;
-    height: 10px !important;
-    width: 10px !important;
-    margin: 0 10px !important;
-    border-radius: 100%;
-    background-color: white !important;
-} */
-
-/* .carousel {
-    margin-top: 8%;
-} */
-
-/* @media (min-width: 1024px) { 
-    html.lstyHtml {
-        overflow: hidden;
-    }
-}  */
-/*tablet*/
-/* @media (min-width: 768px) and ( max-width:1023px) { 
-    html.lstyHtml {
-        overflow: hidden;
-    }
-    body.lstyBody {
-        background-attachment: fixed;
-        background-size: cover;
-        overflow: hidden;
-    }
-    .lstyContent {
-        font-family: Calibri;
-        font-size: 13px;
-        margin-left: 92px;
-        height:350px;
-        width:80%;
-    }
-    #lstyCarousel{
-        margin-top:-30px; 
-        
-    }
-    img#carouselpic {
-        width: 50%;
-        margin-right:200px;
-        
-    }
-
-}  */
-/* phone size*/
-/* @media (max-width: 767px) { 
-    html.lstyHtml{
-        height:100vh;
-        overflow: hidden;
-    }
-    body.lstyBody {
-        background-attachment: fixed;
-        background-size: cover;
-        overflow: hidden;
-    }
-    .lstyContent {
-        font-family: Calibri;
-        font-size: 13px;
-        margin-left: 75px;
-        height:350px;
-        width:75%;
-        
-    }
-    #lsty{
-       visibility:hidden;  
-      }
-     h2.title1 {
-        display: inline;
-        color: #790c15;
-        font-family: AveNextBold;
-        /* font-size: 20px !important; */
-    /* } 
-    
-    #lstyCarousel{
-        visibility: hidden;
-     }
-    
-    
-} */
-
-body.lstyBody {
-    background-image: url("../../Assets/Images/AboutUs.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-position:100% 100%;  
 }
 
 .lstyContent {
@@ -178,7 +40,7 @@ img#lstyPic {
 /* responsive styles */
 @media (min-width: 1024px) { 
     html.lstyHtml {
-        overflow: hidden;
+        overflow-x: hidden;
     }
 }     
 
@@ -277,11 +139,7 @@ img#lstyPic {
         height:100vh;
         overflow: hidden;
     }
-    body.lstyBody {
-        background-attachment: fixed;
-        background-size: cover;
-        overflow: hidden;
-    }
+   
     .lstyContent {
         font-size: 14px;
         margin-left: 70px;
@@ -294,3 +152,13 @@ img#lstyPic {
         visibility:hidden;
        }
     }
+/* Common Size: phone & tablet*/
+@media (max-width: 1023px) { 
+    body.lstyBody{
+        background-attachment: fixed;
+        background-size:cover;
+        background-attachment: fixed;
+        background-position:0;
+     
+    }
+}
