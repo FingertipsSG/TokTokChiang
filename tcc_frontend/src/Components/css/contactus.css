@@ -88,9 +88,9 @@ button.ant-btn.ant-btn-primary.formBtn.mt-2 {
       height: 120vh;
   }
 
-  .contactUs {
+  /* .contactUs {
     margin-top: 4%;
-  }
+  } */
 }
 
 @media (min-width: 1920px) {
@@ -118,7 +118,7 @@ button.ant-btn.ant-btn-primary.formBtn.mt-2 {
  }
  .contactUs {
   margin-left:40%;
-  margin-top: 5%;
+  margin-top: 6%;
   width:150%;
 
 }  
@@ -146,7 +146,7 @@ button.ant-btn.ant-btn-primary.formBtn.mt-2 {
 }
 }
 
-@media (min-width: 1400px ) and (max-width:1600px) {
+@media (min-width: 1500px ) and (max-width:1600px) {
   body.contactUsBody {
   background-image: url("../../Assets/Images/ContactUs.png");
   background-size: cover;
@@ -154,14 +154,29 @@ button.ant-btn.ant-btn-primary.formBtn.mt-2 {
  }
  .contactUs {
   margin-left:40%;
-  margin-top: 8%;
+  margin-top: 4%;
   width:150%;
  
-}  
+}
 button.ant-btn.ant-btn-primary.formBtn.mt-2 {
   margin-left: 6.5%;
 }
 }
+
+@media (min-width: 1400px) and (max-width: 1499px) {
+  body.contactUsBody {
+    background-image: url("../../Assets/Images/ContactUs.png");
+    background-size: cover;
+    background-position:0% 0%; 
+   }
+   .contactUs {
+    margin-left:40%;
+    margin-top: 8%;
+    width:150%;
+   
+  }
+}
+
  @media (min-width: 1300px) and (max-width: 1400px) {
   body.contactUsBody {
   background-image: url("../../Assets/Images/ContactUs.png");
