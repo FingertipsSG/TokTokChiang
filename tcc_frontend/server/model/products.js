@@ -358,13 +358,7 @@ productsDB.deleteProduct = function (product_id, shop, callback) {
 //       return callback(err, null);
 //     } else {
 //       console.log("Connected!");
-//       // fk_identityid = 1 : Get the main image of product
-//       // catId: Get the correct type of products
-//       var sql = `SELECT productid, productname, productdesc, price, url, image
-//                 FROM products
-//                 JOIN images
-//                 ON products.productid = images.fk_productid
-//                 WHERE fk_catid = ${catId} AND fk_identityid = 1`;
+//       var sql = `SELECT * FROM ` + shop;
 //       conn.query(sql, function (err, result) {
 //         conn.end();
 //         if (err) {
@@ -379,9 +373,8 @@ productsDB.deleteProduct = function (product_id, shop, callback) {
 //   });
 // };
 
-// // GET Images - Side and back images
-// productsDB.getOtherImages = function (productId, callback) {
-//   console.log(productId);
+// // GET PRODUCTS LAZY LOAD
+// productsDB.getProductsLL = function (shop, startRow, endRow, callback) {
 //   var conn = db.getConnection();
 //   conn.connect(function (err) {
 //     if (err) {
@@ -389,13 +382,7 @@ productsDB.deleteProduct = function (product_id, shop, callback) {
 //       return callback(err, null);
 //     } else {
 //       console.log("Connected!");
-//       // fk_identityid != 1 : Get all images except for main image
-//       // productId : Get images for specific product
-//       var sql = `SELECT image
-//                 FROM products
-//                 JOIN images
-//                 ON products.productid = images.fk_productid
-//                 WHERE fk_productid = ${productId} AND fk_identityid != 1`;
+//       var sql = `SELECT * FROM ${shop} LIMIT ${startRow},${endRow};`;
 //       conn.query(sql, function (err, result) {
 //         conn.end();
 //         if (err) {
@@ -410,8 +397,9 @@ productsDB.deleteProduct = function (product_id, shop, callback) {
 //   });
 // };
 
-// // Get Products - Lazy Loading
-// productsDB.getProductsLL = function (catId, startRow, endRow, callback) {
+// // DELETE PRODUCT
+// productsDB.deleteProduct = function (product_id, shop, callback) {
+//   console.log(product_id);
 //   var conn = db.getConnection();
 //   conn.connect(function (err) {
 //     if (err) {
@@ -419,19 +407,14 @@ productsDB.deleteProduct = function (product_id, shop, callback) {
 //       return callback(err, null);
 //     } else {
 //       console.log("Connected!");
-//       var sql = `SELECT productid, productname, productdesc, price, url, image
-//       FROM products
-//       JOIN images
-//       ON products.productid = images.fk_productid
-//       WHERE fk_catid = ${catId} AND fk_identityid = 1
-//       LIMIT ${startRow}, ${endRow}`;
-//       conn.query(sql, function (err, result) {
+//       var sql = "DELETE FROM " + shop + " WHERE product_id = ?";
+//       conn.query(sql, [product_id], function (err, result) {
 //         conn.end();
 //         if (err) {
 //           console.log(err);
 //           return callback(err, null);
 //         } else {
-//           // console.log(result);
+//           console.log(result);
 //           return callback(null, result);
 //         }
 //       });
@@ -439,29 +422,122 @@ productsDB.deleteProduct = function (product_id, shop, callback) {
 //   });
 // };
 
-// productsDB.deleteProduct = function (productId, callback) {
-//   console.log(productId);
-//   var conn = db.getConnection();
-//   conn.connect(function (err) {
-//     if (err) {
-//       console.log(err);
-//       return callback(err, null);
-//     } else {
-//       console.log("Connected!");
-//       var sql = `DELETE FROM products WHERE productid = ?`;
-//       conn.query(sql, [productId], function (err, result) {
-//         conn.end();
-//         if (err) {
-//           console.log(err);
-//           return callback(err, null);
-//         } else {
-//           // console.log(result);
-//           return callback(null, result);
-//         }
-//       });
-//     }
-//   });
-// };
+// LEFTOFFAT
+
+// GET Products - NON Lazy Loading
+productsDB.getProducts = function (categoryId, callback) {
+  // console.log(categoryId);
+  var conn = db.getConnection();
+  conn.connect(function (err) {
+    if (err) {
+      console.log(err);
+      return callback(err, null);
+    } else {
+      console.log("Connected!");
+      // fk_identityid = 1 : Get the main image of product
+      // categoryId: Get the correct type of products
+      var sql = `SELECT productid, productname, productdesc, price, url, image
+                FROM products
+                JOIN images
+                ON products.productid = images.fk_productid
+                WHERE fk_catid = ? AND fk_identityid = 1`;
+      conn.query(sql, [categoryId], function (err, result) {
+        conn.end();
+        if (err) {
+          console.log(err);
+          return callback(err, null);
+        } else {
+          // console.log(result);
+          return callback(null, result);
+        }
+      });
+    }
+  });
+};
+
+// GET Images - Side and back images
+productsDB.getOtherImages = function (productId, callback) {
+  console.log(productId);
+  var conn = db.getConnection();
+  conn.connect(function (err) {
+    if (err) {
+      console.log(err);
+      return callback(err, null);
+    } else {
+      console.log("Connected!");
+      // fk_identityid != 1 : Get all images except for main image
+      // productId : Get images for specific product
+      var sql = `SELECT image
+                FROM products
+                JOIN images
+                ON products.productid = images.fk_productid
+                WHERE fk_productid = ? AND fk_identityid != 1`;
+      conn.query(sql, [productId], function (err, result) {
+        conn.end();
+        if (err) {
+          console.log(err);
+          return callback(err, null);
+        } else {
+          // console.log(result);
+          return callback(null, result);
+        }
+      });
+    }
+  });
+};
+
+// Get Products - Lazy Loading
+productsDB.getProductsLL = function (categoryId, startRow, endRow, callback) {
+  var conn = db.getConnection();
+  conn.connect(function (err) {
+    if (err) {
+      console.log(err);
+      return callback(err, null);
+    } else {
+      console.log("Connected!");
+      var sql = `SELECT productid, productname, productdesc, price, url, image
+      FROM products
+      JOIN images
+      ON products.productid = images.fk_productid
+      WHERE fk_catid = ? AND fk_identityid = 1
+      LIMIT ?, ?`;
+      conn.query(sql, [categoryId, startRow, endRow], function (err, result) {
+        conn.end();
+        if (err) {
+          console.log(err);
+          return callback(err, null);
+        } else {
+          // console.log(result);
+          return callback(null, result);
+        }
+      });
+    }
+  });
+};
+
+productsDB.deleteProduct = function (productId, callback) {
+  console.log(productId);
+  var conn = db.getConnection();
+  conn.connect(function (err) {
+    if (err) {
+      console.log(err);
+      return callback(err, null);
+    } else {
+      console.log("Connected!");
+      var sql = `DELETE FROM products WHERE productid = ?`;
+      conn.query(sql, [productId], function (err, result) {
+        conn.end();
+        if (err) {
+          console.log(err);
+          return callback(err, null);
+        } else {
+          // console.log(result);
+          return callback(null, result);
+        }
+      });
+    }
+  });
+};
 
 // LEFTOFFAT
 

@@ -100,7 +100,6 @@ app.get("/getProducts", (req, res) => {
   // Get details of products and the main image NOTE
   productsDB.getProducts(categoryId, (err, result) => {
     if (!err) {
-      console.log("affected rows are: ", result.affectedRows);
       // When no data are returned from the query NOTE
       if (result.length === 0) {
         return res.status(404).send();
@@ -147,7 +146,8 @@ app.post("/getProductsLL", (req, res) => {
 
   productsDB.getProductsLL(categoryId, startRow, endRow, (err, result) => {
     if (result.length === 0) {
-      return res.status(404).send();
+      // If no more data / does not exist in database, return an empty array
+      return res.status(200).send([]);
     } else if (!err) {
       return res.status(200).json(result);
     } else {
