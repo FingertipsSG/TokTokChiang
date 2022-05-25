@@ -178,6 +178,18 @@ app.delete("/deleteProduct", (req, res) => {
   });
 });
 
+//GET SHOPS
+app.get("/getShops", (req, res) => {
+  shopsDB.getShops((err, result) => {
+    if (!err) {
+      return res.status(200).json(result);
+    } else {
+      console.log(err);
+      return res.status(500).send();
+    }
+  });
+});
+
 app.use("*", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "..", "build", "index.html"));
 });

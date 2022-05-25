@@ -9,8 +9,8 @@ shopsDB.getShops = function (callback) {
       console.log(err);
       return callback(err, null);
     } else {
-      console.log("Connected!");
-      var sql = "SELECT * FROM shops";
+      console.log("Connected! getShops");
+      var sql = "SELECT * FROM category";
       conn.query(sql, function (err, result) {
         conn.end();
         if (err) {
