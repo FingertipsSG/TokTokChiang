@@ -140,7 +140,7 @@ textarea#basic_message {
  
 }  
 }
-@media (min-width: 1280px) and (max-width: 1400px) {
+ @media (min-width: 1300px) and (max-width: 1400px) {
   body.contactUsBody {
   background-image: url("../../Assets/Images/ContactUs.png");
   background-attachment: fixed;
@@ -154,8 +154,8 @@ textarea#basic_message {
   margin-top: 5%;
   width:200%;
  
-}  
-}
+} 
+} 
 
 @media (min-width: 1224px) and (max-width: 1279px) {
   body.contactUsBody {
