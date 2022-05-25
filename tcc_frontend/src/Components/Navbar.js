@@ -36,7 +36,7 @@ function TopNavBar() {
 									<Link className="dropdown-item" to="/TokTokChiang">TOK TOK CHIANG OPERA</Link>
 									<Link className="dropdown-item" to="/Wayang">TOK TOK CHIANG WAYANG</Link>
 									<Link className="dropdown-item" to="/LaoSaiTaoYuan">LAO SAI TAO YUAN</Link>
-									<Link className="dropdown-item" to="/Testing">Testing</Link>
+								
 								</div>
 							</div>
 						</li>
