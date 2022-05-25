@@ -15,7 +15,7 @@ import EditShopModal from "./EditShopModal/EditShopModal";
 // import AddShopModal from "./AddShopModal/AddShopModal";
 
 function ShopScreen() {
-  const [type, setType] = useState("shops");
+  const [type, setType] = useState("Shops");
   const [productArray, setProductArray] = useState([]);
   const [ShopArray, setShopArray] = useState([]);
   const [prodEdit, setProdEdit] = useState({});
@@ -158,37 +158,50 @@ function ShopScreen() {
     return imageBuffer64;
   };
 
+  function getKeyByValue(value) {
+    for (var i = 0; i < ShopArray.length; i++) {
+      if (ShopArray[i].sName === value) {
+        return i + 1;
+      }
+    }
+  }
+
   const getProducts = async () => {
     setIsTableLoading(true);
 
-    const endpoint = "getProducts";
-    const res = await Utils.getApi(endpoint, { shop: type });
+    var catid = getKeyByValue(type);
+    // console.log(catid);
+    
+    const res = await Utils.getProducts(catid);
     // console.log(res);
 
     res.forEach((obj) => {
       setProductArray((prevArray) => [
         ...prevArray,
         {
-          pID: obj.product_id,
-          pName: obj.product_name,
-          pDesc: obj.product_description,
-          pPrice: obj.product_price,
-          pImage: obj.product_image,
-          pURL: obj.buy_url,
+          pID: obj.productid,
+          pName: obj.productname,
+          pDesc: obj.productdesc,
+          pPrice: obj.price,
+          pImage: obj.image,
+          pURL: obj.url,
         },
       ]);
     });
 
-    // console.log(productArray);
+    console.log(productArray);
 
     setIsTableLoading(false);
   };
 
   useEffect(() => {
-    setProductArray([]);
-    getProducts();
+    if (type !== "Shops") {
+      setProductArray([]);
+      getProducts();
+    }
   }, [render, type]);
 
+  // Get Shops for shops table
   const getShops = async () => {
     setIsTableLoading(true);
     const endpoint = "getShops";
@@ -199,8 +212,8 @@ function ShopScreen() {
       setShopArray((prevArray) => [
         ...prevArray,
         {
-          sID: obj.id,
-          sName: obj.shop_name,
+          sID: obj.catid,
+          sName: obj.catname
         },
       ]);
     });
@@ -212,34 +225,34 @@ function ShopScreen() {
     setShopArray([]);
     getShops();
   }, [render]);
-
+  
   //----------------------------------------SHOPS----------------------------------------
   // ADD AND POST SHOPS FUNCTONS
-  const openAddShopModal = () => {
-    setIsModalOpen(true);
-    setIsAddShopModalVisible(true);
-  };
-  const cancelAddShopModal = () => {
-    setIsModalOpen(false);
-    setIsAddShopModalVisible(false);
-  };
-  const postAddShopModal = (values) => {
-    setIsModalOpen(false);
-    setIsAddShopModalVisible(false);
+  // const openAddShopModal = () => {
+  //   setIsModalOpen(true);
+  //   setIsAddShopModalVisible(true);
+  // };
+  // const cancelAddShopModal = () => {
+  //   setIsModalOpen(false);
+  //   setIsAddShopModalVisible(false);
+  // };
+  // const postAddShopModal = (values) => {
+  //   setIsModalOpen(false);
+  //   setIsAddShopModalVisible(false);
 
-    Utils.postApi("createShopTable", values).then((res) => {
-      // console.log(res);
-      if (res.status === 201) {
-        Utils.postApi("addShop", values).then((res) => {
-          // console.log(res);
-          if (res.status === 201) {
-            message.success("Successfully added shop");
-            setRender(!render);
-          }
-        });
-      }
-    });
-  };
+  //   Utils.postApi("createShopTable", values).then((res) => {
+  //     // console.log(res);
+  //     if (res.status === 201) {
+  //       Utils.postApi("addShop", values).then((res) => {
+  //         // console.log(res);
+  //         if (res.status === 201) {
+  //           message.success("Successfully added shop");
+  //           setRender(!render);
+  //         }
+  //       });
+  //     }
+  //   });
+  // };
 
   // EDIT AND POST SHOP FUNCTION
   const openEditShopModal = () => {
@@ -417,7 +430,7 @@ function ShopScreen() {
         <h1 className="shop">Shops/{type}</h1>
         <Space direction="horizontal" size={50} style={{ marginBottom: 20 }}>
           <TypeDropdown type={type} setType={setType} render={render} />
-          {type === "shops" ? (
+          {type === "Shops" ? (
             <>
               {/* <CustomButton title="Add Shop" onClick={openAddShopModal} /> */}
 
@@ -491,7 +504,7 @@ function ShopScreen() {
           )}
         </Space>
 
-        {type === "shops" ? (
+        {type === "Shops" ? (
           <Table
             columns={shopColumn}
             dataSource={ShopArray}
