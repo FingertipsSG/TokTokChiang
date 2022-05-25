@@ -62,6 +62,12 @@ img#wayangPic {
     }
 }
 
+@media (min-width: 1300px) {
+    body.wayangBody {
+        height: 120vh;
+    }
+}
+
 @media (min-width: 768px) and ( max-width:1023px){ 
     html.wayangHtml {
         overflow: hidden;

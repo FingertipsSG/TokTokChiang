@@ -39,15 +39,17 @@ Table{
 
 }
 
-@media(min-width: 1344px){
+@media (min-width: 1300px) {
     body.services-body {
         height: 120vh;
     }
+
     Table{
-        margin-top:1.5%;
+        margin-top:4.5%;
     
     }
 }
+
 
 @media (min-width: 1024px) { 
     html.servicesHtml {

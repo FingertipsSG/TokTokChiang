@@ -1,146 +1,172 @@
-@charset "utf-8";
-
-@font-face {
-    src: url(fonts/AvenirNext.ttf);
-    font-family: AveNext;
+body, html{
+    margin:0;
+    padding:0;
 }
 
-@font-face {
-    src: url(fonts/AvenirNext-Bold.ttf);
-    font-family: AveNextBold;
-}
-
-@font-face {
-    src: url(fonts/Calibri\ Regular.ttf);
-    font-family: Calibri;
-}
-
-.homeContentText {
-    font-family: AveNext;
-    margin-left: 92px;
-    font-size: 20px;
-}
-
-.homeContent2 {
-    margin-left: 92px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.textContent2 {
-    font-family: Calibri;
-    font-size: 16px;
-}
-
-.textContent {
-    font-family: Calibri;
-    margin-left: 92px;
-    font-size: 16px;
-}
-
-.homePageBody {
-   
-    margin-left: -30px;
+body.homePageBody {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-size: 100% auto;
     background-position:bottom;
     background-repeat: no-repeat;
     height: auto;
     overflow-x: hidden;
+}
 
+.extraHeight {
+    height: 220px;
+}
+
+.homeContent2 {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Calibri;
+    font-size: 16px;
+}
+
+.homeContent {
+    font-family: Calibri;
+    font-size: 16px;
+    margin-left: 92px;
+    height: 300px;
+    overflow: auto;
 }
 
 .homeFounderPic {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
+    float: right;
+    width: 70%;
+    margin-right: 100px;
+    margin-top: 8%;
 }
 
-.card-body {
-    box-shadow: 2px 2px #bebebe;
+.secondHeader {
+    text-align: center;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1002px) and (max-width: 1022px) {
     .homeFounderPic {
-        width: 40%;
+        margin-top: 10% ;
     }
 }
 
-@media (max-width: 1199.9px) {
-    .homeFounderPic {
-        width: 45%;
-        margin-top: 130px;
+@media (min-width: 1093px) and (max-width: 1223px) {
+    .homeContent {
+        height: 200px;
     }
 }
 
-/* below laptop size */
-@media (max-width: 992px){
+@media (min-width: 1920px) {
     .homeFounderPic {
-        width: 60%;
-        margin-top: 20px;
+        margin-top: 5% !important;
+    }
+}
+
+@media (min-width: 1024px) { 
+    html.homeHtml {
+        overflow-x: hidden;
+    }
+}      
+
+@media (min-width: 1224px) and (max-width: 1449px) {
+    .homeContent {
+        height: 250px;
+    }
+    .homeFounderPic {
+        margin-top: 10%;
+    }
+}
+
+@media (min-width: 991px) and (max-width: 1092px) {
+    .homeContent     {
+        height: 180px !important;
+    }
+ 
+    .homeContent2 {
+        overflow: scroll;
+        height: 200px;
+        margin-top: 1%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .homeFounderPic {
+        margin-top: 3% !important;
+    }
+}
+
+/*tablet*/
+@media (min-width: 768px) and ( max-width:1023px){ 
+    /* html.homeHtml {
+        overflow: hidden;
+    } */
+    .homeContent {
+        font-size: 14px;
+        margin-left: 92px;
+        width:80%;
+        margin-bottom: 0;
+    }
+    .homeContent2 {
+        margin-left: 92px;
+        width: 80%;
+    }
+
+}
+
+/* phone size*/
+@media (max-width: 767px) { 
+    html.homeHtml{
+        height:100vh;
+        /* overflow: hidden; */
+    }
+    .homeContent {
+        font-size: 14px;
+        margin-left: 70px;
+        height:200px;
+        width: 80%;
+        overflow:auto;
+        margin-bottom: 0;
+    }
+    .homeContent2 {
+        font-size: 14px;
+        margin-left: 70px;
+        height:200px;
+        width: 80%;
+    }
+    .homeFounderPic{
+        visibility:hidden;
+    }
+    .hidden {
+        width: 0;
+        height: 0;
+    }
+    .card {
+        margin-top: 1%;
+    }
+}
+
+/* for card */
+@media (max-width: 576px) {
+    .card {
+        width: 55%;
+        margin-left: auto;
+        margin-right: auto;    
     }
 
     .card-body {
         padding: 0;
-        margin-bottom: 10px;
-    }
-
-    .textContent {
-        font-size: 20px;
-        padding: 10px;
-    }
-
-    .homeContent2 {
-        margin: 0;
-    }
-
-    .textContent2 {
-        font-size: 20px;
-        padding: 10px;
-        margin-left: 92px;
-    }
-
-    .homePageBody {
-        background-attachment: fixed;
-        background-size: 100% 100%;
-
     }
 }
 
-/* for phone styles */
-@media (max-width: 768px){
-    .textContent{
-        padding: 5px;
-    }
-
-    .textContent2 {
-        padding: 5px;
-        margin-right: 92px;
-        margin-left: 0;
-    }
-
+@media (min-width: 576px) and (max-width: 576px) {
     .card {
-        width: 55%;
-        margin-left: auto;
-        margin-right: auto;
+        width: 100%;
     }
-
-    .secondHeader {
-        margin-bottom: 30px;
-    }
-
-    .homeContent2 {
-        margin-left: 92px;
-    }
-
-
 }
+
 /* Common Size: phone & tablet*/
 @media (max-width: 1023px) { 
-    body.homeBody {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-attachment: fixed;
+    body.homePageBody {
         background-size:cover;
-        background-position:0; 
-        height:auto; }
-  }
+        background-attachment: fixed;
+        background-position:0;
+    }
+}

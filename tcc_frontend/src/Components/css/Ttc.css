@@ -124,6 +124,11 @@ img#carouselPic {
     }
 }
 
+@media (min-width: 1300px) {
+    body.ttcBody {
+        height: 120vh;
+    }
+  }
 
 
 @media (min-width: 991px) and (max-width: 1092px) {
