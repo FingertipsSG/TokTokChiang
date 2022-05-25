@@ -26,11 +26,11 @@ body.services-body {
 }
 
 th{
-    font-size:18px;
+    font-size:15px;
     color: #790c15;
 }
 td{
-    font-size:16px;
+    font-size:13px;
   
 }
 Table{
@@ -38,6 +38,7 @@ Table{
     margin-top:1.8%;
 
 }
+/*Responsive */
 
 @media (min-width: 1300px) {
     body.services-body {
@@ -119,17 +120,144 @@ Table{
      
     }
 }
+@media (min-width: 1600px){
+    Table{
+        margin-left:30%;
+        margin-top:7%;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/services.png");
+        background-attachment: fixed;
+        background-size:cover;
+        background-position:0% 0%;
+     
+    }
+    th{
+        font-size:22px;
+     }
+     td{
+         font-size:20px;
+     }
+    }
 
-@media (min-width: 768px) and (max-width: 1023px){
+@media (min-width: 1550px) and (max-width: 1600px){
+    Table{
+        margin-left:30%;
+        margin-top:6%;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/services.png");
+        background-attachment: fixed;
+        background-size:cover;
+        background-position:0% 0%;
+     
+    }
+}
+@media (min-width: 1300px) and (max-width: 1550px){
+    Table{
+        margin-left:30%;
+        margin-top:6%;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/services.png");
+        background-attachment: fixed;
+        background-size:cover;
+        background-position:0% 0%;
+     
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1279px){
+    Table{
+        margin-left:30%;
+        margin-top:6%;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/services.png");
+        background-attachment: fixed;
+        background-size:cover;
+        background-position:0% 0%;
+     
+    }
+}
+@media (min-width: 1092px) and (max-width: 1200px){
+    Table{
+        margin-left:30%;
+        margin-top:10%;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/services.png");
+        background-attachment: fixed;
+        background-size:cover;
+        background-position:0% 0%;
+     
+    }
+}
+@media (min-width: 1050px) and (max-width: 1092px){
+    Table{
+        margin-left:14%;
+        margin-top:10%;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-attachment: fixed;
+        background-size:cover;
+        background-position:0% 0%;
+     
+    }
+}
+@media (min-width: 1024px) and (max-width: 1050px){
+    Table{
+        margin-left:14%;
+        margin-top:10%;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-attachment: fixed;
+        background-size:cover;
+        background-position:0% 0%;
+     
+    }
+}
+@media (min-width: 990px) and (max-width: 1023px){
+    Table{
+        margin-left:48%;
+    
+    }
+}
+@media (min-width: 768px) and (max-width: 990px){
     Table{
         margin-left:53%;
     
     }
 }
 
-@media (max-width: 767px) {
+
+@media (min-width: 500px) and (max-width: 767px){ 
+    Table{
+        margin-left:75%;
+    }
+    th{
+        font-size:15px;
+     }
+     td{
+         font-size:12px;
+     }
+    }
+@media (min-width: 450px) and (max-width: 500px){ 
+    Table{
+        margin-left:90%;
+    }
+    }
+@media (min-width: 420px) and (max-width: 450px){ 
+    Table{
+        margin-left:95%;
+    
+    }
+    }
+@media (max-width: 420px) { 
     Table{
         margin-left:100%;
     
     }
-}
+    }
