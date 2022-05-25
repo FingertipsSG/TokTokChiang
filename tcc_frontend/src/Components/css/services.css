@@ -120,6 +120,24 @@ Table{
      
     }
 }
+@media (min-width: 1920px){
+    Table{
+        margin-left:30%;
+        margin-top:7%;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/services.png");
+        background-size:cover;
+        background-position:0% 0%;
+     
+    }
+    th{
+        font-size:22px;
+     }
+     td{
+         font-size:20px;
+     }
+    }
 
 @media (min-width: 1800px ) and (max-width:1920px){
     Table{
@@ -128,7 +146,6 @@ Table{
     }
     body.services-body {
         background-image: url("../../Assets/Images/services.png");
-        background-attachment: fixed;
         background-size:cover;
         background-position:0% 0%;
      
