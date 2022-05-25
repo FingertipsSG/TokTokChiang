@@ -17,6 +17,7 @@ function founder() {
             <body className="founderBody">
                 <Navbar />
                 <br />
+                <br />
                 <div className="firstContent">
                     <Row>
                         <div className=" col-lg-6">
