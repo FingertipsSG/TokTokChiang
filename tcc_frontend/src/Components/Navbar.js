@@ -28,7 +28,7 @@ function TopNavBar() {
 						</li> */}
 						<li className="nav-item">
 							<div className="dropdown">
-								<a className="link nav-link home">
+								<a className="link nav-link">
 									ABOUT US
 								</a>
 								<div className="dropdown-menu">
@@ -42,7 +42,7 @@ function TopNavBar() {
 						</li>
 						<li className="nav-item">
 							<div className="dropdown">
-								<a className="link nav-link shop">
+								<a className="link nav-link">
 									SHOP
 								</a>
 								<div className="dropdown-menu">
@@ -56,7 +56,7 @@ function TopNavBar() {
 						</li>
 						<li className="nav-item">
 							<div className="dropdown">
-								<a className="link nav-link shop">
+								<a className="link nav-link">
 									SUPPORT
 								</a>
 								<div className="dropdown-menu">

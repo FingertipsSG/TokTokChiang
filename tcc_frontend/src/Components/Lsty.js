@@ -19,6 +19,7 @@ function Lsty() {
 			<body className="lstyBody">
 				<Navbar />
 				<br />
+				<br />
 				<div className="firstContent">
 					<Row>
 						<div className="col-lg-6">

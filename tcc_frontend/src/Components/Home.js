@@ -21,6 +21,7 @@ function Home() {
             <body className="homePageBody">
                 <Navbar />
                 <br />
+                <br />
                 <div className="firstContent">
                     <Row>
                         <div className="col-lg-6">

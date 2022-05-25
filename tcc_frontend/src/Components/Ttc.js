@@ -21,6 +21,7 @@ function Ttc() {
 			<body className="ttcBody">
 				<Navbar />
 				<br />
+				<br />
 				<div className="firstContent">
 					<Row>
 						<div className="col-lg-6">

@@ -83,6 +83,16 @@ button.ant-btn.ant-btn-primary.formBtn.mt-2 {
     
 }
 
+@media (min-width: 1300px) {
+  body.contactUsBody {
+      height: 120vh;
+  }
+
+  .contactUs {
+    margin-top: 4%;
+  }
+}
+
 @media (min-width: 1920px) {
  body.contactUsBody {
     background-image: url("../../Assets/Images/ContactUs.png");
