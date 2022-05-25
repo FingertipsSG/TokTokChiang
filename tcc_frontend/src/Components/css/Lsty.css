@@ -34,7 +34,7 @@ img#lstyPic {
 }
 
 .lstyCarousel {
-    margin-top: 12%;
+    margin-top: 8%;
 }
 
 /* responsive styles */
@@ -65,44 +65,36 @@ img#lstyPic {
 }
 
 @media (min-width: 1022px) and (max-width: 1093px) {
-    .lstyCarousel {
-        margin-top: 19%;
-    }
-
     .lstyContent {
-        height: 200px;
+        height: 150px;
     }
 }
 
-@media (min-width: 1093px) and (max-width: 1240px) {
-    .lstyCarousel {
-        margin-top: 18%;
+@media (min-width: 1345px) and (max-width: 1449px)  {
+    .lstyContent {
+        height: 220px;
     }
 }
 
-@media (min-width: 1145px) and (max-width: 1330px) {
-    .lstyCarousel {
-        margin-top: 16%;
+@media (min-width: 1093px) and (max-width: 1344px) {
+    .lstyContent {
+        height: 180px;
     }
 }
 
 @media (min-width: 1224px) and (max-width: 1449px) {
     .lstyCarousel {
-        margin-top: 15%;
+        margin-top: 10%;
     }
 }
 
-@media (min-width: 1449px) and (max-width: 1610px) {
-    .lstyCarousel {
-        margin-top: 13%;
-    }
-        
+@media (min-width: 1449px) and (max-width: 1744px) {
     .lstyContent {
-        height: 300px;
+        height: 250px;
     }
 }
 
-@media (min-width:1610px) {
+@media (min-width: 1744px) {
     .lstyContent {
         height: 350px;
     }
@@ -129,7 +121,7 @@ img#lstyPic {
         margin-left: 92px;
         width:80%;
         margin-bottom: 0;
-        height: 260px;
+        height: 200px;
     }
 }
 

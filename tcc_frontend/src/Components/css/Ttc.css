@@ -19,6 +19,7 @@ body, html{
     margin:0;
     padding:0;
 }
+
 body.ttcBody {
     background: url("../../Assets/Images/AboutUs.png");
     height:130vh;
@@ -65,9 +66,9 @@ body.ttcBody {
 }
 
 img#carouselPic {
-        float: right;
-        width: 70%;
-        margin-right: 100px;
+    float: right;
+    width: 70%;
+    margin-right: 100px;
 }
 
 .carousel-control-prev,
@@ -75,7 +76,6 @@ img#carouselPic {
     display: none;
 }
 
-/* important overrides other styling */
 .carousel-indicators button {
     height: 7px !important;
     width: 7px !important;
@@ -96,7 +96,6 @@ img#carouselPic {
         margin-top: 10% ;
     }
 }
-
 
 @media (min-width: 1093px) and (max-width: 1223px) {
     .ttcContent {
@@ -205,7 +204,6 @@ img#carouselPic {
 /* Common Size: phone & tablet*/
 @media (max-width: 1023px) { 
     body.ttcBody {
-        background-attachment: fixed;
         background-size:cover;
         background-attachment: fixed;
         background-position:0;

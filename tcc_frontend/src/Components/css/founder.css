@@ -1,140 +1,235 @@
-@charset "utf-8";
-
-@font-face {
-    src: url(fonts/AvenirNext.ttf);
-    font-family: AveNext;
-}
-
-@font-face {
-    src: url(fonts/AvenirNext-Bold.ttf);
-    font-family: AveNextBold;
-}
-
-@font-face {
-    src: url(fonts/Calibri\ Regular.ttf);
-    font-family: Calibri;
-}
-
-html {
-    height: 100vh;
-    width: auto;
-}
-
-body {
-    min-height: 100vh;
-    width:auto;
+/* body, html{
+    margin:0;
+    padding:0;
 }
 
 body.founderBody {
-    background-image: url("../../Assets/Images/AboutUs.png");
+    background: url("../../Assets/Images/AboutUs.png");
+    height:130vh;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-attachment: fixed;
+    background-position:100% 100%;  
 }
 
-.title1 {
-    display: inline;
-    color: #790c15;
-    font-family: AveNextBold;
-    font-size: 36px;
-}
-
-.title2 {
-    display: inline;
-    color: #464749;
-    font-family: AveNextBold;
-    font-size: 36px;
-}
-
-h3 {
-    font-weight: bold;
-}
-
-.firstContentText {
-    font-family: AveNext;
-    margin-left: 92px;
-}
-
-.founderDiv {
-    margin-left: -30px;
-}
-
-.FounderContent {
+.founderContent {
     font-family: Calibri;
-    font-size: 19px;
+    font-size: 16px;
     margin-left: 92px;
-    height:400px;
+    height: 300px;
     overflow: auto;
 }
-.FounderPic{
-    width: 38%;
-    margin-top: 30px;
-    margin-left: 120px;
+
+.founderPic {
+    width: 70%;
+    float: right;
+    margin-right: 100px;
+    margin-top: 8%;
+}
+
+@media (min-width: 992px) and (max-width: 1022px) {
+    .founderPic {
+        margin-top: 13% ;
+    }
+
+    .founderContent {
+        height: 200px;
+    }
+}
+
+@media (min-width: 1093px) and (max-width: 1230px) {
+    .founderContent {
+        height: 220px;
+    }
+}
+
+@media (min-width: 1022px) and (max-width: 1093px) {
+    .founderContent {
+        height: 180px
+    }
+}
+
+@media (min-width: 1230px) and (max-width: 1440px) {
+    .founderContent {
+        height: 250px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .founderPic {
+        margin-top: 5% !important;
+    }
+}
+
+@media (min-width: 768px) and ( max-width:1023px){ 
+    html.founderHtml {
+        overflow: hidden;
+    }
+
+    .founderContent {
+        font-size: 14px;
+        margin-left: 92px;
+        width:80%;
+        margin-bottom: 0;
+    }
+} */
+
+/* phone size*/
+/* @media (max-width: 767px) { 
+    html.founderHtml{
+        height:100vh;
+        overflow: hidden;
+    }
+    .founderContent {
+        font-family: Calibri;
+        font-size: 14px;
+        margin-left: 70px;
+        height:350px;
+        width: 80%;
+        overflow:scroll;
+    }
+
+    .founderPic {
+        visibility: hidden;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .founderPic {
+        margin-top: 2% !important;
+    }
+} */
+
+/* Common Size: phone & tablet*/
+/* @media (max-width: 1023px) { 
+    body.founderBody {
+        background-size:cover;
+        background-attachment: fixed;
+        background-position:0;
+     
+    }
 }
 
 @media (min-width: 1024px) { 
     html.founderHtml {
-        overflow: hidden;
+        overflow-x: hidden;
+    }
+}    */
+
+body, html{
+    margin:0;
+    padding:0;
+}
+
+body.founderBody {
+    background: url("../../Assets/Images/AboutUs.png");
+    height:130vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:100% 100%;  
+}
+
+.founderContent {
+    font-family: Calibri;
+    font-size: 16px;
+    margin-left: 92px;
+    height: 300px;
+    overflow: auto;
+}
+
+.founderPic {
+    float: right;
+    width: 70%;
+    margin-right: 100px;
+    margin-top: 8%;
+}
+
+@media (min-width: 1002px) and (max-width: 1022px) {
+    .founderPic {
+        margin-top: 10% ;
     }
 }
+
+@media (min-width: 1093px) and (max-width: 1223px) {
+    .founderContent {
+        height: 200px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .founderPic {
+        margin-top: 5% !important;
+    }
+}
+
+@media (min-width: 1024px) { 
+    html.founderHtml {
+        overflow-x: hidden;
+    }
+}   
+
+@media (min-width: 1224px) and (max-width: 1449px) {
+    .founderContent {
+        height: 250px;
+    }
+    .founderPic {
+        margin-top: 10%;
+    }
+}
+
+@media (min-width: 991px) and (max-width: 1092px) {
+    .founderContent {
+        height: 180px !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .founderPic {
+        margin-top: 3% !important;
+    }
+}
+
 /*tablet*/
-@media (min-width: 768px) and ( max-width:1023px) { 
+@media (min-width: 768px) and ( max-width:1023px){ 
     html.founderHtml {
         overflow: hidden;
     }
-    body.founderBody {
-        background-attachment: fixed;
-        background-size: cover;
-        overflow: hidden;
-    }
-    .FounderContent {
-        font-family: Calibri;
-        font-size: 13px;
+    
+    .founderContent {
+        font-size: 14px;
         margin-left: 92px;
-        height:350px;
         width:80%;
+        margin-bottom: 0;
     }
-    .FounderPic{
-        width:50%; 
-        height:50%;
-        margin-left:230px;
-        
 
-    }
-   
 }
+
 /* phone size*/
 @media (max-width: 767px) { 
     html.founderHtml{
         height:100vh;
         overflow: hidden;
     }
-    body.founderBody {
-        background-attachment: fixed;
-        background-size: cover;
-        overflow: hidden;
-    }
-    .FounderContent {
+    .founderContent {
         font-family: Calibri;
-        font-size: 13px;
-        margin-left: 92px;
+        font-size: 14px;
+        margin-left: 70px;
         height:350px;
-        width:70%;
+        width: 80%;
+        overflow:scroll;
         
     }
-    .FounderPic{
-       visibility: hidden;
+    
+    .founderPic{
+        visibility:hidden;
     }
-    .title1 {
-        display: inline;
-        color: #790c15;
-        font-family: AveNextBold;
-        font-size: 20px;
-    }
-    h2 {
-        
-        color: #464749;
-        font-family: AveNextBold;
-        font-size: 20px;
+}
+
+/* Common Size: phone & tablet*/
+@media (max-width: 1023px) { 
+    body.founderBody {
+        background-size:cover;
+        background-attachment: fixed;
+        background-position:0;
+     
     }
 }
