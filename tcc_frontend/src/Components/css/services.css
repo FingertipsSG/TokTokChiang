@@ -21,12 +21,12 @@ body.services-body {
     background-size: 100% 100%;
 }
 
-th {
+Table.services-table.th {
     font-size:22px;
     color: #790c15;
 }
 
-td {
+Table.services-table.td {
     font-size:18px;
 }
 
@@ -53,11 +53,11 @@ Table.services-table {
         background-size:cover;
     }
 
-    th {
+    Table.services-table.th {
        font-size:16px;
     }
 
-    td {
+    Table.services-table.td {
         font-size:15px;
     }
 
@@ -82,11 +82,11 @@ Table.services-table {
         overflow: hidden;
     }
 
-    th {
+    Table.services-table.th {
         font-size:10px;
     }
     
-    td {
+    Table.services-table.td {
         font-size:8px;
     }
 
