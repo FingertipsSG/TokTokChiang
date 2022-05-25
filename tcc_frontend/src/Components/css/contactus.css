@@ -52,23 +52,6 @@ textarea#basic_message {
   border-width: 2px;
 }
 
-@media (min-width: 768px) and ( max-width: 1023px) {
-    .contactUs {
-    margin-left: 25%;
-    margin-top: 10%;
-  }
-  
-}
-/*Phone size*/
-@media (max-width: 767px) { 
-  .contactUs {
-    padding: 10%;
-    margin-left: 18%;
-  }
-  .ant-form-item {
-    width: 100%;
-  }
-}
 
 
 /* Common Size: phone & tablet*/
@@ -110,21 +93,51 @@ textarea#basic_message {
   } 
 }
 
+@media (min-width: 1800px ) and (max-width:1920px) {
+  body.contactUsBody {
+  background-image: url("../../Assets/Images/ContactUs.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position:0% 0%; 
+ }
+ .contactUs {
+  margin-left:40%;
+  margin-top: 5%;
+  width:150%;
 
+}  
+}
+
+
+@media (min-width: 1280px ) and (max-width:1800px) {
+  body.contactUsBody {
+  background-image: url("../../Assets/Images/ContactUs.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position:0% 0%; 
+ }
+ .contactUs {
+  margin-left:40%;
+  margin-top: 5%;
+  width:150%;
+
+}  
+}
 
 @media (min-width: 1224px) and (max-width: 1279px) {
-    body.contactUsBody {
-    background-image: url("../../Assets/Images/ContactUs.png");
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-   }
-   .contactUs {
-    margin-left:40%;
-    margin-top: 5%;
-    width:200%;
+  body.contactUsBody {
+  background-image: url("../../Assets/Images/ContactUs.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position:0% 0%; 
+ }
+ .contactUs {
+  margin-left:40%;
+  margin-top: 5%;
+  width:200%;
 
-  }  
+}  
 }
 
 
@@ -138,7 +151,7 @@ textarea#basic_message {
    }
    .contactUs {
     margin-left:35%;
-    margin-top: 2%;
+    margin-top: 5.5%;
     width:200%;
 
   }
@@ -162,3 +175,29 @@ textarea#basic_message {
   
 }
 
+@media (min-width: 768px) and ( max-width: 1023px) {
+  .contactUs {
+  margin-left: 25%;
+  margin-top: 10%;
+}
+
+}
+/*Phone size*/
+@media (max-width: 767px) { 
+.contactUs {
+  padding: 10%;
+  margin-left: 18%;
+}
+.ant-form-item {
+  width: 100%;
+}
+}
+@media (max-width: 566px) { 
+.contactUs {
+  padding: 10%;
+  margin-left:2%;
+}
+.ant-form-item {
+  width: 100%;
+}
+}
