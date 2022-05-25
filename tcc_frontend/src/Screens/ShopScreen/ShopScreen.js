@@ -359,11 +359,11 @@ function ShopScreen() {
   // DELETE AND POST PRODUCT FUNCTION
   const onDeleteProduct = (id) => {
     const endpoint = "deleteProduct";
-    const params = { pID: id, shop: type };
+    const params = { pID: id };
 
     Utils.deleteApi(endpoint, params).then((res) => {
       // console.log(res);
-      if (res.data.affectedRows === 1) {
+      if (res.status === 204) {
         message.success("Successfully deleted product");
         setRender(!render);
       }
