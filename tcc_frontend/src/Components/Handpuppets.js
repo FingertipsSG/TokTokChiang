@@ -55,7 +55,7 @@ function HandPuppets() {
 
       // Fetch data from backend
       const res = await Utils.getProductsLazyLoad(startRow, endRow, {
-        shop: "puppets",
+        categoryId: 2,
       });
 
       // If no results returned
@@ -68,10 +68,11 @@ function HandPuppets() {
 
         res.forEach((puppet, index) => {
           let newPuppet = new Puppet(
-            puppet.product_name,
-            puppet.product_description,
-            puppet.product_price,
-            puppet.product_image
+            puppet.productid,
+            puppet.productname,
+            puppet.productdesc,
+            puppet.price,
+            puppet.image
           );
 
           puppetsArr.push(newPuppet);
@@ -174,7 +175,9 @@ function HandPuppets() {
           <Spin size="default" spinning={isLoading} />
         </div>
       );
-    } else if (!isLoading && puppets.length === 0) {
+    }
+
+    if (puppets.length === 0) {
       return <h1 className="comingsoon">COMING SOON</h1>;
     } else {
       return (

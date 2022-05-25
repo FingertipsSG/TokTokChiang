@@ -259,7 +259,7 @@ productsDB = {};
 //   });
 // };
 
-// GET Products - NON Lazy Loading
+// GET Products - NON Lazy Loading NEW
 productsDB.getProducts = function (categoryId, callback) {
   // console.log(catId);
   var conn = db.getConnection();
@@ -270,7 +270,7 @@ productsDB.getProducts = function (categoryId, callback) {
     } else {
       console.log("Connected!");
       // fk_identityid = 1 : Get the main image of product
-      // catId: Get the correct type of products
+      // categoryId: Get the correct type of products
       var sql = `SELECT productid, productname, productdesc, price, url, image
                 FROM products
                 JOIN images
@@ -290,7 +290,7 @@ productsDB.getProducts = function (categoryId, callback) {
   });
 };
 
-// GET Images - Side and back images
+// GET Images - Side and back images NEW
 productsDB.getOtherImages = function (productId, callback) {
   console.log(productId);
   var conn = db.getConnection();
@@ -321,7 +321,7 @@ productsDB.getOtherImages = function (productId, callback) {
   });
 };
 
-// Get Products - Lazy Loading
+// Get Products - Lazy Loading NEW
 productsDB.getProductsLL = function (categoryId, startRow, endRow, callback) {
   var conn = db.getConnection();
   conn.connect(function (err) {
@@ -350,6 +350,7 @@ productsDB.getProductsLL = function (categoryId, startRow, endRow, callback) {
   });
 };
 
+// DELETE PRODUCT NEW
 productsDB.deleteProduct = function (productId, callback) {
   console.log(productId);
   var conn = db.getConnection();

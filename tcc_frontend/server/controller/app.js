@@ -12,6 +12,7 @@ const port = process.env.PORT || 5001;
 
 app.use(express.json());
 app.use(cors());
+app.use(fileUpload());
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 const userDB = require("../model/users.js");
