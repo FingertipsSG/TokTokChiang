@@ -43,6 +43,10 @@ Table{
     body.services-body {
         height: 120vh;
     }
+    Table{
+        margin-top:1.5%;
+    
+    }
 }
 
 @media (min-width: 1024px) { 
