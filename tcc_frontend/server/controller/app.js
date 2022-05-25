@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 
 const fastcsv = require("fast-csv");
 const fs = require("fs");
@@ -13,7 +14,6 @@ const port = process.env.PORT || 5001;
 app.use(express.json());
 app.use(cors());
 app.use(fileUpload());
-app.listen(port, () => console.log(`Listening on port ${port}`));
 
 const userDB = require("../model/users.js");
 const productsDB = require("../model/products.js");
@@ -26,6 +26,15 @@ const csvParser = require("csv-parser");
 
 app.use(urlencodedParser);
 app.use(fileUpload());
+
+app.use(express.static(path.join(__dirname, "..", "..", "build")));
+app.use(express.static("public"));
+
+// app.get('/', (req, res, next) => { 
+//   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' }); 
+// });
+
+app.listen(port, () => console.log(`Listening on port ${port}`));
 
 app.post("/addProduct", (req, res) => {
     var { productname, productdesc, price, url, fk_catid } = req.body;
@@ -167,6 +176,10 @@ app.delete("/deleteProduct", (req, res) => {
       return res.status(500).send();
     }
   });
+});
+
+app.use("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "..", "build", "index.html"));
 });
 
 module.exports = app;
