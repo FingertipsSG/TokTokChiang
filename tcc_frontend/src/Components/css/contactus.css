@@ -57,14 +57,19 @@ textarea#basic_message {
     margin-left: 25%;
     margin-top: 10%;
   }
+  
 }
 /*Phone size*/
 @media (max-width: 767px) { 
   .contactUs {
     padding: 10%;
-    margin-left: 0;
+    margin-left: 18%;
+  }
+  .ant-form-item {
+    width: 100%;
   }
 }
+
 
 /* Common Size: phone & tablet*/
 @media (max-width: 1023px) { 
@@ -133,7 +138,7 @@ textarea#basic_message {
    }
    .contactUs {
     margin-left:35%;
-    margin-top: 6%;
+    margin-top: 2%;
     width:200%;
 
   }
@@ -156,3 +161,4 @@ textarea#basic_message {
   }
   
 }
+
