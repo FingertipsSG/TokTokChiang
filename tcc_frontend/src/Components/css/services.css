@@ -93,7 +93,6 @@ Table{
     body.services-body {
         background-image:none;
         background-image: url("../../Assets/Images/AboutUs.png");
-        background-attachment: fixed;
         background-size: cover;
         overflow: hidden;
     }
@@ -114,7 +113,6 @@ Table{
 @media (max-width: 1023px) { 
     body.services-body {
         background-image: url("../../Assets/Images/AboutUs.png");
-        background-attachment: fixed;
         background-size:cover;
         background-position:0;
      
@@ -123,7 +121,7 @@ Table{
 @media (min-width: 1920px){
     Table{
         margin-left:30%;
-        margin-top:7%;
+        margin-top:10%;
     }
     body.services-body {
         background-image: url("../../Assets/Images/services.png");
@@ -142,7 +140,7 @@ Table{
 @media (min-width: 1800px ) and (max-width:1920px){
     Table{
         margin-left:30%;
-        margin-top:7%;
+        margin-top:10%;
     }
     body.services-body {
         background-image: url("../../Assets/Images/services.png");
@@ -160,11 +158,10 @@ Table{
 @media (min-width: 1600px ) and (max-width:1800px){
     Table{
         margin-left:30%;
-        margin-top:7%;
+        margin-top:10%;
     }
     body.services-body {
         background-image: url("../../Assets/Images/services.png");
-        background-attachment: fixed;
         background-size:cover;
         background-position:0% 0%;
      
@@ -180,29 +177,40 @@ Table{
 @media (min-width: 1550px) and (max-width: 1600px){
     Table{
         margin-left:30%;
-        margin-top:6%;
+        margin-top:10%;
     }
     body.services-body {
         background-image: url("../../Assets/Images/services.png");
-        background-attachment: fixed;
         background-size:cover;
         background-position:0% 0%;
      
     }
 }
-@media (min-width: 1300px) and (max-width: 1550px){
+
+@media (min-width: 1400px) and (max-width: 1550px) {
+    Table{
+        margin-left:30%;
+        margin-top:5%;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/services.png");
+        background-size:cover;
+        background-position:0% 0%;
+    }
+}
+
+@media (min-width: 1300px) and (max-width: 1399px){
     Table{
         margin-left:30%;
         margin-top:6%;
     }
     body.services-body {
         background-image: url("../../Assets/Images/services.png");
-        background-attachment: fixed;
         background-size:cover;
         background-position:0% 0%;
-     
     }
 }
+
 
 @media (min-width: 1200px) and (max-width: 1279px){
     Table{
@@ -211,20 +219,19 @@ Table{
     }
     body.services-body {
         background-image: url("../../Assets/Images/services.png");
-        background-attachment: fixed;
         background-size:cover;
+        background-attachment: fixed;
         background-position:0% 0%;
      
     }
 }
 @media (min-width: 1092px) and (max-width: 1200px){
     Table{
-        margin-left:30%;
-        margin-top:10%;
+        margin-left:34%;
+        margin-top:17%;
     }
     body.services-body {
         background-image: url("../../Assets/Images/services.png");
-        background-attachment: fixed;
         background-size:cover;
         background-position:0% 0%;
      
@@ -237,8 +244,8 @@ Table{
     }
     body.services-body {
         background-image: url("../../Assets/Images/AboutUs.png");
-        background-attachment: fixed;
         background-size:cover;
+        background-attachment: fixed;
         background-position:0% 0%;
      
     }
@@ -250,10 +257,9 @@ Table{
     }
     body.services-body {
         background-image: url("../../Assets/Images/AboutUs.png");
-        background-attachment: fixed;
         background-size:cover;
         background-position:0% 0%;
-     
+        background-attachment: fixed;
     }
 }
 @media (min-width: 990px) and (max-width: 1023px){
