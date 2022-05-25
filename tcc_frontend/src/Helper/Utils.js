@@ -33,7 +33,7 @@ export async function getProductsLazyLoad(startRow, endRow, parameters) {
         "Content-Type": "application/json",
       },
     });
-    return res.response;
+    return res;
   } catch (e) {
     console.log("[getApi error]");
     console.log("url: " + url);
