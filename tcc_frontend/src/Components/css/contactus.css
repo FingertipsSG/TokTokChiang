@@ -107,21 +107,21 @@ textarea#basic_message {
 
 
 
-@media (min-width: 1224px) and (max-width: 1449px) {
-   /* body.contactUsBody {
+@media (min-width: 1224px) and (max-width: 1279px) {
+    body.contactUsBody {
     background-image: url("../../Assets/Images/ContactUs.png");
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position:0% 0%;  
    }
    .contactUs {
     margin-left:40%;
     margin-top: 5%;
     width:200%;
 
-  }  */
+  }  
 }
+
 
 @media (min-width: 1093px) and (max-width: 1223px) {
   body.contactUsBody {
