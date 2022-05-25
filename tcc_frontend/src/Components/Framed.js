@@ -53,18 +53,19 @@ function Framed() {
       }
 
       // Fetch data from backend
-      const res = await Utils.getProductsLazyLoad(startRow, endRow, {
+      var res = await Utils.getProductsLazyLoad(startRow, endRow, {
         categoryId: 5,
       });
 
       // If no results returned
-      if (res.length <= 0) {
+      if (res.status === 404) {
         console.log("has no more data");
         setHasMore(false);
       } else {
         // Keep pushing new mask into masks array
         let framesArr = [];
 
+        res = res.data;
         res.forEach((frame, index) => {
           let newFrame = new Frame(
             frame.productid,

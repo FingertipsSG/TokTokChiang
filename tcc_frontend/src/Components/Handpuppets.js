@@ -54,18 +54,19 @@ function HandPuppets() {
       }
 
       // Fetch data from backend
-      const res = await Utils.getProductsLazyLoad(startRow, endRow, {
+      var res = await Utils.getProductsLazyLoad(startRow, endRow, {
         categoryId: 2,
       });
 
       // If no results returned
-      if (res.length <= 0) {
+      if (res.status === 404) {
         console.log("has no more data");
         setHasMore(false);
       } else {
         // Keep pushing new puppet to puppets array
         let puppetsArr = [];
 
+        res = res.data;
         res.forEach((puppet, index) => {
           let newPuppet = new Puppet(
             puppet.productid,

@@ -53,18 +53,19 @@ function Dolls() {
       }
 
       // Fetch data from backend
-      const res = await Utils.getProductsLazyLoad(startRow, endRow, {
+      var res = await Utils.getProductsLazyLoad(startRow, endRow, {
         categoryId: 3,
       });
 
       // If no results returned
-      if (res.length <= 0) {
+      if (res.status === 404) {
         console.log("has no more data");
         setHasMore(false);
       } else {
         // Keep pushing new doll to dolls array
         let dollsArr = [];
 
+        res = res.data;
         res.forEach((doll, index) => {
           let newDoll = new Doll(
             doll.productid,

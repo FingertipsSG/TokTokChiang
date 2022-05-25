@@ -53,18 +53,19 @@ function Masks() {
       }
 
       // Fetch data from backend
-      const res = await Utils.getProductsLazyLoad(startRow, endRow, {
+      var res = await Utils.getProductsLazyLoad(startRow, endRow, {
         categoryId: 1,
       });
 
       // If no results returned
-      if (res.length <= 0) {
+      if (res.status === 404) {
         console.log("has no more data");
         setHasMore(false);
       } else {
         // Keep pushing new mask into masks array
         let masksArr = [];
 
+        res = res.data;
         res.forEach((mask, index) => {
           let newMask = new Mask(
             mask.productid,
