@@ -54,7 +54,7 @@ function Dolls() {
 
       // Fetch data from backend
       const res = await Utils.getProductsLazyLoad(startRow, endRow, {
-        shop: "dolls",
+        categoryId: 3,
       });
 
       // If no results returned
@@ -67,10 +67,11 @@ function Dolls() {
 
         res.forEach((doll, index) => {
           let newDoll = new Doll(
-            doll.product_name,
-            doll.product_description,
-            doll.product_price,
-            doll.product_image
+            doll.productid,
+            doll.productname,
+            doll.productdesc,
+            doll.price,
+            doll.image
           );
 
           dollsArr.push(newDoll);
@@ -173,7 +174,9 @@ function Dolls() {
           <Spin size="default" spinning={isLoading} />
         </div>
       );
-    } else if (!isLoading && dolls.length === 0) {
+    }
+
+    if (dolls.length === 0) {
       return <h1 className="comingsoon">COMING SOON</h1>;
     } else {
       return (

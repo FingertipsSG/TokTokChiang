@@ -54,7 +54,7 @@ function Tshirts() {
 
       // Fetch data from backend
       const res = await Utils.getProductsLazyLoad(startRow, endRow, {
-        shop: "shirts",
+        categoryId: 4,
       });
 
       // If no results returned
@@ -67,10 +67,11 @@ function Tshirts() {
 
         res.forEach((shirt, index) => {
           let newShirt = new Shirt(
-            shirt.product_name,
-            shirt.product_description,
-            shirt.product_price,
-            shirt.product_image
+            shirt.productid,
+            shirt.productname,
+            shirt.productdesc,
+            shirt.price,
+            shirt.image
           );
 
           shirtsArr.push(newShirt);
@@ -173,7 +174,9 @@ function Tshirts() {
           <Spin size="default" spinning={isLoading} />
         </div>
       );
-    } else if (!isLoading && shirts.length === 0) {
+    }
+
+    if (shirts.length === 0) {
       return <h1 className="comingsoon">COMING SOON</h1>;
     } else {
       return (

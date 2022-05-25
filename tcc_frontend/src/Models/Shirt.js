@@ -1,5 +1,6 @@
 class Shirt {
-  constructor(name, desc, price, image) {
+  constructor(productId, name, desc, price, image) {
+    this.productId = productId;
     this.name = name;
     this.desc = desc;
     this.price = price;
