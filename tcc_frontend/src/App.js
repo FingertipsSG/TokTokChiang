@@ -51,7 +51,7 @@ function App() {
 
 					<Route path="dolls" element={<Dolls />} />
 					<Route path="masks" element={<Masks />} />
-					<Route path="tshirt" element={<Tshirt />} />
+					<Route path="tshirts" element={<Tshirt />} />
 					<Route path="framed" element={<Framed />} />
 					<Route path="handpuppets" element={<HandPuppets />} />
 

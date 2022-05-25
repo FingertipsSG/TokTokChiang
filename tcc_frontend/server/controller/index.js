@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 
 const fastcsv = require("fast-csv");
 const fs = require("fs");
@@ -13,7 +14,6 @@ const port = process.env.PORT || 5001;
 app.use(express.json());
 app.use(cors());
 app.use(fileUpload());
-app.listen(port, () => console.log(`Listening on port ${port}`));
 
 const userDB = require("../model/users.js");
 const productsDB = require("../model/products.js");
@@ -34,6 +34,15 @@ app.use(urlencodedParser);
 //   database: "toktokchiang",
 //   timeout: 4000,
 // });
+
+app.use(express.static(path.join(__dirname, "..", "..", "build")));
+app.use(express.static("public"));
+
+// app.get('/', (req, res, next) => { 
+//   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' }); 
+// });
+
+app.listen(port, () => console.log(`Listening on port ${port}`));
 
 //------------------------------USERS.JS-----------------------------------------------
 //ADD USER
@@ -603,5 +612,9 @@ app.post("/sendEmailPin", (req, res) => {
 //     });
 //   });
 // });
+
+app.use("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "..", "build", "index.html"));
+});
 
 module.exports = app;
