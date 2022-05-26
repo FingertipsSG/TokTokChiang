@@ -225,6 +225,11 @@ function Dolls() {
 
       <body className="dolls-body shop-body">
         <Navbar />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br /> 
         <div className="shop-container">{renderController()}</div>
       </body>
     </html>
