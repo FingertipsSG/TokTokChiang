@@ -31,11 +31,11 @@
 /* Nav Bar*/
 .navbar {
   padding: 1rem 1.5rem;
-  position: relative;
-  top: 10px;
+  z-index: 1020;
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
+  background-color: white;
 }
 
 .navbar__logo {

@@ -228,6 +228,11 @@ function HandPuppets() {
 
       <body className="puppets-body shop-body">
         <Navbar />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br /> 
         <div className="shop-container">{renderController()}</div>
       </body>
     </html>

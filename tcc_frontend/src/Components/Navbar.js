@@ -12,7 +12,7 @@ function TopNavBar() {
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 			</Helmet>
-			<nav className="navbar navbar-expand-lg navbar-light">
+			<nav className="navbar navbar-expand-lg navbar-light" style={{position: "fixed"}}>
 				<NavLink to="/" className="navbar_img">
 					<img src={Logo} alt="logo" className="navbar-brand navbar__logo" />
 				</NavLink>

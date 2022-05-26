@@ -19,6 +19,9 @@ function Wayang() {
                 <Navbar />
                 <br />
                 <br />
+                <br />
+                <br />
+                <br />
                 <div className="firstContent">
                     <Row>
                         <div className="col-lg-6">
