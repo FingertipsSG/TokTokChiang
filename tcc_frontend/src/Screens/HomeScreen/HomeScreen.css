@@ -1,10 +1,163 @@
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: montserrat, sans-serif;;
-} */
-h1.shop{
-    color:#790C15; 
-    text-transform: uppercase;
+body, html{
+    margin:0;
+    padding:0;
+}
+
+body.homePageBody {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-size: 100% auto;
+    background-position:bottom;
+    background-repeat: no-repeat;
+    height: auto;
+    overflow-x: hidden;
+}
+
+.extraHeight {
+    height: 220px;
+}
+
+.homeContent2 {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Calibri;
+    font-size: 16px;
+}
+
+.homeContent {
+    font-family: Calibri;
+    font-size: 16px;
+    margin-left: 92px;
+    height: 300px;
+    overflow: auto;
+}
+
+.homeFounderPic {
+    float: right;
+    width: 70%;
+    margin-right: 100px;
+    margin-top: 8%;
+}
+
+.secondHeader {
+    text-align: center;
+}
+
+@media (min-width: 1002px) and (max-width: 1022px) {
+    .homeFounderPic {
+        margin-top: 10% ;
+    }
+}
+
+@media (min-width: 1093px) and (max-width: 1223px) {
+    .homeContent {
+        height: 200px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .homeFounderPic {
+        margin-top: 5% !important;
+    }
+}
+
+@media (min-width: 1024px) { 
+    html.homeHtml {
+        overflow-x: hidden;
+    }
+}      
+
+@media (min-width: 1224px) and (max-width: 1449px) {
+    .homeContent {
+        height: 250px;
+    }
+    .homeFounderPic {
+        margin-top: 10%;
+    }
+}
+
+@media (min-width: 991px) and (max-width: 1092px) {
+    .homeContent     {
+        height: 180px !important;
+    }
+ 
+    .homeContent2 {
+        overflow: scroll;
+        height: 200px;
+        margin-top: 1%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .homeFounderPic {
+        margin-top: 3% !important;
+    }
+}
+
+@media (min-width: 768px) and ( max-width:1023px){ 
+    .homeContent {
+        font-size: 14px;
+        margin-left: 92px;
+        width:80%;
+        margin-bottom: 0;
+    }
+    .homeContent2 {
+        margin-left: 92px;
+        width: 80%;
+    }
+
+}
+
+@media (max-width: 767px) { 
+    html.homeHtml{
+        height:100vh;
+    }
+    .homeContent {
+        font-size: 14px;
+        margin-left: 70px;
+        height:200px;
+        width: 80%;
+        overflow:auto;
+        margin-bottom: 0;
+    }
+    .homeContent2 {
+        font-size: 14px;
+        margin-left: 70px;
+        height:200px;
+        width: 80%;
+    }
+    .homeFounderPic{
+        visibility:hidden;
+    }
+    .hidden {
+        width: 0;
+        height: 0;
+    }
+    .card {
+        margin-top: 1%;
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        width: 55%;
+        margin-left: auto;
+        margin-right: auto;    
+    }
+    .card-body {
+        padding: 0;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 576px) {
+    .card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1023px) { 
+    body.homePageBody {
+        background-size:cover;
+        background-attachment: fixed;
+        background-position:0;
+    }
 }
