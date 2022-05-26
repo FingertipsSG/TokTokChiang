@@ -1,7 +1,7 @@
 .btn {
     border: none;
     background: transparent;
-    padding: 6px 16px;
+    padding: 3px 8px;
     font-size: 1.1rem;
     color: white;
     background: #B22222;;
@@ -30,4 +30,10 @@
 .btn-action:hover{
     color: white;
 	background: #6c6c6c;
+}
+
+@media(min-width:1500px){
+    btn {
+        padding: 6px 16px;
+    }
 }

@@ -36,3 +36,10 @@
   
     color:#9e202b;
 }
+
+@media(min-width:1500px){
+    img {
+        width:300px;
+        height:70px;
+    }
+}

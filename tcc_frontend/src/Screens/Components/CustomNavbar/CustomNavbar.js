@@ -20,7 +20,7 @@ function CustomNavbar() {
     <>
       <nav className="admin-navbar">
         <Link to="/adminportal" className="admin-navbar-logo">
-          <img src={logo} alt="Logo" width={300} height={70}/>
+          <img src={logo} alt="Logo" width={200} height={40}/>
         </Link>
         <ul className="admin-nav-items">
           {navItems.map((item) => {
