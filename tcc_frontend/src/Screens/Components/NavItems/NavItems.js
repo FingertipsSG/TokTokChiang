@@ -1,28 +1,22 @@
 export const navItems = [
     {
         id: 1,
-        title: "Live Site",
-        path: "/",
-        cName: "admin-nav-item",
-    },
-    {
-        id: 2,
         title: "Shop",
         path: "/shop",
         cName: "admin-nav-item",
     },
     {
-        id: 3,
+        id: 2,
         title: "Admin",
         path: "/users",
         cName: "admin-nav-item",
     },
     {
-        id: 4,
-        title: "Settings",
-         path: "/settings",
+        id: 3,
+        title: "Live Site",
+        path: "/",
         cName: "admin-nav-item",
-    },
+    }
 ];
 
 // export const settingsDropdown = [
