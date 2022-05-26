@@ -150,11 +150,6 @@ body.shop-body {
   overflow: auto;
 }
 
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent; /* make scrollbar transparent */
-}
-
 /* specific to shop type */
 body.dolls-body {
   background-image: url("../../Assets/Images/dolls.png");

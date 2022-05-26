@@ -3,6 +3,7 @@ import "../Components/css/navbar.css";
 import Logo from "../Assets/Images/toktoklogo.png";
 import { Helmet } from "react-helmet";
 
+
 function TopNavBar() {
 	return (
 		<div className="body">
@@ -22,12 +23,9 @@ function TopNavBar() {
 				{/* links */}
 				<div className="collapse navbar-collapse justify-content-end" id="toggler" >
 					<ul className="navbar-nav">
-						{/* <li className="nav-item">
-							<NavLink to="/products" className="link nav-link">ABOUT US</NavLink>
-						</li> */}
 						<li className="nav-item">
 							<div className="dropdown">
-								<a className="link nav-link home">
+								<a className="link nav-link">
 									ABOUT US
 								</a>
 								<div className="dropdown-menu">
@@ -35,12 +33,13 @@ function TopNavBar() {
 									<Link className="dropdown-item" to="/TokTokChiang">TOK TOK CHIANG OPERA</Link>
 									<Link className="dropdown-item" to="/Wayang">TOK TOK CHIANG WAYANG</Link>
 									<Link className="dropdown-item" to="/LaoSaiTaoYuan">LAO SAI TAO YUAN</Link>
+								
 								</div>
 							</div>
 						</li>
 						<li className="nav-item">
 							<div className="dropdown">
-								<a className="link nav-link shop">
+								<a className="link nav-link">
 									SHOP
 								</a>
 								<div className="dropdown-menu">
@@ -54,7 +53,7 @@ function TopNavBar() {
 						</li>
 						<li className="nav-item">
 							<div className="dropdown">
-								<a className="link nav-link shop">
+								<a className="link nav-link">
 									SUPPORT
 								</a>
 								<div className="dropdown-menu">
