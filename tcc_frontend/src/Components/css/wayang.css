@@ -1,155 +1,123 @@
 @charset "utf-8";
-  ::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 7px;
 } 
 
 ::-webkit-scrollbar-track {
-border-radius: 12px;
+    border-radius: 12px;
 }  
 
 ::-webkit-scrollbar-thumb {
-background: grey; 
-border-radius: 12px;
+    background: grey; 
+    border-radius: 12px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-background: rgb(65, 65, 65); 
+    background: rgb(65, 65, 65); 
 }  
 
-@font-face {
-    src: url(fonts/AvenirNext.ttf);
-    font-family: AveNext;
+body, html{
+    margin:0;
+    padding:0;
 }
 
-@font-face {
-    src: url(fonts/AvenirNext-Bold.ttf);
-    font-family: AveNextBold;
-}
-
-@font-face {
-    src: url(fonts/Calibri\ Regular.ttf);
-    font-family: Calibri;
-}
-
-.wayangContentTitle {
-    font-family: AveNext;
-    font-size: 20px;
-    margin-left: 8%;
+.wayangBody {
+    background: url("../../Assets/Images/AboutUs.png");
+    height:130vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:100% 100%;  
 }
 
 .wayangContent {
     font-family: Calibri;
     font-size: 16px;
-    max-width: 80%;
-    height: 300px;
-    overflow: auto;
-    margin-left: 8%;
-}
-
-.wayangContentAll {
+    margin-left: 92px;
     height: 300px;
     overflow: auto;
 }
 
-.wayangBody {
-    background-image: url("../../Assets/Images/AboutUs.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-
-.wayangTitle {
-    display: inline;
-    color: #464749;
-    font-family: AveNextBold;
-    font-size: 36px;
-}
-
-.wayangTok {
-    display: inline;
-    color: #790c15;
-    font-family: AveNextBold;
-    font-size: 36px;
-}
-
-/* carousel styles */
-
-#wayangCarouselPic {
+img#wayangPic {
     float: right;
     width: 70%;
     margin-right: 100px;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-    display: none;
+@media (min-width: 1093px) and (max-width: 1223px) {
+    .wayangContent {
+        height: 200px;
+    }
 }
-
-/* important overrides other styling */
-.carousel-indicators button {
-    height: 7px !important;
-    width: 7px !important;
-    margin: 0 10px !important;
-    border-radius: 100%;
-    background-color: white !important;
-}
-
-/* RESPONSIVE CSS */
-
 
 @media (min-width: 1024px) { 
     html.wayangHtml {
+        overflow-x: hidden;
+    }
+}  
+
+@media (min-width: 991px) and (max-width: 1092px) {
+    .wayangContent {
+        height: 180px !important;
+    }
+}
+
+@media (min-width: 1300px) {
+    body.wayangBody {
+        height: 120vh;
+    }
+}
+
+@media (min-width: 768px) and ( max-width:1023px){ 
+    html.wayangHtml {
         overflow: hidden;
     }
-}    
-
-@media (min-width: 1640px) {
-    #wayangCarouselPic {
-        margin-top: 0% !important;
-    }
-}
-
-/* laptop */
-@media (min-width: 1024px) and (max-width: 1300px) {
-    #wayangCarouselPic {
-        margin-top: 15%;
-    }
-
-}
-
-
-/* tablet */
-@media (min-width: 768px) and (max-width:1023px){
-    #wayangCarouselPic {
-        margin-top: 20px;
-    }
-
-    .wayangBody {
+    body.wayangBody {
         background-attachment: fixed;
         background-size: cover;
         overflow: hidden;
     }
+    .wayangContent {
+        font-size: 14px;
+        margin-left: 92px;
+        width:80%;
+        height: 280px
+    }
+}
 
-    .wayangCarouselSlide {
-        padding: 0;
+@media (min-width: 1224px) and (max-width: 1449px) {
+    .wayangContent {
+        height: 250px;
+    }
+}
+
+@media (max-width: 767px) { 
+    html.wayangHtml{
+        height:100vh;
+        overflow: hidden;
+    }
+    .wayangContent {
+        font-family: Calibri;
+        font-size: 14px;
+        margin-left: 70px;
+        height:350px;
+        width: 80%;
+        overflow:scroll; 
+    }
+    .wayangTitle {
+        font-size: 22px;
+    }
+    .wayangCarousel{
+        visibility:hidden;
     }
     
 }
 
-@media (max-width: 767px){
-    #wayangCarouselPic {
-        width: 75%;
-        margin-right: 8%;
-    }
-
-    .wayangBulkContent {
-        margin-right: 5%;
-        padding: 0;
-    }
-
-    .wayangBody {
+@media (max-width: 1023px) { 
+    body.wayangBody {
         background-attachment: fixed;
-        background-size: cover;
-        overflow: hidden;
+        background-size:cover;
+        background-attachment: fixed;
+        background-position:0;
+     
     }
 }
-
