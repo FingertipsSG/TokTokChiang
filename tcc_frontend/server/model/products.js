@@ -306,7 +306,8 @@ productsDB.getOtherImages = function (productId, callback) {
                 FROM products
                 JOIN images
                 ON products.productid = images.fk_productid
-                WHERE fk_productid = ? AND fk_identityid != 1`;
+                WHERE fk_productid = ? AND fk_identityid != 1
+                ORDER BY fk_identityid ASC`;
       conn.query(sql, [productId], function (err, result) {
         conn.end();
         if (err) {
@@ -376,7 +377,14 @@ productsDB.deleteProduct = function (productId, callback) {
 };
 
 // ADD PRODUCT NEW
-productsDB.addProducts = function ( productname, productdesc, price, url, fk_catid, callback ) {
+productsDB.addProducts = function (
+  productname,
+  productdesc,
+  price,
+  url,
+  fk_catid,
+  callback
+) {
   var conn = db.getConnection();
   conn.connect(function (err) {
     if (err) {
@@ -384,9 +392,13 @@ productsDB.addProducts = function ( productname, productdesc, price, url, fk_cat
       return callback(err, null);
     } else {
       console.log("Connected!");
-      var sql = "INSERT INTO products (productname, productdesc, price, url, fk_catid) VALUES (?,?,?,?,?)";
+      var sql =
+        "INSERT INTO products (productname, productdesc, price, url, fk_catid) VALUES (?,?,?,?,?)";
 
-      conn.query(sql, [ productname, productdesc, price, url, fk_catid ], function (err, result) {
+      conn.query(
+        sql,
+        [productname, productdesc, price, url, fk_catid],
+        function (err, result) {
           conn.end();
           if (err) {
             console.log(err);
@@ -402,7 +414,15 @@ productsDB.addProducts = function ( productname, productdesc, price, url, fk_cat
 };
 
 //EDIT PRODUCT NEW
-productsDB.editProduct = function ( productname, productdesc, price, url, fk_catid, productid, callback ) {
+productsDB.editProduct = function (
+  productname,
+  productdesc,
+  price,
+  url,
+  fk_catid,
+  productid,
+  callback
+) {
   var conn = db.getConnection();
   conn.connect(function (err) {
     if (err) {
@@ -410,9 +430,13 @@ productsDB.editProduct = function ( productname, productdesc, price, url, fk_cat
       return callback(err, null);
     } else {
       console.log("Connected!");
-      const sql = "UPDATE products SET productname = ?, productdesc = ?, price = ?, url = ?, fk_catid = ? WHERE productid = ?";
-      
-      conn.query(sql, [productname, productdesc, price, url, fk_catid, productid], function (err, result) {
+      const sql =
+        "UPDATE products SET productname = ?, productdesc = ?, price = ?, url = ?, fk_catid = ? WHERE productid = ?";
+
+      conn.query(
+        sql,
+        [productname, productdesc, price, url, fk_catid, productid],
+        function (err, result) {
           conn.end();
           if (err) {
             console.log(err);
@@ -428,7 +452,7 @@ productsDB.editProduct = function ( productname, productdesc, price, url, fk_cat
 };
 
 //ADD IMAGE NEW
-productsDB.addImage = function ( image, productid, identityid, callback ) {
+productsDB.addImage = function (image, productid, identityid, callback) {
   var conn = db.getConnection();
   conn.connect(function (err) {
     if (err) {
@@ -436,25 +460,31 @@ productsDB.addImage = function ( image, productid, identityid, callback ) {
       return callback(err, null);
     } else {
       console.log("Connected!");
-      const sql = "INSERT INTO images (image, fk_productid, fk_identityid) VALUES (?,?,?)";
-      
+      const sql =
+        "INSERT INTO images (image, fk_productid, fk_identityid) VALUES (?,?,?)";
+
       conn.query(sql, [image, productid, identityid], function (err, result) {
-          conn.end();
-          if (err) {
-            console.log(err);
-            return callback(err, null);
-          } else {
-            console.log(result);
-            return callback(null, result);
-          }
+        conn.end();
+        if (err) {
+          console.log(err);
+          return callback(err, null);
+        } else {
+          console.log(result);
+          return callback(null, result);
         }
-      );
+      });
     }
   });
 };
 
 //EDIT IMAGE NEW
-productsDB.editImage = function ( image, productid, identityid, imageid, callback ) {
+productsDB.editImage = function (
+  image,
+  productid,
+  identityid,
+  imageid,
+  callback
+) {
   var conn = db.getConnection();
   conn.connect(function (err) {
     if (err) {
@@ -462,9 +492,13 @@ productsDB.editImage = function ( image, productid, identityid, imageid, callbac
       return callback(err, null);
     } else {
       console.log("Connected!");
-      const sql = "UPDATE images SET image = ?, fk_productid = ?, fk_identityid = ? WHERE imageid = ?";
-      
-      conn.query(sql, [image, productid, identityid, imageid], function (err, result) {
+      const sql =
+        "UPDATE images SET image = ?, fk_productid = ?, fk_identityid = ? WHERE imageid = ?";
+
+      conn.query(
+        sql,
+        [image, productid, identityid, imageid],
+        function (err, result) {
           conn.end();
           if (err) {
             console.log(err);
