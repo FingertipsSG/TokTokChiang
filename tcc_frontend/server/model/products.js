@@ -306,7 +306,8 @@ productsDB.getOtherImages = function (productId, callback) {
                 FROM products
                 JOIN images
                 ON products.productid = images.fk_productid
-                WHERE fk_productid = ? AND fk_identityid != 1`;
+                WHERE fk_productid = ? AND fk_identityid != 1
+                ORDER BY fk_identityid ASC`;
       conn.query(sql, [productId], function (err, result) {
         conn.end();
         if (err) {
