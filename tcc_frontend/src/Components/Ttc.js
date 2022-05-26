@@ -1,13 +1,9 @@
 import React from "react";
 import "../Components/css/Ttc.css";
-// import background from "../Assets/Images/AboutUs.png";
 import pic1 from "../Assets/Images/NickShen BianLian.JPG";
 import pic2 from "../Assets/Images/NickShen Warrior WQY01.jpg";
 import Carousel from "react-bootstrap/Carousel";
-// import { Container, Row, Col } from "reactstrap";
-// import Button from "react-bootstrap/Button";
 import { Row } from "reactstrap";
-// import { Helmet } from "react-helmet";
 import Navbar from "./Navbar";
 
 function Ttc() {
@@ -21,6 +17,7 @@ function Ttc() {
 			<body className="ttcBody">
 				<Navbar />
 				<br />
+				<br />
 				<div className="firstContent">
 					<Row>
 						<div className="col-lg-6">
@@ -32,7 +29,6 @@ function Ttc() {
 								<br />
 								<h3 className="ttcTitle"> Who Are We </h3>
 							</div>
-
 							<p className="ttcContent">
 								Tok Tok Chiang Opera Ltd, a non-profit entity established by Nick in 2014 as a platform to promote cultural appreciation in Singapore.
 								The company has since been invited to partner with People’s Association to bring awareness of Chinese opera to the Singapore public.
@@ -50,10 +46,6 @@ function Ttc() {
 								Teochew Opera Troupe under the umbrella of this non-profit entity.
 							</p>
 						</div>
-						{/* <div className="col-lg-6">
-							<img src={pic1} className="w-75 me-5 sliderPic"/>
-						</div> */}
-
 						<div className="col-lg-6">
 							<Carousel variant="dark" className="slide ttcCarousel" fade>
 								<Carousel.Item>
