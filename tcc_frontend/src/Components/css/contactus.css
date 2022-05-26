@@ -5,9 +5,11 @@
 
 .contactUsBody{
   background-image:url("../../Assets/Images/ContactUs.png");
-  background-size: 100% 100%;
+  height:130vh;
+  background-size: cover;
   background-repeat: no-repeat;
-  overflow-x: hidden;
+  background-position:100% 100%;  
+  overflow-x:hidden;
 }
 
 .contactUs {
@@ -21,28 +23,27 @@
 }
 
 h1{
-color: #790C15;
-font-size:30px;
+  color: #790C15;
+  font-size:30px;
 }
 
-/*Form style*/
+/Form style/
 p{
-font-size:15px;
+  font-size:15px;
 }
 input{
- width: 450px;
- height:30px;
+  width: 450px;
+  height:30px;
 }
 ::placeholder {
   font-size: 15px;
-  
 }
 
 button.ant-btn.ant-btn-primary.formBtn {
-background-color: #790C15;
-border: none;
-width:130px;
-border-radius: 3px;
+  background-color: #790C15;
+  border: none;
+  width:130px;
+  border-radius: 3px;
 }
 
 textarea#basic_message {
@@ -50,15 +51,191 @@ textarea#basic_message {
   border-width: 2px;
 }
 
-@media (min-width: 768px) and ( max-width: 1023px) {
-  .contactUsBody {
-    background-image: url("../../Assets/Images/AboutUs.png");
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-attachment: fixed;
-    overflow: hidden;
-  }
+button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+  margin-left: -4%;
+}
 
+@media (max-width: 1023px) { 
+  body.contactUsBody {
+    background-image: url("../../Assets/Images/AboutUs.png");
+    background-attachment: fixed;
+    background-size:cover;
+    background-position:0; 
+    height:auto; 
+  }
+}
+
+
+@media (min-width: 1002px) and (max-width: 1022px) {
+  body.contactUsBody {
+    background-image: url("../../Assets/Images/ContactUs.png");
+    background-size:cover;
+    background-position:50% 0%; 
+  }
+  .contactUs {
+    margin-left: 50%;
+    margin-top: -1.5%;
+  }
+}
+
+@media (min-width: 1300px) {
+  body.contactUsBody {
+    height: 120vh;
+  }
+}
+
+@media (min-width: 1920px) {
+ body.contactUsBody {
+    background-image: url("../../Assets/Images/ContactUs.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:0% 0%;  
+  }
+   .contactUs {
+    margin-left:50%;
+    margin-top: 6%;
+  } 
+  button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+    margin-left: 4.5%;
+  }
+}
+
+@media (min-width: 1800px ) and (max-width:1920px) {
+  body.contactUsBody {
+    background-image: url("../../Assets/Images/ContactUs.png");
+    background-size: cover;
+    background-position:0% 0%; 
+  }
+ .contactUs {
+    margin-left:40%;
+    margin-top: 6%;
+    width:150%;
+  }  
+  button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+    margin-left: 9%;
+  }
+}
+@media (min-width: 1600px ) and (max-width:1800px) {
+  body.contactUsBody {
+    background-image: url("../../Assets/Images/ContactUs.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position:0% 0%; 
+    height:auto;
+  }
+ .contactUs {
+    margin-left:40%;
+    margin-top: 5%;
+    width:150%;
+  }  
+  button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+    margin-left: 9%;
+  }
+}
+
+@media (min-width: 1500px ) and (max-width:1600px) {
+  body.contactUsBody {
+    background-image: url("../../Assets/Images/ContactUs.png");
+    background-size: cover;
+    background-position:0% 0%; 
+  }
+ .contactUs {
+    margin-left:40%;
+    margin-top: 4%;
+    width:150%;
+  }
+  button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+    margin-left: 6.5%;
+  }
+}
+
+@media (min-width: 1400px) and (max-width: 1499px) {
+  body.contactUsBody {
+    background-image: url("../../Assets/Images/ContactUs.png");
+    background-size: cover;
+    background-position:0% 0%; 
+  }
+  .contactUs {
+    margin-left:40%;
+    margin-top: 8%;
+    width:150%;
+  }
+}
+
+ @media (min-width: 1300px) and (max-width: 1400px) {
+  body.contactUsBody {
+    background-image: url("../../Assets/Images/ContactUs.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:0% 0%; 
+    height:auto;
+  }
+ .contactUs {
+    margin-left:40%;
+    margin-top: 5%;
+    width:200%;
+  } 
+  button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+    margin-left: 5.5%;
+  }
+} 
+
+@media (min-width: 1224px) and (max-width: 1279px) {
+  body.contactUsBody {
+    background-image: url("../../Assets/Images/ContactUs.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:0% 0%; 
+    height:auto;
+  }
+ .contactUs {
+    margin-left:40%;
+    margin-top: 5%;
+    width:200%;
+  }  
+}
+
+@media (min-width: 1093px) and (max-width: 1223px) {
+  body.contactUsBody {
+    background-image: url("../../Assets/Images/ContactUs.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:0% 0%;  
+    height:auto;
+  }
+  .contactUs {
+    margin-left:35%;
+    margin-top: 5.5%;
+    width:200%;
+  }
+  button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+    margin-left: 2.5%;
+  }
+}
+
+
+@media (min-width: 991px) and (max-width: 1092px) {
+  body.contactUsBody {
+    background-image: url("../../Assets/Images/AboutUs.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:0% 0%;  
+   }
+  .contactUs {
+    margin-left:25%;
+    margin-top: 10%;
+    width:200%;
+  }
+  button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+    margin-left: 1%;
+  }
+}
+
+@media (min-width: 768px) and ( max-width: 1023px) {
   .contactUs {
     margin-left: 25%;
     margin-top: 10%;
@@ -66,16 +243,20 @@ textarea#basic_message {
 }
 
 @media (max-width: 767px) { 
-  .contactUsBody {
-    background-image: url("../../Assets/Images/AboutUs.png");
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-attachment: fixed;
-    overflow: hidden;
-  }
-
   .contactUs {
     padding: 10%;
-    margin-left: 0;
+    margin-left: 18%;
+  }
+  .ant-form-item {
+    width: 100%;
+  }
+}
+@media (max-width: 566px) { 
+  .contactUs {
+    padding: 10%;
+    margin-left:2%;
+  }
+  .ant-form-item {
+    width: 100%;
   }
 }
