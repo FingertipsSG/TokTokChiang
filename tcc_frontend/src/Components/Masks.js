@@ -53,24 +53,26 @@ function Masks() {
       }
 
       // Fetch data from backend
-      const res = await Utils.getProductsLazyLoad(startRow, endRow, {
-        shop: "Masked",
+      var res = await Utils.getProductsLazyLoad(startRow, endRow, {
+        categoryId: 1,
       });
 
       // If no results returned
-      if (res.length <= 0) {
+      if (res.status === 404) {
         console.log("has no more data");
         setHasMore(false);
       } else {
         // Keep pushing new mask into masks array
         let masksArr = [];
 
+        res = res.data;
         res.forEach((mask, index) => {
           let newMask = new Mask(
-            mask.product_name,
-            mask.product_description,
-            mask.product_price,
-            mask.product_image
+            mask.productid,
+            mask.productname,
+            mask.productdesc,
+            mask.price,
+            mask.image
           );
 
           masksArr.push(newMask);
@@ -173,7 +175,9 @@ function Masks() {
           <Spin size="default" spinning={isLoading} />
         </div>
       );
-    } else if (!isLoading && masks.length === 0) {
+    }
+
+    if (masks.length === 0) {
       return <h1 className="comingsoon">COMING SOON</h1>;
     } else {
       return (

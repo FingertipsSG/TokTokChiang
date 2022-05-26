@@ -1,7 +1,7 @@
 import axios from "axios";
 
-export async function getProducts(prodType, parameters = {}) {
-  const url = `http://localhost:5001/getProducts?shop=${prodType}`;
+export async function getProducts(catid, parameters = {}) {
+  const url = `http://localhost:5001/getProducts?categoryId=${catid}`;
   let params = {};
   params.params = parameters;
 
@@ -33,11 +33,12 @@ export async function getProductsLazyLoad(startRow, endRow, parameters) {
         "Content-Type": "application/json",
       },
     });
-    return res.data;
+    return res;
   } catch (e) {
     console.log("[getApi error]");
     console.log("url: " + url);
     console.log(e);
+    return e.response;
   }
 }
 
