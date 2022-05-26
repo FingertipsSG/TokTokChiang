@@ -19,13 +19,14 @@ function TypeDropdown({ type, setType, render }) {
       res.forEach((obj) => {
         setShopArray((prevArray) => [
           ...prevArray, {
-            label: obj.shop_name,
-            key: obj.shop_name,
+            label: obj.catname,
+            key: obj.catname,
+            id: obj.catid
           }
         ]);
       });
     };
-    setShopArray([{ label: "shops", key: "shops" }]);
+    setShopArray([{ label: "Shops", key: "Shops" }]);
     getShops();
   }, [render]);
 

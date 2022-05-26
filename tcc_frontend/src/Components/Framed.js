@@ -53,24 +53,26 @@ function Framed() {
       }
 
       // Fetch data from backend
-      const res = await Utils.getProductsLazyLoad(startRow, endRow, {
-        shop: "framed",
+      var res = await Utils.getProductsLazyLoad(startRow, endRow, {
+        categoryId: 5,
       });
 
       // If no results returned
-      if (res.length <= 0) {
+      if (res.status === 404) {
         console.log("has no more data");
         setHasMore(false);
       } else {
         // Keep pushing new mask into masks array
         let framesArr = [];
 
+        res = res.data;
         res.forEach((frame, index) => {
           let newFrame = new Frame(
-            frame.product_name,
-            frame.product_description,
-            frame.product_price,
-            frame.product_image
+            frame.productid,
+            frame.productname,
+            frame.productdesc,
+            frame.price,
+            frame.image
           );
 
           framesArr.push(newFrame);
@@ -173,7 +175,9 @@ function Framed() {
           <Spin size="default" spinning={isLoading} />
         </div>
       );
-    } else if (!isLoading && frames.length === 0) {
+    }
+
+    if (frames.length === 0) {
       return <h1 className="comingsoon">COMING SOON</h1>;
     } else {
       return (
