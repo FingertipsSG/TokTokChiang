@@ -27,7 +27,7 @@ function Services() {
                         <Row>
                             <Col className="services-row"  xs={11} >
                                 <div className="services">
-                                    <Table borderless>
+                                    <Table borderless className="services-table">
                                         <thead>
                                             <tr>
                                                 <th>EVENT PLANNING</th>
