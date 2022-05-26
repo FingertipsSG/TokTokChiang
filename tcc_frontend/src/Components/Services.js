@@ -2,7 +2,7 @@ import React from "react";
 import "../Components/css/services.css";
 import { Container, Row, Col } from "reactstrap";
 import Navbar from "./Navbar";
-import { Table } from "react-bootstrap";
+import { Table} from "react-bootstrap";
 
 function Services() {
     return (
@@ -14,14 +14,12 @@ function Services() {
 			</head>
             <body className="services-body">
                 <Navbar />
-                
-
                 <div className="services-div">
                     <Container>
                         <Row>
                             <Col className="services-row"  xs={11} >
                                 <div className="services">
-                                    <Table borderless className="services-table">
+                                    <Table className="services-table" borderless >
                                         <thead>
                                             <tr>
                                                 <th>EVENT PLANNING</th>

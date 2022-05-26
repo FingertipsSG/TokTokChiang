@@ -23,16 +23,16 @@ body.services-body {
     background-position:100% 100%;  
 }
 
-Table.services-table.th{
+.services-table>thead>tr>th{
     font-size:15px;
     color: #790c15;
 }
 
-Table.services-table.td{
+.services-table>tbody>tr>td{
     font-size:13px;
 }
 
-Table.services-table{
+.services-table{
     margin-left:25%;
     margin-top:2.5%;
 }
@@ -65,10 +65,11 @@ Table.services-table{
         background-repeat: no-repeat;
         background-size:cover;
     }
-    Table.services-table.th{
+   
+    .services-table>thead>tr>th{
        font-size:16px;
     }
-    Table.services-table.td{
+    .services-table>tbody>tr>td{
         font-size:15px;
     }
     .services-row{
@@ -89,13 +90,13 @@ Table.services-table{
         background-size: cover;
         overflow: hidden;
     }
-    Table.services-table.th{
+    .services-table>thead>tr>th{
         font-size:10px;
     }
-     Table.services-table.td{
+    .services-table>tbody>tr>td{
          font-size:8px;
     }
-     .services-row{
+    .services-row{
         margin-left:-320px !important;
         margin-top:50px;
     }
@@ -111,7 +112,7 @@ Table.services-table{
 }
 
 @media (min-width: 1920px){
-    Table.services-table{
+    .services-table{
         margin-left:30%;
         margin-top:10%;
     }
@@ -120,10 +121,10 @@ Table.services-table{
         background-size:cover;
         background-position:0% 0%;
     }
-    Table.services-table.th{
+    .services-table>thead>tr>th{
         font-size:22px;
     }
-     Table.services-table.td{
+    .services-table>tbody>tr>td{
          font-size:20px;
     }
 }
@@ -138,10 +139,10 @@ Table.services-table{
         background-size:cover;
         background-position:0% 0%;
     }
-    Table.services-table.th{
+    .services-table>thead>tr>th{
         font-size:22px;
     }
-     Table.services-table.td{
+     .services-table>tbody>tr>td{
          font-size:20px;
     }
 }
@@ -156,10 +157,10 @@ Table.services-table{
         background-size:cover;
         background-position:0% 0%;
     }
-    Table.services-table.th{
+    .services-table>thead>tr>th{
         font-size:22px;
     }
-     Table.services-table.td{
+     .services-table>tbody>tr>td{
          font-size:20px;
     }
 }
@@ -239,7 +240,7 @@ Table.services-table{
 }
 
 @media (min-width: 1024px) and (max-width: 1050px){
-    Table.services-table{
+   .services-table{
         margin-left:14%;
         margin-top:10%;
     }
@@ -258,6 +259,12 @@ Table.services-table{
 }
 
 @media (min-width: 768px) and (max-width: 990px){
+    body.services-body {
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-size:cover;
+        background-position:0% 0%;
+        background-attachment: fixed;
+    }
     Table.services-table{
         margin-left:53%;
     }
@@ -267,11 +274,17 @@ Table.services-table{
     Table.services-table{
         margin-left:75%;
     }
-    Table.services-table.th{
+    .services-table>th{
         font-size:15px;
     }
-     Table.services-table.td{
+     .services-table>tbody>tr>td{
          font-size:12px;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-size:cover;
+        background-position:0% 0%;
+        background-attachment: fixed;
     }
 }
 
@@ -279,16 +292,34 @@ Table.services-table{
     Table.services-table{
         margin-left:90%;
     }
+    body.services-body {
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-size:cover;
+        background-position:0% 0%;
+        background-attachment: fixed;
+    }
 }
 
 @media (min-width: 420px) and (max-width: 450px){ 
     Table.services-table{
         margin-left:95%;
     }
+    body.services-body {
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-size:cover;
+        background-position:0% 0%;
+        background-attachment: fixed;
+    }
 }
 
 @media (max-width: 420px) { 
     Table.services-table{
         margin-left:100%;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-size:cover;
+        background-position:0% 0%;
+        background-attachment: fixed;
     }
 }
