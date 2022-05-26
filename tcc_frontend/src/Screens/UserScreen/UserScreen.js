@@ -208,8 +208,8 @@ function UserScreen() {
   return (
     <>
       <CustomNavbar />
-      <div className='table'>
-        <h1>User Admin</h1>
+      <div className='user-table'>
+        <h1 className="shop">User Admin</h1>
         <Space direction="horizontal" size={20} style={{ marginBottom: 20 }}>
           <CustomSearchBar onSearch={searchUsers} title="Search users" />
 

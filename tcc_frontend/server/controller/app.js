@@ -190,6 +190,192 @@ app.get("/getShops", (req, res) => {
   });
 });
 
+//------------------------------USERS.JS-----------------------------------------------
+//ADD USER
+app.post("/addUser", (req, res) => {
+  var username = req.body.uName;
+  var password = req.body.uPass;
+  var hashPW = hash(password);
+  var email = req.body.uEmail;
+  var role = req.body.uRole;
+
+  console.log(username, hashPW, email, role);
+  userDB.addUser(username, hashPW, email, role, function (err, result) {
+    if (!err) {
+      res.status(201);
+      res.send(`{"userid": "${result.insertId}"}`);
+      console.log(`{"userid":"${result.insertId}"}`);
+    } else {
+      console.log(err);
+      res.status(500).send();
+    }
+  });
+});
+
+//DELETE USER
+app.delete("/deleteUser", (req, res) => {
+  const uid = req.body.uID;
+
+  userDB.deleteUser(uid, function (err, result) {
+    if (!err) {
+      res.type("json");
+      res.status(204).send({ Message: "Successfully deleted" });
+    } else {
+      console.log(err);
+      res.status(500).send();
+    }
+  });
+});
+
+//GET EMAIL
+app.get("/getEmail", (req, res) => {
+  const email = req.query.email;
+  userDB.getEmail(email, function (err, result) {
+    // console.log("Result: " + result)
+    if (result === null) {
+      // console.log("dont exist");
+      return res.status(401).json({ message: "Email not registered!" });
+    }
+    if (!err) {
+      // console.log("correct email");
+      return res.status(200).send();
+    }
+    return res.status(500).send();
+  });
+});
+
+//INSERT PIN
+app.post("/insertPIN", (req, res) => {
+  const pin = req.body.pin;
+  // console.log("PIN FROM REINSERT PIN API:  " + pin);
+  userDB.addPin(pin, (err, result) => {
+    if (!err) {
+      // console.log("successflly added");
+      return res.status(200).json(result);
+    } else {
+      // console.log("error");
+      return res.status(500).send();
+    }
+  });
+});
+
+//DELETE PIN
+app.delete("/deletePIN", (req, res) => {
+  const pin = req.query.pin;
+  // console.log("PIN FROM REDELETE PIN API: " + pin);
+  userDB.deletePin(pin, (err, result) => {
+    if (!err) {
+      // console.log("successflly deleted");
+      return res.status(200).json(result);
+    } else {
+      // console.log("error");
+      return res.status(500).send();
+    }
+  });
+});
+
+//GET PIN
+app.get("/getPIN", (req, res) => {
+  const pin = req.query.pin;
+  console.log("Checking database for pin : " + pin);
+  userDB.getPin(pin, function (err, result) {
+    // console.log("Result: " + result)
+    if (result === null) {
+      return res.status(401).json({ message: "Incorrect PIN/PIN expired!" });
+    }
+    if (!err) {
+      return res.status(200).send({ message: pin });
+    }
+    return res.status(500).json({ message: "Internal Server Error" });
+  });
+});
+
+//UPDATE PASSWORD
+app.patch("/updatePassword", (req, res) => {
+  const password = req.body.password;
+  const email = req.body.email;
+  const hashPW = hash(password);
+  console.log("checking for email: " + email);
+  console.log("Checking database for password : " + password);
+  console.log("hashed password: " + hashPW);
+  userDB.updatePassword(hashPW, email, function (err, result) {
+    // console.log("Result: " + result)
+    // console.log("Error " + err);
+    if (result === null) {
+      return res.status(401).json({ message: "Update failed" });
+    }
+    if (!err) {
+      return res.status(200).send();
+    }
+    return res.status(500).json({ message: "Internal Server Error" });
+  });
+});
+
+//GET ALL USER
+app.get("/getUsers", (req, res) => {
+  const id = req.query.id;
+  userDB.getUsers(id, function (err, result) {
+    if (!err) {
+      return res.status(200).json(result);
+    } else {
+      console.log(err);
+      return res.status(500).send();
+    }
+  });
+});
+
+//LOGIN
+app.post("/login", (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+  const hashedPw = hash(password);
+
+  userDB.login(username, hashedPw, function (err, result) {
+    if (result === null) {
+      return res.status(401).json({ message: "Invalid Username or Password" });
+    }
+    if (!err) {
+      return res.status(200).json(result);
+    }
+    return res.status(500).send({ message: "Internal Server Error" });
+  });
+});
+
+// SEARCH Users
+app.get("/searchUsers", function (req, res) {
+  var searchQuery = req.query.searchQuery;
+  userDB.searchUsers(searchQuery, function (err, result) {
+    //
+    if (!err) {
+      res.type("json");
+      res.status(200);
+      res.send(result);
+    } else {
+      console.log(err);
+      res.status(500).send();
+    }
+  });
+});
+
+//EDIT USERS
+app.patch("/editUsers", (req, res) => {
+  const username = req.body.uName;
+  const password = req.body.uPass;
+  const email = req.body.uEmail;
+  const role = req.body.uRole;
+  const id = req.body.id;
+
+  userDB.editUser(username, password, email, role, id, (err, result) => {
+    if (!err) {
+      console.log(result.affectedRows);
+      return res.status(200).json({ affectedRows: result.changedRows });
+    } else {
+      console.log(err);
+      return res.status(500).send();
+    }
+  });
+});
+
 app.use("*", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "..", "build", "index.html"));
 });
