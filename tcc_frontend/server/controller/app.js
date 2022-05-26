@@ -29,16 +29,22 @@ app.use(fileUpload());
 app.use(express.static(path.join(__dirname, "..", "..", "build")));
 app.use(express.static("public"));
 
-// app.get('/', (req, res, next) => { 
-//   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' }); 
+// app.get('/', (req, res, next) => {
+//   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
 // });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 app.post("/addProduct", (req, res) => {
-    var { productname, productdesc, price, url, fk_catid } = req.body;
+  var { productname, productdesc, price, url, fk_catid } = req.body;
 
-    productsDB.addProducts(productname, productdesc, price, url, fk_catid, function (err, result) {
+  productsDB.addProducts(
+    productname,
+    productdesc,
+    price,
+    url,
+    fk_catid,
+    function (err, result) {
       if (!err) {
         res.status(201).send(`{"affectedRows": "${result.affectedRows}"}`);
         console.log(`{"affectedRows": "${result.affectedRows}"}`);
@@ -46,60 +52,81 @@ app.post("/addProduct", (req, res) => {
         console.log(err);
         res.status(500).send();
       }
-    });
-})
+    }
+  );
+});
 
 app.patch("/editProduct", (req, res) => {
-    var { productname, productdesc, price, url, fk_catid, productid } = req.body;
+  var { productname, productdesc, price, url, fk_catid, productid } = req.body;
 
-    productsDB.editProduct(productname, productdesc, price, url, fk_catid, productid, function (err, result) {
+  productsDB.editProduct(
+    productname,
+    productdesc,
+    price,
+    url,
+    fk_catid,
+    productid,
+    function (err, result) {
       if (!err) {
         if (result.affectedRows === 0) {
-          console.log({"Message": "This product does not exist"});
-          return res.status(404).send({"Message": "This product does not exist"});
+          console.log({ Message: "This product does not exist" });
+          return res
+            .status(404)
+            .send({ Message: "This product does not exist" });
         }
         console.log(`{"affectedRows": "${result.affectedRows}"}`);
-        return res.status(200).send(`{"affectedRows": "${result.affectedRows}"}`);
+        return res
+          .status(200)
+          .send(`{"affectedRows": "${result.affectedRows}"}`);
       } else {
         console.log(err);
         res.status(500).send();
       }
-    });
-})
+    }
+  );
+});
 
 app.post("/image", (req, res) => {
-    var { productid, identityid } = req.body;
-    var image = req.files.image.data;
+  var { productid, identityid } = req.body;
+  var image = req.files.image.data;
 
-    productsDB.addImage(image, productid, identityid, function (err, result) {
-      if (!err) {
-        res.status(201).send(`{"affectedRows": "${result.affectedRows}"}`);
-        console.log(`{"affectedRows": "${result.affectedRows}"}`);
-      } else {
-        console.log(err);
-        res.status(500).send();
-      }
-    });
-})
+  productsDB.addImage(image, productid, identityid, function (err, result) {
+    if (!err) {
+      res.status(201).send(`{"affectedRows": "${result.affectedRows}"}`);
+      console.log(`{"affectedRows": "${result.affectedRows}"}`);
+    } else {
+      console.log(err);
+      res.status(500).send();
+    }
+  });
+});
 
 app.patch("/image", (req, res) => {
-    var { productid, identityid, imageid } = req.body;
-    var image = req.files.image.data;
+  var { productid, identityid, imageid } = req.body;
+  var image = req.files.image.data;
 
-    productsDB.editImage(image, productid, identityid, imageid, function (err, result) {
+  productsDB.editImage(
+    image,
+    productid,
+    identityid,
+    imageid,
+    function (err, result) {
       if (!err) {
         if (result.affectedRows === 0) {
-          console.log({"Message": "This product does not exist"});
-          return res.status(404).send({"Message": "This image does not exist"});
+          console.log({ Message: "This product does not exist" });
+          return res.status(404).send({ Message: "This image does not exist" });
         }
-          console.log(`{"affectedRows": "${result.affectedRows}"}`);
-          return res.status(200).send(`{"affectedRows": "${result.affectedRows}"}`);
+        console.log(`{"affectedRows": "${result.affectedRows}"}`);
+        return res
+          .status(200)
+          .send(`{"affectedRows": "${result.affectedRows}"}`);
       } else {
         console.log(err);
         res.status(500).send();
       }
-    });
-})
+    }
+  );
+});
 
 // GET Products - NON Lazy loading
 app.get("/getProducts", (req, res) => {
@@ -110,7 +137,9 @@ app.get("/getProducts", (req, res) => {
     if (!err) {
       // When no data are returned from the query NOTE
       if (result.length === 0) {
-        return res.status(404).send();
+        return res
+          .status(404)
+          .send({ Message: "This category does not exist" });
       }
 
       // When data is returned succesfully NOTE
@@ -132,7 +161,8 @@ app.get("/getOtherImages", (req, res) => {
     if (!err) {
       // When no data are returned from the query NOTE
       if (result.length === 0) {
-        return res.status(404).send();
+        console.log({ Message: "This product does not exist" });
+        return res.status(404).send({ Message: "This product does not exist" });
       }
 
       // When data is returned successfully NOTE
@@ -154,8 +184,8 @@ app.post("/getProductsLL", (req, res) => {
 
   productsDB.getProductsLL(categoryId, startRow, endRow, (err, result) => {
     if (result.length === 0) {
-      // If no more data / does not exist in database, return an empty array
-      return res.status(200).send([]);
+      console.log({ Message: "This product does not exist" });
+      return res.status(404).send({ Message: "This product does not exist" });
     } else if (!err) {
       return res.status(200).json(result);
     } else {
@@ -172,7 +202,8 @@ app.delete("/deleteProduct", (req, res) => {
   productsDB.deleteProduct(productId, (err, result) => {
     if (!err) {
       if (result.affectedRows === 0) {
-        return res.status(404).send();
+        console.log({ Message: "This product does not exist" });
+        return res.status(404).send({ Message: "This product does not exist" });
       }
       return res.status(204).json(result);
     } else {

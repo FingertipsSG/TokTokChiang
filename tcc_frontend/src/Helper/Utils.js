@@ -42,6 +42,28 @@ export async function getProductsLazyLoad(startRow, endRow, parameters) {
   }
 }
 
+// Same as getApi but returns res instead of res.data
+// To return res.status 404 in the case where there are no data to be returned
+export async function _getApi(endpoint, parameters = {}) {
+  const url = "http://localhost:5001/" + endpoint;
+  let params = {};
+  params.params = parameters;
+  try {
+    const res = await axios.get(url, params);
+    // console.log(res);
+    if (endpoint === "downloadProductCSV") {
+      return res;
+    }
+    return res;
+  } catch (e) {
+    console.log("[getApi error]");
+    console.log("url: " + url);
+    console.log("params: " + JSON.stringify(params));
+    console.log(e);
+    return e.response;
+  }
+}
+
 // GET
 export async function getApi(endpoint, parameters = {}) {
   const url = "http://localhost:5001/" + endpoint;
