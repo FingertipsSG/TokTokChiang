@@ -1,7 +1,7 @@
 export const navItems = [
     {
         id: 1,
-        title: "Dashboard",
+        title: "Live Site",
         path: "/",
         cName: "admin-nav-item",
     },
