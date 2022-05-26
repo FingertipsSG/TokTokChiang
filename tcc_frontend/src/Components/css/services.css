@@ -16,30 +16,28 @@ body {
 }
 
 body.services-body {
-   
     background-image: url("../../Assets/Images/services.png");
     height:130vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-position:100% 100%;  
-   
 }
 
 Table.services-table.th{
     font-size:15px;
     color: #790c15;
 }
+
 Table.services-table.td{
     font-size:13px;
-  
 }
+
 Table.services-table{
     margin-left:25%;
     margin-top:2.5%;
-
 }
-/*Responsive */
 
+/*Responsive */
 @media (min-width: 1300px) {
     body.services-body {
         height: 120vh;
@@ -47,20 +45,16 @@ Table.services-table{
 
     Table.services-table{
         margin-top:4.5%;
-    
     }
 }
-
 
 @media (min-width: 1024px) { 
     html.servicesHtml {
         overflow-x: hidden;
-        
     }
-  
 }    
 
-/tablet/
+/*tablet*/
 @media (min-width: 768px) and ( max-width:1023px){ 
     html.servicesHtml {
         overflow: hidden;
@@ -81,7 +75,6 @@ Table.services-table{
         margin-left:-290px !important;
         margin-top:100px;
     }
-  
 }
 
 /* phone size*/
@@ -98,15 +91,14 @@ Table.services-table{
     }
     Table.services-table.th{
         font-size:10px;
-     }
+    }
      Table.services-table.td{
          font-size:8px;
-     }
+    }
      .services-row{
         margin-left:-320px !important;
         margin-top:50px;
     }
-  
 }
   
 /* Common Size: phone & tablet*/
@@ -115,9 +107,9 @@ Table.services-table{
         background-image: url("../../Assets/Images/AboutUs.png");
         background-size:cover;
         background-position:0;
-     
     }
 }
+
 @media (min-width: 1920px){
     Table.services-table{
         margin-left:30%;
@@ -127,15 +119,14 @@ Table.services-table{
         background-image: url("../../Assets/Images/services.png");
         background-size:cover;
         background-position:0% 0%;
-     
     }
     Table.services-table.th{
         font-size:22px;
-     }
+    }
      Table.services-table.td{
          font-size:20px;
-     }
     }
+}
 
 @media (min-width: 1800px ) and (max-width:1920px){
     Table.services-table{
@@ -146,15 +137,15 @@ Table.services-table{
         background-image: url("../../Assets/Images/services.png");
         background-size:cover;
         background-position:0% 0%;
-     
     }
     Table.services-table.th{
         font-size:22px;
-     }
+    }
      Table.services-table.td{
          font-size:20px;
-     }
     }
+}
+
 @media (min-width: 1600px ) and (max-width:1800px){
     Table.services-table{
         margin-left:30%;
@@ -164,15 +155,14 @@ Table.services-table{
         background-image: url("../../Assets/Images/services.png");
         background-size:cover;
         background-position:0% 0%;
-     
     }
     Table.services-table.th{
         font-size:22px;
-     }
+    }
      Table.services-table.td{
          font-size:20px;
-     }
     }
+}
 
 @media (min-width: 1550px) and (max-width: 1600px){
     Table.services-table{
@@ -183,7 +173,6 @@ Table.services-table{
         background-image: url("../../Assets/Images/services.png");
         background-size:cover;
         background-position:0% 0%;
-     
     }
 }
 
@@ -211,7 +200,6 @@ Table.services-table{
     }
 }
 
-
 @media (min-width: 1200px) and (max-width: 1279px){
     Table.services-table{
         margin-left:30%;
@@ -222,9 +210,9 @@ Table.services-table{
         background-size:cover;
         background-attachment: fixed;
         background-position:0% 0%;
-     
     }
 }
+
 @media (min-width: 1092px) and (max-width: 1200px){
     Table.services-table{
         margin-left:34%;
@@ -234,9 +222,9 @@ Table.services-table{
         background-image: url("../../Assets/Images/services.png");
         background-size:cover;
         background-position:0% 0%;
-     
     }
 }
+
 @media (min-width: 1050px) and (max-width: 1092px){
     Table.services-table{
         margin-left:14%;
@@ -247,9 +235,9 @@ Table.services-table{
         background-size:cover;
         background-attachment: fixed;
         background-position:0% 0%;
-     
     }
 }
+
 @media (min-width: 1024px) and (max-width: 1050px){
     Table.services-table{
         margin-left:14%;
@@ -262,19 +250,18 @@ Table.services-table{
         background-attachment: fixed;
     }
 }
+
 @media (min-width: 990px) and (max-width: 1023px){
     Table.services-table{
         margin-left:48%;
-    
-    }
-}
-@media (min-width: 768px) and (max-width: 990px){
-    Table.services-table{
-        margin-left:53%;
-    
     }
 }
 
+@media (min-width: 768px) and (max-width: 990px){
+    Table.services-table{
+        margin-left:53%;
+    }
+}
 
 @media (min-width: 500px) and (max-width: 767px){ 
     Table.services-table{
@@ -282,25 +269,26 @@ Table.services-table{
     }
     Table.services-table.th{
         font-size:15px;
-     }
+    }
      Table.services-table.td{
          font-size:12px;
-     }
     }
+}
+
 @media (min-width: 450px) and (max-width: 500px){ 
     Table.services-table{
         margin-left:90%;
     }
-    }
+}
+
 @media (min-width: 420px) and (max-width: 450px){ 
     Table.services-table{
         margin-left:95%;
-    
     }
-    }
+}
+
 @media (max-width: 420px) { 
     Table.services-table{
         margin-left:100%;
-    
     }
-    }
+}
