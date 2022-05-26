@@ -1,13 +1,8 @@
 import React from "react";
 import "../Components/css/services.css";
-// import background from "../Assets/Images/wash-painting.png";
-// import Carousel from "react-bootstrap/Carousel";
 import { Container, Row, Col } from "reactstrap";
 import Navbar from "./Navbar";
 import { Table } from "react-bootstrap";
-// import { Helmet } from "react-helmet";
-// import background from "../Assets/Images/services-edited.png";
-// import { Row } from "reactstrap";
 
 function Services() {
     return (
@@ -18,7 +13,6 @@ function Services() {
 				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 			</head>
             <body className="services-body">
-                {/* <img src={background} width="10%" className="services-png"/> */}
                 <Navbar />
                 
 
@@ -27,7 +21,7 @@ function Services() {
                         <Row>
                             <Col className="services-row"  xs={11} >
                                 <div className="services">
-                                    <Table borderless className="services-table"> 
+                                    <Table borderless className="services-table">
                                         <thead>
                                             <tr>
                                                 <th>EVENT PLANNING</th>
