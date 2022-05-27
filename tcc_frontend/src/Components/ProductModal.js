@@ -88,7 +88,7 @@ function ProductModal(props) {
   });
 
   return (
-    <div id="myModal" className="modal fade" role="dialog">
+    <div id="myModal" className="modal fade productModal" role="dialog">
       <div className="modal-dialog modal-xl">
         <div className="modal-content">
           {isLoading ? (
