@@ -298,7 +298,7 @@ body.framed-body {
 
 /* landscape */
 @media screen and (orientation: landscape) {
-  .modal {
+  .productModal {
     top: -7%;
     left: -12.5%;
     /* margin-top: 10%; */
