@@ -144,6 +144,17 @@ button.close-button {
   flex-direction: row;
 }
 
+.productModalDialog {
+  height:100%;
+  margin: 0;
+}
+.productModalContent{
+  height:100%
+}
+.productModalBody{
+  height:100%;
+}
+
 /* When screen is too small to display gallery, main image container should take up 100% of height */
 @media (max-width: 991px) {
   .modal-main-image-container {
@@ -301,7 +312,7 @@ body.framed-body {
   .productModal {
     top: -7%;
     left: -12.5%;
-    /* margin-top: 10%; */
+    margin-top: -6%;
     overflow-y: scroll;
   }
 
