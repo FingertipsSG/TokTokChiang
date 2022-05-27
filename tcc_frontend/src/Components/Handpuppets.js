@@ -73,7 +73,8 @@ function HandPuppets() {
             puppet.productname,
             puppet.productdesc,
             puppet.price,
-            puppet.image
+            puppet.image,
+            puppet.url,
           );
 
           puppetsArr.push(newPuppet);
@@ -231,6 +232,8 @@ function HandPuppets() {
         <br />
         <br />
         <br />
+        <br />
+        <br /> 
         <br />
         <br /> 
         <div className="shop-container">{renderController()}</div>

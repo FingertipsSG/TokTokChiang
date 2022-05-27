@@ -301,7 +301,7 @@ body.framed-body {
   .modal {
     top: -7%;
     left: -12.5%;
-    margin-top: 10%;
+    /* margin-top: 10%; */
     overflow-y: scroll;
   }
 

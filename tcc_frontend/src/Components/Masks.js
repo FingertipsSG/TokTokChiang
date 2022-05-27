@@ -72,7 +72,8 @@ function Masks() {
             mask.productname,
             mask.productdesc,
             mask.price,
-            mask.image
+            mask.image,
+            mask.url,
           );
 
           masksArr.push(newMask);
@@ -228,6 +229,8 @@ function Masks() {
         <br />
         <br />
         <br />
+        <br />
+        <br /> 
         <br />
         <br /> 
         <div className="shop-container">{renderController()}</div>
