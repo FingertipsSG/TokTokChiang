@@ -159,12 +159,14 @@ function ProductModal(props) {
                         </p>
                       </div>
                       <div className="pop-text">
-                        <p>{props.curItem.desc.split("\n")[0]}</p>
-                        <p>{props.curItem.desc.split("\n")[1]}</p>
-                        <p>{props.curItem.desc.split("\n")[2]}</p>
+                        {props.curItem.desc.split("\n").map((line, index) => {
+                          return <p key={index}>{line}</p>;
+                        })}
                       </div>
                       <div>
-                        <a className="shop-here btn" href={props.curItem.url}>Shop Here</a>
+                        <a className="shop-here btn" href={props.curItem.url}>
+                          Shop Here
+                        </a>
                       </div>
                     </div>
                   </Col>
