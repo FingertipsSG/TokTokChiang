@@ -58,7 +58,7 @@ const ImagesModal = (props) => {
   }, [props.curItem]);
 
   return (
-    <div id="myModal" className="modal fade" role="dialog">
+    <div id="myModal" className="modal fade imageModal" role="dialog">
       <div className="modal-dialog modal-xl">
         <div className="modal-content">
           <div className="modal-header">
