@@ -72,7 +72,8 @@ function Tshirts() {
             shirt.productname,
             shirt.productdesc,
             shirt.price,
-            shirt.image
+            shirt.image,
+            shirt.url,
           );
 
           shirtsArr.push(newShirt);
@@ -228,6 +229,8 @@ function Tshirts() {
         <br />
         <br />
         <br />
+        <br />
+        <br /> 
         <br />
         <br /> 
         <div className="shop-container">{renderController()}</div>

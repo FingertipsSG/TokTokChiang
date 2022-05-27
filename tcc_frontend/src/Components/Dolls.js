@@ -72,7 +72,8 @@ function Dolls() {
             doll.productname,
             doll.productdesc,
             doll.price,
-            doll.image
+            doll.image,
+            doll.url
           );
 
           dollsArr.push(newDoll);
@@ -228,6 +229,8 @@ function Dolls() {
         <br />
         <br />
         <br />
+        <br />
+        <br /> 
         <br />
         <br /> 
         <div className="shop-container">{renderController()}</div>

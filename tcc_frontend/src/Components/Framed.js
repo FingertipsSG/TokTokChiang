@@ -72,7 +72,8 @@ function Framed() {
             frame.productname,
             frame.productdesc,
             frame.price,
-            frame.image
+            frame.image,
+            frame.url,
           );
 
           framesArr.push(newFrame);
@@ -228,6 +229,8 @@ function Framed() {
         <br />
         <br />
         <br />
+        <br />
+        <br /> 
         <br />
         <br /> 
         <div className="shop-container">{renderController()}</div>

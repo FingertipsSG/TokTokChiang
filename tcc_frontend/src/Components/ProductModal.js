@@ -164,9 +164,7 @@ function ProductModal(props) {
                         <p>{props.curItem.desc.split("\n")[2]}</p>
                       </div>
                       <div>
-                        <button type="button" className="shop-here">
-                          Shop Here
-                        </button>
+                        <a className="shop-here btn" href={props.curItem.url}>Shop Here</a>
                       </div>
                     </div>
                   </Col>
