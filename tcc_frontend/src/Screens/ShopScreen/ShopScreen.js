@@ -12,6 +12,7 @@ import TypeDropdown from "./TypeDropdown/TypeDropdown";
 import AddProductModal from "./AddProductModal/AddProductModal";
 import EditProductModal from "./EditProductModal/EditProductModal";
 import EditShopModal from "./EditShopModal/EditShopModal";
+import ImagesModal from "./ImagesModal/ImagesModal";
 // import AddShopModal from "./AddShopModal/AddShopModal";
 
 function ShopScreen() {
@@ -27,6 +28,8 @@ function ShopScreen() {
   const [render, setRender] = useState(false);
   const [isTableLoading, setIsTableLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [curProduct, setCurProduct] = useState(null);
+  const [isImagesModalVisible, setIsImagesModalVisible] = useState(false);
 
   const columns = [
     {
@@ -58,13 +61,27 @@ function ShopScreen() {
         if (productArray === undefined) {
           return;
         }
-        // console.log(props);
+        // console.log("props are: ", props);
         // console.log("testing", props.pImage.data)
         return (
-          <img
-            className="image"
-            src={`data:image/jpg;base64,${convertToBase64(props.pImage.data)}`}
-          />
+          <Space size="middle" className="images-column">
+            <img
+              className="image"
+              src={`data:image/jpg;base64,${convertToBase64(
+                props.pImage.data
+              )}`}
+            />
+            <a
+              id="close-image"
+              data-toggle="modal"
+              data-target="#myModal"
+              onClick={() => {
+                openProductImagesModal(props);
+              }}
+            >
+              View all
+            </a>
+          </Space>
         );
       },
     },
@@ -171,7 +188,7 @@ function ShopScreen() {
 
     var catid = getKeyByValue(type);
     // console.log(catid);
-    
+
     const res = await Utils.getProducts(catid);
     // console.log(res);
 
@@ -213,7 +230,7 @@ function ShopScreen() {
         ...prevArray,
         {
           sID: obj.catid,
-          sName: obj.catname
+          sName: obj.catname,
         },
       ]);
     });
@@ -225,7 +242,7 @@ function ShopScreen() {
     setShopArray([]);
     getShops();
   }, [render]);
-  
+
   //----------------------------------------SHOPS----------------------------------------
   // ADD AND POST SHOPS FUNCTONS
   // const openAddShopModal = () => {
@@ -397,6 +414,16 @@ function ShopScreen() {
     });
   };
 
+  // Set images modal to be visible and retrieve item of images to be displayed
+  const openProductImagesModal = (props) => {
+    setIsImagesModalVisible(true);
+    setCurProduct(props);
+  };
+
+  const closeProductImagesModal = () => {
+    setIsImagesModalVisible(false);
+  };
+
   //----------------------------------------DOWNLOAD CSV----------------------------------------
   const downloadProductCSV = () => {
     const endpoint = "downloadProductCSV";
@@ -493,6 +520,17 @@ function ShopScreen() {
                 <div></div>
               )}
 
+              {isImagesModalVisible ? (
+                <div>
+                  <ImagesModal
+                    closeModal={closeProductImagesModal}
+                    curItem={curProduct}
+                  />
+                </div>
+              ) : (
+                <div></div>
+              )}
+
               {/* <EditProductModal
                 title="Edit Product Details"
                 visible={isEditProdModalVisible}
@@ -511,7 +549,7 @@ function ShopScreen() {
             rowKey="sID"
             loading={{
               indicator: <Spin size="default"></Spin>,
-              spinning: isTableLoading
+              spinning: isTableLoading,
             }}
           />
         ) : (
@@ -521,7 +559,7 @@ function ShopScreen() {
             rowKey="pID"
             loading={{
               indicator: <Spin size="default"></Spin>,
-              spinning: isTableLoading
+              spinning: isTableLoading,
             }}
           />
         )}
