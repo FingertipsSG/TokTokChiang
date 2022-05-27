@@ -89,8 +89,8 @@ function ProductModal(props) {
 
   return (
     <div id="myModal" className="modal fade productModal" role="dialog">
-      <div className="modal-dialog modal-xl">
-        <div className="modal-content">
+      <div className="modal-dialog productModalDialog modal-xl">
+        <div className="modal-content productModalContent">
           {isLoading ? (
             <div className="modal-spinner loadmore-centred">
               <Spin size="default" spinning={isLoading} />
@@ -106,7 +106,7 @@ function ProductModal(props) {
                   X
                 </button>
               </div>
-              <div className="modal-body">
+              <div className="modal-body productModalBody">
                 <Row>
                   <Col className="modal-image-container">
                     <div className="modal-main-image-container">
