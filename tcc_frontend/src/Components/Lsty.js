@@ -1,7 +1,8 @@
 import React from "react";
 import "../Components/css/Lsty.css";
-import pic1 from "../Assets/Images/NickShen BianLian.JPG";
-import pic2 from "../Assets/Images/NickShen Warrior WQY01.jpg";
+import pic1 from "../Assets/Images/lsty1.jpg";
+import pic2 from "../Assets/Images/lsty2.jpg";
+import pic3 from "../Assets/Images/lsty3.png";
 import Carousel from "react-bootstrap/Carousel";
 import { Row } from "reactstrap";
 import Navbar from "./Navbar";
@@ -73,21 +74,7 @@ function Lsty() {
 									<img
 										className="col-lg-6  col-sm-12"
 										id="lstyPic"
-										src={pic1}
-									/>
-								</Carousel.Item>
-								<Carousel.Item>
-									<img
-										className="col-lg-6  col-sm-12"
-										id="lstyPic"
-										src={pic2}
-									/>
-								</Carousel.Item>
-								<Carousel.Item>
-									<img
-										className="col-lg-6  col-sm-12"
-										id="lstyPic"
-										src={pic1}
+										src={pic3}
 									/>
 								</Carousel.Item>
 							</Carousel>
