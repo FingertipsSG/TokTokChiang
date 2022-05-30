@@ -7,9 +7,8 @@ const { Option } = Select;
 function EditUserModal({ title, visible, onOk, onCancel, details }) {
     const [form] = Form.useForm();
 
-    form.resetFields();
-
     useEffect(() => {
+        form.resetFields();
         form.setFieldsValue(({
             uName: details.uName,
             uPass: details.uPass,
