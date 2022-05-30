@@ -219,6 +219,36 @@ app.get("/getShops", (req, res) => {
   });
 });
 
+// DOWNLOAD CSV
+var corsForDownloadCSV = {
+  exposedHeader: "Content-Disposition",
+};
+
+app.get("/downloadProductCSV", cors(corsForDownloadCSV), (req, res) => {
+  const shop = req.query.shop;
+  const ws = fs.createWriteStream(`ttc_products_${shop}.csv`);
+
+  productsDB.getProducts(shop, (err, result) => {
+    if (!err) {
+      const jsonData = JSON.parse(JSON.stringify(result));
+      console.log("jsonData", jsonData);
+      fastcsv
+        .write(jsonData, { headers: true })
+        .pipe(ws)
+        .on("finish", function () {
+          console.log(`Write to ttc_products_${shop}.csv successfully!`);
+          // var filename = `ttc_products_${shop}.csv`;
+          var filepath = `./ttc_products_${shop}.csv`;
+          res.header("Access-Control-Expose-Headers", "Content-Disposition");
+          res.status(200).download(filepath);
+        });
+    } else {
+      console.log(err);
+      return res.status(500).send();
+    }
+  });
+});
+
 //------------------------------USERS.JS-----------------------------------------------
 //ADD USER
 app.post("/addUser", (req, res) => {
