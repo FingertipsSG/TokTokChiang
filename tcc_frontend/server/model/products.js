@@ -749,4 +749,32 @@ productsDB.editImage = function (
   });
 };
 
+// TO SEARCH
+productsDB.searchProducts = function (categoryId, searchQuery, callback) {
+  var conn = db.getConnection();
+  conn.connect(function (err) {
+    if (err) {
+      console.log(err);
+      return callback(err, null);
+    } else {
+      console.log("Connected!");
+      var sql = `
+      SELECT productid, productname, productdesc, price, url, image FROM products
+      JOIN images
+      ON products.productid = images.fk_productid
+      WHERE fk_catid = ? AND productname LIKE '%${searchQuery}%' AND fk_identityid = 1`;
+      conn.query(sql, [categoryId], function (err, result) {
+        conn.end();
+        if (err) {
+          console.log(err);
+          return callback(err, null);
+        } else {
+          console.log(result);
+          return callback(null, result);
+        }
+      });
+    }
+  });
+};
+
 module.exports = productsDB;

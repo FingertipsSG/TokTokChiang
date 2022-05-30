@@ -50,10 +50,6 @@ export async function _getApi(endpoint, parameters = {}) {
   params.params = parameters;
   try {
     const res = await axios.get(url, params);
-    // console.log(res);
-    if (endpoint === "downloadProductCSV") {
-      return res;
-    }
     return res;
   } catch (e) {
     console.log("[getApi error]");

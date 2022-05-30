@@ -35,6 +35,7 @@ app.use(express.static("public"));
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
+// <--------------------------- Products APIs -------------------------------------->
 app.post("/addProduct", (req, res) => {
   var { productname, productdesc, price, url, fk_catid } = req.body;
 
@@ -213,14 +214,21 @@ app.delete("/deleteProduct", (req, res) => {
   });
 });
 
-//GET SHOPS
-app.get("/getShops", (req, res) => {
-  shopsDB.getShops((err, result) => {
+// SEARCH PRODUCTS
+app.get("/search", function (req, res) {
+  var searchQuery = req.query.searchQuery;
+  var categoryId = req.query.categoryId;
+
+  productsDB.searchProducts(categoryId, searchQuery, function (err, result) {
     if (!err) {
+      if (result.length === 0) {
+        console.log({ Message: "This product does not exist" });
+        return res.status(404).send({ Message: "This product does not exist" });
+      }
       return res.status(200).json(result);
     } else {
       console.log(err);
-      return res.status(500).send();
+      res.status(500).send();
     }
   });
 });
@@ -255,6 +263,56 @@ app.get("/downloadProductCSV", cors(corsForDownloadCSV), (req, res) => {
   });
 });
 
+// DOWNLOAD CSV
+var corsForDownloadCSV = {
+  exposedHeader: "Content-Disposition",
+};
+
+// <--------------------------- Shops APIs -------------------------------------->
+//GET SHOPS
+app.get("/getShops", (req, res) => {
+  shopsDB.getShops((err, result) => {
+    if (!err) {
+      return res.status(200).json(result);
+    } else {
+      console.log(err);
+      return res.status(500).send();
+    }
+  });
+});
+
+// Edit shop name
+app.put("/editShop", (req, res) => {
+  const newName = req.body.newName;
+  const id = req.body.id;
+
+  shopsDB.editShop(newName, id, (err, result) => {
+    if (!err) {
+      console.log(result);
+      return res.status(200).send(result);
+    } else {
+      console.log(err);
+      return res.status(500).send();
+    }
+  });
+});
+
+// // ALTER SHOP TABLE NAME
+// app.put("/alterTable", (req, res) => {
+//   const oldShop = req.body.oldShop;
+//   const newShop = req.body.sName;
+
+//   shopsDB.alterTable(oldShop, newShop, (err, result) => {
+//     if (!err) {
+//       return res.status(204).json(result.message);
+//     } else {
+//       console.log(err);
+//       return res.status(500).send();
+//     }
+//   });
+// });
+
+// <--------------------------- Users APIs -------------------------------------->
 //------------------------------USERS.JS-----------------------------------------------
 //ADD USER
 app.post("/addUser", (req, res) => {
@@ -441,8 +499,102 @@ app.patch("/editUsers", (req, res) => {
   });
 });
 
-app.use("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "..", "build", "index.html"));
+// <--------------------------- Email APIs -------------------------------------->
+//----------------------- SEND EMAIL --------------------------------
+
+var email = "toktokchiangemails@gmail.com";
+
+const transporter = nodemailer.createTransport({
+  // host: "localhost",
+  // port: 3001,
+  service: "Gmail",
+  auth: {
+    user: email,
+    pass: "HjF0(*3#",
+  },
 });
+
+app.post("/postEmail", (req, res) => {
+  console.log(req.body);
+  const values = req.body;
+
+  var printHtml = (values) => {
+    console.log(values);
+    return `<html>
+      <p>
+      Name: ${values.name}<br />
+      Email: ${values.email}<br />
+      Contact No: ${values.phone}<br />
+      Message: ${values.message}<br />
+      </p>
+    </html>`;
+  };
+
+  var message = {
+    from: email,
+    to: email,
+    subject: "New Contact Form Response",
+    html: printHtml(values),
+  };
+
+  // console.log("Message:", message);
+
+  transporter.sendMail(message, function (err, info) {
+    if (err) {
+      console.log(err);
+      return res.status(500).send(err);
+    } else {
+      // console.log(info);
+      return res.status(200).send({ message: "Form submitted successfully!" });
+    }
+  });
+});
+
+//API FOR FORGET PW SEND EMAIL
+app.post("/sendEmailPin", (req, res) => {
+  const values = req.body;
+  const time = new Date();
+  // console.log("RESEND EMAIL PIN FROM API (Should be same as email/db one): " + values.pin);
+
+  var printHtml = (values) => {
+    return `<html>
+      <p>
+      Hello ${values.email}, <br />  <br />
+
+      Here is your one-time 6 digit token to reset your password: <br />
+      ${values.pin} <br />  <br />
+
+      Best wishes,  <br /> 
+      TokTokChiang Admin
+      </p>
+      </html>
+    `;
+  };
+
+  var emailContent = {
+    from: email,
+    to: values.email,
+    subject: "Password reset for TokTokChiang admin portal",
+    html: printHtml(values),
+    time: time,
+  };
+
+  // console.log(emailContent);
+
+  transporter.sendMail(emailContent, function (err, info) {
+    if (err) {
+      // console.log(err);
+      return res.status(500).send(err);
+    } else {
+      // console.log(info);
+      // console.log("time: " + emailContent.time);
+      return res.status(200).send({ message: emailContent.time });
+    }
+  });
+});
+
+// app.use("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "..", "..", "build", "index.html"));
+// });
 
 module.exports = app;
