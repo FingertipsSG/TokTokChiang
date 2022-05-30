@@ -15,21 +15,27 @@ import EditShopModal from "./EditShopModal/EditShopModal";
 import ImagesModal from "./ImagesModal/ImagesModal";
 // import AddShopModal from "./AddShopModal/AddShopModal";
 
+import { useFirstRender } from "../../Helper/useFirstRender";
+
 function ShopScreen() {
   const [type, setType] = useState("Shops");
   const [productArray, setProductArray] = useState([]);
   const [ShopArray, setShopArray] = useState([]);
-  const [prodEdit, setProdEdit] = useState({});
+  const [curProdDetails, setCurProdDetails] = useState({});
   const [shopEdit, setShopEdit] = useState({});
   const [isAddProdModalVisible, setIsAddProdModalVisible] = useState(false);
   const [isEditProdModalVisible, setIsEditProdModalVisible] = useState(false);
   const [isAddShopModalVisible, setIsAddShopModalVisible] = useState(false);
   const [isEditShopModalVisible, setIsEditShopModalVisible] = useState(false);
+  const [isImageModalVisible, setIsImageModalVisible] = useState(false);
   const [render, setRender] = useState(false);
   const [isTableLoading, setIsTableLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [curProduct, setCurProduct] = useState(null);
+
+  const [curProductSelected, setCurProductSelected] = useState(null);
   const [productImages, setProductImages] = useState([]);
+
+  const firstRender = useFirstRender();
 
   const columns = [
     {
@@ -76,7 +82,8 @@ function ShopScreen() {
               data-toggle="modal"
               data-target="#myModal"
               onClick={() => {
-                setCurProduct(props);
+                setCurProductSelected(props);
+                setIsImageModalVisible(true);
               }}
             >
               View all
@@ -102,15 +109,7 @@ function ShopScreen() {
         <Space size="middle">
           <a
             onClick={() => {
-              setProdEdit({
-                pID: record.pID,
-                pName: record.pName,
-                pDesc: record.pDesc,
-                pPrice: record.pPrice,
-                pImage: record.pImage,
-                pURL: record.pURL,
-              });
-              openEditProductModal();
+              setCurProductSelected(record);
             }}
           >
             Edit
@@ -296,7 +295,7 @@ function ShopScreen() {
   // EDIT AND POST SHOP FUNCTION
   const openEditShopModal = () => {
     setIsModalOpen(true);
-    setIsEditShopModalVisible(true);
+    // setIsEditShopModalVisible(true);
   };
   const cancelEditShopModal = () => {
     setIsModalOpen(false);
@@ -359,16 +358,73 @@ function ShopScreen() {
     setIsAddProdModalVisible(false);
   };
 
-  const postAddProductModal = (values) => {
+  const postAddProductModal = async (values) => {
+    setIsTableLoading(true);
     setIsAddProdModalVisible(false);
     values.shop = type;
+    console.log(type);
+    console.log(values);
+    var thisProductId = 0;
 
-    Utils.postFormApi("addProduct", values).then((response) => {
+    var postBody = {
+      productname: values.pName,
+      productdesc: values.pDesc,
+      price: values.pPrice,
+      url: values.pUrl,
+      fk_catid: getKeyByValue(values.shop),
+    };
+
+    console.log(postBody);
+
+    await Utils.postApi("addProduct", postBody).then((response) => {
       if (response.status === 201) {
+        thisProductId = response.data.insertId;
         message.success("Successfully added product!");
-        setRender(!render);
       }
     });
+
+    var files = values.pImage;
+    // console.log(files);
+
+    for (var i = 0; i < files.length; i++) {
+      let imageBody = {
+        image: convertToBlob(files[i]),
+        productid: thisProductId,
+        imageid: files[i].imageid,
+        identityid: i + 1,
+      };
+
+      Utils.postImageApi("addImage", imageBody).then((res) => {
+        // console.log(res);
+        if (res.status === 201) {
+          console.log(res.data.affectedRows);
+          message.success(`Successfully uploaded image`);
+          setRender(!render);
+        }
+      });
+    }
+
+    setIsTableLoading(false);
+  };
+
+  const convertToBlob = (file) => {
+    // if file is empty, throw a new error
+    if (!file) {
+      throw new Error("No image selected.");
+    }
+
+    // If there's an image, proceed to convert
+    // Safe to do this since base64 encoded string will never have ',' within it
+    const byteCharacters = atob(file.thumbUrl.split(",")[1]);
+
+    const byteNumbers = new Array(byteCharacters.length);
+    for (let i = 0; i < byteCharacters.length; i++) {
+      byteNumbers[i] = byteCharacters.charCodeAt(i);
+    }
+
+    const byteArray = new Uint8Array(byteNumbers);
+
+    return new Blob([byteArray], { type: "image/png" });
   };
 
   // EDIT AND POST PRODUCT FUNCTION
@@ -386,7 +442,7 @@ function ShopScreen() {
     setIsModalOpen(false);
     setIsEditProdModalVisible(false);
     values.shop = type;
-    values.id = prodEdit.pID;
+    values.id = curProdDetails.pID;
 
     Utils.editFormApi("editProduct", values).then((res) => {
       // console.log(res);
@@ -467,32 +523,41 @@ function ShopScreen() {
     }
   };
 
-  //---------------Get all product images when user clicks on 'View All'------------------------
-  // Function to load other images
-  // Get other images from backend STEP
-  const getProductImages = async (curItem) => {
+  //---------------Get all product images when user clicks on 'View All' / 'Edit Product'------------------------
+  // Function to get other images from backend
+  // If going to open edit product modal, should also update the curProdDetails state
+  const getProductDetails = async (curItem) => {
     try {
       var res = await Utils._getApi("getOtherImages", {
         productId: curItem.pID,
       });
 
-      let imgsArr = [
-        `data:image/jpg;base64,${convertToBase64(curItem.pImage)}`,
-      ];
+      let imgsArr = [curItem.pImage];
 
       // If no results returned
       if (res.status === 404) {
         console.log("has no more images");
-        setProductImages(imgsArr);
       } else {
         res = res.data;
         for (let imgData of res) {
-          imgsArr.push(
-            `data:image/jpg;base64,${convertToBase64(imgData.image)}`
-          );
+          imgsArr.push(imgData.image);
         }
-        setProductImages(imgsArr);
       }
+
+      setCurProdDetails({
+        pID: curItem.pID,
+        pName: curItem.pName,
+        pDesc: curItem.pDesc,
+        pPrice: curItem.pPrice,
+        pImage: imgsArr,
+        pURL: curItem.pURL,
+      });
+
+      const convertedImgsArr = [];
+      for (let img of imgsArr) {
+        convertedImgsArr.push(`data:image/jpg;base64,${convertToBase64(img)}`);
+      }
+      setProductImages(convertedImgsArr);
     } catch (err) {
       console.log(err);
     }
@@ -500,8 +565,14 @@ function ShopScreen() {
 
   // trigger loading of other images whenever user clicks on 'View All'
   useEffect(() => {
-    getProductImages(curProduct);
-  }, [curProduct]);
+    getProductDetails(curProductSelected);
+  }, [curProductSelected]);
+
+  useEffect(() => {
+    if (!firstRender && !isImageModalVisible) {
+      openEditProductModal();
+    }
+  }, [curProdDetails]);
 
   //----------------------------------------DOWNLOAD CSV----------------------------------------
   const downloadProductCSV = () => {
@@ -593,15 +664,15 @@ function ShopScreen() {
                   visible={isEditProdModalVisible}
                   onOk={postEditProductModal}
                   onCancel={cancelEditProductModal}
-                  details={prodEdit}
+                  details={curProdDetails}
                 />
               ) : (
                 <div></div>
               )}
 
               <ImagesModal
-                closeModal={() => {
-                  setProductImages([]);
+                onCloseModal={() => {
+                  setIsImageModalVisible(false);
                 }}
                 images={productImages}
               />
@@ -611,7 +682,7 @@ function ShopScreen() {
                 visible={isEditProdModalVisible}
                 onOk={postEditProductModal}
                 onCancel={cancelEditProductModal}
-                details={prodEdit}
+                details={curProdDetails}
               /> */}
             </>
           )}
