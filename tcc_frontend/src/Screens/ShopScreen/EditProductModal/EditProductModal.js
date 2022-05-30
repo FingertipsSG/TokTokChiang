@@ -6,7 +6,7 @@ const { TextArea } = Input;
 
 function EditProductModal({ title, visible, onOk, onCancel, details }) {
   const [form] = Form.useForm();
-  const [fileList, setFileList] = useState([details.pImage]);
+  const [fileList, setFileList] = useState(details.pImage);
 
   const onChange = ({ fileList: curFileList }) => {
     setFileList(curFileList);
@@ -14,6 +14,7 @@ function EditProductModal({ title, visible, onOk, onCancel, details }) {
 
   const onPreview = async (file) => {
     let src = file.url;
+    console.log(src);
     if (!src) {
       src = await new Promise((resolve) => {
         const reader = new FileReader();
@@ -58,22 +59,25 @@ function EditProductModal({ title, visible, onOk, onCancel, details }) {
   form.resetFields();
 
   useEffect(() => {
+    console.log(details.pImage);
+
     // set initial form values
     form.setFieldsValue({
       pName: details.pName,
       pDesc: details.pDesc,
       pPrice: details.pPrice,
-      pImage: [details.pImage],
+      pImage: details.pImage,
       pUrl: details.pURL,
     });
 
-    // add blob data for pop-up preview of image
-    if (fileList[0]) {
-      fileList[0]["thumbUrl"] = `data:image/jpg;base64,${convertToBase64(
-        details.pImage.data
-      )}`;
+    if (fileList.length > 0) {
+      for (let i = 0; i < fileList.length; i++) {
+        fileList[i].thumbUrl = `data:image/jpg;base64,${convertToBase64(
+          details.pImage[i]
+        )}`;
+      }
     }
-  });
+  }, []);
 
   return (
     <Modal
@@ -152,13 +156,13 @@ function EditProductModal({ title, visible, onOk, onCancel, details }) {
           <Space direction="vertical" style={{ width: "100%" }} size="large">
             <Upload
               listType="picture-card"
-              maxCount={1}
+              maxCount={5}
               fileList={fileList}
               onChange={onChange}
               onPreview={onPreview}
               beforeUpload={() => false}
             >
-              {fileList.length <= 1 && "+ Upload"}
+              {fileList.length <= 5 && "+ Upload"}
             </Upload>
           </Space>
         </Form.Item>

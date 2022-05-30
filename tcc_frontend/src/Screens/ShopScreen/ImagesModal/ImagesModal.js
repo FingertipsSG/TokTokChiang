@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ImagesModal.css";
 
 const ImagesModal = (props) => {
@@ -12,7 +12,7 @@ const ImagesModal = (props) => {
               className="header-text"
               type="button"
               data-dismiss="modal"
-              onClick={props.closeModal}
+              onClick={props.onCloseModal}
             >
               X
             </button>
