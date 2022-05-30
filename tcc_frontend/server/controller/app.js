@@ -47,7 +47,7 @@ app.post("/addProduct", (req, res) => {
     fk_catid,
     function (err, result) {
       if (!err) {
-        res.status(201).send(`{"affectedRows": "${result.affectedRows}"}`);
+        res.status(201).send(`{"insertId": "${result.insertId}"}`);
         console.log(`{"affectedRows": "${result.affectedRows}"}`);
       } else {
         console.log(err);
@@ -87,7 +87,7 @@ app.patch("/editProduct", (req, res) => {
   );
 });
 
-app.post("/image", (req, res) => {
+app.post("/addImage", (req, res) => {
   var { productid, identityid } = req.body;
   var image = req.files.image.data;
 
@@ -102,7 +102,7 @@ app.post("/image", (req, res) => {
   });
 });
 
-app.patch("/image", (req, res) => {
+app.patch("/editImage", (req, res) => {
   var { productid, identityid, imageid } = req.body;
   var image = req.files.image.data;
 
