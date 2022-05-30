@@ -89,6 +89,11 @@ function ShopScreen() {
       title: "Buy URL",
       dataIndex: "pURL",
       key: "pURL",
+      render: (text, record) => (
+        <span>
+          <a href={record.pURL}>{record.pURL}</a>
+        </span>
+      ),
     },
     {
       title: "Action",
