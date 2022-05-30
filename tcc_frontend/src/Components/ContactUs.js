@@ -1,7 +1,7 @@
 import React from "react";
 import "../Components/css/contactus.css";
 import Navbar from "../Components/Navbar";
-import { Form, Button, Input, message } from "antd";
+import { message, Form, Button, Input } from "antd";
 import "antd/dist/antd.css";
 import { Row } from "reactstrap";
 import { postApi } from "../Helper/Utils";
@@ -12,9 +12,13 @@ function ContactUs() {
 
   const onFinish = (values) => {
     postApi("postEmail", values).then((response) => {
-      // console.log("Success:", response);
-      message.success(response.message);
-      form.resetFields();
+      console.log("Success:", response);
+      if (response.status === 200) {
+        console.log(response.data.message);
+        message.success(response.data.message);
+        message.success("Form Successfully Submitted");
+        form.resetFields();
+      }
     });
   };
 
@@ -92,6 +96,10 @@ function ContactUs() {
                   name="phone"
                   rules={[
                     {
+                      type: "Number",
+                      message: "The input is not valid number!",
+                    },
+                    {
                       required: true,
                       message: "Please input your phone number!",
                     },
@@ -100,7 +108,7 @@ function ContactUs() {
                   <Input
                     style={{ borderColor: "#9B9B9B", borderWidth: "2px" }}
                     placeholder="Phone"
-                  />{" "}
+                  />
                 </Form.Item>
 
                 <Form.Item
