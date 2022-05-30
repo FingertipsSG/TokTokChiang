@@ -29,7 +29,7 @@ function ShopScreen() {
   const [isTableLoading, setIsTableLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [curProduct, setCurProduct] = useState(null);
-  const [isImagesModalVisible, setIsImagesModalVisible] = useState(false);
+  const [productImages, setProductImages] = useState([]);
 
   const columns = [
     {
@@ -76,7 +76,7 @@ function ShopScreen() {
               data-toggle="modal"
               data-target="#myModal"
               onClick={() => {
-                openProductImagesModal(props);
+                setCurProduct(props);
               }}
             >
               View all
@@ -467,15 +467,41 @@ function ShopScreen() {
     }
   };
 
-  // Set images modal to be visible and retrieve item of images to be displayed
-  const openProductImagesModal = (props) => {
-    setIsImagesModalVisible(true);
-    setCurProduct(props);
+  //---------------Get all product images when user clicks on 'View All'------------------------
+  // Function to load other images
+  // Get other images from backend STEP
+  const getProductImages = async (curItem) => {
+    try {
+      var res = await Utils._getApi("getOtherImages", {
+        productId: curItem.pID,
+      });
+
+      let imgsArr = [
+        `data:image/jpg;base64,${convertToBase64(curItem.pImage)}`,
+      ];
+
+      // If no results returned
+      if (res.status === 404) {
+        console.log("has no more images");
+        setProductImages(imgsArr);
+      } else {
+        res = res.data;
+        for (let imgData of res) {
+          imgsArr.push(
+            `data:image/jpg;base64,${convertToBase64(imgData.image)}`
+          );
+        }
+        setProductImages(imgsArr);
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
 
-  const closeProductImagesModal = () => {
-    setIsImagesModalVisible(false);
-  };
+  // trigger loading of other images whenever user clicks on 'View All'
+  useEffect(() => {
+    getProductImages(curProduct);
+  }, [curProduct]);
 
   //----------------------------------------DOWNLOAD CSV----------------------------------------
   const downloadProductCSV = () => {
@@ -573,16 +599,12 @@ function ShopScreen() {
                 <div></div>
               )}
 
-              {isImagesModalVisible ? (
-                <div>
-                  <ImagesModal
-                    closeModal={closeProductImagesModal}
-                    curItem={curProduct}
-                  />
-                </div>
-              ) : (
-                <div></div>
-              )}
+              <ImagesModal
+                closeModal={() => {
+                  setProductImages([]);
+                }}
+                images={productImages}
+              />
 
               {/* <EditProductModal
                 title="Edit Product Details"
