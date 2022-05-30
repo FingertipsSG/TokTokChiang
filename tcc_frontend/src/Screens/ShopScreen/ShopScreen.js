@@ -157,19 +157,39 @@ function ShopScreen() {
           >
             Edit
           </a>
-          <Popconfirm
-            title={`Are you sure you want to delete ${record.sName}`}
-            onConfirm={() => {
-              onDeleteShop(record.sID, record.sName);
-            }}
-            okText="Yes"
-            cancelText="No"
-          >
-            <a>Delete</a>
-          </Popconfirm>
         </Space>
       ),
     },
+
+    // {
+    //   title: "Action",
+    //   key: "action",
+    //   render: (text, record) => (
+    //     <Space size="middle">
+    //       <a
+    //         onClick={() => {
+    //           setShopEdit({
+    //             sID: record.sID,
+    //             sName: record.sName,
+    //           });
+    //           openEditShopModal();
+    //         }}
+    //       >
+    //         Edit
+    //       </a>
+    //       <Popconfirm
+    //         title={`Are you sure you want to delete ${record.sName}`}
+    //         onConfirm={() => {
+    //           onDeleteShop(record.sID, record.sName);
+    //         }}
+    //         okText="Yes"
+    //         cancelText="No"
+    //       >
+    //         <a>Delete</a>
+    //       </Popconfirm>
+    //     </Space>
+    //   ),
+    // },
   ];
 
   // To convert BLOB to base64 encoded then load the base64 image STEP
@@ -210,9 +230,6 @@ function ShopScreen() {
         },
       ]);
     });
-
-    console.log(productArray);
-
     setIsTableLoading(false);
   };
 
@@ -288,47 +305,49 @@ function ShopScreen() {
   const postEditShopModal = (values) => {
     setIsModalOpen(false);
     setIsEditShopModalVisible(false);
-    values.oldShop = shopEdit.sName;
-    values.id = shopEdit.sID;
-    // console.log(values)
 
-    Utils.putApi("alterTable", values).then((res) => {
-      console.log(res);
-      if (res.status === 204) {
-        Utils.patchApi("editShop", values).then((res) => {
-          console.log(res);
-          if (res.affectedRows === 1) {
-            message.success("Successfully edited shop");
-            setRender(!render);
-          }
-        });
-      }
-    });
+    // console.log(values);
+
+    // shopEdit refers to the old value, values refer to new values from form
+    Utils.putApi("editShop", {
+      newName: values.sName,
+      id: shopEdit.sID,
+    })
+      .then((res) => {
+        console.log(res);
+        if (res.data.affectedRows === 1) {
+          console.log("Successfully edited shop's name");
+          setRender(!render);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
-  // DELETE AND POST SHOP FUNCTION
-  const onDeleteShop = (id, sName) => {
-    // console.log(id, sName);
-    // console.log(typeof id, typeof sName);
-    const params = {
-      sID: id,
-      sName: sName,
-    };
+  // // DELETE AND POST SHOP FUNCTION
+  // const onDeleteShop = (id, sName) => {
+  //   // console.log(id, sName);
+  //   // console.log(typeof id, typeof sName);
+  //   const params = {
+  //     sID: id,
+  //     sName: sName,
+  //   };
 
-    Utils.deleteApi("dropProductTable", params).then((res) => {
-      console.log("success!");
-      // console.log(res);
-      if (res.status === 200) {
-        Utils.deleteApi("deleteShop", params).then((res) => {
-          // console.log(res);
-          if (res.data.affectedRows === 1) {
-            message.success("Successfully deleted shop");
-            setRender(!render);
-          }
-        });
-      }
-    });
-  };
+  //   Utils.deleteApi("dropProductTable", params).then((res) => {
+  //     console.log("success!");
+  //     // console.log(res);
+  //     if (res.status === 200) {
+  //       Utils.deleteApi("deleteShop", params).then((res) => {
+  //         // console.log(res);
+  //         if (res.data.affectedRows === 1) {
+  //           message.success("Successfully deleted shop");
+  //           setRender(!render);
+  //         }
+  //       });
+  //     }
+  //   });
+  // };
 
   //-------------------------------------------- PRODUCTS --------------------------------------------
   // ADD AND POST PRODUCTS FUNCTONS
@@ -395,28 +414,57 @@ function ShopScreen() {
   //SEARCH PRODUCTS
   const searchProducts = async (value) => {
     const endpoint = "search";
-    const res = await Utils.getApi(endpoint, {
-      shop: type,
+    let categoryId;
+
+    // Get shop category
+    switch (type.toLowerCase()) {
+      case "masks":
+        categoryId = 1;
+        break;
+      case "puppets":
+        categoryId = 2;
+        break;
+      case "dolls":
+        categoryId = 3;
+        break;
+      case "shirts":
+        categoryId = 4;
+        break;
+      case "frames":
+        categoryId = 5;
+        break;
+    }
+
+    // Call API to fetch data
+    var res = await Utils._getApi(endpoint, {
+      categoryId: categoryId,
       searchQuery: value,
     });
-    // console.log(res);
 
     setRender(render);
     setProductArray([]);
 
-    res.forEach((obj, i) => {
-      setProductArray((prevArray) => [
-        ...prevArray,
-        {
-          pID: obj.product_id,
-          pName: obj.product_name,
-          pDesc: obj.product_description,
-          pPrice: obj.product_price,
-          pImage: obj.product_image,
-          pURL: obj.buy_url,
-        },
-      ]);
-    });
+    // If no products found
+    if (res.status === 404) {
+      console.log("No product matches query");
+    } else {
+      // Else, get results and concatenate to product array
+      res = res.data;
+
+      res.forEach((obj, i) => {
+        setProductArray((prevArray) => [
+          ...prevArray,
+          {
+            pID: obj.productid,
+            pName: obj.productname,
+            pDesc: obj.productdesc,
+            pPrice: obj.price,
+            pImage: obj.image,
+            pURL: obj.url,
+          },
+        ]);
+      });
+    }
   };
 
   // Set images modal to be visible and retrieve item of images to be displayed

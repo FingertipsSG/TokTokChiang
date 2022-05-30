@@ -1,3 +1,4 @@
+const e = require("cors");
 var db = require("./databaseConfig.js");
 var shopsDB = {};
 
@@ -73,8 +74,7 @@ shopsDB.deleteShop = function (id, callback) {
   });
 };
 
-// PATCH editShop
-shopsDB.editShop = function (shop_name, id, callback) {
+shopsDB.editShop = function (newName, id, callback) {
   var conn = db.getConnection();
   conn.connect(function (err) {
     if (err) {
@@ -82,45 +82,68 @@ shopsDB.editShop = function (shop_name, id, callback) {
       return callback(err, null);
     } else {
       console.log("Connected!");
-      const sql = "UPDATE shops SET shop_name = ? where id = ?";
-      conn.query(sql, [shop_name,id], function (err, result) {
-          conn.end();
-          if (err) {
-            console.log(err);
-            return callback(err, null);
-          } else {
-            console.log(result);
-            return callback(null, result);
-          }
+      const sql = "UPDATE category SET catname = ? WHERE catid = ?";
+      conn.query(sql, [newName, id], function (err, result) {
+        conn.end();
+        if (err) {
+          console.log(err);
+          return callback(err, null);
+        } else {
+          console.log(result);
+          return callback(null, result);
         }
-      );
+      });
     }
   });
 };
 
-// PUT alterTableName
-shopsDB.alterTable = function (oldShop, newShop, callback) {
-  var conn = db.getConnection();
-  conn.connect(function (err) {
-    if (err) {
-      console.log(err);
-      return callback(err, null);
-    } else {
-      console.log("Connected!");
-      const sql = "ALTER TABLE " + oldShop + " RENAME TO " + newShop;
-      conn.query(sql, [oldShop, newShop], function (err, result) {
-          conn.end();
-          if (err) {
-            console.log(err);
-            return callback(err, null);
-          } else {
-            console.log(result);
-            return callback(null, result);
-          }
-        }
-      );
-    }
-  });
-};
+// // PATCH editShop
+// shopsDB.editShop = function (shop_name, id, callback) {
+//   var conn = db.getConnection();
+//   conn.connect(function (err) {
+//     if (err) {
+//       console.log(err);
+//       return callback(err, null);
+//     } else {
+//       console.log("Connected!");
+//       const sql = "UPDATE shops SET shop_name = ? where id = ?";
+//       conn.query(sql, [shop_name, id], function (err, result) {
+//         conn.end();
+//         if (err) {
+//           console.log(err);
+//           return callback(err, null);
+//         } else {
+//           console.log(result);
+//           return callback(null, result);
+//         }
+//       });
+//     }
+//   });
+// };
+
+// // PUT alterTableName
+// shopsDB.alterTable = function (oldShop, newShop, callback) {
+//   var conn = db.getConnection();
+//   conn.connect(function (err) {
+//     if (err) {
+//       console.log(err);
+//       return callback(err, null);
+//     } else {
+//       console.log("Connected!");
+//       const sql = "ALTER TABLE " + oldShop + " RENAME TO " + newShop;
+//       conn.query(sql, [oldShop, newShop], function (err, result) {
+//           conn.end();
+//           if (err) {
+//             console.log(err);
+//             return callback(err, null);
+//           } else {
+//             console.log(result);
+//             return callback(null, result);
+//           }
+//         }
+//       );
+//     }
+//   });
+// };
 
 module.exports = shopsDB;

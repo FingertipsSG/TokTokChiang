@@ -231,34 +231,6 @@ productsDB = {};
 //   });
 // };
 
-// // TO SEARCH
-// productsDB.searchProducts = function (shop, searchQuery, callback) {
-//   var conn = db.getConnection();
-//   conn.connect(function (err) {
-//     if (err) {
-//       console.log(err);
-//       return callback(err, null);
-//     } else {
-//       console.log("Connected!");
-//       var sql =
-//         "SELECT * FROM " +
-//         shop +
-//         " WHERE product_name LIKE " +
-//         `'%${searchQuery}%'`;
-//       conn.query(sql, function (err, result) {
-//         conn.end();
-//         if (err) {
-//           console.log(err);
-//           return callback(err, null);
-//         } else {
-//           console.log(result);
-//           return callback(null, result);
-//         }
-//       });
-//     }
-//   });
-// };
-
 // GET Products - NON Lazy Loading NEW
 productsDB.getProducts = function (categoryId, callback) {
   // console.log(catId);
@@ -509,6 +481,34 @@ productsDB.editImage = function (
           }
         }
       );
+    }
+  });
+};
+
+// TO SEARCH
+productsDB.searchProducts = function (categoryId, searchQuery, callback) {
+  var conn = db.getConnection();
+  conn.connect(function (err) {
+    if (err) {
+      console.log(err);
+      return callback(err, null);
+    } else {
+      console.log("Connected!");
+      var sql = `
+      SELECT productid, productname, productdesc, price, url, image FROM products
+      JOIN images
+      ON products.productid = images.fk_productid
+      WHERE fk_catid = ? AND productname LIKE '%${searchQuery}%' AND fk_identityid = 1`;
+      conn.query(sql, [categoryId], function (err, result) {
+        conn.end();
+        if (err) {
+          console.log(err);
+          return callback(err, null);
+        } else {
+          console.log(result);
+          return callback(null, result);
+        }
+      });
     }
   });
 };
