@@ -749,6 +749,30 @@ productsDB.editImage = function (
   });
 };
 
+// DELETE IMAGE NEW
+productsDB.deleteImage = function (imageId, callback) {
+  var conn = db.getConnection();
+  conn.connect(function (err) {
+    if (err) {
+      console.log(err);
+      return callback(err, null);
+    } else {
+      console.log("Connected!");
+      const sql = "DELETE FROM images WHERE imageid = ?";
+      conn.query(sql, [imageId], function (err, result) {
+        conn.end();
+        if (err) {
+          console.log(err);
+          return callback(err, null);
+        } else {
+          console.log(result);
+          return callback(null, result);
+        }
+      });
+    }
+  });
+};
+
 // TO SEARCH
 productsDB.searchProducts = function (categoryId, searchQuery, callback) {
   var conn = db.getConnection();

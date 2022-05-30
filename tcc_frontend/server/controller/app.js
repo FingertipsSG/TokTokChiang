@@ -129,6 +129,24 @@ app.patch("/image", (req, res) => {
   );
 });
 
+app.delete("/image", (req, res) => {
+  const imageId = req.body.imageID;
+
+  productsDB.deleteImage(imageId, (err, result) => {
+    if (!err) {
+      console.log(result);
+      if (result.affectedRows === 0) {
+        console.log({ Message: "This product does not exist" });
+        return res.status(404).send({ Message: "This product does not exist" });
+      }
+      return res.status(204).json(result);
+    } else {
+      console.log(err);
+      return res.status(500).send();
+    }
+  });
+});
+
 // GET Products - NON Lazy loading
 app.get("/getProducts", (req, res) => {
   const categoryId = req.query.categoryId;
