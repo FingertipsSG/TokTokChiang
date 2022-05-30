@@ -497,7 +497,6 @@ app.patch("/editUsers", (req, res) => {
 //----------------------- SEND EMAIL --------------------------------
 
 var email = "toktokchiangemails@gmail.com";
-
 const transporter = nodemailer.createTransport({
   // host: "localhost",
   // port: 3001,
@@ -543,6 +542,8 @@ app.post("/postEmail", (req, res) => {
     }
   });
 });
+
+
 
 //API FOR FORGET PW SEND EMAIL
 app.post("/sendEmailPin", (req, res) => {
