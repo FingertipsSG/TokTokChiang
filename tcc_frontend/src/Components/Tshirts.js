@@ -228,11 +228,6 @@ function Tshirts() {
         <Navbar />
         <br />
         <br />
-        <br />
-        <br />
-        <br /> 
-        <br />
-        <br /> 
         <div className="shop-container">{renderController()}</div>
       </body>
     </html>

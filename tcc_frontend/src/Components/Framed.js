@@ -227,11 +227,6 @@ function Framed() {
       <body className="framed-body shop-body">
         <Navbar />
         <br />
-        <br />
-        <br />
-        <br />
-        <br /> 
-        <br />
         <br /> 
         <div className="shop-container">{renderController()}</div>
       </body>
