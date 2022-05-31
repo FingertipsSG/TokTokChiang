@@ -17,6 +17,7 @@ body.founderBody {
     margin-left: 92px;
     height: 300px;
     overflow: auto;
+    padding-right: 20px;
 }
 
 .founderPic {
@@ -87,7 +88,7 @@ body.founderBody {
 
 @media (min-width: 1300px) {
     body.founderBody {
-        height: 120vh;
+        height: 100%;
     }
 }
 
@@ -98,16 +99,29 @@ body.founderBody {
     }
     .founderContent {
         font-family: Calibri;
-        font-size: 14px;
+        font-size: 1em;
         margin-left: 70px;
-        height:350px;
+        height: 20em;
         width: 80%;
         overflow:scroll; 
+        margin-bottom: 0;
     }
-    
-    .founderPic{
-        visibility:hidden;
+
+    #founderTitle2 {
+        margin-left: 2em;
     }
+
+    .founderPic {
+        width: 70%;
+        margin-left: 20%;
+        margin-top: 0;
+        float:none;
+    }
+
+    body.founderBody {
+        background-image: none;
+    }
+
 }
 
 /* Common Size: phone & tablet*/
