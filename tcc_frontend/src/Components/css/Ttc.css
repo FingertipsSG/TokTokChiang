@@ -21,7 +21,7 @@ body, html{
 }
 
 body.ttcBody {
-    background: url("../../Assets/Images/AboutUs.png");
+    background: url("../../Assets/Images/TTCbg3.png");
     height:130vh;
     background-size: cover;
     background-repeat: no-repeat;
