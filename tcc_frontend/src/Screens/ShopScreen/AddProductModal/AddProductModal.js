@@ -28,20 +28,20 @@ function AddProductModal({ title, visible, onOk, onCancel }) {
     imgWindow.document.write(image.outerHTML);
   };
 
-  const convertToBlob = (file) => {
-    const byteCharacters = atob(
-      file.thumbUrl.replace("data:image/png;base64,", "")
-    );
+  // const convertToBlob = (file) => {
+  //   const byteCharacters = atob(
+  //     file.thumbUrl.replace("data:image/png;base64,", "")
+  //   );
 
-    const byteNumbers = new Array(byteCharacters.length);
-    for (let i = 0; i < byteCharacters.length; i++) {
-      byteNumbers[i] = byteCharacters.charCodeAt(i);
-    }
+  //   const byteNumbers = new Array(byteCharacters.length);
+  //   for (let i = 0; i < byteCharacters.length; i++) {
+  //     byteNumbers[i] = byteCharacters.charCodeAt(i);
+  //   }
 
-    const byteArray = new Uint8Array(byteNumbers);
+  //   const byteArray = new Uint8Array(byteNumbers);
 
-    return new Blob([byteArray], { type: "image/png" });
-  };
+  //   return new Blob([byteArray], { type: "image/png" });
+  // };
 
   // const beforeUpload = (file) => {
   //     const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'image/jpg';
@@ -70,7 +70,9 @@ function AddProductModal({ title, visible, onOk, onCancel }) {
         form
           .validateFields()
           .then((values) => {
-            values = { ...values, pImage: convertToBlob(fileList[0]) };
+            values = { ...values };
+            values["pImage"] = fileList;
+            // console.log(values);
             form.resetFields();
             setFileList([]);
             onOk(values);

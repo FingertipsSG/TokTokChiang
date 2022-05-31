@@ -68,7 +68,7 @@ function ShopScreen() {
           return;
         }
         // console.log("props are: ", props);
-        // console.log("testing", props.pImage.data)
+        // console.log("testing", props.pImage.data);
         return (
           <Space size="middle" className="images-column">
             <img
@@ -156,6 +156,16 @@ function ShopScreen() {
           >
             Edit
           </a>
+          {/* <Popconfirm
+            title={`Are you sure you want to delete ${record.sName}`}
+            onConfirm={() => {
+              onDeleteShop(record.sID, record.sName);
+            }}
+            okText="Yes"
+            cancelText="No"
+          >
+            <a>Delete</a>
+          </Popconfirm> */}
         </Space>
       ),
     },
@@ -214,7 +224,6 @@ function ShopScreen() {
     // console.log(catid);
 
     const res = await Utils.getProducts(catid);
-    // console.log(res);
 
     res.forEach((obj) => {
       setProductArray((prevArray) => [
@@ -224,7 +233,11 @@ function ShopScreen() {
           pName: obj.productname,
           pDesc: obj.productdesc,
           pPrice: obj.price,
-          pImage: obj.image,
+          pImage: { 
+            data: obj.image.data, 
+            type: obj.image.type, 
+            imageid: obj.imageid
+          },
           pURL: obj.url,
         },
       ]);
@@ -362,8 +375,8 @@ function ShopScreen() {
     setIsTableLoading(true);
     setIsAddProdModalVisible(false);
     values.shop = type;
-    console.log(type);
-    console.log(values);
+    // console.log(type);
+    // console.log(values);
     var thisProductId = 0;
 
     var postBody = {
@@ -374,7 +387,7 @@ function ShopScreen() {
       fk_catid: getKeyByValue(values.shop),
     };
 
-    console.log(postBody);
+    // console.log(postBody);
 
     await Utils.postApi("addProduct", postBody).then((response) => {
       if (response.status === 201) {
@@ -443,14 +456,77 @@ function ShopScreen() {
     setIsEditProdModalVisible(false);
     values.shop = type;
     values.id = curProdDetails.pID;
+    // console.log(curProdDetails);
 
-    Utils.editFormApi("editProduct", values).then((res) => {
-      // console.log(res);
-      if (res.data.affectedRows === 1) {
+    var catid = getKeyByValue(type);
+
+    var formBody = {
+      productname: values.pName,
+      productdesc: values.pDesc, 
+      price: values.pPrice, 
+      url: values.pUrl, 
+      fk_catid: catid,
+      productid: values.id
+    };
+    // console.log(formBody);
+
+    Utils.patchApi("editProduct", formBody).then((res) => {
+      // console.log(res); 
+      if (res.status === 200) {
+        console.log(res.data.affectedRows);
         message.success("Successfully edited product");
         setRender(!render);
       }
     });
+
+    var files = values.pImage;
+
+    for (var i = 0; i < files.length; i++) {
+      let bodyFile = {
+        image: convertToBlob(files[i]),
+        productid: values.id,
+        imageid: files[i].imageid,
+        identityid: i + 1,
+      };
+
+      if (bodyFile.imageid === undefined) {
+        // console.log("post");
+        Utils.postImageApi("addImage", bodyFile).then((res) => {
+          if (res.status === 201) {
+            console.log(res.data.affectedRows);
+            message.success(`Successfully uploaded image`);
+            // setRender(!render);
+          }
+        });
+      }
+      else if (curProdDetails.pImage[i].status !== undefined && files.length < curProdDetails.pImage.length) {
+        // console.log("delete image");
+        let bodyFile = {
+          imageID: files[i].imageid,
+        };
+        
+        Utils.deleteApi("deleteImage", bodyFile).then((res) => {
+          if (res.status === 204) {
+            console.log(res.data.affectedRows);
+            message.success(`Successfully uploaded image`);
+            // setRender(!render);
+          }
+        });
+      }
+      else if (productImages[i] !== bodyFile.image.thumbUrl) {
+        // console.log("patch");
+        Utils.editImageApi("editImage", bodyFile).then((res) => {
+          if (res.status === 200) {
+            console.log(res.data.affectedRows);
+            message.success(`Successfully uploaded image`);
+            // setRender(!render);
+          }
+        });
+      }
+
+      setRender(!render);
+    }
+
   };
 
   // DELETE AND POST PRODUCT FUNCTION
@@ -540,7 +616,13 @@ function ShopScreen() {
       } else {
         res = res.data;
         for (let imgData of res) {
-          imgsArr.push(imgData.image);
+          console.log(res);
+          var newImgData = {
+            type: imgData.image.type,
+            data: imgData.image.data,
+            imageid: imgData.imageid
+          };
+          imgsArr.push(newImgData);
         }
       }
 
@@ -555,7 +637,7 @@ function ShopScreen() {
 
       const convertedImgsArr = [];
       for (let img of imgsArr) {
-        convertedImgsArr.push(`data:image/jpg;base64,${convertToBase64(img)}`);
+        convertedImgsArr.push(`data:image/jpg;base64,${convertToBase64(img.data)}`);
       }
       setProductImages(convertedImgsArr);
     } catch (err) {
