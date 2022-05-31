@@ -437,7 +437,7 @@ productsDB.getProducts = function (categoryId, callback) {
       console.log("Connected!");
       // fk_identityid = 1 : Get the main image of product
       // categoryId: Get the correct type of products
-      var sql = `SELECT productid, productname, productdesc, price, url, image
+      var sql = `SELECT productid, productname, productdesc, price, url, image, imageid
                 FROM products
                 JOIN images
                 ON products.productid = images.fk_productid
@@ -468,7 +468,7 @@ productsDB.getOtherImages = function (productId, callback) {
       console.log("Connected!");
       // fk_identityid != 1 : Get all images except for main image
       // productId : Get images for specific product
-      var sql = `SELECT image
+      var sql = `SELECT image, imageid
                 FROM products
                 JOIN images
                 ON products.productid = images.fk_productid
@@ -497,7 +497,7 @@ productsDB.getProductsLL = function (categoryId, startRow, endRow, callback) {
       return callback(err, null);
     } else {
       console.log("Connected!");
-      var sql = `SELECT productid, productname, productdesc, price, url, image
+      var sql = `SELECT productid, productname, productdesc, price, url, image, imageid
       FROM products
       JOIN images
       ON products.productid = images.fk_productid
@@ -714,13 +714,7 @@ productsDB.addImage = function (image, productid, identityid, callback) {
 };
 
 //EDIT IMAGE NEW
-productsDB.editImage = function (
-  image,
-  productid,
-  identityid,
-  imageid,
-  callback
-) {
+productsDB.editImage = function (image, productid, identityid, imageid, callback) {
   var conn = db.getConnection();
   conn.connect(function (err) {
     if (err) {

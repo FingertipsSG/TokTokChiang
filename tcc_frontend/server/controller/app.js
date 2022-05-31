@@ -24,7 +24,6 @@ const hash = require("../valiators/hash");
 const csvParser = require("csv-parser");
 
 app.use(urlencodedParser);
-app.use(fileUpload());
 
 app.use(express.static(path.join(__dirname, "..", "..", "build")));
 app.use(express.static("public"));
@@ -48,7 +47,8 @@ app.post("/addProduct", (req, res) => {
     function (err, result) {
       if (!err) {
         res.status(201).send(`{"insertId": "${result.insertId}"}`);
-        console.log(`{"affectedRows": "${result.affectedRows}"}`);
+        // console.log(`{"affectedRows": "${result.affectedRows}"}`);
+        console.log(result);
       } else {
         console.log(err);
         res.status(500).send();
@@ -106,12 +106,7 @@ app.patch("/editImage", (req, res) => {
   var { productid, identityid, imageid } = req.body;
   var image = req.files.image.data;
 
-  productsDB.editImage(
-    image,
-    productid,
-    identityid,
-    imageid,
-    function (err, result) {
+  productsDB.editImage(image, productid, identityid, imageid, function (err, result) {
       if (!err) {
         if (result.affectedRows === 0) {
           console.log({ Message: "This product does not exist" });
@@ -129,7 +124,7 @@ app.patch("/editImage", (req, res) => {
   );
 });
 
-app.delete("/image", (req, res) => {
+app.delete("/deleteImage", (req, res) => {
   const imageId = req.body.imageID;
 
   productsDB.deleteImage(imageId, (err, result) => {
@@ -139,7 +134,7 @@ app.delete("/image", (req, res) => {
         console.log({ Message: "This product does not exist" });
         return res.status(404).send({ Message: "This product does not exist" });
       }
-      return res.status(204).json(result);
+      return res.status(204);
     } else {
       console.log(err);
       return res.status(500).send();
@@ -566,8 +561,6 @@ app.post("/postEmail", (req, res) => {
     }
   });
 });
-
-
 
 //API FOR FORGET PW SEND EMAIL
 app.post("/sendEmailPin", (req, res) => {

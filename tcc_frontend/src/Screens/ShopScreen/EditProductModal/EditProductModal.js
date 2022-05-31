@@ -14,7 +14,7 @@ function EditProductModal({ title, visible, onOk, onCancel, details }) {
 
   const onPreview = async (file) => {
     let src = file.url;
-    console.log(src);
+    // console.log(src);
     if (!src) {
       src = await new Promise((resolve) => {
         const reader = new FileReader();
@@ -28,26 +28,6 @@ function EditProductModal({ title, visible, onOk, onCancel, details }) {
     imgWindow.document.write(image.outerHTML);
   };
 
-  const convertToBlob = (file) => {
-    // if file is empty, throw a new error
-    if (!file) {
-      throw new Error("No image selected.");
-    }
-
-    // If there's an image, proceed to convert
-    // Safe to do this since base64 encoded string will never have ',' within it
-    const byteCharacters = atob(file.thumbUrl.split(",")[1]);
-
-    const byteNumbers = new Array(byteCharacters.length);
-    for (let i = 0; i < byteCharacters.length; i++) {
-      byteNumbers[i] = byteCharacters.charCodeAt(i);
-    }
-
-    const byteArray = new Uint8Array(byteNumbers);
-
-    return new Blob([byteArray], { type: "image/png" });
-  };
-
   // To convert BLOB to base64 encoded then load the base64 image STEP
   const convertToBase64 = (imgData) => {
     const imageBuffer = Buffer.from(imgData);
@@ -56,11 +36,10 @@ function EditProductModal({ title, visible, onOk, onCancel, details }) {
     return imageBuffer64;
   };
 
-  form.resetFields();
-
   useEffect(() => {
     console.log(details.pImage);
 
+    // form.resetFields();
     // set initial form values
     form.setFieldsValue({
       pName: details.pName,
@@ -87,10 +66,13 @@ function EditProductModal({ title, visible, onOk, onCancel, details }) {
       cancelText="Cancel"
       onCancel={onCancel}
       onOk={() => {
+        // console.log(fileList);
         form
           .validateFields()
           .then((values) => {
-            values = { ...values, pImage: convertToBlob(fileList[0]) };
+            values = { ...values };
+            values["pImage"] = fileList;
+            // console.log(values);
             form.resetFields();
             onOk(values);
           })
@@ -145,7 +127,7 @@ function EditProductModal({ title, visible, onOk, onCancel, details }) {
 
         <Form.Item
           name="pImage"
-          label="Product Image"
+          label="Product Image (Order: Front, Back, Left Side, Right Side)"
           rules={[
             {
               required: true,
@@ -156,13 +138,13 @@ function EditProductModal({ title, visible, onOk, onCancel, details }) {
           <Space direction="vertical" style={{ width: "100%" }} size="large">
             <Upload
               listType="picture-card"
-              maxCount={5}
+              maxCount={4}
               fileList={fileList}
               onChange={onChange}
               onPreview={onPreview}
               beforeUpload={() => false}
             >
-              {fileList.length <= 5 && "+ Upload"}
+              {fileList.length <= 4 && "+ Upload"}
             </Upload>
           </Space>
         </Form.Item>

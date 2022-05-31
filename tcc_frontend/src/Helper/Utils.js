@@ -10,9 +10,9 @@ export async function getProducts(catid, parameters = {}) {
     return res.data;
   } catch (e) {
     console.log("[getApi error]");
-    console.log("url: " + url);
-    console.log("params: " + JSON.stringify(params));
-    console.log(e);
+    // console.log("url: " + url);
+    // console.log("params: " + JSON.stringify(params));
+    // console.log(e);
   }
 }
 
@@ -36,8 +36,8 @@ export async function getProductsLazyLoad(startRow, endRow, parameters) {
     return res;
   } catch (e) {
     console.log("[getApi error]");
-    console.log("url: " + url);
-    console.log(e);
+    // console.log("url: " + url);
+    // console.log(e);
     return e.response;
   }
 }
@@ -53,9 +53,9 @@ export async function _getApi(endpoint, parameters = {}) {
     return res;
   } catch (e) {
     console.log("[getApi error]");
-    console.log("url: " + url);
-    console.log("params: " + JSON.stringify(params));
-    console.log(e);
+    // console.log("url: " + url);
+    // console.log("params: " + JSON.stringify(params));
+    // console.log(e);
     return e.response;
   }
 }
@@ -74,9 +74,9 @@ export async function getApi(endpoint, parameters = {}) {
     return res.data;
   } catch (e) {
     console.log("[getApi error]");
-    console.log("url: " + url);
-    console.log("params: " + JSON.stringify(params));
-    console.log(e);
+    // console.log("url: " + url);
+    // console.log("params: " + JSON.stringify(params));
+    // console.log(e);
     return e;
   }
 }
@@ -89,23 +89,21 @@ export async function postApi(endpoint, parameters = {}) {
     return res;
   } catch (e) {
     console.log("[postApi error]");
-    console.log("url: " + url);
-    console.log("params: " + parameters);
-    console.log(e);
+    // console.log("url: " + url);
+    // console.log("params: " + parameters);
+    // console.log(e);
   }
 }
 
-export async function postFormApi(endpoint, parameters = {}) {
+export async function postImageApi(endpoint, parameters = {}) {
   const url = "http://localhost:5001/" + endpoint;
   try {
     const formData = new FormData();
 
-    formData.append("pName", parameters.pName);
-    formData.append("pDesc", parameters.pDesc);
-    formData.append("pPrice", parameters.pPrice);
-    formData.append("pImage", parameters.pImage);
-    formData.append("pUrl", parameters.pUrl);
-    formData.append("shop", parameters.shop);
+    console.log(parameters);
+    formData.append("image", parameters.image);
+    formData.append("productid", parameters.productid);
+    formData.append("identityid", parameters.identityid);
 
     // for (let key of formData.entries()) {
     //   console.log(key[0], key[1]);
@@ -124,10 +122,11 @@ export async function postFormApi(endpoint, parameters = {}) {
 
     return res;
   } catch (e) {
-    console.log("[postApi error]");
-    console.log("url: " + url);
-    console.log("params: " + parameters);
-    console.log(e);
+    console.log("[postImageApi error]");
+    // console.log("url: " + url);
+    // console.log("params: " + parameters);
+    // console.log(e);
+    return e.response;
   }
 }
 
@@ -136,34 +135,31 @@ export async function patchApi(endpoint, parameters = {}) {
   const url = "http://localhost:5001/" + endpoint;
   try {
     const res = await axios.patch(url, parameters);
-    return res.data;
+    return res;
   } catch (e) {
     console.log("[patchApi error]");
-    console.log("url: " + url);
-    console.log("params: " + parameters);
-    console.log(e);
+    // console.log("url: " + url);
+    // console.log("params: " + parameters);
+    // console.log(e);
   }
 }
 
-export async function editFormApi(endpoint, parameters = {}) {
+export async function editImageApi(endpoint, parameters = {}) {
   const url = "http://localhost:5001/" + endpoint;
   try {
     const formData = new FormData();
 
-    // console.log(parameters)
-    formData.append("pName", parameters.pName);
-    formData.append("pDesc", parameters.pDesc);
-    formData.append("pPrice", parameters.pPrice);
-    formData.append("pImage", parameters.pImage);
-    formData.append("pUrl", parameters.pUrl);
-    formData.append("shop", parameters.shop);
-    formData.append("id", parameters.id);
+    console.log(parameters);
+    formData.append("image", parameters.image);
+    formData.append("productid", parameters.productid);
+    formData.append("imageid", parameters.imageid);
+    formData.append("identityid", parameters.identityid);
 
-    // for (let key of formData.entries()) {
-    //   console.log(key[0], key[1]);
-    // }
+    for (let key of formData.entries()) {
+      console.log(key[0], key[1]);
+    }
 
-    // console.log(formData.entries());
+    console.log(formData.entries());
 
     const res = await axios({
       method: "PATCH",
@@ -176,10 +172,11 @@ export async function editFormApi(endpoint, parameters = {}) {
 
     return res;
   } catch (e) {
-    console.log("[patchApi error]");
-    console.log("url: " + url);
-    console.log("params: " + parameters);
-    console.log(e);
+    console.log("[patchImageApi error]");
+    // console.log("url: " + url);
+    // console.log("params: " + parameters);
+    // console.log(e);
+    return e.response;
   }
 }
 
@@ -206,8 +203,9 @@ export async function deleteApi(endpoint, parameters = {}) {
     return res;
   } catch (e) {
     console.log("[deleteApi error]");
-    console.log("url: " + url);
-    console.log("params: " + parameters);
-    console.log(e);
+    // console.log("url: " + url);
+    // console.log("params: " + parameters);
+    // console.log(e);
+    return e.response;
   }
 }
