@@ -1,11 +1,11 @@
 const express = require("express");
 const path = require("path");
-
 const fastcsv = require("fast-csv");
 const fs = require("fs");
 var bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
+const jwt = require('jsonwebtoken');
 
 var cors = require("cors");
 const app = express();
@@ -454,12 +454,13 @@ app.get("/getUsers", (req, res) => {
   });
 });
 
+
 //LOGIN
+
 app.post("/login", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
   const hashedPw = hash(password);
-
   userDB.login(username, hashedPw, function (err, result) {
     if (result === null) {
       return res.status(401).json({ message: "Invalid Username or Password" });
