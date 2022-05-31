@@ -13,10 +13,7 @@ function founder() {
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
             </head>
             <body className="founderBody">
-                <Navbar />
-                <br />
-                <br />
-                <br />
+            <Navbar />
                 <br />
                 <br />
                 <div className="firstContent">
@@ -24,7 +21,7 @@ function founder() {
                         <div className=" col-lg-6">
                             <div className="firstContentText">
                                 <h2 className="title1">OUR FOUNDER</h2>
-                                <h2 className="title2"> NICK SHEN </h2>
+                                <h2 className="title2" id="founderTitle2"> NICK SHEN </h2>
                                 <br />
                                 <br />
                                 <h2 className="founderTitle">沈炜竣</h2>
