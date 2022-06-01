@@ -15,13 +15,13 @@ app.use(express.json());
 app.use(cors());
 app.use(fileUpload());
 
-const userDB = require("../server/model/users.js");
-const productsDB = require("../server/model/products.js");
-const shopsDB = require("../server/model/shops.js");
+const userDB = require("./server/model/users.js");
+const productsDB = require("./server/model/products.js");
+const shopsDB = require("./server/model/shops.js");
 const mysql = require("mysql");
 const nodemailer = require("nodemailer");
 
-const hash = require("../server/valiators/hash");
+const hash = require("./server/valiators/hash");
 const csvParser = require("csv-parser");
 
 app.use(urlencodedParser);
