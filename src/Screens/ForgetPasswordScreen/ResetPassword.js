@@ -6,7 +6,6 @@ import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { message, Form, Input } from 'antd';
 import logo from '../../Assets/Images/toktoklogo.png';
-import config from '../../config';
 
 function ResetPassword() {
     const [error, setError] = useState("");
@@ -16,7 +15,7 @@ function ResetPassword() {
     const navigate = useNavigate();
     const [form] = Form.useForm();
     const email = location.state.emailBroughtOver;
-    const baseurl = config.baseurl || "http://localhost:3000/";
+    const baseurl = "https://tok-tok-chiang-nodejs.herokuapp.com/";
     // console.log("Email: " + email);
 
     const updatePassword = () => {

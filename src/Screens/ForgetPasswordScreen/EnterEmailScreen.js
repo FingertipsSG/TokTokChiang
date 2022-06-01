@@ -6,14 +6,13 @@ import AlertTitle from '@material-ui/lab/AlertTitle';
 import { useNavigate } from "react-router-dom";
 import { message, Form, Input } from 'antd';
 import logo from '../../Assets/Images/toktoklogo.png';
-import config from '../../config';
 
 function EnterEmailScreen() {
     const [email, setEmail] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
     const [form] = Form.useForm();
-    const baseurl = config.baseurl || "http://localhost:3000/";
+    const baseurl = "https://tok-tok-chiang-nodejs.herokuapp.com/";
     const emailParams = {
         email: email,
         number: Math.floor(Math.random() * 899999 + 100000)

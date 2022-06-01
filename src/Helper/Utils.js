@@ -1,6 +1,5 @@
 import axios from "axios";
-import config from '../config';
-const baseurl = config.baseurl || "http://localhost:3000/";
+const baseurl = "https://tok-tok-chiang-nodejs.herokuapp.com/";
 
 export async function getProducts(prodType, parameters = {}) {
   const url = baseurl + `getProducts?shop=${prodType}`;

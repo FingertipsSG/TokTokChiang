@@ -7,7 +7,6 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { message, Form, Input } from "antd";
 import logo from '../../Assets/Images/toktoklogo.png';
-import config from '../../config';
 
 function EnterDigitPinScreen() {
     const [error, setError] = useState("");
@@ -16,7 +15,7 @@ function EnterDigitPinScreen() {
     const location = useLocation();
     const [form] = Form.useForm();
     const email = location.state.emailBroughtOver;
-    const baseurl = config.baseurl || "http://localhost:3000/";
+    const baseurl = "https://tok-tok-chiang-nodejs.herokuapp.com/";
     // console.log("from prev page: " + JSON.stringify(location.state));
 
     const getResendPin = () => {
