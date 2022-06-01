@@ -1,5 +1,5 @@
 {
-  "name": "tcc_frontend",
+  "name": "TokTokChiang",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://fingertipssg.github.io",
@@ -40,10 +40,10 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "cd ./app && node app.js",
+    "start": "export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
     "server": "cd ./server/controller && node index.js",
     "dev": "concurrently \"npm run server\" \"npm start\"",
-    "build": "react-scripts build",
+    "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
