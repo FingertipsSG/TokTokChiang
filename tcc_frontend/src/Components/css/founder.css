@@ -27,10 +27,20 @@ body.founderBody {
     margin-top: 8%;
 }
 
+/* Common Size: phone & tablet*/
+@media (max-width: 1023px) { 
+    body.founderBody {
+        background-size:cover;
+        background-attachment: fixed;
+        background-position:0;
+    }
+}
+
 @media (min-width: 1002px) and (max-width: 1022px) {
     .founderPic {
         margin-top: 10% ;
     }
+    
 }
 
 @media (min-width: 1093px) and (max-width: 1223px) {
@@ -53,25 +63,23 @@ body.founderBody {
 
 @media (min-width: 1224px) and (max-width: 1449px) {
     .founderContent {
-        height: 250px;
+        height: 350px;
     }
     .founderPic {
         margin-top: 10%;
     }
 }
 
-@media (min-width: 991px) and (max-width: 1092px) {
+@media (min-width: 1300px) {
+    body.founderBody {
+        height: 100%;
+    }
+}
+@media (min-width: 990px) and (max-width: 1092px) {
     .founderContent {
-        height: 180px !important;
+        height: 50em !important;
     }
 }
-
-@media (min-width: 768px) and (max-width: 991px) {
-    .founderPic {
-        margin-top: 3% !important;
-    }
-}
-
 @media (min-width: 768px) and ( max-width:1023px){ 
     html.founderHtml {
         overflow: hidden;
@@ -83,15 +91,16 @@ body.founderBody {
         width:80%;
         margin-bottom: 0;
     }
-
 }
 
-@media (min-width: 1300px) {
-    body.founderBody {
-        height: 100%;
+@media (min-width: 768px) and (max-width: 991px) {
+    .founderPic {
+        margin-top: 3% !important;
     }
 }
 
+
+/*mobile version*/
 @media (max-width: 767px) { 
     html.founderHtml{
         height:100vh;
@@ -102,6 +111,191 @@ body.founderBody {
         font-size: 1em;
         margin-left: 70px;
         height: 20em;
+        width: 80%;
+        overflow:scroll; 
+        margin-bottom: 0;
+    }
+
+    #founderTitle2 {
+        margin-left: 15em;
+    }
+
+    .founderPic {
+        width: 70%;
+        margin-left: 20%;
+        margin-top: 0;
+        float:none;
+    }
+
+    body.founderBody {
+        background-image: none;
+    }
+
+}
+@media (max-width: 529px) { 
+    html.founderHtml{
+        height:100vh;
+        overflow: hidden;
+    }
+    .founderContent {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left: 70px;
+        height: 20em;
+        width: 80%;
+        overflow:scroll; 
+        margin-bottom: 0;
+    }
+
+    #founderTitle2 {
+        margin-left:40em;
+    }
+
+    .founderPic {
+        width: 70%;
+        margin-left: 20%;
+        margin-top: 0;
+        float:none;
+    }
+
+    body.founderBody {
+        background-image: none;
+    }
+}
+@media (max-width: 528px) { 
+    html.founderHtml{
+        height:100vh;
+        overflow: hidden;
+    }
+    .founderContent {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left: 70px;
+        height: 20em;
+        width: 80%;
+        overflow:scroll; 
+        margin-bottom: 0;
+    }
+
+    #founderTitle2 {
+        margin-left:6em;
+    }
+
+    .founderPic {
+        width: 70%;
+        margin-left: 20%;
+        margin-top: 0;
+        float:none;
+    }
+
+    body.founderBody {
+        background-image: none;
+    }
+}
+@media (max-width: 450px) { 
+    html.founderHtml{
+        height:100vh;
+        overflow: hidden;
+    }
+    .founderContent {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left: 70px;
+        height: 20em;
+        width: 80%;
+        overflow:scroll; 
+        margin-bottom: 0;
+    }
+
+    #founderTitle2 {
+        margin-left: 5em;
+    }
+
+    .founderPic {
+        width: 70%;
+        margin-left: 20%;
+        margin-top: 0;
+        float:none;
+    }
+
+    body.founderBody {
+        background-image: none;
+    }
+
+}
+@media (max-width: 435px) { 
+    html.founderHtml{
+        height:100vh;
+        overflow: hidden;
+    }
+    .founderContent {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left: 70px;
+        height: 25em;
+        width: 80%;
+        overflow:scroll; 
+        margin-bottom: 0;
+    }
+
+    #founderTitle2 {
+        margin-left: 3em;
+    }
+
+    .founderPic {
+        width: 70%;
+        margin-left: 20%;
+        margin-top: 0;
+        float:none;
+    }
+
+    body.founderBody {
+        background-image: none;
+    }
+
+}
+@media (max-width: 400px) { 
+    html.founderHtml{
+        height:100vh;
+        overflow: hidden;
+    }
+    .founderContent {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left: 70px;
+        height: 25em;
+        width: 80%;
+        overflow:scroll; 
+        margin-bottom: 0;
+    }
+
+    #founderTitle2 {
+        margin-left: 3em;
+    }
+
+    .founderPic {
+        width: 70%;
+        margin-left: 20%;
+        margin-top: 0;
+        float:none;
+    }
+
+    body.founderBody {
+        background-image: none;
+    }
+
+}
+
+@media (max-width: 380px) { 
+    html.founderHtml{
+        height:100vh;
+        overflow: hidden;
+    }
+    .founderContent {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left: 70px;
+        height: 15em;
         width: 80%;
         overflow:scroll; 
         margin-bottom: 0;
@@ -122,13 +316,4 @@ body.founderBody {
         background-image: none;
     }
 
-}
-
-/* Common Size: phone & tablet*/
-@media (max-width: 1023px) { 
-    body.founderBody {
-        background-size:cover;
-        background-attachment: fixed;
-        background-position:0;
-    }
 }
