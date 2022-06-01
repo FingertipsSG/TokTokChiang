@@ -1,5 +1,7 @@
 var db = require("./databaseConfig.js");
+var config = require("./config.js");
 var userDB = {};
+const jwt = require('jsonwebtoken');
 
 //----------------------------------------ADMIN----------------------------------------
 //ADD USERS
@@ -234,6 +236,7 @@ userDB.getUsers = function (id, callback) {
 //LOGIN
 userDB.login = function (username, password, callback) {
   var dbConn = db.getConnection();
+  console.log("JWT Token: " + config.JWTKey);
   dbConn.connect(function (err) {
     if (err) {
       console.log(err);
@@ -241,7 +244,6 @@ userDB.login = function (username, password, callback) {
     } else {
       const query = "SELECT * FROM toktokchiang.admin WHERE username = ? AND password = ?";
       dbConn.query(query, [username, password], (error, results) => {
-        console.log(results);
         if (error) {
           callback(error, null);
           return;
@@ -250,7 +252,23 @@ userDB.login = function (username, password, callback) {
           return callback(null, null);
         } else {
           const user = results[0];
-          return callback(null, user);
+          const pw = password.toString();
+          if (pw === user.password) {
+            let data = {
+              id: user.id,
+              username: user.username,
+              password: user.password,
+              email: user.email,
+              role: user.role,
+              token: jwt.sign({ id: user.id }, config.JWTKey, {
+                expiresIn: "5s", //Expires in 24 hrs
+              })
+            };//End of data variable setup
+            // verifyFn.verifyToken;
+            return callback(null, data);
+          } else {
+            console.log("Wrong password");
+          }
         }
       });
     }

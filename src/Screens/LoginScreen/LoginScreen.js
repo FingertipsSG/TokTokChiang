@@ -6,18 +6,20 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import logo from '../../Assets/Images/toktoklogo.png';
+import config from '../../../server/model/config';
 
 function LoginScreen() {
     const [details, setDetails] = useState({ username: "", password: "" });
     const [user, setUser] = useState("");
     const [error, setError] = useState("");
+    const baseurl = config.baseurl || "http://localhost:3000/";
 
     const navigate = useNavigate();
   
     const Login = async details => {
       // console.log(details);
   
-      await axios.post("http://localhost:5001/login", {
+      await axios.post(baseurl + "login", {
         username: details.username,
         password: details.password,
       }).then((response) => {

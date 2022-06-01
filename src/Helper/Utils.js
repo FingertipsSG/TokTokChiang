@@ -1,7 +1,9 @@
 import axios from "axios";
+import config from '../../server/model/config';
+const baseurl = config.baseurl || "http://localhost:3000/";
 
 export async function getProducts(prodType, parameters = {}) {
-  const url = `http://localhost:5001/getProducts?shop=${prodType}`;
+  const url = baseUrl + `getProducts?shop=${prodType}`;
   let params = {};
   params.params = parameters;
 
@@ -18,7 +20,7 @@ export async function getProducts(prodType, parameters = {}) {
 
 // Get products - lazy load
 export async function getProductsLazyLoad(startRow, endRow, parameters) {
-  const url = "http://localhost:5001/getProductsLL";
+  const url = baseUrl +  "getProductsLL";
   try {
     const res = await axios({
       method: "POST",
@@ -43,7 +45,7 @@ export async function getProductsLazyLoad(startRow, endRow, parameters) {
 
 // GET
 export async function getApi(endpoint, parameters = {}) {
-  const url = "http://localhost:5001/" + endpoint;
+  const url = baseUrl + endpoint;
   let params = {};
   params.params = parameters;
   try {
@@ -64,7 +66,7 @@ export async function getApi(endpoint, parameters = {}) {
 
 // POST
 export async function postApi(endpoint, parameters = {}) {
-  const url = "http://localhost:5001/" + endpoint;
+  const url = baseUrl + endpoint;
   try {
     const res = await axios.post(url, parameters);
     return res;
@@ -77,7 +79,7 @@ export async function postApi(endpoint, parameters = {}) {
 }
 
 export async function postFormApi(endpoint, parameters = {}) {
-  const url = "http://localhost:5001/" + endpoint;
+  const url = baseUrl + endpoint;
   try {
     const formData = new FormData();
 
@@ -114,7 +116,7 @@ export async function postFormApi(endpoint, parameters = {}) {
 
 // PATCH
 export async function patchApi(endpoint, parameters = {}) {
-  const url = "http://localhost:5001/" + endpoint;
+  const url = baseUrl + endpoint;
   try {
     const res = await axios.patch(url, parameters);
     return res.data;
@@ -127,7 +129,7 @@ export async function patchApi(endpoint, parameters = {}) {
 }
 
 export async function editFormApi(endpoint, parameters = {}) {
-  const url = "http://localhost:5001/" + endpoint;
+  const url = baseUrl + endpoint;
   try {
     const formData = new FormData();
 
@@ -166,7 +168,7 @@ export async function editFormApi(endpoint, parameters = {}) {
 
 // PUT
 export async function putApi(endpoint, parameters = {}) {
-  const url = "http://localhost:5001/" + endpoint;
+  const url = baseUrl + endpoint;
   try {
     const res = await axios.put(url, parameters);
     return res;
@@ -180,7 +182,7 @@ export async function putApi(endpoint, parameters = {}) {
 
 // DELETE
 export async function deleteApi(endpoint, parameters = {}) {
-  const url = "http://localhost:5001/" + endpoint;
+  const url = baseUrl + endpoint;
   try {
     // console.log(parameters);
     const res = await axios.delete(url, { data: parameters });
