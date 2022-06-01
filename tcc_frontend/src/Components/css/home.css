@@ -29,6 +29,7 @@ body.homePageBody {
     margin-left: 92px;
     height: 300px;
     overflow: auto;
+    padding-right: 20px;
 }
 
 .homeFounderPic {
@@ -81,8 +82,6 @@ body.homePageBody {
     }
  
     .homeContent2 {
-        overflow: scroll;
-        height: 200px;
         margin-top: 1%;
     }
 }
@@ -112,28 +111,26 @@ body.homePageBody {
         height:100vh;
     }
     .homeContent {
-        font-size: 14px;
         margin-left: 70px;
-        height:200px;
+        height:14em;
         width: 80%;
         overflow:auto;
         margin-bottom: 0;
     }
     .homeContent2 {
-        font-size: 14px;
         margin-left: 70px;
         height:200px;
         width: 80%;
     }
     .homeFounderPic{
-        visibility:hidden;
-    }
-    .hidden {
-        width: 0;
-        height: 0;
+        margin-left: 20%;
+        float: none;
     }
     .card {
         margin-top: 1%;
+    }
+    body.homePageBody {
+        background-image: none;
     }
 }
 
@@ -154,6 +151,13 @@ body.homePageBody {
     }
 }
 
+
+@media (max-width: 376px) {
+    .homeContent {
+        height: 13em;
+    }   
+}
+
 @media (max-width: 1023px) { 
     body.homePageBody {
         background-size:cover;
@@ -161,3 +165,10 @@ body.homePageBody {
         background-position:0;
     }
 }
+
+/* LANDSCAPE VIEW */
+@media only screen and (orientation:landscape){
+    body.homePageBody {
+        background-image: none;
+    }
+  }
