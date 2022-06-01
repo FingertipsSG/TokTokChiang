@@ -81,6 +81,12 @@ body {
   text-align: left;
 }
 
+/* for modal popup*/
+.modal {
+  position: absolute;
+  height: 600px;
+}
+
 .shop-here {
   background-color: #790c15;
   border: none;
@@ -102,6 +108,13 @@ body {
   justify-content: flex-end;
 }
 
+.modal-spinner {
+  min-height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 button.close-button {
   border: none;
   padding: 8px;
@@ -117,18 +130,109 @@ button.close-button {
   max-width: 60%;
 }
 
+.modal-main-image-container {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+}
+
+.modal-side-images-container {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: row;
+}
+
+.productModalDialog {
+  height:100%;
+  margin: 0;
+}
+.productModalContent{
+  height:100%
+}
+.productModalBody{
+  height:100%;
+}
+
+/* When screen is too small to display gallery, main image container should take up 100% of height */
+@media (max-width: 991px) {
+  .modal-main-image-container {
+    height: 100%;
+  }
+
+  .modal-side-images-container {
+    height: 0%;
+  }
+}
+
+.modal-toggle-button-container {
+  width: 28%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-left {
+  justify-content: flex-end;
+}
+
+.toggle-right {
+  justify-content: flex-start;
+}
+
+.toggle-button {
+  width: 50px;
+  height: 50px;
+  color: #790c15;
+}
+
+.side-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .modal-text-container {
   max-width: 40%;
 }
 
 .popup-image {
   display: block;
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   box-shadow: 0px 0px 3px 1px #bebebe;
   object-fit: cover;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* When screen becomes too small to accomodate main image */
+@media (max-width: 415px) {
+  .popup-image {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* When screen becomes too small to accomodate main image */
+@media (max-width: 370px) {
+  .popup-image {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* When screen becomes too small to accomodate main image */
+@media (max-width: 300px) {
+  .popup-image {
+    width: 90px;
+    height: 90px;
+  }
+
+  .modal-toggle-button-container {
+    width: 20%;
+  }
 }
 
 .small-image {
@@ -173,10 +277,20 @@ body.framed-body {
 
 /* potrait */
 @media screen and (orientation: portrait) {
+  .modal {
+    top: 0%;
+    left: -12.5%;
+  }
+
   /* different screen sizes */
   @media (max-width: 590px) {
     body.shop-body {
       background-size: 100% 40%;
+    }
+
+    .modal {
+      overflow-y: scroll;
+      height: 650px;
     }
   }
 
@@ -195,6 +309,13 @@ body.framed-body {
 
 /* landscape */
 @media screen and (orientation: landscape) {
+  .productModal {
+    top: -7%;
+    left: -12.5%;
+    margin-top: -6%;
+    overflow-y: scroll;
+  }
+
   /* different screen sizes */
   @media (max-height: 420px) {
     body.shop-body {
