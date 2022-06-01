@@ -70,9 +70,11 @@ body.founderBody {
     }
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1440px) {
     body.founderBody {
-        height: 100%;
+        height: 120vh;
+        background-size: contain;
+
     }
 }
 @media (min-width: 990px) and (max-width: 1092px) {
