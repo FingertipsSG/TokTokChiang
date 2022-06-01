@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import logo from '../../Assets/Images/toktoklogo.png';
-import config from '../../../server/model/config';
+import config from '../../config';
 
 function LoginScreen() {
     const [details, setDetails] = useState({ username: "", password: "" });

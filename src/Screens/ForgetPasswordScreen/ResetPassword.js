@@ -6,7 +6,7 @@ import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { message, Form, Input } from 'antd';
 import logo from '../../Assets/Images/toktoklogo.png';
-import config from '../../../server/model/config';
+import config from '../../config';
 
 function ResetPassword() {
     const [error, setError] = useState("");

@@ -7,7 +7,7 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { message, Form, Input } from "antd";
 import logo from '../../Assets/Images/toktoklogo.png';
-import config from '../../../server/model/config';
+import config from '../../config';
 
 function EnterDigitPinScreen() {
     const [error, setError] = useState("");
