@@ -1,5 +1,5 @@
 import axios from "axios";
-import config from '../../server/model/config';
+import config from '../../config';
 const baseurl = config.baseurl || "http://localhost:3000/";
 
 export async function getProducts(prodType, parameters = {}) {
