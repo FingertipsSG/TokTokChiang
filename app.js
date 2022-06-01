@@ -3,9 +3,9 @@ const app = express();
 
 app.use(express.json());
 
-app.get('/', (req,res) => {
-    res.send('Welcome to Daily Code Buffer in Heroku Auto Deployment!!');
-})
+// app.get('/', (req,res) => {
+//     res.send('Welcome to Daily Code Buffer in Heroku Auto Deployment!!');
+// })
 
 app.use("*", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "build", "index.html"));
