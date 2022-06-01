@@ -35,7 +35,7 @@
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
-  /* background-color: white; */
+  background-color: white;
 }
 
 .navbar__logo {
@@ -46,10 +46,11 @@
 }
 
 button.navbar-toggler {
-  width: 15%;
-  height: 35px;
+  width: 10%;
+  height: 40px;
   border-color: black !important;
   border: 2px solid;
+  padding: 0;
 }
 
 .navbar-toggler-icon {
@@ -124,6 +125,7 @@ a.link.nav-link:hover {
 @media (max-width: 767px) { 
   .navbar__logo {
     margin-left: 4%;
+    width: 70%;
   }
 }
 
@@ -131,4 +133,19 @@ a.link.nav-link:hover {
     a.link.nav-link {
       margin-right: 30px;
     }
+}
+
+@media (max-width: 630px) {
+  .navbar-toggler-icon {
+    width: 200%;
+  }
+  .navbar-toggler {
+    width: 12% !important;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 520px) {
+  .navbar-toggler {
+    width: 14%    !important;
+  }
 }
