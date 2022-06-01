@@ -28,8 +28,7 @@ export async function getProductsLazyLoad(startRow, endRow, parameters) {
         startRow: startRow,
         endRow: endRow,
       }),
-
-      params: parameters,
+      query: parameters,
       headers: {
         "Content-Type": "application/json",
       },
@@ -39,6 +38,7 @@ export async function getProductsLazyLoad(startRow, endRow, parameters) {
     console.log("[getApi error]");
     console.log("url: " + url);
     console.log(e);
+    return e.response;
   }
 }
 
