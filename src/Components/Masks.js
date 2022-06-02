@@ -135,7 +135,7 @@ function Masks() {
 
   // convert image to base64 STEP
   const convertToBase64 = (imgData) => {
-    const imageBuffer = Buffer.from([imgData]);
+    const imageBuffer = Buffer.from(imgData);
     const imageBuffer64 = imageBuffer.toString("base64");
 
     return imageBuffer64;
