@@ -3,6 +3,10 @@ body, html{
     padding:0;
 }
 
+html.founderHtml {
+    overflow-x: hidden;
+}
+
 body.founderBody {
     background: url("../../Assets/Images/TTCbg3.png");
     height:130vh;
@@ -27,39 +31,12 @@ body.founderBody {
     margin-top: 8%;
 }
 
-/* Common Size: phone & tablet*/
-@media (max-width: 1023px) { 
-    body.founderBody {
-        background-size:cover;
-        background-attachment: fixed;
-        background-position:0;
-    }
-}
-
-@media (min-width: 1002px) and (max-width: 1022px) {
-    .founderPic {
-        margin-top: 10% ;
-    }
-    
-}
-
-@media (min-width: 1093px) and (max-width: 1223px) {
-    .founderContent {
-        height: 200px;
-    }
-}
-
+/* Responsive*/
 @media (min-width: 1920px) {
     .founderPic {
         margin-top: 5% !important;
     }
 }
-
-@media (min-width: 1024px) { 
-    html.founderHtml {
-        overflow-x: hidden;
-    }
-}   
 
 @media (min-width: 1224px) and (max-width: 1449px) {
     .founderContent {
@@ -68,35 +45,25 @@ body.founderBody {
     .founderPic {
         margin-top: 10%;
     }
-}
-
-@media (min-width: 1440px) {
-    body.founderBody {
-        height: 120vh;
-        background-size: contain;
-
+    body.founderBody{
+        overflow-x: hidden;
     }
 }
+ 
 
-@media (min-width: 992px) and (max-width: 1092px) {
-    html.founderHtml {
-        overflow: hidden;
-    }
-    body.founderBody {
-        background-image: url("../../Assets/Images/comingsoon.png");
-    }
+@media (min-width: 1093px) and (max-width: 1224px) {
     .founderContent {
-        height: 30em !important;
+        height: 200px;
     }
-}
+    h2#founderTitle2{
+        display:block !important;
+    }
+    .founderTitle{
+        margin-top:-1.5em;
+    }
+} 
 
-/* Responsive: 1600x900*/
-/* Responsive: 1280x800*/
-/* Responsive: 1280x1024*/
-/* Responsive: 1024x768*/
-/* Responsive: 768x1024*/
-
-/*TO AVOID DEVELOPER"S MAIN SCREEN*/
+/* TO AVOID DEVELOPER'S PERSONAL SCREEN*/
 @media (min-width: 1224px) and ( max-width:1275px){ 
     .founderContent {
         height:280px;
@@ -108,28 +75,9 @@ body.founderBody {
         height:auto;
         background-position:0;
     }
-}
-/* @media (min-width: 1276px) and (max-width: 1340px) {
-    html.founderHtml {
-        overflow: hidden;
-    }
-    .founderContent {
-        height:280px;
-    }
-    .founderPic {
-        margin-top: 10% ;
-    }
-    body.founderBody{
-        background-position:0;
-        background-attachment: fixed;
-    }
-} */
+} 
 
-/*13.8-14.9inch w height:796*/
-@media (min-width: 1325px) and (max-width: 1439px) {
-    html.founderHtml {
-        overflow: hidden;
-    }
+@media (min-width: 1276px) and (max-width: 1279px) {
     .founderContent {
         height:280px;
     }
@@ -137,23 +85,64 @@ body.founderBody {
         margin-top: 10% ;
     }
     body.founderBody{
+        background-position:auto auto;
+        height:120vh;
+    }
+}   
+
+ /* 13.9-14.9inch w height:796 */
+@media (min-width: 1281px) and (max-width: 1535px) {
+    .founderContent {
+        height:280px;
+    }
+    .founderPic {
+        margin-top: 10% ;
+    }
+    body.founderBody{
+        height:120vh;
+    }
+} 
+
+/*Tablet*/
+@media (min-width: 1023px) and (max-width: 1092px) {
+    html.founderHtml {
+        overflow-x: hidden;
+    }
+    body.founderBody {
+        background-image: url("../../Assets/Images/comingsoon.png"); 
+        background-size:cover;
         background-position:0;
-        background-attachment: fixed;
+    }
+    .founderContent {
+        height: 20em !important;
     }
 }
-/* 
-@media (min-width: 1249px) and (max-width: 1499px) {
-    .founderContent {
-        height:280px;
-    }
-    .founderPic {
-        margin-top: 10% ;
-    }
-    body.founderBody{
-        height:auto;
+@media (max-width: 1023px) { 
+    body.founderBody {
+        background-size:cover;
         background-position:0;
     }
-} */
+} 
+/*Tablet*/
+@media (min-width: 992px) and (max-width: 1022px) {
+    
+    body.founderBody {
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-position:0;  
+    }
+    .founderContent {
+        height: 15em !important;
+    }
+}
+
+@media (min-width: 1536px) {
+    body.founderBody {
+        height: 120vh;
+    }
+    html.founderHtml {
+        overflow-x: hidden;
+    }
+}
 
 /* Ipad air version */
 @media (min-width: 768px) and ( max-width:991px){ 
