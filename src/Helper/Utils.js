@@ -18,8 +18,9 @@ export async function getProducts(prodType, parameters = {}) {
 }
 
 // Get products - lazy load
+// Get products - lazy load
 export async function getProductsLazyLoad(startRow, endRow, parameters) {
-  const url = baseurl +  "getProductsLL";
+  const url = baseurl + "getProductsLL";
   try {
     const res = await axios({
       method: "POST",
@@ -28,16 +29,35 @@ export async function getProductsLazyLoad(startRow, endRow, parameters) {
         startRow: startRow,
         endRow: endRow,
       }),
-      query: parameters,
+
+      params: parameters,
       headers: {
         "Content-Type": "application/json",
       },
     });
-    return res.data;
+    return res;
   } catch (e) {
     console.log("[getApi error]");
-    console.log("url: " + url);
-    console.log(e);
+    // console.log("url: " + url);
+    // console.log(e);
+    return e.response;
+  }
+}
+
+// Same as getApi but returns res instead of res.data
+// To return res.status 404 in the case where there are no data to be returned
+export async function _getApi(endpoint, parameters = {}) {
+  const url = baseurl + endpoint;
+  let params = {};
+  params.params = parameters;
+  try {
+    const res = await axios.get(url, params);
+    return res;
+  } catch (e) {
+    console.log("[getApi error]");
+    // console.log("url: " + url);
+    // console.log("params: " + JSON.stringify(params));
+    // console.log(e);
     return e.response;
   }
 }

@@ -53,24 +53,27 @@ function Dolls() {
       }
 
       // Fetch data from backend
-      const res = await Utils.getProductsLazyLoad(startRow, endRow, {
-        shop: "dolls",
+      var res = await Utils.getProductsLazyLoad(startRow, endRow, {
+        categoryId: 3,
       });
 
       // If no results returned
-      if (res.length <= 0) {
+      if (res.status === 404) {
         console.log("has no more data");
         setHasMore(false);
       } else {
         // Keep pushing new doll to dolls array
         let dollsArr = [];
 
+        res = res.data;
         res.forEach((doll, index) => {
           let newDoll = new Doll(
-            doll.product_name,
-            doll.product_description,
-            doll.product_price,
-            doll.product_image
+            doll.productid,
+            doll.productname,
+            doll.productdesc,
+            doll.price,
+            doll.image,
+            doll.url
           );
 
           dollsArr.push(newDoll);
@@ -173,7 +176,9 @@ function Dolls() {
           <Spin size="default" spinning={isLoading} />
         </div>
       );
-    } else if (!isLoading && dolls.length === 0) {
+    }
+
+    if (dolls.length === 0) {
       return <h1 className="comingsoon">COMING SOON</h1>;
     } else {
       return (
@@ -221,6 +226,8 @@ function Dolls() {
 
       <body className="dolls-body shop-body">
         <Navbar />
+        <br />
+        <br />
         <div className="shop-container">{renderController()}</div>
       </body>
     </html>

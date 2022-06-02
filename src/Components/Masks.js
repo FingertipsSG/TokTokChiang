@@ -73,7 +73,7 @@ function Masks() {
             mask.productdesc,
             mask.price,
             mask.image,
-            mask.url,
+            mask.url
           );
 
           masksArr.push(newMask);
@@ -227,7 +227,7 @@ function Masks() {
       <body className="masks-body shop-body">
         <Navbar />
         <br />
-        <br /> 
+        <br />
         <div className="shop-container">{renderController()}</div>
       </body>
     </html>

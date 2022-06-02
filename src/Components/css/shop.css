@@ -145,14 +145,14 @@ button.close-button {
 }
 
 .productModalDialog {
-  height:100%;
+  height: 100%;
   margin: 0;
 }
-.productModalContent{
-  height:100%
+.productModalContent {
+  height: 100%;
 }
-.productModalBody{
-  height:100%;
+.productModalBody {
+  height: 100%;
 }
 
 /* When screen is too small to display gallery, main image container should take up 100% of height */

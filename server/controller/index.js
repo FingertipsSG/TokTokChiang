@@ -38,8 +38,8 @@ app.use(urlencodedParser);
 app.use(express.static(path.join(__dirname, "..", "..", "build")));
 app.use(express.static("public"));
 
-// app.get('/', (req, res, next) => { 
-//   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' }); 
+// app.get('/', (req, res, next) => {
+//   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
 // });
 
 app.use("*", (req, res) => {
@@ -238,7 +238,7 @@ app.patch("/editUsers", (req, res) => {
 app.get("/getProducts", (req, res) => {
   const shop = req.query.shop;
 
-  productsDB.getProducts(shop, (err, result) => {
+  productsDB.Products(shop, (err, result) => {
     if (!err) {
       return res.status(200).json(result);
     } else {
@@ -250,12 +250,31 @@ app.get("/getProducts", (req, res) => {
 
 // GET PRODUCTS - LAZY LOADING FOR FRONTEND
 app.post("/getProductsLL", (req, res) => {
-  const shop = req.query.shop;
+  const categoryId = req.query.categoryId;
   const startRow = req.body.startRow;
   const endRow = req.body.endRow;
 
-  productsDB.getProductsLL(shop, startRow, endRow, (err, result) => {
+  productsDB.getProductsLL(categoryId, startRow, endRow, (err, result) => {
     if (!err) {
+      return res.status(200).json(result);
+    } else {
+      console.log(err);
+      return res.status(500).send();
+    }
+  });
+});
+
+// GET Images - Side and back images
+app.get("/getOtherImages", (req, res) => {
+  const productId = req.query.productId;
+
+  // Get the remaining images for the specified product NOTE
+  productsDB.getOtherImages(productId, (err, result) => {
+    if (!err) {
+      if (result.length === 0) {
+        console.log({ Message: "This product does not exist" });
+        return res.status(404).send({ Message: "This product does not exist" });
+      }
       return res.status(200).json(result);
     } else {
       console.log(err);
