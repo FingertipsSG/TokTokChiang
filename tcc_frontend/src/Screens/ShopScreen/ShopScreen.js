@@ -516,20 +516,25 @@ function ShopScreen() {
           });
         }
       } else {
-        console.log("delete image");
-        let bodyFile = {
-          imageID: curProdDetails.pImage[i].imageid,
-        };
-        // console.log(bodyFile);
-        
-        await Utils.deleteApi("deleteImage", bodyFile).then((res) => {
-          if (res.status === 204) {
-            console.log(res);
-            console.log(res.data.affectedRows);
-            message.success(`Successfully removed image`);
-            // setRender(!render);
-          }
-        });
+        try {
+          console.log(curProdDetails.pImage, i);
+          console.log("delete image");
+          let bodyFile = {
+            imageID: curProdDetails.pImage[i].imageid,
+          };
+          // console.log(bodyFile);
+          
+          await Utils.deleteApi("deleteImage", bodyFile).then((res) => {
+            if (res.status === 204) {
+              console.log(res);
+              console.log(res.data.affectedRows);
+              message.success(`Successfully removed image`);
+              // setRender(!render);
+            }
+          });
+        } catch (e) {
+          console.log(e);
+        }
       }
       setRender(!render);
     }
@@ -660,7 +665,7 @@ function ShopScreen() {
 
   useEffect(() => {
     if (!firstRender && !isImageModalVisible) {
-      openEditProductModal();
+      openEditProductModal({});
     }
   }, [curProdDetails]);
 
