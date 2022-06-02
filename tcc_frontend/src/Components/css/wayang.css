@@ -45,7 +45,7 @@ img#wayangPic {
 
 /*Responsive*/
 @media (min-width: 1920px) {
-    .founderPic {
+    .wayangCarousel {
         margin-top: 5% !important;
     }
 }
