@@ -184,6 +184,7 @@ app.post("/getProductsLL", (req, res) => {
   const endRow = req.body.endRow;
 
   productsDB.getProductsLL(categoryId, startRow, endRow, (err, result) => {
+    console.log(result);
     if (result.length === 0) {
       console.log({ Message: "This product does not exist" });
       return res.status(404).send({ Message: "This product does not exist" });
