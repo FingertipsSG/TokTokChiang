@@ -450,7 +450,13 @@ productsDB.addImage = function (image, productid, identityid, callback) {
 };
 
 //EDIT IMAGE NEW
-productsDB.editImage = function (image, productid, identityid, imageid, callback) {
+productsDB.editImage = function (
+  image,
+  productid,
+  identityid,
+  imageid,
+  callback
+) {
   var conn = db.getConnection();
   conn.connect(function (err) {
     if (err) {

@@ -1,10 +1,14 @@
 var db = require("./databaseConfig.js");
 var config = require("./config.js");
 var userDB = {};
-const jwtDecode = require('jwt-decode');
-const jwt = require('jsonwebtoken');
-var verify = require("../valiators/verifyFn.js");
-const verifyFn = require("../valiators/verifyFn.js");
+const jwtDecode = require("jwt-decode");
+const jwt = require("jsonwebtoken");
+
+// var verify = require("../valiators/verifyFn.js");
+// const verifyFn = require("../valiators/verifyFn.js");
+
+// LEFTOFFAT
+const verificationFns = require("../valiators/verifyFn");
 
 //----------------------------------------ADMIN----------------------------------------
 //ADD USERS
@@ -18,7 +22,8 @@ userDB.addUser = function (username, password, email, role, callback) {
       return callback(err, null);
     } else {
       console.log("Connected!");
-      var sql = "INSERT INTO admin (username, password, email, role) VALUES (?,?,?,?)";
+      var sql =
+        "INSERT INTO admin (username, password, email, role) VALUES (?,?,?,?)";
       conn.query(
         sql,
         [username, password, email, role],
@@ -130,7 +135,7 @@ userDB.deletePin = function (pin, callback) {
   });
 };
 
-// //RE-DELETE PIN 
+// //RE-DELETE PIN
 // userDB.reDeletePin = function (pin, callback) {
 //   console.log("PIN FROM RE-DELETE " + pin);
 //   var conn = db.getConnection();
@@ -245,7 +250,8 @@ userDB.login = function (username, password, callback) {
       console.log(err);
       return callback(err, null);
     } else {
-      const query = "SELECT * FROM toktokchiang.admin WHERE username = ? AND password = ?";
+      const query =
+        "SELECT * FROM toktokchiang.admin WHERE username = ? AND password = ?";
       dbConn.query(query, [username, password], (error, results) => {
         if (error) {
           callback(error, null);
@@ -257,16 +263,19 @@ userDB.login = function (username, password, callback) {
           const user = results[0];
           const pw = password.toString();
           if (pw === user.password) {
-            let data = {
+            let userDetails = {
               id: user.id,
               username: user.username,
-              password: user.password,
               email: user.email,
               role: user.role,
-              token: jwt.sign({ id: user.id }, config.JWTKey, {
-                expiresIn: "5s", //Expires in 24 hrs
-              })
-            };//End of data variable setup
+            };
+
+            let data = {
+              ...userDetails,
+              token: jwt.sign(userDetails, config.JWTKey, {
+                expiresIn: "1h", //Expires in 1hr
+              }),
+            }; //End of data variable setup
             // verifyFn.verifyToken;
             return callback(null, data);
           } else {
@@ -287,7 +296,8 @@ userDB.searchUsers = function (searchQuery, callback) {
       return callback(err, null);
     } else {
       console.log("Connected!");
-      var sql = "SELECT * FROM admin WHERE username LIKE " + `'%${searchQuery}%'`;
+      var sql =
+        "SELECT * FROM admin WHERE username LIKE " + `'%${searchQuery}%'`;
       conn.query(sql, function (err, result) {
         conn.end();
         if (err) {
@@ -311,17 +321,22 @@ userDB.editUser = function (username, password, email, role, id, callback) {
       return callback(err, null);
     } else {
       console.log("Connected!");
-      const sql = "UPDATE admin SET username = ?, password = ?, email = ?, role = ? WHERE id = ?";
-      conn.query(sql, [username, password, email, role, id], function (err, result) {
-        conn.end();
-        if (err) {
-          console.log(err);
-          return callback(err, null);
-        } else {
-          console.log(result);
-          return callback(null, result);
+      const sql =
+        "UPDATE admin SET username = ?, password = ?, email = ?, role = ? WHERE id = ?";
+      conn.query(
+        sql,
+        [username, password, email, role, id],
+        function (err, result) {
+          conn.end();
+          if (err) {
+            console.log(err);
+            return callback(err, null);
+          } else {
+            console.log(result);
+            return callback(null, result);
+          }
         }
-      });
+      );
     }
   });
 };

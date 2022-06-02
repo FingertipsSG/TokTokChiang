@@ -233,10 +233,10 @@ function ShopScreen() {
           pName: obj.productname,
           pDesc: obj.productdesc,
           pPrice: obj.price,
-          pImage: { 
-            data: obj.image.data, 
-            type: obj.image.type, 
-            imageid: obj.imageid
+          pImage: {
+            data: obj.image.data,
+            type: obj.image.type,
+            imageid: obj.imageid,
           },
           pURL: obj.url,
         },
@@ -308,7 +308,7 @@ function ShopScreen() {
   // EDIT AND POST SHOP FUNCTION
   const openEditShopModal = () => {
     setIsModalOpen(true);
-    // setIsEditShopModalVisible(true);
+    setIsEditShopModalVisible(true);
   };
   const cancelEditShopModal = () => {
     setIsModalOpen(false);
@@ -462,16 +462,16 @@ function ShopScreen() {
 
     var formBody = {
       productname: values.pName,
-      productdesc: values.pDesc, 
-      price: values.pPrice, 
-      url: values.pUrl, 
+      productdesc: values.pDesc,
+      price: values.pPrice,
+      url: values.pUrl,
       fk_catid: catid,
-      productid: values.id
+      productid: values.id,
     };
     // console.log(formBody);
 
     Utils.patchApi("editProduct", formBody).then((res) => {
-      // console.log(res); 
+      // console.log(res);
       if (res.status === 200) {
         console.log(res.data.affectedRows);
         message.success("Successfully edited product");
@@ -498,13 +498,15 @@ function ShopScreen() {
             // setRender(!render);
           }
         });
-      }
-      else if (curProdDetails.pImage[i].status !== undefined && files.length < curProdDetails.pImage.length) {
+      } else if (
+        curProdDetails.pImage[i].status !== undefined &&
+        files.length < curProdDetails.pImage.length
+      ) {
         // console.log("delete image");
         let bodyFile = {
           imageID: files[i].imageid,
         };
-        
+
         Utils.deleteApi("deleteImage", bodyFile).then((res) => {
           if (res.status === 204) {
             console.log(res.data.affectedRows);
@@ -512,8 +514,7 @@ function ShopScreen() {
             // setRender(!render);
           }
         });
-      }
-      else if (productImages[i] !== bodyFile.image.thumbUrl) {
+      } else if (productImages[i] !== bodyFile.image.thumbUrl) {
         // console.log("patch");
         Utils.editImageApi("editImage", bodyFile).then((res) => {
           if (res.status === 200) {
@@ -526,7 +527,6 @@ function ShopScreen() {
 
       setRender(!render);
     }
-
   };
 
   // DELETE AND POST PRODUCT FUNCTION
@@ -620,7 +620,7 @@ function ShopScreen() {
           var newImgData = {
             type: imgData.image.type,
             data: imgData.image.data,
-            imageid: imgData.imageid
+            imageid: imgData.imageid,
           };
           imgsArr.push(newImgData);
         }
@@ -637,7 +637,9 @@ function ShopScreen() {
 
       const convertedImgsArr = [];
       for (let img of imgsArr) {
-        convertedImgsArr.push(`data:image/jpg;base64,${convertToBase64(img.data)}`);
+        convertedImgsArr.push(
+          `data:image/jpg;base64,${convertToBase64(img.data)}`
+        );
       }
       setProductImages(convertedImgsArr);
     } catch (err) {

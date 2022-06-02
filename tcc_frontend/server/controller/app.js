@@ -5,7 +5,7 @@ const fs = require("fs");
 var bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 var cors = require("cors");
 const app = express();
@@ -24,8 +24,10 @@ const nodemailer = require("nodemailer");
 const hash = require("../valiators/hash");
 const csvParser = require("csv-parser");
 
-app.use(urlencodedParser);
+// Import verification function LEFTOFFAT
+const verificationFns = require("../valiators/verifyFn");
 
+app.use(urlencodedParser);
 app.use(express.static(path.join(__dirname, "..", "..", "build")));
 app.use(express.static("public"));
 
@@ -36,7 +38,8 @@ app.use(express.static("public"));
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 // <--------------------------- Products APIs -------------------------------------->
-app.post("/addProduct", (req, res) => {
+// OK
+app.post("/addProduct", verificationFns.verifyToken, (req, res) => {
   var { productname, productdesc, price, url, fk_catid } = req.body;
 
   productsDB.addProducts(
@@ -58,7 +61,8 @@ app.post("/addProduct", (req, res) => {
   );
 });
 
-app.patch("/editProduct", (req, res) => {
+// OK
+app.patch("/editProduct", verificationFns.verifyToken, (req, res) => {
   var { productname, productdesc, price, url, fk_catid, productid } = req.body;
 
   productsDB.editProduct(
@@ -88,7 +92,8 @@ app.patch("/editProduct", (req, res) => {
   );
 });
 
-app.post("/addImage", (req, res) => {
+// OK
+app.post("/addImage", verificationFns.verifyToken, (req, res) => {
   var { productid, identityid } = req.body;
   var image = req.files.image.data;
 
@@ -103,11 +108,17 @@ app.post("/addImage", (req, res) => {
   });
 });
 
-app.patch("/editImage", (req, res) => {
+// OK
+app.patch("/editImage", verificationFns.verifyToken, (req, res) => {
   var { productid, identityid, imageid } = req.body;
   var image = req.files.image.data;
 
-  productsDB.editImage(image, productid, identityid, imageid, function (err, result) {
+  productsDB.editImage(
+    image,
+    productid,
+    identityid,
+    imageid,
+    function (err, result) {
       if (!err) {
         if (result.affectedRows === 0) {
           console.log({ Message: "This product does not exist" });
@@ -125,7 +136,8 @@ app.patch("/editImage", (req, res) => {
   );
 });
 
-app.delete("/deleteImage", (req, res) => {
+// OK
+app.delete("/deleteImage", verificationFns.verifyToken, (req, res) => {
   const imageId = req.body.imageID;
 
   productsDB.deleteImage(imageId, (err, result) => {
@@ -135,13 +147,68 @@ app.delete("/deleteImage", (req, res) => {
         console.log({ Message: "This product does not exist" });
         return res.status(404).send({ Message: "This product does not exist" });
       }
-      return res.status(204);
+      return res.status(200).send({ Message: "Image deleted successfully" });
     } else {
       console.log(err);
       return res.status(500).send();
     }
   });
 });
+
+// OK
+// DELETE PRODUCTS
+app.delete("/deleteProduct", verificationFns.verifyToken, (req, res) => {
+  const productId = req.body.pID;
+
+  productsDB.deleteProduct(productId, (err, result) => {
+    if (!err) {
+      if (result.affectedRows === 0) {
+        console.log({ Message: "This product does not exist" });
+        return res.status(404).send({ Message: "This product does not exist" });
+      }
+      return res.status(204).json(result);
+    } else {
+      console.log(err);
+      return res.status(500).send();
+    }
+  });
+});
+
+// LEFTOFFAT
+// DOWNLOAD CSV
+var corsForDownloadCSV = {
+  exposedHeader: "Content-Disposition",
+};
+
+app.get(
+  "/downloadProductCSV",
+  verificationFns.verifyToken,
+  cors(corsForDownloadCSV),
+  (req, res) => {
+    const shop = req.query.shop;
+    const ws = fs.createWriteStream(`ttc_products_${shop}.csv`);
+
+    productsDB.getProducts(shop, (err, result) => {
+      if (!err) {
+        const jsonData = JSON.parse(JSON.stringify(result));
+        console.log("jsonData", jsonData);
+        fastcsv
+          .write(jsonData, { headers: true })
+          .pipe(ws)
+          .on("finish", function () {
+            console.log(`Write to ttc_products_${shop}.csv successfully!`);
+            // var filename = `ttc_products_${shop}.csv`;
+            var filepath = `./ttc_products_${shop}.csv`;
+            res.header("Access-Control-Expose-Headers", "Content-Disposition");
+            res.status(200).download(filepath);
+          });
+      } else {
+        console.log(err);
+        return res.status(500).send();
+      }
+    });
+  }
+);
 
 // GET Products - NON Lazy loading
 app.get("/getProducts", (req, res) => {
@@ -203,24 +270,6 @@ app.post("/getProductsLL", (req, res) => {
   });
 });
 
-// DELETE PRODUCTS
-app.delete("/deleteProduct", (req, res) => {
-  const productId = req.body.pID;
-
-  productsDB.deleteProduct(productId, (err, result) => {
-    if (!err) {
-      if (result.affectedRows === 0) {
-        console.log({ Message: "This product does not exist" });
-        return res.status(404).send({ Message: "This product does not exist" });
-      }
-      return res.status(204).json(result);
-    } else {
-      console.log(err);
-      return res.status(500).send();
-    }
-  });
-});
-
 // SEARCH PRODUCTS
 app.get("/search", function (req, res) {
   var searchQuery = req.query.searchQuery;
@@ -240,41 +289,6 @@ app.get("/search", function (req, res) {
   });
 });
 
-// DOWNLOAD CSV
-var corsForDownloadCSV = {
-  exposedHeader: "Content-Disposition",
-};
-
-app.get("/downloadProductCSV", cors(corsForDownloadCSV), (req, res) => {
-  const shop = req.query.shop;
-  const ws = fs.createWriteStream(`ttc_products_${shop}.csv`);
-
-  productsDB.getProducts(shop, (err, result) => {
-    if (!err) {
-      const jsonData = JSON.parse(JSON.stringify(result));
-      console.log("jsonData", jsonData);
-      fastcsv
-        .write(jsonData, { headers: true })
-        .pipe(ws)
-        .on("finish", function () {
-          console.log(`Write to ttc_products_${shop}.csv successfully!`);
-          // var filename = `ttc_products_${shop}.csv`;
-          var filepath = `./ttc_products_${shop}.csv`;
-          res.header("Access-Control-Expose-Headers", "Content-Disposition");
-          res.status(200).download(filepath);
-        });
-    } else {
-      console.log(err);
-      return res.status(500).send();
-    }
-  });
-});
-
-// DOWNLOAD CSV
-var corsForDownloadCSV = {
-  exposedHeader: "Content-Disposition",
-};
-
 // <--------------------------- Shops APIs -------------------------------------->
 //GET SHOPS
 app.get("/getShops", (req, res) => {
@@ -288,10 +302,14 @@ app.get("/getShops", (req, res) => {
   });
 });
 
+// OK
 // Edit shop name
-app.put("/editShop", (req, res) => {
+app.put("/editShop", verificationFns.verifyToken, (req, res) => {
   const newName = req.body.newName;
   const id = req.body.id;
+
+  // LEFTOFFAT
+  console.log(newName, id);
 
   shopsDB.editShop(newName, id, (err, result) => {
     if (!err) {
@@ -321,41 +339,53 @@ app.put("/editShop", (req, res) => {
 
 // <--------------------------- Users APIs -------------------------------------->
 //------------------------------USERS.JS-----------------------------------------------
-//ADD USER
-app.post("/addUser", (req, res) => {
-  var username = req.body.uName;
-  var password = req.body.uPass;
-  var hashPW = hash(password);
-  var email = req.body.uEmail;
-  var role = req.body.uRole;
+// OK
+// ADD USER
+app.post(
+  "/addUser",
+  verificationFns.verifyToken,
+  verificationFns.verifyRole,
+  (req, res) => {
+    var username = req.body.uName;
+    var password = req.body.uPass;
+    var hashPW = hash(password);
+    var email = req.body.uEmail;
+    var role = req.body.uRole;
 
-  console.log(username, hashPW, email, role);
-  userDB.addUser(username, hashPW, email, role, function (err, result) {
-    if (!err) {
-      res.status(201);
-      res.send(`{"userid": "${result.insertId}"}`);
-      console.log(`{"userid":"${result.insertId}"}`);
-    } else {
-      console.log(err);
-      res.status(500).send();
-    }
-  });
-});
+    console.log(username, hashPW, email, role);
+    userDB.addUser(username, hashPW, email, role, function (err, result) {
+      if (!err) {
+        res.status(201);
+        res.send(`{"userid": "${result.insertId}"}`);
+        console.log(`{"userid":"${result.insertId}"}`);
+      } else {
+        console.log(err);
+        res.status(500).send();
+      }
+    });
+  }
+);
 
+// OK
 //DELETE USER
-app.delete("/deleteUser", (req, res) => {
-  const uid = req.body.uID;
+app.delete(
+  "/deleteUser",
+  verificationFns.verifyToken,
+  verificationFns.verifyRole,
+  (req, res) => {
+    const uid = req.body.uID;
 
-  userDB.deleteUser(uid, function (err, result) {
-    if (!err) {
-      res.type("json");
-      res.status(204).send({ Message: "Successfully deleted" });
-    } else {
-      console.log(err);
-      res.status(500).send();
-    }
-  });
-});
+    userDB.deleteUser(uid, function (err, result) {
+      if (!err) {
+        res.type("json");
+        res.status(204).send({ Message: "Successfully deleted" });
+      } else {
+        console.log(err);
+        res.status(500).send();
+      }
+    });
+  }
+);
 
 //GET EMAIL
 app.get("/getEmail", (req, res) => {
@@ -441,8 +471,9 @@ app.patch("/updatePassword", (req, res) => {
   });
 });
 
+// OK
 //GET ALL USER
-app.get("/getUsers", (req, res) => {
+app.get("/getUsers", verificationFns.verifyToken, (req, res) => {
   const id = req.query.id;
   userDB.getUsers(id, function (err, result) {
     if (!err) {
@@ -454,9 +485,7 @@ app.get("/getUsers", (req, res) => {
   });
 });
 
-
 //LOGIN
-
 app.post("/login", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
@@ -472,8 +501,9 @@ app.post("/login", (req, res) => {
   });
 });
 
+// OK
 // SEARCH Users
-app.get("/searchUsers", function (req, res) {
+app.get("/searchUsers", verificationFns.verifyToken, function (req, res) {
   var searchQuery = req.query.searchQuery;
   userDB.searchUsers(searchQuery, function (err, result) {
     //
@@ -488,24 +518,31 @@ app.get("/searchUsers", function (req, res) {
   });
 });
 
+// OK
 //EDIT USERS
-app.patch("/editUsers", (req, res) => {
-  const username = req.body.uName;
-  const password = req.body.uPass;
-  const email = req.body.uEmail;
-  const role = req.body.uRole;
-  const id = req.body.id;
+app.patch(
+  "/editUsers",
+  verificationFns.verifyToken,
+  verificationFns.verifyRole,
+  (req, res) => {
+    const username = req.body.uName;
+    const password = req.body.uPass;
+    const hashPW = hash(password);
+    const email = req.body.uEmail;
+    const role = req.body.uRole;
+    const id = req.body.id;
 
-  userDB.editUser(username, password, email, role, id, (err, result) => {
-    if (!err) {
-      console.log(result.affectedRows);
-      return res.status(200).json({ affectedRows: result.changedRows });
-    } else {
-      console.log(err);
-      return res.status(500).send();
-    }
-  });
-});
+    userDB.editUser(username, hashPW, email, role, id, (err, result) => {
+      if (!err) {
+        console.log(result.affectedRows);
+        return res.status(200).json({ affectedRows: result.changedRows });
+      } else {
+        console.log(err);
+        return res.status(500).send();
+      }
+    });
+  }
+);
 
 // <--------------------------- Email APIs -------------------------------------->
 //----------------------- SEND EMAIL --------------------------------
