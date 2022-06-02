@@ -97,7 +97,7 @@ function ContactUs() {
                   <Input
                     style={{ borderColor: "#9B9B9B", borderWidth: "2px" }}
                     placeholder="Phone"
-                  />{" "}
+                  />
                 </Form.Item>
 
                 <Form.Item
