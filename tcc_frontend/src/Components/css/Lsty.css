@@ -36,81 +36,135 @@ img#lstyPic {
     margin-top: 8%;
 }
 
-/* responsive styles */
-@media (min-width: 1024px) { 
-    html.lstyHtml {
-        overflow-x: hidden;
-    }
-}     
-
-@media (min-width: 992px) and (max-width: 1002px) {
-    .lstyCarousel {
-        margin-top: 26%;
-    }
-    .lstyContent {
-        height: 200px;
+/*Responsive*/
+@media (min-width: 1920px) {
+    .lstyCarousel{
+        margin-top: 5% !important;
     }
 }
-
-@media (min-width: 1002px) and (max-width: 1022px){
-    .lstyCarousel {
-        margin-top: 19% !important;
-    }
-    .lstyContent {
-        height: 180px;
-    }
-}
-
-@media (min-width: 1022px) and (max-width: 1093px) {
-    .lstyContent {
-        height: 150px;
-    }
-}
-
-@media (min-width: 1345px) and (max-width: 1449px)  {
-    .lstyContent {
-        height: 220px;
-    }
-}
-
-@media (min-width: 1093px) and (max-width: 1344px) {
-    .lstyContent {
-        height: 180px;
-    }
-}
-
 @media (min-width: 1224px) and (max-width: 1449px) {
-    .lstyCarousel {
-        margin-top: 10%;
-    }
-}
-
-@media (min-width: 1449px) and (max-width: 1744px) {
     .lstyContent {
         height: 250px;
     }
-}
-
-@media (min-width: 1744px) {
-    .lstyContent {
-        height: 350px;
+    body.lstyBody{
+        overflow-x: hidden;
     }
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1093px) and (max-width: 1224px) {
+    .lstyContent {
+        height: 200px;
+    }
+} 
+
+/* TO AVOID DEVELOPER'S PERSONAL SCREEN*/
+@media (min-width: 1224px) and ( max-width:1275px){ 
+    .lstyContent {
+        height:280px;
+    }
+    .lstyCarousel {
+        margin-top: 10% ;
+    }
+    body.lstyBody{
+        height:auto;
+        background-position:0;
+    }
+} 
+@media (min-width: 1276px) and (max-width: 1279px) {
+    .lstyContent {
+        height:280px;
+    }
+    .lstyCarousel {
+        margin-top: 10% ;
+    }
+    body.lstyBody{
+        background-position:auto auto;
+        height:120vh;
+    }
+} 
+
+/* 13.9-14.9inch w height:796 */
+@media (min-width: 1281px) and (max-width: 1535px) {
+    .lstyContent {
+        height:280px;
+    }
+    .lstyCarousel {
+        margin-top: 10% ;
+    }
+    body.lstyBody{
+        height:120vh;
+    }
+} 
+
+/*Tablet*/
+@media (min-width: 1023px) and (max-width: 1092px) {
+    html.lstyHtml {
+        overflow-x: hidden;
+    }
+    body.lstyBody {
+        background-image: url("../../Assets/Images/comingsoon.png"); 
+        background-size:cover;
+        background-position:0;
+    }
+    .lstyContent {
+        height: 20em !important;
+    }
+}
+
+@media (max-width: 1023px) { 
+    body.lstyBody {
+        background-size:cover;
+        background-position:0;
+     
+    }
+}  
+/*Tablet*/
+@media (min-width: 992px) and (max-width: 1022px) {
+    body.lstyBody {
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-position:0;  
+    }
+    .lstyContent {
+        height: 15em !important;
+    }
+}
+
+@media (min-width: 1536px) {
     body.lstyBody {
         height: 120vh;
     }
-}
-
-@media (min-width: 1920px) {
-    .lstyCarousel {
-        margin-top: 10% !important;
+    html.lstyHtml {
+        overflow-x: hidden;
     }
 }
-
-@media (min-width: 768px) and (max-width:1023px) {
-    html.lstyHtml {
+/*Ipad air*/
+@media(min-width: 768px) and (max-width: 991px){ 
+    html.lstyHtml{
+        overflow: hidden;
+    }
+    body.lstyBody {
+        background-position:0;  
+        background-attachment: fixed;
+    }
+    .lstyContent {
+        font-size: 14px;
+        margin-left: 92px;
+        width:80%;
+        height: 280px
+    }
+    .lstyTitle {
+        font-size: 22px;
+    }
+    .lstyCarousel{
+        width: 100%;
+        margin-top: 0;
+        float:none;
+    }
+} 
+/*Ipad Mini*/
+ @media(min-width: 766px) and (max-width: 767px){ 
+    html.lstyHtml{
+        height:100vh;
         overflow: hidden;
     }
     body.lstyBody {
@@ -122,34 +176,242 @@ img#lstyPic {
         font-size: 14px;
         margin-left: 92px;
         width:80%;
-        margin-bottom: 0;
-        height: 200px;
+        height: 280px
     }
-}
+    .lstyTitle {
+        font-size: 22px;
+    }
+    .lstyCarousel{
+        width: 100%;
+        margin-left: 4%;
+        margin-top: 0;
+        float:none;
+    }
+    
+    body.lstyBody {
+        background-position:0;  
+        background-attachment: fixed;
+    }
+} 
 
-@media (max-width: 767px) { 
+/*mobile version*/
+@media(min-width: 731px) and (max-width: 765px){
     html.lstyHtml{
         height:100vh;
-        overflow: hidden;
+        overflow-y:scroll;
+        overflow-x:hidden;
     }
     .lstyContent {
+        font-family: Calibri;
         font-size: 14px;
         margin-left: 70px;
         height:350px;
         width: 80%;
-        overflow:scroll;
+        overflow:scroll; 
+    }
+    .lstyTitle {
+        font-size: 22px;
+    }
+    body.lstyBody {
+        background-image: none;
     }
     .lstyCarousel{
-        visibility:hidden;
-       }
+        width: 100%;
+        margin-left: 4%;
+        margin-top: 0;
+        float:none;
     }
-    
-@media (max-width: 1023px) { 
-    body.lstyBody{
-        background-attachment: fixed;
-        background-size:cover;
-        background-attachment: fixed;
-        background-position:0;
-     
+}
+
+@media(min-width: 631px) and (max-width: 700px){
+    html.lstyHtml{
+        height:100vh;
+        overflow-y:scroll;
+        overflow-x:hidden;
+    }
+    .lstyContent {
+        font-family: Calibri;
+        font-size: 14px;
+        margin-left: 70px;
+        height:350px;
+        width: 80%;
+        overflow:scroll; 
+    }
+    .lstyTitle {
+        font-size: 22px;
+    }
+    body.lstyBody {
+        background-image: none;
+    }
+    .lstyCarousel{
+        width: 100%;
+        margin-left: 4%;
+        margin-top: 0;
+        float:none;
+    }
+}
+@media(min-width: 528px) and (max-width: 630px){
+    html.lstyHtml{
+        height:100vh;
+        overflow-y:scroll;
+        overflow-x:hidden;
+    }
+    .lstyContent {
+        font-family: Calibri;
+        font-size: 14px;
+        margin-left: 70px;
+        height:350px;
+        width: 80%;
+        overflow:scroll; 
+    }
+    .lstyTitle {
+        font-size: 22px;
+    }
+    body.lstyBody {
+        background-image: none;
+    }
+    .lstyCarousel{
+        width: 100%;
+        margin-left: 5%;
+        margin-top: 0;
+        float:none;
+    }
+}
+@media(min-width: 451px) and (max-width: 528px){
+    html.lstyHtml{
+        height:100vh;
+        overflow-y:scroll;
+        overflow-x:hidden;
+    }
+    .lstyContent {
+        font-family: Calibri;
+        font-size: 14px;
+        margin-left: 70px;
+        height:350px;
+        width: 80%;
+        overflow:scroll; 
+    }
+    .lstyTitle {
+        font-size: 22px;
+    }
+    body.lstyBody {
+        background-image: none;
+    }
+    .lstyCarousel{
+        width: 100%;
+        margin-left: 10%;
+        margin-top: 0;
+        float:none;
+    }
+}
+@media(max-width:450px){
+    html.lstyHtml{
+        height:100vh;
+        overflow-y:scroll;
+        overflow-x:hidden;
+    }
+    .lstyContent {
+        font-family: Calibri;
+        font-size: 14px;
+        margin-left: 70px;
+        height:350px;
+        width: 80%;
+        overflow:scroll; 
+    }
+    .lstyTitle {
+        font-size: 22px;
+    }
+    body.lstyBody {
+        background-image: none;
+    }
+    .lstyCarousel{
+        width: 100%;
+        margin-left: 10%;
+        margin-top: 0;
+        float:none;
+    }
+}
+
+@media(max-width:435px){
+    html.lstyHtml{
+        height:100vh;
+        overflow-y:scroll;
+        overflow-x:hidden;
+    }
+    .lstyContent {
+        font-family: Calibri;
+        font-size: 14px;
+        margin-left: 70px;
+        height:350px;
+        width: 80%;
+        overflow:scroll; 
+    }
+    .lstyTitle {
+        font-size: 22px;
+    }
+    body.lstyBody {
+        background-image: none;
+    }
+    .lstyCarousel{
+        width: 100%;
+        margin-left: 10%;
+        margin-top: 0;
+        float:none;
+    }
+}
+
+@media(max-width:400px){
+    html.lstyHtml{
+        height:100vh;
+        overflow-y:scroll;
+        overflow-x:hidden;
+    }
+    .lstyContent {
+        font-family: Calibri;
+        font-size: 14px;
+        margin-left: 70px;
+        height:350px;
+        width: 80%;
+        overflow:scroll; 
+    }
+    .lstyTitle {
+        font-size: 22px;
+    }
+    body.lstyBody {
+        background-image: none;
+    }
+    .lstyCarousel{
+        width: 100%;
+        margin-left: 15%;
+        margin-top: 0;
+        float:none;
+    }
+}
+
+@media(max-width:380px){
+    html.lstyHtml{
+        height:100vh;
+        overflow-y:scroll;
+        overflow-x:hidden;
+    }
+    .lstyContent {
+        font-family: Calibri;
+        font-size: 14px;
+        margin-left: 70px;
+        height:350px;
+        width: 80%;
+        overflow:scroll; 
+    }
+    .lstyTitle {
+        font-size: 22px;
+    }
+    body.lstyBody {
+        background-image: none;
+    }
+    .lstyCarousel{
+        width: 100%;
+        margin-left: 15%;
+        margin-top: 0;
+        float:none;
     }
 }
