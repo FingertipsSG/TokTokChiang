@@ -714,7 +714,7 @@ productsDB.addImage = function (image, productid, identityid, callback) {
 };
 
 //EDIT IMAGE NEW
-productsDB.editImage = function (image, productid, identityid, imageid, callback) {
+productsDB.editImage = function (image, productid, identityid, productid, identityid, callback) {
   var conn = db.getConnection();
   conn.connect(function (err) {
     if (err) {
@@ -723,11 +723,11 @@ productsDB.editImage = function (image, productid, identityid, imageid, callback
     } else {
       console.log("Connected!");
       const sql =
-        "UPDATE images SET image = ?, fk_productid = ?, fk_identityid = ? WHERE imageid = ?";
+        "UPDATE images SET image = ?, fk_productid = ?, fk_identityid = ? WHERE fk_productid = ? AND fk_identityid = ?";
 
       conn.query(
         sql,
-        [image, productid, identityid, imageid],
+        [image, productid, identityid, productid, identityid],
         function (err, result) {
           conn.end();
           if (err) {

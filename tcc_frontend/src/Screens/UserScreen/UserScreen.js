@@ -198,7 +198,7 @@ function UserScreen() {
     Utils.patchApi("editUsers", values).then((res) => {
       // console.log('hello');
       // console.log(res);
-      if (res.affectedRows === 1) {
+      if (res.status === 200) {
         message.success("Successfully edited user");
         setRender(!render);
       }

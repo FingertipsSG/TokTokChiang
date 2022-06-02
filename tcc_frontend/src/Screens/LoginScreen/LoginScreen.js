@@ -15,7 +15,7 @@ function LoginScreen() {
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
-
+  
   const Login = async details => {
     // console.log(details);
 
@@ -45,7 +45,7 @@ function LoginScreen() {
               localStorage.clear();
               navigate("/login");
             }
-          }, 5000
+          }, 180000
         );
       }
     }).catch((error) => {
