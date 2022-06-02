@@ -104,10 +104,10 @@ app.post("/addImage", (req, res) => {
 });
 
 app.patch("/editImage", (req, res) => {
-  var { productid, identityid, imageid } = req.body;
+  var { productid, identityid } = req.body;
   var image = req.files.image.data;
 
-  productsDB.editImage(image, productid, identityid, imageid, function (err, result) {
+  productsDB.editImage(image, productid, identityid, productid, identityid, function (err, result) {
       if (!err) {
         if (result.affectedRows === 0) {
           console.log({ Message: "This product does not exist" });
@@ -130,12 +130,12 @@ app.delete("/deleteImage", (req, res) => {
 
   productsDB.deleteImage(imageId, (err, result) => {
     if (!err) {
-      console.log(result);
+      console.log("this delete", result);
       if (result.affectedRows === 0) {
         console.log({ Message: "This product does not exist" });
         return res.status(404).send({ Message: "This product does not exist" });
       }
-      return res.status(204);
+      return res.status(200).json(result);
     } else {
       console.log(err);
       return res.status(500).send();
@@ -600,8 +600,8 @@ app.post("/sendEmailPin", (req, res) => {
   });
 });
 
-// app.use("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "..", "..", "build", "index.html"));
-// });
+app.use("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "..", "build", "index.html"));
+});
 
 module.exports = app;

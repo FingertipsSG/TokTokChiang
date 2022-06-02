@@ -82,6 +82,7 @@ function ShopScreen() {
               data-toggle="modal"
               data-target="#myModal"
               onClick={() => {
+                console.log("this click props", props);
                 setCurProductSelected(props);
                 setIsImageModalVisible(true);
               }}
@@ -308,7 +309,7 @@ function ShopScreen() {
   // EDIT AND POST SHOP FUNCTION
   const openEditShopModal = () => {
     setIsModalOpen(true);
-    // setIsEditShopModalVisible(true);
+    setIsEditShopModalVisible(true);
   };
   const cancelEditShopModal = () => {
     setIsModalOpen(false);
@@ -442,6 +443,7 @@ function ShopScreen() {
 
   // EDIT AND POST PRODUCT FUNCTION
   const openEditProductModal = () => {
+    console.log("opening edit model");
     setIsModalOpen(true);
     setIsEditProdModalVisible(true);
   };
@@ -451,7 +453,7 @@ function ShopScreen() {
     setIsEditProdModalVisible(false);
   };
 
-  const postEditProductModal = (values) => {
+  const postEditProductModal = async (values) => {
     setIsModalOpen(false);
     setIsEditProdModalVisible(false);
     values.shop = type;
@@ -470,63 +472,67 @@ function ShopScreen() {
     };
     // console.log(formBody);
 
-    Utils.patchApi("editProduct", formBody).then((res) => {
+    await Utils.patchApi("editProduct", formBody).then((res) => {
       // console.log(res); 
       if (res.status === 200) {
         console.log(res.data.affectedRows);
         message.success("Successfully edited product");
-        setRender(!render);
+        // setRender(!render);
       }
     });
 
     var files = values.pImage;
+    // console.log(files);
 
-    for (var i = 0; i < files.length; i++) {
-      let bodyFile = {
-        image: convertToBlob(files[i]),
-        productid: values.id,
-        imageid: files[i].imageid,
-        identityid: i + 1,
-      };
-
-      if (bodyFile.imageid === undefined) {
-        // console.log("post");
-        Utils.postImageApi("addImage", bodyFile).then((res) => {
-          if (res.status === 201) {
-            console.log(res.data.affectedRows);
-            message.success(`Successfully uploaded image`);
-            // setRender(!render);
-          }
-        });
-      }
-      else if (curProdDetails.pImage[i].status !== undefined && files.length < curProdDetails.pImage.length) {
-        // console.log("delete image");
+    for (var i = 0; i < 4; i++) {
+      // console.log(i);
+      if (files[i] !== undefined) {
+        // console.log("this file now", files[i]);
         let bodyFile = {
-          imageID: files[i].imageid,
+          image: convertToBlob(files[i]),
+          productid: values.id,
+          imageid: files[i].imageid,
+          identityid: i + 1,
         };
-        
-        Utils.deleteApi("deleteImage", bodyFile).then((res) => {
-          if (res.status === 204) {
-            console.log(res.data.affectedRows);
-            message.success(`Successfully uploaded image`);
-            // setRender(!render);
-          }
-        });
-      }
-      else if (productImages[i] !== bodyFile.image.thumbUrl) {
-        // console.log("patch");
-        Utils.editImageApi("editImage", bodyFile).then((res) => {
-          if (res.status === 200) {
-            console.log(res.data.affectedRows);
-            message.success(`Successfully uploaded image`);
-            // setRender(!render);
-          }
-        });
-      }
 
+        if (bodyFile.imageid === undefined) {
+          console.log("post");
+          await Utils.postImageApi("addImage", bodyFile).then((res) => {
+            if (res.status === 201) {
+              console.log(res.data.affectedRows);
+              message.success(`Successfully uploaded image`);
+              // setRender(!render);
+            }
+          });
+        }
+        else if (bodyFile.imageid) {
+          console.log("patch");
+          await Utils.editImageApi("editImage", bodyFile).then((res) => {
+            if (res.status === 200) {
+              console.log(res.data.affectedRows);
+              message.success(`Successfully edited image`);
+              // setRender(!render);
+            }
+          });
+        }
+      } else {
+        console.log("delete image");
+        let bodyFile = {
+          imageID: curProdDetails.pImage[i].imageid,
+        };
+        // console.log(bodyFile);
+        
+        await Utils.deleteApi("deleteImage", bodyFile).then((res) => {
+          if (res.status === 204) {
+            console.log(res);
+            console.log(res.data.affectedRows);
+            message.success(`Successfully removed image`);
+            // setRender(!render);
+          }
+        });
+      }
       setRender(!render);
     }
-
   };
 
   // DELETE AND POST PRODUCT FUNCTION
@@ -604,42 +610,44 @@ function ShopScreen() {
   // If going to open edit product modal, should also update the curProdDetails state
   const getProductDetails = async (curItem) => {
     try {
-      var res = await Utils._getApi("getOtherImages", {
-        productId: curItem.pID,
-      });
-
-      let imgsArr = [curItem.pImage];
-
-      // If no results returned
-      if (res.status === 404) {
-        console.log("has no more images");
-      } else {
-        res = res.data;
-        for (let imgData of res) {
-          console.log(res);
-          var newImgData = {
-            type: imgData.image.type,
-            data: imgData.image.data,
-            imageid: imgData.imageid
-          };
-          imgsArr.push(newImgData);
+      if (curItem !== null) {
+        var res = await Utils._getApi("getOtherImages", {
+          productId: curItem.pID,
+        });
+  
+        let imgsArr = [curItem.pImage];
+  
+        // If no results returned
+        if (res.status === 404) {
+          console.log("has no more images");
+        } else {
+          res = res.data;
+          for (let imgData of res) {
+            console.log(res);
+            var newImgData = {
+              type: imgData.image.type,
+              data: imgData.image.data,
+              imageid: imgData.imageid
+            };
+            imgsArr.push(newImgData);
+          }
         }
-      }
-
-      setCurProdDetails({
-        pID: curItem.pID,
-        pName: curItem.pName,
-        pDesc: curItem.pDesc,
-        pPrice: curItem.pPrice,
-        pImage: imgsArr,
-        pURL: curItem.pURL,
-      });
-
-      const convertedImgsArr = [];
-      for (let img of imgsArr) {
-        convertedImgsArr.push(`data:image/jpg;base64,${convertToBase64(img.data)}`);
-      }
-      setProductImages(convertedImgsArr);
+  
+        setCurProdDetails({
+          pID: curItem.pID,
+          pName: curItem.pName,
+          pDesc: curItem.pDesc,
+          pPrice: curItem.pPrice,
+          pImage: imgsArr,
+          pURL: curItem.pURL,
+        });
+  
+        const convertedImgsArr = [];
+        for (let img of imgsArr) {
+          convertedImgsArr.push(`data:image/jpg;base64,${convertToBase64(img.data)}`);
+        }
+        setProductImages(convertedImgsArr);
+      }   
     } catch (err) {
       console.log(err);
     }
@@ -730,7 +738,7 @@ function ShopScreen() {
                 title="Add Products"
                 onClick={openAddProductModal}
               />
-              <CustomButton title="Bulk Upload" />
+              {/* <CustomButton title="Bulk Upload" /> */}
               <CustomButton title="Download CSV" onClick={downloadProductCSV} />
 
               <AddProductModal
@@ -755,6 +763,7 @@ function ShopScreen() {
               <ImagesModal
                 onCloseModal={() => {
                   setIsImageModalVisible(false);
+                  setCurProductSelected(null);
                 }}
                 images={productImages}
               />

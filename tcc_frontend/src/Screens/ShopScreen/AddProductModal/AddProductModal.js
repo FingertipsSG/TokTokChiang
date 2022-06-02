@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "antd/dist/antd.css";
-import { Modal, Form, Input, InputNumber, Upload, Space } from "antd";
+import { Modal, Form, Input, InputNumber, Upload, Space, message } from "antd";
 // import "./AddProductModal.css";
 
 const { TextArea } = Input;
@@ -43,17 +43,17 @@ function AddProductModal({ title, visible, onOk, onCancel }) {
   //   return new Blob([byteArray], { type: "image/png" });
   // };
 
-  // const beforeUpload = (file) => {
-  //     const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'image/jpg';
-  //     if (!isJpgOrPng) {
-  //         message.error('You can only upload JPG/PNG file!');
-  //     }
-  //     const isLt2M = file.size / 1024 / 1024 < 2;
-  //     if (!isLt2M) {
-  //         message.error('Image must smaller than 2MB!');
-  //     }
-  //     return isJpgOrPng && isLt2M;
-  // }
+  const beforeUpload = (file) => {
+    const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'image/jpg';
+    if (!isJpgOrPng) {
+        message.error('You can only upload JPG/PNG file!');
+    }
+    const isLt2M = file.size / 1024 / 1024 < 2;
+    if (!isLt2M) {
+        message.error('Image must smaller than 3MB!');
+    }
+    return isJpgOrPng && isLt2M;
+  };
 
   return (
     <Modal
@@ -139,11 +139,11 @@ function AddProductModal({ title, visible, onOk, onCancel }) {
           <Space direction="vertical" style={{ width: "100%" }} size="large">
             <Upload
               listType="picture-card"
-              maxCount={1}
+              maxCount={4}
               fileList={fileList}
               onChange={onChange}
               onPreview={onPreview}
-              beforeUpload={() => false}
+              beforeUpload={beforeUpload}
             >
               {fileList.length <= 1 && "+ Upload"}
             </Upload>

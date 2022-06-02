@@ -100,7 +100,7 @@ export async function postImageApi(endpoint, parameters = {}) {
   try {
     const formData = new FormData();
 
-    console.log(parameters);
+    // console.log(parameters);
     formData.append("image", parameters.image);
     formData.append("productid", parameters.productid);
     formData.append("identityid", parameters.identityid);
@@ -149,17 +149,17 @@ export async function editImageApi(endpoint, parameters = {}) {
   try {
     const formData = new FormData();
 
-    console.log(parameters);
+    // console.log(parameters);
     formData.append("image", parameters.image);
     formData.append("productid", parameters.productid);
-    formData.append("imageid", parameters.imageid);
+    // formData.append("imageid", parameters.imageid);
     formData.append("identityid", parameters.identityid);
 
-    for (let key of formData.entries()) {
-      console.log(key[0], key[1]);
-    }
+    // for (let key of formData.entries()) {
+    //   console.log(key[0], key[1]);
+    // }
 
-    console.log(formData.entries());
+    // console.log(formData.entries());
 
     const res = await axios({
       method: "PATCH",

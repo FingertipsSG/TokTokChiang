@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "antd/dist/antd.css";
-import { Modal, Form, Input, InputNumber, Upload, Space } from "antd";
+import { Modal, Form, Input, InputNumber, Upload, Space, message } from "antd";
 import { Buffer } from "buffer";
 const { TextArea } = Input;
 
@@ -26,6 +26,18 @@ function EditProductModal({ title, visible, onOk, onCancel, details }) {
     image.src = src;
     const imgWindow = window.open(src);
     imgWindow.document.write(image.outerHTML);
+  };
+
+  const beforeUpload = (file) => {
+    const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'image/jpg';
+    if (!isJpgOrPng) {
+        message.error('You can only upload JPG/PNG file!');
+    }
+    const isLt2M = file.size / 1024 / 1024 < 2;
+    if (!isLt2M) {
+        message.error('Image must smaller than 2MB!');
+    }
+    return isJpgOrPng && isLt2M;
   };
 
   // To convert BLOB to base64 encoded then load the base64 image STEP
@@ -142,7 +154,7 @@ function EditProductModal({ title, visible, onOk, onCancel, details }) {
               fileList={fileList}
               onChange={onChange}
               onPreview={onPreview}
-              beforeUpload={() => false}
+              beforeUpload={beforeUpload} // () => false
             >
               {fileList.length <= 4 && "+ Upload"}
             </Upload>
