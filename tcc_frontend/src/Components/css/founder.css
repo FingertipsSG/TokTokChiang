@@ -159,6 +159,10 @@ body.founderBody {
     .founderPic {
         margin-top: 3% !important;
     }
+    body.founderBody {
+        background-position:0;  
+        background-attachment: fixed;
+    }
 }
 
 /*Ipad mini*/
@@ -189,7 +193,8 @@ body.founderBody {
     }
 
     body.founderBody {
-        background-image: none;
+        background-position:0;  
+        background-attachment: fixed;
     }
 }
 
