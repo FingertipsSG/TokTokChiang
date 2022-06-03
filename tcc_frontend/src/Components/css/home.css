@@ -56,7 +56,16 @@ body.homePageBody {
     }
 }
 
-@media (min-width: 1224px) and (max-width: 1449px) {
+@media (min-width: 1224px) and (max-width: 1279px) {
+    .homeContent {
+        height: 350px;
+    }
+    body.homePageBody{
+        overflow-x: hidden;
+    }
+}
+
+@media (min-width: 1281) and (max-width: 1449) {
     .homeContent {
         height: 350px;
     }
