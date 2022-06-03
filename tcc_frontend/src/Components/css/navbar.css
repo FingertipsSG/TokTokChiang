@@ -129,6 +129,22 @@ a.link.nav-link:hover {
   }
 }
 
+@media (min-width: 615px) and (max-width:  767px) {
+  .navbar__logo {
+    width: 40%;
+  }
+}
+@media (min-width: 546px) and (max-width:  615px) {
+  .navbar__logo {
+    width: 50%;
+  }
+}
+@media (min-width: 400px) and (max-width: 545px) { 
+  .navbar__logo {
+    width: 60%;
+  }
+}
+
 @media (max-width: 1065px) {
     a.link.nav-link {
       margin-right: 30px;
