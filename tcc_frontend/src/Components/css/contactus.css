@@ -4,11 +4,11 @@
 }
 
 .contactUsBody{
-  background-image:url("../../Assets/Images/ContactUs.png");
-  height:130vh;
+  background-image:url("../../Assets/Images/TTC\ CU3.png");
+  height:120vh;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position:100% 100%;  
+  background-position:0 0;  
   overflow-x:hidden;
 }
 
@@ -55,34 +55,9 @@ button.ant-btn.ant-btn-primary.formBtn.mt-2 {
   margin-left: -4%;
 }
 
-@media (max-width: 1023px) { 
-  body.contactUsBody {
-    background-image: url("../../Assets/Images/AboutUs.png");
-    background-attachment: fixed;
-    background-size:cover;
-    background-position:0; 
-    height:auto; 
-  }
-}
 
 
-@media (min-width: 1002px) and (max-width: 1022px) {
-  body.contactUsBody {
-    background-image: url("../../Assets/Images/ContactUs.png");
-    background-size:cover;
-    background-position:50% 0%; 
-  }
-  .contactUs {
-    margin-left: 50%;
-    margin-top: -1.5%;
-  }
-}
-
-@media (min-width: 1300px) {
-  body.contactUsBody {
-    height: 120vh;
-  }
-}
+/*RESPONSIVE*/
 
 @media (min-width: 1920px) {
  body.contactUsBody {
@@ -118,22 +93,41 @@ button.ant-btn.ant-btn-primary.formBtn.mt-2 {
 @media (min-width: 1600px ) and (max-width:1800px) {
   body.contactUsBody {
     background-image: url("../../Assets/Images/ContactUs.png");
-    background-attachment: fixed;
     background-size: cover;
     background-position:0% 0%; 
-    height:auto;
   }
  .contactUs {
     margin-left:40%;
     margin-top: 5%;
-    width:150%;
+    width:140%;
   }  
   button.ant-btn.ant-btn-primary.formBtn.mt-2 {
     margin-left: 9%;
   }
+  body.contactUsBody {
+    height: 120vh;
+}
+}
+
+@media (min-width: 1536px) {
+  body.contactUsBody {
+      height: 120vh;
+  }
+  html.contactUsHTML {
+      overflow-x: hidden;
+  }
+  .formTitle{
+    font-size:xx-large
+  }
+  .CuContent{
+    font-size:x-large;
+  }
 }
 
 @media (min-width: 1500px ) and (max-width:1600px) {
+  body.contactUsBody {
+    height: 120vh;
+}
   body.contactUsBody {
     background-image: url("../../Assets/Images/ContactUs.png");
     background-size: cover;
@@ -142,10 +136,16 @@ button.ant-btn.ant-btn-primary.formBtn.mt-2 {
  .contactUs {
     margin-left:40%;
     margin-top: 4%;
-    width:150%;
+    width:110%;
   }
   button.ant-btn.ant-btn-primary.formBtn.mt-2 {
     margin-left: 6.5%;
+  }
+  .formTitle{
+    font-size:xx-large
+  }
+  .CuContent{
+    font-size:x-large;
   }
 }
 
@@ -160,71 +160,115 @@ button.ant-btn.ant-btn-primary.formBtn.mt-2 {
     margin-top: 8%;
     width:150%;
   }
+  .formTitle{
+    font-size:xx-large
+  }
+  .CuContent{
+    font-size:x-large;
+  }
 }
 
- @media (min-width: 1300px) and (max-width: 1400px) {
+@media (min-width: 1300px) and (max-width: 1400px) {
   body.contactUsBody {
     background-image: url("../../Assets/Images/ContactUs.png");
-    background-attachment: fixed;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position:0% 0%; 
-    height:auto;
+    background-position:0
   }
  .contactUs {
     margin-left:40%;
     margin-top: 5%;
-    width:200%;
+    width:100%;
   } 
   button.ant-btn.ant-btn-primary.formBtn.mt-2 {
     margin-left: 5.5%;
   }
-} 
+  .formTitle{
+    font-size:xx-large
+  }
+  .CuContent{
+    font-size:x-large;
+  }
+}  
 
-@media (min-width: 1224px) and (max-width: 1279px) {
+ @media (min-width: 1224px) and (max-width: 1279px) {
   body.contactUsBody {
     background-image: url("../../Assets/Images/ContactUs.png");
-    background-attachment: fixed;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position:0% 0%; 
-    height:auto;
+    background-position:0
   }
  .contactUs {
     margin-left:40%;
-    margin-top: 5%;
-    width:200%;
+    margin-top: 7%;
+    width:100%;
   }  
+  .contactUsDiv{
+    margin-top:-3.5em;
+  }
 }
 
 @media (min-width: 1093px) and (max-width: 1223px) {
   body.contactUsBody {
     background-image: url("../../Assets/Images/ContactUs.png");
-    background-attachment: fixed;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position:0% 0%;  
-    height:auto;
+    background-position:0
   }
   .contactUs {
     margin-left:35%;
-    margin-top: 5.5%;
+    margin-top:2%;
     width:200%;
   }
   button.ant-btn.ant-btn-primary.formBtn.mt-2 {
     margin-left: 2.5%;
   }
-}
+  .contactUsDiv{
+    margin-top:2em;
+  }
+  .CuContent{
+    font-size:large;
+  }
+} 
 
-
-@media (min-width: 991px) and (max-width: 1092px) {
+@media (max-width: 1023px) { 
   body.contactUsBody {
     background-image: url("../../Assets/Images/AboutUs.png");
     background-attachment: fixed;
+    background-size:cover;
+    background-position:0; 
+    height:auto; 
+  }
+}
+ 
+
+/*Tablet*/
+@media (min-width: 1022px) and (max-width: 1092px) {
+  html.contactUsHTML {
+    overflow-x: hidden;
+}
+  body.contactUsBody {
+    background-image: url("../../Assets/Images/AboutUs.png");
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position:0% 0%;  
+    background-position:0
    }
+  .contactUs {
+    margin-left:25%;
+    margin-top: 10%;
+    width:100%;
+  }
+  button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+    margin-left: 1%;
+  }
+  .CuContent{
+    font-size:x-large;
+  }
+}
+
+/*Tablet*/
+@media (min-width: 991px) and (max-width: 1022px) {
+    
+  body.contactUsBody {
+      background-image: url("../../Assets/Images/comingsoon.png");
+      background-position:0;  
+  }
   .contactUs {
     margin-left:25%;
     margin-top: 10%;
@@ -233,15 +277,30 @@ button.ant-btn.ant-btn-primary.formBtn.mt-2 {
   button.ant-btn.ant-btn-primary.formBtn.mt-2 {
     margin-left: 1%;
   }
-}
-
-@media (min-width: 768px) and ( max-width: 1023px) {
-  .contactUs {
-    margin-left: 25%;
-    margin-top: 10%;
+  .contactUsDiv{
+    margin-top: -5em;
+  }
+  .CuContent{
+    font-size:x-large;
   }
 }
 
+/* Ipad air version */
+@media (min-width: 768px) and ( max-width:990px){ 
+  .contactUs {
+    margin-left: 25%;
+    margin-top: 12%;
+  }
+  body.contactUsBody {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-position:0;  
+}
+.CuContent{
+  font-size:x-large;
+}
+}
+
+/*Ipad Mini*/
 @media (max-width: 767px) { 
   .contactUs {
     padding: 10%;
@@ -250,6 +309,7 @@ button.ant-btn.ant-btn-primary.formBtn.mt-2 {
   .ant-form-item {
     width: 100%;
   }
+ 
 }
 @media (max-width: 566px) { 
   .contactUs {
@@ -258,5 +318,21 @@ button.ant-btn.ant-btn-primary.formBtn.mt-2 {
   }
   .ant-form-item {
     width: 100%;
+  }
+ 
+}
+@media (max-width: 380px) { 
+  .contactUs {
+    padding: 10%;
+    margin-left:2%;
+  }
+  .ant-form-item {
+    width: 100%;
+  }
+  .formTitle{
+    font-size: 2em;
+  }
+  .contactUsDiv{
+    margin-top: -2em;
   }
 }

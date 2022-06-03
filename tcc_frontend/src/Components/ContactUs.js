@@ -30,12 +30,12 @@ function ContactUs() {
     <html className="contactUsHTML">
       <body className="contactUsBody">
         <Navbar />
-        <div>
+        <div className='contactUsDiv'>
           <Row>
             <div className="col-lg-4"></div>
             <div className="contactUs col-lg-8 col-md-12">
               <h1 className="formTitle"> Stay Connected With Us</h1>
-              <p>
+              <p className="CuContent">
                 Feel free to contact us anytime time.
                 <br />
                 We will get back to you as soon as we can!
