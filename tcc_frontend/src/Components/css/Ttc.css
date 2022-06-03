@@ -58,6 +58,7 @@ body.ttcBody {
     margin-left: 92px;
     height: 300px;
     overflow: auto;
+    padding-right: 20px;
 }
 
 .carousel {
@@ -88,17 +89,8 @@ img#carouselPic {
     margin-right: 20% !important;
 }
 
-@media (min-width: 1002px) and (max-width: 1022px) {
-    .carousel {
-        margin-top: 10% ;
-    }
-}
 
-@media (min-width: 1093px) and (max-width: 1223px) {
-    .ttcContent {
-        height: 200px;
-    }
-}
+/* Responsive */
 
 @media (min-width: 1920px) {
     .carousel {
@@ -106,13 +98,475 @@ img#carouselPic {
     }
 }
 
-@media (min-width: 1024px) { 
+@media (min-width: 1224px) and (max-width: 1449px) {
+    .ttcContent {
+        height: 250px;
+    }
+    .carousel {
+        margin-top: 10%;
+    }
+    body.ttcBody {
+        overflow-x: hidden;
+    }
+}
+
+@media (min-width: 1093px) and (max-width: 1224px) {
+    .ttcContent {
+        height: 200px;
+    }
+    .title1 {
+        font-size: 28px;
+    }
+    .title2 {
+        font-size: 28px;
+    }
+}
+
+
+@media (min-width: 1002px) and (max-width: 1022px) {
+    .carousel {
+        margin-top: 10% ;
+    }
+}
+
+@media (min-width: 1224px) and ( max-width:1275px){ 
+    .ttcContent {
+        height: 250px;
+    }
+    .carousel {
+        margin-top: 10%;
+    }
+    body.ttcBody {
+        height: auto;
+        background-position: 0;
+    }
+}
+
+@media (min-width: 1276px) and (max-width: 1279px) {
+    .ttcContent {
+        height:280px;
+    }
+    .ttcCarousel {
+        margin-top: 10% ;
+    }
+    body.ttcBody{
+        background-position:auto auto;
+        height:120vh;
+    }
+}   
+
+ /* 13.9-14.9inch w height:796 */
+ @media (min-width: 1281px) and (max-width: 1535px) {
+    .ttcContent {
+        height:280px;
+    }
+    .ttcCarousel {
+        margin-top: 10% ;
+    }
+    body.ttcBody{
+        height:120vh;
+    }
+} 
+
+/*Tablet*/
+@media (min-width: 1023px) and (max-width: 1092px) {
     html.ttcHtml {
         overflow-x: hidden;
     }
-}      
+    body.ttcBody {
+        background-image: url("../../Assets/Images/comingsoon.png"); 
+        background-size:cover;
+        background-position:0;
+    }
+    .ttcContent {
+        height: 20em !important;
+    }
+}
 
-@media (min-width: 1224px) and (max-width: 1449px) {
+@media (max-width: 1023px) { 
+    body.ttcBody {
+        background-size:cover;
+        background-position:0;
+    }
+} 
+
+@media (min-width: 992px) and (max-width: 1022px) {
+    body.ttcBody {
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-position:0;  
+    }
+    .ttcContent {
+        height: 15em !important;
+    }
+}
+
+@media (min-width: 1536px) {
+    body.ttcBody {
+        height: 120vh;
+    }
+    html.ttcHtml {
+        overflow-x: hidden;
+    }
+}
+
+/* Ipad air version */
+@media (min-width: 768px) and ( max-width:991px){ 
+    html.ttcHtml {
+        overflow: hidden;
+    }
+    
+    .ttcContent {
+        font-size: 14px;
+        margin-left: 6.5em;
+        width:80%;
+        margin-bottom: 0;
+    }
+    .firstContentText {
+        margin-left: 6.5em;
+    }
+    .ttcCarousel {
+        margin-top: 3% !important;
+    }
+    body.ttcBody {
+        background-position: 0;
+        background-attachment: fixed;
+    }
+}
+
+/*Ipad mini*/
+@media (min-width: 766px) and (max-width: 767px) { 
+    html.ttcHtml{
+        height:100vh;
+        overflow: hidden;
+    }
+    .ttcContent {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left: 6.5em;
+        height: 20em;
+        width: 80%;
+        overflow:scroll; 
+        margin-bottom: 0;
+    }
+
+    .firstContentText {
+        margin-left: 6.5em;
+    }
+    .ttcCarousel {
+        width: 70%;
+        margin-left: 20%;
+        margin-top: 0;
+        float:none;
+    }
+
+    body.founderBody {
+        background-position: 0;
+        background-attachment: fixed;
+    }
+}
+
+/* mobile version */
+@media (min-width: 731px) and (max-width: 765px) { 
+    html.ttcHtml{
+        height:100vh;
+        overflow-y: scroll;
+        overflow-x:hidden;
+    }
+    .ttcContent {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left: 6.5em;
+        height: 31em;
+        width: 85%;
+        overflow:scroll; 
+        margin-bottom: 0;
+    }
+    .firstContentText {
+        margin-left: 6.5em;
+    }
+    .ttcCarousel {
+        width: 60%;
+        margin-left: 25%;
+        margin-top: 0;
+        float:none;
+    }
+
+    body.ttcBody {
+        background-image: none;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 730px) { 
+    html.ttcHtml{
+        height:100vh;
+        overflow-y: scroll;
+        overflow-x:hidden;
+    }
+    .ttcContent {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left: 6.5em;
+        height:20em;
+        width: 85%;
+        overflow:auto; 
+        margin-bottom: 0;
+    }
+    .firstContentText {
+        margin-left: 6.5em;
+    }
+    img#carouselPic {
+        width: 65%;
+        margin-left: 20%;
+        margin-top: 0;
+        float:none;
+    }
+
+    body.ttcBody {
+        background-image: none;
+    }
+}
+
+@media (min-width: 631px) and (max-width: 700px) { 
+    html.ttcHtml{
+        height:100vh;
+        overflow-y: scroll;
+        overflow-x:hidden;
+    }
+    .ttcContent {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left: 6em;
+        height: 25em;
+        width: 85%;
+        overflow:scroll; 
+        margin-bottom: 0;
+    } 
+    .firstContentText {
+        margin-left: 6em;
+    }
+    .ttcCarousel {
+        width: 70%;
+        margin-left: 20%;
+        margin-top: 0;
+        float:none;
+    }
+
+    body.ttcBody {
+        background-image: none;
+    }
+}
+
+@media (min-width: 528px) and (max-width: 630px) { 
+    html.ttcHtml{
+        height:100vh;
+        overflow-y: scroll;
+        overflow-x:hidden;
+    }
+    .ttcContent {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left: 5.5em;
+        height: 20em;
+        width: 85%;
+        overflow:scroll; 
+        margin-bottom: 0;
+    }
+    img#carouselPic {
+        width: 70%;
+        margin-left: 20%;
+        margin-top: 0;
+        float:none;
+    }
+
+    .carousel {
+        margin-top: 0;
+    }
+    .firstContentText {
+        margin-left: 5.5em;
+    }
+    
+    body.ttcBody {
+        background-image: none;
+    }
+}
+
+@media (min-width: 451px) and (max-width: 528px) {
+    html.ttcHtml{
+        height:100vh;
+        overflow-y:scroll;
+        overflow-x:hidden;
+    }
+    .ttcContent {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left: 5.5em;
+        height: 30em;
+        width: 80%;
+        overflow:scroll; 
+        margin-bottom: 0;
+    }
+    .carousel {
+        margin-top: 0;
+    }
+
+    img#carouselPic {
+        width: 70%;
+        margin-left: 20%;
+        margin-top: 0;
+        float:none;
+    }
+    body.ttcBody {
+        background-image: none;
+    }
+    .firstContentText {
+        margin-left: 5.5em;
+    }
+
+}
+
+@media (max-width: 450px) { 
+    html.ttcHtml{
+        height:100vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    .ttcContent {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left: 5.5em;
+        height: 30em;
+        width: 80%;
+        overflow:scroll; 
+        margin-bottom: 0;
+    }
+    .firstContentText {
+        margin-left: 5.5em;
+    }
+
+    img#carouselPic {
+        width: 70%;
+        margin-left: 20%;
+        margin-top: 0;
+        float:none;
+    }
+    .carousel {
+        margin-top: 0;
+    }
+
+    body.ttcBody {
+        background-image: none;
+    }
+
+}
+
+@media (max-width: 435px) { 
+    html.ttcHtml{
+        height:100vh;
+        overflow-y: scroll;
+        overflow-x:hidden;
+    }
+    .ttcContent {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left: 5.5em;
+        height: 31em;
+        width: 80%;
+        overflow:scroll; 
+        margin-bottom: 0;
+    }
+
+    .carousel {
+        margin-top: 0;
+    }
+
+    img#carouselPic {
+        width: 70%;
+        margin-left: 20%;
+        margin-top: 0;
+        float:none;
+    }
+    .firstContentText {
+        margin-left: 5.5em;
+    }
+    body.ttcBody {
+        background-image: none;
+    }
+
+}
+
+@media (max-width: 400px) { 
+    html.ttcHtml{
+        height:100vh;
+        overflow-y: scroll;
+        overflow-x:hidden;
+    }
+    .firstContentText {
+        margin-left: 70px !important;
+    }
+    .ttcContent {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left: 5.5em;
+        height: 28em;
+        width: 80%;
+        overflow:scroll; 
+        margin-bottom: 0;
+    }
+    .ttcCarousel {
+        margin-top: 0;
+    }
+
+    img#carouselPic {
+        width: 70%;
+        margin-left: 20%;
+        margin-top: 0;
+        float:none;
+    }
+
+    body.ttcBody {
+        background-image: none;
+    }
+
+}
+
+@media (max-width: 380px) { 
+    html.ttcHtml{
+        height:100vh;
+        overflow-y:scroll;
+        overflow-x:hidden;
+    }
+    .ttcContent {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left: 70px;
+        height: 30em;
+        width: 80%;
+        overflow:scroll; 
+        margin-bottom: 0;
+    }
+
+    img#carouselPic {
+        width: 65%;
+        margin-left: 22%;
+        margin-top: 0;
+        float:none;
+    }
+
+    body.ttcBody {
+        background-image: none;
+    }
+
+    .firstContentText {
+        margin-left: 5.5em;
+    }
+
+}
+
+
+
+
+
+/* @media (min-width: 1224px) and (max-width: 1449px) {
     .ttcContent {
         height: 250px;
     }
@@ -171,13 +625,13 @@ img#carouselPic {
     .ttcContent {
         font-family: Calibri;
         font-size: 14px;
-        margin-left: 70px;
+        margin-left: 85px;
         height:350px;
         width: 80%;
         overflow:scroll;
     }
     .firstContentText {
-        margin-left: 70px !important;
+        margin-left: 85px !important;
     }
     .ttcCarousel{
         visibility:hidden;
@@ -200,4 +654,6 @@ img#carouselPic {
         background-attachment: fixed;
         background-position:0;
     }
-}
+} 
+ */
+
