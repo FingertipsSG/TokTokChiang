@@ -1,16 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import CustomNavbar from '../Components/CustomNavbar/CustomNavbar';
+import React, { useState, useEffect } from "react";
+import CustomNavbar from "../Components/CustomNavbar/CustomNavbar";
 import { Table, Space, Tag, Popconfirm, message, Spin } from "antd";
-import 'antd/dist/antd.css';
+import "antd/dist/antd.css";
 import { Utils } from "../../Helper";
 import "./UserScreen.css";
-import CustomSearchBar from '../Components/CustomSearchBar/CustomSearchBar';
-import CustomButton from '../Components/CustomButton/CustomButton';
-import AddUserModal from './AddUserModal/AddUserModal';
-import EditUserModal from './EditUserModal/EditUserModal';
+import CustomSearchBar from "../Components/CustomSearchBar/CustomSearchBar";
+import CustomButton from "../Components/CustomButton/CustomButton";
+import AddUserModal from "./AddUserModal/AddUserModal";
+import EditUserModal from "./EditUserModal/EditUserModal";
 
 function UserScreen() {
-  const currentUser = { name: JSON.parse(localStorage.getItem("user")), role: JSON.parse(localStorage.getItem("role")), id: JSON.parse(localStorage.getItem("id")) };
+  const currentUser = {
+    name: JSON.parse(localStorage.getItem("user")),
+    role: JSON.parse(localStorage.getItem("role")),
+    id: JSON.parse(localStorage.getItem("id")),
+  };
   const [userArray, setUserArray] = useState([]);
   const [render, setRender] = useState(false);
   const [userEdit, setUserEdit] = useState({});
@@ -21,20 +25,23 @@ function UserScreen() {
   const columns = [
     {
       title: "ID",
-      dataIndex: 'uID',
-      key: "uID"
-    }, {
-      title: 'Name',
-      dataIndex: 'uName',
-      key: 'uName',
-    }, {
-      title: 'Email',
-      dataIndex: 'uEmail',
-      key: 'uEmail'
-    }, {
-      title: 'Role',
-      dataIndex: 'uRole',
-      key: 'uRole',
+      dataIndex: "uID",
+      key: "uID",
+    },
+    {
+      title: "Name",
+      dataIndex: "uName",
+      key: "uName",
+    },
+    {
+      title: "Email",
+      dataIndex: "uEmail",
+      key: "uEmail",
+    },
+    {
+      title: "Role",
+      dataIndex: "uRole",
+      key: "uRole",
       render: (uRole, record) => (
         <>
           {uRole === "master" ? (
@@ -47,51 +54,67 @@ function UserScreen() {
                 {uRole.toUpperCase()}
               </Tag>
             )
+          ) : record.uName === currentUser.name ? (
+            <Tag color="green" key={uRole}>
+              {uRole.toUpperCase()}
+            </Tag>
           ) : (
-            record.uName === currentUser.name ? (
-              <Tag color="green" key={uRole}>
-                {uRole.toUpperCase()}
-              </Tag>
-            ) : (
-              <Tag color="blue" key={uRole}>
-                {uRole.toUpperCase()}
-              </Tag>
-            )
+            <Tag color="blue" key={uRole}>
+              {uRole.toUpperCase()}
+            </Tag>
           )}
         </>
       ),
-    }, {
-      title: 'Action',
-      key: 'action',
+    },
+    {
+      title: "Action",
+      key: "action",
       render: (text, record) => (
         <Space size="middle">
           {currentUser.role === "master" ? (
-            <a onClick={() => {
-              setUserEdit(
-                {
+            <a
+              onClick={() => {
+                setUserEdit({
                   uID: record.uID,
                   uName: record.uName,
                   uPass: record.uPass,
                   uEmail: record.uEmail,
                   uRole: record.uRole,
                 });
-              openEditUserModal();
-            }}>Edit</a>
-          ) : (currentUser.name === record.uName ? (
-              <a>Edit</a>
-            ) : (
-              <></>
-            )
+                openEditUserModal();
+              }}
+            >
+              Edit
+            </a>
+          ) : currentUser.name === record.uName ? (
+            <a
+              onClick={() => {
+                console.log(record);
+                setUserEdit({
+                  uID: record.uID,
+                  uName: record.uName,
+                  uPass: record.uPass,
+                  uEmail: record.uEmail,
+                  uRole: record.uRole,
+                });
+                openEditUserModal();
+              }}
+            >
+              Edit
+            </a>
+          ) : (
+            <></>
           )}
 
           {currentUser.role === "master" ? (
             currentUser.name === record.uName ? (
-              <>
-              </>
+              <></>
             ) : (
               <Popconfirm
                 title={`Are you sure you want to delete ${record.uName}`}
-                onConfirm={() => { onDeleteUser(record.uID); }}
+                onConfirm={() => {
+                  onDeleteUser(record.uID);
+                }}
                 okText="Yes"
                 cancelText="No"
               >
@@ -99,12 +122,11 @@ function UserScreen() {
               </Popconfirm>
             )
           ) : (
-            <>
-            </>
+            <></>
           )}
         </Space>
-      )
-    }
+      ),
+    },
   ];
 
   const openAddUserModal = () => {
@@ -147,12 +169,13 @@ function UserScreen() {
 
     res.forEach((obj, i) => {
       setUserArray((prevArray) => [
-        ...prevArray, {
+        ...prevArray,
+        {
           uID: obj.id,
           uName: obj.username,
           uEmail: obj.email,
           uRole: obj.role,
-        }
+        },
       ]);
     });
   };
@@ -168,23 +191,26 @@ function UserScreen() {
     // console.log(value);
     // console.log(searchQuery);
     const endpoint = "searchUsers";
-    const res = await Utils.getApi(endpoint, {searchQuery: value });
+    let res = await Utils.postApi(endpoint, { searchQuery: value });
+
     // console.log(res);
+    res = res.data;
     setRender(render);
     setUserArray([]);
 
     res.forEach((obj, i) => {
       setUserArray((prevArray) => [
-        ...prevArray, {
+        ...prevArray,
+        {
           uID: obj.id,
-        uName: obj.username,
-        uEmail: obj.email,
-        uRole: obj.role,
-        }
+          uName: obj.username,
+          uEmail: obj.email,
+          uRole: obj.role,
+        },
       ]);
     });
   };
-  
+
   // EDIT AND POST USER FUNCTION
   const openEditUserModal = () => {
     setIsEditUserModalVisible(true);
@@ -208,7 +234,7 @@ function UserScreen() {
   return (
     <>
       <CustomNavbar />
-      <div className='user-table'>
+      <div className="user-table">
         <h1 className="shop">User Admin</h1>
         <Space direction="horizontal" size={20} style={{ marginBottom: 20 }}>
           <CustomSearchBar onSearch={searchUsers} title="Search users" />
@@ -225,7 +251,7 @@ function UserScreen() {
                 onOk={postAddUserModal}
                 onCancel={cancelAddUserModal}
               />
-               <EditUserModal
+              <EditUserModal
                 title="Edit User Details"
                 visible={isEditUserModalVisible}
                 onOk={postEditUserModal}
@@ -235,11 +261,25 @@ function UserScreen() {
             </>
           ) : (
             <>
+              <EditUserModal
+                title="Edit User Details"
+                visible={isEditUserModalVisible}
+                onOk={postEditUserModal}
+                onCancel={cancelEditUserModal}
+                details={userEdit}
+              />
             </>
           )}
-
         </Space>
-        <Table columns={columns} dataSource={userArray} rowKey="uID" loading={{ indicator: <Spin size="default"></Spin>, spinning: isTableLoading }} />
+        <Table
+          columns={columns}
+          dataSource={userArray}
+          rowKey="uID"
+          loading={{
+            indicator: <Spin size="default"></Spin>,
+            spinning: isTableLoading,
+          }}
+        />
       </div>
     </>
   );
