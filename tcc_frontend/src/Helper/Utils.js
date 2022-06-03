@@ -66,7 +66,13 @@ export async function getApi(endpoint, parameters = {}) {
   let params = {};
   params.params = parameters;
   try {
-    const res = await axios.get(url, params);
+    const res = await axios({
+      method: "GET",
+      url: url,
+      headers: {
+        authorization: "Bearer " + JSON.parse(localStorage.getItem("token")),
+      },
+    });
     // console.log(res);
     if (endpoint === "downloadProductCSV") {
       return res;
@@ -81,11 +87,18 @@ export async function getApi(endpoint, parameters = {}) {
   }
 }
 
-// POST
+// POST - with JWT token
 export async function postApi(endpoint, parameters = {}) {
   const url = "http://localhost:5001/" + endpoint;
   try {
-    const res = await axios.post(url, parameters);
+    const res = await axios({
+      method: "POST",
+      url: url,
+      headers: {
+        authorization: "Bearer " + JSON.parse(localStorage.getItem("token")),
+      },
+      data: parameters,
+    });
     return res;
   } catch (e) {
     console.log("[postApi error]");
@@ -95,12 +108,13 @@ export async function postApi(endpoint, parameters = {}) {
   }
 }
 
+// POSTIMAGEAPI - with JWT token
 export async function postImageApi(endpoint, parameters = {}) {
   const url = "http://localhost:5001/" + endpoint;
   try {
     const formData = new FormData();
 
-    // console.log(parameters);
+    console.log(parameters);
     formData.append("image", parameters.image);
     formData.append("productid", parameters.productid);
     formData.append("identityid", parameters.identityid);
@@ -116,7 +130,8 @@ export async function postImageApi(endpoint, parameters = {}) {
       url: url,
       data: formData,
       headers: {
-        "Content-Type": `multipart/form-data`,
+        authorization: "Bearer " + JSON.parse(localStorage.getItem("token")),
+        "Content-Type": "multipart/form-data",
       },
     });
 
@@ -134,7 +149,14 @@ export async function postImageApi(endpoint, parameters = {}) {
 export async function patchApi(endpoint, parameters = {}) {
   const url = "http://localhost:5001/" + endpoint;
   try {
-    const res = await axios.patch(url, parameters);
+    const res = await axios({
+      method: "PATCH",
+      url: url,
+      headers: {
+        authorization: "Bearer " + JSON.parse(localStorage.getItem("token")),
+      },
+      data: parameters,
+    });
     return res;
   } catch (e) {
     console.log("[patchApi error]");
@@ -149,24 +171,25 @@ export async function editImageApi(endpoint, parameters = {}) {
   try {
     const formData = new FormData();
 
-    // console.log(parameters);
+    console.log(parameters);
     formData.append("image", parameters.image);
     formData.append("productid", parameters.productid);
-    // formData.append("imageid", parameters.imageid);
+    formData.append("imageid", parameters.imageid);
     formData.append("identityid", parameters.identityid);
 
-    // for (let key of formData.entries()) {
-    //   console.log(key[0], key[1]);
-    // }
+    for (let key of formData.entries()) {
+      console.log(key[0], key[1]);
+    }
 
-    // console.log(formData.entries());
+    console.log(formData.entries());
 
     const res = await axios({
       method: "PATCH",
       url: url,
       data: formData,
       headers: {
-        "Content-Type": `multipart/form-data`,
+        authorization: "Bearer " + JSON.parse(localStorage.getItem("token")),
+        "Content-Type": "multipart/form-data",
       },
     });
 
@@ -184,7 +207,17 @@ export async function editImageApi(endpoint, parameters = {}) {
 export async function putApi(endpoint, parameters = {}) {
   const url = "http://localhost:5001/" + endpoint;
   try {
-    const res = await axios.put(url, parameters);
+    // LEFTOFFAT
+    console.log(localStorage.getItem("token"));
+
+    const res = await axios({
+      method: "PUT",
+      url: url,
+      data: parameters,
+      headers: {
+        authorization: "Bearer " + JSON.parse(localStorage.getItem("token")),
+      },
+    });
     return res;
   } catch (e) {
     console.log("[putApi error]");
@@ -199,7 +232,14 @@ export async function deleteApi(endpoint, parameters = {}) {
   const url = "http://localhost:5001/" + endpoint;
   try {
     // console.log(parameters);
-    const res = await axios.delete(url, { data: parameters });
+    const res = await axios({
+      method: "DELETE",
+      url: url,
+      data: parameters,
+      headers: {
+        authorization: "Bearer " + JSON.parse(localStorage.getItem("token")),
+      },
+    });
     return res;
   } catch (e) {
     console.log("[deleteApi error]");
