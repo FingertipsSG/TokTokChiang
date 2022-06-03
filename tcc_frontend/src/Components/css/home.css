@@ -232,10 +232,17 @@ body.homePageBody {
     .homeContent {
         font-family: Calibri;
         font-size: 1em;
-        margin-left: 70px;
-        height: 31em;
+        margin-left: 90px;
+        height: 11em;
         width: 85%;
         overflow:scroll; 
+        margin-bottom: 0;
+    }
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left: 90px;
+        width: 85%;
         margin-bottom: 0;
     }
     .homeFounderPic {
@@ -259,8 +266,8 @@ body.homePageBody {
     .homeContent {
         font-family: Calibri;
         font-size: 1em;
-        margin-left: 70px;
-        height:31em;
+        margin-left: 90px;
+        height:12em;
         width: 85%;
         overflow:scroll; 
         margin-bottom: 0;
@@ -268,7 +275,7 @@ body.homePageBody {
     .homeFounderPic {
         width: 65%;
         margin-left: 20%;
-        margin-top: 0;
+        margin-top: 2%;
         float:none;
     }
 
@@ -286,17 +293,27 @@ body.homePageBody {
     .homeContent {
         font-family: Calibri;
         font-size: 1em;
-        margin-left: 70px;
-        height: 25em;
+        margin-left: 84px;
+        height: 11em;
         width: 85%;
         overflow:scroll; 
         margin-bottom: 0;
     }
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left: 84px;
+        width: 85%;
+        margin-bottom: 0;
+    }
+    .secondHeader {
+        margin-left: 84px;
+    }
     .homeFounderPic {
         width: 70%;
         margin-left: 20%;
-        margin-top: 0;
         float:none;
+        margin-top: 2%;
     }
 
     body.homePageBody {
@@ -313,14 +330,22 @@ body.homePageBody {
     .homeContent {
         font-family: Calibri;
         font-size: 1em;
-        margin-left: 70px;
-        height: 20em;
+        margin-left: 5.5em;
+        height: 9em;
         width: 85%;
         overflow:scroll; 
         margin-bottom: 0;
     }
-    .homeTitle {
-        margin-top: -1.5em;
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left: 5.5em;
+        height: 9em;
+        width: 85%;
+        overflow:scroll; 
+    }
+    .secondHeader {
+        margin-left: 77px;
     }
     .homeFounderPic {
         width: 70%;
@@ -343,11 +368,24 @@ body.homePageBody {
     .homeContent {
         font-family: Calibri;
         font-size: 1em;
-        margin-left: 70px;
-        height: 30em;
+        margin-left: 77px;
+        height: 11em;
         width: 80%;
         overflow:scroll; 
         margin-bottom: 0;
+    }
+
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left: 77px;
+        height: 11em;
+        width: 80%;
+        overflow:scroll; 
+    }
+
+    .secondHeader {
+        margin-left: 77px;
     }
 
     .homeFounderPic {
@@ -355,9 +393,6 @@ body.homePageBody {
         margin-left: 20%;
         margin-top: 0;
         float:none;
-    }
-    .homeTitle {
-        margin-top: -1.5em;
     }
     body.homePageBody {
         background-image: none;
@@ -374,10 +409,20 @@ body.homePageBody {
         font-family: Calibri;
         font-size: 1em;
         margin-left: 70px;
-        height: 30em;
+        height: 11em;
         width: 80%;
         overflow:scroll; 
+        margin-bottom: 0;
+        padding-bottom: 0;
     } 
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left: 70px;
+        height: 11em;
+        width: 80%;
+        overflow:scroll;     
+    }
     .homeFounderPic {
         width: 70%;
         margin-left: 20%;

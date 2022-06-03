@@ -1,11 +1,7 @@
 import React from "react";
 import "../Components/css/home.css";
 import { Row } from "reactstrap";
-import founder from "../Assets/Images/NickShen MBS01.jpg";
-import mask from "../Assets/Images/homeMask.jpg";
-import doll from "../Assets/Images/doll1.jpg";
-import puppet from "../Assets/Images/homePuppets.jpg";
-import beard from "../Assets/Images/homeBeard.jpg";
+import founder from "../Assets/Images/wayang3.jpg";
 
 import Navbar from "./Navbar";
 
@@ -28,13 +24,12 @@ function Home() {
                                 <h2 className="title1">ALL ABOUT US</h2>
                                 <br />
                                 <br />
-                                <h3 className="homeTitle"> How We Started? </h3>
+                                <h5 className="homeTitle"> How We Started? </h5>
                             </div>
                             <p className="homeContent">
                                 Having been influenced by his grandmother who would routinely read him scripts at bedtime,
                                 and his grandfather as a drummer for a Chinese opera troupe, Nick has lived and breathed
                                 Teochew opera since he was a child and started performing at age 13.
-                                <br />
                                 <br />
                                 In 2011, Nick turned his passion for Chinese opera into a purpose and founded Tok Tok Chiang,
                                 a platform where Nick dedicates his efforts in repositioning Chinese opera and culture, changing
@@ -42,65 +37,24 @@ function Home() {
                                 traditional art form, Nick followed his passion and made an impact. He bagged the Honouree Award
                                 for Cultural Achievement of JCI Ten Outstanding Young Persons of the World Singapore in 2014.
                                 <br />
-                                <br />
                                 In 2017, Nick made further efforts to revive and promote this vanishing art form by taking over the
                                 helm as the troupe owner of Lao Sai Tao Yuan, a 158-year-old Teochew Opera Troupe under our non-profit
                                 arm, Tok Tok Chiang Opera Ltd.
                             </p>
+                            <br />
+                            <h5 className="secondHeader"> What We Sell? </h5>
+                            <p className="homeContent2">
+                                Keeping the traditions alive, we love seeing elements of Chinese opera
+                                everywhere we go! Ranging from gifts to lifestyle merchandise, we sourced
+                                globally for high quality Chinese Opera-inspired items. You can also find
+                                one-of-a-kind pieces which are handcrafted by our very own veteran artistes
+                                of Lao Sai Tao Yuan Teochew Opera Troupe. From time to time, we may also launched
+                                uniquely designed items. A portion of the sale proceeds will be used to fund
+                                the operations of Lao Sai Tao Yuan Teochew Opera Troupe.
+                            </p>
                         </div>
                         <div className="col-lg-6">
                             <img src={founder} className="homeFounderPic" />
-                        </div>
-                    </Row>
-                    <Row>
-                        <div className="homeContentText">
-                            <br />
-                            <br />
-                            <h2 className="secondHeader"> What We Sell? </h2>
-                        </div>
-                    </Row>
-
-                    <Row className="products justify-content-center">
-                        <div className="col-lg-2 col-md-5 col-sm-5">
-                            <div className="card">
-                                <div className="card-body">
-                                    <img src={mask} className="card-img" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-2 col-md-5 col-sm-5">
-                            <div className="card">
-                                <div className="card-body">
-                                    <img src={doll} className="card-img" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-2 col-md-5 col-sm-5">
-                            <div className="card">
-                                <div className="card-body">
-                                    <img src={beard} className="card-img" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-2 col-md-5 col-sm-5">
-                            <div className="card">
-                                <div className="card-body">
-                                    <img src={puppet} className="card-img" />
-                                </div>
-                            </div>
-                        </div>
-                    </Row>
-                    <Row>
-                        <div className="homeContent2 col-lg-8">
-                            <br />
-                            Keeping the traditions alive, we love seeing elements of Chinese opera
-                            everywhere we go! Ranging from gifts to lifestyle merchandise, we sourced
-                            globally for high quality Chinese Opera-inspired items. You can also find
-                            one-of-a-kind pieces which are handcrafted by our very own veteran artistes
-                            of Lao Sai Tao Yuan Teochew Opera Troupe. From time to time, we may also launched
-                            uniquely designed items. A portion of the sale proceeds will be used to fund
-                            the operations of Lao Sai Tao Yuan Teochew Opera Troupe.
-                            <div className="extraHeight"></div>
                         </div>
                     </Row>
                 </div>
