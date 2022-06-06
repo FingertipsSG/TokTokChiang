@@ -19,7 +19,7 @@ body.homePageBody {
     font-family: Calibri;
     font-size: 16px;
     margin-left: 92px;
-    height: 150px;
+    height: 100px;
     overflow: auto;
     padding-right: 20px;
 }
@@ -28,7 +28,6 @@ body.homePageBody {
     font-family: Calibri;
     font-size: 16px;
     margin-left: 92px;
-    height: 150px;
     padding-right: 20px;
 }
 
@@ -65,7 +64,7 @@ body.homePageBody {
     }
 }
 
-@media (min-width: 1281) and (max-width: 1449) {
+@media (min-width: 1281px) and (max-width: 1449px) {
     .homeContent {
         height: 350px;
     }
