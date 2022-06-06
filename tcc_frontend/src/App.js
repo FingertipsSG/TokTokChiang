@@ -27,45 +27,68 @@ import EmailScreen from "./Screens/ForgetPasswordScreen/EnterEmailScreen";
 import DigitPinScreen from "./Screens/ForgetPasswordScreen/EnterDigitPinScreen";
 import ResetPasswordScreen from "./Screens/ForgetPasswordScreen/ResetPassword";
 
+import ProtectedRoute from "./Components/ProtectedRoute";
+
 function App() {
-	return (
-		<div className="App">
-			<Helmet>
-				<meta charSet="utf-8" />
-				<title>Wayang Shop</title>
-				<link rel="canonical" href="wayangshop.com" />
-				<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-			</Helmet>
-	
-			<Router>
-				<Routes>
-					<Route path="" element={<Home />} />
-					<Route path="laosaitaoyuan" element={<Lsty />} />
-					<Route path="toktokchiang" element={<Ttc />} />
-					<Route path="founder" element={<Founder />} />
-					<Route path="contactus" element={<ContactUs />} />
-					<Route path="services" element={<Services />} />
-					<Route path="wayang" element={<Wayang />} />
+  return (
+    <div className="App">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Wayang Shop</title>
+        <link rel="canonical" href="wayangshop.com" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      </Helmet>
 
-					<Route path="dolls" element={<Dolls />} />
-					<Route path="masks" element={<Masks />} />
-					<Route path="tshirts" element={<Tshirt />} />
-					<Route path="frames" element={<Framed />} />
-					<Route path="handpuppets" element={<HandPuppets />} />
+      <Router>
+        <Routes>
+          <Route path="" element={<Home />} />
+          <Route path="laosaitaoyuan" element={<Lsty />} />
+          <Route path="toktokchiang" element={<Ttc />} />
+          <Route path="founder" element={<Founder />} />
+          <Route path="contactus" element={<ContactUs />} />
+          <Route path="services" element={<Services />} />
+          <Route path="wayang" element={<Wayang />} />
 
-					<Route path="login" element={<LoginScreen />} />
-					<Route path="admin" element={<HomeScreen />} />
-					<Route path="shop" element={<ShopScreen />} />
-					<Route path="users" element={<UserScreen />} />
-					<Route path="email" element={<EmailScreen />} />
-					<Route path="digitPin" element={<DigitPinScreen />} />
-					<Route path="reset" element={<ResetPasswordScreen />} />
-				</Routes>
-			</Router>
-		</div>
-	);
+          <Route path="dolls" element={<Dolls />} />
+          <Route path="masks" element={<Masks />} />
+          <Route path="tshirts" element={<Tshirt />} />
+          <Route path="frames" element={<Framed />} />
+          <Route path="handpuppets" element={<HandPuppets />} />
+
+          <Route path="login" element={<LoginScreen />} />
+          <Route
+            path="admin"
+            element={
+              <ProtectedRoute>
+                <HomeScreen />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="shop"
+            element={
+              <ProtectedRoute>
+                <ShopScreen />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="users"
+            element={
+              <ProtectedRoute>
+                <UserScreen />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="email" element={<EmailScreen />} />
+          <Route path="digitPin" element={<DigitPinScreen />} />
+          <Route path="reset" element={<ResetPasswordScreen />} />
+        </Routes>
+      </Router>
+    </div>
+  );
 }
 
 export default App;
