@@ -323,3 +323,9 @@ body.framed-body {
     }
   }
 }
+
+@media (max-width: 768px) {
+  .shop-body {
+      background-image: none !important;
+  }
+}
