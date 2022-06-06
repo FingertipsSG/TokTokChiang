@@ -145,6 +145,31 @@ export async function postImageApi(endpoint, parameters = {}) {
   }
 }
 
+// POST downloadCSV - with JWT token
+export async function postDownloadCSVApi(endpoint, parameters = {}) {
+  const url = "http://localhost:5001/" + endpoint;
+  const headers = {
+    ...parameters.headers,
+    authorization: "Bearer " + JSON.parse(localStorage.getItem("token")),
+  };
+  const dataBody = parameters.params;
+
+  try {
+    const res = await axios({
+      method: "POST",
+      url: url,
+      headers: headers,
+      data: dataBody,
+    });
+    return res;
+  } catch (e) {
+    console.log("[postApi error]");
+    // console.log("url: " + url);
+    // console.log("params: " + parameters);
+    // console.log(e);
+  }
+}
+
 // PATCH
 export async function patchApi(endpoint, parameters = {}) {
   const url = "http://localhost:5001/" + endpoint;
