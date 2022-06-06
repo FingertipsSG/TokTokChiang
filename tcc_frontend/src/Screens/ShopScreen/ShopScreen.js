@@ -234,10 +234,10 @@ function ShopScreen() {
           pName: obj.productname,
           pDesc: obj.productdesc,
           pPrice: obj.price,
-          pImage: { 
-            data: obj.image.data, 
-            type: obj.image.type, 
-            imageid: obj.imageid
+          pImage: {
+            data: obj.image.data,
+            type: obj.image.type,
+            imageid: obj.imageid,
           },
           pURL: obj.url,
         },
@@ -464,16 +464,16 @@ function ShopScreen() {
 
     var formBody = {
       productname: values.pName,
-      productdesc: values.pDesc, 
-      price: values.pPrice, 
-      url: values.pUrl, 
+      productdesc: values.pDesc,
+      price: values.pPrice,
+      url: values.pUrl,
       fk_catid: catid,
-      productid: values.id
+      productid: values.id,
     };
     // console.log(formBody);
 
     await Utils.patchApi("editProduct", formBody).then((res) => {
-      // console.log(res); 
+      // console.log(res);
       if (res.status === 200) {
         console.log(res.data.affectedRows);
         message.success("Successfully edited product");
@@ -504,8 +504,7 @@ function ShopScreen() {
               // setRender(!render);
             }
           });
-        }
-        else if (bodyFile.imageid) {
+        } else if (bodyFile.imageid) {
           console.log("patch");
           await Utils.editImageApi("editImage", bodyFile).then((res) => {
             if (res.status === 200) {
@@ -523,7 +522,7 @@ function ShopScreen() {
             imageID: curProdDetails.pImage[i].imageid,
           };
           // console.log(bodyFile);
-          
+
           await Utils.deleteApi("deleteImage", bodyFile).then((res) => {
             if (res.status === 204) {
               console.log(res);
@@ -619,9 +618,9 @@ function ShopScreen() {
         var res = await Utils._getApi("getOtherImages", {
           productId: curItem.pID,
         });
-  
+
         let imgsArr = [curItem.pImage];
-  
+
         // If no results returned
         if (res.status === 404) {
           console.log("has no more images");
@@ -632,12 +631,12 @@ function ShopScreen() {
             var newImgData = {
               type: imgData.image.type,
               data: imgData.image.data,
-              imageid: imgData.imageid
+              imageid: imgData.imageid,
             };
             imgsArr.push(newImgData);
           }
         }
-  
+
         setCurProdDetails({
           pID: curItem.pID,
           pName: curItem.pName,
@@ -646,13 +645,15 @@ function ShopScreen() {
           pImage: imgsArr,
           pURL: curItem.pURL,
         });
-  
+
         const convertedImgsArr = [];
         for (let img of imgsArr) {
-          convertedImgsArr.push(`data:image/jpg;base64,${convertToBase64(img.data)}`);
+          convertedImgsArr.push(
+            `data:image/jpg;base64,${convertToBase64(img.data)}`
+          );
         }
         setProductImages(convertedImgsArr);
-      }   
+      }
     } catch (err) {
       console.log(err);
     }
@@ -672,11 +673,16 @@ function ShopScreen() {
   //----------------------------------------DOWNLOAD CSV----------------------------------------
   const downloadProductCSV = () => {
     const endpoint = "downloadProductCSV";
-    Utils.getApi(
-      endpoint,
-      { shop: type },
-      { headers: { "Access-Control-Expose-Headers": "Content-Disposition" } }
-    ).then((res) => {
+    const config = {
+      headers: {
+        "Access-Control-Expose-Headers": "Content-Disposition",
+      },
+      params: {
+        shop: type,
+        categoryId: getKeyByValue(type),
+      },
+    };
+    Utils.postDownloadCSVApi(endpoint, config).then((res) => {
       console.log(res);
       if (res) {
         const filename = res.request.getResponseHeader("Content-Disposition");
