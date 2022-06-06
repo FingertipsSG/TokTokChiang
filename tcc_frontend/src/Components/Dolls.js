@@ -10,7 +10,7 @@ import ProductModal from "./ProductModal";
 // To load dolls from database NOTE
 import { Utils } from "../Helper";
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import Doll from "../Models/Doll";
+import Product from "../Models/Product";
 
 function Dolls() {
   // states for data loading STEP
@@ -67,7 +67,7 @@ function Dolls() {
 
         res = res.data;
         res.forEach((doll, index) => {
-          let newDoll = new Doll(
+          let newDoll = new Product(
             doll.productid,
             doll.productname,
             doll.productdesc,
@@ -227,7 +227,7 @@ function Dolls() {
       <body className="dolls-body shop-body">
         <Navbar />
         <br />
-        <br /> 
+        <br />
         <div className="shop-container">{renderController()}</div>
       </body>
     </html>

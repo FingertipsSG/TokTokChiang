@@ -10,7 +10,7 @@ import ProductModal from "./ProductModal";
 // To load dolls from database NOTE
 import { Utils } from "../Helper";
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import Frame from "../Models/Frame";
+import Product from "../Models/Product";
 
 function Framed() {
   // states for data loading STEP
@@ -67,13 +67,13 @@ function Framed() {
 
         res = res.data;
         res.forEach((frame, index) => {
-          let newFrame = new Frame(
+          let newFrame = new Product(
             frame.productid,
             frame.productname,
             frame.productdesc,
             frame.price,
             frame.image,
-            frame.url,
+            frame.url
           );
 
           framesArr.push(newFrame);
@@ -227,7 +227,7 @@ function Framed() {
       <body className="framed-body shop-body">
         <Navbar />
         <br />
-        <br /> 
+        <br />
         <div className="shop-container">{renderController()}</div>
       </body>
     </html>

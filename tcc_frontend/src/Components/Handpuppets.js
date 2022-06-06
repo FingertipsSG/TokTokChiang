@@ -10,7 +10,7 @@ import ProductModal from "./ProductModal";
 // To load dolls from database NOTE
 import { Utils } from "../Helper";
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import Puppet from "../Models/Puppet";
+import Product from "../Models/Product";
 
 function HandPuppets() {
   // states for data loading STEP
@@ -68,13 +68,13 @@ function HandPuppets() {
 
         res = res.data;
         res.forEach((puppet, index) => {
-          let newPuppet = new Puppet(
+          let newPuppet = new Product(
             puppet.productid,
             puppet.productname,
             puppet.productdesc,
             puppet.price,
             puppet.image,
-            puppet.url,
+            puppet.url
           );
 
           puppetsArr.push(newPuppet);
@@ -230,7 +230,7 @@ function HandPuppets() {
       <body className="puppets-body shop-body">
         <Navbar />
         <br />
-        <br /> 
+        <br />
         <div className="shop-container">{renderController()}</div>
       </body>
     </html>

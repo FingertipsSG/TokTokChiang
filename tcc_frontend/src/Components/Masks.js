@@ -10,7 +10,7 @@ import ProductModal from "./ProductModal";
 // To load dolls from database NOTE
 import { Utils } from "../Helper";
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import Mask from "../Models/Mask";
+import Product from "../Models/Product";
 
 function Masks() {
   // states for data loading STEP
@@ -67,13 +67,13 @@ function Masks() {
 
         res = res.data;
         res.forEach((mask, index) => {
-          let newMask = new Mask(
+          let newMask = new Product(
             mask.productid,
             mask.productname,
             mask.productdesc,
             mask.price,
             mask.image,
-            mask.url,
+            mask.url
           );
 
           masksArr.push(newMask);
@@ -227,7 +227,7 @@ function Masks() {
       <body className="masks-body shop-body">
         <Navbar />
         <br />
-        <br /> 
+        <br />
         <div className="shop-container">{renderController()}</div>
       </body>
     </html>
