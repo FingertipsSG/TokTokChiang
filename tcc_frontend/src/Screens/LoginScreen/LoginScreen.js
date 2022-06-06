@@ -15,12 +15,13 @@ function LoginScreen() {
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
+  var baseUrl = process.env.BASEURL || "https://tok-tok-chiang-nodejs.herokuapp.com";
 
   const Login = async (details) => {
     // console.log(details);
 
     await axios
-      .post(process.env.BASEURL + "/login", {
+      .post(baseUrl + "/login", {
         username: details.username,
         password: details.password,
       })

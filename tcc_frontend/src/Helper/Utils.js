@@ -1,7 +1,8 @@
 import axios from "axios";
+var baseUrl = process.env.BASEURL || "https://tok-tok-chiang-nodejs.herokuapp.com";
 
 export async function getProducts(catid, parameters = {}) {
-  const url = process.env.BASEURL + `/getProducts?categoryId=${catid}`;
+  const url = baseUrl + `/getProducts?categoryId=${catid}`;
   let params = {};
   params.params = parameters;
 
@@ -18,7 +19,7 @@ export async function getProducts(catid, parameters = {}) {
 
 // Get products - lazy load
 export async function getProductsLazyLoad(startRow, endRow, parameters) {
-  const url = process.env.BASEURL + "/getProductsLL";
+  const url = baseUrl + "/getProductsLL";
   try {
     const res = await axios({
       method: "POST",
@@ -45,7 +46,7 @@ export async function getProductsLazyLoad(startRow, endRow, parameters) {
 // Same as getApi but returns res instead of res.data
 // To return res.status 404 in the case where there are no data to be returned
 export async function _getApi(endpoint, parameters = {}) {
-  const url = process.env.BASEURL + endpoint;
+  const url = baseUrl + endpoint;
   let params = {};
   params.params = parameters;
   try {
@@ -62,7 +63,7 @@ export async function _getApi(endpoint, parameters = {}) {
 
 // GET
 export async function getApi(endpoint, parameters = {}) {
-  const url = process.env.BASEURL + endpoint;
+  const url = baseUrl + endpoint;
   let params = {};
   params.params = parameters;
   try {
@@ -89,7 +90,7 @@ export async function getApi(endpoint, parameters = {}) {
 
 // POST - with JWT token
 export async function postApi(endpoint, parameters = {}) {
-  const url = process.env.BASEURL + endpoint;
+  const url = baseUrl + endpoint;
   try {
     const res = await axios({
       method: "POST",
@@ -110,7 +111,7 @@ export async function postApi(endpoint, parameters = {}) {
 
 // POSTIMAGEAPI - with JWT token
 export async function postImageApi(endpoint, parameters = {}) {
-  const url = process.env.BASEURL + endpoint;
+  const url = baseUrl + endpoint;
   try {
     const formData = new FormData();
 
@@ -147,7 +148,7 @@ export async function postImageApi(endpoint, parameters = {}) {
 
 // POST downloadCSV - with JWT token
 export async function postDownloadCSVApi(endpoint, parameters = {}) {
-  const url = process.env.BASEURL + endpoint;
+  const url = baseUrl + endpoint;
   const headers = {
     ...parameters.headers,
     authorization: "Bearer " + JSON.parse(localStorage.getItem("token")),
@@ -172,7 +173,7 @@ export async function postDownloadCSVApi(endpoint, parameters = {}) {
 
 // PATCH
 export async function patchApi(endpoint, parameters = {}) {
-  const url = process.env.BASEURL + endpoint;
+  const url = baseUrl + endpoint;
   try {
     const res = await axios({
       method: "PATCH",
@@ -192,7 +193,7 @@ export async function patchApi(endpoint, parameters = {}) {
 }
 
 export async function editImageApi(endpoint, parameters = {}) {
-  const url = process.env.BASEURL + endpoint;
+  const url = baseUrl + endpoint;
   try {
     const formData = new FormData();
 
@@ -230,7 +231,7 @@ export async function editImageApi(endpoint, parameters = {}) {
 
 // PUT
 export async function putApi(endpoint, parameters = {}) {
-  const url = process.env.BASEURL + endpoint;
+  const url = baseUrl + endpoint;
   try {
     // LEFTOFFAT
     console.log(localStorage.getItem("token"));
@@ -254,7 +255,7 @@ export async function putApi(endpoint, parameters = {}) {
 
 // DELETE
 export async function deleteApi(endpoint, parameters = {}) {
-  const url = process.env.BASEURL + endpoint;
+  const url = baseUrl + endpoint;
   try {
     // console.log(parameters);
     const res = await axios({
