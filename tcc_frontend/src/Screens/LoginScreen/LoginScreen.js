@@ -20,7 +20,7 @@ function LoginScreen() {
     // console.log(details);
 
     await axios
-      .post("http://localhost:5001/login", {
+      .post(process.env.BASEURL + "/login", {
         username: details.username,
         password: details.password,
       })
