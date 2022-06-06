@@ -10,7 +10,7 @@ import ProductModal from "./ProductModal";
 // To load dolls from database NOTE
 import { Utils } from "../Helper";
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import Shirt from "../Models/Shirt";
+import Product from "../Models/Product";
 
 function Tshirts() {
   // states for data loading STEP
@@ -67,13 +67,13 @@ function Tshirts() {
 
         res = res.data;
         res.forEach((shirt, index) => {
-          let newShirt = new Shirt(
+          let newShirt = new Product(
             shirt.productid,
             shirt.productname,
             shirt.productdesc,
             shirt.price,
             shirt.image,
-            shirt.url,
+            shirt.url
           );
 
           shirtsArr.push(newShirt);
