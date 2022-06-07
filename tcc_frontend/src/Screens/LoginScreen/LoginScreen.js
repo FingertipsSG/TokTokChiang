@@ -13,12 +13,9 @@ function LoginScreen() {
   const [details, setDetails] = useState({ username: "", password: "" });
   const [user, setUser] = useState("");
   const [error, setError] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
   const Login = async (details) => {
-    // console.log(details);
-
     await axios
       .post("http://localhost:5001/login", {
         username: details.username,
