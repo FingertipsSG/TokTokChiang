@@ -501,8 +501,9 @@ app.patch("/editUsers", (req, res) => {
   const email = req.body.uEmail;
   const role = req.body.uRole;
   const id = req.body.id;
+  const hashPW = hash(password);
 
-  userDB.editUser(username, password, email, role, id, (err, result) => {
+  userDB.editUser(username, hashPW, email, role, id, (err, result) => {
     if (!err) {
       console.log(result.affectedRows);
       return res.status(200).json({ affectedRows: result.changedRows });
