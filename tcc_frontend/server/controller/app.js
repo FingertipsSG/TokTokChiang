@@ -150,7 +150,6 @@ app.get("/getProducts", (req, res) => {
   // Get details of products and the main image NOTE
   productsDB.getProducts(categoryId, (err, result) => {
     if (!err) {
-      // When no data are returned from the query NOTE
       if (result.length === 0) {
         return res
           .status(404)
@@ -161,7 +160,7 @@ app.get("/getProducts", (req, res) => {
       return res.status(200).json(result);
     } else {
       // When error is unclear NOTE
-      console.log(err);
+      // console.log(err);
       return res.status(500).send();
     }
   });

@@ -42,10 +42,6 @@ app.use(express.static("public"));
 //   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' }); 
 // });
 
-app.use("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "..", "build", "index.html"));
-});
-
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 //------------------------------USERS.JS-----------------------------------------------
@@ -616,5 +612,9 @@ app.post("/sendEmailPin", (req, res) => {
 //     });
 //   });
 // });
+
+app.use("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "..", "build", "index.html"));
+});
 
 module.exports = app;
