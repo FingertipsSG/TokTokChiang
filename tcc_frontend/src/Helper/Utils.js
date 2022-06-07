@@ -63,7 +63,7 @@ export async function _getApi(endpoint, parameters = {}) {
 
 // GET
 export async function getApi(endpoint, parameters = {}) {
-  const url = baseUrl + endpoint;
+  const url = baseUrl + "/" + endpoint;
   let params = {};
   params.params = parameters;
   try {

@@ -16,8 +16,10 @@ import ImagesModal from "./ImagesModal/ImagesModal";
 // import AddShopModal from "./AddShopModal/AddShopModal";
 
 import { useFirstRender } from "../../Helper/useFirstRender";
+import { useLocation } from "react-router-dom";
 
 function ShopScreen() {
+  const location = useLocation();
   const [type, setType] = useState("Shops");
   const [productArray, setProductArray] = useState([]);
   const [ShopArray, setShopArray] = useState([]);
@@ -703,7 +705,7 @@ function ShopScreen() {
 
   return (
     <>
-      <CustomNavbar />
+      <CustomNavbar isLoggedIn={location.state.isLoggedIn}/>
       <div className="shop-content">
         <h1 className="shop">Shops/{type}</h1>
         <Space direction="horizontal" size={50} style={{ marginBottom: 20 }}>

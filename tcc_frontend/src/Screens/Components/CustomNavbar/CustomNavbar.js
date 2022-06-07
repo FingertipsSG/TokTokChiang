@@ -3,12 +3,19 @@ import React from 'react';
 import "./CustomNavbar.css";
 import { navItems } from '../NavItems/NavItems';
 import CustomButton from '../CustomButton/CustomButton';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import logo from '../../../Assets/Images/toktoklogo.png';
 
-function CustomNavbar() {
+function CustomNavbar({ isLoggedIn }) {
+  var loggedIn;
   // const [dropdown, setDropdown] = useState(false);
   const navigate = useNavigate();
+  
+  if (isLoggedIn != undefined) {
+    loggedIn = isLoggedIn;
+  }
+
+  console.log(isLoggedIn);
 
   const logOut = () => {
     localStorage.clear();
@@ -39,7 +46,7 @@ function CustomNavbar() {
             // }
             return (
               <li key={item.id} className={item.cName}>
-                <Link to={item.path}>{item.title}</Link>
+                <Link to={item.path} state={{isLoggedIn: loggedIn}}>{item.title}</Link>
               </li>
             );
           })}
