@@ -13,7 +13,7 @@ function LoginScreen() {
   const [details, setDetails] = useState({ username: "", password: "" });
   const [user, setUser] = useState("");
   const [error, setError] = useState("");
-
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
   const Login = async (details) => {
@@ -44,7 +44,13 @@ function LoginScreen() {
         console.log(response.data.token);
 
         if (response.status === 200) {
-          navigate("/admin");
+          navigate("/admin", {
+            state: {
+              isLoggedIn: true,
+            },
+            replace: true,
+          });
+
           // CLears JWT details after 1h
           setTimeout(function () {
             if (jwtDecode(response.data.token).exp < Date.now()) {
