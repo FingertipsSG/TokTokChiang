@@ -25,8 +25,9 @@ function founder() {
                                 <br />
                                 <h2 className="founderTitle">沈炜竣</h2>
                             </div>
-                            <div className="founderPicMobile">
-                                <img src={founderPic} className="founderPic " />
+                            < div className="founderPicMobile">
+                                    <img src={founderPic} className="founderImage" />
+            
                             </div>
                             <Row>
                                 <div className="col-lg-6">
