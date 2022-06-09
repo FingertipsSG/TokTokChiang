@@ -675,56 +675,16 @@ function ShopScreen() {
   //----------------------------------------DOWNLOAD CSV----------------------------------------
   const downloadProductExcel = async () => {
     try {
-      // Get all product details
-      const productDetails = await Utils.getApi("getProductsDownloadExcel", {
-        categoryId: getKeyByValue(type),
-      });
-
-      // Get all images
-      const imageDetails = await Utils.getApi("getImagesDownloadExcel", {
-        categoryId: getKeyByValue(type),
-      });
-
-      // Loop through products and match all images that match to each product
-      for (let product of productDetails) {
-        for (let i = 1; i <= 4; i++) {
-          // Find if imageDetails has that correct image
-          let image = imageDetails.find(
-            (image) =>
-              image.productid === product.productid && image.fk_identityid === i
-          );
-
-          // Depending on which type image is, save it in the corresponding property of object
-          // if that image exists
-          if (image != undefined) {
-            // Convert image to base64
-            image = `data:image/jpg;base64,${convertToBase64(image.image)}`;
-
-            if (i === 1) {
-              product.frontImage = image;
-            } else if (i === 2) {
-              product.backImage = image;
-            } else if (i === 3) {
-              product.leftImage = image;
-            } else {
-              product.rightImage = image;
-            }
-          }
-        }
-      }
-
-      // LEFTOFFAT delete later
-      console.log(productDetails);
-
       const config = {
         headers: {
           "Access-Control-Expose-Headers": "Content-Disposition",
         },
         params: {
           shop: type,
-          productDetails: productDetails,
+          categoryId: getKeyByValue(type),
         },
       };
+
       // Send product details and shop type to backend to generate file
       // download file in frontend
       Utils.postDownloadExcelApi("downloadProductExcel", config).then((res) => {
