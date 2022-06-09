@@ -1,5 +1,6 @@
 import axios from "axios";
-var baseUrl = process.env.BASEURL || "https://tok-tok-chiang-nodejs.herokuapp.com";
+var config = require("../config.js");
+var baseUrl = config.LOCAL_BACKEND || "https://tok-tok-chiang-nodejs.herokuapp.com";
 
 export async function getProducts(catid, parameters = {}) {
   const url = baseUrl + `/getProducts?categoryId=${catid}`;
@@ -197,17 +198,17 @@ export async function editImageApi(endpoint, parameters = {}) {
   try {
     const formData = new FormData();
 
-    console.log(parameters);
+    // console.log(parameters);
     formData.append("image", parameters.image);
     formData.append("productid", parameters.productid);
     formData.append("imageid", parameters.imageid);
     formData.append("identityid", parameters.identityid);
 
-    for (let key of formData.entries()) {
-      console.log(key[0], key[1]);
-    }
+    // for (let key of formData.entries()) {
+    //   console.log(key[0], key[1]);
+    // }
 
-    console.log(formData.entries());
+    // console.log(formData.entries());
 
     const res = await axios({
       method: "PATCH",

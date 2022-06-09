@@ -9,12 +9,14 @@ import logo from "../../Assets/Images/toktoklogo.png";
 import jwtDecode from "jwt-decode";
 import { resolveContent } from "nodemailer/lib/shared";
 
+var config = require("../../config.js");
+var baseUrl = config.LOCAL_BACKEND || "https://tok-tok-chiang-nodejs.herokuapp.com";
+
 function LoginScreen() {
   const [details, setDetails] = useState({ username: "", password: "" });
   const [user, setUser] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  var baseUrl = process.env.BASEURL || "https://tok-tok-chiang-nodejs.herokuapp.com";
 
   const Login = async (details) => {
     await axios

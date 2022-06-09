@@ -1,11 +1,12 @@
 import { Navigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+var config = require("../config.js");
 
 function ProtectedRoute({ children }) {
   const location = useLocation();
   const [isAuth, setIsAuth] = useState(false);
-  var baseUrl = process.env.BASEURL || "https://tok-tok-chiang-nodejs.herokuapp.com";
+  var baseUrl = config.LOCAL_BACKEND || "https://tok-tok-chiang-nodejs.herokuapp.com";
 
   // Check if user is authenticated
   const checkAuthentication = async (token) => {
