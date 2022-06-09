@@ -84,7 +84,7 @@ function ShopScreen() {
               data-toggle="modal"
               data-target="#myModal"
               onClick={() => {
-                console.log("this click props", props);
+                // console.log("this click props", props);
                 setCurProductSelected(props);
                 setIsImageModalVisible(true);
               }}
@@ -485,41 +485,18 @@ function ShopScreen() {
 
     var files = values.pImage;
     // console.log(files);
+    // console.log(curProdDetails.pImage);
 
     for (var i = 0; i < 4; i++) {
       // console.log(i);
-      if (files[i] !== undefined) {
-        // console.log("this file now", files[i]);
-        let bodyFile = {
-          image: convertToBlob(files[i]),
-          productid: values.id,
-          imageid: files[i].imageid,
-          identityid: i + 1,
-        };
 
-        if (bodyFile.imageid === undefined) {
-          console.log("post");
-          await Utils.postImageApi("addImage", bodyFile).then((res) => {
-            if (res.status === 201) {
-              console.log(res.data.affectedRows);
-              message.success(`Successfully uploaded image`);
-              // setRender(!render);
-            }
-          });
-        } else if (bodyFile.imageid) {
-          console.log("patch");
-          await Utils.editImageApi("editImage", bodyFile).then((res) => {
-            if (res.status === 200) {
-              console.log(res.data.affectedRows);
-              message.success(`Successfully edited image`);
-              // setRender(!render);
-            }
-          });
-        }
-      } else {
-        try {
-          console.log(curProdDetails.pImage, i);
-          console.log("delete image");
+      // console.log(i <= (curProdDetails.pImage.length - 1));
+      var checkIfPostOrPatch = i <= (curProdDetails.pImage.length - 1);
+
+      if (i <= files.length - 1) {
+        // console.log("this file now", files[i]);
+        if (files[i] == undefined) {
+          // console.log("delete image");
           let bodyFile = {
             imageID: curProdDetails.pImage[i].imageid,
           };
@@ -527,15 +504,43 @@ function ShopScreen() {
 
           await Utils.deleteApi("deleteImage", bodyFile).then((res) => {
             if (res.status === 204) {
-              console.log(res);
-              console.log(res.data.affectedRows);
+              // console.log(res);
+              // console.log(res.data.affectedRows);
               message.success(`Successfully removed image`);
               // setRender(!render);
             }
           });
-        } catch (e) {
-          console.log(e);
+        } else {
+          let bodyFile = {
+            image: convertToBlob(files[i]),
+            productid: values.id,
+            imageid: files[i].imageid,
+            identityid: i + 1,
+          };
+  
+          if (checkIfPostOrPatch === true) {
+            // console.log("patch");
+            // console.log(bodyFile);
+            bodyFile.imageid = curProdDetails.pImage[i].imageid;
+            await Utils.editImageApi("editImage", bodyFile).then((res) => {
+              if (res.status === 200) {
+                // console.log(res.data.affectedRows);
+                message.success(`Successfully edited image`);
+                // setRender(!render);
+              }
+            });
+          } else if (checkIfPostOrPatch === false) {
+            // console.log("post");
+            await Utils.postImageApi("addImage", bodyFile).then((res) => {
+              if (res.status === 201) {
+                // console.log(res.data.affectedRows);
+                message.success(`Successfully uploaded image`);
+                // setRender(!render);
+              }
+            });
+          }
         }
+
       }
       setRender(!render);
     }
