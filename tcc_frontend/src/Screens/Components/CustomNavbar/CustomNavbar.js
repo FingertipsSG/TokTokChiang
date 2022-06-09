@@ -15,7 +15,7 @@ function CustomNavbar({ isLoggedIn }) {
     loggedIn = isLoggedIn;
   }
 
-  console.log(isLoggedIn);
+  // console.log(isLoggedIn);
 
   const logOut = () => {
     localStorage.clear();
