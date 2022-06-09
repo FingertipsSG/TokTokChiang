@@ -234,7 +234,7 @@ function UserScreen() {
 
   return (
     <>
-      <CustomNavbar isLoggedIn={location.state.isLoggedIn}/>
+      <CustomNavbar isLoggedIn={location.state.isLoggedIn} />
       <div className="user-table">
         <h1 className="shop">User Admin</h1>
         <Space direction="horizontal" size={20} style={{ marginBottom: 20 }}>

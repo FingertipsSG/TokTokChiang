@@ -4,24 +4,14 @@ body, html{
 }
 
 html.founderHtml {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
-body.founderBody {
-    background: url("../../Assets/Images/TTCbg3.png");
-    height:130vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position:100% 100%;  
-}
 
-.founderContent {
-    font-family: Calibri;
-    font-size: 16px;
-    margin-left: 92px;
-    height: 300px;
-    overflow: auto;
-    padding-right: 20px;
+.founderPicMobile {
+    visibility: hidden;
+    height: 0;
+    width: 0;
 }
 
 .founderPic {
@@ -29,14 +19,104 @@ body.founderBody {
     width: 70%;
     margin-right: 100px;
     margin-top: 8%;
+
 }
+
+body.founderBody {
+    overflow-x: hidden;
+    
+}
+
+.rightDivision {
+    background:  url("../../Assets/Images/bg-rightSide.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: right top 1em;
+    height: 100vh;
+}
+
+.bottomDivision {
+    background:  url("../../Assets/Images/bg-leftSide.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    background-attachment: fixed;
+}
+
+
+.founderContent {
+    font-family: Calibri;
+    font-size: 16px;
+    margin-left: 92px;
+    padding-right: 20px;
+    height: 20em;
+    overflow-y: scroll;
+}
+
 
 /* Responsive*/
 @media (min-width: 1920px) {
     .founderPic {
-        margin-top: 5% !important;
+        margin-top: 5%;
+    }
+    .firstContent {
+        margin-top: 3%;
+    }
+    .founderContent {
+        font-size: 1.7em;
+    }
+    .title1 {
+        font-size: 3.2em;
+    }
+    .title2 {
+        font-size: 3.2em;
+    }
+    .founderTitle {
+        font-size: 2.8em;
     }
 }
+
+@media (min-width: 3840px) {
+    .founderPic {
+        margin-top: 5%;
+    }
+    .firstContent {
+        margin-top: 3%;
+    }
+    .founderContent {
+        font-size: 2.5em;
+    }
+    .title1 {
+        font-size: 4em;
+    }
+    .title2 {
+        font-size: 4em;
+    }
+    .founderTitle {
+        font-size: 3em;
+    }
+    .rightDivision {
+        background-position: right bottom 15em;
+    }
+}
+
+/* height 1080 */
+@media (min-width: 1920px) and (max-width: 2100px) {
+    .rightDivision {
+        background-position: right bottom 2em;
+    }
+    .founderPic {
+        margin-top: 10%;
+    }
+    .bottomDivision {
+        background-size: 100% 100%;
+    }
+    .founderContent {
+        height: 14em;
+    }
+} 
+
 
 @media (min-width: 1224px) and (max-width: 1449px) {
     .founderContent {
@@ -47,6 +127,9 @@ body.founderBody {
     }
     body.founderBody{
         overflow-x: hidden;
+    }
+    .bottomDivision {
+        background-position: left 100%;
     }
 }
  
@@ -60,6 +143,12 @@ body.founderBody {
     }
     .founderTitle{
         margin-top:-1.5em;
+    }
+    .bottomDivision {
+        background-position: left 100%;
+    }
+    .rightDivision {
+        background-size: 75% 95%;
     }
 } 
 
@@ -89,6 +178,15 @@ body.founderBody {
         height:120vh;
     }
 }   
+/* 900px height */
+@media (min-width: 1600px) and (max-width: 1919px) {
+.rightDivision {
+    background-position: right top;
+}
+/* .bottomDivision {
+    background-size: 100% 100%;
+} */
+}
 
  /* 13.9-14.9inch w height:796 */
 @media (min-width: 1281px) and (max-width: 1535px) {
@@ -101,6 +199,7 @@ body.founderBody {
     body.founderBody{
         height:120vh;
     }
+    
 } 
 
 /*Tablet*/
@@ -108,13 +207,11 @@ body.founderBody {
     html.founderHtml {
         overflow-x: hidden;
     }
-    body.founderBody {
-        background-image: url("../../Assets/Images/comingsoon.png"); 
-        background-size:cover;
-        background-position:0;
-    }
     .founderContent {
         height: 20em !important;
+    }
+    .bottomDivision {
+        background-position: 100% 100%;
     }
 }
 @media (max-width: 1023px) { 
@@ -125,13 +222,11 @@ body.founderBody {
 } 
 /*Tablet*/
 @media (min-width: 992px) and (max-width: 1022px) {
-    
-    body.founderBody {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-position:0;  
-    }
     .founderContent {
         height: 15em !important;
+    }
+    .bottomDivision {
+        background-position: 100% 100%;
     }
 }
 
@@ -148,6 +243,7 @@ body.founderBody {
 @media (min-width: 768px) and ( max-width:991px){ 
     html.founderHtml {
         overflow: hidden;
+        height: 105vh;
     }
     
     .founderContent {
@@ -159,16 +255,24 @@ body.founderBody {
     .founderPic {
         margin-top: 3% !important;
     }
+    .rightDivision {
+        background-image: none;
+    }
+
+    .bottomDivision {
+        background-image: none;
+    }
     body.founderBody {
-        background-position:0;  
-        background-attachment: fixed;
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position: 5% 100%;
     }
 }
 
 /*Ipad mini*/
-@media (min-width: 766px) and (max-width: 767px) { 
+@media (min-width: 766px) and (max-width: 768px) { 
     html.founderHtml{
-        height:100vh;
+        height:120vh;
         overflow: hidden;
     }
     .founderContent {
@@ -188,29 +292,36 @@ body.founderBody {
     .founderPic {
         width: 70%;
         margin-left: 20%;
-        margin-top: 0;
+        /* margin-top: 0; */
         float:none;
     }
 
+    .rightDivision {
+        background-image: none;
+    }
+
+    .bottomDivision {
+        background-image: none;
+    }
     body.founderBody {
-        background-position:0;  
-        background-attachment: fixed;
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-repeat: no-repeat;  
+        background-position: 5% 100%;
     }
 }
 
 /* mobile version */
-@media (min-width: 731px) and (max-width: 765px) { 
+@media (min-width: 730px) and (max-width: 766px) { 
     html.founderHtml{
-        height:100vh;
-        overflow-y: scroll;
-        overflow-x:hidden;
+        height:110vh;
+        overflow: hidden;
     }
     .founderContent {
         font-family: Calibri;
         font-size: 1em;
         margin-left: 70px;
-        height: 31em;
-        width: 85%;
+        height: 20em;
+        width: 80%;
         overflow:scroll; 
         margin-bottom: 0;
     }
@@ -221,26 +332,33 @@ body.founderBody {
     .founderPic {
         width: 60%;
         margin-left: 25%;
-        margin-top: 0;
         float:none;
     }
 
-    body.founderBody {
+    .rightDivision {
         background-image: none;
+    }
+
+    .bottomDivision {
+        background-image: none;
+    }
+    body.founderBody {
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-repeat: no-repeat;  
+        background-position: 5% 100%;
     }
 }
 @media (min-width: 700px) and (max-width: 730px) { 
     html.founderHtml{
-        height:100vh;
-        overflow-y: scroll;
-        overflow-x:hidden;
+        height:110vh;
+        overflow: hidden;
     }
     .founderContent {
         font-family: Calibri;
         font-size: 1em;
         margin-left: 70px;
-        height:31em;
-        width: 85%;
+        height: 20em;
+        width: 80%;
         overflow:scroll; 
         margin-bottom: 0;
     }
@@ -251,26 +369,33 @@ body.founderBody {
     .founderPic {
         width: 65%;
         margin-left: 20%;
-        margin-top: 0;
         float:none;
     }
 
-    body.founderBody {
+    .rightDivision {
         background-image: none;
     }
+
+    .bottomDivision {
+        background-image: none;
+    }
+    body.founderBody {
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-repeat: no-repeat;  
+        background-position: 5% 100%;
+    }
 }
-@media (min-width: 631px) and (max-width: 700px) { 
+@media (min-width: 630px) and (max-width: 700px) { 
     html.founderHtml{
-        height:100vh;
-        overflow-y: scroll;
-        overflow-x:hidden;
+        height:110vh;
+        overflow: hidden;
     }
     .founderContent {
         font-family: Calibri;
         font-size: 1em;
         margin-left: 70px;
-        height: 25em;
-        width: 85%;
+        height: 20em;
+        width: 80%;
         overflow:scroll; 
         margin-bottom: 0;
     }
@@ -281,27 +406,35 @@ body.founderBody {
     .founderPic {
         width: 70%;
         margin-left: 20%;
-        margin-top: 0;
         float:none;
     }
 
-    body.founderBody {
+    .rightDivision {
         background-image: none;
+    }
+
+    .bottomDivision {
+        background-image: none;
+    }
+    body.founderBody {
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-repeat: no-repeat;  
+        background-position: 5% 100%;
     }
 }
 
 @media (min-width: 528px) and (max-width: 630px) { 
     html.founderHtml{
-        height:100vh;
-        overflow-y: scroll;
-        overflow-x:hidden;
+        height:110vh;
+        overflow: hidden;
+
     }
     .founderContent {
         font-family: Calibri;
         font-size: 1em;
         margin-left: 70px;
         height: 20em;
-        width: 85%;
+        width: 80%;
         overflow:scroll; 
         margin-bottom: 0;
     }
@@ -316,26 +449,34 @@ body.founderBody {
     .founderPic {
         width: 70%;
         margin-left: 20%;
-        margin-top: 0;
         float:none;
     }
 
-    body.founderBody {
+    .rightDivision {
         background-image: none;
+    }
+
+    .bottomDivision {
+        background-image: none;
+    }
+    body.founderBody {
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-repeat: no-repeat;  
+        background-position: 5% 100%;
     }
 }
 
 @media (min-width: 451px) and (max-width: 528px) {
     html.founderHtml{
-        height:100vh;
-        overflow-y:scroll;
-        overflow-x:hidden;
+        height:110vh;
+        overflow: hidden;
+
     }
     .founderContent {
         font-family: Calibri;
         font-size: 1em;
         margin-left: 70px;
-        height: 30em;
+        height: 20em;
         width: 80%;
         overflow:scroll; 
         margin-bottom: 0;
@@ -344,7 +485,7 @@ body.founderBody {
       .founderPic {
         width: 70%;
         margin-left: 20%;
-        margin-top: 0;
+        /* margin-top: 0; */
         float:none;
     }
     #founderTitle2 {
@@ -355,22 +496,30 @@ body.founderBody {
     .founderTitle {
         margin-top: -1.5em;
     }
-    body.founderBody {
+    .rightDivision {
         background-image: none;
     }
 
+    .bottomDivision {
+        background-image: none;
+    }
+    body.founderBody {
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-repeat: no-repeat;  
+        background-position: 5% 100%;
+    }
+
 }
-@media (max-width: 450px) { 
+@media (max-width: 451px) { 
     html.founderHtml{
-        height:100vh;
-        overflow-y: auto;
-        overflow-x:hidden;
+        height:110vh;
+        overflow: hidden;
     }
     .founderContent {
         font-family: Calibri;
         font-size: 1em;
         margin-left: 70px;
-        height: 30em;
+        height: 20em;
         width: 80%;
         overflow:scroll; 
         margin-bottom: 0;
@@ -385,68 +534,71 @@ body.founderBody {
     .founderPic {
         width: 70%;
         margin-left: 20%;
-        margin-top: 0;
+        /* margin-top: 0; */
         float:none;
     }
 
-    body.founderBody {
+    .rightDivision {
         background-image: none;
+    }
+
+    .bottomDivision {
+        background-image: none;
+    }
+    body.founderBody {
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-repeat: no-repeat;  
+        background-position: 5% 100%;
     }
 
 }
 @media (max-width: 435px) { 
     html.founderHtml{
-        height:100vh;
-        overflow-y: scroll;
-        overflow-x:hidden;
+        height:110vh;
+        overflow: hidden;
     }
     .founderContent {
         font-family: Calibri;
         font-size: 1em;
         margin-left: 70px;
-        height: 31em;
+        height: 20em;
         width: 80%;
         overflow:scroll; 
         margin-bottom: 0;
     }
-/* 
-    #founderTitle2 {
-        margin-left: 3em;
-    }
-     */
-
     .founderPic {
         width: 70%;
         margin-left: 20%;
         margin-top: 0;
         float:none;
     }
-
-    body.founderBody {
+    .rightDivision {
         background-image: none;
     }
 
+    .bottomDivision {
+        background-image: none;
+    }
+    body.founderBody {
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-repeat: no-repeat;  
+        background-position: 5% 100%;
+    }
 }
 @media (max-width: 400px) { 
     html.founderHtml{
-        height:100vh;
-        overflow-y: scroll;
-        overflow-x:hidden;
+        height:110vh;
+        overflow: hidden;
     }
     .founderContent {
         font-family: Calibri;
         font-size: 1em;
         margin-left: 70px;
-        height: 30em;
+        height: 20em;
         width: 80%;
         overflow:scroll; 
         margin-bottom: 0;
     }
-/* 
-    #founderTitle2 {
-        margin-left: 3em;
-    } */
-
     .founderPic {
         width: 70%;
         margin-left: 20%;
@@ -454,41 +606,87 @@ body.founderBody {
         float:none;
     }
 
-    body.founderBody {
+    .rightDivision {
         background-image: none;
+    }
+
+    .bottomDivision {
+        background-image: none;
+    }
+    body.founderBody {
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-repeat: no-repeat;  
+        background-position: 5% 100%;
     }
 
 }
 
 @media (max-width: 380px) { 
     html.founderHtml{
-        height:100vh;
-        overflow-y:scroll;
-        overflow-x:hidden;
+        height:420vh;
+       
     }
     .founderContent {
         font-family: Calibri;
-        font-size: 1em;
+        font-size: 1.2em;
         margin-left: 70px;
-        height: 30em;
+        height: fit-content;
         width: 80%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
+        margin-top:2em;
     }
-
-    /* #founderTitle2 {
-        margin-left: 2em;
-    } */
 
     .founderPic {
         width: 65%;
         margin-left: 22%;
-        margin-top: 0;
+        margin-top: 4%;
         float:none;
     }
 
-    body.founderBody {
+    .firstContentFounder {
+        height: fit-content;
+    }
+    .rightDivision {
         background-image: none;
     }
 
+    .bottomDivision {
+        background-image: none;
+    }
+    body.founderBody {
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-repeat: no-repeat;  
+        /* background-position: 5% 100%; */
+        background-position:5% bottom;
+        background-size:auto;
+    }
+    .founderPicDesktop {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+    }
+     .founderPicMobile {
+        visibility: visible;
+        height: auto;
+        width: auto;  
+    } 
+    .rightDivision{
+        background-image: url("../../Assets/Images/brush1.png");
+        background-position: 130% 42%;
+        background-attachment:unset;
+        background-size:100% 50%;
+    }
+    .founderImage{
+        width:70%;
+        margin-left:5em;
+    }
+    .founderTitle{
+       letter-spacing: 5px;
+    } 
+
+    /* for landing page
+    .founderTitle{
+        font-size:x-large;
+    } */
 }

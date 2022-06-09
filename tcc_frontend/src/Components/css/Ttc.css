@@ -424,7 +424,7 @@ img#carouselPic {
 
 }
 
-@media (max-width: 450px) { 
+@media (max-width: 451px) { 
     html.ttcHtml{
         height:100vh;
         overflow-y: auto;

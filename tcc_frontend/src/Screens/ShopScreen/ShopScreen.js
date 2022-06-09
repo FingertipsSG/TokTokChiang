@@ -677,40 +677,47 @@ function ShopScreen() {
     }
   }, [curProdDetails]);
 
-  //----------------------------------------DOWNLOAD CSV----------------------------------------
-  const downloadProductCSV = () => {
-    const endpoint = "downloadProductCSV";
-    const config = {
-      headers: {
-        "Access-Control-Expose-Headers": "Content-Disposition",
-      },
-      params: {
-        shop: type,
-        categoryId: getKeyByValue(type),
-      },
-    };
-    Utils.postDownloadCSVApi(endpoint, config).then((res) => {
-      console.log(res);
-      if (res) {
-        const filename = res.request.getResponseHeader("Content-Disposition");
-        console.log(filename);
-        const cleanFilename = filename.split(`"`)[1];
-        // var filename = `ttc_products_${type}.csv`;
-        const downloadUrl = window.URL.createObjectURL(new Blob([res.data]));
-        const link = document.createElement("a");
-        link.href = downloadUrl;
-        link.setAttribute("download", cleanFilename);
-        document.body.appendChild(link);
-        link.click();
-        link.remove();
-        message.success("Successfully downloaded CSV!");
-      }
-    });
+  //----------------------------------------DOWNLOAD EXCEL----------------------------------------
+  const downloadProductExcel = async () => {
+    try {
+      const config = {
+        headers: {
+          "Access-Control-Expose-Headers": "Content-Disposition",
+        },
+        params: {
+          shop: type,
+          categoryId: getKeyByValue(type),
+        },
+      };
+
+      // Send product details and shop type to backend to generate file
+      // download file in frontend
+      Utils.postDownloadExcelApi("downloadProductExcel", config).then((res) => {
+        if (res) {
+          const filename = res.request.getResponseHeader("Content-Disposition");
+          console.log(filename);
+          const cleanFilename = filename.split(`"`)[1];
+          // var filename = `ttc_products_${type}.csv`;
+          const downloadUrl = window.URL.createObjectURL(new Blob([res.data]));
+          console.log(downloadUrl);
+          const link = document.createElement("a");
+          link.href = downloadUrl;
+          link.setAttribute("download", cleanFilename);
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+          message.success("Successfully downloaded CSV!");
+        }
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
+  //----------------------------------------RETURN----------------------------------------
   return (
     <>
-      <CustomNavbar isLoggedIn={location.state.isLoggedIn}/>
+      <CustomNavbar isLoggedIn={location.state.isLoggedIn} />
       <div className="shop-content">
         <h1 className="shop">Shops/{type}</h1>
         <Space direction="horizontal" size={50} style={{ marginBottom: 20 }}>
@@ -757,7 +764,10 @@ function ShopScreen() {
                 onClick={openAddProductModal}
               />
               {/* <CustomButton title="Bulk Upload" /> */}
-              <CustomButton title="Download CSV" onClick={downloadProductCSV} />
+              <CustomButton
+                title="Download Excel"
+                onClick={downloadProductExcel}
+              />
 
               <AddProductModal
                 title="Add Product Details"

@@ -67,6 +67,7 @@ export async function getApi(endpoint, parameters = {}) {
   const url = baseUrl + "/" + endpoint;
   let params = {};
   params.params = parameters;
+
   try {
     const res = await axios({
       method: "GET",
@@ -74,6 +75,7 @@ export async function getApi(endpoint, parameters = {}) {
       headers: {
         authorization: "Bearer " + JSON.parse(localStorage.getItem("token")),
       },
+      params: parameters,
     });
     // console.log(res);
     if (endpoint === "downloadProductCSV") {
@@ -147,8 +149,8 @@ export async function postImageApi(endpoint, parameters = {}) {
   }
 }
 
-// POST downloadCSV - with JWT token
-export async function postDownloadCSVApi(endpoint, parameters = {}) {
+// POST downloadExcel - with JWT token
+export async function postDownloadExcelApi(endpoint, parameters = {}) {
   const url = baseUrl + "/" + endpoint;
   const headers = {
     ...parameters.headers,
@@ -162,6 +164,7 @@ export async function postDownloadCSVApi(endpoint, parameters = {}) {
       url: url,
       headers: headers,
       data: dataBody,
+      responseType: "arraybuffer",
     });
     return res;
   } catch (e) {

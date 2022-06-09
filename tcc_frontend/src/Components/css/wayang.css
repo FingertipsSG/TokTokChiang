@@ -8,12 +8,12 @@
 }  
 
 ::-webkit-scrollbar-thumb {
-    background: grey; 
+    background: #e2e2e2; 
     border-radius: 12px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgb(65, 65, 65); 
+    background: gray; 
 }  
 
 body, html{
@@ -258,6 +258,13 @@ img#wayangPic {
     }
 }
 @media(min-width: 528px) and (max-width: 630px){
+    .wayangPicCol {
+        float: left;
+        position: absolute;
+    }
+    .wayangTextCol {
+        
+    }
     html.wayangHtml{
         height:100vh;
         overflow-y:scroll;
