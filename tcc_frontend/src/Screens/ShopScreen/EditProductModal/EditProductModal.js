@@ -9,12 +9,20 @@ function EditProductModal({ title, visible, onOk, onCancel, details }) {
   const [fileList, setFileList] = useState(details.pImage);
 
   const onChange = ({ fileList: curFileList }) => {
-    setFileList(curFileList);
+    // console.log(curFileList);
+    const isLt2M = curFileList[curFileList.length - 1].size / 1024 / 1024 < 2;
+
+    if (!isLt2M) {
+      message.error('Image must smaller than 2MB!');
+    } else {
+      setFileList(curFileList);
+    }
   };
 
   const onPreview = async (file) => {
     let src = file.url;
     // console.log(src);
+    
     if (!src) {
       src = await new Promise((resolve) => {
         const reader = new FileReader();
@@ -22,23 +30,27 @@ function EditProductModal({ title, visible, onOk, onCancel, details }) {
         reader.onload = () => resolve(reader.result);
       });
     }
+
     const image = new Image();
     image.src = src;
     const imgWindow = window.open(src);
     imgWindow.document.write(image.outerHTML);
   };
 
-  const beforeUpload = (file) => {
-    const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'image/jpg';
-    if (!isJpgOrPng) {
-        message.error('You can only upload JPG/PNG file!');
-    }
-    const isLt2M = file.size / 1024 / 1024 < 2;
-    if (!isLt2M) {
-        message.error('Image must smaller than 2MB!');
-    }
-    return isJpgOrPng && isLt2M;
+  const onRemove = (file) => {
+    const index = fileList.indexOf(file);
+    const newFileList = fileList.slice();
+    newFileList.splice(index, 1);
+    setFileList(newFileList);
   };
+
+  // const beforeUpload = (file) => {
+  //   const isLt2M = file.size / 1024 / 1024 < 2;
+  //   if (!isLt2M) {
+  //     message.error('Image must smaller than 2MB!');
+  //   }
+  //   return isLt2M;
+  // };
 
   // To convert BLOB to base64 encoded then load the base64 image STEP
   const convertToBase64 = (imgData) => {
@@ -49,7 +61,7 @@ function EditProductModal({ title, visible, onOk, onCancel, details }) {
   };
 
   useEffect(() => {
-    console.log(details.pImage);
+    // console.log(details.pImage);
 
     // form.resetFields();
     // set initial form values
@@ -154,7 +166,9 @@ function EditProductModal({ title, visible, onOk, onCancel, details }) {
               fileList={fileList}
               onChange={onChange}
               onPreview={onPreview}
-              beforeUpload={beforeUpload} // () => false
+              onRemove={onRemove}
+              beforeUpload={() => false} // () => false / beforeUpload
+              accept = "image/*"
             >
               {fileList.length <= 4 && "+ Upload"}
             </Upload>
