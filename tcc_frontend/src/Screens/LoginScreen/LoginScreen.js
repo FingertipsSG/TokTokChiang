@@ -13,12 +13,9 @@ function LoginScreen() {
   const [details, setDetails] = useState({ username: "", password: "" });
   const [user, setUser] = useState("");
   const [error, setError] = useState("");
-
   const navigate = useNavigate();
 
   const Login = async (details) => {
-    // console.log(details);
-
     await axios
       .post("http://localhost:5001/login", {
         username: details.username,
@@ -44,7 +41,13 @@ function LoginScreen() {
         console.log(response.data.token);
 
         if (response.status === 200) {
-          navigate("/admin");
+          navigate("/admin", {
+            state: {
+              isLoggedIn: true,
+            },
+            replace: true,
+          });
+
           // CLears JWT details after 1h
           setTimeout(function () {
             if (jwtDecode(response.data.token).exp < Date.now()) {
