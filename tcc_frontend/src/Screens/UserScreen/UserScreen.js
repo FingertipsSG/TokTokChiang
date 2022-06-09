@@ -8,8 +8,10 @@ import CustomSearchBar from "../Components/CustomSearchBar/CustomSearchBar";
 import CustomButton from "../Components/CustomButton/CustomButton";
 import AddUserModal from "./AddUserModal/AddUserModal";
 import EditUserModal from "./EditUserModal/EditUserModal";
+import { useLocation } from "react-router-dom";
 
 function UserScreen() {
+  const location = useLocation();
   const currentUser = {
     name: JSON.parse(localStorage.getItem("user")),
     role: JSON.parse(localStorage.getItem("role")),
@@ -233,7 +235,7 @@ function UserScreen() {
 
   return (
     <>
-      <CustomNavbar />
+      <CustomNavbar isLoggedIn={location.state.isLoggedIn} />
       <div className="user-table">
         <h1 className="shop">User Admin</h1>
         <Space direction="horizontal" size={20} style={{ marginBottom: 20 }}>
