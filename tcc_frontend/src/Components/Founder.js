@@ -19,7 +19,7 @@ function founder() {
                         <br />
                         <div className="firstContent firstContentFounder">
                             <div className="firstContentText">
-                                <h2 className="title1">OUR FOUNDER</h2>
+                                <h2 className="title1">OUR FOUNDER </h2>
                                 <h2 className="title2" id="founderTitle2"> NICK SHEN </h2>
                                 <br />
                                 <br />
