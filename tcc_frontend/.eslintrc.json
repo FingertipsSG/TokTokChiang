@@ -40,7 +40,7 @@
             "always"
         ],
         "react/react-in-jsx-scope": "off",
-        "camelcase": "error",
+        "camelcase": "off",
         // "no-console": "warn",
         // "max-len": [
         //     "error", 

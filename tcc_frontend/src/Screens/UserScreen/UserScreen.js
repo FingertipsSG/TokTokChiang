@@ -221,7 +221,6 @@ function UserScreen() {
     setIsEditUserModalVisible(false);
   };
   const postEditUserModal = (values) => {
-    setIsEditUserModalVisible(false);
     values.id = userEdit.uID;
     Utils.patchApi("editUsers", values).then((res) => {
       // console.log('hello');

@@ -155,9 +155,12 @@ app.get("/getProducts", (req, res) => {
           .status(404)
           .send({ Message: "This category does not exist" });
       }
+
+      // When data is returned succesfully NOTE
       return res.status(200).json(result);
     } else {
-      console.log(err);
+      // When error is unclear NOTE
+      // console.log(err);
       return res.status(500).send();
     }
   });
@@ -170,10 +173,13 @@ app.get("/getOtherImages", (req, res) => {
   // Get the remaining images for the specified product NOTE
   productsDB.getOtherImages(productId, (err, result) => {
     if (!err) {
+      // When no data are returned from the query NOTE
       if (result.length === 0) {
         console.log({ Message: "This product does not exist" });
         return res.status(404).send({ Message: "This product does not exist" });
       }
+
+      // When data is returned successfully NOTE
       return res.status(200).json(result);
     } else {
       console.log(err);
