@@ -37,7 +37,7 @@ body.founderBody {
 }
 
 .bottomDivision {
-    background:  url("../../Assets/Images/TTC\ V8.2.png");
+    background:  url("../../Assets/Images/bg-leftSide.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: left;
@@ -623,16 +623,18 @@ body.founderBody {
 
 @media (max-width: 380px) { 
     html.founderHtml{
-        height:140vh;
+        height:420vh;
+       
     }
     .founderContent {
         font-family: Calibri;
-        font-size: 1em;
+        font-size: 1.2em;
         margin-left: 70px;
-        height: 20em;
+        height: fit-content;
         width: 80%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
+        margin-top:2em;
     }
 
     .founderPic {
@@ -655,17 +657,36 @@ body.founderBody {
     body.founderBody {
         background-image: url("../../Assets/Images/AboutUs.png");
         background-repeat: no-repeat;  
-        background-position: 5% 100%;
+        /* background-position: 5% 100%; */
+        background-position:5% bottom;
+        background-size:auto;
     }
     .founderPicDesktop {
         visibility: hidden;
         height: 0;
         width: 0;
     }
-    .founderPicMobile {
+     .founderPicMobile {
         visibility: visible;
         height: auto;
-        width: auto;
-        background-image: url("../../Assets/Images/bg-rightSide.png");
+        width: auto;  
+    } 
+    .rightDivision{
+        background-image: url("../../Assets/Images/brush1.png");
+        background-position: 130% 42%;
+        background-attachment:unset;
+        background-size:100% 50%;
     }
+    .founderImage{
+        width:70%;
+        margin-left:5em;
+    }
+    .founderTitle{
+       letter-spacing: 5px;
+    } 
+
+    /* for landing page
+    .founderTitle{
+        font-size:x-large;
+    } */
 }
