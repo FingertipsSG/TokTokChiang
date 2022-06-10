@@ -167,6 +167,7 @@ body.founderBody {
 @media (min-width: 1520px) and (max-width: 1535px) {
     .founderContent {
         height:230px;
+        width:95%;
     }
     .founderPic {
         margin-top:-5% ;
@@ -192,6 +193,7 @@ body.founderBody {
 @media (min-width: 1350px) and (max-width: 1520px) {
     .founderContent {
         height:230px;
+        width:95%;
     }
     .founderPic {
         margin-top:-5% ;
@@ -215,6 +217,7 @@ body.founderBody {
 @media (min-width: 1281px) and (max-width: 1349px) {
     .founderContent {
         height:272px;
+        width:95%;
     }
     .founderPic {
         margin-top:-9% ;
@@ -245,6 +248,7 @@ body.founderBody {
 @media (min-width: 1278px) and (max-width: 1280px) {
     .founderContent {
         height:225px;
+        width:95%;
     }
     .founderPic {
         margin-top:-12% ;
@@ -267,6 +271,7 @@ body.founderBody {
 @media (min-width: 1277px) and (max-width: 1279px) {
     .founderContent {
         height:260px;
+        width:95%;
     }
     .founderPic {
         margin-top: -8% ;
@@ -294,6 +299,7 @@ body.founderBody {
 @media (min-width: 1274px) and (max-width: 1277px) {
     .founderContent {
         height:256px;
+        width:95%;
     }
     .founderPic {
         margin-top: -8% ;
@@ -322,6 +328,7 @@ body.founderBody {
 @media (min-width: 1224px) and ( max-width:1275px){ 
     .founderContent {
         height:250px;
+        width:90%;
     }
     .founderPic {
         margin-top: -9% ;
@@ -351,6 +358,7 @@ body.founderBody {
 @media (min-width: 1093px) and (max-width: 1224px) {
     .founderContent {
         height: 200px;
+        width:90%;
     }
     h2#founderTitle2{
         display:block !important;
@@ -385,6 +393,7 @@ body.founderBody {
     }
     .founderContent {
         height: 20em !important;
+        width:90%;
     }
     .bottomDivision {
         background-position: left bottom ;

@@ -162,6 +162,7 @@ img#carouselPic {
 @media (min-width: 1520px) and (max-width: 1535px) {
     .ttcContent {
         height:280px;
+        width:95%
     }
     .carouselDesktop {
         margin-top:-6%;
@@ -176,6 +177,7 @@ img#carouselPic {
 @media (min-width: 1350px) and (max-width: 1520px) {
     .ttcContent {
         height:280px;
+        width:95%
     }
     .carouselDesktop {
         margin-top:-6.1%;
@@ -190,6 +192,7 @@ img#carouselPic {
 @media (min-width: 1281px) and (max-width: 1349px) {
     .ttcContent {
         height:280px;
+        width:95%;
     }
     .carouselDesktop {
         margin-top:-7%;
@@ -203,6 +206,7 @@ img#carouselPic {
 @media (min-width: 1278px) and (max-width: 1280px) {
     .ttcContent {
         height: 230px;
+        width:95%
     }
     .title1,.title2 {
         font-size: 28px;
