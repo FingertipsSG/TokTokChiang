@@ -9,8 +9,6 @@ import Ttc from "./Components/Ttc";
 import Lsty from "./Components/Lsty";
 import Founder from "./Components/Founder";
 import Wayang from "./Components/Wayang";
-import Warranty from "./Components/Warranty";
-import Onlinestore from "./Components/Onlinestore";
 
 import Dolls from "./Components/Dolls";
 import Services from "./Components/Services";
@@ -32,15 +30,6 @@ import ProtectedRoute from "./Components/ProtectedRoute";
 function App() {
   return (
     <div className="App">
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Wayang Shop</title>
-        <link rel="canonical" href="wayangshop.com" />
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-      </Helmet>
-
       <Router>
         <Routes>
           <Route path="" element={<Home />} />
