@@ -1,6 +1,19 @@
 import axios from "axios";
 var config = require("../config.js");
-var baseUrl = config.LOCAL_BACKEND || "https://tok-tok-chiang-nodejs.herokuapp.com";
+var baseUrl =
+  config.LOCAL_BACKEND || "https://tok-tok-chiang-nodejs.herokuapp.com";
+
+const onErrorHandler = (err) => {
+  // user not logged in or token given is invalid
+  if (err.response.status === 403 || err.response.status === 401) {
+    return { message: "Unauthenticated" };
+  }
+
+  // unknown error by server
+  if (err.response.status === 500) {
+    return { message: "Unknown error" };
+  }
+};
 
 export async function getProducts(catid, parameters = {}) {
   const url = baseUrl + `/getProducts?categoryId=${catid}`;
@@ -12,9 +25,7 @@ export async function getProducts(catid, parameters = {}) {
     return res.data;
   } catch (e) {
     console.log("[getApi error]");
-    // console.log("url: " + url);
-    // console.log("params: " + JSON.stringify(params));
-    // console.log(e);
+    return onErrorHandler(e);
   }
 }
 
@@ -84,10 +95,7 @@ export async function getApi(endpoint, parameters = {}) {
     return res.data;
   } catch (e) {
     console.log("[getApi error]");
-    // console.log("url: " + url);
-    // console.log("params: " + JSON.stringify(params));
-    // console.log(e);
-    return e;
+    return onErrorHandler(e);
   }
 }
 
@@ -106,9 +114,7 @@ export async function postApi(endpoint, parameters = {}) {
     return res;
   } catch (e) {
     console.log("[postApi error]");
-    // console.log("url: " + url);
-    // console.log("params: " + parameters);
-    // console.log(e);
+    return onErrorHandler(e);
   }
 }
 
@@ -142,10 +148,7 @@ export async function postImageApi(endpoint, parameters = {}) {
     return res;
   } catch (e) {
     console.log("[postImageApi error]");
-    // console.log("url: " + url);
-    // console.log("params: " + parameters);
-    // console.log(e);
-    return e.response;
+    return onErrorHandler(e);
   }
 }
 
@@ -169,9 +172,7 @@ export async function postDownloadExcelApi(endpoint, parameters = {}) {
     return res;
   } catch (e) {
     console.log("[postApi error]");
-    // console.log("url: " + url);
-    // console.log("params: " + parameters);
-    // console.log(e);
+    return onErrorHandler(e);
   }
 }
 
@@ -190,9 +191,7 @@ export async function patchApi(endpoint, parameters = {}) {
     return res;
   } catch (e) {
     console.log("[patchApi error]");
-    // console.log("url: " + url);
-    // console.log("params: " + parameters);
-    // console.log(e);
+    return onErrorHandler(e);
   }
 }
 
@@ -251,15 +250,13 @@ export async function putApi(endpoint, parameters = {}) {
     return res;
   } catch (e) {
     console.log("[putApi error]");
-    console.log("url: " + url);
-    console.log("params: " + parameters);
-    console.log(e);
+    return onErrorHandler(e);
   }
 }
 
 // DELETE
 export async function deleteApi(endpoint, parameters = {}) {
-  const url = baseUrl +  "/" + endpoint;
+  const url = baseUrl + "/" + endpoint;
   try {
     // console.log(parameters);
     const res = await axios({
@@ -273,9 +270,6 @@ export async function deleteApi(endpoint, parameters = {}) {
     return res;
   } catch (e) {
     console.log("[deleteApi error]");
-    // console.log("url: " + url);
-    // console.log("params: " + parameters);
-    // console.log(e);
-    return e.response;
+    return onErrorHandler(e);
   }
 }
