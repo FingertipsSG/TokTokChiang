@@ -17,7 +17,7 @@ html.founderHtml {
     margin-top: 8%;
 }
 body.founderBody {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 .rightDivision {
     background:  url("../../Assets/Images/bg-rightSide.png");
@@ -209,11 +209,12 @@ body.founderBody {
         background-size: 60%;
         background-position: right top 1.5em;
     }
+    
 }
 
 @media (min-width: 1281px) and (max-width: 1349px) {
     .founderContent {
-        height:230px;
+        height:272px;
     }
     .founderPic {
         margin-top:-9% ;
@@ -234,6 +235,10 @@ body.founderBody {
         background-size: 60%;
         background-position: right top 1.5em;
     }
+    .title1,.title2,.founderTitle{
+        font-size:2em;
+        margin-left: -0.1em;
+    }
 } 
 
 /*my computer size*/
@@ -252,14 +257,20 @@ body.founderBody {
     .rightDivision {
         background-position:auto 10%;
     }
+    .title1,.title2,.founderTitle{
+        font-size:2em;
+        margin-left: -0.1em;
+    }
 } 
 
-@media (min-width: 1276px) and (max-width: 1279px) {
+/*min height:640*/
+@media (min-width: 1277px) and (max-width: 1279px) {
     .founderContent {
-        height:280px;
+        height:260px;
     }
     .founderPic {
         margin-top: -8% ;
+        width: 65%;
     }
     body.founderBody{
         background-position:auto auto;
@@ -272,17 +283,21 @@ body.founderBody {
     }
     .rightDivision {
         background-attachment: fixed;
-        background-size: 60%;
-        background-position: right top 1.5em;
+        background-size:57%;
+        background-position: right top 1em;
+    }
+    .title1,.title2{  
+        font-size:1.8em;
     }
 }   
 
-@media (min-width: 1274px) and (max-width: 1276px) {
+@media (min-width: 1274px) and (max-width: 1277px) {
     .founderContent {
-        height:270px;
+        height:256px;
     }
     .founderPic {
         margin-top: -8% ;
+        width: 65%;
     }
     body.founderBody{
         background-position:auto auto;
@@ -295,18 +310,22 @@ body.founderBody {
     }
     .rightDivision {
         background-attachment: fixed;
-        background-size: 60%;
+        background-size: 55%;
         background-position: right top 1.5em;
+    }
+    .title1,.title2{  
+        font-size:1.8em;
     }
 }   
 
-/* TO AVOID DEVELOPER'S PERSONAL SCREEN*/
+/* TO AVOID DEVELOPER'S PERSONAL SCREEN min height:600px*/
 @media (min-width: 1224px) and ( max-width:1275px){ 
     .founderContent {
-        height:280px;
+        height:250px;
     }
     .founderPic {
         margin-top: -9% ;
+        width: 65%;
     }
     body.founderBody{
         height:auto;
@@ -320,12 +339,15 @@ body.founderBody {
     }
     .rightDivision {
         background-attachment: fixed;
-        background-size: 60%;
-        background-position: right top 1.5em;
+        background-size: 55%;
+        background-position:right top 1.5em;;
+    }
+    .title1,.title2{  
+        font-size:1.8em;
     }
 } 
 
-/* w min height 650px*/
+/* w min height 600px*/
 @media (min-width: 1093px) and (max-width: 1224px) {
     .founderContent {
         height: 200px;
@@ -381,12 +403,12 @@ body.founderBody {
     }
 }
 
-
-/*Tablet with min height 732*/
+/*Tablet with min height 600*/
 @media (min-width: 992px) and (max-width: 1022px) {
     .founderContent {
-        height: 22em !important;
-        width:85%;
+        height: 16em !important;
+        width:90%;
+        font-size:1em;
     }
     .bottomDivision {
         background-position: 100% 100%;
@@ -394,12 +416,10 @@ body.founderBody {
     .rightDivision {
         background:  url("../../Assets/Images/bg-rightSide.png");
         background-repeat: no-repeat;
-        background-size: 65%;
+        background-size: 60%;
         background-attachment: fixed;
-        background-position: right top 6em;
-        height: 100vh;
+        background-position: right top 4em;
     }
-    
     .bottomDivision {
         background:  url("../../Assets/Images/bg-leftSide.png");
         background-repeat: no-repeat;
@@ -409,13 +429,13 @@ body.founderBody {
     }
     .founderPic {
         margin-right: 100px;
-        margin-top:3%;
+        margin-top:-4%;
     }
-    .founderTitle{
-        letter-spacing: 5px;
-     } 
+    .title1,.title2,.founderTitle{
+        font-size:1.8em;
+        margin-left: -0.1em;
+    }
 }
-
 
 /* Ipad air version */
 @media (min-width: 769px) and ( max-width:991px){ 
@@ -470,7 +490,7 @@ body.founderBody {
 /*Ipad mini*/
 @media (min-width: 766px) and (max-width: 768px) { 
     html.founderHtml{
-        height:300vh;
+        height:275vh;
     }
     .founderContent {
         font-family: Calibri;
@@ -504,7 +524,7 @@ body.founderBody {
         background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position: 5% 100%;
-        background-size:auto 78%;
+        background-size:auto 50%;
     }
     .founderPicDesktop {
         visibility: hidden;
@@ -548,7 +568,7 @@ body.founderBody {
         background-image: url("../../Assets/Images/phoneview.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto 78%;
+        background-size:auto 60%;
     }
     .founderPicDesktop {
         visibility: hidden;
@@ -571,9 +591,6 @@ body.founderBody {
         margin-left:6em;
         margin-top:2em;
     }
-    .founderTitle{
-        letter-spacing: 5px;
-     } 
 }
 
 @media (min-width: 700px) and (max-width: 730px) { 
@@ -606,7 +623,7 @@ body.founderBody {
         background-image: url("../../Assets/Images/phoneview.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:cover;
+        background-size:auto 60%;
         
     }
     .founderPicDesktop {
@@ -629,9 +646,6 @@ body.founderBody {
         width:70%;
         margin-left:6em;
         margin-top:2em;
-    }
-    .founderTitle{
-       letter-spacing: 5px;
     } 
 }
 
@@ -662,10 +676,10 @@ body.founderBody {
         background-image: none;
     }
     body.founderBody {
-        background-image: url("../../Assets/Images/AboutUs.png");
+        background-image: url("../../Assets/Images/phoneview.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto;
+        background-size:auto 60%;
     }
     .founderPicDesktop {
         visibility: hidden;
@@ -679,9 +693,9 @@ body.founderBody {
     } 
     .rightDivision{
         background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 20%;
+        background-position: 130% 15%;
         background-attachment:unset;
-        background-size:100% 74%;
+        background-size:100% 67%;
     }
     .founderImage{
         width:70%;
@@ -758,16 +772,13 @@ body.founderBody {
     } 
     .rightDivision{
         background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 39%;
+        background-position: 130% 16%;
         background-attachment:unset;
-        background-size:100% 55%;
+        background-size:100% 70%;
     }
     .founderImage{
         width:70%;
         margin-left:5em;
-    }
-    .founderTitle{
-       letter-spacing: 5px;
     } 
 }
 
@@ -819,23 +830,19 @@ body.founderBody {
     } 
     .rightDivision{
         background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 24%;
+        background-position: 130% 35%;
         background-attachment:unset;
-        background-size:100% 55%;
+        background-size:100% 58%;
     }
     .founderImage{
         width:70%;
         margin-left:5em;
     }
-    .founderTitle{
-       letter-spacing: 5px;
-    } 
 }
 
 @media (max-width: 451px) { 
     html.founderHtml{
-        height:290vh;
-       
+        height:360vh;
     }
     .founderContent {
         font-family: Calibri;
@@ -882,22 +889,19 @@ body.founderBody {
     } 
     .rightDivision{
         background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 24%;
+        background-position: 130% 33%;
         background-attachment:unset;
-        background-size:100% 40%;
+        background-size:100% 55%;
     }
     .founderImage{
         width:70%;
         margin-left:5em;
     }
-    .founderTitle{
-       letter-spacing: 5px;
-    } 
 }
 
 @media (max-width: 435px) { 
     html.founderHtml{
-        height:280vh;
+        height:380vh;
     }
     .founderContent {
         font-family: Calibri;
@@ -950,15 +954,11 @@ body.founderBody {
         width:70%;
         margin-left:5em;
     }
-    .founderTitle{
-       letter-spacing: 5px;
-    } 
 }
 
 @media (max-width: 400px) { 
     html.founderHtml{
-        height:320vh;
-      
+        height:400vh;
     }
     .founderContent {
         font-family: Calibri;
@@ -982,7 +982,6 @@ body.founderBody {
     .rightDivision {
         background-image: none;
     }
-
     .bottomDivision {
         background-image: none;
     }
@@ -1004,22 +1003,19 @@ body.founderBody {
     } 
     .rightDivision{
         background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 27%;
+        background-position: 130% 26%;
         background-attachment:unset;
-        background-size:100% 40%;
+        background-size:100% 39%;
     }
     .founderImage{
         width:70%;
         margin-left:5em;
     }
-    .founderTitle{
-       letter-spacing: 5px;
-    } 
 }
 
 @media (max-width: 380px) { 
     html.founderHtml{
-        height:410vh;
+        height:400vh;
     }
     .founderContent {
         font-family: Calibri;
@@ -1072,14 +1068,11 @@ body.founderBody {
         width:70%;
         margin-left:5em;
     }
-    .founderTitle{
-       letter-spacing: 5px;
-    } 
 }
 
 @media (max-width: 360px) { 
     html.founderHtml{
-        height:380vh;
+        height:410vh;
     }
     .founderContent {
         font-family: Calibri;
@@ -1099,9 +1092,6 @@ body.founderBody {
     }
     .firstContentFounder {
         height: fit-content;
-    }
-    .rightDivision {
-        background-image: none;
     }
     .bottomDivision {
         background-image: none;
@@ -1126,13 +1116,10 @@ body.founderBody {
         background-image: url("../../Assets/Images/brush1.png");
         background-position: 130% 33%;
         background-attachment:unset;
-        background-size:100% 40%;
+        background-size:100% 50%;
     }
     .founderImage{
         width:70%;
         margin-left:5em;
     }
-    .founderTitle{
-       letter-spacing: 5px;
-    } 
 }
