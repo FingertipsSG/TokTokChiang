@@ -19,7 +19,7 @@ function ProtectedRoute({ children }) {
       });
 
       if (res.status === 200) {
-        console.log("authenticated");
+        // console.log("authenticated");
         setIsAuth(true);
       }
     } catch (err) {

@@ -27,7 +27,7 @@ function ShopScreen() {
   const [shopEdit, setShopEdit] = useState({});
   const [isAddProdModalVisible, setIsAddProdModalVisible] = useState(false);
   const [isEditProdModalVisible, setIsEditProdModalVisible] = useState(false);
-  const [isAddShopModalVisible, setIsAddShopModalVisible] = useState(false);
+  // const [isAddShopModalVisible, setIsAddShopModalVisible] = useState(false);
   const [isEditShopModalVisible, setIsEditShopModalVisible] = useState(false);
   const [isImageModalVisible, setIsImageModalVisible] = useState(false);
   const [render, setRender] = useState(false);
@@ -445,7 +445,7 @@ function ShopScreen() {
 
   // EDIT AND POST PRODUCT FUNCTION
   const openEditProductModal = () => {
-    console.log("opening edit model");
+    // console.log("opening edit model");
     setIsModalOpen(true);
     setIsEditProdModalVisible(true);
   };
@@ -620,49 +620,44 @@ function ShopScreen() {
   // Function to get other images from backend
   // If going to open edit product modal, should also update the curProdDetails state
   const getProductDetails = async (curItem) => {
-    try {
-      if (curItem !== null) {
-        var res = await Utils._getApi("getOtherImages", {
-          productId: curItem.pID,
-        });
+    if (curItem !== null) {
+      var res = await Utils._getApi("getOtherImages", {
+        productId: curItem.pID,
+      });
 
-        let imgsArr = [curItem.pImage];
+      let imgsArr = [curItem.pImage];
 
-        // If no results returned
-        if (res.status === 404) {
-          console.log("has no more images");
-        } else {
-          res = res.data;
-          for (let imgData of res) {
-            console.log(res);
-            var newImgData = {
-              type: imgData.image.type,
-              data: imgData.image.data,
-              imageid: imgData.imageid,
-            };
-            imgsArr.push(newImgData);
-          }
+      // If no results returned
+      if (res.status !== 404) {
+        res = res.data;
+        for (let imgData of res) {
+          console.log(res);
+          var newImgData = {
+            type: imgData.image.type,
+            data: imgData.image.data,
+            imageid: imgData.imageid,
+          };
+          imgsArr.push(newImgData);
         }
-
-        setCurProdDetails({
-          pID: curItem.pID,
-          pName: curItem.pName,
-          pDesc: curItem.pDesc,
-          pPrice: curItem.pPrice,
-          pImage: imgsArr,
-          pURL: curItem.pURL,
-        });
-
-        const convertedImgsArr = [];
-        for (let img of imgsArr) {
-          convertedImgsArr.push(
-            `data:image/jpg;base64,${convertToBase64(img.data)}`
-          );
-        }
-        setProductImages(convertedImgsArr);
       }
-    } catch (err) {
-      console.log(err);
+
+      setCurProdDetails({
+        pID: curItem.pID,
+        pName: curItem.pName,
+        pDesc: curItem.pDesc,
+        pPrice: curItem.pPrice,
+        pImage: imgsArr,
+        pURL: curItem.pURL,
+      });
+
+      const convertedImgsArr = [];
+      for (let img of imgsArr) {
+        convertedImgsArr.push(
+          `data:image/jpg;base64,${convertToBase64(img.data)}`
+        );
+      }
+
+      setProductImages(convertedImgsArr);
     }
   };
 
@@ -695,12 +690,13 @@ function ShopScreen() {
       Utils.postDownloadExcelApi("downloadProductExcel", config).then((res) => {
         if (res) {
           const filename = res.request.getResponseHeader("Content-Disposition");
-          console.log(filename);
           const cleanFilename = filename.split(`"`)[1];
-          // var filename = `ttc_products_${type}.csv`;
           const downloadUrl = window.URL.createObjectURL(new Blob([res.data]));
-          console.log(downloadUrl);
           const link = document.createElement("a");
+          // console.log(filename);
+          // console.log(downloadUrl);
+          // var filename = `ttc_products_${type}.csv`;
+
           link.href = downloadUrl;
           link.setAttribute("download", cleanFilename);
           document.body.appendChild(link);
@@ -790,8 +786,9 @@ function ShopScreen() {
 
               <ImagesModal
                 onCloseModal={() => {
-                  setIsImageModalVisible(false);
+                  setProductImages([]);
                   setCurProductSelected(null);
+                  setIsImageModalVisible(false);
                 }}
                 images={productImages}
               />
