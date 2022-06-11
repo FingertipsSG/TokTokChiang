@@ -20,91 +20,75 @@ body, html{
     margin:0;
     padding:0;
 }
-
-.wayangBody {
-    background: url("../../Assets/Images/TTCbg3.png");
-    height:130vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position:100% 100%;  
+html.wayangHtml {
+    overflow: hidden;
 }
-
 .wayangContent {
     font-family: Calibri;
     font-size: 16px;
     margin-left: 92px;
-    height: 300px;
-    overflow: auto;
+    padding-right: 20px;
+    height: 20em;
+    overflow-y: scroll;
 }
-
 img#wayangPic {
     float: right;
     width: 70%;
     margin-right: 100px;
 }
 
-/*Responsive*/
-@media (min-width: 1920px) {
-    .wayangCarousel {
-        margin-top: 5% !important;
+/*Responsive*/  
+@media (min-width: 2101px) {
+    .title1,.title2 {
+        font-size: 3.2em;
+    }
+    .founderTitle {
+        font-size: 2.8em;
+    }
+    .wayangContent {
+        font-size:2em;
+        height:400px;
+     }
+     .rightDiv {
+         background-attachment: fixed;
+         background-size: 60%;
+         background-position: right top 1em;
+     }
+     .carouselDesktop {
+        width:50%;
+        margin-top:-6em;
+     }
+} 
+@media (min-width: 1919px)and (max-width: 2100px){
+    .carouselDesktop {
+        width:50%;
+        margin-top:-5.5em;
+     } 
+    .wayangContent {
+        height:385px;
+        width:95%;
+        font-size:1.7em;
     }
 }
-@media (min-width: 1224px) and (max-width: 1449px) {
+@media (min-width: 1536px) and (max-width: 1919px) {
+    img#wayangPic {
+        width: 80%;
+        margin-top: 4em;
+}
     .wayangContent {
-        height: 250px;
+        height:365px;
+        width:95%;
+        font-size:1.5em;
     }
-    body.wayangBody{
-        overflow-x: hidden;
+}
+@media (min-width: 1224px) and (max-width: 1536px) {
+    .ttcContent {
+        width:95%
     }
 }
 
+/*w min 600px*/
 @media (min-width: 1093px) and (max-width: 1224px) {
-    .wayangContent {
-        height: 200px;
-    }
-} 
-
-/* TO AVOID DEVELOPER'S PERSONAL SCREEN*/
-@media (min-width: 1224px) and ( max-width:1275px){ 
-    .wayangContent {
-        height:280px;
-    }
-    .wayangCarousel {
-        margin-top: 10% ;
-    }
-    body.wayangBody{
-        height:auto;
-        background-position:0;
-    }
-} 
-@media (min-width: 1276px) and (max-width: 1279px) {
-    .wayangContent {
-        height:280px;
-    }
-    .wayangCarousel {
-        margin-top: 10% ;
-    }
-    body.wayangBody{
-        background-position:auto auto;
-        height:120vh;
-    }
-} 
-
-/* 13.9-14.9inch w height:796 */
-@media (min-width: 1281px) and (max-width: 1535px) {
-    .wayangContent {
-        height:280px;
-    }
-    .wayangCarousel {
-        margin-top: 10% ;
-    }
-    body.wayangBody{
-        height:120vh;
-    }
-} 
-
-/*Tablet*/
-@media (min-width: 1023px) and (max-width: 1092px) {
     html.wayangHtml {
         overflow-x: hidden;
     }
@@ -114,318 +98,477 @@ img#wayangPic {
         background-position:0;
     }
     .wayangContent {
-        height: 20em !important;
+        height: 14em !important;
+        width:90%
     }
 }
 
-@media (max-width: 1023px) { 
-    body.wayangBody {
-        background-size:cover;
-        background-position:0;
-     
-    }
-}  
-/*Tablet*/
-@media (min-width: 992px) and (max-width: 1022px) {
-    body.wayangBody {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-position:0;  
-    }
-    .wayangContent {
-        height: 15em !important;
-    }
-}
-
-@media (min-width: 1536px) {
-    body.wayangBody {
-        height: 120vh;
-    }
+/*Tablet w min 600px*/
+@media (min-width: 1023px) and (max-width: 1092px) {
     html.wayangHtml {
         overflow-x: hidden;
     }
-}
-/*Ipad air*/
-@media(min-width: 768px) and (max-width: 991px){ 
-    html.wayangHtml{
-        overflow: hidden;
+    .wayangContent {
+        height: 14em !important;
+        width:90%
     }
-    body.wayangBody {
-        background-position:0;  
+    .bottomDiv {
+        background:  url("../../Assets/Images/bg-leftSide.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: left bottom ;
         background-attachment: fixed;
     }
+}
+
+/*Tablet w min height 600*/
+@media (min-width: 992px) and (max-width: 1022px) {
+    .wayangContent{
+        height: 17em !important;
+        width:90%;
+        font-size:1em;
+    }
+}
+
+/*Ipad air*/
+@media(min-width: 769px) and (max-width: 991px){ 
+    html.wayangHtml{
+        height: 220vh;
+    }
+    body.wayangBody {
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position: 5% 100%;
+        background-size:auto 47%;
+    }
     .wayangContent {
-        font-size: 14px;
-        margin-left: 92px;
-        width:80%;
-        height: 280px
+        font-family: Calibri;
+        font-size: 1.8em;
+        margin-left: 90px;
+        height: fit-content;
+        width: 80%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:2em;
     }
     .wayangTitle {
         font-size: 22px;
     }
     .wayangCarousel{
         width: 100%;
-        margin-top: 0;
         float:none;
+    }
+    .founderPicDesktop {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+    }
+     .founderPicMobile {
+        visibility: visible;
+        height: auto;
+        width: auto;  
+    } 
+    .wayangCarousel{
+        width: 100%;
+        margin-left: -4em;
+        margin-top: 4em;
+        float:none;
+    }
+    .wayangTitle {
+        font-size: 3em;
     }
 } 
+
 /*Ipad Mini*/
- @media(min-width: 766px) and (max-width: 767px){ 
+ @media(min-width: 766px) and (max-width: 768px){ 
     html.wayangHtml{
-        height:100vh;
-        overflow: hidden;
+        height: 230vh;
+        overflow-y: auto;
+        overflow-x:hidden;
     }
     body.wayangBody {
-        background-attachment: fixed;
-        background-size: cover;
-        overflow: hidden;
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position:5% 100%;
+        background-size:auto 61%;
     }
     .wayangContent {
-        font-size: 14px;
-        margin-left: 92px;
-        width:80%;
-        height: 280px
+        font-family: Calibri;
+        font-size: 1.6em;
+        margin-left: 4em;
+        height: fit-content;
+        width: 80%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:2em;
     }
     .wayangTitle {
-        font-size: 22px;
+        font-size: 3em;
     }
     .wayangCarousel{
         width: 100%;
-        margin-left: 4%;
-        margin-top: 0;
+        margin-left: -3em;
+        margin-top: 4em;
         float:none;
     }
-    
-    body.wayangBody {
-        background-position:0;  
-        background-attachment: fixed;
+    .carouselDesktop {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+    }
+     .carouselMobile {
+        visibility: visible;
+        height: auto;
+        width: auto;  
+        margin-top:5%;
+    } 
+    .rightDiv{
+        background-image:none;
+    }
+    .bottomDiv {
+        background-image: none;
+    }
+    .carousel-indicators {
+        margin-right: 15% !important;
+        margin-bottom: 2% !important;
     }
 } 
 
 /*mobile version*/
 @media(min-width: 731px) and (max-width: 765px){
     html.wayangHtml{
-        height:100vh;
-        overflow-y:scroll;
+        height:250vh;
+        overflow-y:auto;
         overflow-x:hidden;
     }
     .wayangContent {
         font-family: Calibri;
-        font-size: 14px;
-        margin-left: 70px;
-        height:350px;
+        font-size: 1.5em;
+        margin-left:83px;
+        height: fit-content;
         width: 80%;
-        overflow:scroll; 
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:2em;
     }
     .wayangTitle {
-        font-size: 22px;
+        font-size: 2.5em;
     }
     body.wayangBody {
         background-image: none;
     }
     .wayangCarousel{
         width: 100%;
-        margin-left: 4%;
-        margin-top: 0;
+        margin-left: -3.5em;
+        margin-top: 5.5em;
         float:none;
     }
+    body.wayangBody {
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:auto 59%; 
+    }
+    
 }
-
-@media(min-width: 631px) and (max-width: 700px){
+@media(min-width: 700px) and (max-width: 730px){
     html.wayangHtml{
-        height:100vh;
-        overflow-y:scroll;
+        height:230vh;
+        overflow-y:auto;
         overflow-x:hidden;
     }
     .wayangContent {
         font-family: Calibri;
-        font-size: 14px;
-        margin-left: 70px;
-        height:350px;
+        font-size: 1.5em;
+        margin-left: 80px;
+        height: fit-content;
         width: 80%;
-        overflow:scroll; 
-    }
-    .wayangTitle {
-        font-size: 22px;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:2em;
     }
     body.wayangBody {
-        background-image: none;
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:auto 60%;
     }
     .wayangCarousel{
         width: 100%;
-        margin-left: 4%;
-        margin-top: 0;
+        margin-left: -1.5em;
+        margin-top: 8%;
+        float:none;
+    } 
+}
+
+@media(min-width: 630px) and (max-width: 700px){
+    html.wayangHtml{
+        height:230vh;
+        overflow-y:auto;
+        overflow-x:hidden;
+    }
+    .wayangContent {
+        font-family: Calibri;
+        font-size: 1.3em;
+        margin-left: 80px;
+        height: fit-content;
+        width: 80%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:2em;
+    }
+
+    body.wayangBody {
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:auto 60%;
+    }
+    .wayangCarousel{
+        width: 100%;
+        margin-left: -1.5em;
+        margin-top: 8%;
         float:none;
     }
 }
 @media(min-width: 528px) and (max-width: 630px){
-    .wayangPicCol {
-        float: left;
-        position: absolute;
-    }
-    .wayangTextCol {
-        
-    }
     html.wayangHtml{
-        height:100vh;
-        overflow-y:scroll;
+        height:280vh;
+        overflow-y:auto;
         overflow-x:hidden;
     }
     .wayangContent {
         font-family: Calibri;
-        font-size: 14px;
+        font-size: 1.5em;
         margin-left: 70px;
-        height:350px;
+        height: fit-content;
         width: 80%;
-        overflow:scroll; 
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:2em;
     }
     .wayangTitle {
         font-size: 22px;
+        margin-top: -1.5em;
     }
     body.wayangBody {
-        background-image: none;
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:auto;
     }
     .wayangCarousel{
         width: 100%;
-        margin-left: 5%;
-        margin-top: 0;
+        margin-top: 8%;
         float:none;
+    }
+    #Title2 {
+        display: block;
     }
 }
 @media(min-width: 451px) and (max-width: 528px){
     html.wayangHtml{
-        height:100vh;
-        overflow-y:scroll;
+        height:250vh;
+        overflow-y:auto;
         overflow-x:hidden;
     }
     .wayangContent {
         font-family: Calibri;
-        font-size: 14px;
+        font-size: 1.3em;
         margin-left: 70px;
-        height:350px;
+        height: fit-content;
         width: 80%;
-        overflow:scroll; 
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:2em;
     }
     .wayangTitle {
         font-size: 22px;
     }
     body.wayangBody {
-        background-image: none;
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:auto;
     }
     .wayangCarousel{
         width: 100%;
-        margin-left: 10%;
-        margin-top: 0;
+        margin-left: 4%;
+        margin-top: 8%;
         float:none;
+    }
+    #Title2 {
+        display: block;
+    }
+    .wayangTitle {
+        margin-top: -1.5em;
     }
 }
-@media(max-width:450px){
+@media(max-width:451px){
     html.wayangHtml{
-        height:100vh;
-        overflow-y:scroll;
+        height:280vh;
+        overflow-y:auto;
         overflow-x:hidden;
     }
     .wayangContent {
         font-family: Calibri;
-        font-size: 14px;
+        font-size: 1.2em;
         margin-left: 70px;
-        height:350px;
+        height: fit-content;
         width: 80%;
-        overflow:scroll; 
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:2em;
     }
     .wayangTitle {
         font-size: 22px;
     }
     body.wayangBody {
-        background-image: none;
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:auto;
     }
     .wayangCarousel{
         width: 100%;
-        margin-left: 10%;
-        margin-top: 0;
+        margin-left: 5.5%;
+        margin-top: 8%;
         float:none;
+    }
+    .carousel-indicators {
+        margin-right: 25% !important;
+        margin-bottom: 2% !important;
+    }
+    #Title2 {
+        display: block;
+    }
+    .wayangTitle {
+        margin-top: -1.5em;
     }
 }
 
 @media(max-width:435px){
     html.wayangHtml{
-        height:100vh;
-        overflow-y:scroll;
+        height:220vh;
+        overflow-y:auto;
         overflow-x:hidden;
     }
     .wayangContent {
         font-family: Calibri;
-        font-size: 14px;
+        font-size: 1.2em;
         margin-left: 70px;
-        height:350px;
+        height: fit-content;
         width: 80%;
-        overflow:scroll; 
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:2em;
     }
     .wayangTitle {
         font-size: 22px;
     }
     body.wayangBody {
-        background-image: none;
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:auto;
     }
     .wayangCarousel{
         width: 100%;
-        margin-left: 10%;
-        margin-top: 0;
+        margin-left: 8%;
+        margin-top: 8%;
         float:none;
+    }
+    .carousel-indicators {
+        margin-right: 25% !important;
+        margin-bottom: 2% !important;
     }
 }
 
 @media(max-width:400px){
     html.wayangHtml{
-        height:100vh;
-        overflow-y:scroll;
+        height:245vh;
+        overflow-y:auto;
         overflow-x:hidden;
     }
     .wayangContent {
         font-family: Calibri;
-        font-size: 14px;
+        font-size: 1.2em;
         margin-left: 70px;
-        height:350px;
+        height: fit-content;
         width: 80%;
-        overflow:scroll; 
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:2em;
     }
     .wayangTitle {
         font-size: 22px;
     }
     body.wayangBody {
-        background-image: none;
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:auto;
     }
     .wayangCarousel{
         width: 100%;
-        margin-left: 15%;
-        margin-top: 0;
+        margin-left: 3.2em;
+        margin-top: 7%;
         float:none;
+    }
+    .carousel-indicators {
+        margin-right: 25% !important;
+        margin-bottom: 2% !important;
+    }
+    .rightDiv{
+        background-image: url("../../Assets/Images/brush1.png");
+        background-position: 130% 26%;
+        background-attachment:unset;
+        background-size:100% 39%;
     }
 }
 
 @media(max-width:380px){
     html.wayangHtml{
-        height:100vh;
-        overflow-y:scroll;
+        height:310vh;
+        overflow-y: auto;
         overflow-x:hidden;
     }
     .wayangContent {
         font-family: Calibri;
-        font-size: 14px;
+        font-size: 1.2em;
         margin-left: 70px;
-        height:350px;
+        height: fit-content;
         width: 80%;
-        overflow:scroll; 
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:2em;
     }
     .wayangTitle {
         font-size: 22px;
     }
-    body.wayangBody {
-        background-image: none;
+    .wayangCarousel{
+        margin-left: 3.6em;
+    }   
+    .rightDiv{
+        background-image: url("../../Assets/Images/brush1.png");
+        background-position: 130% 42%;
+        background-attachment:unset;
+        background-size:100% 50%;
+    }
+}
+@media(max-width:360px){
+    html.wayangHtml{
+        height:285vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    .rightDiv{
+        background-image: url("../../Assets/Images/brush1.png");
+        background-position: 130% 33%;
+        background-attachment:unset;
+        background-size:100% 50%;
     }
     .wayangCarousel{
-        width: 100%;
-        margin-left: 15%;
-        margin-top: 0;
-        float:none;
-    }
+        margin-top: 2.5em;
+    } 
 }
