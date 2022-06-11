@@ -19,12 +19,12 @@ export async function getProducts(catid, parameters = {}) {
   const url = baseUrl + `/getProducts?categoryId=${catid}`;
   let params = {};
   params.params = parameters;
-
+  
   try {
     const res = await axios.get(url, params);
     return res.data;
   } catch (e) {
-    console.log("[getApi error]");
+    // console.log("[getProducts error]");
     return onErrorHandler(e);
   }
 }
@@ -48,7 +48,7 @@ export async function getProductsLazyLoad(startRow, endRow, parameters) {
     });
     return res;
   } catch (e) {
-    console.log("[getApi error]");
+    // console.log("[getProductsLazyLoad error]");
     // console.log("url: " + url);
     // console.log(e);
     return e.response;
@@ -65,7 +65,7 @@ export async function _getApi(endpoint, parameters = {}) {
     const res = await axios.get(url, params);
     return res;
   } catch (e) {
-    console.log("[getApi error]");
+    // console.log("[_getApi error]");
     // console.log("url: " + url);
     // console.log("params: " + JSON.stringify(params));
     // console.log(e);
@@ -94,7 +94,7 @@ export async function getApi(endpoint, parameters = {}) {
     }
     return res.data;
   } catch (e) {
-    console.log("[getApi error]");
+    // console.log("[getApi error]");
     return onErrorHandler(e);
   }
 }
@@ -113,7 +113,7 @@ export async function postApi(endpoint, parameters = {}) {
     });
     return res;
   } catch (e) {
-    console.log("[postApi error]");
+    // console.log("[postApi error]");
     return onErrorHandler(e);
   }
 }
@@ -147,7 +147,7 @@ export async function postImageApi(endpoint, parameters = {}) {
 
     return res;
   } catch (e) {
-    console.log("[postImageApi error]");
+    // console.log("[postImageApi error]");
     return onErrorHandler(e);
   }
 }
@@ -171,7 +171,7 @@ export async function postDownloadExcelApi(endpoint, parameters = {}) {
     });
     return res;
   } catch (e) {
-    console.log("[postApi error]");
+    // console.log("[postDownloadExcelApi error]");
     return onErrorHandler(e);
   }
 }
@@ -190,7 +190,7 @@ export async function patchApi(endpoint, parameters = {}) {
     });
     return res;
   } catch (e) {
-    console.log("[patchApi error]");
+    // console.log("[patchApi error]");
     return onErrorHandler(e);
   }
 }
@@ -224,7 +224,7 @@ export async function editImageApi(endpoint, parameters = {}) {
 
     return res;
   } catch (e) {
-    console.log("[patchImageApi error]");
+    // console.log("[patchImageApi error]");
     // console.log("url: " + url);
     // console.log("params: " + parameters);
     // console.log(e);
@@ -249,7 +249,7 @@ export async function putApi(endpoint, parameters = {}) {
     });
     return res;
   } catch (e) {
-    console.log("[putApi error]");
+    // console.log("[putApi error]");
     return onErrorHandler(e);
   }
 }
@@ -269,7 +269,7 @@ export async function deleteApi(endpoint, parameters = {}) {
     });
     return res;
   } catch (e) {
-    console.log("[deleteApi error]");
+    // console.log("[deleteApi error]");
     return onErrorHandler(e);
   }
 }

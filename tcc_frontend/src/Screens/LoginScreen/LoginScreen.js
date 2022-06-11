@@ -28,7 +28,7 @@ function LoginScreen() {
         password: details.password,
       })
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         setUser(response.data.username);
 
         localStorage.setItem("user", JSON.stringify(response.data.username));
@@ -36,18 +36,18 @@ function LoginScreen() {
         localStorage.setItem("id", JSON.stringify(response.data.id));
         localStorage.setItem("token", JSON.stringify(response.data.token));
 
-        const currentTime = new Date(Date.now()).getTime().toString();
-        console.log(
-          "current time: " + currentTime.substring(0, currentTime.length - 3)
-        );
-        const jwtTime = jwtDecode(response.data.token).exp;
-        console.log("jwt time: " + jwtTime);
+        // const currentTime = new Date(Date.now()).getTime().toString();
+        // const jwtTime = jwtDecode(response.data.token).exp;
+        // console.log(
+        //   "current time: " + currentTime.substring(0, currentTime.length - 3)
+        // );
+        // console.log("jwt time: " + jwtTime);
 
         // LEFTOFFAT Console log token to test
-        console.log(response.data.token);
+        // console.log(response.data.token);
 
         if (response.status === 200) {
-          navigate("/admin", {
+          navigate("/shop", {
             state: {
               isLoggedIn: true,
               isAuthenticated: true,
@@ -59,7 +59,7 @@ function LoginScreen() {
           // CLears JWT details after 1h
           setTimeout(function () {
             if (jwtDecode(response.data.token).exp < Date.now()) {
-              console.log("after 1 hour");
+              // console.log("after 1 hour");
 
               // Clear localStorage
               localStorage.clear();
