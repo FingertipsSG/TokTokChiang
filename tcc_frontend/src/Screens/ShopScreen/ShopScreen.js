@@ -320,20 +320,19 @@ function ShopScreen() {
     Utils.getApi(endpoint, {})
       .then((res) => {
         if (res.message && res.message === "Unknown error") {
-          message.error("Something went wrong. Please try again later");
+          return message.error("Something went wrong. Please try again later");
         }
 
-        if (checkErrorHandler(res, false)) {
-          res.forEach((obj, i) => {
-            setShopArray((prevArray) => [
-              ...prevArray,
-              {
-                sID: obj.catid,
-                sName: obj.catname,
-              },
-            ]);
-          });
-        }
+        res.forEach((obj, i) => {
+          setShopArray((prevArray) => [
+            ...prevArray,
+            {
+              sID: obj.catid,
+              sName: obj.catname,
+            },
+          ]);
+        });
+
       })
       .then(() => {
         setIsTableLoading(false);
