@@ -200,6 +200,7 @@ function UserScreen() {
   };
 
   const getUsers = () => {
+    setIsTableLoading(true);
     const endpoint = "getUsers";
     Utils.getApi(endpoint, { id: currentUser.id }).then((res) => {
       if (checkErrorHandler(res, true)) {
@@ -215,6 +216,9 @@ function UserScreen() {
           ]);
         });
       }
+    })
+    .then(() => {
+      setIsTableLoading(false);
     });
   };
 
@@ -225,6 +229,7 @@ function UserScreen() {
 
   //SEARCH PRODUCTS
   const searchUsers = async (value) => {
+    setIsTableLoading(true);
     // console.log("searching");
     // console.log(value);
     // console.log(searchQuery);
@@ -247,6 +252,9 @@ function UserScreen() {
           ]);
         });
       }
+    })
+    .then(() => {
+      setIsTableLoading(false);
     });
   };
 

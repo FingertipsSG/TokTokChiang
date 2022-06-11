@@ -614,6 +614,7 @@ function ShopScreen() {
 
   //SEARCH PRODUCTS
   const searchProducts = async (value) => {
+    setIsProdTableLoading(true);
     const endpoint = "search";
     const categoryId = getKeyByValue(type);
 
@@ -628,12 +629,14 @@ function ShopScreen() {
 
     // If no products found
     if (res.status === 404) {
-      console.log("No product matches query");
+      setProductArray([]);
+      setIsProdTableLoading(false);
+      // console.log("No product matches query");
     } else {
       // Else, get results and concatenate to product array
       res = res.data;
 
-      res.forEach((obj, i) => {
+      await res.forEach((obj, i) => {
         setProductArray((prevArray) => [
           ...prevArray,
           {
@@ -646,6 +649,8 @@ function ShopScreen() {
           },
         ]);
       });
+
+      setIsProdTableLoading(false);
     }
   };
 
@@ -722,7 +727,9 @@ function ShopScreen() {
       // Send product details and shop type to backend to generate file
       // download file in frontend
       // need to be authenticated
+      var loadMsg = message.loading("Preparing file for download...", 0);
       Utils.postDownloadExcelApi("downloadProductExcel", config).then((res) => {
+        loadMsg();
         if (checkErrorHandler(res, true)) {
           const filename = res.request.getResponseHeader("Content-Disposition");
           const cleanFilename = filename.split(`"`)[1];
