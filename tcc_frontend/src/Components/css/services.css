@@ -5,308 +5,517 @@
     font-family: AveNext;
 }
 
-html {
-    height: 100vh;
-    width: auto;
+html,body {
+   margin:0%;
+   padding:0;
 }
 
-body {
-    min-height: 100%;
-    min-width: auto;
+html.servicesHtml {
+    overflow: hidden;
 }
-
-body.services-body {
-    background-image: url("../../Assets/Images/services.png");
-    height:130vh;
-    background-size: cover;
+body.servicesBody {
+    overflow: hidden;
+}
+.leftDiv {
+    background:  url("../../Assets/Images/bg-leftSide.png");
     background-repeat: no-repeat;
-    background-position:0 0;  
-    overflow-x:hidden;
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: left top -0.5em;
+    height: 100vh;
 }
-
+.bottomSection {
+    background:  url("../../Assets/Images/bg-leftSide.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    background-attachment: fixed;
+}
 .services-table>thead>tr>th{
     font-size:15px;
     color: #790c15;
 }
-
 .services-table>tbody>tr>td{
     font-size:13px;
 }
-
 .services-table{
     margin-left:25%;
-    margin-top:2.5%;
+    margin-top:2%;
 }
-
-/*Responsive */
-@media (min-width: 1300px) {
-    body.services-body {
-        height: 120vh;
-    }
-
+/*Responsive*/
+@media (min-width:2101px){
     Table.services-table{
-        margin-top:4.5%;
+        margin-left:30%;
+        margin-top:5.5em;
     }
-
-    .services-table>thead>tr>th{
-        font-size:20px;
-     }
-     .services-table>tbody>tr>td{
-         font-size:18px;
-     }
-}
-
-@media (min-width: 1024px) { 
-    html.servicesHtml {
-        overflow-x: hidden;
-    }
-}    
-
-/*tablet*/
-@media (min-width: 768px) and ( max-width:1023px){ 
-    html.servicesHtml {
-        overflow-x: hidden;
-    }
-    body.services-body {
-        background-image:none;
-        background-image: url("../../Assets/Images/comingsoon.png");
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
         background-repeat: no-repeat;
-        background-size:cover;
-    }
-   
-    .services-table>thead>tr>th{
-       font-size:16px;
-    }
-    .services-table>tbody>tr>td{
-        font-size:15px;
-    }
-    .services-row{
-        margin-left:-290px !important;
-        margin-top:100px;
-    }
-}
-
-/* phone size*/
-@media (max-width: 767px) { 
-    html.servicesHtml{
-        height:100vh;
-        overflow-x: hidden;
-    }
-    body.services-body {
-        background-image:none;
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-size: cover;
-        overflow-x: hidden;
-    }
-    .services-table>thead>tr>th{
-        font-size:8px;
-    }
-    .services-table>tbody>tr>td{
-         font-size:8px;
-    }
-    .services-row{
-        margin-left:-300px !important;
-        margin-top:50px;
-    }
-}
-  
-/* Common Size: phone & tablet*/
-@media (max-width: 1023px) { 
-    body.services-body {
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-size:cover;
-        background-position:0;
-    }
-}
-
-@media (min-width: 1920px){
-    .services-table{
-        margin-left:30%;
-        margin-top:10%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/services.png");
-        background-size:cover;
-        background-position:0% 0%;
-    }
-    .services-table>thead>tr>th{
-        font-size:22px;
-    }
-    .services-table>tbody>tr>td{
-         font-size:20px;
-    }
-}
-
-@media (min-width: 1800px ) and (max-width:1920px){
-    Table.services-table{
-        margin-left:30%;
-        margin-top:10%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/services.png");
-        background-size:cover;
-        background-position:0% 0%;
-    }
-    .services-table>thead>tr>th{
-        font-size:22px;
-    }
-     .services-table>tbody>tr>td{
-         font-size:20px;
-    }
-}
-
-@media (min-width: 1600px ) and (max-width:1800px){
-    Table.services-table{
-        margin-left:30%;
-        margin-top:8%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/services.png");
-        background-size:cover;
-        background-position:0% 0%;
-    }
-    .services-table>thead>tr>th{
-        font-size:22px;
-    }
-     .services-table>tbody>tr>td{
-         font-size:20px;
-    }
-}
-
-@media (min-width: 1550px) and (max-width: 1600px){
-    Table.services-table{
-        margin-left:30%;
-        margin-top:10%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/services.png");
-        background-size:cover;
-        background-position:0% 0%;
-    }
-}
-
-@media (min-width: 1400px) and (max-width: 1550px) {
-    Table.services-table{
-        margin-left:30%;
-        margin-top:5%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/services.png");
-        background-size:cover;
-        background-position:0% 0%;
-    }
-}
-
-@media (min-width: 1300px) and (max-width: 1399px){
-    Table.services-table{
-        margin-left:30%;
-        margin-top:5%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/services.png");
-        background-size:cover;
-        background-position:0% 0%;
-    }
-}
-
-@media (min-width: 1200px) and (max-width: 1279px){
-    Table.services-table{
-        margin-left:30%;
-        margin-top:4%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/services.png");
-        background-size:cover;
-        background-position:0% 0%;
-    }
-}
-
-@media (min-width: 1092px) and (max-width: 1200px){
-    Table.services-table{
-        margin-left:34%;
-        margin-top:6%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/services.png");
-        background-size:cover;
-        background-position:0;
-    }
-}
-
-@media (min-width: 1050px) and (max-width: 1092px){
-    Table.services-table{
-        margin-left:14%;
-        margin-top:10%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-size:cover;
-        background-position:0;
-    }
-}
-
-@media (min-width: 1024px) and (max-width: 1050px){
-   .services-table{
-        margin-left:14%;
-        margin-top:10%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-size:cover;
-        background-position:0;
-        /* background-attachment: fixed; */
-    }
-}
-
-@media (min-width: 990px) and (max-width: 1023px){
-    Table.services-table{
-        margin-left:48%;
-    }
-}
-
-/*Ipad*/
-@media (min-width: 768px) and (max-width: 990px){
-    body.services-body {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-size:cover;
-        background-position:0;
         background-attachment: fixed;
-  
-        
-    
+        background-position: left -0.7em top -8em;
     }
-    Table.services-table{
-        margin-left:53%;
-        margin-top:-2em;
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: left bottom;
+        background-attachment: fixed;
     }
-}
-/* phone size*/
-@media (max-width: 767px) { 
-    html.servicesHtml{
-        height:100vh;
-        overflow-x: hidden;
+    .services-table>thead>tr>th{
+        font-size:25px;
     }
+    .services-table>tbody>tr>td{
+         font-size:20px;
+    }  
     body.services-body {
         background-image:none;
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-size: cover;
-        overflow-x: hidden;
+    }
+}
+/* 1080px height */
+@media (min-width:1919px) and (max-width: 2100px){
+    Table.services-table{
+        margin-left:30%;
+        margin-top:5em;
+    }
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left -0.7em top -3.5em;
+    }
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: left bottom;
+        background-attachment: fixed;
+    }
+    .services-table>thead>tr>th{
+        font-size:22px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:18px;
+    }  
+    body.services-body {
+        background-image:none;
+    }
+}
+
+/* 900px height */
+@media (min-width:1600px) and (max-width: 1919px){
+    Table.services-table{
+        margin-left:30%;
+        margin-top:2.3em;
+    }
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left -0.7em top -5em;
+    }
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: left bottom;
+        background-attachment: fixed;
+    }
+    .services-table>thead>tr>th{
+        font-size:22px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:17px;
+    }  
+    body.services-body {
+        background-image:none;
+    }
+}
+
+@media (min-width:1536px) and (max-width: 1600px){
+    Table.services-table{
+        margin-left:30%;
+        margin-top:2.8em;
+    }
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left -1.5em top -2.5em;
+    }
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: left bottom;
+        background-attachment: fixed;
+    }
+    .services-table>thead>tr>th{
+        font-size:17px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:14px;
+    }  
+    body.services-body {
+        background-image:none;
+    }
+}
+
+/* 13.9-14.9inch w height:796 */
+@media (min-width:1520px) and (max-width: 1535px){
+    Table.services-table{
+        margin-left:30%;
+        margin-top:2.5em;
+    }
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left -1.4em top -2.5em;
+    }
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: left bottom;
+        background-attachment: fixed;
+    }
+    .services-table>thead>tr>th{
+        font-size:17px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:14px;
+    }  
+    body.services-body {
+        background-image:none;
+    }
+}
+
+@media (min-width:1350px) and (max-width: 1520px){
+    Table.services-table{
+        margin-left:30%;
+        margin-top:0.9em;
+    }
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left -1.3em top -3.3em;
+    }
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: left bottom;
+        background-attachment: fixed;
+    }
+    .services-table>thead>tr>th{
+        font-size:17px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:14px;
+    }  
+    body.services-body {
+        background-image:none;
+    }
+}
+
+@media (min-width:1281px) and (max-width: 1349px){
+    Table.services-table{
+        margin-left:30%;
+        margin-top:0.8em;
+    }
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left -0.9em top -2.3em;
+    }
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: left bottom;
+        background-attachment: fixed;
+    }
+    .services-table>thead>tr>th{
+        font-size:17px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:14px;
+    }  
+    body.services-body {
+        background-image:none;
+    }
+}
+
+@media (min-width:1278px) and (max-width: 1280px){
+    Table.services-table{
+        margin-left:30%;
+        margin-top:0.5em;
+    }
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left -0.7em top -2.7em;
+    }
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 75%;
+        background-position: left bottom;
+        background-attachment: fixed;
+    }
+    .services-table>thead>tr>th{
+        font-size:16px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:12px;
+    }  
+    body.services-body {
+        background-image:none;
+    }
+}
+
+@media (min-width:1224px) and (max-width: 1279px){
+    Table.services-table{
+        margin-left:30%;
+        margin-top:0.5em;
+    }
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left -0.7em top -2.3em;
+    }
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 75%;
+        background-position: left bottom;
+        background-attachment: fixed;
+    }
+    .services-table>thead>tr>th{
+        font-size:16px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:13px;
+    }  
+    body.services-body {
+        background-image:none;
+    }
+}
+
+/*Tablet w min height 600*/
+@media (min-width:1093px) and (max-width: 1224px){
+    Table.services-table{
+        margin-left:30%;
+        margin-top:0.5em;
+    }
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left -0.6em top -2.2em;
+    }
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: left bottom;
+        background-attachment: fixed;
+    }
+    .services-table>thead>tr>th{
+        font-size:16px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:12px;
+    }  
+    body.services-body {
+        background-image:none;
+    }
+}
+
+@media (min-width:1023px) and (max-width: 1092px){
+    Table.services-table{
+        margin-left:25%;
+        margin-top:0.5em;
+    }
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left 0.1em top -0.7em;
+    }
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: left bottom;
+        background-attachment: fixed;
+    }
+    body.services-body {
+        background-image: none;
+    }
+    .services-table>thead>tr>th{
+        font-size:16px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:12px;
+    }
+    
+}
+
+@media (min-width: 992px) and (max-width: 1022px){
+    Table.services-table{
+        margin-left:25%;
+        margin-top:1.2em;
+    }
+    body.services-body {
+        background-image: none;
     }
     .services-table>thead>tr>th{
         font-size:12px;
     }
     .services-table>tbody>tr>td{
-         font-size:8px;
+         font-size:10px;
     }
-    .services-row{
-        margin-left:-300px !important;
-        margin-top:50px;
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left 0.2em top 0.2em;
+    }
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: left bottom;
+        background-attachment: fixed;
     }
 }
 
-@media (min-width: 500px) and (max-width: 767px){ 
+/*Ipad Air*/
+@media (min-width: 769px) and (max-width: 991px){
+    body.services-body {
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-size:cover;
+        background-position:0;
+        background-repeat: none;
+        background-attachment: fixed;  
+    }
     Table.services-table{
-        margin-left:75%;
+        margin-left:9%;
+        margin-top:3em;
+    }
+    .leftDiv{
+        background-image: none;
+    }
+    .bottomSection {
+        background-image: none;
+    }
+    .services-table>thead>tr>th{
+        font-size:14px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:13px;
+    }
+}
+/*Ipad Mini*/
+@media (min-width: 766px) and (max-width: 768px){
+    body.services-body {
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-size:cover;
+        background-position:0;
+        background-repeat: none;
+        background-attachment: fixed;  
+    }
+    Table.services-table{
+        margin-left:10%;
+        margin-top:3em;
+    }
+    .leftDiv{
+        background-image: none;
+    }
+    .bottomSection {
+        background-image: none;
+    }
+    .services-table>thead>tr>th{
+        font-size:14px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:13px;
+    }
+}
+/*Phone Version*/
+@media (min-width: 731px) and (max-width: 765px) { 
+    html.servicesHtml{
+        height:100vh;
+        overflow-x: hidden;
+    }
+    body.services-body {
+        background-image:none;
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:auto 120%;
+    }
+    .services-table>thead>tr>th{
+        font-size:14px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:13px;
+    }
+    .services-row{
+        margin-left:-6.5em ;
+        margin-top:20px;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 730px) { 
+    html.servicesHtml{
+        height:100vh;
+        overflow-x: hidden;
+    }
+    body.services-body {
+        background-image:none;
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:auto 120%;
+    }
+    .services-table>thead>tr>th{
+        font-size:14px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:13px;
+    }
+    .services-row{
+        margin-left:-6.5em ;
+        margin-top:20px;
+    }
+    .leftDiv{
+        background-image: none;
+    }
+    .bottomSection {
+        background-image: none;
+    }
+}
+@media (min-width: 630px) and (max-width: 700px){ 
+    Table.services-table{
+        margin-left:72%;
         margin-top:-2em;
     }
     .services-table>th{
@@ -316,37 +525,64 @@ body.services-body {
          font-size:12px;
     }
     body.services-body {
-        background-image: url("../../Assets/Images/AboutUs.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-size:cover;
+        background-repeat: none;
+        background-position:0;
+        height:100vh;
+    }
+    .leftDiv{
+        background-image: none;
+    }
+    .bottomSection {
+        background-image: none;
+    }
+}
+@media (min-width: 528px) and (max-width: 630px){ 
+    Table.services-table{
+        margin-left:70%;
+        margin-top:-2em;
+    }
+    .services-table>th{
+        font-size:15px;
+    }
+     .services-table>tbody>tr>td{
+         font-size:12px;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-size:cover;
         background-position:0;
-     height:100vh;
+        background-repeat: none;
+        height:100vh;
+    }
+    .leftDiv{
+        background-image: none;
+    }
+    .bottomSection {
+        background-image: none;
     }
 }
 
-@media (min-width: 450px) and (max-width: 500px){ 
+@media (min-width: 451px) and (max-width: 528px){ 
     Table.services-table{
-        margin-left:90%;
+        margin-left:24em;
     }
     body.services-body {
         background-image: url("../../Assets/Images/AboutUs.png");
         background-size:cover;
         background-position:0;
-    
+        background-repeat: none;
+    }
+    .leftDiv{
+        background-image: none;
+    }
+    .bottomSection {
+        background-image: none;
     }
 }
 
-@media (min-width: 420px) and (max-width: 450px){ 
-    Table.services-table{
-        margin-left:95%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-size:cover;
-        background-position:0;
-    }
-}
-
-@media (max-width: 420px) { 
+@media (max-width: 451px) { 
     Table.services-table{
         margin-left:100%;
     }
@@ -354,20 +590,26 @@ body.services-body {
         background-image: url("../../Assets/Images/AboutUs.png");
         background-size:cover;
         background-position:0;
-       
+        background-repeat: none;
     }
       .services-table>tbody>tr>td{
          font-size:8px;
     }
     .services-row{
-        margin-left:-325px !important;
+        margin-left:-25.5em;
         margin-top:50px;
+    }
+    .leftDiv{
+        background-image: none;
+    }
+    .bottomSection {
+        background-image: none;
     }
 }
 
 
 /*Iphone XR*/
-@media (max-width: 415px) { 
+@media (max-width: 435px) { 
     Table.services-table{
         margin-left:100%;
     }
@@ -376,6 +618,7 @@ body.services-body {
         background-size:cover;
         background-position:0% 0%;
         background-attachment: fixed;
+        background-repeat: none;
         height:100vh;
     }
       .services-table>tbody>tr>td{
@@ -385,12 +628,12 @@ body.services-body {
         font-size:9px;
     }
     .services-row{
-        margin-left:-320px !important;
+        margin-left:-23.5em ;
         margin-top:50px;
     }
 }
 
-@media (max-width: 390px) { 
+@media (max-width: 400px) { 
     Table.services-table{
         margin-left:100%;
     }
@@ -399,6 +642,7 @@ body.services-body {
         background-size:cover;
         background-position:0% 0%;
         background-attachment: fixed;
+        background-repeat: none;
         height:100vh;
     }
       .services-table>tbody>tr>td{
@@ -408,7 +652,7 @@ body.services-body {
         font-size:9px;
     }
     .services-row{
-        margin-left:-310px !important;
+        margin-left:-310px;
         margin-top:50px;
     }
 }
@@ -421,6 +665,7 @@ body.services-body {
         background-image: url("../../Assets/Images/AboutUs.png");
         background-size:cover;
         background-position:0% 0%;
+        background-repeat: none;
     }
       .services-table>tbody>tr>td{
          font-size:8px;
@@ -428,9 +673,30 @@ body.services-body {
     .services-table>thead>tr>th{
         font-size:9px;
     }
-  
     .services-row{
-        margin-left:-295px !important;
+        margin-left:-21.5em;
         margin-top:35px;
     }
+}
+@media (max-width: 360px) { 
+    Table.services-table{
+        margin-left:100%;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/AboutUs.png");
+        background-size:cover;
+        background-position:0% 0%;
+        background-repeat: none;
+    }
+      .services-table>tbody>tr>td{
+         font-size:8px;
+    }
+    .services-table>thead>tr>th{
+        font-size:8px;
+    }
+    .services-row{
+        margin-left:-20.5em;
+        margin-top:35px;
+    }
+    
 }
