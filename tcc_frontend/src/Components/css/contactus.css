@@ -2,16 +2,27 @@
   src: url(fonts/AvenirNext.ttf);
   font-family: AveNext;
 }
-
-.contactUsBody{
-  background-image:url("../../Assets/Images/TTC\ CU3.png");
-  height:120vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position:0 0;  
-  overflow-x:hidden;
+html.contactUsHTML{
+  overflow:hidden;
 }
-
+body.contactUsBody {
+  overflow: hidden;
+}
+.leftSection {
+  background:  url("../../Assets/Images/contactus-left.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  background-position: left top -0.5em;
+  height: 100vh;
+}
+.bottomSection {
+  background:  url("../../Assets/Images/phoneview.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+  background-attachment: fixed;
+}
 .contactUs {
   margin-left: 50%;
   margin-top: 2.5%;
@@ -56,248 +67,603 @@ button.ant-btn.ant-btn-primary.formBtn.mt-2 {
 }
 
 
-
 /*RESPONSIVE*/
-
-@media (min-width: 1920px) {
- body.contactUsBody {
-    background-image: url("../../Assets/Images/TTC CU3.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position:0% 0%;  
-  }
-   .contactUs {
-    margin-left:50%;
-    margin-top: 6%;
-  } 
-  button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-    margin-left: 4.5%;
-  }
-}
-
-@media (min-width: 1800px ) and (max-width:1920px) {
-  body.contactUsBody {
-    background-image: url("../../Assets/Images/TTC CU3.png");
-    background-size: cover;
-    background-position:0% 0%; 
-  }
- .contactUs {
-    margin-left:40%;
-    margin-top: 6%;
-    width:150%;
-  }  
-  button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-    margin-left: 9%;
-  }
-}
-@media (min-width: 1600px ) and (max-width:1800px) {
-  body.contactUsBody {
-    background-image: url("../../Assets/Images/TTC CU3.png");
-    background-size: cover;
-    background-position:0% 0%; 
-  }
- .contactUs {
-    margin-left:40%;
-    margin-top: 7.5%;
-    width:140%;
-  }  
-  button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-    margin-left: 9%;
-  }
-  body.contactUsBody {
-    height: 120vh;
-}
-}
-
-@media (min-width: 1536px) {
-  body.contactUsBody {
-      height: 120vh;
-  }
-  html.contactUsHTML {
-      overflow-x: hidden;
-  }
-  .formTitle{
-    font-size:xx-large
-  }
-  .CuContent{
-    font-size:x-large;
-  }
-}
-
-@media (min-width: 1500px ) and (max-width:1600px) {
-  body.contactUsBody {
-    height: 120vh;
-}
-  body.contactUsBody {
-    background-image: url("../../Assets/Images/TTC CU3.png");
-    background-size: cover;
-    background-position:0% 0%; 
-  }
- .contactUs {
-    margin-left:40%;
-    margin-top: 8%;
-    width:100%;
-  }
-  button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-    margin-left: 6.5%;
-  }
-  .formTitle{
-    font-size:xx-large
-  }
-  .CuContent{
-    font-size:x-large;
-  }
-}
-
-@media (min-width: 1400px) and (max-width: 1499px) {
-  body.contactUsBody {
-    background-image: url("../../Assets/Images/TTC CU3.png");
-    background-size: cover;
-    background-position:0% 0%; 
-  }
-  .contactUs {
-    margin-left:40%;
-    margin-top: 8%;
-    width:150%;
-  }
-  .formTitle{
-    font-size:xx-large
-  }
-  .CuContent{
-    font-size:x-large;
-  }
-}
-
-@media (min-width: 1300px) and (max-width: 1400px) {
-  body.contactUsBody {
-    background-image: url("../../Assets/Images/TTC CU3.png");
-    background-size: cover;
-    background-position:0
-  }
- .contactUs {
-    margin-left:40%;
-    margin-top: 9%;
-    width:100%;
-  } 
-  button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-    margin-left: 5.5%;
-  }
-  .formTitle{
-    font-size:xx-large
-  }
-  .CuContent{
-    font-size:x-large;
-  }
-}  
-@media (min-width: 1281px) and (max-width: 1300px) {
-  body.contactUsBody {
-    background-image: url("../../Assets/Images/TTC CU3.png");
-    background-size: cover;
-    background-position:0
-  }
- .contactUs {
-    margin-left:40%;
-    margin-top: 14%;
-    width:100%;
-  }  
-  .contactUsDiv{
-    margin-top:-3.5em;
-  }
-}
-
- @media (min-width: 1224px) and (max-width: 1279px) {
-  body.contactUsBody {
-    background-image: url("../../Assets/Images/TTC CU3.png");
-    background-size: cover;
-    background-position:0
-  }
- .contactUs {
-    margin-left:40%;
-    margin-top: 14%;
-    width:100%;
-  }  
-  .contactUsDiv{
-    margin-top:-3.5em;
-  }
-}
-
-@media (min-width: 1093px) and (max-width: 1224px) {
-  body.contactUsBody {
-    background-image: url("../../Assets/Images/TTC CU3.png");
-    background-size: cover;
-    background-position:0
-  }
-  .contactUs {
-    margin-left:45%;
-    margin-top:8%;
-    width:90%;
-  }
-  button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-    margin-left: 2.5%;
-  }
-  .contactUsDiv{
-    margin-top:2em;
-  }
-  .CuContent{
-    font-size:large;
-  }
-} 
-
-@media (max-width: 1023px) { 
-  body.contactUsBody {
-    background-image: url("../../Assets/Images/AboutUs.png");
-    background-attachment: fixed;
-    background-size:cover;
-    background-position:0; 
-    height:auto; 
-  }
-}
- 
-
-/*Tablet*/
-@media (min-width: 1022px) and (max-width: 1092px) {
+@media (min-width:2101px) {
   html.contactUsHTML {
     overflow-x: hidden;
 }
   body.contactUsBody {
-    background-image: url("../../Assets/Images/AboutUs.png");
-    background-size: cover;
-    background-position:0
-   }
-  .contactUs {
-    margin-left:25%;
-    margin-top: 10%;
-    width:100%;
-  }
-  button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-    margin-left: 1%;
-  }
-  .CuContent{
-    font-size:x-large;
-  }
+    background-image: none;
+}
+   .leftSection {
+    background-image: url("../../Assets/Images/contactus-left.png");
+    background-size: 82%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left 1.6em top 0.5em;
+}
+  .bottomDiv{
+  background-image: url("../../Assets/Images/phoneview.png");
+  background-repeat: no-repeat;
+  background-size: 81%;
+  background-position: left bottom;
+  background-attachment: fixed;
+}
+.contactUs {
+  margin-left:49%;
+  margin-top: 7.5%;
+  width:75%;
+}
+button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+  margin-left: 5em;
+}
+.contactUsDiv{
+  margin-top: -5em;
+}
+.CuContent{
+  font-size:x-large;
+}
+.formTitle{
+  font-size: 3em;
+}
+}  
+
+@media (min-width:1919px) and (max-width: 2100px) {
+  html.contactUsHTML {
+    overflow-x: hidden;
+}
+  body.contactUsBody {
+    background-image: none;
+}
+   .leftSection {
+    background-image: url("../../Assets/Images/contactus-left.png");
+    background-size: 82%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left 1.6em top 1em;
+}
+  .bottomDiv{
+  background-image: url("../../Assets/Images/phoneview.png");
+  background-repeat: no-repeat;
+  background-size: 81%;
+  background-position: left bottom;
+  background-attachment: fixed;
+}
+.contactUs {
+  margin-left:49%;
+  margin-top: 7.5%;
+  width:75%;
+}
+button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+  margin-left: 5em;
+}
+.contactUsDiv{
+  margin-top: -5em;
+}
+.CuContent{
+  font-size:x-large;
+}
+.formTitle{
+  font-size: 3em;
+}
+}  
+@media (min-width: 1600px) and (max-width: 1919px) {
+  html.contactUsHTML {
+    overflow-x: hidden;
+}
+  body.contactUsBody {
+    background-image: none;
+}
+   .leftSection {
+    background-image: url("../../Assets/Images/contactus-left.png");
+    background-size: 82%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left 1.6em top -0.8em;
+}
+  .bottomDiv{
+  background-image: url("../../Assets/Images/phoneview.png");
+  background-repeat: no-repeat;
+  background-size: 81%;
+  background-position: left bottom;
+  background-attachment: fixed;
+}
+.contactUs {
+  margin-left:49%;
+  margin-top: 6%;
+  width:80%;
+}
+button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+  margin-left: 3.5em;
+}
+.contactUsDiv{
+  margin-top: -5em;
+}
+.CuContent{
+  font-size:x-large;
+}
+.formTitle{
+  font-size: 3em;
+}
+}  
+/* 1080px height */
+@media (min-width:1919px) and (max-width: 2100px) {
+  html.contactUsHTML {
+    overflow-x: hidden;
+}
+  body.contactUsBody {
+    background-image: none;
+}
+   .leftSection {
+    background-image: url("../../Assets/Images/contactus-left.png");
+    background-size: 82%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left 1.6em top 1em;
+}
+  .bottomDiv{
+  background-image: url("../../Assets/Images/phoneview.png");
+  background-repeat: no-repeat;
+  background-size: 81%;
+  background-position: left bottom;
+  background-attachment: fixed;
+}
+.contactUs {
+  margin-left:49%;
+  margin-top: 7.5%;
+  width:75%;
+}
+button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+  margin-left: 5em;
+}
+.contactUsDiv{
+  margin-top: -5em;
+}
+.CuContent{
+  font-size:x-large;
+}
+.formTitle{
+  font-size: 3em;
+}
+}  
+@media (min-width: 1600px) and (max-width: 1919px) {
+  html.contactUsHTML {
+    overflow-x: hidden;
+}
+  body.contactUsBody {
+    background-image: none;
+}
+   .leftSection {
+    background-image: url("../../Assets/Images/contactus-left.png");
+    background-size: 82%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left 1.6em top -0.8em;
+}
+  .bottomDiv{
+  background-image: url("../../Assets/Images/phoneview.png");
+  background-repeat: no-repeat;
+  background-size: 81%;
+  background-position: left bottom;
+  background-attachment: fixed;
+}
+.contactUs {
+  margin-left:49%;
+  margin-top: 6%;
+  width:80%;
+}
+button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+  margin-left: 3.5em;
+}
+.contactUsDiv{
+  margin-top: -5em;
+}
+.CuContent{
+  font-size:x-large;
+}
+.formTitle{
+  font-size: 3em;
+}
+}  
+
+@media (min-width: 1536px) and (max-width: 1600px) {
+  html.contactUsHTML {
+    overflow-x: hidden;
+}
+  body.contactUsBody {
+    background-image: none;
+}
+   .leftSection {
+    background-image: url("../../Assets/Images/contactus-left.png");
+    background-size: 82%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left 0.9em top 0.9em;
+}
+  .bottomDiv{
+  background-image: url("../../Assets/Images/phoneview.png");
+  background-repeat: no-repeat;
+  background-size: 81%;
+  background-position: left bottom;
+  background-attachment: fixed;
+}
+.contactUs {
+  margin-left:49%;
+  margin-top: 7.5%;
+  width:80%;
+}
+button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+  margin-left: 1.4em;
+}
+.contactUsDiv{
+  margin-top: -5em;
+}
+.CuContent{
+  font-size:large;
+}
+.formTitle{
+  font-size: xx-large;
+}
+}  
+
+
+@media (min-width: 1520px) and (max-width: 1535px) {
+  html.contactUsHTML {
+    overflow-x: hidden;
+}
+  body.contactUsBody {
+    background-image: none;
+}
+   .leftSection {
+    background-image: url("../../Assets/Images/contactus-left.png");
+    background-size: 82%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left 0.9em top 1em;
+}
+  .bottomDiv{
+  background-image: url("../../Assets/Images/phoneview.png");
+  background-repeat: no-repeat;
+  background-size: 81%;
+  background-position: left bottom;
+  background-attachment: fixed;
+}
+.contactUs {
+  margin-left:49%;
+  margin-top: 7.5%;
+  width:80%;
+}
+button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+  margin-left: 1.4em;
+}
+.contactUsDiv{
+  margin-top: -5em;
+}
+.CuContent{
+  font-size:large;
+}
+.formTitle{
+  font-size: xx-large;
+}
+}  
+
+@media (min-width: 1350px) and (max-width: 1520px) {
+  html.contactUsHTML {
+    overflow-x: hidden;
+}
+  body.contactUsBody {
+    background-image: none;
+}
+   .leftSection {
+    background-image: url("../../Assets/Images/contactus-left.png");
+    background-size: 82%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left 0.9em top 0.5em;
+}
+  .bottomDiv{
+  background-image: url("../../Assets/Images/phoneview.png");
+  background-repeat: no-repeat;
+  background-size: 81%;
+  background-position: left bottom;
+  background-attachment: fixed;
+}
+.contactUs {
+  margin-left:49%;
+  margin-top: 7%;
+  width:80%;
+}
+button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+  margin-left: 0.6em;
+}
+.contactUsDiv{
+  margin-top: -5em;
+}
+.CuContent{
+  font-size:medium;
+}
+.formTitle{
+  font-size: x-large;
+}
+}  
+
+@media (min-width: 1281px) and (max-width: 1349px) {
+  html.contactUsHTML {
+    overflow-x: hidden;
+}
+  body.contactUsBody {
+    background-image: none;
+}
+   .leftSection {
+    background-image: url("../../Assets/Images/contactus-left.png");
+    background-size: 82%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left 1.2em top 0.5em;
+}
+  .bottomDiv{
+  background-image: url("../../Assets/Images/phoneview.png");
+  background-repeat: no-repeat;
+  background-size: 81%;
+  background-position: left bottom;
+  background-attachment: fixed;
+}
+.contactUs {
+  margin-left:49%;
+  margin-top: 7%;
+  width:80%;
+}
+button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+  margin-left: -0.5%;
+}
+.contactUsDiv{
+  margin-top: -5em;
+}
+.CuContent{
+  font-size:medium;
+}
+.formTitle{
+  font-size: x-large;
+}
+}
+@media (min-width: 1278px) and (max-width: 1280px) {
+  html.contactUsHTML {
+    overflow-x: hidden;
+}
+  body.contactUsBody {
+    background-image: none;
+}
+   .leftSection {
+    background-image: url("../../Assets/Images/contactus-left.png");
+    background-size: 82%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left 1.2em top 0.2em;
+}
+  .bottomDiv{
+  background-image: url("../../Assets/Images/phoneview.png");
+  background-repeat: no-repeat;
+  background-size: 81%;
+  background-position: left bottom;
+  background-attachment: fixed;
+}
+.contactUs {
+  margin-left:49%;
+  margin-top: 6.5%;
+  width:80%;
+}
+button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+  margin-left: -0.5%;
+}
+.contactUsDiv{
+  margin-top: -5em;
+}
+.CuContent{
+  font-size:medium;
+}
+.formTitle{
+  font-size: x-large;
+}
+} 
+
+@media (min-width: 1224px) and (max-width: 1279px) {
+  html.contactUsHTML {
+    overflow-x: hidden;
+}
+  body.contactUsBody {
+    background-image: none;
+}
+   .leftSection {
+    background-image: url("../../Assets/Images/contactus-left.png");
+    background-size: 82%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left 1.2em top 0.6em;
+}
+  .bottomDiv{
+  background-image: url("../../Assets/Images/phoneview.png");
+  background-repeat: no-repeat;
+  background-size: 81%;
+  background-position: left bottom;
+  background-attachment: fixed;
+}
+.contactUs {
+  margin-left:49%;
+  margin-top: 6.8%;
+  width:80%;
+}
+button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+  margin-left: -1%;
+}
+.contactUsDiv{
+  margin-top: -5em;
+}
+.CuContent{
+  font-size:medium;
+}
+.formTitle{
+  font-size: x-large;
+}
+} 
+
+@media (min-width: 1093px) and (max-width: 1224px) {
+  html.contactUsHTML {
+    overflow-x: hidden;
+}
+  body.contactUsBody {
+    background-image: none;
+}
+   .leftSection {
+    background-image: url("../../Assets/Images/contactus-left.png");
+    background-size: 82%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left 1.4em top 0.6em;
+}
+  .bottomDiv{
+  background-image: url("../../Assets/Images/phoneview.png");
+  background-repeat: no-repeat;
+  background-size: 81%;
+  background-position: left bottom;
+  background-attachment: fixed;
+}
+.contactUs {
+  margin-left:49%;
+  margin-top: 8%;
+  width:80%;
+}
+button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+  margin-left: -2%;
+}
+.contactUsDiv{
+  margin-top: -5em;
+}
+.CuContent{
+  font-size:medium;
+}
+.formTitle{
+  font-size: x-large;
+}
+}
+
+@media (min-width: 1093px) and (max-width: 1224px) {
+  html.contactUsHTML {
+    overflow-x: hidden;
+}
+  body.contactUsBody {
+    background-image: none;
+}
+   .leftSection {
+    background-image: url("../../Assets/Images/contactus-left.png");
+    background-size: 82%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left 1.4em top 0.6em;
+}
+  .bottomDiv{
+  background-image: url("../../Assets/Images/phoneview.png");
+  background-repeat: no-repeat;
+  background-size: 81%;
+  background-position: left bottom;
+  background-attachment: fixed;
+}
+.contactUs {
+  margin-left:49%;
+  margin-top: 6.5%;
+  width:80%;
+}
+button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+  margin-left: -2%;
+}
+.contactUsDiv{
+  margin-top: -5em;
+}
+.CuContent{
+  font-size:medium;
+}
+.formTitle{
+  font-size: x-large;
+}
 }
 
 /*Tablet*/
-@media (min-width: 991px) and (max-width: 1022px) {
-    
+@media (min-width: 1023px) and (max-width: 1092px) {
+  html.contactUsHTML {
+    overflow-x: hidden;
+}
   body.contactUsBody {
-      background-image: url("../../Assets/Images/comingsoon.png");
-      background-position:0;  
-  }
+    background-image: none;
+}
+   .leftSection {
+    background-image: url("../../Assets/Images/contactus-left.png");
+    background-size: 82%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left 1.7em top 1.7em;
+}
+  .bottomDiv{
+  background-image: url("../../Assets/Images/phoneview.png");
+  background-repeat: no-repeat;
+  background-size: 81%;
+  background-position: left bottom;
+  background-attachment: fixed;
+}
+.contactUs {
+  margin-left:49%;
+  margin-top: 8%;
+  width:80%;
+}
+button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+  margin-left: -5%;
+}
+.contactUsDiv{
+  margin-top: -5em;
+}
+.CuContent{
+  font-size:medium;
+}
+.formTitle{
+  font-size: x-large;
+}
+}
+
+/*Tablet*/
+@media (min-width: 992px) and (max-width: 1022px) {
+    
+  .leftSection {
+    background-image: url("../../Assets/Images/contactus-left.png");
+    background-size: 82%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left 1.7em top 2.5em;
+}
+  .bottomDiv{
+  background-image: url("../../Assets/Images/phoneview.png");
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: left bottom;
+  background-attachment: fixed;
+}
   .contactUs {
-    margin-left:25%;
-    margin-top: 10%;
-    width:200%;
+    margin-left:49%;
+    margin-top: 9%;
+    width:80%;
   }
   button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-    margin-left: 1%;
+    margin-left: -6%;
   }
   .contactUsDiv{
     margin-top: -5em;
   }
   .CuContent{
-    font-size:x-large;
+    font-size:medium;
   }
+  .formTitle{
+    font-size: x-large;
+  }
+  body.contactUsBody {
+    background-image: none;
+}
 }
 
 /* Ipad air version */
