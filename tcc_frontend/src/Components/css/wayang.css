@@ -65,27 +65,64 @@ img#wayangPic {
         margin-top:-5.5em;
      } 
     .wayangContent {
-        height:385px;
+        height:430px;
         width:95%;
-        font-size:1.7em;
+        font-size:1.8em;
+    }
+    .wayangCarousel{
+        margin-top:3.5em;
+    }
+    .wayangTitle{
+        font-size:3.5em;
+    }
+
+}
+@media (min-width: 1600px) and (max-width: 1919px) {
+    img#wayangPic {
+        width: 77%;
+}
+    .rightDiv {
+        background-attachment: fixed;
+        background-size: 58%;
+        background-position: right top 1em;
+    }
+    .wayangContent {
+        height:365px;
+        width:95%;
+        font-size:1.5em;
+    }
+    .wayangCarousel{
+        width:90%;
+       margin-left:8em;
+       margin-top: 1.3em;
     }
 }
-@media (min-width: 1536px) and (max-width: 1919px) {
+@media (min-width: 1536px) and (max-width: 1600px) {
     img#wayangPic {
-        width: 80%;
-        margin-top: 4em;
+        width: 81%;
+        margin-top: 0.9em;
 }
     .wayangContent {
         height:365px;
         width:95%;
         font-size:1.5em;
     }
+    .wayangCarousel{
+        width:100%;
+       margin-left:7em
+    }
 }
 @media (min-width: 1224px) and (max-width: 1536px) {
-    .ttcContent {
+    .wayangContent {
         width:95%
     }
 }
+@media (min-width: 1278px) and (max-width: 1280px) {
+    .wayangContent {
+        height:225px;
+        width:95%;
+    }
+} 
 
 /*w min 600px*/
 @media (min-width: 1093px) and (max-width: 1224px) {
@@ -151,9 +188,6 @@ img#wayangPic {
         margin-bottom: 0;
         margin-top:2em;
     }
-    .wayangTitle {
-        font-size: 22px;
-    }
     .wayangCarousel{
         width: 100%;
         float:none;
@@ -171,7 +205,7 @@ img#wayangPic {
     .wayangCarousel{
         width: 100%;
         margin-left: -4em;
-        margin-top: 4em;
+        margin-top: 5em;
         float:none;
     }
     .wayangTitle {
@@ -295,7 +329,7 @@ img#wayangPic {
     }
     .wayangCarousel{
         width: 100%;
-        margin-left: -1.5em;
+        margin-left: -3em;
         margin-top: 8%;
         float:none;
     } 
@@ -317,7 +351,9 @@ img#wayangPic {
         margin-bottom: 0;
         margin-top:2em;
     }
-
+    .wayangTitle{
+        margin-top:1.6em;
+    }
     body.wayangBody {
         background-image: url("../../Assets/Images/phoneview.png");
         background-repeat: no-repeat;  
@@ -449,7 +485,7 @@ img#wayangPic {
 
 @media(max-width:435px){
     html.wayangHtml{
-        height:220vh;
+        height:230vh;
         overflow-y:auto;
         overflow-x:hidden;
     }
@@ -548,10 +584,11 @@ img#wayangPic {
     }
     .wayangCarousel{
         margin-left: 3.6em;
+        margin-top:2.5em;
     }   
     .rightDiv{
         background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 42%;
+        background-position: 130% 40%;
         background-attachment:unset;
         background-size:100% 50%;
     }

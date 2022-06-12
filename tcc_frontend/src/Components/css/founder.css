@@ -38,46 +38,15 @@ body.founderBody {
     font-family: Calibri;
     font-size: 16px;
     margin-left: 92px;
+    height: 300px;
+    overflow: auto;
     padding-right: 20px;
-    height: 20em;
-    overflow-y: scroll;
 }
 .founderTitle{
     letter-spacing: 5px;
  } 
 
 /* Responsive*/
-
-
-@media (min-width: 3840px) {
-    .founderPic {
-        margin-top: 5%;
-    }
-    .firstContent {
-        margin-top: 3%;
-    }
-    .founderContent {
-        font-size: 3em;
-    }
-    .title1,title2 {
-        font-size: 5em;
-    }
-    .founderTitle {
-        font-size: 5.5em;
-        letter-spacing: 5px;
-    }
-    .bottomDivision {
-        background-position: left bottom ;
-        background-size: contain;
-        background-attachment: fixed;
-    }
-    .rightDivision {
-        background-attachment: fixed;
-        background-size: 60%;
-        background-position: right top 1.5em;
-    }
-}
-
 @media (min-width: 2101px) {
     .firstContent {
         margin-top: 3%;
@@ -108,14 +77,16 @@ body.founderBody {
         background-position: right bottom 2em;
     }
     .founderPic {
-        margin-top: -3em;
+        margin-top: 0.9em;
     }
     .bottomDivision {
         background-size: 100% 100%;
     }
     .founderContent {
-        height: 14em;
-        font-size:1.7em;
+        height:510px;
+        width:95%;
+        font-size:1.8em;
+        margin-top:1.5em;
     }
     .bottomDivision {
         background-position: left bottom ;
@@ -126,6 +97,9 @@ body.founderBody {
         background-attachment: fixed;
         background-size: 60%;
         background-position: right top 1.5em;
+    }
+    .founderTitle{
+        font-size:3em;
     }
 } 
 
@@ -138,12 +112,20 @@ body.founderBody {
     }
     .rightDivision {
         background-attachment: fixed;
-        background-size: 60%;
-        background-position: right top 1.5em;
+        background-size: 58%;
+        background-position: right top 1em;
+    }
+    .founderPic {
+        margin-top: 1em;
+    }
+    .founderContent {
+        height:365px;
+        width:95%;
+        font-size:1.5em;
     }
 }
 
-@media (min-width: 1536px)and (max-width:1299px) {
+@media (min-width: 1536px)and (max-width:1600px) {
     body.founderBody {
         height: 120vh;
     }
@@ -154,17 +136,12 @@ body.founderBody {
         float: right;
         width: 71%;
         margin-right: 100px;
-        margin-top:1.2%;
+        margin-top:-1.8em;
     }
     .bottomDivision {
         background-position: left bottom ;
         background-size: contain;
         background-attachment: fixed;
-    }
-    .rightDivision {
-        background-attachment: fixed;
-        background-size: 60%;
-        background-position: right top 1em;
     }
     .founderContent {
         height:365px;
@@ -177,7 +154,7 @@ body.founderBody {
 /* 13.9-14.9inch w height:796 from 1278px */
 @media (min-width: 1520px) and (max-width: 1535px) {
     .founderContent {
-        height:230px;
+        height:280px;
         width:95%;
     }
     .founderPic {
@@ -207,7 +184,7 @@ body.founderBody {
         width:95%;
     }
     .founderPic {
-        margin-top:-3.3% ;
+        margin-top:-4.2% ;
     }
     body.founderBody{
         height:120vh;
@@ -243,7 +220,7 @@ body.founderBody {
     }
     .rightDivision {
         background-attachment: fixed;
-        background-size: 58.8%;
+        background-size: 60.1%;
         background-position: right top 1em;
     }
     .title1,.title2,.founderTitle{
@@ -459,7 +436,7 @@ body.founderBody {
 /* Ipad air version */
 @media (min-width: 769px) and ( max-width:991px){ 
     html.founderHtml {
-        height: 260vh;
+        height: 270vh;
     }
     .founderContent {
         font-family: Calibri;
@@ -492,8 +469,6 @@ body.founderBody {
     }
     .founderPicDesktop {
         visibility: hidden;
-        height: 0;
-        width: 0;
     }
      .founderPicMobile {
         visibility: visible;
@@ -503,6 +478,7 @@ body.founderBody {
     .founderImage{
         width:70%;
         margin-left:6.5em;
+        margin-top:3em;
     }
 }
 
@@ -625,10 +601,6 @@ body.founderBody {
         margin-bottom: 0;
         margin-top:2em;
     }
-    #founderTitle2 {
-        margin-left:-0em;
-        margin-right:-0em;
-    } 
     .bottomDivision {
         background-image: none;
     }
@@ -657,7 +629,7 @@ body.founderBody {
     .founderImage{
         width:70%;
         margin-left:6em;
-        margin-top:2em;
+        margin-top:3em;
     } 
 }
 
@@ -700,17 +672,18 @@ body.founderBody {
     } 
     .rightDivision{
         background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 22%;
+        background-position: 130% 25%;
         background-attachment:unset;
         background-size:100% 65%;
     }
     .founderImage{
         width:70%;
-        margin-top:2em;
+        margin-top:1.8em;
         margin-left:6em;
     }
     .founderTitle{
        letter-spacing: 5px;
+       margin-top:-1.3em;
     } 
     .founderPicDesktop {
         visibility: hidden;
@@ -722,6 +695,11 @@ body.founderBody {
         height: auto;
         width: auto;  
     } 
+    #founderTitle2 {
+        margin-left:-0em;
+        margin-right:-0em;
+        display: block;
+    }
 }
 
 @media (min-width: 528px) and (max-width: 630px) { 
@@ -1007,10 +985,11 @@ body.founderBody {
         visibility: visible;
         height: auto;
         width: auto;  
+        margin-top:-0.5em;
     } 
     .rightDivision{
         background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 42%;
+        background-position: 130% 40%;
         background-attachment:unset;
         background-size:100% 50%;
     }
