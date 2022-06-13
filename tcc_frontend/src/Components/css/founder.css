@@ -508,7 +508,10 @@ body.founderBody {
         background-image: none;
     }
     .rightDivision{
-        background-image:none;
+        background-image: url("../../Assets/Images/brush1.png");
+        background-position: 130% 27%;
+        background-attachment:unset;
+        background-size:100% 65%;
     }
     body.founderBody {
         background-image: url("../../Assets/Images/comingsoon.png");
@@ -619,18 +622,22 @@ body.founderBody {
         visibility: visible;
         height: auto;
         width: auto;  
+        margin-top:1.7em;
     } 
     .rightDivision{
         background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 22%;
+        background-position: 130% 29%;
         background-attachment:unset;
         background-size:100% 65%;
     }
     .founderImage{
         width:70%;
         margin-left:6em;
-        margin-top:3em;
+        margin-top:1.2em;
     } 
+    .founderTitle{
+      margin-top:1em;
+    }
 }
 
 @media (min-width: 630px) and (max-width: 700px) { 
@@ -742,10 +749,11 @@ body.founderBody {
         visibility: visible;
         height: auto;
         width: auto;  
+        margin-top:2em;
     } 
     .rightDivision{
         background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 22%;
+        background-position: 130% 28%;
         background-attachment:unset;
         background-size:100% 60%;
     }
@@ -757,7 +765,7 @@ body.founderBody {
 
 @media (min-width: 451px) and (max-width: 528px) {
     html.founderHtml{
-        height:315vh;
+        height:380vh;
     }
     .founderContent {
         font-family: Calibri;
@@ -773,6 +781,7 @@ body.founderBody {
         margin-left:-0em;
         margin-right:-0em;
         display: block;
+        font-size:1.7em;
     } 
     .founderTitle {
         margin-top: -1.5em;
@@ -795,11 +804,11 @@ body.founderBody {
         visibility: visible;
         height: auto;
         width: auto;  
-        margin-top: 3em;
+        margin-top: 1.5em;
     } 
     .rightDivision{
         background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 28%;
+        background-position: 130% 23%;
         background-attachment:unset;
         background-size:100% 55%;
     }
@@ -896,14 +905,14 @@ body.founderBody {
     } 
     .rightDivision{
         background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 24%;
+        background-position: 130% 30%;
         background-attachment:unset;
         background-size:100% 40%;
     }
     .founderImage{
         width:70%;
         margin-left:5em;
-        margin-top:3%;
+        margin-top:2.5%;
     }
 }
 
@@ -939,6 +948,7 @@ body.founderBody {
         visibility: visible;
         height: auto;
         width: auto;  
+      
     } 
     .rightDivision{
         background-image: url("../../Assets/Images/brush1.png");
@@ -949,7 +959,7 @@ body.founderBody {
     .founderImage{
         width:70%;
         margin-left:5em;
-        margin-top: 1.3em;
+        margin-top: 1.5em;
     }
 }
 
@@ -989,7 +999,7 @@ body.founderBody {
     } 
     .rightDivision{
         background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 40%;
+        background-position: 130% 30%;
         background-attachment:unset;
         background-size:100% 50%;
     }
@@ -1034,7 +1044,7 @@ body.founderBody {
     } 
     .rightDivision{
         background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 33%;
+        background-position: 130% 27%;
         background-attachment:unset;
         background-size:100% 50%;
     }

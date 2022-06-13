@@ -64,20 +64,22 @@ img#carouselPic {
     width: 70%;
     margin-right: 100px;
 }
-/* .carousel-control-prev,.carousel-control-next {
+
+.carousel-control-prev,.carousel-control-next {
     display: none;
 }
+
 .carousel-indicators button {
     height: 7px !important;
     width: 7px !important;
     margin: 0 10px !important;
     border-radius: 100%;
-    background-color: white !important;
+    background-color:transparent!important;
 }
 .carousel-indicators {
     justify-content: right;
     margin-right: 20% !important;
-} */
+} 
 .rightDiv {
     background:  url("../../Assets/Images/bg-rightSide.png");
     background-repeat: no-repeat;
@@ -277,9 +279,9 @@ img#carouselPic {
         font-size: 1.8em;
     }
     .rightDiv {
-        background-size: 57%;
+        background-size: 55%;
         background-attachment: fixed;
-        background-position: right top 1em;
+        background-position: right top 1.5em;
     }
     .bottomDiv {
         background-size: contain;
@@ -427,14 +429,17 @@ img#carouselPic {
     .firstContentText {
         margin-left: 6.7em;
     }
-    .rightDiv{
-        background-image:none;
-    }
     .bottomDiv {
         background-image: none;
     }
     .ttcTitle{
         font-size:2.7em;
+    }
+    .rightDiv{
+        background-image: url("../../Assets/Images/brush1.png");
+        background-position: 130% 20%;
+        background-attachment:unset;
+        background-size:100% 65%;
     }
 }
 
@@ -483,8 +488,11 @@ img#carouselPic {
     .firstContentText {
         margin-left: 6.7em;
     }
-    .rightDiv,.bottomDiv{
-        background-image:none;
+    .rightDiv{
+        background-image: url("../../Assets/Images/brush1.png");
+        background-position: 130% 27%;
+        background-attachment:unset;
+        background-size:100% 65%;
     }
     .bottomDiv {
         background-image: none;
@@ -592,18 +600,23 @@ img#carouselPic {
         visibility: visible;
         height: auto;
         width: auto;  
+        margin-top:-1.4em;
     } 
     .firstContentText {
         margin-left: 6em;
     }
     .rightDiv{
         background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 22%;
+        background-position: 130% 29%;
         background-attachment:unset;
         background-size:100% 65%;
     }
     .bottomDiv {
         background-image: none;
+    }
+    .ttcTitle{
+        font-size:28px;
+        margin-top:1em;
     }
 }
 
@@ -614,7 +627,8 @@ img#carouselPic {
         overflow-x:hidden;
     }
     .ttcTitle{
-        margin-top:1.6em;
+        margin-top:1em;
+        font-size:28px;
     }
     .ttcContent {
         font-family: Calibri;
@@ -649,7 +663,7 @@ img#carouselPic {
         visibility: visible;
         height: auto;
         width: auto;  
-        margin-top: -1em;
+        margin-top: -0.6em;
     } 
     .rightDiv{
         background-image: url("../../Assets/Images/brush1.png");
@@ -701,11 +715,11 @@ img#carouselPic {
         visibility: visible;
         height: auto;
         width: auto;  
-        margin-top: -2.5em;
+        margin-top: -1.3em;
     } 
     .rightDiv{
         background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 22%;
+        background-position: 130% 28%;
         background-attachment:unset;
         background-size:100% 60%;
     }
@@ -714,12 +728,16 @@ img#carouselPic {
     }
     .ttcTitle {
         margin-top: -1.5em;
+        font-size:25.2px;
+    }
+    .title1,.title2{
+        font-size:1.8em;
     }
 }
 
 @media (min-width: 451px) and (max-width: 528px) {
     html.ttcHtml{
-        height:190vh;
+        height:220vh;
         overflow-y:auto;
         overflow-x:hidden;
     }
@@ -757,10 +775,11 @@ img#carouselPic {
         visibility: visible;
         height: auto;
         width: auto;  
+        margin-top: -1.5em;
     } 
     .rightDiv{
         background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 28%;
+        background-position: 130% 23%;
         background-attachment:unset;
         background-size:100% 55%;
     }
@@ -769,6 +788,9 @@ img#carouselPic {
     }
     .ttcTitle {
         margin-top: -1.5em;
+    }
+    .title1,.title2{
+        font-size:1.7em;
     }
 }
 
@@ -811,7 +833,7 @@ img#carouselPic {
         visibility: visible;
         height: auto;
         width: auto;  
-        margin-top: -0.5em;
+        margin-top: -0.4em;
     } 
     .rightDiv{
         background-image: url("../../Assets/Images/brush1.png");
@@ -829,13 +851,13 @@ img#carouselPic {
         margin-top: -1.5em;
     }
     .title1,.title2{
-        font-size:1.8em;
+        font-size:1.6em;
     }
 }
 
 @media (max-width: 435px) { 
     html.ttcHtml{
-        height:180vh;
+        height:166vh;
         overflow-y: auto;
         overflow-x:hidden;
     }
@@ -868,15 +890,17 @@ img#carouselPic {
         visibility: hidden;
         height: 0;
         width: 0;
+        margin-top:0.5em;
     }
      .carouselMobile {
         visibility: visible;
         height: auto;
         width: auto;  
+        margin-top:-1em;
     } 
     .rightDiv{
         background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 24%;
+        background-position: 130% 22%;
         background-attachment:unset;
         background-size:100% 40%;
     }
@@ -893,6 +917,7 @@ img#carouselPic {
     }
     .firstContentText {
         margin-left: 5em !important;
+        margin-top:-1em;
     }
     .ttcContent {
         font-family: Calibri;
@@ -925,6 +950,7 @@ img#carouselPic {
         visibility: visible;
         height: auto;
         width: auto;  
+        margin-top: 0em;
     } 
     .rightDiv{
         background-image: url("../../Assets/Images/brush1.png");
@@ -935,14 +961,17 @@ img#carouselPic {
     .bottomDiv {
         background-image: none;
     }
-    .title1,.title2{
-        font-size:1.8em;
+    .title1{
+        margin-top:-2em;
+    }
+    .title2{
+        font-size:1.6em;
     }
 }
 
 @media (max-width: 380px) { 
     html.ttcHtml{
-        height:230vh;
+        height:220vh;
         overflow-y: auto;
         overflow-x:hidden;
     }
@@ -983,6 +1012,7 @@ img#carouselPic {
         visibility: visible;
         height: auto;
         width: auto;  
+        margin-top:-0.7em;
     } 
     .rightDiv{
         background-image: url("../../Assets/Images/brush1.png");

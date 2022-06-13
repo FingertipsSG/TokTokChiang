@@ -27,7 +27,7 @@ function Wayang() {
                                 <h2 className="title2" id="Title2">	CHIANG WAYANG</h2>
                                 <br />
                                 <br />
-                                <h3 className="wayangTitle"> How We Started? </h3>
+                                <h3 className="wayangTitle"> How We Started </h3>
                             </div>
                             <div className="carouselMobile">
                                 <Carousel variant="dark" className="slide wayangCarousel" fade>
