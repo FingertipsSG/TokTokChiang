@@ -17,11 +17,15 @@ const onErrorHandler = (err) => {
 
 export async function getProducts(catid, parameters = {}) {
   const url = baseUrl + `/getProducts?categoryId=${catid}`;
-  let params = {};
-  params.params = parameters;
   
   try {
-    const res = await axios.get(url, params);
+    const res = await axios({
+      method: "GET",
+      url: url,
+      headers: {
+        "Access-Control-Allow-Origin": "*"
+      },
+    });
     return res.data;
   } catch (e) {
     // console.log("[getProducts error]");
