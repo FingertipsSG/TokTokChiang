@@ -24,7 +24,7 @@ function Ttc() {
 							<div className="firstContentText">
 								<h2 className="title1">TOK</h2>
 								<h2 className="title1">	TOK</h2>
-								<h2 className="title2">	CHIANG OPERA</h2>
+								<h2 className="title2" id="Title2">	CHIANG OPERA</h2>
 								<br />
 								<br />
 								<h3 className="ttcTitle"> Who Are We </h3>
@@ -66,8 +66,6 @@ function Ttc() {
 										Some of its clients include the Ministry of Education, National Heritage Board and the National Library Board.
 										Nick strongly believes that Chinese Opera is more than just an art form.
 										Recognising the importance of preserving and keeping this traditional performing art alive,
-										<br />
-										<br />
 										Nick hopes to impart traditional values and beliefs through the stories portrayed in Chinese opera,
 										to future generations. In 2017, Nick took over the helm as the troupe owner of Lao Sai Tao Yuan
 										Teochew Opera Troupe under the umbrella of this non-profit entity.

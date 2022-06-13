@@ -61,6 +61,7 @@ img#lstyPic {
         height:365px;
         width:95%;
         font-size:1.5em;
+        margin-top:0.6em;
     }
     .lstyHeader,.lstyHeader2{
         font-size:30px;
@@ -69,8 +70,9 @@ img#lstyPic {
         font-size:2.2em;
     }
     .lstyCarousel{
-        margin-top: 1.35em;
-        width:115%;
+        margin-top: -0.6em;
+        width:100%;
+        margin-left:1.7em;
     }
 }
 @media (min-width: 1536px) and (max-width: 1600px) {
@@ -147,7 +149,7 @@ img#lstyPic {
         font-size:1.8em;
     }
     .lstyCarousel{
-        margin-top: 1.5em;
+        margin-top: 1.2em;
     }
 }
 @media (min-width: 1093px) and (max-width: 1224px) {
@@ -508,8 +510,7 @@ img#lstyPic {
         margin-top:2em;
     }
     .lstyCarousel{
-        width: 100%;
-        margin-left: 12%;
+        width: 96%;
         margin-top: 2.5em;
         float:none;
     }
@@ -537,6 +538,15 @@ img#lstyPic {
         margin-top: 2.5em;
         float:none;
     }
+    .lstyHeader{
+        font-size:1.7em;
+    }
+    .lstyHeader2{
+        font-size:1.6em;
+    }
+    .lstyTitle{
+        margin-top:0.2em;
+    }
 }
 @media(max-width:360px){
     html.lstyHtml{
@@ -545,6 +555,16 @@ img#lstyPic {
         overflow-x:hidden;
     }
     .lstyCarousel{
-        margin-top: 2.5em;
+        margin-top: 2.4em;
     } 
+    .lstyHeader{
+        font-size:1.7em;
+    }
+    .lstyHeader2{
+        font-size:1.6em;
+        margin-top:1.7em;
+    }
+    .lstyTitle{
+        font-size:24px;
+    }
 }

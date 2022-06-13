@@ -64,7 +64,7 @@ img#carouselPic {
     width: 70%;
     margin-right: 100px;
 }
-.carousel-control-prev,.carousel-control-next {
+/* .carousel-control-prev,.carousel-control-next {
     display: none;
 }
 .carousel-indicators button {
@@ -77,7 +77,7 @@ img#carouselPic {
 .carousel-indicators {
     justify-content: right;
     margin-right: 20% !important;
-}
+} */
 .rightDiv {
     background:  url("../../Assets/Images/bg-rightSide.png");
     background-repeat: no-repeat;
@@ -277,9 +277,9 @@ img#carouselPic {
         font-size: 1.8em;
     }
     .rightDiv {
-        background-size: 55%;
+        background-size: 57%;
         background-attachment: fixed;
-        background-position: right top 1.5em;
+        background-position: right top 1em;
     }
     .bottomDiv {
         background-size: contain;
@@ -491,10 +491,6 @@ img#carouselPic {
     }
     .ttcTitle{
         font-size:2.7em;
-    }
-    .carousel-indicators {
-        margin-right: 15% !important;
-        margin-bottom: 2% !important;
     }
 }
 
@@ -839,7 +835,7 @@ img#carouselPic {
 
 @media (max-width: 435px) { 
     html.ttcHtml{
-        height:220vh;
+        height:180vh;
         overflow-y: auto;
         overflow-x:hidden;
     }
@@ -994,6 +990,7 @@ img#carouselPic {
         background-attachment:unset;
         background-size:100% 50%;
     }
+    
 }
 
 @media (max-width: 360px) { 
@@ -1032,5 +1029,11 @@ img#carouselPic {
         height: auto;
         width: auto;  
     } 
+    /* .ttcCarousel.carousel-indicators {
+        justify-content: right;
+        margin-left: 3em !important;
+        margin-right: 0;
+        margin-bottom: 0;
+    } */
 }
 

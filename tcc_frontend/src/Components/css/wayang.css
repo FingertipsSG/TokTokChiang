@@ -262,10 +262,6 @@ img#wayangPic {
     .bottomDiv {
         background-image: none;
     }
-    .carousel-indicators {
-        margin-right: 15% !important;
-        margin-bottom: 2% !important;
-    }
 } 
 
 /*mobile version*/
@@ -471,10 +467,6 @@ img#wayangPic {
         margin-top: 8%;
         float:none;
     }
-    .carousel-indicators {
-        margin-right: 25% !important;
-        margin-bottom: 2% !important;
-    }
     #Title2 {
         display: block;
     }
@@ -514,10 +506,6 @@ img#wayangPic {
         margin-top: 8%;
         float:none;
     }
-    .carousel-indicators {
-        margin-right: 25% !important;
-        margin-bottom: 2% !important;
-    }
 }
 
 @media(max-width:400px){
@@ -550,10 +538,6 @@ img#wayangPic {
         margin-left: 3.2em;
         margin-top: 7%;
         float:none;
-    }
-    .carousel-indicators {
-        margin-right: 25% !important;
-        margin-bottom: 2% !important;
     }
     .rightDiv{
         background-image: url("../../Assets/Images/brush1.png");
@@ -606,6 +590,6 @@ img#wayangPic {
         background-size:100% 50%;
     }
     .wayangCarousel{
-        margin-top: 2.5em;
+        margin-top: 2.3em;
     } 
 }
