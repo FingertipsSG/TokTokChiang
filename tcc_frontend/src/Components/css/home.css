@@ -59,6 +59,10 @@ body.homePageBody {
     font-family: AveNext;
     font-size:22.96px;
 }
+.homeTitle1 {
+    font-family: AveNext;
+    font-size:22.96px;
+}
 
 /* Responsive*/
 @media (min-width: 1919px)and (max-width: 2100px) { 
@@ -66,9 +70,9 @@ body.homePageBody {
         font-family: Calibri;
         font-size: 1.7em;
         margin-left: 90px;
-        height: 240px;
+        height: fit-content;
         width: 90%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
         margin-top:-0.1em;
     }
@@ -78,14 +82,14 @@ body.homePageBody {
         margin-left:90px;
         height: fit-content;
         width: 90%;
-        overflow:scroll; 
+        overflow:hidden;
         margin-bottom: 0;
         margin-top:-0.1em;
     }
     .homeFounderPic {
         width: 69.7%;
         margin-left:20.2%;
-        margin-top: 1.7em;
+        margin-top: 6.1em;
         float:none;
     }
     .rightDivision {
@@ -96,15 +100,26 @@ body.homePageBody {
     body.homePageBody {
         background-image: none
     }
-    .homeTitle{
+    .homeTitle1{
         margin-top:-0.2em;
-        margin-left:0em;
+        margin-left:2.1em;
         font-size:42px;
     }
     .secondHeader{
         margin-top:0.2em;
-        margin-left:2.2em;
+        margin-left:2.1em;
         font-size:42px;
+    }
+    .homeTitle{
+        display:none;
+    }
+    .homescroll{
+        height: 500px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
+        padding-right: 40px;
+        margin-top:1em;
     }
 }
 
@@ -113,9 +128,9 @@ body.homePageBody {
         font-family: Calibri;
         font-size: 1.5em;
         margin-left: 90px;
-        height: 180px;
+        height: fit-content;
         width: 90%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
         margin-top:-0.1em;
     }
@@ -125,13 +140,129 @@ body.homePageBody {
         margin-left:90px;
         height: fit-content;
         width: 90%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
         margin-top:-0.1em;
     }
     .homeFounderPic {
         width: 69.7%;
         margin-left:18.7%;
+        margin-top: 4.9em;
+        float:none;
+    }
+    .rightDivision {
+        background-attachment: fixed;
+        background-size:40%;
+        background-position: right top 1em;
+    }
+    body.homePageBody {
+        background-image: none
+    }
+    .homeTitle1{
+        margin-top:-0.2em;
+        margin-left:3.3em;
+        font-size:27.1px;
+    }
+    .secondHeader{
+        margin-top:0em;
+        margin-left:3.2em;
+        font-size:27.1px;
+    }
+    .homeTitle{
+        display:none;
+    }
+    .homescroll{
+        height: 400px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
+        padding-right: 40px;
+        margin-top: 0.7em;
+    }
+}
+
+@media (min-width: 1536px)and (max-width: 1600px) { 
+    .homeContent {
+        font-family: Calibri;
+        font-size: 1.5em;
+        margin-left: 90px;
+        height: fit-content;
+        width: 90%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 1.5em;
+        margin-left:90px;
+        height: fit-content;
+        width: 90%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeFounderPic {
+        width: 71%;
+        margin-left:16%;
+        margin-top: 1.6em;
+        float:none;
+    }
+    .rightDivision {
+        background-attachment: fixed;
+        background-size:40%;
+        background-position: right top 1em;
+    }
+    body.homePageBody {
+        background-image: none
+    }
+    .homeTitle1{
+        margin-top:-0.2em;
+        margin-left:3.3em;
+        font-size:27.1px;
+    }
+    .secondHeader{
+        margin-top:-0.7em;
+        margin-left:3.2em;
+        font-size:27.1px;
+    }
+    .homeTitle{
+        display:none;
+    }
+    .homescroll{
+        height: 375px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
+        padding-right: 40px;
+    }
+}
+
+/* 13.9-14.9inch w height:796 from 1278px */
+@media (min-width: 1520px)and (max-width: 1535px) { 
+    .homeContent {
+        font-family: Calibri;
+        font-size: 16px;
+        margin-left: 90px;
+        height: fit-content;
+        width: 90%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 16px;
+        margin-left:90px;
+        height: fit-content;
+        width: 90%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeFounderPic {
+        width: 68.6%;
+        margin-left:18%;
         margin-top: 2em;
         float:none;
     }
@@ -143,56 +274,9 @@ body.homePageBody {
     body.homePageBody {
         background-image: none
     }
-    .homeTitle{
+    .homeTitle1{
         margin-top:-0.2em;
-        margin-left:0em;
-        font-size:27.1px;
-    }
-    .secondHeader{
-        margin-top:0em;
-        margin-left:3.2em;
-        font-size:27.1px;
-    }
-}
-
-@media (min-width: 1536px)and (max-width: 1600px) { 
-    .homeContent {
-        font-family: Calibri;
-        font-size: 16px;
-        margin-left: 90px;
-        height: 139px;
-        width: 90%;
-        overflow:scroll; 
-        margin-bottom: 0;
-        margin-top:-0.1em;
-    }
-    .homeContent2 {
-        font-family: Calibri;
-        font-size: 16px;
-        margin-left:90px;
-        height: 145px;
-        width: 90%;
-        overflow:scroll; 
-        margin-bottom: 0;
-        margin-top:-0.1em;
-    }
-    .homeFounderPic {
-        width: 71%;
-        margin-left:16%;
-        margin-top: -0.8em;
-        float:none;
-    }
-    .rightDivision {
-        background-attachment: fixed;
-        background-size:40%;
-        background-position: right top 1em;
-    }
-    body.homePageBody {
-        background-image: none
-    }
-    .homeTitle{
-        margin-top:-0.2em;
-        margin-left:0em;
+        margin-left:3.3em;
         font-size:27.1px;
     }
     .secondHeader{
@@ -200,53 +284,16 @@ body.homePageBody {
         margin-left:3.2em;
         font-size:27.1px;
     }
-}
-
-/* 13.9-14.9inch w height:796 from 1278px */
-@media (min-width: 1520px)and (max-width: 1535px) { 
-    .homeContent {
-        font-family: Calibri;
-        font-size: 16px;
-        margin-left: 90px;
-        height: 139px;
-        width: 90%;
-        overflow:scroll; 
-        margin-bottom: 0;
-        margin-top:-0.1em;
-    }
-    .homeContent2 {
-        font-family: Calibri;
-        font-size: 16px;
-        margin-left:90px;
-        height: 145px;
-        width: 90%;
-        overflow:scroll; 
-        margin-bottom: 0;
-        margin-top:-0.1em;
-    }
-    .homeFounderPic {
-        width: 68.6%;
-        margin-left:18%;
-        margin-top: -0.8em;
-        float:none;
-    }
-    .rightDivision {
-        background-attachment: fixed;
-        background-size:40%;
-        background-position: right top 1em;
-    }
-    body.homePageBody {
-        background-image: none
-    }
     .homeTitle{
-        margin-top:-0.2em;
-        margin-left:0em;
-        font-size:27.1px;
+        display:none;
     }
-    .secondHeader{
-        margin-top:-0.7em;
-        margin-left:3.2em;
-        font-size:27.1px;
+    .homescroll{
+        height: 320px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
+        padding-right: 40px;
+        margin-top:0.4em;
     }
 }
 
@@ -255,9 +302,9 @@ body.homePageBody {
         font-family: Calibri;
         font-size: 16px;
         margin-left: 90px;
-        height: 139px;
+        height: fit-content;
         width: 90%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
         margin-top:-0.1em;
     }
@@ -265,16 +312,16 @@ body.homePageBody {
         font-family: Calibri;
         font-size: 16px;
         margin-left:90px;
-        height: 145px;
+        height: fit-content;
         width: 90%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
         margin-top:-0.1em;
     }
     .homeFounderPic {
         width: 69%;
         margin-left:16.3%;
-        margin-top: -1.2em;
+        margin-top: 1.7em;
         float:none;
     }
     .rightDivision {
@@ -285,15 +332,25 @@ body.homePageBody {
     body.homePageBody {
         background-image: none
     }
-    .homeTitle{
+    .homeTitle1{
         margin-top:-0.2em;
-        margin-left:0em;
+        margin-left:3.2em;
         font-size:27.1px;
     }
     .secondHeader{
         margin-top:-0.7em;
-        margin-left:3.2em;
+        margin-left:3.3em;
         font-size:27.1px;
+    }
+    .homeTitle{
+        display:none;
+    }
+    .homescroll{
+        height: 320px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
+        padding-right: 40px;
     }
 }
 
@@ -302,9 +359,9 @@ body.homePageBody {
         font-family: Calibri;
         font-size: 16px;
         margin-left: 90px;
-        height: 115px;
+        height: fit-content;
         width: 90%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
         margin-top:-0.1em;
     }
@@ -312,16 +369,16 @@ body.homePageBody {
         font-family: Calibri;
         font-size: 16px;
         margin-left:90px;
-        height: 110px;
+        height: fit-content;
         width: 90%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
         margin-top:-0.1em;
     }
     .homeFounderPic {
         width: 69%;
         margin-left:15.8%;
-        margin-top: -2.5em;
+        margin-top: 0.5em;
         float:none;
     }
     .rightDivision {
@@ -332,9 +389,9 @@ body.homePageBody {
     body.homePageBody {
         background-image: none;
     }
-    .homeTitle{
+    .homeTitle1{
         margin-top:-0.2em;
-        margin-left:0em;
+        margin-left:3.2em;
         font-size:27.1px;
     }
     .secondHeader{
@@ -342,16 +399,32 @@ body.homePageBody {
         margin-left:3.2em;
         font-size:27.1px;
     }
+    .homeTitle{
+        display:none;
+    }
+    .homescroll{
+        height: 320px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
+        padding-right: 40px;
+    }
 }
 
 @media (min-width: 1279px)and (max-width: 1280px) { 
+    .homescroll{
+        height: 272px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
+    }
     .homeContent {
         font-family: Calibri;
         font-size: 16px;
         margin-left: 90px;
-        height: 115px;
+        height: fit-content;
         width: 90%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
         margin-top:-0.1em;
     }
@@ -359,16 +432,16 @@ body.homePageBody {
         font-family: Calibri;
         font-size: 16px;
         margin-left:90px;
-        height: 110px;
+        height: fit-content;
         width: 90%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
         margin-top:-0.1em;
     }
     .homeFounderPic {
         width: 67%;
-        margin-left:15.8%;
-        margin-top: -5em;
+        margin-left:15.7%;
+        margin-top: -1.7em;
         float:none;
     }
     .rightDivision {
@@ -379,10 +452,13 @@ body.homePageBody {
     body.homePageBody {
         background-image: none;
     }
-    .homeTitle{
+    .homeTitle1{
         margin-top:-0.2em;
-        margin-left:0em;
+        margin-left:3.2em;
         font-size:27.1px;
+    }
+    .homeTitle{
+      display:none;
     }
     .secondHeader{
         margin-top:-0.7em;
@@ -392,61 +468,14 @@ body.homePageBody {
 }
 
 /*min height:640*/
-@media (min-width: 1277px)and (max-width: 1279px) { 
-    .homeContent {
-        font-family: Calibri;
-        font-size: 16px;
-        margin-left: 90px;
-        height: 115px;
-        width: 90%;
-        overflow:scroll; 
-        margin-bottom: 0;
-        margin-top:-0.1em;
-    }
-    .homeContent2 {
-        font-family: Calibri;
-        font-size: 16px;
-        margin-left:90px;
-        height: 110px;
-        width: 90%;
-        overflow:scroll; 
-        margin-bottom: 0;
-        margin-top:-0.1em;
-    }
-    .homeFounderPic {
-        width: 64%;
-        margin-left:20%;
-        margin-top: -2.7em;
-        float:none;
-    }
-    .rightDivision {
-        background-attachment: fixed;
-        background-size:40%;
-        background-position: right top 1em;
-    }
-    body.homePageBody {
-        background-image: none;
-    }
-    .homeTitle{
-        margin-top:-0.2em;
-        margin-left:0em;
-        font-size:27.1px;
-    }
-    .secondHeader{
-        margin-top:-0.7em;
-        margin-left:3.2em;
-        font-size:27.1px;
-    }
-}
-
 @media (min-width: 1274px)and (max-width: 1277px) { 
     .homeContent {
         font-family: Calibri;
         font-size: 16px;
         margin-left: 90px;
-        height: 115px;
+        height: fit-content;
         width: 90%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
         margin-top:-0.1em;
     }
@@ -454,30 +483,40 @@ body.homePageBody {
         font-family: Calibri;
         font-size: 16px;
         margin-left:90px;
-        height: 110px;
+        height: fit-content;
         width: 90%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
         margin-top:-0.1em;
     }
     .homeFounderPic {
         width: 64%;
-        margin-left:20%;
-        margin-top: -2.7em;
+        margin-left:19.5%;
+        margin-top: 0.1em;
         float:none;
     }
     body.homePageBody {
         background-image: none;
     }
-    .homeTitle{
+    .homeTitle1{
         margin-top:-0.2em;
-        margin-left:0em;
+        margin-left:3.2em;
         font-size:27.1px;
     }
     .secondHeader{
         margin-top:-0.7em;
         margin-left:3.2em;
         font-size:27.1px;
+    }
+    .homeTitle{
+        display:none;
+    }
+    .homescroll{
+        height: 290px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
+        padding-right: 40px;
     }
 }
 
@@ -486,9 +525,9 @@ body.homePageBody {
         font-family: Calibri;
         font-size: 16px;
         margin-left: 90px;
-        height: 115px;
+        height: fit-content;
         width: 90%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
         margin-top:-0.1em;
     }
@@ -496,30 +535,40 @@ body.homePageBody {
         font-family: Calibri;
         font-size: 16px;
         margin-left:90px;
-        height: 110px;
+        height: fit-content;
         width: 90%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
         margin-top:-0.1em;
     }
     .homeFounderPic {
         width: 64%;
-        margin-left:20%;
-        margin-top: -2.8em;
+        margin-left:19%;
+        margin-top: 0.1em;
         float:none;
     }
     body.homePageBody {
         background-image: none;
     }
-    .homeTitle{
+    .homeTitle1{
         margin-top:-0.2em;
-        margin-left:0em;
+        margin-left:3.2em;
         font-size:27.1px;
     }
     .secondHeader{
         margin-top:-0.7em;
         margin-left:3.2em;
         font-size:27.1px;
+    }
+    .homeTitle{
+        display:none;
+    }
+    .homescroll{
+        height: 272px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
+        padding-right: 40px;
     }
 }
 
@@ -528,9 +577,9 @@ body.homePageBody {
         font-family: Calibri;
         font-size: 16px;
         margin-left: 90px;
-        height: 115px;
+        height: fit-content;
         width: 90%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
         margin-top:-0.1em;
     }
@@ -538,30 +587,39 @@ body.homePageBody {
         font-family: Calibri;
         font-size: 16px;
         margin-left:90px;
-        height: 110px;
+        height: fit-content;
         width: 90%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
         margin-top:-0.1em;
     }
     .homeFounderPic {
         width: 70%;
-        margin-left:11%;
-        margin-top: -3.2em;
+        margin-left:13%;
+        margin-top: -0.4em;
         float:none;
     }
     body.homePageBody {
         background-image: none;
     }
-    .homeTitle{
+    .homeTitle1{
         margin-top:-0.2em;
-        margin-left:0em;
+        margin-left:3.3em;
         font-size:27.1px;
     }
     .secondHeader{
         margin-top:-0.7em;
         margin-left:3.2em;
         font-size:27.1px;
+    }
+    .homeTitle{
+        display:none;
+    }
+    .homescroll{
+        height: 272px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
     }
 }
 
@@ -570,9 +628,9 @@ body.homePageBody {
         font-family: Calibri;
         font-size: 16px;
         margin-left: 90px;
-        height: 115px;
+        height: fit-content;
         width: 90%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
         margin-top:-0.1em;
     }
@@ -580,30 +638,39 @@ body.homePageBody {
         font-family: Calibri;
         font-size: 16px;
         margin-left:90px;
-        height: 110px;
+        height: fit-content;
         width: 90%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
         margin-top:-0.1em;
     }
     .homeFounderPic {
         width: 70%;
         margin-left:11%;
-        margin-top: -1.2em;
+        margin-top: 1.7em;
         float:none;
     }
     body.homePageBody {
         background-image: none;
     }
-    .homeTitle{
+    .homeTitle1{
         margin-top:-0.2em;
-        margin-left:0em;
+        margin-left:3.3em;
         font-size:27.1px;
     }
     .secondHeader{
         margin-top:-0.7em;
         margin-left:3.2em;
         font-size:27.1px;
+    }
+    .homeTitle{
+        display:none;
+    }
+    .homescroll{
+        height: 272px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
     }
 }
 /*min height 600*/
@@ -613,9 +680,9 @@ body.homePageBody {
         font-family: Calibri;
         font-size: 1em;
         margin-left: 90px;
-        height: 110px;
+        height: fit-content;
         width: 90%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
         margin-top:-0.1em;
     }
@@ -623,30 +690,39 @@ body.homePageBody {
         font-family: Calibri;
         font-size: 1em;
         margin-left:90px;
-        height: 100px;
+        height: fit-content;
         width: 90%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
         margin-top:-0.1em;
     }
     .homeFounderPic {
         width: 70%;
         margin-left:10%;
-        margin-top: -1em;
+        margin-top: 1.65em;
         float:none;
     }
     body.homePageBody {
         background-image: none;
     }
-    .homeTitle{
+    .homeTitle1{
         margin-top:0em;
-        margin-left:-0.2em;
+        margin-left:4.3em;
         font-size:1.5em;
     }
     .secondHeader{
         margin-top:-0.5em;
         margin-left:4.3em;
         font-size:1.5em;
+    }
+    .homeTitle{
+        display:none;
+    }
+    .homescroll{
+        height: 272px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
     }
 }
 /*Ipad Air Version*/
@@ -693,6 +769,10 @@ body.homePageBody {
     .secondHeader{
         margin-left:2.6em;
         font-size:35px;
+        margin-top:0.5em;
+    }
+    .homeTitle1{
+        display:none;
     }
 }
 
@@ -740,7 +820,12 @@ body.homePageBody {
     .secondHeader{
         margin-left:2.6em;
         font-size:35px;
+        margin-top:0.5em;
     }
+    .homeTitle1{
+        display:none;
+    }
+    
 }
 
 @media (min-width: 730px)and (max-width: 766px) { 
@@ -750,7 +835,7 @@ body.homePageBody {
     .homeContent {
         font-family: Calibri;
         font-size: 1.5em;
-        margin-left: 78px;
+        margin-left: 80px;
         height: fit-content;
         width: 80%;
         overflow:hidden; 
@@ -760,12 +845,12 @@ body.homePageBody {
     .homeContent2 {
         font-family: Calibri;
         font-size: 1.5em;
-        margin-left: 78px;
+        margin-left: 80px;
         height: fit-content;
         width: 80%;
         overflow:hidden; 
         margin-bottom: 0;
-        margin-top:2em;
+        margin-top:1.3em;
     }
     .homeFounderPic {
         width: 70%;
@@ -786,6 +871,10 @@ body.homePageBody {
     .secondHeader{
         margin-left:2.3em;
         font-size:35px;
+        margin-top:0.1em;
+    }
+    .homeTitle1{
+        display:none;
     }
 }
 
@@ -811,12 +900,12 @@ body.homePageBody {
         width: 80%;
         overflow:hidden; 
         margin-bottom: 0;
-        margin-top:2em;
+        margin-top:1.8em;
     }
     .homeFounderPic {
         width: 70%;
         margin-left:11%;
-        margin-top: 3.5em;
+        margin-top: 1.3em;
         float:none;
     }
     body.homePageBody {
@@ -826,10 +915,16 @@ body.homePageBody {
         background-size:auto 65.5%;
     }
     .homeTitle{
-        margin-top:0em;
+        margin-top:1em;
+        font-size:28px;
     }
     .secondHeader{
-        margin-left:3.3em;
+        margin-top:0.8em;
+        margin-left:2.8em;
+        font-size:28px;
+    }
+    .homeTitle1{
+        display:none;
     }
 }
 
@@ -840,7 +935,7 @@ body.homePageBody {
     .homeContent {
         font-family: Calibri;
         font-size: 1.3em;
-        margin-left: 71px;
+        margin-left: 85px;
         height: fit-content;
         width: 80%;
         overflow:hidden; 
@@ -850,17 +945,17 @@ body.homePageBody {
     .homeContent2 {
         font-family: Calibri;
         font-size: 1.3em;
-        margin-left: 71px;
+        margin-left: 85px;
         height: fit-content;
         width: 80%;
         overflow:hidden; 
         margin-bottom: 0;
-        margin-top:2em;
+        margin-top:1.7em;
     }
     .homeFounderPic {
         width: 70%;
         margin-left: 13%;
-        margin-top: 2em;
+        margin-top: 2.4em;
         float:none;
     }
     body.homePageBody {
@@ -870,10 +965,15 @@ body.homePageBody {
         background-size:auto;
     }
     .homeTitle{
-        margin-top:1.7em;
+        font-size:28px;
+        margin-top:1em;
     }
     .secondHeader{
-        margin-left:3.1em;
+        margin-left:3em;
+        font-size:28px;
+    }
+    .homeTitle1{
+        display:none;
     }
 }
 
@@ -904,7 +1004,7 @@ body.homePageBody {
     .homeFounderPic {
         width: 70%;
         margin-left: 13%;
-        margin-top: 0.2em;
+        margin-top: 1.2em;
         float:none;
     }
     body.homePageBody {
@@ -914,16 +1014,21 @@ body.homePageBody {
         background-size:auto;
     }
     .homeTitle{
-        margin-top:1.6em;
+        margin-top:0.5em;
+        font-size: 1.8em;
     }
     .secondHeader{
-        margin-left:3.1em;
+        margin-left:2.8em;
+        font-size:25.2px;
+    }
+    .homeTitle1{
+        display:none;
     }
 }
 
 @media (min-width: 451px)and (max-width: 528px) { 
     html.homeHtml{
-        height:230vh;
+        height:260vh;
     }
     .homeContent {
         font-family: Calibri;
@@ -943,12 +1048,12 @@ body.homePageBody {
         width: 80%;
         overflow:hidden; 
         margin-bottom: 0;
-        margin-top:2em;
+        margin-top:1.5em;
     }
     .homeFounderPic {
         width: 70%;
         margin-left: 14%;
-        margin-top: -0.2em;
+        margin-top:1.5em;
         float:none;
     }
     body.homePageBody {
@@ -959,15 +1064,20 @@ body.homePageBody {
     }
     .homeTitle{
         margin-top:1.7em;
+        margin-top:0.3em;
     }
     .secondHeader{
         margin-left:3em;
+        margin-top:0.3em;
+    }
+    .homeTitle1{
+        display:none;
     }
 }
 
 @media (max-width: 451px) { 
     html.homeHtml{
-        height:270vh;
+        height:250vh;
     }
     .homeContent {
         font-family: Calibri;
@@ -987,12 +1097,12 @@ body.homePageBody {
         width: 80%;
         overflow:hidden; 
         margin-bottom: 0;
-        margin-top:2em;
+        margin-top:1.6em;
     }
     .homeFounderPic {
         width: 70%;
         margin-left: 15%;
-        margin-top: 1.22em;
+        margin-top: 3.4em;
         float:none;
     }
     body.homePageBody {
@@ -1003,15 +1113,19 @@ body.homePageBody {
     }
     .homeTitle{
         margin-top:1.34em;
+        margin-top:0em;
     }
     .secondHeader{
         margin-left:3em;
+    }
+    .homeTitle1{
+        display:none;
     }
 }
 
 @media (max-width: 435px) { 
     html.homeHtml{
-        height:225vh;
+        height:195vh;
     }
     .homeContent {
         font-family: Calibri;
@@ -1031,12 +1145,12 @@ body.homePageBody {
         width: 80%;
         overflow:hidden; 
         margin-bottom: 0;
-        margin-top:2em;
+        margin-top:1.5em;
     }
     .homeFounderPic {
         width: 70%;
         margin-left: 16%;
-        margin-top: 1.22em;
+        margin-top: 2.7em;
         float:none;
     }
     body.homePageBody {
@@ -1047,15 +1161,19 @@ body.homePageBody {
     }
     .homeTitle{
         margin-top:1.35em;
+        margin-top:0em;
     }
     .secondHeader{
         margin-left:3em;
+    }
+    .homeTitle1{
+        display:none;
     }
 }
 
 @media (max-width: 400px) { 
     html.homeHtml{
-        height:225vh;
+        height:215vh;
     }
     .homeContent {
         font-family: Calibri;
@@ -1080,7 +1198,7 @@ body.homePageBody {
     .homeFounderPic {
         width: 70%;
         margin-left: 17%;
-        margin-top: 1.24em;
+        margin-top:3.3em;
         float:none;
     }
     body.homePageBody {
@@ -1090,16 +1208,19 @@ body.homePageBody {
         background-size:auto;
     }
     .homeTitle{
-        margin-top:1.35em;
+        margin-top:0em;
     }
     .secondHeader{
         margin-left:3em;
+    }
+    .homeTitle1{
+        display:none;
     }
 }
 
 @media (max-width: 380px) { 
     html.homeHtml{
-        height:290vh;
+        height:270vh;
     }
     .homeContent {
         font-family: Calibri;
@@ -1119,12 +1240,12 @@ body.homePageBody {
         width: 80%;
         overflow:hidden; 
         margin-bottom: 0;
-        margin-top:2em;
+        margin-top:1.5em;
     }
     .homeFounderPic {
         width: 70%;
         margin-left: 17.5%;
-        margin-top: 1.5em;
+        margin-top: 3.5em;
         float:none;
     }
     body.homePageBody {
@@ -1134,15 +1255,33 @@ body.homePageBody {
         background-size:auto;
     }
     .homeTitle{
-        margin-top:1.35em;
+        margin-top:-0.25em;
     }
     .secondHeader{
         margin-left:3em;
+        font-size: 22.96px;
+    }
+    .homeTitle1{
+        display:none;
     }
 }
 @media (max-width: 360px) { 
     html.homeHtml{
-        height:270vh;
+        height:250vh;
     }
-
+    .homeTitle1{
+        display:none;
+    }
+    .homeTitle{
+        margin-top:-0.25em;
+    }
+    .homeFounderPic {
+        margin-top: 3.6em;
+    }
+    .title1{
+    font-size:1.6em;
+    }
+    .secondHeader{
+        font-size: 22.96px;
+    }
 }

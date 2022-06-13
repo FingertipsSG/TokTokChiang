@@ -23,13 +23,14 @@ function Home() {
                                 <h2 className="title1">ALL ABOUT US</h2>
                                 <br />
                                 <br />
-                                <h5 className="homeTitle"> How We Started? </h5>
+                                <h5 className="homeTitle"> How We Started </h5>
                             </div>
                             <div className="founderPicMobile">
                                 <img src={founder} className="homeFounderPic" />
                             </div>
                             <Row>
-                                <div className="col-lg-6">
+                                <div className="col-lg-6 homescroll">
+                                <h5 className="homeTitle1"> How We Started </h5>
                                     <p className="homeContent">
                                         Having been influenced by his grandmother who would routinely read him scripts at bedtime,
                                         and his grandfather as a drummer for a Chinese opera troupe, Nick has lived and breathed
@@ -46,7 +47,7 @@ function Home() {
                                         arm, Tok Tok Chiang Opera Ltd.
                                     </p>
                                     <br />
-                                    <h5 className="secondHeader"> What We Sell? </h5>
+                                    <h5 className="secondHeader"> What We Sell </h5>
                                     <p className="homeContent2">
                                         Keeping the traditions alive, we love seeing elements of Chinese opera
                                         everywhere we go! Ranging from gifts to lifestyle merchandise, we sourced
