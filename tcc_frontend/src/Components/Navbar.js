@@ -47,7 +47,7 @@ function TopNavBar() {
 									<Link className="dropdown-item" to="/dolls">DOLLS</Link>
 									<Link className="dropdown-item" to="/handpuppets">HAND PUPPETS</Link>
 									<Link className="dropdown-item" to="/tshirts">T-SHIRTS</Link>
-									<Link className="dropdown-item" to="/frames">FRAMED</Link>
+									<Link className="dropdown-item" to="/frames">FRAMES</Link>
 								</div>
 							</div>
 						</li>

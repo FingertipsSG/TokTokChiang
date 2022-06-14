@@ -145,7 +145,7 @@ function Tshirts() {
   const renderColContent = (arr, rowIndex) => {
     return arr.map((item, colIndex) => {
       return (
-        <Col xs={10} sm={9} md={5} lg={2} xl={3} key={colIndex} className="shopContent">
+        <Col xs={10} sm={9} md={5} lg={3} xl={3} key={colIndex} className="shopContent">
           <div className="imagePlaceHolder">
             <a
               id="close-image"

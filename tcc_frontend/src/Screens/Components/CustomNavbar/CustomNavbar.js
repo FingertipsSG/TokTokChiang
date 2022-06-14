@@ -10,12 +10,12 @@ function CustomNavbar({ isLoggedIn }) {
   var loggedIn;
 
   // const [dropdown, setDropdown] = useState(false);
-  var loggedIn;
+  // var loggedIn;
   const navigate = useNavigate();
   
-  if (isLoggedIn != undefined) {
-    loggedIn = isLoggedIn;
-  }
+  // if (isLoggedIn != undefined) {
+  //   loggedIn = isLoggedIn;
+  // }
 
   // console.log(isLoggedIn);
 
