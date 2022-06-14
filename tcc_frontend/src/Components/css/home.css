@@ -25,6 +25,7 @@ body.homePageBody {
     overflow:hidden; 
     margin-bottom: 0;
     margin-top:2em;
+    text-align: justify !important;
 }
 
 .homeContent2 {
@@ -36,7 +37,7 @@ body.homePageBody {
     overflow:hidden; 
     margin-bottom: 0;
     margin-top:2em;
-    
+    text-align: justify !important;
 }
 .founderMobile {
     visibility: hidden;

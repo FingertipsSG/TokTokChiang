@@ -12,6 +12,7 @@ html.lstyHtml {
     height: 300px;
     overflow: auto;
     padding-right: 20px;
+    text-align: justify !important;
 }
 img#lstyPic {
     float: right;

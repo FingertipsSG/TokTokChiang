@@ -30,6 +30,7 @@ html.wayangHtml {
     padding-right: 20px;
     height: 20em;
     overflow-y: scroll;
+    text-align: justify !important;
 }
 img#wayangPic {
     float: right;
