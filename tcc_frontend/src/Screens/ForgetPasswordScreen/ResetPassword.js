@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { message, Form, Input } from 'antd';
 import logo from '../../Assets/Images/toktoklogo.png';
+import config from '../../config';
 
 function ResetPassword() {
     const [error, setError] = useState("");
@@ -18,7 +19,7 @@ function ResetPassword() {
     // console.log("Email: " + email);
 
     const updatePassword = () => {
-        axios.patch('http://localhost:5001/updatePassword', { password: password, email: email })
+        axios.patch(config.LOCAL_BACKEND + '/updatePassword', { password: password, email: email })
             .then(function (response) {
                 console.log(response);
             }).catch((error) => {

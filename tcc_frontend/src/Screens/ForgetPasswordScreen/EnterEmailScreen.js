@@ -6,6 +6,7 @@ import AlertTitle from '@material-ui/lab/AlertTitle';
 import { useNavigate } from "react-router-dom";
 import { message, Form, Input } from 'antd';
 import logo from '../../Assets/Images/toktoklogo.png';
+import config from '../../config';
 
 function EnterEmailScreen() {
     const [email, setEmail] = useState("");
@@ -18,7 +19,7 @@ function EnterEmailScreen() {
     };
 
     const insertPin = () => {
-        axios.post('http://localhost:5001/insertPIN', { pin: emailParams.number })
+        axios.post(config.LOCAL_BACKEND + '/insertPIN', { pin: emailParams.number })
             .then(function (response) {
                 console.log(response);
             }).catch((error) => {
@@ -27,7 +28,7 @@ function EnterEmailScreen() {
     };
 
     const deletePin = () => {
-        axios.delete('http://localhost:5001/deletePIN', { params: { pin: emailParams.number } })
+        axios.delete(config.LOCAL_BACKEND + '/deletePIN', { params: { pin: emailParams.number } })
             .then(function (response) {
                 console.log(response);
             }).catch((error) => {
@@ -36,7 +37,7 @@ function EnterEmailScreen() {
     };
 
     const sendEmail = () => {
-        axios.post('http://localhost:5001/sendEmailPin', { pin: emailParams.number, email: emailParams.email })
+        axios.post(config.LOCAL_BACKEND + '/sendEmailPin', { pin: emailParams.number, email: emailParams.email })
             .then(function (response) {
                 const emailTime = new Date(response.data.message); //emailTime
                 const min = 3;
@@ -65,7 +66,7 @@ function EnterEmailScreen() {
     const submitHandler = async e => {
         e.preventDefault();
 
-        await axios.get('http://localhost:5001/getEmail', { params: { email: email } })
+        await axios.get(config.LOCAL_BACKEND + '/getEmail', { params: { email: email } })
             .then(function (response) {
                 // console.log("Response: " + response);
                 if (response.data.message === "Email not registered!") {

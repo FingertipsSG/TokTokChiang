@@ -7,6 +7,7 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { message, Form, Input } from "antd";
 import logo from '../../Assets/Images/toktoklogo.png';
+import config from '../../config';
 
 function EnterDigitPinScreen() {
     const [error, setError] = useState("");
@@ -28,7 +29,7 @@ function EnterDigitPinScreen() {
     // console.log("resent pin after load = " + getResendPin());
 
     const getPin = () => {
-        axios.get('http://localhost:5001/getPIN', { params: { pin: digitPin } })
+        axios.get(config.LOCAL_BACKEND + '/getPIN', { params: { pin: digitPin } })
             .then(function (response) {
                 console.log("===========================");
                 console.log("RESPONSE FRM GET PIN (SHOULD BE CORRECT PIN): " + response.data.message);
@@ -58,7 +59,7 @@ function EnterDigitPinScreen() {
 
     //RESEND EMAIL CODES
     const resendEmail = () => {
-        axios.post('http://localhost:5001/sendEmailPin', { pin: pin, email: email })
+        axios.post(config.LOCAL_BACKEND + '/sendEmailPin', { pin: pin, email: email })
             .then(function (response) {
                 // console.log("SUCCESS IN EMAIL RESEND");
                 // console.log("===========================");
@@ -99,7 +100,7 @@ function EnterDigitPinScreen() {
 
     //REINSERT PIN
     const reInsertPin = () => {
-        axios.post('http://localhost:5001/insertPIN', { pin: pin })
+        axios.post(config.LOCAL_BACKEND + '/insertPIN', { pin: pin })
             .then(function (response) {
                 console.log(response.status);
             }).catch((error) => {
