@@ -6,7 +6,7 @@
 }
 
 html,body {
-   margin:0%;
+   margin:0;
    padding:0;
 }
 
@@ -42,6 +42,7 @@ body.servicesBody {
     margin-left:25%;
     margin-top:2%;
 }
+
 /*Responsive*/
 @media (min-width:2101px){
     Table.services-table{
@@ -71,6 +72,9 @@ body.servicesBody {
     body.services-body {
         background-image:none;
     }
+    .servicesHeader{
+        display:none;
+       }
 }
 /* 1080px height */
 @media (min-width:1919px) and (max-width: 2100px){
@@ -101,6 +105,9 @@ body.servicesBody {
     body.services-body {
         background-image:none;
     }
+    .servicesHeader{
+        display:none;
+       }
 }
 
 /* 900px height */
@@ -132,6 +139,9 @@ body.servicesBody {
     body.services-body {
         background-image:none;
     }
+    .servicesHeader{
+        display:none;
+       }
 }
 
 @media (min-width:1536px) and (max-width: 1600px){
@@ -162,6 +172,9 @@ body.servicesBody {
     body.services-body {
         background-image:none;
     }
+    .servicesHeader{
+        display:none;
+       }
 }
 
 /* 13.9-14.9inch w height:796 */
@@ -193,6 +206,12 @@ body.servicesBody {
     body.services-body {
         background-image:none;
     }
+    .servicesHeader{
+        display:none;
+     }
+    .servicesHeader{
+        display:none;
+    }
 }
 
 @media (min-width:1350px) and (max-width: 1520px){
@@ -223,6 +242,13 @@ body.servicesBody {
     body.services-body {
         background-image:none;
     }
+    .servicesHeader{
+        display:none;
+    }
+    .servicesHeader{
+        display:none;
+     }
+    
 }
 
 @media (min-width:1281px) and (max-width: 1349px){
@@ -252,6 +278,9 @@ body.servicesBody {
     }  
     body.services-body {
         background-image:none;
+    }
+    .servicesHeader{
+        display:none;
     }
 }
 
@@ -283,6 +312,9 @@ body.servicesBody {
     body.services-body {
         background-image:none;
     }
+    .servicesHeader{
+        display:none;
+       }
 }
 
 @media (min-width:1224px) and (max-width: 1279px){
@@ -313,6 +345,9 @@ body.servicesBody {
     body.services-body {
         background-image:none;
     }
+    .servicesHeader{
+        display:none;
+       }
 }
 
 /*Tablet w min height 600*/
@@ -344,6 +379,9 @@ body.servicesBody {
     body.services-body {
         background-image:none;
     }
+    .servicesHeader{
+        display:none;
+       }
 }
 
 @media (min-width:1023px) and (max-width: 1092px){
@@ -374,7 +412,9 @@ body.servicesBody {
     .services-table>tbody>tr>td{
          font-size:12px;
     }
-    
+    .servicesHeader{
+        display:none;
+       }
 }
 
 @media (min-width: 992px) and (max-width: 1022px){
@@ -405,298 +445,476 @@ body.servicesBody {
         background-position: left bottom;
         background-attachment: fixed;
     }
+    .servicesHeader{
+     display:none;
+    }
 }
 
 /*Ipad Air*/
 @media (min-width: 769px) and (max-width: 991px){
-    body.services-body {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-size:cover;
-        background-position:0;
-        background-repeat: none;
-        background-attachment: fixed;  
-    }
-    Table.services-table{
-        margin-left:9%;
-        margin-top:3em;
-    }
-    .leftDiv{
-        background-image: none;
-    }
-    .bottomSection {
-        background-image: none;
-    }
-    .services-table>thead>tr>th{
-        font-size:14px;
-    }
-    .services-table>tbody>tr>td{
-         font-size:13px;
-    }
-}
-/*Ipad Mini*/
-@media (min-width: 766px) and (max-width: 768px){
-    body.services-body {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-size:cover;
-        background-position:0;
-        background-repeat: none;
-        background-attachment: fixed;  
-    }
-    Table.services-table{
-        margin-left:10%;
-        margin-top:3em;
-    }
-    .leftDiv{
-        background-image: none;
-    }
-    .bottomSection {
-        background-image: none;
-    }
-    .services-table>thead>tr>th{
-        font-size:14px;
-    }
-    .services-table>tbody>tr>td{
-         font-size:13px;
-    }
-}
-/*Phone Version*/
-@media (min-width: 731px) and (max-width: 765px) { 
     html.servicesHtml{
         height:100vh;
-        overflow-x: hidden;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    Table.services-table{
+        margin-left:26em;
+        margin-top:-3em;
     }
     body.services-body {
-        background-image:none;
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-repeat: no-repeat;  
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-size:auto 113%;
+        background-repeat: no-repeat;
         background-position:5% bottom;
-        background-size:auto 120%;
-    }
-    .services-table>thead>tr>th{
-        font-size:14px;
     }
     .services-table>tbody>tr>td{
-         font-size:13px;
+         font-size:1.2em;
     }
-    .services-row{
-        margin-left:-6.5em ;
-        margin-top:20px;
-    }
-}
-
-@media (min-width: 700px) and (max-width: 730px) { 
-    html.servicesHtml{
-        height:100vh;
-        overflow-x: hidden;
-    }
-    body.services-body {
-        background-image:none;
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-repeat: no-repeat;  
-        background-position:5% bottom;
-        background-size:auto 120%;
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 42px;
+        margin-left:1.5em;
+        letter-spacing: 0.1em;
+        margin-top:0.3em;
     }
     .services-table>thead>tr>th{
-        font-size:14px;
-    }
-    .services-table>tbody>tr>td{
-         font-size:13px;
-    }
-    .services-row{
-        margin-left:-6.5em ;
-        margin-top:20px;
-    }
-    .leftDiv{
-        background-image: none;
-    }
-    .bottomSection {
-        background-image: none;
-    }
-}
-@media (min-width: 630px) and (max-width: 700px){ 
-    Table.services-table{
-        margin-left:72%;
-        margin-top:-2em;
-    }
-    .services-table>th{
-        font-size:15px;
-    }
-     .services-table>tbody>tr>td{
-         font-size:12px;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-size:cover;
-        background-repeat: none;
-        background-position:0;
-        height:100vh;
-    }
-    .leftDiv{
-        background-image: none;
-    }
-    .bottomSection {
-        background-image: none;
-    }
-}
-@media (min-width: 528px) and (max-width: 630px){ 
-    Table.services-table{
-        margin-left:70%;
-        margin-top:-2em;
-    }
-    .services-table>th{
-        font-size:15px;
-    }
-     .services-table>tbody>tr>td{
-         font-size:12px;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-size:cover;
-        background-position:0;
-        background-repeat: none;
-        height:100vh;
-    }
-    .leftDiv{
-        background-image: none;
-    }
-    .bottomSection {
-        background-image: none;
-    }
-}
-
-@media (min-width: 451px) and (max-width: 528px){ 
-    Table.services-table{
-        margin-left:24em;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-size:cover;
-        background-position:0;
-        background-repeat: none;
-    }
-    .leftDiv{
-        background-image: none;
-    }
-    .bottomSection {
-        background-image: none;
-    }
-}
-
-@media (max-width: 451px) { 
-    Table.services-table{
-        margin-left:100%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-size:cover;
-        background-position:0;
-        background-repeat: none;
-    }
-      .services-table>tbody>tr>td{
-         font-size:8px;
-    }
-    .services-row{
-        margin-left:-25.5em;
-        margin-top:50px;
-    }
-    .leftDiv{
-        background-image: none;
-    }
-    .bottomSection {
-        background-image: none;
-    }
-}
-
-
-/*Iphone XR*/
-@media (max-width: 435px) { 
-    Table.services-table{
-        margin-left:100%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-size:cover;
-        background-position:0% 0%;
-        background-attachment: fixed;
-        background-repeat: none;
-        height:100vh;
-    }
-      .services-table>tbody>tr>td{
-         font-size:8px;
-    }
-    .services-table>thead>tr>th{
-        font-size:9px;
-    }
-    .services-row{
-        margin-left:-23.5em ;
-        margin-top:50px;
-    }
-}
-
-@media (max-width: 400px) { 
-    Table.services-table{
-        margin-left:100%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-size:cover;
-        background-position:0% 0%;
-        background-attachment: fixed;
-        background-repeat: none;
-        height:100vh;
-    }
-      .services-table>tbody>tr>td{
-         font-size:8px;
-    }
-    .services-table>thead>tr>th{
-        font-size:9px;
+        font-size:1.3em;
+        white-space:nowrap;
     }
     .services-row{
         margin-left:-310px;
         margin-top:50px;
     }
+    .bottomSection,.leftDiv{
+        background-image:none;
+    }
 }
+/*Ipad Mini*/
+@media (min-width: 766px) and (max-width: 768px){
+    html.servicesHtml{
+        height:110vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    Table.services-table{
+        margin-left:26em;
+        margin-top:-3em;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-size:auto 113%;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
+    }
+    .services-table>tbody>tr>td{
+         font-size:1.2em;
+    }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 42px;
+        margin-left:1.5em;
+        letter-spacing: 0.1em;
+        margin-top:0.3em;
+    }
+    .services-table>thead>tr>th{
+        font-size:1.3em;
+        white-space:nowrap;
+    }
+    .services-row{
+        margin-left:-310px;
+        margin-top:50px;
+    }
+    .bottomSection,.leftDiv{
+        background-image:none;
+    }
+}
+
+@media (min-width: 731px) and (max-width: 765px) { 
+    html.servicesHtml{
+        height:130vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    Table.services-table{
+        margin-left:22em;
+        margin-top:-3em;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-size:auto 117%;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
+    }
+    .services-table>tbody>tr>td{
+         font-size:1.2em;
+    }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 30px;
+        margin-left:1.8em;
+        letter-spacing: 0.1em;
+        margin-top:0.6em;
+    }
+    .services-table>thead>tr>th{
+        font-size:1.3em;
+        white-space:nowrap;
+    }
+    .services-row{
+        margin-left:-310px;
+        margin-top:50px;
+    }
+    .bottomSection,.leftDiv{
+        background-image:none;
+    }
+} 
+
+@media (min-width: 700px) and (max-width: 730px) { 
+    html.servicesHtml{
+        height:130vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    Table.services-table{
+        margin-left:22em;
+        margin-top:-3em;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-size:auto 110%;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
+    }
+    .services-table>tbody>tr>td{
+         font-size:1.2em;
+    }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 30px;
+        margin-left:1.8em;
+        letter-spacing: 0.1em;
+        margin-top:0.6em;
+    }
+    .services-table>thead>tr>th{
+        font-size:1.3em;
+        white-space:nowrap;
+    }
+    .services-row{
+        margin-left:-310px;
+        margin-top:50px;
+    }
+    .bottomSection,.leftDiv{
+        background-image:none;
+    }
+} 
+@media (min-width: 631px) and (max-width: 700px) { 
+    html.servicesHtml{
+        height:130vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    Table.services-table{
+        margin-left:21em;
+        margin-top:-3em;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-size:auto 93%;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
+    }
+    .services-table>tbody>tr>td{
+         font-size:1.2em;
+    }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 30px;
+        margin-left:1.7em;
+        letter-spacing: 0.1em;
+        margin-top:0.6em;
+    }
+    .services-table>thead>tr>th{
+        font-size:1.3em;
+        white-space:nowrap;
+    }
+    .services-row{
+        margin-left:-310px;
+        margin-top:50px;
+    }
+    .bottomSection,.leftDiv{
+        background-image:none;
+    }
+} 
+@media (min-width: 528px) and (max-width: 630px) { 
+    html.servicesHtml{
+        height:120vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    Table.services-table{
+        margin-left:23.9em;
+        margin-top:-3em;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-size:auto 114%;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
+    }
+    .services-table>tbody>tr>td{
+         font-size:1em;
+    }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 25.2px;
+        margin-left:1.8em;
+        letter-spacing: 0.1em;
+        margin-top: 0.7em;
+    }
+    .services-table>thead>tr>th{
+        font-size:1.2em;
+        white-space:nowrap;
+    }
+    .services-row{
+        margin-left:-310px;
+        margin-top:50px;
+    }
+    .bottomSection,.leftDiv{
+        background-image:none;
+    }
+} 
+
+@media (min-width: 451px) and (max-width: 528px) { 
+    html.servicesHtml{
+        height:120vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    Table.services-table{
+        margin-left:24em;
+        margin-top:-3em;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-size:auto 107%;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
+    }
+    .services-table>tbody>tr>td{
+         font-size:0.9em;
+    }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 23.8px;
+        margin-left:1.8em;
+        letter-spacing: 0.1em;
+        margin-top: 0.8em;
+    }
+    .services-table>thead>tr>th{
+        font-size:1em;
+        white-space:nowrap;
+    }
+    .services-row{
+        margin-left:-310px;
+        margin-top:50px;
+    }
+    .bottomSection,.leftDiv{
+        background-image:none;
+    }
+} 
+
+@media (max-width: 451px) { 
+    html.servicesHtml{
+        height:160vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    Table.services-table{
+        margin-left:23.6em;
+        margin-top:-3em;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-size:auto 105%;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
+    }
+    .services-table>tbody>tr>td{
+         font-size:0.9em;
+    }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 1.6em;
+        margin-left:1.8em;
+        letter-spacing: 0.1em;
+        margin-top: 1em;
+    }
+    .services-table>thead>tr>th{
+        font-size:1em;
+    }
+    .services-row{
+        margin-left:-310px;
+        margin-top:50px;
+    }
+    .bottomSection,.leftDiv{
+        background-image:none;
+    }
+} 
+
+@media (max-width: 435px) { 
+    html.servicesHtml{
+        height:100vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    Table.services-table{
+        margin-left:23.6em;
+        margin-top:-3em;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-size:auto 78%;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
+    }
+    .services-table>tbody>tr>td{
+         font-size:0.9em;
+    }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 1.6em;
+        margin-left:1.8em;
+        letter-spacing: 0.1em;
+    }
+    .services-table>thead>tr>th{
+        font-size:1em;
+    }
+    .services-row{
+        margin-left:-310px;
+        margin-top:50px;
+    }
+    .bottomSection,.leftDiv{
+        background-image:none;
+    }
+} 
+
+ @media (max-width: 400px) { 
+    html.servicesHtml{
+        height:100vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    Table.services-table{
+        margin-left:23.6em;
+        margin-top:-3em;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-size:auto 78%;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
+    }
+    .services-table>tbody>tr>td{
+         font-size:0.8em;
+    }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 1.6em;
+        margin-left:1.8em;
+        letter-spacing: 0.1em;
+    }
+    .services-table>thead>tr>th{
+        font-size:0.9em;
+    }
+    .services-row{
+        margin-left:-310px;
+        margin-top:50px;
+    }
+    .bottomSection,.leftDiv{
+        background-image:none;
+    }
+} 
 /*Iphone SE*/
 @media (max-width: 380px) { 
+    html.servicesHtml{
+        height:160vh;
+    }
     Table.services-table{
-        margin-left:100%;
+        margin-left:101%;
+        margin-top:-2.5em;
     }
     body.services-body {
         background-image: url("../../Assets/Images/AboutUs.png");
-        background-size:cover;
-        background-position:0% 0%;
-        background-repeat: none;
+        background-size:auto;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
     }
       .services-table>tbody>tr>td{
-         font-size:8px;
+         font-size:0.85em;
     }
     .services-table>thead>tr>th{
-        font-size:9px;
+        font-size:0.9em;
     }
     .services-row{
         margin-left:-21.5em;
         margin-top:35px;
     }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 1.6em;
+        margin-left:1.8em;
+        letter-spacing: 0.1em;
+    }
+    .bottomSection,.leftDiv{
+        background-image:none;
+    }
 }
+
 @media (max-width: 360px) { 
+    html.servicesHtml{
+        height:130vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
     Table.services-table{
         margin-left:100%;
+        margin-top:-3em;
     }
     body.services-body {
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-size:cover;
-        background-position:0% 0%;
-        background-repeat: none;
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-size:auto 78%;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
+    }
+    .bottomSection,.leftDiv{
+        background-image:none;
     }
       .services-table>tbody>tr>td{
-         font-size:8px;
+         font-size:0.8em;
     }
     .services-table>thead>tr>th{
-        font-size:8px;
+        font-size:0.8em;
     }
     .services-row{
         margin-left:-20.5em;
         margin-top:35px;
+    }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 1.6em;
+        margin-left:1.8em;
+        letter-spacing: 0.1em;
     }
     
 }

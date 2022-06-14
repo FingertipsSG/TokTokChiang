@@ -17,6 +17,7 @@ function Services() {
                  <div className="leftDiv">
                         <Navbar />
                         <div className="services-div">
+                            <p className="servicesHeader">SERVICES</p>
                             <Container>
                                 <Row>
                                     <Col className="services-row"  xs={11} >
