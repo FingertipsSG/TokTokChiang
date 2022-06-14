@@ -1028,7 +1028,7 @@ body.homePageBody {
 
 @media (min-width: 451px)and (max-width: 528px) { 
     html.homeHtml{
-        height:260vh;
+        height:220vh;
     }
     .homeContent {
         font-family: Calibri;
