@@ -18,6 +18,8 @@ function EnterEmailScreen() {
     number: Math.floor(Math.random() * 899999 + 100000),
   };
 
+  let isHere = true;
+
   const insertPin = () => {
     axios.post(config.LOCAL_BACKEND + "/insertPIN", {
       pin: emailParams.number,
@@ -46,9 +48,12 @@ function EnterEmailScreen() {
           if (expiredTime < now) {
             // selected date is in the past
             deletePin();
-            message.error(
-              "6-digit token expired. Please click on the resend button."
-            );
+
+            if (!isHere) {
+              message.error(
+                "6-digit token expired. Please click on the resend button."
+              );
+            }
           }
         }, 180000);
       });
@@ -71,6 +76,7 @@ function EnterEmailScreen() {
           sendEmail();
           insertPin();
 
+          isHere = false;
           navigate("/digitPin", {
             state: {
               digitPin: emailParams.number,
