@@ -332,7 +332,6 @@ function ShopScreen() {
             },
           ]);
         });
-
       })
       .then(() => {
         setIsTableLoading(false);
@@ -349,33 +348,6 @@ function ShopScreen() {
   }, [render]);
 
   //----------------------------------------SHOPS----------------------------------------
-  // ADD AND POST SHOPS FUNCTONS
-  // const openAddShopModal = () => {
-  //   setIsModalOpen(true);
-  //   setIsAddShopModalVisible(true);
-  // };
-  // const cancelAddShopModal = () => {
-  //   setIsModalOpen(false);
-  //   setIsAddShopModalVisible(false);
-  // };
-  // const postAddShopModal = (values) => {
-  //   setIsModalOpen(false);
-  //   setIsAddShopModalVisible(false);
-
-  //   Utils.postApi("createShopTable", values).then((res) => {
-  //     // console.log(res);
-  //     if (res.status === 201) {
-  //       Utils.postApi("addShop", values).then((res) => {
-  //         // console.log(res);
-  //         if (res.status === 201) {
-  //           message.success("Successfully added shop");
-  //           setRender(!render);
-  //         }
-  //       });
-  //     }
-  //   });
-  // };
-
   // EDIT AND POST SHOP FUNCTION
   const openEditShopModal = () => {
     setIsModalOpen(true);
@@ -401,7 +373,6 @@ function ShopScreen() {
         if (checkErrorHandler(res, true)) {
           // on success
           if (res.data.affectedRows === 1) {
-            console.log("Successfully edited shop's name");
             setRender(!render);
           }
         }
@@ -627,7 +598,7 @@ function ShopScreen() {
     setProductArray([]);
 
     // If no products found
-    if (res.status === 404) {
+    if (res.data.message === "No match found") {
       setProductArray([]);
       setIsProdTableLoading(false);
       // console.log("No product matches query");
@@ -669,7 +640,6 @@ function ShopScreen() {
       if (res.status !== 404) {
         res = res.data;
         for (let imgData of res) {
-          console.log(res);
           var newImgData = {
             type: imgData.image.type,
             data: imgData.image.data,

@@ -17,13 +17,13 @@ const onErrorHandler = (err) => {
 
 export async function getProducts(catid, parameters = {}) {
   const url = baseUrl + `/getProducts?categoryId=${catid}`;
-  
+
   try {
     const res = await axios({
       method: "GET",
       url: url,
       headers: {
-        "Access-Control-Allow-Origin": "*"
+        "Access-Control-Allow-Origin": "*",
       },
     });
     return res.data;
@@ -128,7 +128,6 @@ export async function postImageApi(endpoint, parameters = {}) {
   try {
     const formData = new FormData();
 
-    console.log(parameters);
     formData.append("image", parameters.image);
     formData.append("productid", parameters.productid);
     formData.append("identityid", parameters.identityid);
@@ -240,9 +239,6 @@ export async function editImageApi(endpoint, parameters = {}) {
 export async function putApi(endpoint, parameters = {}) {
   const url = baseUrl + "/" + endpoint;
   try {
-    // LEFTOFFAT
-    console.log(localStorage.getItem("token"));
-
     const res = await axios({
       method: "PUT",
       url: url,
