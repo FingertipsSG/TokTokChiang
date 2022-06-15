@@ -732,6 +732,20 @@ body.shop-body {
   }
 }
 
+@media (min-width: 1535px) and (max-width: 1537px){
+  .dolls-body {
+    background-size: 70% 33.3% !important;
+    background-position: left top 3.2% !important;
+  }
+  .shirts-body {
+    background-size: 70% 65% !important;
+    background-position: left top 11.9% !important;
+  }
+  .framed-body {
+    background-position: left top 6% !important;
+  }
+}
+
 @media (min-width: 1505px) and (max-width: 1700px) {
   .shop {
     margin-top: 5%;
@@ -1048,15 +1062,15 @@ body.shop-body {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 70% 55.85%;
+    background-size: 70% 55.7%;
     background-position: left top 17.2%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
   .puppets-body {
     background-image: url("../../Assets/Images/handpuppetsBG2.png");
-    background-size: 70% 78%;
-    background-position: left top 4.8em;
+    background-size: 70% 80.3%;
+    background-position: left top 4.85em;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
