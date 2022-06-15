@@ -20,7 +20,7 @@ function EditProductModal({ title, visible, onOk, onCancel, details }) {
         const thisLessThan100KB = curFileList[i].size / 1024 / 1024 < 0.1;
         
         if (thisLessThan100KB == false) {
-          message.error('Image must smaller than 2MB!');
+          message.error('Image must smaller than 100kb!');
           return isLt2M = false;
         }
       }
