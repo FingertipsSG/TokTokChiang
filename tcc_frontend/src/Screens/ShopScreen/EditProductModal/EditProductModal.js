@@ -17,11 +17,13 @@ function EditProductModal({ title, visible, onOk, onCancel, details }) {
       var isLt2M = true;
 
       for (var i = 0; i < curFileList.length; i++) {
-        const thisLessThan100KB = curFileList[i].size / 1024 / 1024 < 0.1;
-        
-        if (thisLessThan100KB == false) {
-          message.error('Image must smaller than 100kb!');
-          return isLt2M = false;
+        if (!curFileList[i].initial) {
+          const thisLessThan100KB = curFileList[i].size / 1024 / 1024 < 0.1;
+          
+          if (thisLessThan100KB == false) {
+            message.error('Image must smaller than 100kb!');
+            return isLt2M = false;
+          }
         }
       }
 
@@ -85,6 +87,7 @@ function EditProductModal({ title, visible, onOk, onCancel, details }) {
         fileList[i].thumbUrl = `data:image/jpg;base64,${convertToBase64(
           details.pImage[i]
         )}`;
+        fileList[i].initial = true;
       }
     }
   }, []);
