@@ -224,7 +224,13 @@ function ShopScreen() {
 
     // If there's an image, proceed to convert
     // Safe to do this since base64 encoded string will never have ',' within it
-    const byteCharacters = atob(file.thumbUrl.split(",")[1]);
+    var byteCharacters;
+
+    if (file.thumbUrl) {
+      byteCharacters = atob(file.thumbUrl.split(",")[1]);
+    } else {
+      byteCharacters = atob(file.split(",")[1]);
+    }
 
     const byteNumbers = new Array(byteCharacters.length);
     for (let i = 0; i < byteCharacters.length; i++) {
@@ -269,6 +275,7 @@ function ShopScreen() {
     return false;
   };
 
+  // <------------------------------------------------ GET products ------------------------------------------------------------------------
   const getProducts = () => {
     setIsProdTableLoading(true);
 
@@ -430,7 +437,6 @@ function ShopScreen() {
             let imageBody = {
               image: convertToBlob(files[i]),
               productid: thisProductId,
-              imageid: files[i].imageid,
               identityid: i + 1,
             };
 

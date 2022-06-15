@@ -7,15 +7,27 @@ const { TextArea } = Input;
 function EditProductModal({ title, visible, onOk, onCancel, details }) {
   const [form] = Form.useForm();
   const [fileList, setFileList] = useState(details.pImage);
+  var removing = false;
 
-  const onChange = ({ fileList: curFileList }) => {
+  const onChange = async ({ fileList: curFileList }) => {
     // console.log(curFileList);
-    const isLt2M = curFileList[curFileList.length - 1].size / 1024 / 1024 < 2;
-
-    if (!isLt2M) {
-      message.error('Image must smaller than 2MB!');
+    if (curFileList.length == 0) {
+      setFileList([]);
     } else {
-      setFileList(curFileList);
+      var isLt2M = true;
+
+      for (var i = 0; i < curFileList.length; i++) {
+        const thisLessThan100KB = curFileList[i].size / 1024 / 1024 < 0.1;
+        
+        if (thisLessThan100KB == false) {
+          message.error('Image must smaller than 2MB!');
+          return isLt2M = false;
+        }
+      }
+
+      if (isLt2M == true && removing == false) {
+        setFileList(curFileList);
+      }
     }
   };
 
@@ -38,19 +50,14 @@ function EditProductModal({ title, visible, onOk, onCancel, details }) {
   };
 
   const onRemove = (file) => {
+    // console.log('onRemove');
+    removing = true;
     const index = fileList.indexOf(file);
     const newFileList = fileList.slice();
     newFileList.splice(index, 1);
     setFileList(newFileList);
+    removing = false;
   };
-
-  // const beforeUpload = (file) => {
-  //   const isLt2M = file.size / 1024 / 1024 < 2;
-  //   if (!isLt2M) {
-  //     message.error('Image must smaller than 2MB!');
-  //   }
-  //   return isLt2M;
-  // };
 
   // To convert BLOB to base64 encoded then load the base64 image STEP
   const convertToBase64 = (imgData) => {
@@ -101,7 +108,7 @@ function EditProductModal({ title, visible, onOk, onCancel, details }) {
             onOk(values);
           })
           .catch((info) => {
-            console.log("Validate Failed:", info);
+            // console.log("Validate Failed:", info);
           });
       }}
     >
@@ -128,7 +135,7 @@ function EditProductModal({ title, visible, onOk, onCancel, details }) {
             },
           ]}
         >
-          <TextArea showCount maxLength={100} style={{ height: 120 }} />
+          <TextArea showCount maxLength={1000} style={{ height: 120 }} />
         </Form.Item>
         <Form.Item
           name="pPrice"
@@ -168,9 +175,9 @@ function EditProductModal({ title, visible, onOk, onCancel, details }) {
               onPreview={onPreview}
               onRemove={onRemove}
               beforeUpload={() => false} // () => false / beforeUpload
-              accept = "image/*"
+              accept = ".jpg,.png,.jpeg"
             >
-              {fileList.length <= 4 && "+ Upload"}
+              {fileList.length <= 3 && "+ Upload"}
             </Upload>
           </Space>
         </Form.Item>
