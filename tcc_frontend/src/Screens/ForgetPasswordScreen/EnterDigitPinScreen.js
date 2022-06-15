@@ -17,8 +17,6 @@ function EnterDigitPinScreen() {
   const [form] = Form.useForm();
   const email = location.state.emailBroughtOver;
 
-  let isHere = true;
-
   // console.log("from prev page: " + JSON.stringify(location.state));
 
   const getResendPin = () => {
@@ -38,13 +36,12 @@ function EnterDigitPinScreen() {
           params: { pin: response.data.message },
         });
 
-        isHere = false;
         navigate("/reset", {
           state: { digitPin: digitPin, emailBroughtOver: email },
         });
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         if (error.response.status === 401) {
           setError(error.response.data.message);
         }
@@ -77,13 +74,17 @@ function EnterDigitPinScreen() {
         // console.log("EXPIRED TIME: " + expiredTime);
         // console.log("===========================");
         setTimeout(function () {
+          var currentLocation = window.location;
+          var pathname = new URL(currentLocation).pathname;
+          // console.log(pathname);
+
           var now = new Date();
           if (expiredTime < now) {
             axios.delete(config.LOCAL_BACKEND + "/deletePIN", {
               params: { pin: pin },
             });
 
-            if (isHere) {
+            if (pathname === "/digitPin") {
               message.error(
                 "6-digit token expired. Please click on the resend button."
               );
@@ -92,7 +93,7 @@ function EnterDigitPinScreen() {
         }, 180000);
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   };
 
