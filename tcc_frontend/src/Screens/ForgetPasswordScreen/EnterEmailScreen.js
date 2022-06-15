@@ -57,7 +57,7 @@ function EnterEmailScreen() {
               );
             }
           }
-        }, 50000);
+        }, 180000);
       });
   };
 
