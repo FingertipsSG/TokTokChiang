@@ -11,8 +11,7 @@ import { resolveContent } from "nodemailer/lib/shared";
 import { Alert as WarningAlert } from "antd";
 
 var config = require("../../config.js");
-var baseUrl =
-  config.LOCAL_BACKEND || "https://tok-tok-chiang-nodejs.herokuapp.com";
+var baseUrl = config.LOCAL_BACKEND;
 
 function LoginScreen() {
   const [details, setDetails] = useState({ username: "", password: "" });

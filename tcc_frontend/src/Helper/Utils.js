@@ -1,7 +1,6 @@
 import axios from "axios";
 var config = require("../config.js");
-var baseUrl =
-  config.LOCAL_BACKEND || "https://tok-tok-chiang-nodejs.herokuapp.com";
+var baseUrl = config.LOCAL_BACKEND;
 
 const onErrorHandler = (err) => {
   // user not logged in or token given is invalid
