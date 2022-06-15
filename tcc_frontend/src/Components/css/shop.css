@@ -415,7 +415,7 @@ body.shop-body {
     margin-left: 2.1% !important;
   }
   .masks-body {
-    background-size: 65% 54% !important;
+    background-size: 65% 70% !important;
   }
   .puppets-body {
     background-size: 65% 104% !important;
@@ -458,8 +458,8 @@ body.shop-body {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 70% 53.3%;
-    background-position: left top 0.3%;
+    background-size: 70% 69.4%;
+    background-position: left top 0.5%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -517,8 +517,8 @@ body.shop-body {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 65% 52%;
-    background-position: left top 14%;
+    background-size: 65% 68%;
+    background-position: left top 27.2%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -576,8 +576,8 @@ body.shop-body {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 70% 51%;
-    background-position: left top 14%;
+    background-size: 70% 66%;
+    background-position: left top 27%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -635,8 +635,8 @@ body.shop-body {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 70% 52%;
-    background-position: left top 7%;
+    background-size: 70% 68%;
+    background-position: left top 13.7%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -694,8 +694,8 @@ body.shop-body {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 70% 50.5%;
-    background-position: left top 6.7%;
+    background-size: 70% 66.7%;
+    background-position: left top 13%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -753,8 +753,8 @@ body.shop-body {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 70% 50%;
-    background-position: left top 6%;
+    background-size: 70% 66.5%;
+    background-position: left top 12.7%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -812,8 +812,8 @@ body.shop-body {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 70% 45%;
-    background-position: left top 9%;
+    background-size: 70% 59%;
+    background-position: left top 15.8%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -871,8 +871,8 @@ body.shop-body {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 70% 43%;
-    background-position: left top 7%;
+    background-size: 70% 56.7%;
+    background-position: left top 12.1%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -930,8 +930,8 @@ body.shop-body {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 75% 47%;
-    background-position: left top 7.5%;
+    background-size: 75% 62%;
+    background-position: left top 13.6%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -989,8 +989,8 @@ body.shop-body {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 75% 45%;
-    background-position: left top 9%;
+    background-size: 75% 58.9%;
+    background-position: left top 15.8%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -1048,8 +1048,8 @@ body.shop-body {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 70% 43%;
-    background-position: left top 10%;
+    background-size: 70% 55.85%;
+    background-position: left top 17.2%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -1107,8 +1107,8 @@ body.shop-body {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 70% 37%;
-    background-position: left top 8.6%;
+    background-size: 70% 47.2%;
+    background-position: left top 13.2%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -1173,8 +1173,8 @@ body.shop-body {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 90% 26.6%;
-    background-position: left top 4.5%;
+    background-size: 90% 38.5%;
+    background-position: left top 7.8%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -1210,7 +1210,7 @@ body.shop-body {
       background-image: url("../../Assets/Images/comingsoon.png");
       background-repeat: no-repeat;  
       background-position: 5% 100%;
-      background-size:auto 57.14%;
+      background-size:auto 82.7%;
       height: fit-content;
   }
   body.puppets-skyline {
@@ -1261,7 +1261,7 @@ body.shop-body {
     width: 30% !important;
   }
   .shopHeader {
-    font-size : 1.8em;
+    font-size : 28px;
     font-family: AveNextBold;
     color: #8d191d;
     letter-spacing: 0.1em;
@@ -1274,8 +1274,8 @@ body.shop-body {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 90% 26%;
-    background-position: left top 4.5%;
+    background-size: 90% 37.7%;
+    background-position: left top 7.7%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -1288,15 +1288,15 @@ body.shop-body {
   }
   .dolls-body {
     background-image: url("../../Assets/Images/dollsBG2.png");
-    background-size: 90% 15.45%;
-    background-position: left top 2.35%;
+    background-size: 90% 15.55%;
+    background-position: left top 2.33%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
   .shirts-body {
     background-image: url("../../Assets/Images/tshirtBG2.png");
     background-size: 90% 36.1%;
-    background-position: left top 7.2%;
+    background-position: left top 7.1%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -1311,28 +1311,28 @@ body.shop-body {
       background-image: url("../../Assets/Images/comingsoon.png");
       background-repeat: no-repeat;  
       background-position: 5% 100%;
-      background-size:auto 53.2%;
+      background-size:auto 76.9%;
       height: fit-content;
   }
   body.puppets-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 95.4%;
+    background-size:auto 95.1%;
     height: fit-content;
   }
   body.dolls-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 31.57%;
+    background-size:auto 31.61%;
     height: fit-content;
   }
   body.shirts-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 73.55%;
+    background-size:auto 73.4%;
     height: fit-content;
   }
   body.framed-skyline {
@@ -1355,7 +1355,7 @@ body.shop-body {
     margin-left: 15%;
   }
   .shopHeader {
-    font-size : 30px;
+    font-size : 28px;
     font-family: AveNextBold;
     color: #8d191d;
     letter-spacing: 0.1em;
@@ -1368,8 +1368,8 @@ body.shop-body {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 95% 26.1%;
-    background-position: left top 6.5%;
+    background-size: 95% 37.4%;
+    background-position: left top 11%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -1383,7 +1383,7 @@ body.shop-body {
   .dolls-body {
     background-image: url("../../Assets/Images/dollsBG2.png");
     background-size: 95% 16.15%;
-    background-position: left top 3.55%;
+    background-position: left top 3.54%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -1405,28 +1405,28 @@ body.shop-body {
       background-image: url("../../Assets/Images/comingsoon.png");
       background-repeat: no-repeat;  
       background-position: 5% 100%;
-      background-size:auto 53.4%;
+      background-size:auto 76.7%;
       height: fit-content;
   }
   body.puppets-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 98%;
+    background-size:auto 98.2%;
     height: fit-content;
   }
   body.dolls-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 33.03%;
+    background-size:auto 33%;
     height: fit-content;
   }
   body.shirts-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 75.5%;
+    background-size:auto 75.6%;
     height: fit-content;
   }
   body.framed-skyline {
@@ -1449,7 +1449,7 @@ body.shop-body {
     margin-left: 15%;
   }
   .shopHeader {
-    font-size : 3.2em;
+    font-size : 28px;
     font-family: AveNextBold;
     color: #8d191d;
     letter-spacing: 0.1em;
@@ -1462,14 +1462,14 @@ body.shop-body {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 100% 26%;
-    background-position: left top 8%;
+    background-size: 100% 37.8%;
+    background-position: left top 13%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
   .puppets-body {
     background-image: url("../../Assets/Images/handpuppetsBG2.png");
-    background-size: 100% 47%;
+    background-size: 100% 48.4%;
     background-position: left top 20.2%;
     background-attachment: unset;
     background-repeat: no-repeat;
@@ -1477,21 +1477,21 @@ body.shop-body {
   .dolls-body {
     background-image: url("../../Assets/Images/dollsBG2.png");
     background-size: 100% 15.91%;
-    background-position: left top 4.32%;
+    background-position: left top 4.05%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
   .shirts-body {
     background-image: url("../../Assets/Images/tshirtBG2.png");
-    background-size: 100% 36.5%;
-    background-position: left top 13.1%;
+    background-size: 100% 37%;
+    background-position: left top 12.7%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
   .framed-body {
     background-image: url("../../Assets/Images/framesBG2.png");
     background-size: 100% 24.85%;
-    background-position: left top 7.55%;
+    background-position: left top 7.2%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -1499,28 +1499,28 @@ body.shop-body {
       background-image: url("../../Assets/Images/comingsoon.png");
       background-repeat: no-repeat;  
       background-position: 5% 100%;
-      background-size:auto 50.8%;
+      background-size:auto 73.3%;
       height: fit-content;
   }
   body.puppets-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 92%;
+    background-size:auto 94%;
     height: fit-content;
   }
   body.dolls-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 31.15%;
+    background-size:auto 30.9%;
     height: fit-content;
   }
   body.shirts-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 71.3%;
+    background-size:auto 72.1%;
     height: fit-content;
   }
   body.framed-skyline {
@@ -1543,7 +1543,7 @@ body.shop-body {
     margin-left: 15%;
   }
   .shopHeader {
-    font-size : 3.2em;
+    font-size : 28px;
     font-family: AveNextBold;
     color: #8d191d;
     letter-spacing: 0.1em;
@@ -1556,36 +1556,36 @@ body.shop-body {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 110% 26%;
-    background-position: left top 8%;
+    background-size: 110% 37%;
+    background-position: left top 11%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
   .puppets-body {
     background-image: url("../../Assets/Images/handpuppetsBG2.png");
-    background-size: 110% 47.4%;
-    background-position: left top 20.2%;
+    background-size: 110% 47.8%;
+    background-position: left top 16.8%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
   .dolls-body {
     background-image: url("../../Assets/Images/dollsBG2.png");
-    background-size: 110% 15.9%;
-    background-position: left top 4.24%;
+    background-size: 110% 15.6%;
+    background-position: left top 3.35%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
   .shirts-body {
     background-image: url("../../Assets/Images/tshirtBG2.png");
     background-size: 110% 36.7%;
-    background-position: left top 13%;
+    background-position: left top 10.5%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
   .framed-body {
     background-image: url("../../Assets/Images/framesBG2.png");
-    background-size: 110% 24.65%;
-    background-position: left top 7.35%;
+    background-size: 110% 24.5%;
+    background-position: left top 5.8%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -1593,28 +1593,28 @@ body.shop-body {
       background-image: url("../../Assets/Images/comingsoon.png");
       background-repeat: no-repeat;  
       background-position: 5% 100%;
-      background-size:auto 45.6%;
+      background-size:auto 65.8%;
       height: fit-content;
   }
   body.puppets-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 82.8%;
+    background-size:auto 84.5%;
     height: fit-content;
   }
   body.dolls-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 27.7%;
+    background-size:auto 27.45%;
     height: fit-content;
   }
   body.shirts-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 64%;
+    background-size:auto 64.7%;
     height: fit-content;
   }
   body.framed-skyline {
@@ -1637,8 +1637,8 @@ body.shop-body {
     margin-left: 15%;
   }
   .shopHeader {
-    font-size : 16px;
-    font-family: AveNextDemiBold;
+    font-size :28px;
+    font-family: AveNextBold;
     color: #8d191d;
     letter-spacing: 0.1em;
     margin-top: -6%;
@@ -1650,21 +1650,21 @@ body.shop-body {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 110% 24%;
-    background-position: left top 4%;
+    background-size: 110% 34.7%;
+    background-position: left top 6.5%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
   .puppets-body {
     background-image: url("../../Assets/Images/handpuppetsBG2.png");
     background-size: 110% 44.2%;
-    background-position: left top 10.15%;
+    background-position: left top 9.7%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
   .dolls-body {
     background-image: url("../../Assets/Images/dollsBG2.png");
-    background-size: 110% 14.4%;
+    background-size: 110% 14.7%;
     background-position: left top 2.1%;
     background-attachment: unset;
     background-repeat: no-repeat;
@@ -1678,7 +1678,7 @@ body.shop-body {
   }
   .framed-body {
     background-image: url("../../Assets/Images/framesBG2.png");
-    background-size: 110% 22.75%;
+    background-size: 110% 22.9%;
     background-position: left top 3.7%;
     background-attachment: unset;
     background-repeat: no-repeat;
@@ -1687,28 +1687,28 @@ body.shop-body {
       background-image: url("../../Assets/Images/comingsoon.png");
       background-repeat: no-repeat;  
       background-position: 5% 100%;
-      background-size:auto 45.6%;
+      background-size:auto 65%;
       height: fit-content;
   }
   body.puppets-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 84.2%;
+    background-size:auto 82.85%;
     height: fit-content;
   }
   body.dolls-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 27.35%;
+    background-size:auto 27.5%;
     height: fit-content;
   }
   body.shirts-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 63.55%;
+    background-size:auto 63.1%;
     height: fit-content;
   }
   body.framed-skyline {
@@ -1725,7 +1725,7 @@ body.shop-body {
 
 @media (min-width: 768px) and (max-width: 768px) {
   .shopHeader {
-  font-size: 3em !important;
+  font-size: 28px !important;
   font-family: AveNextBold;
   }
   .main-image {
@@ -1733,41 +1733,41 @@ body.shop-body {
     height: 175px !important;
   }
   .masks-body {
-    background-size: 110% 28.85% !important;
-    background-position: left top 7% !important;
+    background-size: 110% 40.7% !important;
+    background-position: left top 12.3% !important;
     background-repeat: no-repeat;
   }
   .puppets-body {
-    background-size: 110% 51.5% !important;
-    background-position: left top 5.95em !important;
+    background-size: 110% 51.8% !important;
+    background-position: left top 6em !important;
     background-repeat: no-repeat;
   }
   .dolls-body {
-    background-size: 110% 17.3% !important;
-    background-position: left top 3.6% !important;
+    background-size: 110% 17% !important;
+    background-position: left top 3.67% !important;
     background-repeat: no-repeat;
   }
   .shirts-body {
-    background-size: 110% 38.5% !important;
-    background-position: left top 11% !important;
+    background-size: 110% 38.8% !important;
+    background-position: left top 11.2% !important;
     background-repeat: no-repeat;
   }
   .framed-body {
     background-size: 110% 26.95% !important;
-    background-position: left top 6.45% !important;
+    background-position: left top 6.5% !important;
     background-repeat: no-repeat;
   }
   body.masks-skyline {
-    background-size:auto 50.46% !important;
+    background-size:auto 72.3% !important;
   }
   body.puppets-skyline {
-    background-size:auto 90.4% !important;
+    background-size:auto 89.5% !important;
   }
   body.dolls-skyline {
-    background-size:auto 30.4% !important;
+    background-size:auto 30.15% !important;
   }
   body.shirts-skyline {
-    background-size:auto 68% !important;
+    background-size:auto 68.6% !important;
   }
   body.framed-skyline {
     background-size:auto 47.6% !important;
@@ -1788,7 +1788,7 @@ body.shop-body {
     margin-left: 15%;
   }
   .shopHeader {
-    font-size : 3em;
+    font-size : 28px;
     font-family: AveNextBold;
     color: #8d191d;
     letter-spacing: 0.1em;
@@ -1801,29 +1801,29 @@ body.shop-body {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 105% 14%;
-    background-position: left top 2.9%;
+    background-size: 105% 21.15%;
+    background-position: left top 4.83%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
   .puppets-body {
     background-image: url("../../Assets/Images/handpuppetsBG2.png");
-    background-size: 105% 28.55%;
-    background-position: left top 7.15%;
+    background-size: 105% 28.7%;
+    background-position: left top 7.2%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
   .dolls-body {
     background-image: url("../../Assets/Images/dollsBG2.png");
-    background-size: 105% 8.35%;
-    background-position: left top 1.6%;
+    background-size: 105% 8.25%;
+    background-position: left top 1.62%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
   .shirts-body {
     background-image: url("../../Assets/Images/tshirtBG2.png");
     background-size: 105% 24.4%;
-    background-position: left top 5.7%;
+    background-position: left top 5.8%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -1838,28 +1838,28 @@ body.shop-body {
       background-image: url("../../Assets/Images/comingsoon.png");
       background-repeat: no-repeat;  
       background-position: 5% 100%;
-      background-size:auto 30%;
+      background-size:auto 45.7%;
       height: fit-content;
   }
   body.puppets-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 61.2%;
+    background-size:auto 61.9%;
     height: fit-content;
   }
   body.dolls-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 17.85%;
+    background-size:auto 17.78%;
     height: fit-content;
   }
   body.shirts-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 52.15%;
+    background-size:auto 52.6%;
     height: fit-content;
   }
   body.framed-skyline {
@@ -1882,7 +1882,7 @@ body.shop-body {
     margin-left: 15%;
   }
   .shopHeader {
-    font-size : 1.6em;
+    font-size : 24px;
     font-family: AveNextBold;
     color: #8d191d;
     letter-spacing: 0.1em;
@@ -1895,8 +1895,8 @@ body.shop-body {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 105% 15.2%;
-    background-position: left top 3.1%;
+    background-size: 105% 23%;
+    background-position: left top 5.2%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -1931,14 +1931,14 @@ body.shop-body {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 30.35%;
+    background-size:auto 46%;
     height: fit-content;
 }
 body.puppets-skyline {
   background-image: url("../../Assets/Images/comingsoon.png");
   background-repeat: no-repeat;  
   background-position: 5% 100%;
-  background-size:auto 62.1%;
+  background-size:auto 62%;
   height: fit-content;
 }
 body.dolls-skyline {
@@ -1972,7 +1972,7 @@ body.framed-skyline {
     margin-top: 5%;
   }
   .shopHeader {
-    font-size : 1.6em;
+    font-size : 24px;
     font-family: AveNextBold;
     color: #8d191d;
     letter-spacing: 0.1em;
@@ -1985,15 +1985,15 @@ body.framed-skyline {
   } 
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 110% 15.55%;
-    background-position: left top 2.9%;
+    background-size: 110% 23.3%;
+    background-position: left top 4.8%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
   .puppets-body {
     background-image: url("../../Assets/Images/handpuppetsBG2.png");
-    background-size: 110% 31%;
-    background-position: left top 7.1%;
+    background-size: 110% 30.9%;
+    background-position: left top 7.05%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -2022,21 +2022,21 @@ body.framed-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 31.9%;
+    background-size:auto 47.85%;
     height: fit-content;
   }
   body.puppets-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 63.6%;
+    background-size:auto 63.65%;
     height: fit-content;
   } 
   body.dolls-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 19.2%;
+    background-size:auto 19.25%;
     height: fit-content;
   }
   body.shirts-skyline {
@@ -2066,7 +2066,7 @@ body.framed-skyline {
     margin-left: 15%;
   }
   .shopHeader {
-    font-size : 1.6em;
+    font-size : 24px;
     font-family: AveNextBold;
     color: #8d191d;
     letter-spacing: 0.1em;
@@ -2079,15 +2079,15 @@ body.framed-skyline {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 120% 13.7%;
-    background-position: left top 3.6%;
+    background-size: 120% 20.6%;
+    background-position: left top 5.85%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
   .puppets-body {
     background-image: url("../../Assets/Images/handpuppetsBG2.png");
-    background-size: 120% 27.7%;
-    background-position: left top 8.7%;
+    background-size: 120% 27.6%;
+    background-position: left top 8.6%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -2116,7 +2116,7 @@ body.framed-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 31.15%;
+    background-size:auto 47.1%;
     height: fit-content;
   }
   body.puppets-skyline {
@@ -2130,7 +2130,7 @@ body.framed-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 18.6%;
+    background-size:auto 18.65%;
     height: fit-content;
   }
   body.shirts-skyline {
@@ -2160,8 +2160,8 @@ body.framed-skyline {
     margin-left: 15%;
   }
   .shopHeader {
-    font-size : 1.6em;
-    font-family: AveNextDemiBold;
+    font-size : 24px;
+    font-family: AveNextBold;
     color: #8d191d;
     letter-spacing: 0.1em;
     margin-top: -5%;
@@ -2173,8 +2173,8 @@ body.framed-skyline {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 120% 13.26%;
-    background-position: left top 4%;
+    background-size: 120% 20%;
+    background-position: left top 6.5%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -2210,14 +2210,14 @@ body.framed-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 31.15%;
+    background-size:auto 46.9%;
     height: fit-content;
   }
   body.puppets-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 62.9%;
+    background-size:auto 62.8%;
     height: fit-content;
   } 
   body.dolls-skyline {
@@ -2254,7 +2254,7 @@ body.framed-skyline {
     margin-left: 15%;
   }
   .shopHeader {
-    font-size : 1.6em;
+    font-size : 22.4px;
     font-family: AveNextBold;
     color: #8d191d;
     letter-spacing: 0.1em;
@@ -2267,8 +2267,8 @@ body.framed-skyline {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 130% 12.6%;
-    background-position: left top 3.7%;
+    background-size: 130% 19%;
+    background-position: left top 6%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -2304,7 +2304,7 @@ body.framed-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 31.1%;
+    background-size:auto 46.95%;
     height: fit-content;
   }
   body.puppets-skyline {
@@ -2348,7 +2348,7 @@ body.framed-skyline {
     margin-left: 15%;
   }
   .shopHeader {
-    font-size : 1.6em;
+    font-size : 22.4px;
     font-family: AveNextBold;
     color: #8d191d;
     letter-spacing: 0.1em;
@@ -2361,15 +2361,15 @@ body.framed-skyline {
   }
   .masks-body {
     background-image: url("../../Assets/Images/masksBG2.png");
-    background-size: 155% 12%;
-    background-position: left top 3.3%;
+    background-size: 155% 18.1%;
+    background-position: left top 5.4%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
   .puppets-body {
     background-image: url("../../Assets/Images/handpuppetsBG2.png");
-    background-size: 155% 24.5%;
-    background-position: left top 7.9%;
+    background-size: 155% 24%;
+    background-position: left top 7.7%;
     background-attachment: unset;
     background-repeat: no-repeat;
   }
@@ -2398,14 +2398,14 @@ body.framed-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 30.45%;
+    background-size:auto 46.1%;
     height: fit-content;
   }
   body.puppets-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
     background-repeat: no-repeat;  
     background-position: 5% 100%;
-    background-size:auto 62.1%;
+    background-size:auto 61.2%;
     height: fit-content;
   } 
   body.dolls-skyline {
@@ -2437,11 +2437,7 @@ body.framed-skyline {
 /* iphone SE */
 @media (min-width: 375px) and (max-width: 376px) {
   body.masks-skyline {
-    background-image: url("../../Assets/Images/comingsoon.png");
-    background-repeat: no-repeat;  
-    background-position: 5% 100%;
-    background-size:auto 30.45%;
-    height: fit-content;
+    background-size:auto 46.1%;
   }
   body.puppets-skyline {
     background-size:auto 60.2%;
@@ -2457,7 +2453,7 @@ body.framed-skyline {
     background-position: left top 7.5%;
   }
   .masks-body {
-    background-size: 155% 11.95%;
+    background-size: 155% 18.1%;
   }
 }
 
@@ -2495,8 +2491,8 @@ body.framed-skyline {
     margin-top: -10.3%;
   }
   .masks-body {
-    background-size: 140% 11.5%;
-    background-position: left top 3.4%;
+    background-size: 140% 17.4%;
+    background-position: left top 5.5%;
   }
   .puppets-body {
     background-size: 140% 23.45%;
@@ -2515,7 +2511,7 @@ body.framed-skyline {
     background-position: left top 3.14%;
   }
   body.masks-skyline {
-    background-size:auto 31.1%;
+    background-size:auto 47.1%;
   }
   body.puppets-skyline {
     background-size:auto 63.4%;
@@ -2549,8 +2545,8 @@ body.framed-skyline {
     background-size:auto 28.45%;
   }
   .masks-body {
-    background-size: 155% 12%;
-    background-position: left top 3.3%;
+    background-size: 155% 18.1%;
+    background-position: left top 5.4%;
   }
   .puppets-body {
     background-size: 155% 23.35%;
