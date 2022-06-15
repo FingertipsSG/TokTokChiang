@@ -1723,6 +1723,7 @@ body.shop-body {
   }
 }
 
+/* ipad mini */
 @media (min-width: 768px) and (max-width: 768px) {
   .shopHeader {
   font-size: 28px !important;
@@ -1761,7 +1762,7 @@ body.shop-body {
     background-size:auto 72.3% !important;
   }
   body.puppets-skyline {
-    background-size:auto 89.5% !important;
+    background-size:auto 81% !important;
   }
   body.dolls-skyline {
     background-size:auto 30.15% !important;
@@ -2566,3 +2567,20 @@ body.framed-skyline {
   }
 }
 
+/* ipad air */
+@media (min-width: 820px) and (max-width: 821px) {
+  body.puppets-skyline {
+    background-size:auto 68.4%;
+  }
+  body.shirts-skyline {
+    background-size:auto 63.7%;
+  }
+  .shirts-body {
+    background-size: 110% 36.4%;
+    background-position: left top 10.2%;
+  }
+  .framed-body {
+    background-size: 110% 24.5%;
+    background-position: left top 5.9%;
+  }
+}
