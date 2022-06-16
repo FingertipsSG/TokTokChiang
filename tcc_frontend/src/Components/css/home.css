@@ -351,7 +351,7 @@ body.homePageBody {
         width:50%;
         overflow:scroll; 
         overflow-x: hidden;
-        padding-right: 40px;
+        padding-right: 50px;
     }
 }
 
@@ -419,6 +419,9 @@ body.homePageBody {
         overflow:scroll; 
         overflow-x: hidden;
     }
+}
+
+@media (min-width: 1224px)and (max-width: 1275px) { 
     .homeContent {
         font-family: Calibri;
         font-size: 16px;
@@ -725,6 +728,15 @@ body.homePageBody {
         overflow:scroll; 
         overflow-x: hidden;
     }
+    .secondHeader{
+        margin-left:2.6em;
+        font-size:35px;
+        margin-top:0.5em;
+    }
+    .homeTitle1{
+        display:none;
+    }
+    
 }
 /*Ipad Air Version*/
 @media (min-width: 769px)and (max-width: 991px) { 
@@ -749,7 +761,7 @@ body.homePageBody {
         width: 83%;
         overflow:hidden; 
         margin-bottom: 0;
-        margin-top:1.5em;
+        margin-top:2em;
     }
     .homeFounderPic {
         width: 70%;
@@ -758,18 +770,18 @@ body.homePageBody {
         float:none;
     }
     body.homePageBody {
-        background-image: url("../../Assets/Images/phoneview.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto 56%;
+        background-size:210%;
     }
     .homeTitle{
         margin-top:0em;
-        font-size:27px;
+        font-size:28px;
     }
     .secondHeader{
-        margin-left:2.6em;
-        font-size:35px;
+        margin-left:3.2em;
+        font-size:28px;
         margin-top:0.5em;
     }
     .homeTitle1{
@@ -780,14 +792,14 @@ body.homePageBody {
 /*Ipad Mini*/
 @media (min-width: 766px)and (max-width: 768px) { 
     html.homeHtml{
-        height:220vh;
+        height:200vh;
     }
     .homeContent {
         font-family: Calibri;
         font-size: 1.6em;
         margin-left: 90px;
         height: fit-content;
-        width: 83%;
+        width: 81%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -797,7 +809,7 @@ body.homePageBody {
         font-size: 1.6em;
         margin-left: 90px;
         height: fit-content;
-        width: 83%;
+        width: 81%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -809,18 +821,18 @@ body.homePageBody {
         float:none;
     }
     body.homePageBody {
-        background-image: url("../../Assets/Images/phoneview.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto 67%;
+        background-size:210%;
     }
     .homeTitle{
         margin-top:0em;
-        font-size:35px;
+        font-size:28px;
     }
     .secondHeader{
-        margin-left:2.6em;
-        font-size:35px;
+        margin-left:3.2em;
+        font-size:28px;
         margin-top:0.5em;
     }
     .homeTitle1{
@@ -838,7 +850,7 @@ body.homePageBody {
         font-size: 1.5em;
         margin-left: 80px;
         height: fit-content;
-        width: 85%;
+        width: 82%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -848,7 +860,7 @@ body.homePageBody {
         font-size: 1.5em;
         margin-left: 80px;
         height: fit-content;
-        width: 85%;
+        width: 82%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:1.3em;
@@ -856,22 +868,22 @@ body.homePageBody {
     .homeFounderPic {
         width: 70%;
         margin-left:11%;
-        margin-top: 1em;
+        margin-top: 2.5em;
         float:none;
     }
     body.homePageBody {
-        background-image: url("../../Assets/Images/phoneview.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto 67%;
+        background-size:220%;
     }
     .homeTitle{
         margin-top:0em;
-        font-size:35px;
+        font-size:28px;
     }
     .secondHeader{
-        margin-left:2.3em;
-        font-size:35px;
+        margin-left:2.9em;
+        font-size:28px;
         margin-top:0.1em;
     }
     .homeTitle1{
@@ -910,10 +922,10 @@ body.homePageBody {
         float:none;
     }
     body.homePageBody {
-        background-image: url("../../Assets/Images/phoneview.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto 65.5%;
+        background-size:230%;
     }
     .homeTitle{
         margin-top:1em;
@@ -921,7 +933,7 @@ body.homePageBody {
     }
     .secondHeader{
         margin-top:0.8em;
-        margin-left:2.8em;
+        margin-left:3em;
         font-size:28px;
     }
     .homeTitle1{
@@ -931,14 +943,14 @@ body.homePageBody {
 
 @media (min-width: 631px)and (max-width: 700px) { 
     html.homeHtml{
-        height:220vh;
+        height:210vh;
     }
     .homeContent {
         font-family: Calibri;
         font-size: 1.3em;
         margin-left: 85px;
         height: fit-content;
-        width: 82%;
+        width: 80%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -948,7 +960,7 @@ body.homePageBody {
         font-size: 1.3em;
         margin-left: 85px;
         height: fit-content;
-        width: 82%;
+        width: 80%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:1.7em;
@@ -960,18 +972,18 @@ body.homePageBody {
         float:none;
     }
     body.homePageBody {
-        background-image: url("../../Assets/Images/AboutUs.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto;
+        background-size:195%;
     }
     .homeTitle{
-        font-size:28px;
+        font-size:24px;
         margin-top:1em;
     }
     .secondHeader{
-        margin-left:3em;
-        font-size:28px;
+        margin-left:3.5em;
+        font-size:24px;
     }
     .homeTitle1{
         display:none;
@@ -987,7 +999,7 @@ body.homePageBody {
         font-size: 1.5em;
         margin-left: 72px;
         height: fit-content;
-        width: 85%;
+        width: 81%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -997,10 +1009,10 @@ body.homePageBody {
         font-size: 1.5em;
         margin-left: 71px;
         height: fit-content;
-        width: 85%;
+        width: 81%;
         overflow:hidden; 
         margin-bottom: 0;
-        margin-top:2em;
+        margin-top:1.5em;
     }
     .homeFounderPic {
         width: 70%;
@@ -1009,18 +1021,19 @@ body.homePageBody {
         float:none;
     }
     body.homePageBody {
-        background-image: url("../../Assets/Images/AboutUs.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto;
+        background-size:251%;
     }
     .homeTitle{
         margin-top:0.5em;
-        font-size: 1.8em;
+        font-size: 24px;
     }
     .secondHeader{
-        margin-left:2.8em;
-        font-size:25.2px;
+        margin-left:2.9em;
+        font-size:24px;
+        margin-top:0.5em;
     }
     .homeTitle1{
         display:none;
@@ -1036,7 +1049,7 @@ body.homePageBody {
         font-size: 1.3em;
         margin-left: 70px;
         height: fit-content;
-        width: 82%;
+        width: 79%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -1046,7 +1059,7 @@ body.homePageBody {
         font-size: 1.3em;
         margin-left: 70px;
         height: fit-content;
-        width: 82%;
+        width: 79%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:1.5em;
@@ -1054,22 +1067,23 @@ body.homePageBody {
     .homeFounderPic {
         width: 70%;
         margin-left: 14%;
-        margin-top:1.5em;
+        margin-top:1.4em;
         float:none;
     }
     body.homePageBody {
-        background-image: url("../../Assets/Images/AboutUs.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto;
+        background-size:280%;
     }
     .homeTitle{
-        margin-top:1.7em;
         margin-top:0.3em;
+     font-size:24px;
     }
     .secondHeader{
         margin-left:3em;
         margin-top:0.3em;
+        font-size:24px;
     }
     .homeTitle1{
         display:none;
@@ -1085,7 +1099,7 @@ body.homePageBody {
         font-size: 1.2em;
         margin-left: 70px;
         height: fit-content;
-        width: 80%;
+        width: 78%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -1096,7 +1110,7 @@ body.homePageBody {
         font-size: 1.2em;
         margin-left: 70px;
         height: fit-content;
-        width: 80%;
+        width: 78%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:1.6em;
@@ -1109,17 +1123,16 @@ body.homePageBody {
         float:none;
     }
     body.homePageBody {
-        background-image: url("../../Assets/Images/AboutUs.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto;
+        background-size:305%;
     }
-    .homeTitle{
-        margin-top:1.34em;
-        margin-top:0em;
+    .homeTitle,.secondHeader{
+        font-size:22.4px;
     }
     .secondHeader{
-        margin-left:3em;
+        margin-left:3.2em;
     }
     .homeTitle1{
         display:none;
@@ -1128,14 +1141,14 @@ body.homePageBody {
 
 @media (max-width: 435px) { 
     html.homeHtml{
-        height:195vh;
+        height:200vh;
     }
     .homeContent {
         font-family: Calibri;
         font-size: 1.2em;
         margin-left: 70px;
         height: fit-content;
-        width: 80%;
+        width: 79.6%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -1146,7 +1159,7 @@ body.homePageBody {
         font-size: 1.2em;
         margin-left: 70px;
         height: fit-content;
-        width: 80%;
+        width: 79.6%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:1.5em;
@@ -1155,21 +1168,23 @@ body.homePageBody {
     .homeFounderPic {
         width: 70%;
         margin-left: 16%;
-        margin-top: 2.7em;
+        margin-top: 2.5em;
         float:none;
     }
     body.homePageBody {
-        background-image: url("../../Assets/Images/AboutUs.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto;
+        background-size:320%;
     }
     .homeTitle{
         margin-top:1.35em;
         margin-top:0em;
+        font-size:22.4px;
     }
     .secondHeader{
-        margin-left:3em;
+        margin-left:3.1em;
+        font-size:22.4px;
     }
     .homeTitle1{
         display:none;
@@ -1199,26 +1214,28 @@ body.homePageBody {
         width: 80%;
         overflow:hidden; 
         margin-bottom: 0;
-        margin-top:1.3em;
-        padding-right: 0.5em;
+        margin-top:1.4em;
+        padding-right: 1.3em;
     }
     .homeFounderPic {
         width: 70%;
         margin-left: 17%;
-        margin-top:3.3em;
+        margin-top:3.4em;
         float:none;
     }
     body.homePageBody {
-        background-image: url("../../Assets/Images/AboutUs.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto;
+        background-size:342%;
     }
     .homeTitle{
         margin-top:0em;
+        font-size:22.4px;
     }
     .secondHeader{
-        margin-left:3em;
+        margin-left:3.1em;
+        font-size:22.4px;
     }
     .homeTitle1{
         display:none;
@@ -1254,21 +1271,22 @@ body.homePageBody {
     .homeFounderPic {
         width: 70%;
         margin-left: 17.5%;
-        margin-top: 3.5em;
+        margin-top: 3.8em;
         float:none;
     }
     body.homePageBody {
-        background-image: url("../../Assets/Images/AboutUs.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto;
+        background-size:342%;
     }
     .homeTitle{
         margin-top:-0.25em;
+        font-size:22.4px;
     }
     .secondHeader{
-        margin-left:3em;
-        font-size: 22.96px;
+        margin-left:3.1em;
+        font-size: 22.4px;
     }
     .homeTitle1{
         display:none;
@@ -1276,21 +1294,52 @@ body.homePageBody {
 }
 @media (max-width: 360px) { 
     html.homeHtml{
-        height:250vh;
+        height:260vh;
     }
     .homeTitle1{
         display:none;
     }
     .homeTitle{
         margin-top:-0.25em;
+        font-size:22.4px;
+        margin-left:-0.12em;
     }
     .homeFounderPic {
-        margin-top: 3.6em;
+        margin-top: 3.8em;
+        margin-left:5em;
     }
     .title1{
     font-size:1.6em;
     }
     .secondHeader{
-        font-size: 22.96px;
+        font-size: 22.4px;
+    }
+    body.homePageBody {
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:359%;
+    }
+    .homeContent {
+        font-family: Calibri;
+        font-size: 1.2em;
+        margin-left: 70px;
+        height: fit-content;
+        width: 80%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:2em;
+        padding-right: 1.5em;
+    }
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 1.2em;
+        margin-left: 70px;
+        height: fit-content;
+        width: 80%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:1.3em;
+        padding-right: 1.5em;
     }
 }

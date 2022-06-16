@@ -36,11 +36,13 @@ function Home() {
                                         and his grandfather as a drummer for a Chinese opera troupe, Nick has lived and breathed
                                         Teochew opera since he was a child and started performing at age 13.
                                         <br />
+                                        <br/>
                                         In 2011, Nick turned his passion for Chinese opera into a purpose and founded Tok Tok Chiang,
                                         a platform where Nick dedicates his efforts in repositioning Chinese opera and culture, changing
                                         perspectives and renewing interest in the audience. With his determination in perfecting this
                                         traditional art form, Nick followed his passion and made an impact. He bagged the Honouree Award
                                         for Cultural Achievement of JCI Ten Outstanding Young Persons of the World Singapore in 2014.
+                                        <br />
                                         <br />
                                         In 2017, Nick made further efforts to revive and promote this vanishing art form by taking over the
                                         helm as the troupe owner of Lao Sai Tao Yuan, a 158-year-old Teochew Opera Troupe under our non-profit
