@@ -177,20 +177,20 @@ img#wayangPic {
 /*Ipad air*/
 @media(min-width: 769px) and (max-width: 991px){ 
     html.wayangHtml{
-        height: 220vh;
+        height: 210vh;
     }
     body.wayangBody {
         background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position: 5% 100%;
-        background-size:auto 47%;
+        background-size:210%;
     }
     .wayangContent {
         font-family: Calibri;
         font-size: 1.8em;
         margin-left: 90px;
         height: fit-content;
-        width: 86.5%;
+        width: 85%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -220,16 +220,19 @@ img#wayangPic {
     }
     .rightDivision{
         background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 20%;
+        background-position: 130% 13%;
         background-attachment:unset;
         background-size:100% 65%;
+    }
+    .title1,.title2,.wayangTitle{
+        font-size:28px;
     }
 } 
 
 /*Ipad Mini*/
  @media(min-width: 766px) and (max-width: 768px){ 
     html.wayangHtml{
-        height: 230vh;
+        height: 218vh;
         overflow-y: auto;
         overflow-x:hidden;
     }
@@ -237,20 +240,17 @@ img#wayangPic {
         background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% 100%;
-        background-size:auto 61%;
+        background-size:210%;
     }
     .wayangContent {
         font-family: Calibri;
         font-size: 1.6em;
-        margin-left: 4em;
+        margin-left: 4.4em;
         height: fit-content;
-        width: 84%;
+        width: 82%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
-    }
-    .wayangTitle {
-        font-size: 3em;
     }
     .wayangCarousel{
         width: 100%;
@@ -267,16 +267,19 @@ img#wayangPic {
         visibility: visible;
         height: auto;
         width: auto;  
-        margin-top:5%;
+        margin-top:8%;
     } 
-    .rightDivision{
+    .rightDiv{
         background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 27%;
+        background-position: 130% 15%;
         background-attachment:unset;
         background-size:100% 65%;
     }
     .bottomDiv {
         background-image: none;
+    }
+    .title1,.title2,.wayangTitle{
+        font-size:28px;
     }
 } 
 
@@ -292,13 +295,10 @@ img#wayangPic {
         font-size: 1.5em;
         margin-left:83px;
         height: fit-content;
-        width: 86%;
+        width: 85%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
-    }
-    .wayangTitle {
-        font-size: 2.5em;
     }
     body.wayangBody {
         background-image: none;
@@ -310,10 +310,13 @@ img#wayangPic {
         float:none;
     }
     body.wayangBody {
-        background-image: url("../../Assets/Images/phoneview.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto 59%; 
+        background-size:220%; 
+    }
+    .title1,.title2,.wayangTitle{
+        font-size:28px;
     }
     
 }
@@ -328,33 +331,34 @@ img#wayangPic {
         font-size: 1.5em;
         margin-left: 80px;
         height: fit-content;
-        width: 87%;
+        width: 85%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
     }
     body.wayangBody {
-        background-image: url("../../Assets/Images/phoneview.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto 60%;
+        background-size:230%;
     }
     .wayangCarousel{
         width: 100%;
         margin-left: -3em;
-        margin-top: 6.5%;
+        margin-top: 8%;
         float:none;
     } 
     .wayangTitle{
         margin-top:1em;
+    }
+    .title1,.title2,.wayangTitle{
         font-size:28px;
-        
     }
 }
 
 @media(min-width: 630px) and (max-width: 700px){
     html.wayangHtml{
-        height:230vh;
+        height:225vh;
         overflow-y:auto;
         overflow-x:hidden;
     }
@@ -363,7 +367,7 @@ img#wayangPic {
         font-size: 1.3em;
         margin-left: 80px;
         height: fit-content;
-        width: 85.5%;
+        width: 84%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -373,16 +377,19 @@ img#wayangPic {
         margin-top:1em;
     }
     body.wayangBody {
-        background-image: url("../../Assets/Images/phoneview.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto 60%;
+        background-size:195%;
     }
     .wayangCarousel{
         width: 100%;
         margin-left: -1.5em;
         margin-top: 8%;
         float:none;
+    }
+    .title1,.title2,.wayangTitle{
+        font-size:24px;
     }
 }
 @media(min-width: 528px) and (max-width: 630px){
@@ -394,22 +401,22 @@ img#wayangPic {
     .wayangContent {
         font-family: Calibri;
         font-size: 1.5em;
-        margin-left: 70px;
+        margin-left: 74px;
         height: fit-content;
-        width: 86.5%;
+        width: 83%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
     }
     .wayangTitle {
-        font-size: 25.2px;
+        font-size: 24px;
         margin-top: -1.5em;
     }
     body.wayangBody {
-        background-image: url("../../Assets/Images/AboutUs.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto;
+        background-size:251%;
     }
     .wayangCarousel{
         width: 100%;
@@ -419,10 +426,13 @@ img#wayangPic {
     #Title2 {
         display: block;
     }
+    .title1,.title2,.wayangTitle{
+        font-size:24px;
+    }
 }
 @media(min-width: 451px) and (max-width: 528px){
     html.wayangHtml{
-        height:300vh;
+        height:220vh;
         overflow-y:auto;
         overflow-x:hidden;
     }
@@ -431,7 +441,7 @@ img#wayangPic {
         font-size: 1.3em;
         margin-left: 70px;
         height: fit-content;
-        width: 84%;
+        width: 83%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -440,10 +450,10 @@ img#wayangPic {
         font-size: 22px;
     }
     body.wayangBody {
-        background-image: url("../../Assets/Images/AboutUs.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto;
+        background-size:280%;
     }
     .wayangCarousel{
         width: 100%;
@@ -457,82 +467,13 @@ img#wayangPic {
     .wayangTitle {
         margin-top: -1.5em;
     }
+    .title1,.title2,.wayangTitle{
+        font-size:24px;
+    }
 }
 @media(max-width:451px){
     html.wayangHtml{
         height:280vh;
-        overflow-y:auto;
-        overflow-x:hidden;
-    }
-    .wayangContent {
-        font-family: Calibri;
-        font-size: 1.2em;
-        margin-left: 70px;
-        height: fit-content;
-        width: 82%;
-        overflow:hidden; 
-        margin-bottom: 0;
-        margin-top:2em;
-    }
-    .wayangTitle {
-        font-size: 22px;
-    }
-    body.wayangBody {
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-repeat: no-repeat;  
-        background-position:5% bottom;
-        background-size:auto;
-    }
-    .wayangCarousel{
-        width: 100%;
-        margin-left: 6.2%;
-        margin-top: 8%;
-        float:none;
-    }
-    #Title2 {
-        display: block;
-    }
-    .wayangTitle {
-        margin-top: -1.5em;
-    }
-}
-
-@media(max-width:435px){
-    html.wayangHtml{
-        height:230vh;
-        overflow-y:auto;
-        overflow-x:hidden;
-    }
-    .wayangContent {
-        font-family: Calibri;
-        font-size: 1.2em;
-        margin-left: 70px;
-        height: fit-content;
-        width: 82%;
-        overflow:hidden; 
-        margin-bottom: 0;
-        margin-top:2em;
-    }
-    .wayangTitle {
-        font-size: 22px;
-    }
-    body.wayangBody {
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-repeat: no-repeat;  
-        background-position:5% bottom;
-        background-size:auto;
-    }
-    .wayangCarousel{
-        width: 100%;
-        margin-left: 8%;
-        margin-top: 8%;
-        float:none;
-    }
-}
-
-@media(max-width:400px){
-    html.wayangHtml{
-        height:250vh;
         overflow-y:auto;
         overflow-x:hidden;
     }
@@ -550,10 +491,83 @@ img#wayangPic {
         font-size: 22px;
     }
     body.wayangBody {
-        background-image: url("../../Assets/Images/AboutUs.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto;
+        background-size:305%;
+    }
+    .wayangCarousel{
+        width: 100%;
+        margin-left: 6.2%;
+        margin-top: 8%;
+        float:none;
+    }
+    #Title2 {
+        display: block;
+    }
+    .wayangTitle {
+        margin-top: -1.5em;
+        font-size:22.4px;
+    }
+}
+
+@media(max-width:435px){
+    html.wayangHtml{
+        height:220vh;
+        overflow-y:auto;
+        overflow-x:hidden;
+    }
+    .wayangContent {
+        font-family: Calibri;
+        font-size: 1.2em;
+        margin-left: 70px;
+        height: fit-content;
+        width: 80%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:2em;
+    }
+    .wayangTitle {
+        font-size: 22.4px;
+    }
+    body.wayangBody {
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:320%;
+    }
+    .wayangCarousel{
+        width: 100%;
+        margin-left: 8.5%;
+        margin-top: 8%;
+        float:none;
+    }
+}
+
+@media(max-width:400px){
+    html.wayangHtml{
+        height:245vh;
+        overflow-y:auto;
+        overflow-x:hidden;
+    }
+    .wayangContent {
+        font-family: Calibri;
+        font-size: 1.2em;
+        margin-left: 70px;
+        height: fit-content;
+        width: 80%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:2em;
+    }
+    .wayangTitle {
+        font-size: 22.4px;
+    }
+    body.wayangBody {
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:342%;
     }
     .wayangCarousel{
         width: 100%;
@@ -580,13 +594,19 @@ img#wayangPic {
         font-size: 1.2em;
         margin-left: 70px;
         height: fit-content;
-        width: 80%;
+        width: 79%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
     }
     .wayangTitle {
-        font-size: 22px;
+        font-size: 22.4px;
+    }
+    body.wayangBody {
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:342%;
     }
     .wayangCarousel{
         margin-left: 3.6em;
@@ -601,9 +621,38 @@ img#wayangPic {
 }
 @media(max-width:360px){
     html.wayangHtml{
-        height:300vh;
+        height:285vh;
         overflow-y: auto;
         overflow-x:hidden;
+    }
+    .wayangContent {
+        font-family: Calibri;
+        font-size: 1.2em;
+        margin-left: 70px;
+        height: fit-content;
+        width: 78%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:2em;
+    }
+    body.wayangBody {
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:359%;
+    }
+    .rightDiv{
+        background-image: url("../../Assets/Images/brush1.png");
+        background-position: 130% 27%;
+        background-attachment:unset;
+        background-size:100% 50%;
+    }
+    .wayangCarousel{
+        margin-top: 2.3em;
+        margin-left:3.8em;
+    } 
+    .wayangTitle{
+        font-size:22.4px;
     }
     .rightDiv{
         background-image: url("../../Assets/Images/brush1.png");
