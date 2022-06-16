@@ -456,11 +456,17 @@ body.homePageBody {
         display:none;
     }
     .homescroll{
-        height: 320px;
+        height:300px;
         width:50%;
         overflow:scroll; 
         overflow-x: hidden;
         padding-right: 40px;
+    }
+    .homeFounderPic {
+        width: 67%;
+        margin-left:15.7%;
+        margin-top: -1.7em;
+        float:none;
     }
 }
 
