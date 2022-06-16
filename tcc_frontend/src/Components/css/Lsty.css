@@ -44,6 +44,7 @@ img#lstyPic {
         height:420px;
         width:95%;
         font-size:1.7em;
+        padding-right:2em;
     }
     .lstyHeader,.lstyHeader2{
         font-size:45px;
@@ -62,6 +63,7 @@ img#lstyPic {
         width:95%;
         font-size:1.5em;
         margin-top:0.6em;
+        padding-right:2em;
     }
     .lstyHeader,.lstyHeader2{
         font-size:30px;
@@ -78,6 +80,7 @@ img#lstyPic {
 @media (min-width: 1536px) and (max-width: 1600px) {
     .lstyContent {
         height:365px;
+        padding-right:2em;
         width:95%;
         font-size:1.5em;
     }
@@ -95,6 +98,7 @@ img#lstyPic {
 @media (min-width: 1520px) and (max-width: 1535px) {
     .lstyContent {
         height:280px;
+        padding-right:2em;
         width:95%
     }
     .lstyHeader,.lstyHeader2{
@@ -110,6 +114,7 @@ img#lstyPic {
 @media (min-width: 1350px) and (max-width: 1520px) {
     .lstyContent {
         height:280px;
+        padding-right:2em;
         width:95%
     }
     .lstyHeader,.lstyHeader2{
@@ -126,6 +131,7 @@ img#lstyPic {
     .lstyContent {
         height: 16em !important;
         width:90%;
+        padding-right:2em;
     }
     .lstyHeader,.lstyHeader2{
         font-size:28px;
@@ -141,6 +147,7 @@ img#lstyPic {
     .lstyContent {
         height: 13em !important;
         width:90%;
+        padding-right:2em;
     }
     .lstyHeader,.lstyHeader2{
         font-size:28px;
@@ -156,6 +163,7 @@ img#lstyPic {
     .lstyContent {
         height: 13em !important;
         width:90%;
+        padding-right:2em;
     }
     .lstyHeader,.lstyHeader2{
         font-size:25.2px;
@@ -171,6 +179,7 @@ img#lstyPic {
     .lstyContent {
         height: 13em !important;
         width:90%;
+        padding-right:2em;
     }
     .lstyHeader,.lstyHeader2{
         font-size:25.2px;
@@ -186,6 +195,7 @@ img#lstyPic {
     .lstyContent {
         height: 13em !important;
         width:90%;
+        padding-right:2em;
     }
     .lstyHeader,.lstyHeader2{
         font-size:30px;
@@ -203,6 +213,7 @@ img#lstyPic {
         height: 15em !important;
         width:90%;
         font-size:1em;
+        padding-right:2em;
     }
     .lstyHeader,.lstyHeader2,lstyTitle{
         font-size:25.2px;
@@ -215,7 +226,7 @@ img#lstyPic {
 /*Ipad air*/
 @media(min-width: 768px) and (max-width: 991px){ 
     html.lstyHtml{
-        height: 200vh;
+        height: 190vh;
         overflow: hidden;
     } 
     body.lstyBody {
@@ -229,13 +240,16 @@ img#lstyPic {
         font-size: 1.8em;
         margin-left: 90px;
         height: fit-content;
-        width: 87%;
+        width: 84%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
     }
-    .lstyHeader,.lstyHeader2,.lstyTitle{
+    .lstyHeader,.lstyHeader2{
         font-size:28px;
+    }
+    .lstyTitle{
+        font-size:29px;
     }
     .lstyCarousel{
         width: 100%;
@@ -248,7 +262,7 @@ img#lstyPic {
 /*Ipad Mini*/
 @media(min-width: 766px) and (max-width: 768px){ 
      html.lstyHtml{
-        height:220vh;
+        height:200vh;
         overflow: hidden;
     } 
     .lstyContent {
@@ -256,7 +270,7 @@ img#lstyPic {
         font-size: 1.6em;
         margin-left: 92px;
         height: fit-content;
-        width: 84%;
+        width: 80%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -264,7 +278,7 @@ img#lstyPic {
     .lstyCarousel{
         width: 100%;
         margin-left: -3em;
-        margin-top: -1.5em;
+        margin-top: -1.9em;
         float:none;
     }
     body.lstyBody {
@@ -273,8 +287,12 @@ img#lstyPic {
         background-position: 5% 100%;
         background-size:210%;
     }
-    .lstyHeader,.lstyHeader2,.lstyTitle{
+    .lstyHeader,.lstyHeader2{
         font-size:28px;
+    }
+    .lstyTitle{
+        font-size:29px;
+        letter-spacing: 5px;
     }
 } 
 @media(min-width: 730px) and (max-width: 766px){
@@ -321,7 +339,7 @@ img#lstyPic {
         font-size: 1.5em;
         margin-left:83px;
         height: fit-content;
-        width: 85%;
+        width: 82%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -330,7 +348,7 @@ img#lstyPic {
         background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:210%; 
+        background-size:230%; 
     }
     .lstyCarousel{
         width: 100%;
@@ -338,13 +356,16 @@ img#lstyPic {
         margin-top: 3.9em;
         float:none;
     }
-    .lstyHeader,.lstyHeader2,.lstyTitle{
+    .lstyHeader,.lstyHeader2{
         font-size:28px;
+    }
+    .lstyTitle{
+        font-size:29px;
     }
 }
 @media(min-width: 631px) and (max-width: 700px){
     html.lstyHtml{
-        height:220vh;
+        height:219vh;
         overflow-y:auto;
         overflow-x:hidden;
     } 
@@ -354,7 +375,7 @@ img#lstyPic {
         margin-left: 4.5em;
         margin-top:2em;
         height: fit-content;
-        width: 81.5%;
+        width: 81%;
         overflow:hidden; 
         margin-bottom: 0;
     }
@@ -362,7 +383,7 @@ img#lstyPic {
         background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:220%;
+        background-size:195%;
     }
     .lstyCarousel{
         width: 100%;
@@ -370,7 +391,10 @@ img#lstyPic {
         margin-top: 8%;
         float:none;
     }
-    .lstyHeader,.lstyHeader2,.lstyTitle{
+    .lstyHeader,.lstyHeader2{
+        font-size:24px;
+    }
+    .lstyTitle{
         font-size:25px;
     }
 }
@@ -384,11 +408,11 @@ img#lstyPic {
         font-family: Calibri;
         font-size: 1.5em;
         height: fit-content;
-        width: 83%;
+        width: 85%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
-        margin-left:4em;
+        margin-left:3.7em;
         padding-right:47px;
     }
     .lstyTitle {
@@ -398,22 +422,25 @@ img#lstyPic {
         background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:252%;
+        background-size:251%;
     }
     .lstyCarousel{
         width: 100%;
-        margin-left: 1%;
+        margin-left: 0.2%;
         margin-top: 8%;
         float:none;
     }
-    .lstyHeader,.lstyHeader2,.lstyTitle{
+    .lstyHeader,.lstyHeader2{
+        font-size:24px;
+    }
+    .lstyTitle{
         font-size:25px;
     }
 }
 
 @media(min-width: 451px) and (max-width: 528px){
     html.lstyHtml{
-        height:240vh;
+        height:220vh;
         overflow-y:auto;
         overflow-x:hidden;
     } 
@@ -422,14 +449,14 @@ img#lstyPic {
         font-size: 1.3em;
         margin-left:70px;
         height: fit-content;
-        width: 85.5%;
+        width: 79%;
         overflow:scroll; 
         margin-bottom: 0;
         margin-top:2em;
     }
     .lstyCarousel{
         width: 100%;
-        margin-left: 3%;
+        margin-left: 3.5%;
         margin-top: 8%;
         float:none;
     }
@@ -437,10 +464,13 @@ img#lstyPic {
         background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:294%;
+        background-size:280%;
     }
-    .lstyHeader,.lstyHeader2,lstyTitle{
+    .lstyHeader,.lstyHeader2{
         font-size:24px;
+    }
+    .lstyTitle{
+        font-size:25px;
     }
 }
 
@@ -455,18 +485,18 @@ img#lstyPic {
         font-size: 1.2em;
         margin-left: 70px;
         height: fit-content;
-        width: 82%;
+        width: 80%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
         padding-right:13px;
     }
     .lstyTitle {
-        font-size: 22.4px;
+        font-size: 23px;
     }
     .lstyCarousel{
         width: 100%;
-        margin-left: 6.6%;
+        margin-left: 6.5%;
         margin-top: 8%;
         float:none;
     }
@@ -482,7 +512,7 @@ img#lstyPic {
 }
 @media(max-width:435px){
     html.lstyHtml{
-        height:215vh;
+        height:200vh;
         overflow-y:auto;
         overflow-x:hidden;
     } 
@@ -491,7 +521,7 @@ img#lstyPic {
         font-size: 1.2em;
         margin-left: 70px;
         height: fit-content;
-        width: 82%;
+        width: 78%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -509,7 +539,10 @@ img#lstyPic {
         background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position: 5% 100%;
-        background-size:342%;
+        background-size:320%;
+    }
+    .lstyTitle{
+        font-size:23px;
     }
 }
 
@@ -530,19 +563,22 @@ img#lstyPic {
         font-size: 1.2em;
         margin-left: 70px;
         height: fit-content;
-        width: 77%;
+        width: 78%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
     }
     .lstyCarousel{
         width: 99%;
-        margin-top: 2.5em;
+        margin-top: 2.3em;
         float:none;
-        margin-left:3.5em;
+        margin-left:3.3em;
     }
      .lstyHeader, .lstyHeader2{
         font-size:1.6em;
+    }
+    .lstyTitle{
+        font-size:23px;
     }
 }
 
@@ -564,8 +600,8 @@ img#lstyPic {
     }
     .lstyCarousel{
         width: 100%;
-        margin-left:13%;
-        margin-top: 2.5em;
+        margin-left:12%;
+        margin-top: 2.2em;
         float:none;
     }
     body.lstyBody {
@@ -592,6 +628,7 @@ img#lstyPic {
     }
     .lstyCarousel{
         margin-top: 2.2em;
+        margin-left:3.9em;
     } 
     .lstyHeader{
         font-size:1.6em;
@@ -599,6 +636,9 @@ img#lstyPic {
     .lstyHeader2{
         font-size:1.6em;
         margin-top:1.7em;
+    }
+    .lstyContent {
+        width: 76%;
     }
     .lstyTitle{
         font-size:24px;
@@ -609,62 +649,10 @@ img#lstyPic {
         background-position: 5% 100%;
         background-size:359%;
     }
-    .lstyHeader{
-        font-size:1.6em;
-    }
-    .lstyHeader2{
-        font-size:1.6em;
+    .lstyHeader,.lstyHeader2,.lstyTitle{
+        font-size:22.4px;
     }
     .lstyTitle{
-        margin-top:0em;
-    }
-}
-@media(max-width:360px){
-    html.lstyHtml{
-        height:280vh;
-        overflow-y: auto;
-        overflow-x:hidden;
-    }
-    .lstyCarousel{
-        margin-top: 2.2em;
-    } 
-    .lstyHeader{
-        font-size:1.6em;
-    }
-    .lstyHeader2{
-        font-size:1.6em;
-        margin-top:1.7em;
-    }
-    .lstyTitle{
-        font-size:24px;
-    }
-    .lstyHeader{
-        font-size:1.6em;
-    }
-    .lstyHeader2{
-        font-size:1.6em;
-    }
-    .lstyTitle{
-        margin-top:0em;
-    }
-}
-@media(max-width:360px){
-    html.lstyHtml{
-        height:280vh;
-        overflow-y: auto;
-        overflow-x:hidden;
-    }
-    .lstyCarousel{
-        margin-top: 2.2em;
-    } 
-    .lstyHeader{
-        font-size:1.6em;
-    }
-    .lstyHeader2{
-        font-size:1.6em;
-        margin-top:1.7em;
-    }
-    .lstyTitle{
-        font-size:24px;
+        font-size:23px;
     }
 }
