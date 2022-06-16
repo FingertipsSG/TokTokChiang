@@ -34,7 +34,7 @@ function ContactUs() {
             <Navbar />
             <div className='contactUsDiv'>
               <Row>
-              <p className="contactUsHeader">CONTACTUS</p>
+              <p className="contactUsHeader">CONTACT US</p>
                 <div className="contactUs col-lg-8 col-md-12">
                   <h1 className="formTitle"> Stay Connected With Us</h1>
                   <p className="CuContent">
