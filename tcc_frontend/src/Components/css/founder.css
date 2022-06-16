@@ -437,14 +437,14 @@ body.founderBody {
 /* Ipad air version */
 @media (min-width: 769px) and ( max-width:991px){ 
     html.founderHtml {
-        height: 270vh;
+        height: 260vh;
     }
     .founderContent {
         font-family: Calibri;
         font-size: 1.8em;
         margin-left: 90px;
         height: fit-content;
-        width: 86%;
+        width: 85%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -453,7 +453,7 @@ body.founderBody {
         font-size: 28px;
     } 
     .founderTitle{
-        font-size:3.2em;
+        font-size:29px;
         letter-spacing: 5px;
     }    
     .rightDivision{
@@ -466,7 +466,7 @@ body.founderBody {
         background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position: 5% 100%;
-        background-size:auto 39.5%;
+        background-size:210%;
     }
     .founderPicDesktop {
         visibility: hidden;
@@ -479,21 +479,21 @@ body.founderBody {
     .founderImage{
         width:70%;
         margin-left:6.5em;
-        margin-top:3em;
+        margin-top:4em;
     }
 }
 
 /*Ipad mini*/
 @media (min-width: 766px) and (max-width: 768px) { 
     html.founderHtml{
-        height:280vh;
+        height:269vh;
     }
     .founderContent {
         font-family: Calibri;
         font-size: 1.6em;
         margin-left: 90px;
         height: fit-content;
-        width: 84%;
+        width: 83%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -502,7 +502,7 @@ body.founderBody {
         font-size: 3em;
     } 
     .founderTitle{
-        font-size:3em;
+        font-size:29px;
         letter-spacing: 5px;
      } 
     .bottomDivision {
@@ -510,7 +510,7 @@ body.founderBody {
     }
     .rightDivision{
         background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 27%;
+        background-position: 130% 15%;
         background-attachment:unset;
         background-size:100% 65%;
     }
@@ -518,7 +518,7 @@ body.founderBody {
         background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position: 5% 100%;
-        background-size:auto 50%;
+        background-size:210%;
     }
     .founderPicDesktop {
         visibility: hidden;
@@ -529,7 +529,7 @@ body.founderBody {
         visibility: visible;
         height: auto;
         width: auto; 
-        margin-top: 4em; 
+        margin-top: 5.2em; 
     } 
     .founderImage{
         width:70%;
@@ -557,16 +557,16 @@ body.founderBody {
         margin-right:-0em;
     } 
     .founderTitle{
-        font-size: 2.5em;
+        font-size: 29px;
     }
     .bottomDivision {
         background-image: none;
     }
     body.founderBody {
-        background-image: url("../../Assets/Images/phoneview.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto 60%;
+        background-size:220%;
     }
     .founderPicDesktop {
         visibility: hidden;
@@ -587,7 +587,7 @@ body.founderBody {
     .founderImage{
         width:70%;
         margin-left:6em;
-        margin-top:2em;
+        margin-top:2.2em;
     }
 }
 
@@ -609,10 +609,10 @@ body.founderBody {
         background-image: none;
     }
     body.founderBody {
-        background-image: url("../../Assets/Images/phoneview.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto 50%; 
+        background-size:230%; 
     }
     .founderPicDesktop {
         visibility: hidden;
@@ -638,19 +638,20 @@ body.founderBody {
     } 
     .founderTitle{
       margin-top:1em;
+      font-size:29px;
     }
 }
 
 @media (min-width: 630px) and (max-width: 700px) { 
     html.founderHtml{
-        height:290vh;
+        height:270vh;
     }
     .founderContent {
         font-family: Calibri;
         font-size: 1.3em;
         margin-left: 84px;
         height: fit-content;
-        width: 84%;
+        width: 83%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -658,15 +659,16 @@ body.founderBody {
     #founderTitle2 {
         margin-left:-0em;
         margin-right:-0em;
+        font-size:24px;
     } 
     .bottomDivision {
         background-image: none;
     }
     body.founderBody {
-        background-image: url("../../Assets/Images/phoneview.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto 48%;
+        background-size:195%;
     }
     .founderPicDesktop {
         visibility: hidden;
@@ -692,6 +694,7 @@ body.founderBody {
     .founderTitle{
        letter-spacing: 5px;
        margin-top:-1.3em;
+       font-size:25px;
     } 
     .founderPicDesktop {
         visibility: hidden;
@@ -717,9 +720,9 @@ body.founderBody {
     .founderContent {
         font-family: Calibri;
         font-size: 1.5em;
-        margin-left: 4em;
+        margin-left: 3.7em;
         height: fit-content;
-        width: 82%;
+        width: 83%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -731,15 +734,16 @@ body.founderBody {
     } 
     .founderTitle {
         margin-top: -1.5em;
+        font-size:25px;
     }
     .bottomDivision {
         background-image: none;
     }
     body.founderBody {
-        background-image: url("../../Assets/Images/AboutUs.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto;
+        background-size:251%;
     }
     .founderPicDesktop {
         visibility: hidden;
@@ -766,14 +770,14 @@ body.founderBody {
 
 @media (min-width: 451px) and (max-width: 528px) {
     html.founderHtml{
-        height:380vh;
+        height:320vh;
     }
     .founderContent {
         font-family: Calibri;
         font-size: 1.3em;
         margin-left: 70px;
         height: fit-content;
-        width: 84%;
+        width: 82%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -782,19 +786,20 @@ body.founderBody {
         margin-left:-0em;
         margin-right:-0em;
         display: block;
-        font-size:1.7em;
+        font-size:24px;
     } 
     .founderTitle {
         margin-top: -1.5em;
+        font-size:25px;
     }
     .bottomDivision {
         background-image: none;
     }
     body.founderBody {
-        background-image: url("../../Assets/Images/AboutUs.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto;
+        background-size:280%;
     }
     .founderPicDesktop {
         visibility: hidden;
@@ -821,14 +826,14 @@ body.founderBody {
 
 @media (max-width: 451px) { 
     html.founderHtml{
-        height:360vh;
+        height:350vh;
     }
     .founderContent {
         font-family: Calibri;
         font-size: 1.2em;
         margin-left: 70px;
         height: fit-content;
-        width: 82%;
+        width: 80%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -838,15 +843,16 @@ body.founderBody {
     } 
     .founderTitle {
         margin-top: -1.5em;
+        font-size:23px;
     }
     .bottomDivision {
         background-image: none;
     }
     body.founderBody {
-        background-image: url("../../Assets/Images/AboutUs.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto;
+        background-size:305%;
     }
     .founderPicDesktop {
         visibility: hidden;
@@ -873,14 +879,14 @@ body.founderBody {
 
 @media (max-width: 435px) { 
     html.founderHtml{
-        height:285vh;
+        height:280vh;
     }
     .founderContent {
         font-family: Calibri;
         font-size: 1.2em;
         margin-left: 70px;
         height: fit-content;
-        width: 81%;
+        width: 80%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -889,10 +895,10 @@ body.founderBody {
         background-image: none;
     }
     body.founderBody {
-        background-image: url("../../Assets/Images/AboutUs.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto;
+        background-size:320%;
     }
     .founderPicDesktop {
         visibility: hidden;
@@ -913,13 +919,16 @@ body.founderBody {
     .founderImage{
         width:70%;
         margin-left:5em;
-        margin-top:2.5%;
+        margin-top:2.3%;
+    }
+    .founderTitle{
+        font-size:23px;
     }
 }
 
 @media (max-width: 400px) { 
     html.founderHtml{
-        height:320vh;
+        height:310vh;
     }
     .founderContent {
         font-family: Calibri;
@@ -936,10 +945,10 @@ body.founderBody {
         background-image: none;
     }
     body.founderBody {
-        background-image: url("../../Assets/Images/AboutUs.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto;
+        background-size:342%;
     }
     .founderPicDesktop {
         visibility: hidden;
@@ -950,7 +959,6 @@ body.founderBody {
         visibility: visible;
         height: auto;
         width: auto;  
-      
     } 
     .rightDivision{
         background-image: url("../../Assets/Images/brush1.png");
@@ -963,6 +971,9 @@ body.founderBody {
         margin-left:5em;
         margin-top: 1.5em;
     }
+    .founderTitle {
+        font-size:23px;
+    }
 }
 
 @media (max-width: 380px) { 
@@ -974,7 +985,7 @@ body.founderBody {
         font-size: 1.2em;
         margin-left: 70px;
         height: fit-content;
-        width: 80%;
+        width: 79.5%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -983,21 +994,25 @@ body.founderBody {
         background-image: none;
     }
     body.founderBody {
-        background-image: url("../../Assets/Images/AboutUs.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto;
+        background-size:342%;
     }
     .founderPicDesktop {
         visibility: hidden;
         height: 0;
         width: 0;
     }
+    .founderTitle {
+        margin-top: -1.5em;
+        font-size:23px;
+    }
     .founderPicMobile {
         visibility: visible;
         height: auto;
         width: auto;  
-        margin-top:-0.5em;
+        margin-top:-0.7em;
     } 
     .rightDivision{
         background-image: url("../../Assets/Images/brush1.png");
@@ -1020,7 +1035,7 @@ body.founderBody {
         font-size: 1.2em;
         margin-left: 70px;
         height: fit-content;
-        width: 80%;
+        width: 79%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
@@ -1028,11 +1043,14 @@ body.founderBody {
     .bottomDivision {
         background-image: none;
     }
+    .founderTitle{
+        font-size:23px;
+    }
     body.founderBody {
-        background-image: url("../../Assets/Images/AboutUs.png");
+        background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position:5% bottom;
-        background-size:auto;
+        background-size:359%;
     }
     .founderPicDesktop {
         visibility: hidden;
@@ -1051,7 +1069,8 @@ body.founderBody {
         background-size:100% 50%;
     }
     .founderImage{
-        width:70%;
-        margin-left:5em;
+        width:69%;
+        margin-left:5.1em;
+        margin-top: 1.5em;
     }
 }
