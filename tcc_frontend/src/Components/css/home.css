@@ -412,16 +412,59 @@ body.homePageBody {
     }
 }
 
-@media (min-width: 1279px)and (max-width: 1280px) { 
+@media (min-width: 1278px)and (max-width: 1280px) { 
     .homescroll{
         height: 272px;
         width:50%;
         overflow:scroll; 
         overflow-x: hidden;
     }
+    .homeContent {
+        font-family: Calibri;
+        font-size: 16px;
+        margin-left: 90px;
+        height: fit-content;
+        width: 89%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 16px;
+        margin-left:90px;
+        height: fit-content;
+        width: 89%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeTitle{
+        display: none;
+    }
+    .homeTitle1{
+        margin-top:0.5em;
+        margin-left:3.2em;
+        font-size:27.1px;
+    }
+    .secondHeader{
+        margin-top:0.2em;
+        margin-left:3.2em;
+        font-size:27.1px;
+    }
+    .homeTitle{
+        display:none;
+    }
+    .homescroll{
+        height: 320px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
+        padding-right: 40px;
+    }
 }
 
-@media (min-width: 1224px)and (max-width: 1275px) { 
+@media (min-width: 1224px)and (max-width: 1279px) { 
     .homeContent {
         font-family: Calibri;
         font-size: 16px;
