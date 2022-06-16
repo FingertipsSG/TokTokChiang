@@ -638,4 +638,33 @@ img#lstyPic {
     .lstyTitle{
         font-size:24px;
     }
+    .lstyHeader{
+        font-size:1.6em;
+    }
+    .lstyHeader2{
+        font-size:1.6em;
+    }
+    .lstyTitle{
+        margin-top:0em;
+    }
+}
+@media(max-width:360px){
+    html.lstyHtml{
+        height:280vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    .lstyCarousel{
+        margin-top: 2.2em;
+    } 
+    .lstyHeader{
+        font-size:1.6em;
+    }
+    .lstyHeader2{
+        font-size:1.6em;
+        margin-top:1.7em;
+    }
+    .lstyTitle{
+        font-size:24px;
+    }
 }

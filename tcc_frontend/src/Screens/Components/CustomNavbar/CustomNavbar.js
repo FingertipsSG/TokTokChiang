@@ -1,14 +1,27 @@
-import { Link } from 'react-router-dom';
-import React from 'react';
+import { Link } from "react-router-dom";
+import React from "react";
 import "./CustomNavbar.css";
-import { navItems } from '../NavItems/NavItems';
-import CustomButton from '../CustomButton/CustomButton';
-import { useNavigate } from "react-router-dom";
-import logo from '../../../Assets/Images/toktoklogo.png';
+import { navItems } from "../NavItems/NavItems";
+import CustomButton from "../CustomButton/CustomButton";
+import { useNavigate, useLocation } from "react-router-dom";
+import logo from "../../../Assets/Images/toktoklogo.png";
 
-function CustomNavbar() {
+function CustomNavbar({ isLoggedIn }) {
+  var loggedIn;
+
   // const [dropdown, setDropdown] = useState(false);
+  // var loggedIn;
   const navigate = useNavigate();
+  
+  // if (isLoggedIn != undefined) {
+  //   loggedIn = isLoggedIn;
+  // }
+
+  // console.log(isLoggedIn);
+
+  if (!isLoggedIn != undefined) {
+    loggedIn = isLoggedIn;
+  }
 
   const logOut = () => {
     localStorage.clear();
@@ -20,14 +33,20 @@ function CustomNavbar() {
     <>
       <nav className="admin-navbar">
         <Link to="/adminportal" className="admin-navbar-logo">
-          <img className="TTCLogo" src={logo} alt="Logo" width={200} height={40}/>
+          <img
+            className="TTCLogo"
+            src={logo}
+            alt="Logo"
+            width={200}
+            height={40}
+          />
         </Link>
         <ul className="admin-nav-items">
           {navItems.map((item) => {
             // if (item.title === "Settings") {
             //   return (
-            //     <li 
-            //     key={item.id} 
+            //     <li
+            //     key={item.id}
             //     className={item.cName}
             //     onMouseEnter={() => setDropdown(true)}=
             //     onMouseLeave={() => setDropdown(false)}
@@ -39,12 +58,14 @@ function CustomNavbar() {
             // }
             return (
               <li key={item.id} className={item.cName}>
-                <Link to={item.path}>{item.title}</Link>
+                <Link to={item.path} state={{ isLoggedIn: loggedIn }}>
+                  {item.title}
+                </Link>
               </li>
             );
           })}
         </ul>
-        <CustomButton path ="/" onClick={logOut} title="Sign Out" />
+        <CustomButton path="/" onClick={logOut} title="Sign Out" />
       </nav>
     </>
   );
