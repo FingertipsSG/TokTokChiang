@@ -5,425 +5,916 @@
     font-family: AveNext;
 }
 
-html {
-    height: 100vh;
-    width: auto;
+html,body {
+   margin:0;
+   padding:0;
 }
 
-body {
-    min-height: 100%;
-    min-width: auto;
+html.servicesHtml {
+    overflow: hidden;
 }
-
-body.services-body {
-    background-image: url("../../Assets/Images/services.png");
-    height:130vh;
-    background-size: cover;
+body.servicesBody {
+    overflow: hidden;
+}
+.leftDiv {
+    background:  url("../../Assets/Images/bg-leftSide.png");
     background-repeat: no-repeat;
-    background-position:0 0;  
-    overflow-x:hidden;
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: left top -0.5em;
+    height: 100vh;
 }
-
+.bottomSection {
+    background:  url("../../Assets/Images/bg-leftSide.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    background-attachment: fixed;
+}
 .services-table>thead>tr>th{
     font-size:15px;
     color: #790c15;
 }
-
 .services-table>tbody>tr>td{
     font-size:13px;
 }
-
 .services-table{
     margin-left:25%;
-    margin-top:2.5%;
+    margin-top:2%;
 }
 
-/*Responsive */
-@media (min-width: 1300px) {
-    body.services-body {
-        height: 120vh;
-    }
-
+/*Responsive*/
+@media (min-width:2101px){
     Table.services-table{
-        margin-top:4.5%;
+        margin-left:30%;
+        margin-top:5.5em;
     }
-}
-
-@media (min-width: 1024px) { 
-    html.servicesHtml {
-        overflow-x: hidden;
-    }
-}    
-
-/*tablet*/
-@media (min-width: 768px) and ( max-width:1023px){ 
-    html.servicesHtml {
-        overflow-x: hidden;
-    }
-    body.services-body {
-        background-image:none;
-        background-image: url("../../Assets/Images/comingsoon.png");
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
         background-repeat: no-repeat;
-        background-size:cover;
-    }
-   
-    .services-table>thead>tr>th{
-       font-size:16px;
-    }
-    .services-table>tbody>tr>td{
-        font-size:15px;
-    }
-    .services-row{
-        margin-left:-290px !important;
-        margin-top:100px;
-    }
-}
-
-/* phone size*/
-@media (max-width: 767px) { 
-    html.servicesHtml{
-        height:100vh;
-        overflow-x: hidden;
-    }
-    body.services-body {
-        background-image:none;
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-size: cover;
-        overflow-x: hidden;
-    }
-    .services-table>thead>tr>th{
-        font-size:8px;
-    }
-    .services-table>tbody>tr>td{
-         font-size:8px;
-    }
-    .services-row{
-        margin-left:-300px !important;
-        margin-top:50px;
-    }
-}
-  
-/* Common Size: phone & tablet*/
-@media (max-width: 1023px) { 
-    body.services-body {
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-size:cover;
-        background-position:0;
-    }
-}
-
-@media (min-width: 1920px){
-    .services-table{
-        margin-left:30%;
-        margin-top:10%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/services.png");
-        background-size:cover;
-        background-position:0% 0%;
-    }
-    .services-table>thead>tr>th{
-        font-size:22px;
-    }
-    .services-table>tbody>tr>td{
-         font-size:20px;
-    }
-}
-
-@media (min-width: 1800px ) and (max-width:1920px){
-    Table.services-table{
-        margin-left:30%;
-        margin-top:10%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/services.png");
-        background-size:cover;
-        background-position:0% 0%;
-    }
-    .services-table>thead>tr>th{
-        font-size:22px;
-    }
-     .services-table>tbody>tr>td{
-         font-size:20px;
-    }
-}
-
-@media (min-width: 1600px ) and (max-width:1800px){
-    Table.services-table{
-        margin-left:30%;
-        margin-top:8%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/services.png");
-        background-size:cover;
-        background-position:0% 0%;
-    }
-    .services-table>thead>tr>th{
-        font-size:22px;
-    }
-     .services-table>tbody>tr>td{
-         font-size:20px;
-    }
-}
-
-@media (min-width: 1550px) and (max-width: 1600px){
-    Table.services-table{
-        margin-left:30%;
-        margin-top:10%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/services.png");
-        background-size:cover;
-        background-position:0% 0%;
-    }
-}
-
-@media (min-width: 1400px) and (max-width: 1550px) {
-    Table.services-table{
-        margin-left:30%;
-        margin-top:5%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/services.png");
-        background-size:cover;
-        background-position:0% 0%;
-    }
-}
-
-@media (min-width: 1300px) and (max-width: 1399px){
-    Table.services-table{
-        margin-left:30%;
-        margin-top:5%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/services.png");
-        background-size:cover;
-        background-position:0% 0%;
-    }
-}
-
-@media (min-width: 1200px) and (max-width: 1279px){
-    Table.services-table{
-        margin-left:30%;
-        margin-top:4%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/services.png");
-        background-size:cover;
-        background-position:0% 0%;
-    }
-}
-
-@media (min-width: 1092px) and (max-width: 1200px){
-    Table.services-table{
-        margin-left:34%;
-        margin-top:6%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/services.png");
-        background-size:cover;
-        background-position:0;
-    }
-}
-
-@media (min-width: 1050px) and (max-width: 1092px){
-    Table.services-table{
-        margin-left:14%;
-        margin-top:10%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-size:cover;
-        background-position:0;
-    }
-}
-
-@media (min-width: 1024px) and (max-width: 1050px){
-   .services-table{
-        margin-left:14%;
-        margin-top:10%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-size:cover;
-        background-position:0;
-        /* background-attachment: fixed; */
-    }
-}
-
-@media (min-width: 990px) and (max-width: 1023px){
-    Table.services-table{
-        margin-left:48%;
-    }
-}
-
-/*Ipad*/
-@media (min-width: 768px) and (max-width: 990px){
-    body.services-body {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-size:cover;
-        background-position:0;
         background-attachment: fixed;
-  
-        
-    
+        background-position: left -0.7em top -8em;
     }
-    Table.services-table{
-        margin-left:53%;
-        margin-top:-2em;
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: left bottom;
+        background-attachment: fixed;
     }
-}
-/* phone size*/
-@media (max-width: 767px) { 
-    html.servicesHtml{
-        height:100vh;
-        overflow-x: hidden;
+    .services-table>thead>tr>th{
+        font-size:25px;
     }
+    .services-table>tbody>tr>td{
+         font-size:20px;
+    }  
     body.services-body {
         background-image:none;
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-size: cover;
-        overflow-x: hidden;
+    }
+    .servicesHeader{
+        display:none;
+       }
+}
+/* 1080px height */
+@media (min-width:1919px) and (max-width: 2100px){
+    Table.services-table{
+        margin-left:30%;
+        margin-top:5em;
+    }
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left -0.7em top -3.5em;
+    }
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: left bottom;
+        background-attachment: fixed;
+    }
+    .services-table>thead>tr>th{
+        font-size:22px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:18px;
+    }  
+    body.services-body {
+        background-image:none;
+    }
+    .servicesHeader{
+        display:none;
+       }
+}
+
+/* 900px height */
+@media (min-width:1600px) and (max-width: 1919px){
+    Table.services-table{
+        margin-left:30%;
+        margin-top:2.3em;
+    }
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left -0.7em top -5em;
+    }
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: left bottom;
+        background-attachment: fixed;
+    }
+    .services-table>thead>tr>th{
+        font-size:22px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:17px;
+    }  
+    body.services-body {
+        background-image:none;
+    }
+    .servicesHeader{
+        display:none;
+       }
+}
+
+@media (min-width:1536px) and (max-width: 1600px){
+    Table.services-table{
+        margin-left:30%;
+        margin-top:2.8em;
+    }
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left -1.5em top -2.5em;
+    }
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: left bottom;
+        background-attachment: fixed;
+    }
+    .services-table>thead>tr>th{
+        font-size:17px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:14px;
+    }  
+    body.services-body {
+        background-image:none;
+    }
+    .servicesHeader{
+        display:none;
+       }
+}
+
+/* 13.9-14.9inch w height:796 */
+@media (min-width:1520px) and (max-width: 1535px){
+    Table.services-table{
+        margin-left:30%;
+        margin-top:2.5em;
+    }
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left -1.4em top -2.5em;
+    }
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: left bottom;
+        background-attachment: fixed;
+    }
+    .services-table>thead>tr>th{
+        font-size:17px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:14px;
+    }  
+    body.services-body {
+        background-image:none;
+    }
+    .servicesHeader{
+        display:none;
+     }
+    .servicesHeader{
+        display:none;
+    }
+}
+
+@media (min-width:1350px) and (max-width: 1520px){
+    Table.services-table{
+        margin-left:30%;
+        margin-top:0.9em;
+    }
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left -1.3em top -3.3em;
+    }
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: left bottom;
+        background-attachment: fixed;
+    }
+    .services-table>thead>tr>th{
+        font-size:17px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:14px;
+    }  
+    body.services-body {
+        background-image:none;
+    }
+    .servicesHeader{
+        display:none;
+    }
+    .servicesHeader{
+        display:none;
+     }
+    
+}
+
+@media (min-width:1281px) and (max-width: 1349px){
+    Table.services-table{
+        margin-left:30%;
+        margin-top:0.8em;
+    }
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left -0.9em top -2.3em;
+    }
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: left bottom;
+        background-attachment: fixed;
+    }
+    .services-table>thead>tr>th{
+        font-size:17px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:14px;
+    }  
+    body.services-body {
+        background-image:none;
+    }
+    .servicesHeader{
+        display:none;
+    }
+}
+
+@media (min-width:1278px) and (max-width: 1280px){
+    Table.services-table{
+        margin-left:30%;
+        margin-top:0.5em;
+    }
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left -0.7em top -2.7em;
+    }
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 75%;
+        background-position: left bottom;
+        background-attachment: fixed;
+    }
+    .services-table>thead>tr>th{
+        font-size:16px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:12px;
+    }  
+    body.services-body {
+        background-image:none;
+    }
+    .servicesHeader{
+        display:none;
+       }
+}
+
+@media (min-width:1224px) and (max-width: 1279px){
+    Table.services-table{
+        margin-left:30%;
+        margin-top:0.5em;
+    }
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left -0.7em top -2.3em;
+    }
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 75%;
+        background-position: left bottom;
+        background-attachment: fixed;
+    }
+    .services-table>thead>tr>th{
+        font-size:16px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:13px;
+    }  
+    body.services-body {
+        background-image:none;
+    }
+    .servicesHeader{
+        display:none;
+       }
+}
+
+/*Tablet w min height 600*/
+@media (min-width:1093px) and (max-width: 1224px){
+    Table.services-table{
+        margin-left:30%;
+        margin-top:0.5em;
+    }
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left -0.6em top -2.2em;
+    }
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: left bottom;
+        background-attachment: fixed;
+    }
+    .services-table>thead>tr>th{
+        font-size:16px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:12px;
+    }  
+    body.services-body {
+        background-image:none;
+    }
+    .servicesHeader{
+        display:none;
+       }
+}
+
+@media (min-width:1023px) and (max-width: 1092px){
+    Table.services-table{
+        margin-left:25%;
+        margin-top:0.5em;
+    }
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left 0.1em top -0.7em;
+    }
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: left bottom;
+        background-attachment: fixed;
+    }
+    body.services-body {
+        background-image: none;
+    }
+    .services-table>thead>tr>th{
+        font-size:16px;
+    }
+    .services-table>tbody>tr>td{
+         font-size:12px;
+    }
+    .servicesHeader{
+        display:none;
+       }
+}
+
+@media (min-width: 992px) and (max-width: 1022px){
+    Table.services-table{
+        margin-left:25%;
+        margin-top:1.2em;
+    }
+    body.services-body {
+        background-image: none;
     }
     .services-table>thead>tr>th{
         font-size:12px;
     }
     .services-table>tbody>tr>td{
-         font-size:8px;
+         font-size:10px;
     }
-    .services-row{
-        margin-left:-300px !important;
-        margin-top:50px;
-    }
-}
-
-@media (min-width: 500px) and (max-width: 767px){ 
-    Table.services-table{
-        margin-left:75%;
-        margin-top:-2em;
-    }
-    .services-table>th{
-        font-size:15px;
-    }
-     .services-table>tbody>tr>td{
-         font-size:12px;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-size:cover;
-        background-position:0;
-     height:100vh;
-    }
-}
-
-@media (min-width: 450px) and (max-width: 500px){ 
-    Table.services-table{
-        margin-left:90%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-size:cover;
-        background-position:0;
-    
-    }
-}
-
-@media (min-width: 420px) and (max-width: 450px){ 
-    Table.services-table{
-        margin-left:95%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-size:cover;
-        background-position:0;
-    }
-}
-
-@media (max-width: 420px) { 
-    Table.services-table{
-        margin-left:100%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-size:cover;
-        background-position:0;
-       
-    }
-      .services-table>tbody>tr>td{
-         font-size:8px;
-    }
-    .services-row{
-        margin-left:-325px !important;
-        margin-top:50px;
-    }
-}
-
-
-/*Iphone XR*/
-@media (max-width: 415px) { 
-    Table.services-table{
-        margin-left:100%;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-size:cover;
-        background-position:0% 0%;
+    .leftDiv {
+        background-image: url("../../Assets/Images/services-left.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
         background-attachment: fixed;
-        height:100vh;
+        background-position: left 0.2em top 0.2em;
     }
-      .services-table>tbody>tr>td{
-         font-size:8px;
+    .bottomSection{
+        background-image: url("../../Assets/Images/servicesPV.png");
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: left bottom;
+        background-attachment: fixed;
+    }
+    .servicesHeader{
+     display:none;
+    }
+}
+
+/*Ipad Air*/
+@media (min-width: 769px) and (max-width: 991px){
+    html.servicesHtml{
+        height:100vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    Table.services-table{
+        margin-left:26em;
+        margin-top:-3em;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-size:auto 113%;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
+    }
+    .services-table>tbody>tr>td{
+         font-size:1.2em;
+    }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 42px;
+        margin-left:1.5em;
+        letter-spacing: 0.1em;
+        margin-top:0.3em;
     }
     .services-table>thead>tr>th{
-        font-size:9px;
+        font-size:1.3em;
+        white-space:nowrap;
     }
     .services-row{
-        margin-left:-320px !important;
+        margin-left:-310px;
         margin-top:50px;
+    }
+    .bottomSection,.leftDiv{
+        background-image:none;
+    }
+}
+/*Ipad Mini*/
+@media (min-width: 766px) and (max-width: 768px){
+    html.servicesHtml{
+        height:110vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    Table.services-table{
+        margin-left:26em;
+        margin-top:-3em;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-size:auto 113%;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
+    }
+    .services-table>tbody>tr>td{
+         font-size:1.2em;
+    }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 42px;
+        margin-left:1.5em;
+        letter-spacing: 0.1em;
+        margin-top:0.3em;
+    }
+    .services-table>thead>tr>th{
+        font-size:1.3em;
+        white-space:nowrap;
+    }
+    .services-row{
+        margin-left:-310px;
+        margin-top:50px;
+    }
+    .bottomSection,.leftDiv{
+        background-image:none;
     }
 }
 
-@media (max-width: 390px) { 
+@media (min-width: 731px) and (max-width: 765px) { 
+    html.servicesHtml{
+        height:130vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
     Table.services-table{
-        margin-left:100%;
+        margin-left:22em;
+        margin-top:-3em;
     }
     body.services-body {
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-size:cover;
-        background-position:0% 0%;
-        background-attachment: fixed;
-        height:100vh;
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-size:auto 117%;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
     }
-      .services-table>tbody>tr>td{
-         font-size:8px;
+    .services-table>tbody>tr>td{
+         font-size:1.2em;
+    }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 30px;
+        margin-left:1.8em;
+        letter-spacing: 0.1em;
+        margin-top:0.6em;
     }
     .services-table>thead>tr>th{
-        font-size:9px;
+        font-size:1.3em;
+        white-space:nowrap;
     }
     .services-row{
-        margin-left:-310px !important;
+        margin-left:-310px;
         margin-top:50px;
     }
-}
+    .bottomSection,.leftDiv{
+        background-image:none;
+    }
+} 
+
+@media (min-width: 700px) and (max-width: 730px) { 
+    html.servicesHtml{
+        height:130vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    Table.services-table{
+        margin-left:22em;
+        margin-top:-3em;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-size:auto 110%;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
+    }
+    .services-table>tbody>tr>td{
+         font-size:1.2em;
+    }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 30px;
+        margin-left:1.8em;
+        letter-spacing: 0.1em;
+        margin-top:0.6em;
+    }
+    .services-table>thead>tr>th{
+        font-size:1.3em;
+        white-space:nowrap;
+    }
+    .services-row{
+        margin-left:-310px;
+        margin-top:50px;
+    }
+    .bottomSection,.leftDiv{
+        background-image:none;
+    }
+} 
+@media (min-width: 631px) and (max-width: 700px) { 
+    html.servicesHtml{
+        height:130vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    Table.services-table{
+        margin-left:21em;
+        margin-top:-3em;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-size:auto 93%;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
+    }
+    .services-table>tbody>tr>td{
+         font-size:1.2em;
+    }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 30px;
+        margin-left:1.7em;
+        letter-spacing: 0.1em;
+        margin-top:0.6em;
+    }
+    .services-table>thead>tr>th{
+        font-size:1.3em;
+        white-space:nowrap;
+    }
+    .services-row{
+        margin-left:-310px;
+        margin-top:50px;
+    }
+    .bottomSection,.leftDiv{
+        background-image:none;
+    }
+} 
+@media (min-width: 528px) and (max-width: 630px) { 
+    html.servicesHtml{
+        height:120vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    Table.services-table{
+        margin-left:23.9em;
+        margin-top:-3em;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-size:auto 114%;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
+    }
+    .services-table>tbody>tr>td{
+         font-size:1em;
+    }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 25.2px;
+        margin-left:1.8em;
+        letter-spacing: 0.1em;
+        margin-top: 0.7em;
+    }
+    .services-table>thead>tr>th{
+        font-size:1.2em;
+        white-space:nowrap;
+    }
+    .services-row{
+        margin-left:-310px;
+        margin-top:50px;
+    }
+    .bottomSection,.leftDiv{
+        background-image:none;
+    }
+} 
+
+@media (min-width: 451px) and (max-width: 528px) { 
+    html.servicesHtml{
+        height:120vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    Table.services-table{
+        margin-left:24em;
+        margin-top:-3em;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-size:auto 107%;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
+    }
+    .services-table>tbody>tr>td{
+         font-size:0.9em;
+    }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 23.8px;
+        margin-left:1.8em;
+        letter-spacing: 0.1em;
+        margin-top: 0.8em;
+    }
+    .services-table>thead>tr>th{
+        font-size:1em;
+        white-space:nowrap;
+    }
+    .services-row{
+        margin-left:-310px;
+        margin-top:50px;
+    }
+    .bottomSection,.leftDiv{
+        background-image:none;
+    }
+} 
+
+@media (max-width: 451px) { 
+    html.servicesHtml{
+        height:160vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    Table.services-table{
+        margin-left:23.6em;
+        margin-top:-3em;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-size:auto 105%;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
+    }
+    .services-table>tbody>tr>td{
+         font-size:0.9em;
+    }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 1.6em;
+        margin-left:1.8em;
+        letter-spacing: 0.1em;
+        margin-top: 1em;
+    }
+    .services-table>thead>tr>th{
+        font-size:1em;
+    }
+    .services-row{
+        margin-left:-310px;
+        margin-top:50px;
+    }
+    .bottomSection,.leftDiv{
+        background-image:none;
+    }
+} 
+
+@media (max-width: 435px) { 
+    html.servicesHtml{
+        height:100vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    Table.services-table{
+        margin-left:23.6em;
+        margin-top:-3em;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-size:auto 78%;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
+    }
+    .services-table>tbody>tr>td{
+         font-size:0.9em;
+    }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 1.6em;
+        margin-left:1.8em;
+        letter-spacing: 0.1em;
+    }
+    .services-table>thead>tr>th{
+        font-size:1em;
+    }
+    .services-row{
+        margin-left:-310px;
+        margin-top:50px;
+    }
+    .bottomSection,.leftDiv{
+        background-image:none;
+    }
+} 
+
+ @media (max-width: 400px) { 
+    html.servicesHtml{
+        height:100vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    Table.services-table{
+        margin-left:23.6em;
+        margin-top:-3em;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-size:auto 78%;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
+    }
+    .services-table>tbody>tr>td{
+         font-size:0.8em;
+    }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 1.6em;
+        margin-left:1.8em;
+        letter-spacing: 0.1em;
+    }
+    .services-table>thead>tr>th{
+        font-size:0.9em;
+    }
+    .services-row{
+        margin-left:-310px;
+        margin-top:50px;
+    }
+    .bottomSection,.leftDiv{
+        background-image:none;
+    }
+} 
 /*Iphone SE*/
 @media (max-width: 380px) { 
+    html.servicesHtml{
+        height:160vh;
+    }
     Table.services-table{
-        margin-left:100%;
+        margin-left:101%;
+        margin-top:-2.5em;
     }
     body.services-body {
         background-image: url("../../Assets/Images/AboutUs.png");
-        background-size:cover;
-        background-position:0% 0%;
+        background-size:auto;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
     }
       .services-table>tbody>tr>td{
-         font-size:8px;
+         font-size:0.85em;
     }
     .services-table>thead>tr>th{
-        font-size:9px;
+        font-size:0.9em;
     }
-  
     .services-row{
-        margin-left:-295px !important;
+        margin-left:-21.5em;
         margin-top:35px;
     }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 1.6em;
+        margin-left:1.8em;
+        letter-spacing: 0.1em;
+    }
+    .bottomSection,.leftDiv{
+        background-image:none;
+    }
+}
+
+@media (max-width: 360px) { 
+    html.servicesHtml{
+        height:130vh;
+        overflow-y: auto;
+        overflow-x:hidden;
+    }
+    Table.services-table{
+        margin-left:100%;
+        margin-top:-3em;
+    }
+    body.services-body {
+        background-image: url("../../Assets/Images/phoneview.png");
+        background-size:auto 78%;
+        background-repeat: no-repeat;
+        background-position:5% bottom;
+    }
+    .bottomSection,.leftDiv{
+        background-image:none;
+    }
+      .services-table>tbody>tr>td{
+         font-size:0.8em;
+    }
+    .services-table>thead>tr>th{
+        font-size:0.8em;
+    }
+    .services-row{
+        margin-left:-20.5em;
+        margin-top:35px;
+    }
+    .servicesHeader{
+        color:#8d191d;;
+        font-family: AveNextBold;
+        font-size: 1.6em;
+        margin-left:1.8em;
+        letter-spacing: 0.1em;
+    }
+    
 }
