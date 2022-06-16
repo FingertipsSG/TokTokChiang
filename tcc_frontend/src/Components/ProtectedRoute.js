@@ -1,10 +1,11 @@
-import { Navigate, useLocation } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 var config = require("../config.js");
 
 function ProtectedRoute({ children }) {
   const location = useLocation();
+  const navigate = useNavigate();
   const [isAuth, setIsAuth] = useState(false);
   var baseUrl = config.LOCAL_BACKEND || "https://tok-tok-chiang-nodejs.herokuapp.com";
 
@@ -19,11 +20,21 @@ function ProtectedRoute({ children }) {
       });
 
       if (res.status === 200) {
-        console.log("authenticated");
+        // console.log("authenticated");
         setIsAuth(true);
       }
     } catch (err) {
-      console.log(err);
+      if (err.response.status === 403) {
+        navigate("/login", {
+          state: {
+            isLoggedIn: false,
+            isAuthenticated: false,
+            message: "User not authenticated. Please log in again.",
+          },
+          replace: true,
+        });
+      }
+      // console.log(err);
     }
   };
 

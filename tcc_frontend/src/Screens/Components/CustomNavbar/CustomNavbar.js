@@ -3,29 +3,26 @@ import React from "react";
 import "./CustomNavbar.css";
 import { navItems } from "../NavItems/NavItems";
 import CustomButton from "../CustomButton/CustomButton";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import logo from "../../../Assets/Images/toktoklogo.png";
 
 function CustomNavbar({ isLoggedIn }) {
-  var loggedIn;
-
   // const [dropdown, setDropdown] = useState(false);
-  // var loggedIn;
+  var loggedIn;
   const navigate = useNavigate();
-  
-  // if (isLoggedIn != undefined) {
-  //   loggedIn = isLoggedIn;
-  // }
 
-  // console.log(isLoggedIn);
-
-  if (!isLoggedIn != undefined) {
+  if (isLoggedIn != undefined) {
     loggedIn = isLoggedIn;
   }
 
   const logOut = () => {
     localStorage.clear();
-    navigate("/login");
+    navigate("/login", {
+      state: {
+        isLoggedIn: false,
+      },
+      replace: true,
+    });
     window.location.reload();
   };
 

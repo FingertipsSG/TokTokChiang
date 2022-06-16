@@ -8,9 +8,28 @@ const { TextArea } = Input;
 function AddProductModal({ title, visible, onOk, onCancel }) {
   const [form] = Form.useForm();
   const [fileList, setFileList] = useState([]);
+  var removing = false;
 
-  const onChange = ({ fileList: curFileList }) => {
-    setFileList(curFileList);
+  const onChange = async ({ fileList: curFileList }) => {
+    // console.log(curFileList);
+    if (curFileList.length == 0) {
+      setFileList([]);
+    } else {
+      var isLt2M = true;
+
+      for (var i = 0; i < curFileList.length; i++) {
+        const thisLessThan100KB = curFileList[i].size / 1024 / 1024 < 0.1;
+        
+        if (thisLessThan100KB == false) {
+          message.error('Image must smaller than 100kb!');
+          return isLt2M = false;
+        }
+      }
+
+      if (isLt2M == true && removing == false) {
+        setFileList(curFileList);
+      }
+    }
   };
 
   const onPreview = async (file) => {
@@ -28,31 +47,14 @@ function AddProductModal({ title, visible, onOk, onCancel }) {
     imgWindow.document.write(image.outerHTML);
   };
 
-  // const convertToBlob = (file) => {
-  //   const byteCharacters = atob(
-  //     file.thumbUrl.replace("data:image/png;base64,", "")
-  //   );
-
-  //   const byteNumbers = new Array(byteCharacters.length);
-  //   for (let i = 0; i < byteCharacters.length; i++) {
-  //     byteNumbers[i] = byteCharacters.charCodeAt(i);
-  //   }
-
-  //   const byteArray = new Uint8Array(byteNumbers);
-
-  //   return new Blob([byteArray], { type: "image/png" });
-  // };
-
-  const beforeUpload = (file) => {
-    const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'image/jpg';
-    if (!isJpgOrPng) {
-        message.error('You can only upload JPG/PNG file!');
-    }
-    const isLt2M = file.size / 1024 / 1024 < 2;
-    if (!isLt2M) {
-        message.error('Image must smaller than 3MB!');
-    }
-    return isJpgOrPng && isLt2M;
+  const onRemove = (file) => {
+    // console.log('onRemove');
+    removing = true;
+    const index = fileList.indexOf(file);
+    const newFileList = fileList.slice();
+    newFileList.splice(index, 1);
+    setFileList(newFileList);
+    removing = false;
   };
 
   return (
@@ -78,7 +80,7 @@ function AddProductModal({ title, visible, onOk, onCancel }) {
             onOk(values);
           })
           .catch((info) => {
-            console.log("Validate Failed:", info);
+            // console.log("Validate Failed:", info);
           });
       }}
     >
@@ -143,9 +145,11 @@ function AddProductModal({ title, visible, onOk, onCancel }) {
               fileList={fileList}
               onChange={onChange}
               onPreview={onPreview}
-              beforeUpload={beforeUpload}
+              onRemove={onRemove}
+              beforeUpload={() => false}
+              accept = ".jpg,.png,.jpeg"
             >
-              {fileList.length <= 1 && "+ Upload"}
+              {fileList.length <= 3 && "+ Upload"}
             </Upload>
           </Space>
         </Form.Item>

@@ -59,8 +59,7 @@ function HandPuppets() {
       });
 
       // If no results returned
-      if (res.status === 404) {
-        console.log("has no more data");
+      if (res.data.message === "No products found") {
         setHasMore(false);
       } else {
         // Keep pushing new puppet to puppets array

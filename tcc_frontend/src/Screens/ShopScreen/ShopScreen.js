@@ -16,10 +16,11 @@ import ImagesModal from "./ImagesModal/ImagesModal";
 // import AddShopModal from "./AddShopModal/AddShopModal";
 
 import { useFirstRender } from "../../Helper/useFirstRender";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function ShopScreen() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [type, setType] = useState("Shops");
   const [productArray, setProductArray] = useState([]);
   const [ShopArray, setShopArray] = useState([]);
@@ -27,11 +28,13 @@ function ShopScreen() {
   const [shopEdit, setShopEdit] = useState({});
   const [isAddProdModalVisible, setIsAddProdModalVisible] = useState(false);
   const [isEditProdModalVisible, setIsEditProdModalVisible] = useState(false);
-  const [isAddShopModalVisible, setIsAddShopModalVisible] = useState(false);
+  // const [isAddShopModalVisible, setIsAddShopModalVisible] = useState(false);
   const [isEditShopModalVisible, setIsEditShopModalVisible] = useState(false);
   const [isImageModalVisible, setIsImageModalVisible] = useState(false);
   const [render, setRender] = useState(false);
+  const [renderProd, setRenderProd] = useState(false);
   const [isTableLoading, setIsTableLoading] = useState(false);
+  const [isProdTableLoading, setIsProdTableLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [curProductSelected, setCurProductSelected] = useState(null);
@@ -204,12 +207,39 @@ function ShopScreen() {
     // },
   ];
 
+  // <------------------------------------------------ utility function ------------------------------------------------------------------------> NOTE
   // To convert BLOB to base64 encoded then load the base64 image STEP
   const convertToBase64 = (imgData) => {
     const imageBuffer = Buffer.from(imgData);
     const imageBuffer64 = imageBuffer.toString("base64");
 
     return imageBuffer64;
+  };
+
+  const convertToBlob = (file) => {
+    // if file is empty, throw a new error
+    if (!file) {
+      throw new Error("No image selected.");
+    }
+
+    // If there's an image, proceed to convert
+    // Safe to do this since base64 encoded string will never have ',' within it
+    var byteCharacters;
+
+    if (file.thumbUrl) {
+      byteCharacters = atob(file.thumbUrl.split(",")[1]);
+    } else {
+      byteCharacters = atob(file.split(",")[1]);
+    }
+
+    const byteNumbers = new Array(byteCharacters.length);
+    for (let i = 0; i < byteCharacters.length; i++) {
+      byteNumbers[i] = byteCharacters.charCodeAt(i);
+    }
+
+    const byteArray = new Uint8Array(byteNumbers);
+
+    return new Blob([byteArray], { type: "image/png" });
   };
 
   function getKeyByValue(value) {
@@ -220,32 +250,67 @@ function ShopScreen() {
     }
   }
 
-  const getProducts = async () => {
-    setIsTableLoading(true);
+  const checkErrorHandler = (res, requiresAuth) => {
+    // if there are no errors, res would not have .message property => return immediately
+    if (!res.message) {
+      return true;
+    }
+
+    // if the API call requires authentication, possibly encouter not authenticated error => return unauthenticated error
+    if (requiresAuth && res.message === "Unauthenticated") {
+      navigate("/login", {
+        state: {
+          isLoggedIn: false,
+          isAuthenticated: false,
+          message: "User not authenticated. Please log in again.",
+        },
+        replace: true,
+      });
+    }
+
+    // if the error is an unknown server error => return unknown error
+    if (res.message === "Unknown error") {
+      message.error("Something went wrong. Please try again later");
+    }
+    return false;
+  };
+
+  // <------------------------------------------------ GET products ------------------------------------------------------------------------
+  const getProducts = () => {
+    setIsProdTableLoading(true);
 
     var catid = getKeyByValue(type);
     // console.log(catid);
 
-    const res = await Utils.getProducts(catid);
-
-    res.forEach((obj) => {
-      setProductArray((prevArray) => [
-        ...prevArray,
-        {
-          pID: obj.productid,
-          pName: obj.productname,
-          pDesc: obj.productdesc,
-          pPrice: obj.price,
-          pImage: {
-            data: obj.image.data,
-            type: obj.image.type,
-            imageid: obj.imageid,
-          },
-          pURL: obj.url,
-        },
-      ]);
-    });
-    setIsTableLoading(false);
+    Utils.getProducts(catid)
+      .then((res) => {
+        // if there are no errors
+        if (checkErrorHandler(res, false)) {
+          res.forEach((obj) => {
+            setProductArray((prevArray) => [
+              ...prevArray,
+              {
+                pID: obj.productid,
+                pName: obj.productname,
+                pDesc: obj.productdesc,
+                pPrice: obj.price,
+                pImage: {
+                  data: obj.image.data,
+                  type: obj.image.type,
+                  imageid: obj.imageid,
+                },
+                pURL: obj.url,
+              },
+            ]);
+          });
+        }
+      })
+      .then(() => {
+        setIsProdTableLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   useEffect(() => {
@@ -253,25 +318,34 @@ function ShopScreen() {
       setProductArray([]);
       getProducts();
     }
-  }, [render, type]);
+  }, [renderProd, type]);
 
   // Get Shops for shops table
-  const getShops = async () => {
+  const getShops = () => {
     setIsTableLoading(true);
     const endpoint = "getShops";
-    const res = await Utils.getApi(endpoint, {});
-    // console.log(res);
+    Utils.getApi(endpoint, {})
+      .then((res) => {
+        if (res.message && res.message === "Unknown error") {
+          return message.error("Something went wrong. Please try again later");
+        }
 
-    res.forEach((obj, i) => {
-      setShopArray((prevArray) => [
-        ...prevArray,
-        {
-          sID: obj.catid,
-          sName: obj.catname,
-        },
-      ]);
-    });
-    setIsTableLoading(false);
+        res.forEach((obj, i) => {
+          setShopArray((prevArray) => [
+            ...prevArray,
+            {
+              sID: obj.catid,
+              sName: obj.catname,
+            },
+          ]);
+        });
+      })
+      .then(() => {
+        setIsTableLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   // GET SHOPS TABLE, ADD OR DELETE SHOP DETAILS
@@ -281,33 +355,6 @@ function ShopScreen() {
   }, [render]);
 
   //----------------------------------------SHOPS----------------------------------------
-  // ADD AND POST SHOPS FUNCTONS
-  // const openAddShopModal = () => {
-  //   setIsModalOpen(true);
-  //   setIsAddShopModalVisible(true);
-  // };
-  // const cancelAddShopModal = () => {
-  //   setIsModalOpen(false);
-  //   setIsAddShopModalVisible(false);
-  // };
-  // const postAddShopModal = (values) => {
-  //   setIsModalOpen(false);
-  //   setIsAddShopModalVisible(false);
-
-  //   Utils.postApi("createShopTable", values).then((res) => {
-  //     // console.log(res);
-  //     if (res.status === 201) {
-  //       Utils.postApi("addShop", values).then((res) => {
-  //         // console.log(res);
-  //         if (res.status === 201) {
-  //           message.success("Successfully added shop");
-  //           setRender(!render);
-  //         }
-  //       });
-  //     }
-  //   });
-  // };
-
   // EDIT AND POST SHOP FUNCTION
   const openEditShopModal = () => {
     setIsModalOpen(true);
@@ -329,40 +376,18 @@ function ShopScreen() {
       id: shopEdit.sID,
     })
       .then((res) => {
-        console.log(res);
-        if (res.data.affectedRows === 1) {
-          console.log("Successfully edited shop's name");
-          setRender(!render);
+        // console.log(res);
+        if (checkErrorHandler(res, true)) {
+          // on success
+          if (res.data.affectedRows === 1) {
+            setRender(!render);
+          }
         }
       })
       .catch((err) => {
         console.log(err);
       });
   };
-
-  // // DELETE AND POST SHOP FUNCTION
-  // const onDeleteShop = (id, sName) => {
-  //   // console.log(id, sName);
-  //   // console.log(typeof id, typeof sName);
-  //   const params = {
-  //     sID: id,
-  //     sName: sName,
-  //   };
-
-  //   Utils.deleteApi("dropProductTable", params).then((res) => {
-  //     console.log("success!");
-  //     // console.log(res);
-  //     if (res.status === 200) {
-  //       Utils.deleteApi("deleteShop", params).then((res) => {
-  //         // console.log(res);
-  //         if (res.data.affectedRows === 1) {
-  //           message.success("Successfully deleted shop");
-  //           setRender(!render);
-  //         }
-  //       });
-  //     }
-  //   });
-  // };
 
   //-------------------------------------------- PRODUCTS --------------------------------------------
   // ADD AND POST PRODUCTS FUNCTONS
@@ -374,8 +399,8 @@ function ShopScreen() {
     setIsAddProdModalVisible(false);
   };
 
-  const postAddProductModal = async (values) => {
-    setIsTableLoading(true);
+  const postAddProductModal = (values) => {
+    setIsProdTableLoading(true);
     setIsAddProdModalVisible(false);
     values.shop = type;
     // console.log(type);
@@ -391,61 +416,54 @@ function ShopScreen() {
     };
 
     // console.log(postBody);
-
-    await Utils.postApi("addProduct", postBody).then((response) => {
-      if (response.status === 201) {
-        thisProductId = response.data.insertId;
-        message.success("Successfully added product!");
-      }
-    });
-
-    var files = values.pImage;
-    // console.log(files);
-
-    for (var i = 0; i < files.length; i++) {
-      let imageBody = {
-        image: convertToBlob(files[i]),
-        productid: thisProductId,
-        imageid: files[i].imageid,
-        identityid: i + 1,
-      };
-
-      Utils.postImageApi("addImage", imageBody).then((res) => {
-        // console.log(res);
-        if (res.status === 201) {
-          console.log(res.data.affectedRows);
-          message.success(`Successfully uploaded image`);
-          setRender(!render);
+    Utils.postApi("addProduct", postBody)
+      .then((res) => {
+        if (checkErrorHandler(res, true)) {
+          // on success
+          if (res.status === 201) {
+            thisProductId = res.data.insertId;
+            message.success("Successfully added product!");
+            return true;
+          }
         }
+        return false;
+      })
+      .then((result) => {
+        if (result) {
+          var files = values.pImage;
+          // console.log(files);
+
+          for (var i = 0; i < files.length; i++) {
+            let imageBody = {
+              image: convertToBlob(files[i]),
+              productid: thisProductId,
+              identityid: i + 1,
+            };
+
+            Utils.postImageApi("addImage", imageBody).then((res) => {
+              // console.log(res);
+              if (checkErrorHandler(res, true)) {
+                if (res.status === 201) {
+                  console.log(res.data.affectedRows);
+                  message.success(`Successfully uploaded image`);
+                  setRenderProd(!renderProd);
+                }
+              }
+            });
+          }
+        }
+      })
+      .then(() => {
+        setIsProdTableLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
       });
-    }
-
-    setIsTableLoading(false);
-  };
-
-  const convertToBlob = (file) => {
-    // if file is empty, throw a new error
-    if (!file) {
-      throw new Error("No image selected.");
-    }
-
-    // If there's an image, proceed to convert
-    // Safe to do this since base64 encoded string will never have ',' within it
-    const byteCharacters = atob(file.thumbUrl.split(",")[1]);
-
-    const byteNumbers = new Array(byteCharacters.length);
-    for (let i = 0; i < byteCharacters.length; i++) {
-      byteNumbers[i] = byteCharacters.charCodeAt(i);
-    }
-
-    const byteArray = new Uint8Array(byteNumbers);
-
-    return new Blob([byteArray], { type: "image/png" });
   };
 
   // EDIT AND POST PRODUCT FUNCTION
   const openEditProductModal = () => {
-    console.log("opening edit model");
+    // console.log("opening edit model");
     setIsModalOpen(true);
     setIsEditProdModalVisible(true);
   };
@@ -460,7 +478,6 @@ function ShopScreen() {
     setIsEditProdModalVisible(false);
     values.shop = type;
     values.id = curProdDetails.pID;
-    // console.log(curProdDetails);
 
     var catid = getKeyByValue(type);
 
@@ -472,78 +489,83 @@ function ShopScreen() {
       fk_catid: catid,
       productid: values.id,
     };
-    // console.log(formBody);
 
-    await Utils.patchApi("editProduct", formBody).then((res) => {
-      // console.log(res);
-      if (res.status === 200) {
-        console.log(res.data.affectedRows);
-        message.success("Successfully edited product");
-        // setRender(!render);
-      }
-    });
-
-    var files = values.pImage;
-    // console.log(files);
-    // console.log(curProdDetails.pImage);
-
-    for (var i = 0; i < 4; i++) {
-      // console.log(i);
-
-      // console.log(i <= (curProdDetails.pImage.length - 1));
-      var checkIfPostOrPatch = i <= (curProdDetails.pImage.length - 1);
-
-      if (i <= files.length - 1) {
-        // console.log("this file now", files[i]);
-        if (files[i] == undefined) {
-          // console.log("delete image");
-          let bodyFile = {
-            imageID: curProdDetails.pImage[i].imageid,
-          };
-          // console.log(bodyFile);
-
-          await Utils.deleteApi("deleteImage", bodyFile).then((res) => {
-            if (res.status === 204) {
-              // console.log(res);
-              // console.log(res.data.affectedRows);
-              message.success(`Successfully removed image`);
-              // setRender(!render);
-            }
-          });
-        } else {
-          let bodyFile = {
-            image: convertToBlob(files[i]),
-            productid: values.id,
-            imageid: files[i].imageid,
-            identityid: i + 1,
-          };
-  
-          if (checkIfPostOrPatch === true) {
-            // console.log("patch");
-            // console.log(bodyFile);
-            bodyFile.imageid = curProdDetails.pImage[i].imageid;
-            await Utils.editImageApi("editImage", bodyFile).then((res) => {
-              if (res.status === 200) {
-                // console.log(res.data.affectedRows);
-                message.success(`Successfully edited image`);
-                // setRender(!render);
-              }
-            });
-          } else if (checkIfPostOrPatch === false) {
-            // console.log("post");
-            await Utils.postImageApi("addImage", bodyFile).then((res) => {
-              if (res.status === 201) {
-                // console.log(res.data.affectedRows);
-                message.success(`Successfully uploaded image`);
-                // setRender(!render);
-              }
-            });
+    await Utils.patchApi("editProduct", formBody)
+      .then((res) => {
+        // check for any errors
+        if (checkErrorHandler(res, true)) {
+          if (res.status === 200) {
+            console.log(res.data.affectedRows);
+            message.success("Successfully edited product");
+            return true;
           }
         }
+        return false;
+      })
+      .then((result) => {
+        if (result) {
+          var files = values.pImage;
 
-      }
-      setRender(!render);
-    }
+          for (var i = 0; i < 4; i++) {
+            // checkIfPostOrPatch returns a boolean value by checking against the old file array
+            // If true, then patch (update) as the image already exists
+            // If false, then post as the image doesn't exist yet
+            var checkIfPostOrPatch = i <= curProdDetails.pImage.length - 1;
+
+            // If current position is < then the current file list length run
+            // do nothing if current position is > current file length
+            if (i <= files.length - 1) {
+              // console.log("this file now", files[i]);
+              // If file is undefined, delete the image
+              let bodyFile = {
+                image: convertToBlob(files[i]),
+                productid: values.id,
+                imageid: files[i].imageid,
+                identityid: i + 1,
+              };
+
+              if (checkIfPostOrPatch === true) {
+                // console.log("patch");
+                bodyFile.imageid = curProdDetails.pImage[i].imageid;
+                Utils.editImageApi("editImage", bodyFile).then((res) => {
+                  if (res.status === 200) {
+                    message.success(`Successfully edited image`);
+                  }
+                });
+              } else if (checkIfPostOrPatch === false) {
+                // console.log("post");
+                Utils.postImageApi("addImage", bodyFile).then((res) => {
+                  if (res.status === 201) {
+                    message.success(`Successfully uploaded image`);
+                  }
+                });
+              }
+            }
+
+            if (
+              curProdDetails.pImage.length > files.length &&
+              i > files.length - 1
+            ) {
+              console.log("delete image");
+              let bodyFile = {
+                imageID: curProdDetails.pImage[i].imageid,
+              };
+
+              Utils.deleteApi("deleteImage", bodyFile).then((res) => {
+                if (res.status === 204) {
+                  message.success(`Successfully removed image`);
+                }
+              });
+            }
+          }
+        }
+      })
+      .then(() => {
+        setRenderProd(!renderProd);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   // DELETE AND POST PRODUCT FUNCTION
@@ -551,38 +573,26 @@ function ShopScreen() {
     const endpoint = "deleteProduct";
     const params = { pID: id };
 
-    Utils.deleteApi(endpoint, params).then((res) => {
-      // console.log(res);
-      if (res.status === 204) {
-        message.success("Successfully deleted product");
-        setRender(!render);
-      }
-    });
+    Utils.deleteApi(endpoint, params)
+      .then((res) => {
+        // console.log(res);
+        if (checkErrorHandler(res, true)) {
+          if (res.status === 204) {
+            message.success("Successfully deleted product");
+            setRenderProd(!renderProd);
+          }
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   //SEARCH PRODUCTS
   const searchProducts = async (value) => {
+    setIsProdTableLoading(true);
     const endpoint = "search";
-    let categoryId;
-
-    // Get shop category
-    switch (type.toLowerCase()) {
-      case "masks":
-        categoryId = 1;
-        break;
-      case "puppets":
-        categoryId = 2;
-        break;
-      case "dolls":
-        categoryId = 3;
-        break;
-      case "shirts":
-        categoryId = 4;
-        break;
-      case "frames":
-        categoryId = 5;
-        break;
-    }
+    const categoryId = getKeyByValue(type);
 
     // Call API to fetch data
     var res = await Utils._getApi(endpoint, {
@@ -590,17 +600,19 @@ function ShopScreen() {
       searchQuery: value,
     });
 
-    setRender(render);
+    setRenderProd(renderProd);
     setProductArray([]);
 
     // If no products found
-    if (res.status === 404) {
-      console.log("No product matches query");
+    if (res.data.message === "No match found") {
+      setProductArray([]);
+      setIsProdTableLoading(false);
+      // console.log("No product matches query");
     } else {
       // Else, get results and concatenate to product array
       res = res.data;
 
-      res.forEach((obj, i) => {
+      await res.forEach((obj, i) => {
         setProductArray((prevArray) => [
           ...prevArray,
           {
@@ -613,56 +625,53 @@ function ShopScreen() {
           },
         ]);
       });
+
+      setIsProdTableLoading(false);
     }
   };
 
   //---------------Get all product images when user clicks on 'View All' / 'Edit Product'------------------------
   // Function to get other images from backend
   // If going to open edit product modal, should also update the curProdDetails state
+  // Don't need to be authenticated
   const getProductDetails = async (curItem) => {
-    try {
-      if (curItem !== null) {
-        var res = await Utils._getApi("getOtherImages", {
-          productId: curItem.pID,
-        });
+    if (curItem !== null) {
+      var res = await Utils._getApi("getOtherImages", {
+        productId: curItem.pID,
+      });
 
-        let imgsArr = [curItem.pImage];
+      let imgsArr = [curItem.pImage];
 
-        // If no results returned
-        if (res.status === 404) {
-          console.log("has no more images");
-        } else {
-          res = res.data;
-          for (let imgData of res) {
-            console.log(res);
-            var newImgData = {
-              type: imgData.image.type,
-              data: imgData.image.data,
-              imageid: imgData.imageid,
-            };
-            imgsArr.push(newImgData);
-          }
+      // If no results returned
+      if (res.status !== 404) {
+        res = res.data;
+        for (let imgData of res) {
+          var newImgData = {
+            type: imgData.image.type,
+            data: imgData.image.data,
+            imageid: imgData.imageid,
+          };
+          imgsArr.push(newImgData);
         }
-
-        setCurProdDetails({
-          pID: curItem.pID,
-          pName: curItem.pName,
-          pDesc: curItem.pDesc,
-          pPrice: curItem.pPrice,
-          pImage: imgsArr,
-          pURL: curItem.pURL,
-        });
-
-        const convertedImgsArr = [];
-        for (let img of imgsArr) {
-          convertedImgsArr.push(
-            `data:image/jpg;base64,${convertToBase64(img.data)}`
-          );
-        }
-        setProductImages(convertedImgsArr);
       }
-    } catch (err) {
-      console.log(err);
+
+      setCurProdDetails({
+        pID: curItem.pID,
+        pName: curItem.pName,
+        pDesc: curItem.pDesc,
+        pPrice: curItem.pPrice,
+        pImage: imgsArr,
+        pURL: curItem.pURL,
+      });
+
+      const convertedImgsArr = [];
+      for (let img of imgsArr) {
+        convertedImgsArr.push(
+          `data:image/jpg;base64,${convertToBase64(img.data)}`
+        );
+      }
+
+      setProductImages(convertedImgsArr);
     }
   };
 
@@ -692,25 +701,30 @@ function ShopScreen() {
 
       // Send product details and shop type to backend to generate file
       // download file in frontend
+      // need to be authenticated
+      var loadMsg = message.loading("Preparing file for download...", 0);
       Utils.postDownloadExcelApi("downloadProductExcel", config).then((res) => {
-        if (res) {
+        loadMsg();
+        if (checkErrorHandler(res, true)) {
           const filename = res.request.getResponseHeader("Content-Disposition");
-          console.log(filename);
           const cleanFilename = filename.split(`"`)[1];
-          // var filename = `ttc_products_${type}.csv`;
           const downloadUrl = window.URL.createObjectURL(new Blob([res.data]));
-          console.log(downloadUrl);
           const link = document.createElement("a");
+          // console.log(filename);
+          // console.log(downloadUrl);
+          // var filename = `ttc_products_${type}.csv`;
+
           link.href = downloadUrl;
           link.setAttribute("download", cleanFilename);
           document.body.appendChild(link);
           link.click();
           link.remove();
-          message.success("Successfully downloaded CSV!");
+          message.success("Successfully downloaded excel!");
         }
       });
     } catch (err) {
       console.log(err);
+      message.error("Download failed. Please try again later.");
     }
   };
 
@@ -790,8 +804,9 @@ function ShopScreen() {
 
               <ImagesModal
                 onCloseModal={() => {
-                  setIsImageModalVisible(false);
+                  setProductImages([]);
                   setCurProductSelected(null);
+                  setIsImageModalVisible(false);
                 }}
                 images={productImages}
               />
@@ -824,7 +839,7 @@ function ShopScreen() {
             rowKey="pID"
             loading={{
               indicator: <Spin size="default"></Spin>,
-              spinning: isTableLoading,
+              spinning: isProdTableLoading,
             }}
           />
         )}

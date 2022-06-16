@@ -8,10 +8,11 @@ import CustomSearchBar from "../Components/CustomSearchBar/CustomSearchBar";
 import CustomButton from "../Components/CustomButton/CustomButton";
 import AddUserModal from "./AddUserModal/AddUserModal";
 import EditUserModal from "./EditUserModal/EditUserModal";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function UserScreen() {
   const location = useLocation();
+  const navigate = useNavigate();
   const currentUser = {
     name: JSON.parse(localStorage.getItem("user")),
     role: JSON.parse(localStorage.getItem("role")),
@@ -23,6 +24,31 @@ function UserScreen() {
   const [isEditUserModalVisible, setIsEditUserModalVisible] = useState(false);
   const [isAddUserModalVisible, setIsAddUserModalVisible] = useState(false);
   const [isTableLoading, setIsTableLoading] = useState(false);
+
+  const checkErrorHandler = (res, requiresAuth) => {
+    // if there are no errors, res would not have .message property => return immediately
+    if (!res.message) {
+      return true;
+    }
+
+    // if the API call requires authentication, possibly encouter not authenticated error => return unauthenticated error
+    if (requiresAuth && res.message === "Unauthenticated") {
+      navigate("/login", {
+        state: {
+          isLoggedIn: false,
+          isAuthenticated: false,
+          message: "User not authenticated. Please log in again.",
+        },
+        replace: true,
+      });
+    }
+
+    // if the error is an unknown server error => return unknown error
+    if (res.message === "Unknown error") {
+      message.error("Something went wrong. Please try again later");
+    }
+    return false;
+  };
 
   const columns = [
     {
@@ -91,7 +117,6 @@ function UserScreen() {
           ) : currentUser.name === record.uName ? (
             <a
               onClick={() => {
-                console.log(record);
                 setUserEdit({
                   uID: record.uID,
                   uName: record.uName,
@@ -140,13 +165,21 @@ function UserScreen() {
   const postAddUserModal = (values) => {
     setIsAddUserModalVisible(false);
     // console.log(values);
-    Utils.postApi("addUser", values).then((res) => {
-      // console.log(res);
-      if (res.status === 201) {
-        message.success("Successfully added user");
+    Utils.postApi("addUser", values)
+      .then((res) => {
+        if (checkErrorHandler(res, true)) {
+          // in the case where adding is successful
+          if (res.status === 201) {
+            message.success("Successfully added user");
+          }
+        }
+      })
+      .then((result) => {
         setRender(!render);
-      }
-    });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const onDeleteUser = (id) => {
@@ -155,30 +188,37 @@ function UserScreen() {
     setUserArray([]);
 
     Utils.deleteApi("deleteUser", params).then((res) => {
-      // console.log(res);
-
-      if (res.status === 204) {
-        message.success("Successfully deleted user");
-        // setRender(!render);
-        getUsers();
+      if (checkErrorHandler(res, true)) {
+        // in the case where deleting is successful
+        if (res.status === 204) {
+          message.success("Successfully deleted user");
+          // setRender(!render);
+          getUsers();
+        }
       }
     });
   };
 
-  const getUsers = async () => {
+  const getUsers = () => {
+    setIsTableLoading(true);
     const endpoint = "getUsers";
-    const res = await Utils.getApi(endpoint, { id: currentUser.id });
-
-    res.forEach((obj, i) => {
-      setUserArray((prevArray) => [
-        ...prevArray,
-        {
-          uID: obj.id,
-          uName: obj.username,
-          uEmail: obj.email,
-          uRole: obj.role,
-        },
-      ]);
+    Utils.getApi(endpoint, { id: currentUser.id }).then((res) => {
+      if (checkErrorHandler(res, true)) {
+        res.forEach((obj, i) => {
+          setUserArray((prevArray) => [
+            ...prevArray,
+            {
+              uID: obj.id,
+              uName: obj.username,
+              uEmail: obj.email,
+              uRole: obj.role,
+            },
+          ]);
+        });
+      }
+    })
+    .then(() => {
+      setIsTableLoading(false);
     });
   };
 
@@ -189,27 +229,32 @@ function UserScreen() {
 
   //SEARCH PRODUCTS
   const searchUsers = async (value) => {
+    setIsTableLoading(true);
     // console.log("searching");
     // console.log(value);
     // console.log(searchQuery);
     const endpoint = "searchUsers";
-    let res = await Utils.postApi(endpoint, { searchQuery: value });
+    await Utils.postApi(endpoint, { searchQuery: value }).then((res) => {
+      if (checkErrorHandler(res, true)) {
+        res = res.data;
+        setRender(render);
+        setUserArray([]);
 
-    // console.log(res);
-    res = res.data;
-    setRender(render);
-    setUserArray([]);
-
-    res.forEach((obj, i) => {
-      setUserArray((prevArray) => [
-        ...prevArray,
-        {
-          uID: obj.id,
-          uName: obj.username,
-          uEmail: obj.email,
-          uRole: obj.role,
-        },
-      ]);
+        res.forEach((obj, i) => {
+          setUserArray((prevArray) => [
+            ...prevArray,
+            {
+              uID: obj.id,
+              uName: obj.username,
+              uEmail: obj.email,
+              uRole: obj.role,
+            },
+          ]);
+        });
+      }
+    })
+    .then(() => {
+      setIsTableLoading(false);
     });
   };
 
@@ -221,13 +266,15 @@ function UserScreen() {
     setIsEditUserModalVisible(false);
   };
   const postEditUserModal = (values) => {
+    setIsEditUserModalVisible(false);
     values.id = userEdit.uID;
     Utils.patchApi("editUsers", values).then((res) => {
-      // console.log('hello');
-      // console.log(res);
-      if (res.status === 200) {
-        message.success("Successfully edited user");
-        setRender(!render);
+      if (checkErrorHandler(res, true)) {
+        // in the case where user edited successfully
+        if (res.status === 200) {
+          message.success("Successfully edited user");
+          setRender(!render);
+        }
       }
     });
   };
@@ -258,6 +305,7 @@ function UserScreen() {
                 onOk={postEditUserModal}
                 onCancel={cancelEditUserModal}
                 details={userEdit}
+                canEditRole={currentUser.role === "master" ? true : false}
               />
             </>
           ) : (
