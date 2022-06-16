@@ -3,6 +3,14 @@
   src: url(fonts/AvenirNext.ttf);
   font-family: AveNext;
 }
+@font-face {
+  src: url(fonts/AvenirNext-Bold.ttf);
+  font-family: AveNextBold;
+}
+@font-face {
+  src: url(fonts/AvenirNext-DemiBold.ttf);
+  font-family: AveNextDemiBold;
+}
 html {
   height: 100vh;
   width: auto;
@@ -12,6 +20,14 @@ body {
   width: auto;
 }
 
+.shopHeader {
+  font-size : 28px;
+  font-family: AveNextDemiBold;
+  color: #8d191d;
+  letter-spacing: 0.1em;
+  margin-top: -1%;
+  margin-left: 4%;
+  }
 /* for spinner */
 .centred {
   position: absolute;
@@ -31,6 +47,7 @@ body {
 
 .shop-container {
   margin-left: 20%;
+  margin-top: -6%;
   padding: 2%;
 }
 
@@ -40,8 +57,8 @@ body {
 
 .main-image {
   display: block;
-  width: 150px;
-  height: 150px;
+  width: 220px;
+  height: 220px;
   box-shadow: 0px 0px 3px 1px #bebebe;
   object-fit: cover;
   margin-left: auto;
@@ -224,7 +241,7 @@ button.close-button {
 }
 
 /* When screen becomes too small to accomodate main image */
-@media (max-width: 300px) {
+@media (max-width: 300px) { 
   .popup-image {
     width: 90px;
     height: 90px;
@@ -255,24 +272,24 @@ body.shop-body {
 }
 
 /* specific to shop type */
-body.dolls-body {
-  background-image: url("../../Assets/Images/dolls.png");
+.dolls-body {
+  background-image: url("../../Assets/Images/dollsBG2.png");
 }
 
-body.masks-body {
-  background-image: url("../../Assets/Images/masks.png");
+.masks-body {
+  background-image: url("../../Assets/Images/masksBG2.png");
 }
 
-body.puppets-body {
-  background-image: url("../../Assets/Images/handpuppets.png");
+.puppets-body {
+  background-image: url("../../Assets/Images/handpuppetsBG2.png");
 }
 
-body.shirts-body {
-  background-image: url("../../Assets/Images/Tshirts.png");
+.shirts-body {
+  background-image: url("../../Assets/Images/tshirtBG2.png");
 }
 
-body.framed-body {
-  background-image: url("../../Assets/Images/Frames.png");
+.framed-body {
+  background-image: url("../../Assets/Images/framesBG2.png");
 }
 
 /* potrait */
@@ -320,12 +337,2264 @@ body.framed-body {
   @media (max-height: 420px) {
     body.shop-body {
       background-position: 0px 75px;
+      background-attachment: unset;
+      background-size: 90% 25%;
+    }
+    .shopHeader {
+      margin-left: 7%;
+      margin-top: -5%;
+    }
+    .shop {
+      margin-top: 12%;
     }
   }
 }
 
-@media (max-width: 768px) {
-  .shop-body {
-      background-image: none !important;
+/* height 600px */
+@media (min-width: 1600px) {
+  .shop {
+    margin-top: 10%;
+  }
+  .shop-container {
+    margin-left: 15%;
+  }
+  .shopHeader {
+    font-size : 20px;
+    font-family: AveNextDemiBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -3%;
+    margin-left: 4.1%;
+  }
+  .main-image {
+    width: 240px;
+    height: 240px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 80% 52%;
+    background-position: left top 0.3%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 80% 99.35%;
+    background-position: left top 28%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 80% 34.2%;
+    background-position: left top 0.1%  ;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 80% 67%;
+    background-position: left top 0.4%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 80% 49.8%;
+    background-position: left top 0.2%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shop-height {
+    height: 10em;
+  }
+}
+
+@media (min-width: 3000px) {
+  .shopHeader {
+    margin-left: 2.1% !important;
+  }
+  .masks-body {
+    background-size: 65% 70% !important;
+  }
+  .puppets-body {
+    background-size: 65% 104% !important;
+  }
+  .dolls-body {
+    background-size: 65% 35% !important;
+  }
+  .shirts-body {
+    background-size: 65% 68.1% !important;
+  }
+  .framed-body {
+    background-size: 65% 51.3% !important;
+  }
+}
+
+@media (min-width: 2300px) {
+  .shop { 
+    margin-top: 5%;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .price  {
+    font-size: 18px;
+  }
+  .shop-container {
+    margin-left: 15%;
+  }
+  .shopHeader {
+    font-size : 3.2em;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -1%;
+    margin-left: 2.5%;
+  }
+  .main-image {
+    width: 310px;
+    height: 310px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 70% 69.4%;
+    background-position: left top 0.5%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 70% 104%;
+    background-position: left top 0.15em;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 70% 34%;
+    background-position: left top 0.5;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 70% 67%;
+    background-position: left top 0.4%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 70% 50.4%;
+    background-position: left top 0.2%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shop-height {
+    height: 10em;
+  }
+}
+
+@media (min-width: 2200px) and (max-width: 2300px) {
+  .shop { 
+    margin-top: 5%;
+  }
+  .shop-container {
+    margin-left: 15%;
+  }
+  .shopHeader {
+    font-size : 3.2em;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: 1.6%;
+    margin-left: 2.8%;
+  }
+  .main-image {
+    width: 300px;
+    height: 300px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 65% 68%;
+    background-position: left top 27.2%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 65% 97.7%;
+    background-position: left top 7.6em;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 65% 35.4%;
+    background-position: left top 7%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 65% 68%;
+    background-position: left top 27%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 65% 52%;
+    background-position: left top 13.9%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shop-height {
+    height: 10em;
+  }
+}
+
+@media (min-width: 2000px) and (max-width: 2200px) {
+  .shop { 
+    margin-top: 5%;
+  }
+  .shop-container {
+    margin-left: 15%;
+  }
+  .shopHeader {
+    font-size : 3.2em;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: 1.6%;
+    margin-left: 2.9%;
+  }
+  .main-image {
+    width: 300px;
+    height: 300px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 70% 66%;
+    background-position: left top 27%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 70% 96%;
+    background-position: left top 7.8em;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 70% 34.7%;
+    background-position: left top 7.2%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 70% 66.8%;
+    background-position: left top 27%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 70% 51%;
+    background-position: left top 14%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shop-height {
+    height: 10em;
+  }
+}
+
+@media (min-width: 1800px) and (max-width: 2000px) {
+  .shop {
+    margin-top: 5%;
+  }
+  .shop-container {
+    margin-left: 15%;
+  }
+  .shopHeader {
+    font-size : 45px;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -1.6%;
+    margin-left: 3.1%;
+  }
+  .main-image {
+    width: 240px;
+    height: 240px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 70% 68%;
+    background-position: left top 13.7%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 70% 97.7%;
+    background-position: left top 3.2em;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 70% 35.5%;
+    background-position: left top 3.5%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 70% 68%;
+    background-position: left top 13.6%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 70% 52%;
+    background-position: left top 7.1%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shop-height {
+    height: 10em;
+  }
+}
+
+@media (min-width: 1700px) and (max-width: 1800px) {
+  .shop {
+    margin-top: 5%;
+  }
+  .shop-container {
+    margin-left: 15%;
+  }
+  .shopHeader {
+    font-size : 30px;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -1.6%;
+    margin-left: 3.4%;
+  }
+  .main-image {
+    width: 240px;
+    height: 240px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 70% 66.7%;
+    background-position: left top 13%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 70% 97.5%;
+    background-position: left top 3.1em;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 70% 34%;
+    background-position: left top 3.5%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 70% 66.4%;
+    background-position: left top 13.4%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 70% 50.3%;
+    background-position: left top 6.9%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shop-height {
+    height: 10em;
+  }
+}
+
+@media (min-width: 1535px) and (max-width: 1537px){
+  .dolls-body {
+    background-size: 70% 33.3% !important;
+    background-position: left top 3.2% !important;
+  }
+  .shirts-body {
+    background-size: 70% 65% !important;
+    background-position: left top 11.9% !important;
+  }
+  .framed-body {
+    background-position: left top 6% !important;
+  }
+}
+
+@media (min-width: 1505px) and (max-width: 1700px) {
+  .shop {
+    margin-top: 5%;
+  }
+  .shop-container {
+    margin-left: 15%;
+  }
+  .shopHeader {
+    font-size : 30px;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -1.6%;
+    margin-left: 3.6%;
+  }
+  .main-image {
+    width: 220px;
+    height: 220px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 70% 66.5%;
+    background-position: left top 12.7%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 70% 96.4%;
+    background-position: left top 2.85em;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 70% 33.65%;
+    background-position: left top 3.15%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 70% 64.5%;
+    background-position: left top 11%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 70% 48.3%;
+    background-position: left top 5.8%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shop-height {
+    height: 10em;
+  }
+}
+
+@media (min-width: 1400px) and (max-width: 1505px) {
+  .shop {
+    margin-top: 5%;
+  }
+  .shop-container {
+    margin-left: 15%;
+  }
+  .shopHeader {
+    font-size : 30px;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -1.8%;
+    margin-left: 4%;
+  }
+  .main-image {
+    width: 220px;
+    height: 220px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 70% 59%;
+    background-position: left top 15.8%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 70% 85.6%;
+    background-position: left top 4.35em;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 70% 29.55%;
+    background-position: left top 4.6%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 70% 57.7%;
+    background-position: left top 15%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 70% 42.9%;
+    background-position: left top 8.1%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shop-height {
+    height: 10em;
+  }
+}
+
+@media (min-width: 1365px) and (max-width: 1400px) {
+  .shop {
+    margin-top: 5%;
+  }
+  .shop-container {
+    margin-left: 15%;
+  }
+  .shopHeader {
+    font-size : 30px;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -1.9%;
+    margin-left: 4.5%;
+  }
+  .main-image {
+    width: 240px;
+    height: 240px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 70% 56.7%;
+    background-position: left top 12.1%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 70% 83.2%;
+    background-position: left top 3.65em;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 70% 28%;
+    background-position: left top 3.6%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 70% 55.5%;
+    background-position: left top 11.5%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 70% 41%;
+    background-position: left top 6.4%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shop-height {
+    height: 10em;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1365px) {
+  .shop {
+    margin-top: 5%;
+  }
+  .shop-container {
+    margin-left: 15%;
+  }
+  .shopHeader {
+    font-size : 30px;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -2.1%;
+    margin-left: 4.5%;
+  }
+  .main-image {
+    width: 220px;
+    height: 220px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 75% 62%;
+    background-position: left top 13.6%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 75% 90.1%;
+    background-position: left top 3.4em;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 75% 30.8%;
+    background-position: left top 3.75%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 75% 60.5%;
+    background-position: left top 12.9%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 75% 44.7%;
+    background-position: left top 6.85%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shop-height {
+    height: 10em;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1300px) {
+  .shop {
+    margin-top: 5%;
+  }
+  .shop-container {
+    margin-left: 15%;
+  }
+  .shopHeader {
+    font-size : 2em;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -2%;
+    margin-left: 4.5%;
+  }
+  .main-image {
+    width: 200px;
+    height: 200px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 75% 58.9%;
+    background-position: left top 15.8%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 75% 84.7%;
+    background-position: left top 4.09em;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 75% 29.3%;
+    background-position: left top 4.55%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 75% 56.35%;
+    background-position: left top 14.1%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 75% 42.9%;
+    background-position: left top 8.2%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shop-height{
+    height: 10em;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1280px) {
+  .shop {
+    margin-top: 5%;
+  }
+  .shop-container {
+    margin-left: 16%;
+  }
+  .shopHeader {
+    font-size : 2em;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -2.1%;
+    margin-left: 4.6%;
+  }
+  .main-image {
+    width: 200px;
+    height: 200px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 70% 55.7%;
+    background-position: left top 17.2%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 70% 80.3%;
+    background-position: left top 4.85em;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 70% 27.7%;
+    background-position: left top 5.3%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 70% 53.3%;
+    background-position: left top 15.7%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 70% 40.6%;
+    background-position: left top 9.4%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shop-height{
+    height: 10em;
+  }
+}
+
+@media (min-width: 1140px) and (max-width: 1200px) {
+  .shop {
+    margin-top: 5%;
+  }
+  .shop-container {
+    margin-left: 15%;
+  }
+  .shopHeader {
+    font-size : 1.8em;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -2.3%;
+    margin-left: 5%;
+  }
+  .main-image {
+    width: 200px;
+    height: 200px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 70% 47.2%;
+    background-position: left top 13.2%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 70% 63.55%;
+    background-position: left top 4.85em;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 70% 24.6%;
+    background-position: left top 4.8%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 70% 45.3%;
+    background-position: left top 12.15%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 70% 35.1%;
+    background-position: left top 7.98%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shop-height {
+    height: 17em;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1140px) {
+  .shop {
+    margin-top: 5%;
+  }
+  .shop-container {
+    margin-left: 23% !important;
+  }
+  .shopContent {
+    margin-right: 10em;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 30% !important;
+    width: 30% !important;
+  }
+  .shopHeader {
+    font-size : 1.8em;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -2.3%;
+    margin-left: 5.4%;
+  }
+  .main-image {
+    width: 220px;
+    height: 220px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 90% 38.5%;
+    background-position: left top 7.8%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 90% 47.7%;
+    background-position: left top 11.3%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 90% 15.8%;
+    background-position: left top 2.33%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 90% 36.8%;
+    background-position: left top 7.2%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 90% 25.3%;
+    background-position: left top 4.2%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  body.masks-skyline {
+      background-image: url("../../Assets/Images/comingsoon.png");
+      background-repeat: no-repeat;  
+      background-position: 5% 100%;
+      background-size:auto 82.7%;
+      height: fit-content;
+  }
+  body.puppets-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 102.4%;
+    height: fit-content;
+  }
+  body.dolls-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 33.93%;
+    height: fit-content;
+  }
+  body.shirts-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 78.98%;
+    height: fit-content;
+  }
+  body.framed-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 54.2%;
+    height: fit-content;
+  }
+  .shop-height {
+    height: 17em;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1000px) {
+  .shop {
+    margin-top: 5%;
+  }
+  .shop-container {
+    margin-left: 20% !important;
+  }
+  .shopContent {
+    margin-right: 10em;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 30% !important;
+    width: 30% !important;
+  }
+  .shopHeader {
+    font-size : 28px;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -2.7%;
+    margin-left: 6.35%;
+  }
+  .main-image {
+    width: 220px;
+    height: 220px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 90% 37.7%;
+    background-position: left top 7.7%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 90% 46.65%;
+    background-position: left top 11.2%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 90% 15.55%;
+    background-position: left top 2.33%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 90% 36.1%;
+    background-position: left top 7.1%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 90% 24.8%;
+    background-position: left top 4.15%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  body.masks-skyline {
+      background-image: url("../../Assets/Images/comingsoon.png");
+      background-repeat: no-repeat;  
+      background-position: 5% 100%;
+      background-size:auto 76.9%;
+      height: fit-content;
+  }
+  body.puppets-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 95.1%;
+    height: fit-content;
+  }
+  body.dolls-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 31.61%;
+    height: fit-content;
+  }
+  body.shirts-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 73.4%;
+    height: fit-content;
+  }
+  body.framed-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 50.45%;
+    height: fit-content;
+  }
+  .shop-height {
+    height: 17em;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 992px) {
+  .shop {
+    margin-top: 5%;
+  }
+  .shop-container {
+    margin-left: 15%;
+  }
+  .shopHeader {
+    font-size : 28px;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -2.8%;
+    margin-left: 6.7%;
+  }
+  .main-image {
+    width: 220px;
+    height: 220px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 95% 37.4%;
+    background-position: left top 11%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 95% 47.9%;
+    background-position: left top 16.95%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 95% 16.15%;
+    background-position: left top 3.54%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 95% 36.9%;
+    background-position: left top 10.8%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 95% 25%;
+    background-position: left top 6.19%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  body.masks-skyline {
+      background-image: url("../../Assets/Images/comingsoon.png");
+      background-repeat: no-repeat;  
+      background-position: 5% 100%;
+      background-size:auto 76.7%;
+      height: fit-content;
+  }
+  body.puppets-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 98.2%;
+    height: fit-content;
+  }
+  body.dolls-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 33%;
+    height: fit-content;
+  }
+  body.shirts-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 75.6%;
+    height: fit-content;
+  }
+  body.framed-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 51.25%;
+    height: fit-content;
+  }
+  .shop-height {
+    height: 17em;
+  }
+}
+
+@media (min-width: 845px) and (max-width: 900px) {
+  .shop {
+    margin-top: 5%;
+  }
+  .shop-container {
+    margin-left: 15%;
+  }
+  .shopHeader {
+    font-size : 28px;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -3.6%;
+    margin-left: 7.5%;
+  }
+  .main-image {
+    width: 200px;
+    height: 200px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 100% 37.8%;
+    background-position: left top 13%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 100% 48.4%;
+    background-position: left top 20.2%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 100% 15.91%;
+    background-position: left top 4.05%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 100% 37%;
+    background-position: left top 12.7%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 100% 24.85%;
+    background-position: left top 7.2%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  body.masks-skyline {
+      background-image: url("../../Assets/Images/comingsoon.png");
+      background-repeat: no-repeat;  
+      background-position: 5% 100%;
+      background-size:auto 73.3%;
+      height: fit-content;
+  }
+  body.puppets-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 94%;
+    height: fit-content;
+  }
+  body.dolls-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 30.9%;
+    height: fit-content;
+  }
+  body.shirts-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 72.1%;
+    height: fit-content;
+  }
+  body.framed-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 48.64%;
+    height: fit-content;
+  }
+  .shop-height {
+    height: 15em;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 845px) {
+  .shop {
+    margin-top: 5%;
+  }
+  .shop-container {
+    margin-left: 15%;
+  }
+  .shopHeader {
+    font-size : 28px;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -4%;
+    margin-left: 7.5%;
+  }
+  .main-image {
+    width: 200px;
+    height: 200px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 110% 37%;
+    background-position: left top 11%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 110% 47.8%;
+    background-position: left top 16.8%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 110% 15.6%;
+    background-position: left top 3.35%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 110% 36.7%;
+    background-position: left top 10.5%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 110% 24.5%;
+    background-position: left top 5.8%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  body.masks-skyline {
+      background-image: url("../../Assets/Images/comingsoon.png");
+      background-repeat: no-repeat;  
+      background-position: 5% 100%;
+      background-size:auto 65.8%;
+      height: fit-content;
+  }
+  body.puppets-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 84.5%;
+    height: fit-content;
+  }
+  body.dolls-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 27.45%;
+    height: fit-content;
+  }
+  body.shirts-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 64.7%;
+    height: fit-content;
+  }
+  body.framed-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 43.1%;
+    height: fit-content;
+  }
+  .shop-height {
+    height: 15em;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 800px) {
+  .shop {
+    margin-top: 14%;
+  }
+  .shop-container {
+    margin-left: 15%;
+  }
+  .shopHeader {
+    font-size :28px;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -6%;
+    margin-left: 8%;
+  }
+  .main-image {
+    width: 200px;
+    height: 200px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 110% 34.7%;
+    background-position: left top 6.5%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 110% 44.2%;
+    background-position: left top 9.7%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 110% 14.7%;
+    background-position: left top 2.1%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 110% 33.6%;
+    background-position: left top 6.3%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 110% 22.9%;
+    background-position: left top 3.7%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  body.masks-skyline {
+      background-image: url("../../Assets/Images/comingsoon.png");
+      background-repeat: no-repeat;  
+      background-position: 5% 100%;
+      background-size:auto 65%;
+      height: fit-content;
+  }
+  body.puppets-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 82.85%;
+    height: fit-content;
+  }
+  body.dolls-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 27.5%;
+    height: fit-content;
+  }
+  body.shirts-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 63.1%;
+    height: fit-content;
+  }
+  body.framed-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 43.15%;
+    height: fit-content;
+  }
+  .shop-height {
+    height: 15em;
+  }
+}
+
+/* ipad mini */
+@media (min-width: 768px) and (max-width: 768px) {
+  .shopHeader {
+  font-size: 28px !important;
+  font-family: AveNextBold;
+  }
+  .main-image {
+    width:175px !important;
+    height: 175px !important;
+  }
+  .masks-body {
+    background-size: 110% 40.7% !important;
+    background-position: left top 9% !important;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-size: 110% 51.8% !important;
+    background-position: left top 4.4em !important;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-size: 110% 17% !important;
+    background-position: left top 2.68% !important;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-size: 110% 38.8% !important;
+    background-position: left top 8.2% !important;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-size: 110% 26.95% !important;
+    background-position: left top 4.8% !important;
+    background-repeat: no-repeat;
+  }
+  body.masks-skyline {
+    background-size:auto 72.3% !important;
+  }
+  body.puppets-skyline {
+    background-size:auto 81% !important;
+  }
+  body.dolls-skyline {
+    background-size:auto 30.15% !important;
+  }
+  body.shirts-skyline {
+    background-size:auto 68.6% !important;
+  }
+  body.framed-skyline {
+    background-size:auto 47.6% !important;
+  }
+  .shop-height {
+    height: 15em !important;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 768px) {
+  /* html.shop-html {
+    height: auto;
+  } */
+  .shop {
+    margin-top: 5%;
+  }
+  .shop-container {
+    margin-left: 15%;
+  }
+  .shopHeader {
+    font-size : 28px;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -3.9%;
+    margin-left: 8%;
+  }
+  .main-image {
+    width: 220px;
+    height: 220px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 105% 21.15%;
+    background-position: left top 4.83%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 105% 28.7%;
+    background-position: left top 7.2%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 105% 8.25%;
+    background-position: left top 1.62%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 105% 24.4%;
+    background-position: left top 5.8%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 105% 14%;
+    background-position: left top 2.87%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  body.masks-skyline {
+      background-image: url("../../Assets/Images/comingsoon.png");
+      background-repeat: no-repeat;  
+      background-position: 5% 100%;
+      background-size:auto 45.7%;
+      height: fit-content;
+  }
+  body.puppets-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 61.9%;
+    height: fit-content;
+  }
+  body.dolls-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 17.78%;
+    height: fit-content;
+  }
+  body.shirts-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 52.6%;
+    height: fit-content;
+  }
+  body.framed-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 30%;
+    height: fit-content;
+  }
+  .shop-height {
+    height: 20em;
+  }
+}
+
+@media (min-width: 630px) and (max-width: 700px) {
+  .shop {
+    margin-top: 5%;
+  }
+  .shop-container {
+    margin-left: 15%;
+  }
+  .shopHeader {
+    font-size : 24px;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -4.4%;
+    margin-left: 8%;
+  }
+  .main-image {
+    width: 150px;
+    height: 150px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 105% 23%;
+    background-position: left top 5.2%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 105% 31.05%;
+    background-position: left top 7.8%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 105% 9.05%;
+    background-position: left top 1.72%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 105% 26.5%;
+    background-position: left top 6.25%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 105% 15.2%;
+    background-position: left top 3.1%;
+    background-repeat: no-repeat;
+  }
+  body.masks-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 46%;
+    height: fit-content;
+}
+body.puppets-skyline {
+  background-image: url("../../Assets/Images/comingsoon.png");
+  background-repeat: no-repeat;  
+  background-position: 5% 100%;
+  background-size:auto 62%;
+  height: fit-content;
+}
+body.dolls-skyline {
+  background-image: url("../../Assets/Images/comingsoon.png");
+  background-repeat: no-repeat;  
+  background-position: 5% 100%;
+  background-size:auto 18.06%;
+  height: fit-content;
+}
+body.shirts-skyline {
+  background-image: url("../../Assets/Images/comingsoon.png");
+  background-repeat: no-repeat;  
+  background-position: 5% 100%;
+  background-size:auto 52.86%;
+  height: fit-content;
+}
+body.framed-skyline {
+  background-image: url("../../Assets/Images/comingsoon.png");
+  background-repeat: no-repeat;  
+  background-position: 5% 100%;
+  background-size:auto 30.35%;
+  height: fit-content;
+}
+.shop-height {
+  height: 15em;
+}
+}
+
+@media (min-width: 550px) and (max-width: 630px) {
+  .shop {
+    margin-top: 5%;
+  }
+  .shopHeader {
+    font-size : 24px;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -3.9%;
+    margin-left: 8.5%;
+  }
+  .main-image {
+    width: 150px;
+    height: 150px;
+  } 
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 110% 23.3%;
+    background-position: left top 4.8%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 110% 30.9%;
+    background-position: left top 7.05%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 110% 9.35%;
+    background-position: left top 1.62%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 110% 26.6%;
+    background-position: left top 5.7%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 110% 15.35%;
+    background-position: left top 2.85%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  body.masks-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 47.85%;
+    height: fit-content;
+  }
+  body.puppets-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 63.65%;
+    height: fit-content;
+  } 
+  body.dolls-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 19.25%;
+    height: fit-content;
+  }
+  body.shirts-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 54.58%;
+    height: fit-content;
+  }
+  body.framed-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 31.45%;
+    height: fit-content;
+  }
+  .shop-height {
+    height: 20em;
+  }
+}
+
+@media (min-width: 504px) and (max-width: 550px) {
+  .shop {
+    margin-top: 5%;
+  }
+  .shop-container {
+    margin-left: 15%;
+  }
+  .shopHeader {
+    font-size : 24px;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -4.5%;
+    margin-left: 9%;
+  }
+  .main-image {
+    width: 150px;
+    height: 150px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 120% 20.6%;
+    background-position: left top 5.85%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 120% 27.6%;
+    background-position: left top 8.6%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 120% 8.18%;
+    background-position: left top 2.01%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 120% 23.6%;
+    background-position: left top 7%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 120% 13.7%;
+    background-position: left top 3.6%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  body.masks-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 47.1%;
+    height: fit-content;
+  }
+  body.puppets-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 63%;
+    height: fit-content;
+  } 
+  body.dolls-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 18.65%;
+    height: fit-content;
+  }
+  body.shirts-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 53.8%;
+    height: fit-content;
+  }
+  body.framed-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 31.15%;
+    height: fit-content;
+  }
+  .shop-height {
+    height: 17em;
+  }
+}
+
+@media (min-width: 450px) and (max-width: 504px) {
+  .shop {
+    margin-top: 5%;
+  }
+  .shop-container {
+    margin-left: 15%;
+  }
+  .shopHeader {
+    font-size : 24px;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -5%;
+    margin-left: 9.7%;
+  }
+  .main-image {
+    width: 150px;
+    height: 150px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 120% 20%;
+    background-position: left top 6.5%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 120% 26.7%;
+    background-position: left top 9.5%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 120% 7.9%;
+    background-position: left top 2.25%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 120% 22.5%;
+    background-position: left top 7.6%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 120% 13%;
+    background-position: left top 3.9%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  body.masks-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 46.9%;
+    height: fit-content;
+  }
+  body.puppets-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 62.8%;
+    height: fit-content;
+  } 
+  body.dolls-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 18.62%;
+    height: fit-content;
+  }
+  body.shirts-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 53.05%;
+    height: fit-content;
+  }
+  body.framed-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 30.66%;
+    height: fit-content;
+  }
+  .shop-height {
+    height: 17em;
+  }
+}
+
+@media (max-width: 450px) {
+  .shop {
+    margin-top: 5%;
+  }
+  .shop-container {
+    margin-left: 15%;
+  }
+  .shopHeader {
+    font-size : 22.4px;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -6%;
+    margin-left: 10%;
+  }
+  .main-image {
+    width: 150px;
+    height: 150px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 130% 19%;
+    background-position: left top 6%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 130% 25.5%;
+    background-position: left top 8.8%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 130% 7.4%;
+    background-position: left top 2.05%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 130% 21.4%;
+    background-position: left top 7%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 130% 12.1%;
+    background-position: left top 3.6%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  body.masks-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 46.95%;
+    height: fit-content;
+  }
+  body.puppets-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 63%;
+    height: fit-content;
+  } 
+  body.dolls-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 18.3%;
+    height: fit-content;
+  }
+  body.shirts-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 53.1%;
+    height: fit-content;
+  }
+  body.framed-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 30.15%;
+    height: fit-content;
+  }
+  .shop-height {
+    height: 17em;
+  }
+}
+
+@media (max-width: 380px) {
+  .shop {
+    margin-top: 5%;
+  }
+  .shop-container {
+    margin-left: 15%;
+  }
+  .shopHeader {
+    font-size : 22.4px;
+    font-family: AveNextBold;
+    color: #8d191d;
+    letter-spacing: 0.1em;
+    margin-top: -10.6%;
+    margin-left: 11%;
+  }
+  .main-image {
+    width: 150px;
+    height: 150px;
+  }
+  .masks-body {
+    background-image: url("../../Assets/Images/masksBG2.png");
+    background-size: 155% 18.1%;
+    background-position: left top 5.4%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .puppets-body {
+    background-image: url("../../Assets/Images/handpuppetsBG2.png");
+    background-size: 155% 24%;
+    background-position: left top 7.7%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .dolls-body {
+    background-image: url("../../Assets/Images/dollsBG2.png");
+    background-size: 155% 6.85%;
+    background-position: left top 1.78%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .shirts-body {
+    background-image: url("../../Assets/Images/tshirtBG2.png");
+    background-size: 155% 19.5%;
+    background-position: left top 5.9%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  .framed-body {
+    background-image: url("../../Assets/Images/framesBG2.png");
+    background-size: 155% 11.2%;
+    background-position: left top 3.05%;
+    background-attachment: unset;
+    background-repeat: no-repeat;
+  }
+  body.masks-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 46.1%;
+    height: fit-content;
+  }
+  body.puppets-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 61.2%;
+    height: fit-content;
+  } 
+  body.dolls-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 17.4%;
+    height: fit-content;
+  }
+  body.shirts-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 49.55%;
+    height: fit-content;
+  }
+  body.framed-skyline {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% 100%;
+    background-size:auto 28.45%;
+    height: fit-content;
+  }
+  .shop-height {
+    height: 17em;
+  }
+}
+
+/* iphone SE */
+@media (min-width: 375px) and (max-width: 376px) {
+  body.masks-skyline {
+    background-size:auto 46.1%;
+  }
+  body.puppets-skyline {
+    background-size:auto 60.2%;
+  } 
+  body.dolls-skyline {
+    background-size:auto 17.32%;
+  }
+  .dolls-body {
+    background-size: 155% 6.8%;
+  }
+  .puppets-body {
+    background-size: 155% 23.6%;
+    background-position: left top 7.5%;
+  }
+  .masks-body {
+    background-size: 155% 18.1%;
+  }
+}
+
+/* iphone XR & samsung galaxy s20 ultra */
+@media (min-width: 412px) and (max-width: 415px) {
+  .shopHeader {
+    margin-top: -6.55%;;
+  }
+  .dolls-body {
+    background-size: 130% 7.35%;
+    background-position: left top 2.03%;
+  }
+  .shirts-body {
+    background-size: 130% 21.2%;
+    background-position: left top 6.9%;
+  }
+  .framed-body {
+    background-size: 130% 11.7%;
+    background-position: left top 3.45%;
+  }
+  body.dolls-skyline {
+    background-size:auto 18.15%;
+  }
+  body.shirts-skyline {
+    background-size:auto 52.4%;
+  }
+  body.framed-skyline {
+    background-size:auto 29.05%;
+  }
+}
+
+/* iphone 12 Pro */
+@media (min-width: 390px) and (max-width: 391px) {
+  .shopHeader {
+    margin-top: -10.3%;
+  }
+  .masks-body {
+    background-size: 140% 17.4%;
+    background-position: left top 5.5%;
+  }
+  .puppets-body {
+    background-size: 140% 23.45%;
+    background-position: left top 8%;
+  }
+  .dolls-body {
+    background-size: 140% 6.58%;
+    background-position: left top 1.83%;
+  }
+  .shirts-body {
+    background-size: 140% 19%;
+    background-position: left top 6.1%;
+  }
+  .framed-body {
+    background-size: 140% 10.75%;
+    background-position: left top 3.14%;
+  }
+  body.masks-skyline {
+    background-size:auto 47.1%;
+  }
+  body.puppets-skyline {
+    background-size:auto 63.4%;
+  } 
+  body.dolls-skyline {
+    background-size:auto 17.78%;
+  }
+  body.shirts-skyline {
+    background-size:auto 51.25%;
+  }
+  body.framed-skyline {
+    background-size:auto 29.05%;
+  }
+}
+
+/* samsung galaxy s8+ */
+@media (min-width: 360px) and (max-width: 361px) {
+  .shopHeader {
+    margin-top: -11.9%;
+  }
+  body.puppets-skyline {
+    background-size:auto 59.4%;
+  } 
+  body.dolls-skyline {
+    background-size:auto 17.3%;
+  }
+  body.shirts-skyline {
+    background-size:auto 49.6%;
+  }
+  body.framed-skyline {
+    background-size:auto 28.45%;
+  }
+  .masks-body {
+    background-size: 155% 18.1%;
+    background-position: left top 5.4%;
+  }
+  .puppets-body {
+    background-size: 155% 23.35%;
+    background-position: left top 7.4%;
+  }
+  .dolls-body {
+    background-size: 155% 6.8%;
+    background-position: left top 1.77%;
+  }
+  .shirts-body {
+    background-size: 155% 19.45%;
+    background-position: left top 5.9%;
+  }
+  .framed-body {
+    background-size: 155% 11.1%;
+    background-position: left top 3.1%;
+  }
+}
+
+/* ipad air */
+@media (min-width: 820px) and (max-width: 821px) {
+  body.puppets-skyline {
+    background-size:auto 68.4%;
+  }
+  body.shirts-skyline {
+    background-size:auto 63.7%;
+  }
+  .shirts-body {
+    background-size: 110% 36.4%;
+    background-position: left top 10.2%;
+  }
+  .framed-body {
+    background-size: 110% 24.5%;
+    background-position: left top 5.9%;
   }
 }

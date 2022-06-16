@@ -27,7 +27,6 @@ function founder() {
                             </div>
                             < div className="founderPicMobile">
                                     <img src={founderPic} className="founderImage" />
-            
                             </div>
                             <Row>
                                 <div className="col-lg-6">

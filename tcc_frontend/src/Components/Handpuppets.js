@@ -145,7 +145,7 @@ function HandPuppets() {
   const renderColContent = (arr, rowIndex) => {
     return arr.map((item, colIndex) => {
       return (
-        <Col xs={10} sm={9} md={5} lg={3} key={colIndex}>
+        <Col xs={10} sm={9} md={5} lg={3} xl={3} key={colIndex} className="shopContent">
           <div className="imagePlaceHolder">
             <a
               id="close-image"
@@ -219,20 +219,24 @@ function HandPuppets() {
   };
 
   return (
-    <html>
-      <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-      </head>
+    <html className="shop-html">
+    <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    </head>
 
-      <body className="puppets-body shop-body">
+    <body className="puppets-skyline">
+      <div className="puppets-body shop-body">
         <Navbar />
         <br />
         <br />
+        <p className="shopHeader">HAND PUPPETS</p>
         <div className="shop-container">{renderController()}</div>
-      </body>
-    </html>
+        <div className="shop-height"></div>
+      </div>
+    </body>
+  </html>
   );
 }
 

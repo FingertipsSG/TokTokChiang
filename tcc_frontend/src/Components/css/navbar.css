@@ -120,12 +120,18 @@ a.link.nav-link:hover {
     background-color: white;
     padding-left: 10px;
   }
+  .nav-link{
+    margin-left:2.3em;
+  }
 }
 
 @media (max-width: 767px) { 
   .navbar__logo {
     margin-left: 4%;
     width: 70%;
+  }
+  .nav-link{
+    margin-left:0.8em;
   }
 }
 

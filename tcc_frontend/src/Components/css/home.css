@@ -1,36 +1,49 @@
+@font-face {
+    src: url(fonts/AvenirNext.ttf);
+    font-family: AveNext;
+}
+
 body, html{
     margin:0;
     padding:0;
 }
 
 html.homeHtml {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 body.homePageBody {
-    background: url("../../Assets/Images/TTCbg3.png");
-    height:130vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position:100% 100%;
+    overflow: hidden;
 }
 
 .homeContent {
     font-family: Calibri;
-    font-size: 16px;
-    margin-left: 92px;
-    height: 100px;
-    overflow: auto;
-    padding-right: 20px;
+    font-size: 1.2em;
+    margin-left: 70px;
+    height: fit-content;
+    width: 80%;
+    overflow:hidden; 
+    margin-bottom: 0;
+    margin-top:2em;
+    text-align: justify !important;
 }
 
 .homeContent2 {
     font-family: Calibri;
-    font-size: 16px;
-    margin-left: 92px;
-    padding-right: 20px;
+    font-size: 1.2em;
+    margin-left: 70px;
+    height: fit-content;
+    width: 80%;
+    overflow:hidden; 
+    margin-bottom: 0;
+    margin-top:2em;
+    text-align: justify !important;
 }
-
+.founderMobile {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}
 .homeFounderPic {
     float: right;
     width: 70%;
@@ -39,519 +52,1294 @@ body.homePageBody {
 }
 
 .secondHeader {
-    margin-left: 92px;
     font-family: 'Avenext';
-    font-weight: bold;
+    font-size:22.96px;
+   
 }
-
 .homeTitle {
-    font-weight: bold;
+    font-family: AveNext;
+    font-size:22.96px;
+}
+.homeTitle1 {
+    font-family: AveNext;
+    font-size:22.96px;
 }
 
 /* Responsive*/
-@media (min-width: 1920px) {
-    .homeFounderPic {
-        margin-top: 5% !important;
-    }
-}
-
-@media (min-width: 1224px) and (max-width: 1279px) {
+@media (min-width: 1919px)and (max-width: 2100px) { 
     .homeContent {
-        height: 350px;
-    }
-    body.homePageBody{
-        overflow-x: hidden;
-    }
-}
-
-@media (min-width: 1281px) and (max-width: 1449px) {
-    .homeContent {
-        height: 350px;
-    }
-    body.homePageBody{
-        overflow-x: hidden;
-    }
-}
-
-@media (min-width: 1093px) and (max-width: 1224px) {
-    .homeContent {
-        height: 200px;
-    }
-} 
-
-@media (min-width: 1224px) and ( max-width:1275px){ 
-    .homeContent {
-        height:11em;
+        font-family: Calibri;
+        font-size: 1.7em;
+        margin-left: 90px;
+        height: fit-content;
+        width: 90%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
     }
     .homeContent2 {
-        overflow: scroll;
-        height: 7em;
-    }
-    body.homePageBody{
-        height:auto;
-        background-position:0;
-    }
-} 
-
-@media (min-width: 1275px) and (max-width: 1279px) {
-    .homeContent {
-        height:9.5em;
-    }   
-    .homeFounderPic {
-        margin-top: 10% ;
-    }
-    body.homePageBody{
-        background-position:auto auto;
-        height:120vh;
-    }
-}   
-
- @media (min-width: 1281px) and (max-width: 1535px) {
-    .homeContent {
-        height:170px;
+        font-family: Calibri;
+        font-size: 1.7em;
+        margin-left:90px;
+        height: fit-content;
+        width: 90%;
+        overflow:hidden;
+        margin-bottom: 0;
+        margin-top:-0.1em;
     }
     .homeFounderPic {
-        margin-top: 10% ;
+        width: 69.7%;
+        margin-left:20.2%;
+        margin-top: 6.1em;
+        float:none;
     }
-    body.homePageBody{
-        height:120vh;
-    }
-} 
-
-/*Tablet*/
-@media (min-width: 1023px) and (max-width: 1092px) {
-    html.homeHtml {
-        overflow-x: hidden;
+    .rightDivision {
+        background-attachment: fixed;
+        background-size:40%;
+        background-position: right top 1em;
     }
     body.homePageBody {
-        background-image: url("../../Assets/Images/comingsoon.png"); 
-        background-size:cover;
-        background-position:0;
+        background-image: none
     }
+    .homeTitle1{
+        margin-top:-0.2em;
+        margin-left:2.1em;
+        font-size:42px;
+    }
+    .secondHeader{
+        margin-top:0.2em;
+        margin-left:2.1em;
+        font-size:42px;
+    }
+    .homeTitle{
+        display:none;
+    }
+    .homescroll{
+        height: 500px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
+        padding-right: 40px;
+        margin-top:1em;
+    }
+}
+
+@media (min-width: 1600px)and (max-width: 1919px) { 
     .homeContent {
-        height: 9em;
+        font-family: Calibri;
+        font-size: 1.5em;
+        margin-left: 90px;
+        height: fit-content;
+        width: 90%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
     }
     .homeContent2 {
-        overflow: scroll;
-        height: 9em;
+        font-family: Calibri;
+        font-size: 1.5em;
+        margin-left:90px;
+        height: fit-content;
+        width: 90%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
     }
     .homeFounderPic {
-        margin-top: 8em;
+        width: 69.7%;
+        margin-left:18.7%;
+        margin-top: 4.9em;
+        float:none;
+    }
+    .rightDivision {
+        background-attachment: fixed;
+        background-size:40%;
+        background-position: right top 1em;
+    }
+    body.homePageBody {
+        background-image: none
+    }
+    .homeTitle1{
+        margin-top:-0.2em;
+        margin-left:3.3em;
+        font-size:27.1px;
+    }
+    .secondHeader{
+        margin-top:0em;
+        margin-left:3.2em;
+        font-size:27.1px;
+    }
+    .homeTitle{
+        display:none;
+    }
+    .homescroll{
+        height: 400px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
+        padding-right: 40px;
+        margin-top: 0.7em;
     }
 }
 
-@media (max-width: 1023px) { 
-    body.homePageBody {
-        background-size:cover;
-        background-position:0;
-    }
-} 
-
-/*Tablet*/
-@media (min-width: 992px) and (max-width: 1022px) {
-    body.homePageBody {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-position:0;  
-    }
+@media (min-width: 1536px)and (max-width: 1600px) { 
     .homeContent {
-        height: 8em;
+        font-family: Calibri;
+        font-size: 1.5em;
+        margin-left: 90px;
+        height: fit-content;
+        width: 90%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
     }
     .homeContent2 {
-        overflow: scroll;
-        height: 7em;
+        font-family: Calibri;
+        font-size: 1.5em;
+        margin-left:90px;
+        height: fit-content;
+        width: 90%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
     }
     .homeFounderPic {
-        margin-top: 8em;
+        width: 71%;
+        margin-left:16%;
+        margin-top: 1.6em;
+        float:none;
+    }
+    .rightDivision {
+        background-attachment: fixed;
+        background-size:40%;
+        background-position: right top 1em;
+    }
+    body.homePageBody {
+        background-image: none
+    }
+    .homeTitle1{
+        margin-top:-0.2em;
+        margin-left:3.3em;
+        font-size:27.1px;
+    }
+    .secondHeader{
+        margin-top:-0.7em;
+        margin-left:3.2em;
+        font-size:27.1px;
+    }
+    .homeTitle{
+        display:none;
+    }
+    .homescroll{
+        height: 375px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
+        padding-right: 40px;
     }
 }
 
-@media (min-width: 1536px) {
-    body.homePageBody {
-        height: 120vh;
+/* 13.9-14.9inch w height:796 from 1278px */
+@media (min-width: 1520px)and (max-width: 1535px) { 
+    .homeContent {
+        font-family: Calibri;
+        font-size: 16px;
+        margin-left: 90px;
+        height: fit-content;
+        width: 90%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
     }
-    html.homeHtml {
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 16px;
+        margin-left:90px;
+        height: fit-content;
+        width: 90%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeFounderPic {
+        width: 68.6%;
+        margin-left:18%;
+        margin-top: 2em;
+        float:none;
+    }
+    .rightDivision {
+        background-attachment: fixed;
+        background-size:40%;
+        background-position: right top 1em;
+    }
+    body.homePageBody {
+        background-image: none
+    }
+    .homeTitle1{
+        margin-top:-0.2em;
+        margin-left:3.3em;
+        font-size:27.1px;
+    }
+    .secondHeader{
+        margin-top:-0.7em;
+        margin-left:3.2em;
+        font-size:27.1px;
+    }
+    .homeTitle{
+        display:none;
+    }
+    .homescroll{
+        height: 320px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
+        padding-right: 40px;
+        margin-top:0.4em;
+    }
+}
+
+@media (min-width: 1350px)and (max-width: 1520px) { 
+    .homeContent {
+        font-family: Calibri;
+        font-size: 16px;
+        margin-left: 90px;
+        height: fit-content;
+        width: 90%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 16px;
+        margin-left:90px;
+        height: fit-content;
+        width: 90%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeFounderPic {
+        width: 69%;
+        margin-left:16.3%;
+        margin-top: 1.7em;
+        float:none;
+    }
+    .rightDivision {
+        background-attachment: fixed;
+        background-size:40%;
+        background-position: right top 1em;
+    }
+    body.homePageBody {
+        background-image: none
+    }
+    .homeTitle1{
+        margin-top:-0.2em;
+        margin-left:3.2em;
+        font-size:27.1px;
+    }
+    .secondHeader{
+        margin-top:-0.7em;
+        margin-left:3.3em;
+        font-size:27.1px;
+    }
+    .homeTitle{
+        display:none;
+    }
+    .homescroll{
+        height: 320px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
+        padding-right: 50px;
+    }
+}
+
+@media (min-width: 1281px)and (max-width: 1349px) { 
+    .homeContent {
+        font-family: Calibri;
+        font-size: 16px;
+        margin-left: 90px;
+        height: fit-content;
+        width: 89%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 16px;
+        margin-left:90px;
+        height: fit-content;
+        width: 89%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeFounderPic {
+        width: 69%;
+        margin-left:15.8%;
+        margin-top: 0.5em;
+        float:none;
+    }
+    .rightDivision {
+        background-attachment: fixed;
+        background-size:40%;
+        background-position: right top 1em;
+    }
+    body.homePageBody {
+        background-image: none;
+    }
+    .homeTitle1{
+        margin-top:-0.2em;
+        margin-left:3.2em;
+        font-size:27.1px;
+    }
+    .secondHeader{
+        margin-top:-0.7em;
+        margin-left:3.2em;
+        font-size:27.1px;
+    }
+    .homeTitle{
+        display:none;
+    }
+    .homescroll{
+        height: 320px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
+        padding-right: 40px;
+    }
+}
+
+@media (min-width: 1279px)and (max-width: 1280px) { 
+    .homescroll{
+        height: 272px;
+        width:50%;
+        overflow:scroll; 
         overflow-x: hidden;
     }
 }
 
-/* Ipad air version */
-@media (min-width: 768px) and ( max-width:991px){ 
-    html.homeHtml {
-        overflow: hidden;
+@media (min-width: 1224px)and (max-width: 1275px) { 
+    .homeContent {
+        font-family: Calibri;
+        font-size: 16px;
+        margin-left: 90px;
+        height: fit-content;
+        width: 85%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 16px;
+        margin-left:90px;
+        height: fit-content;
+        width: 85%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeFounderPic {
+        width: 67%;
+        margin-left:15.7%;
+        margin-top: -1.7em;
+        float:none;
+    }
+    .rightDivision {
+        background-attachment: fixed;
+        background-size:40%;
+        background-position: right top 1em;
+    }
+    body.homePageBody {
+        background-image: none;
+    }
+    .homeTitle1{
+        margin-top:-0.2em;
+        margin-left:3.2em;
+        font-size:27.1px;
+    }
+    .homeTitle{
+      display:none;
+    }
+    .secondHeader{
+        margin-top:-0.7em;
+        margin-left:3.2em;
+        font-size:27.1px;
+    }
+}
+
+/*min height:640*/
+@media (min-width: 1274px)and (max-width: 1277px) { 
+    .homeContent {
+        font-family: Calibri;
+        font-size: 16px;
+        margin-left: 90px;
+        height: fit-content;
+        width: 88%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 16px;
+        margin-left:90px;
+        height: fit-content;
+        width: 88%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeFounderPic {
+        width: 64%;
+        margin-left:19.5%;
+        margin-top: 0.1em;
+        float:none;
+    }
+    body.homePageBody {
+        background-image: none;
+    }
+    .homeTitle1{
+        margin-top:-0.2em;
+        margin-left:3.2em;
+        font-size:27.1px;
+    }
+    .secondHeader{
+        margin-top:-0.7em;
+        margin-left:3.2em;
+        font-size:27.1px;
+    }
+    .homeTitle{
+        display:none;
+    }
+    .homescroll{
+        height: 290px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
+        padding-right: 40px;
+    }
+}
+
+@media (min-width: 1224px)and (max-width: 1275px) { 
+    .homeContent {
+        font-family: Calibri;
+        font-size: 16px;
+        margin-left: 90px;
+        height: fit-content;
+        width: 87%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 16px;
+        margin-left:90px;
+        height: fit-content;
+        width: 87%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeFounderPic {
+        width: 64%;
+        margin-left:19%;
+        margin-top: 0.1em;
+        float:none;
+    }
+    body.homePageBody {
+        background-image: none;
+    }
+    .homeTitle1{
+        margin-top:-0.2em;
+        margin-left:3.2em;
+        font-size:27.1px;
+    }
+    .secondHeader{
+        margin-top:-0.7em;
+        margin-left:3.2em;
+        font-size:27.1px;
+    }
+    .homeTitle{
+        display:none;
+    }
+    .homescroll{
+        height: 272px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
+        padding-right: 40px;
+    }
+}
+
+@media (min-width: 1093px)and (max-width: 1224px) { 
+    .homeContent {
+        font-family: Calibri;
+        font-size: 16px;
+        margin-left: 90px;
+        height: fit-content;
+        width: 83%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 16px;
+        margin-left:90px;
+        height: fit-content;
+        width: 83%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeFounderPic {
+        width: 70%;
+        margin-left:13%;
+        margin-top: -0.4em;
+        float:none;
+    }
+    body.homePageBody {
+        background-image: none;
+    }
+    .homeTitle1{
+        margin-top:-0.2em;
+        margin-left:3.3em;
+        font-size:27.1px;
+    }
+    .secondHeader{
+        margin-top:-0.7em;
+        margin-left:3.2em;
+        font-size:27.1px;
+    }
+    .homeTitle{
+        display:none;
+    }
+    .homescroll{
+        height: 272px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
+    }
+}
+
+@media (min-width: 1023px)and (max-width: 1092px) { 
+    .homeContent {
+        font-family: Calibri;
+        font-size: 16px;
+        margin-left: 90px;
+        height: fit-content;
+        width: 83%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 16px;
+        margin-left:90px;
+        height: fit-content;
+        width: 83%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeFounderPic {
+        width: 70%;
+        margin-left:11%;
+        margin-top: 1.7em;
+        float:none;
+    }
+    body.homePageBody {
+        background-image: none;
+    }
+    .homeTitle1{
+        margin-top:-0.2em;
+        margin-left:3.3em;
+        font-size:27.1px;
+    }
+    .secondHeader{
+        margin-top:-0.7em;
+        margin-left:3.2em;
+        font-size:27.1px;
+    }
+    .homeTitle{
+        display:none;
+    }
+    .homescroll{
+        height: 272px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
+    }
+}
+/*min height 600*/
+@media (min-width: 992px)and (max-width: 1022px) { 
+ 
+    .homeContent {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left: 90px;
+        height: fit-content;
+        width: 80%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 1em;
+        margin-left:90px;
+        height: fit-content;
+        width: 80%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:-0.1em;
+    }
+    .homeFounderPic {
+        width: 70%;
+        margin-left:10%;
+        margin-top: 1.65em;
+        float:none;
+    }
+    body.homePageBody {
+        background-image: none;
+    }
+    .homeTitle1{
+        margin-top:0em;
+        margin-left:4.3em;
+        font-size:1.5em;
+    }
+    .secondHeader{
+        margin-top:-0.5em;
+        margin-left:4.3em;
+        font-size:1.5em;
+    }
+    .homeTitle{
+        display:none;
+    }
+    .homescroll{
+        height: 272px;
+        width:50%;
+        overflow:scroll; 
+        overflow-x: hidden;
+    }
+    .secondHeader{
+        margin-left:2.6em;
+        font-size:35px;
+        margin-top:0.5em;
+    }
+    .homeTitle1{
+        display:none;
     }
     
-    .homeContent {
-        font-size: 14px;
-        margin-left: 92px;
-        width:80%;
-        margin-bottom: 0;
-    }
-    .homeContent2 {
-        font-size: 14px;
-        margin-left: 92px;
-        width:80%;
-        margin-bottom: 0;
-    }
-    .homeFounderPic {
-        margin-top: 3% !important;
-    }
-    body.homePageBody {
-        background-position:0;  
-        background-attachment: fixed;
-    }
 }
-
-/*Ipad mini*/
-@media (min-width: 766px) and (max-width: 767px) { 
+/*Ipad Air Version*/
+@media (min-width: 769px)and (max-width: 991px) { 
     html.homeHtml{
-        height:100vh;
-        overflow: hidden;
+        height:190vh;
     }
     .homeContent {
         font-family: Calibri;
-        font-size: 1em;
-        margin-left: 70px;
-        height: 20em;
-        width: 80%;
-        overflow:scroll; 
-        margin-bottom: 0;
-    }
-
-    .homeFounderPic {
-        width: 70%;
-        margin-left: 20%;
-        margin-top: 0;
-        float:none;
-    }
-
-    body.homePageBody {
-        background-position:0;  
-        background-attachment: fixed;
-    }
-}
-
-/* mobile version */
-@media (min-width: 731px) and (max-width: 765px) { 
-    html.homeHtml{
-        height:100vh;
-        overflow-y: scroll;
-        overflow-x:hidden;
-    }
-    .homeContent {
-        font-family: Calibri;
-        font-size: 1em;
+        font-size: 1.8em;
         margin-left: 90px;
-        height: 11em;
-        width: 85%;
-        overflow:scroll; 
+        height: fit-content;
+        width: 83%;
+        overflow:hidden; 
         margin-bottom: 0;
+        margin-top:2em;
     }
     .homeContent2 {
         font-family: Calibri;
-        font-size: 1em;
+        font-size: 1.8em;
         margin-left: 90px;
-        width: 85%;
+        height: fit-content;
+        width: 83%;
+        overflow:hidden; 
         margin-bottom: 0;
+        margin-top:1.5em;
     }
     .homeFounderPic {
-        width: 60%;
-        margin-left: 25%;
-        margin-top: 0;
+        width: 70%;
+        margin-left:11%;
+        margin-top: 4em;
         float:none;
     }
-
     body.homePageBody {
-        background-image: none;
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:210%;
+    }
+    .homeTitle{
+        margin-top:0em;
+        font-size:28px;
+    }
+    .secondHeader{
+        margin-left:3.2em;
+        font-size:28px;
+        margin-top:0.5em;
+    }
+    .homeTitle1{
+        display:none;
     }
 }
 
-@media (min-width: 700px) and (max-width: 730px) { 
+/*Ipad Mini*/
+@media (min-width: 766px)and (max-width: 768px) { 
     html.homeHtml{
-        height:100vh;
-        overflow-y: scroll;
-        overflow-x:hidden;
+        height:200vh;
     }
     .homeContent {
         font-family: Calibri;
-        font-size: 1em;
+        font-size: 1.6em;
         margin-left: 90px;
-        height:12em;
-        width: 85%;
-        overflow:scroll; 
+        height: fit-content;
+        width: 81%;
+        overflow:hidden; 
         margin-bottom: 0;
-    } 
-    .homeFounderPic {
-        width: 65%;
-        margin-left: 20%;
-        margin-top: 2%;
-        float:none;
-    }
-
-    body.homePageBody {
-        background-image: none;
-    }
-}
-
-@media (min-width: 631px) and (max-width: 700px) { 
-    html.homeHtml{
-        height:100vh;
-        overflow-y: scroll;
-        overflow-x:hidden;
-    }
-    .homeContent {
-        font-family: Calibri;
-        font-size: 1em;
-        margin-left: 84px;
-        height: 11em;
-        width: 85%;
-        overflow:scroll; 
-        margin-bottom: 0;
+        margin-top:2em;
     }
     .homeContent2 {
         font-family: Calibri;
-        font-size: 1em;
-        margin-left: 84px;
-        width: 85%;
+        font-size: 1.6em;
+        margin-left: 90px;
+        height: fit-content;
+        width: 81%;
+        overflow:hidden; 
         margin-bottom: 0;
-    }
-    .secondHeader {
-        margin-left: 84px;
+        margin-top:1.7em;
     }
     .homeFounderPic {
         width: 70%;
-        margin-left: 20%;
+        margin-left:12%;
+        margin-top: 0.7em;
         float:none;
-        margin-top: 2%;
     }
-
     body.homePageBody {
-        background-image: none;
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:210%;
     }
+    .homeTitle{
+        margin-top:0em;
+        font-size:28px;
+    }
+    .secondHeader{
+        margin-left:3.2em;
+        font-size:28px;
+        margin-top:0.5em;
+    }
+    .homeTitle1{
+        display:none;
+    }
+    
 }
 
-@media (min-width: 528px) and (max-width: 630px) { 
+@media (min-width: 730px)and (max-width: 766px) { 
     html.homeHtml{
-        height:100vh;
-        overflow-y: scroll;
-        overflow-x:hidden;
+        height:220vh;
     }
     .homeContent {
         font-family: Calibri;
-        font-size: 1em;
-        margin-left: 5.5em;
-        height: 9em;
-        width: 85%;
-        overflow:scroll; 
+        font-size: 1.5em;
+        margin-left: 80px;
+        height: fit-content;
+        width: 82%;
+        overflow:hidden; 
         margin-bottom: 0;
+        margin-top:2em;
     }
     .homeContent2 {
         font-family: Calibri;
-        font-size: 1em;
-        margin-left: 5.5em;
-        height: 9em;
-        width: 85%;
-        overflow:scroll; 
-    }
-    .secondHeader {
-        margin-left: 77px;
+        font-size: 1.5em;
+        margin-left: 80px;
+        height: fit-content;
+        width: 82%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:1.3em;
     }
     .homeFounderPic {
         width: 70%;
-        margin-left: 20%;
-        margin-top: 0;
+        margin-left:11%;
+        margin-top: 2.5em;
         float:none;
     }
-
     body.homePageBody {
-        background-image: none;
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:220%;
+    }
+    .homeTitle{
+        margin-top:0em;
+        font-size:28px;
+    }
+    .secondHeader{
+        margin-left:2.9em;
+        font-size:28px;
+        margin-top:0.1em;
+    }
+    .homeTitle1{
+        display:none;
     }
 }
 
-@media (min-width: 451px) and (max-width: 528px) {
+@media (min-width: 700px)and (max-width: 730px) { 
     html.homeHtml{
-        height:100vh;
-        overflow-y:scroll;
-        overflow-x:hidden;
+        height:220vh;
     }
     .homeContent {
         font-family: Calibri;
-        font-size: 1em;
-        margin-left: 77px;
-        height: 11em;
+        font-size: 1.5em;
+        margin-left: 82px;
+        height: fit-content;
+        width: 83%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:2em;
+    }
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 1.5em;
+        margin-left: 82px;
+        height: fit-content;
+        width: 83%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:1.8em;
+    }
+    .homeFounderPic {
+        width: 70%;
+        margin-left:11%;
+        margin-top: 1.3em;
+        float:none;
+    }
+    body.homePageBody {
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:230%;
+    }
+    .homeTitle{
+        margin-top:1em;
+        font-size:28px;
+    }
+    .secondHeader{
+        margin-top:0.8em;
+        margin-left:3em;
+        font-size:28px;
+    }
+    .homeTitle1{
+        display:none;
+    }
+}
+
+@media (min-width: 631px)and (max-width: 700px) { 
+    html.homeHtml{
+        height:210vh;
+    }
+    .homeContent {
+        font-family: Calibri;
+        font-size: 1.3em;
+        margin-left: 85px;
+        height: fit-content;
         width: 80%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
+        margin-top:2em;
     }
-
     .homeContent2 {
         font-family: Calibri;
-        font-size: 1em;
-        margin-left: 77px;
-        height: 11em;
+        font-size: 1.3em;
+        margin-left: 85px;
+        height: fit-content;
         width: 80%;
-        overflow:scroll; 
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:1.7em;
     }
-
-    .secondHeader {
-        margin-left: 77px;
-    }
-
     .homeFounderPic {
         width: 70%;
-        margin-left: 20%;
-        margin-top: 0;
+        margin-left: 13%;
+        margin-top: 2.4em;
         float:none;
     }
     body.homePageBody {
-        background-image: none;
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:195%;
+    }
+    .homeTitle{
+        font-size:24px;
+        margin-top:1em;
+    }
+    .secondHeader{
+        margin-left:3.5em;
+        font-size:24px;
+    }
+    .homeTitle1{
+        display:none;
     }
 }
 
-@media (max-width: 450px) { 
+@media (min-width: 528px)and (max-width: 630px) { 
     html.homeHtml{
-        height:100vh;
-        overflow-y: auto;
-        overflow-x:hidden;
+        height:240vh;
     }
     .homeContent {
         font-family: Calibri;
-        font-size: 1em;
+        font-size: 1.5em;
+        margin-left: 72px;
+        height: fit-content;
+        width: 81%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:2em;
+    }
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 1.5em;
+        margin-left: 71px;
+        height: fit-content;
+        width: 81%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:1.5em;
+    }
+    .homeFounderPic {
+        width: 70%;
+        margin-left: 13%;
+        margin-top: 1.2em;
+        float:none;
+    }
+    body.homePageBody {
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:251%;
+    }
+    .homeTitle{
+        margin-top:0.5em;
+        font-size: 24px;
+    }
+    .secondHeader{
+        margin-left:2.9em;
+        font-size:24px;
+        margin-top:0.5em;
+    }
+    .homeTitle1{
+        display:none;
+    }
+}
+
+@media (min-width: 451px)and (max-width: 528px) { 
+    html.homeHtml{
+        height:220vh;
+    }
+    .homeContent {
+        font-family: Calibri;
+        font-size: 1.3em;
         margin-left: 70px;
-        height: 11em;
-        width: 80%;
-        overflow:scroll; 
+        height: fit-content;
+        width: 79%;
+        overflow:hidden; 
         margin-bottom: 0;
-        padding-bottom: 0;
-    } 
+        margin-top:2em;
+    }
     .homeContent2 {
         font-family: Calibri;
-        font-size: 1em;
+        font-size: 1.3em;
         margin-left: 70px;
-        height: 11em;
-        width: 80%;
-        overflow:scroll;     
+        height: fit-content;
+        width: 79%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:1.5em;
     }
     .homeFounderPic {
         width: 70%;
-        margin-left: 20%;
-        margin-top: 0;
+        margin-left: 14%;
+        margin-top:1.4em;
         float:none;
     }
-    .secondHeader {
-        margin-left: 70px;
-    }
-
     body.homePageBody {
-        background-image: none;
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:280%;
+    }
+    .homeTitle{
+        margin-top:0.3em;
+     font-size:24px;
+    }
+    .secondHeader{
+        margin-left:3em;
+        margin-top:0.3em;
+        font-size:24px;
+    }
+    .homeTitle1{
+        display:none;
+    }
+}
+
+@media (max-width: 451px) { 
+    html.homeHtml{
+        height:250vh;
+    }
+    .homeContent {
+        font-family: Calibri;
+        font-size: 1.2em;
+        margin-left: 70px;
+        height: fit-content;
+        width: 78%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:2em;
+        padding-right: 0.6em;
+    }
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 1.2em;
+        margin-left: 70px;
+        height: fit-content;
+        width: 78%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:1.6em;
+        padding-right: 0.6em;
+    }
+    .homeFounderPic {
+        width: 70%;
+        margin-left: 15%;
+        margin-top: 3.4em;
+        float:none;
+    }
+    body.homePageBody {
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:305%;
+    }
+    .homeTitle,.secondHeader{
+        font-size:22.4px;
+    }
+    .secondHeader{
+        margin-left:3.2em;
+    }
+    .homeTitle1{
+        display:none;
     }
 }
 
 @media (max-width: 435px) { 
     html.homeHtml{
-        height:100vh;
-        overflow-y: scroll;
-        overflow-x:hidden;
+        height:200vh;
     }
     .homeContent {
         font-family: Calibri;
-        font-size: 1em;
+        font-size: 1.2em;
         margin-left: 70px;
-        height: 10em;
-        width: 80%;
-        overflow:scroll; 
+        height: fit-content;
+        width: 79.6%;
+        overflow:hidden; 
         margin-bottom: 0;
+        margin-top:2em;
+        padding-right: 1em;
     }
     .homeContent2 {
         font-family: Calibri;
-        font-size: 1em;
+        font-size: 1.2em;
         margin-left: 70px;
-        height: 7em;
-        width: 80%;
-        overflow:scroll; 
+        height: fit-content;
+        width: 79.6%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:1.5em;
+        padding-right: 1em;
     }
     .homeFounderPic {
         width: 70%;
-        margin-left: 20%;
-        margin-top: 0;
+        margin-left: 16%;
+        margin-top: 2.5em;
         float:none;
     }
-
     body.homePageBody {
-        background-image: none;
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:320%;
+    }
+    .homeTitle{
+        margin-top:1.35em;
+        margin-top:0em;
+        font-size:22.4px;
+    }
+    .secondHeader{
+        margin-left:3.1em;
+        font-size:22.4px;
+    }
+    .homeTitle1{
+        display:none;
     }
 }
 
 @media (max-width: 400px) { 
     html.homeHtml{
-        height:100vh;
-        overflow-y: scroll;
-        overflow-x:hidden;
+        height:215vh;
     }
     .homeContent {
         font-family: Calibri;
-        font-size: 1em;
+        font-size: 1.2em;
         margin-left: 70px;
-        height: 12em;
+        height: fit-content;
         width: 80%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
+        margin-top:2em;
+        padding-right: 1.3em;
     }
-
     .homeContent2 {
         font-family: Calibri;
-        font-size: 1em;
+        font-size: 1.2em;
         margin-left: 70px;
-        height: 10em;
+        height: fit-content;
         width: 80%;
-        overflow:scroll; 
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:1.4em;
+        padding-right: 1.3em;
     }
-
-    .secondHeader {
-        margin-left: 70px;
-    }
-
     .homeFounderPic {
         width: 70%;
-        margin-left: 20%;
-        margin-top: 0;
+        margin-left: 17%;
+        margin-top:3.4em;
         float:none;
     }
-
     body.homePageBody {
-        background-image: none;
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:342%;
+    }
+    .homeTitle{
+        margin-top:0em;
+        font-size:22.4px;
+    }
+    .secondHeader{
+        margin-left:3.1em;
+        font-size:22.4px;
+    }
+    .homeTitle1{
+        display:none;
     }
 }
 
 @media (max-width: 380px) { 
     html.homeHtml{
-        height:100vh;
-        overflow-y:scroll;
-        overflow-x:hidden;
+        height:270vh;
     }
     .homeContent {
-        font-size: 1em;
+        font-family: Calibri;
+        font-size: 1.2em;
         margin-left: 70px;
-        height: 12em;
+        height: fit-content;
         width: 80%;
-        overflow:scroll; 
+        overflow:hidden; 
         margin-bottom: 0;
+        margin-top:2em;
+        padding-right: 1.5em;
     }
     .homeContent2 {
-        font-size: 1em;
+        font-family: Calibri;
+        font-size: 1.2em;
         margin-left: 70px;
-        height: 9em;
+        height: fit-content;
         width: 80%;
-        overflow:scroll; 
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:1.5em;
+        padding-right: 1.5em;
     }
     .homeFounderPic {
-        width: 65%;
-        margin-left: 22%;
-        margin-top: 0;
+        width: 70%;
+        margin-left: 17.5%;
+        margin-top: 3.8em;
         float:none;
     }
-
     body.homePageBody {
-        background-image: none;
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:342%;
     }
-
+    .homeTitle{
+        margin-top:-0.25em;
+        font-size:22.4px;
+    }
+    .secondHeader{
+        margin-left:3.1em;
+        font-size: 22.4px;
+    }
+    .homeTitle1{
+        display:none;
+    }
+}
+@media (max-width: 360px) { 
+    html.homeHtml{
+        height:260vh;
+    }
+    .homeTitle1{
+        display:none;
+    }
+    .homeTitle{
+        margin-top:-0.25em;
+        font-size:22.4px;
+        margin-left:-0.12em;
+    }
+    .homeFounderPic {
+        margin-top: 3.8em;
+        margin-left:5em;
+    }
+    .title1{
+    font-size:1.6em;
+    }
+    .secondHeader{
+        font-size: 22.4px;
+    }
+    body.homePageBody {
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position:5% bottom;
+        background-size:359%;
+    }
+    .homeContent {
+        font-family: Calibri;
+        font-size: 1.2em;
+        margin-left: 70px;
+        height: fit-content;
+        width: 80%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:2em;
+        padding-right: 1.5em;
+    }
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 1.2em;
+        margin-left: 70px;
+        height: fit-content;
+        width: 80%;
+        overflow:hidden; 
+        margin-bottom: 0;
+        margin-top:1.3em;
+        padding-right: 1.5em;
+    }
 }
