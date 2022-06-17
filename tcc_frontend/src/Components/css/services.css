@@ -79,7 +79,7 @@ body.servicesBody {
         background-image: none;
     }
 
-    .servicesHeader{
+    .titleFormatIpad {
         display: none;
     }
 }
@@ -138,8 +138,10 @@ body.servicesBody {
     }
 
     Table.services-table{
-        margin-left: 23.6em;
-        margin-top: -3em;
+        word-wrap: break-word;
+        table-layout: fixed;
+        width: 85%;
+        margin-left: 8%;
     }
 
     body.services-body {
@@ -149,17 +151,13 @@ body.servicesBody {
         background-position: 5% bottom;
     }
 
-    .services-table>tbody>tr>td{
-        font-size: 0.8em;
-        padding-right: 0.5em;
+    .titleFormatIpad {
+        margin-left: 10%;
+        margin-top: 0.5em;
     }
 
-    .servicesHeader{
-        color: #8d191d;;
-        font-family: AveNextBold;
-        font-size: 22.4px;
-        margin-left: 1.8em;
-        letter-spacing: 0.1em;
+    .services-table>tbody>tr>td{
+        font-size: 0.75em;
     }
 
     .services-table>thead>tr>th{
