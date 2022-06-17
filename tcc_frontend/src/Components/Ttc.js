@@ -27,10 +27,10 @@ function Ttc() {
 								<h2 className="title2" id="Title2">	CHIANG OPERA</h2>
 								<br />
 								<br />
-								<h3 className="ttcTitle"> Who Are We </h3>
+								<h3 className="homeTitle"> Who Are We </h3>
 							</div>
 							< div className="carouselMobile">
-								<Carousel variant="dark" className="slide ttcCarousel" fade>
+								<Carousel variant="dark" className="slide" fade>
 									<Carousel.Item>
 										<img
 											className="col-lg-6  col-sm-12"
@@ -56,7 +56,7 @@ function Ttc() {
 							</div>
 							<Row>
 								<div className="col-lg-6">
-									<p className="ttcContent">
+									<p className="founderContent">
 										Tok Tok Chiang Opera Ltd, a non-profit entity established by Nick in 2014 as a platform to promote cultural appreciation in Singapore.
 										The company has since been invited to partner with People’s Association to bring awareness of Chinese opera to the Singapore public.
 										It also works with several government ministries and statutory boards to plan and conceptualise cultural events and workshops on Chinese opera for schools,
@@ -72,7 +72,7 @@ function Ttc() {
 									</p>
 								</div>
 								<div className="col-lg-6 carouselDesktop">
-									<Carousel variant="dark" className="slide ttcCarousel" fade>
+									<Carousel variant="dark" className="slide" fade>
 										<Carousel.Item>
 											<img
 												className="col-lg-6  col-sm-12"

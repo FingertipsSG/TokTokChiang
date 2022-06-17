@@ -17,37 +17,45 @@ body, html{
     margin:0;
     padding:0;
 }
+
 html.ttcHtml {
     overflow: hidden;
 }
+
 body.ttcBody {
     overflow: hidden;
 }
+
 .carouselMobile {
     visibility: hidden;
     height: 0;
     width: 0;
 }
+
 .title1 {
     display: inline;
     color: #790c15;
     font-family: AveNextBold;
     font-size: 30px;
 }
+
 .title2 {
     display: inline;
     color: #464749;
     font-family: AveNextBold;
     font-size: 30px;
 }
+
 .firstContentText {
-    margin-left: 92px;
+    margin-left: 5.1em;
     font-family: AveNext;
     color: #464749;
 }
+
 .firstContent {
     margin-left: -30px;
 }
+
 .ttcContent {
     font-family: Calibri;
     font-size: 16px;
@@ -57,9 +65,11 @@ body.ttcBody {
     padding-right: 20px;
     text-align: justify !important;
 }
+
 .carousel {
     margin-top: 8%;
 }
+
 img#carouselPic {
     float: right;
     width: 70%;
@@ -77,10 +87,12 @@ img#carouselPic {
     border-radius: 100%;
     background-color:transparent!important;
 }
+
 .carousel-indicators {
     justify-content: right;
     margin-right: 20% !important;
 } 
+
 .rightDiv {
     background:  url("../../Assets/Images/bg-rightSide.png");
     background-repeat: no-repeat;
@@ -89,6 +101,7 @@ img#carouselPic {
     background-position: right top 1em;
     height: 100vh;
 }
+
 .bottomDiv {
     background:  url("../../Assets/Images/bg-leftSide.png");
     background-repeat: no-repeat;
@@ -97,185 +110,19 @@ img#carouselPic {
     background-attachment: fixed;
 }
 
-/* Responsive */
- @media (min-width: 2101px) {
+/* Desktop */
+@media (min-width: 1024px) {
     .ttcContent {
-        font-size:2em;
-        height:400px;
-     }
-     .rightDiv {
-         background-attachment: fixed;
-         background-size: 60%;
-         background-position: right top 1em;
-     }
-     .carouselDesktop {
-        width:50%;
-        margin-top:-6em;
-     }
-} 
-@media (min-width: 1919px)and (max-width: 2100px) {
-    .ttcContent {
-       font-size:1.7em;
-       height:420px;
-    }
-    .rightDiv {
-        background-attachment: fixed;
-        background-size: 60%;
-        background-position: right top 1.5em;
-    }
-    .carouselDesktop {
-       width:50%;
-       margin-top:-5.5em;
-    }
-    .title1,.title2{
-        font-size:45px;
-    }
-    .ttcTitle{
-        font-size:3em;
-    }
-    .ttcCarousel{
-        margin-top:4em;
-    }
-
-}
-
-@media (min-width: 1600px) and (max-width: 1919px) {
-    .carouselDesktop {
-        width:50%;
-        margin-left:-2em;
-    }
-    img#carouselPic {
-        width: 80%;
-        margin-top: 4em;
-}
-    .rightDiv {
-        background-attachment: fixed;
-        background-size: 60%;
-        background-position: right top 1em;
-    }
-    .ttcContent {
-        height:365px;
-        width:95%;
-        font-size:1.5em;
-        margin-top:1em;
-    }
-    .ttcCarousel{
-        width:87%;
-       margin-left:10em;
-       margin-top: -1.2em;
-    }
-} 
-
-@media (min-width: 1536px)and (max-width:1600px) {
-    html.ttcHtml {
-        overflow-x: hidden;
-    }
-    body.ttcBody {
-        height: 120vh;
-    }
-    .carouselDesktop {
-        margin-top:-5.5%;
-        width:44%;
-    }
-    .rightDiv,.bottomDiv {
-        background-attachment: fixed;
-    }  
-    .ttcContent {
-        height:365px;
-        width:95%;
-        font-size:1.5em;
-    }
-    .ttcCarousel{
-        width:115%;
-        margin-top:2.9em;
-        margin-left:-0.5em;
-    }
-    .carouselDesktop {
-        margin-top:-7%;
-    }
-    .rightDiv,.bottomDiv {
-        background-attachment: fixed;
-    }  
-} 
-
-/* 13.9-14.9inch w height:796 */
-@media (min-width: 1520px) and (max-width: 1535px) {
-    .ttcContent {
-        height:280px;
-        width:95%
-    }
-    .carouselDesktop {
-        margin-top:-5%;
-        width:49%;
-       margin-left: 1em;
-    }
-    .rightDiv,.bottomDiv {
-        background-attachment: fixed;
-    }  
-    .rightDiv {
-        background-size: 60%;
-        background-position: right top 1.5em;
-    }
-} 
-
-/*min-height:700px*/
-@media (min-width: 1350px) and (max-width: 1520px) {
-    .ttcContent {
-        height:280px;
-        width:95%
-    }
-    .carouselDesktop {
-        margin-top:-5.5%;
-        width:50%;
-    }
-    .rightDiv,.bottomDiv {
-        background-attachment: fixed;
-    }  
-    .rightDiv {
-        background-size: 60%;
-        background-position: right top 1.5em;
-    }
-} 
-
-/*min-height:700px*/
-@media (min-width: 1281px) and (max-width: 1349px) {
-    .ttcContent {
-        height:280px;
-        width:95%;
-    }
-    .carouselDesktop {
-        margin-top:-7%;
-    }
-    .rightDiv,.bottomDiv {
-        background-attachment: fixed;
-    }  
-    .rightDiv{
-        background-size: 60.1%;
-        background-position: right top 1em
-    }
-    .bottomDiv {
-        background-size: contain;
-        background-position: left bottom ;
-        background-attachment: fixed;
-    }
-    .carouselDesktop {
-        margin-top:-8%;
-    }
-}
-
-/*my computer size*/
-@media (min-width: 1278px) and (max-width: 1280px) {
-    .ttcContent {
-        height: 230px;
+        height: 270px;
         width:95%
     }
     .title1,.title2 {
         font-size: 28px;
     }
     .rightDiv { 
-        background-size: 52%;
+        background-size: 60%;
         background-attachment: fixed;
-        background-position:right top 1.5em;
+        background-position: right top 1.5em;
     }  
     .bottomDiv {
         background-size: contain;
@@ -283,824 +130,123 @@ img#carouselPic {
         background-attachment: fixed;
     }
     .carouselDesktop {
-        margin-top:-9%;
-        width:48%;
-        margin-left:1em;
-    }
-}
-
-@media (min-width: 1224px) and (max-width: 1279px) {
-    .ttcContent {
-        height: 250px;
-        width:90%
-    }
-    .title1,.title2 {
-        font-size: 1.8em;
-    }
-    .rightDiv {
-        background-size: 55%;
-        background-attachment: fixed;
-        background-position: right top 1.5em;
-    }
-    .bottomDiv {
-        background-size: contain;
-        background-position: left bottom ;
-        background-attachment: fixed;
-    }
-    .carouselDesktop {
-        margin-top:-7%;
-        width: 46%; 
-        margin-left:3.5em;
-    }   
-}
-
-/* w min height 600px*/
-@media (min-width: 1093px) and (max-width: 1224px) {
-    .ttcContent {
-        height: 255px;
-        width:90%;
-    }
-    .title1,.title2 {
-        font-size: 1.8em;
-    }
-    .rightDiv {
-        background-size: 60%;
-        background-attachment: fixed;
-        background-position: right top 1.5em;
-    }
-    .bottomDiv {
-        background-size: contain;
-        background-position: left bottom ;
-        background-attachment: fixed;
-    }
-    .carouselDesktop {
-        margin-top:-8%;
-    }
-}
-
-/*Tablet w min height 600px*/
-@media (min-width: 1023px) and (max-width: 1092px) {
-    html.ttcHtml {
-        overflow-x: hidden;
-    }
-    .ttcContent {
-        height: 14em !important;
-        width:90%;
-    }
-    .bottomDiv {
-        background-position: left bottom ;
-    }
-    .rightDiv {
-        background:  url("../../Assets/Images/bg-rightSide.png");
-        background-repeat: no-repeat;
-        background-size: 60%;
-        background-attachment: fixed;
-        background-position: right top 4em;
-    }
-    .carouselDesktop {
-        margin-top:-5.8%;
-    }
-    img#carouselPic {
-       background-size: 70%;
-    }
-}
-
-/*Tablet with min height 600*/
-@media (min-width: 992px) and (max-width: 1022px) {
-    .ttcContent {
-        height: 17em !important;
-        width:90%;
-        font-size:1em;
-        padding-right:2em;
-    }
-    .bottomDiv {
-        background-position: 100% 100%;
-    }
-    .rightDiv {
-        background:  url("../../Assets/Images/bg-rightSide.png");
-        background-repeat: no-repeat;
-        background-size: 60%;
-        background-attachment: fixed;
-        background-position: right top 4em;
-    }
-    .bottomDiv {
-        background:  url("../../Assets/Images/bg-leftSide.png");
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: left bottom ;
-        background-attachment: fixed;
-    }
-    .carouselDesktop {
-        margin-top:-4%;
-        margin-top:-6%;
-    }
-    img#carouselPic {
-       background-size: 70%;
+        margin-top: -3.8%;
+        width: 48%;
+        margin-left: 1em;
     }
 }
 
 /* Ipad air version */
-@media (min-width: 769px) and ( max-width:990px){ 
+@media (min-width: 766px) and ( max-width:1023px){ 
     html.ttcHtml {
-      height:170vh;
+      height: 170vh;
       overflow-y: auto;
-      overflow-x:hidden;
+      overflow-x: hidden;
     }
-    .ttcContent {
-        font-family: Calibri;
-        font-size: 28px;
-        margin-left: 4em;
-        height: fit-content;
-        width: 83%;
-        overflow:hidden; 
-        margin-bottom: 0;
-        margin-top:2.2em;
-    }
+
     .firstContentText {
         margin-left: 6.5em;
     }
+
     body.ttcBody {
         background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
-        background-position:5% 100%;
-        background-size:210%;
+        background-position: 5% 100%;
+        background-size: 210%;
     }
-    img#carouselPic {
-        width: 70%;
-        margin-left: 12%;
-        margin-top: 0;
-        float:none;
-    }
-    .carouselDesktop {
-        visibility: hidden;
-    }
-     .carouselMobile {
-        visibility: visible;
-        height: auto;
-        width: auto;  
-        margin-left:-0.5em;
-    } 
+
     .firstContentText {
         margin-left: 6.7em;
     }
+
     .bottomDiv {
         background-image: none;
     }
+
     .ttcTitle{
-        font-size:28px;
+        font-size: 28px;
     }
+
     .rightDiv{
         background-image: url("../../Assets/Images/brush1.png");
         background-position: 130% 13%;
-        background-attachment:unset;
-        background-size:100% 65%;
+        background-attachment: unset;
+        background-size: 100% 65%;
     }
 }
 
-/*Ipad mini*/
-@media (min-width: 766px) and (max-width: 768px) { 
+/* Mobile Devices */
+@media (max-width: 765px) { 
     html.ttcHtml{
-        height: 160vh;
+        height: 170vh;
         overflow-y: auto;
-        overflow-x:hidden;
+        overflow-x: hidden;
     }
-    .ttcContent {
-        font-family: Calibri;
-        font-size: 1.6em;
-        margin-left: 4em;
-        height: fit-content;
-        width: 83%;
-        overflow:hidden; 
-        margin-bottom: 0;
-        margin-top:2em;
-    }
-    .firstContentText {
-        margin-left: 7.5em;
-    }
-    body.ttcBody {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-repeat: no-repeat;  
-        background-position:5% 100%;
-        background-size:210%;
-    }
-    img#carouselPic {
-        width: 70%;
-        margin-left: 12.5%;
-        margin-top: 0.3em;
-        float:none;
-    }
-    .carouselDesktop {
-        visibility: hidden;
-        height: 0;
-        width: 0;
-    }
-     .carouselMobile {
-        visibility: visible;
-        height: auto;
-        width: auto;  
-    } 
-    .firstContentText {
-        margin-left: 6.7em;
-    }
-    .rightDiv{
-        background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 15%;
-        background-attachment:unset;
-        background-size:100% 65%;
-    }
-    .bottomDiv {
-        background-image: none;
-    }
-    .ttcTitle{
-        font-size:28px;
-    }
-}
 
-/* mobile version */
-@media (min-width: 731px) and (max-width: 765px) { 
-    html.ttcHtml{
-        height:190vh;
-        overflow-y: auto;
-        overflow-x:hidden;
-    }
-    .ttcContent {
-        font-family: Calibri;
-        font-size: 1.5em;
-        margin-left: 4em;
-        height: 31em;
-        height: fit-content;
-        width: 84%;
-        overflow:hidden; 
-        margin-bottom: 0;
-        margin-top:2em;
-    }
-    .firstContentText {
-        margin-left: 6.5em;
-    }
-    body.ttcBody {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-repeat: no-repeat;  
-        background-position:5% bottom;
-        background-size:220%;
-    }
-    img#carouselPic {
-        width: 70%;
-        margin-left: 11.3%;
-        margin-top: 0;
-        float:none;
-    }
-    .carouselDesktop {
-        visibility: hidden;
-        height: 0;
-        width: 0;
-    }
-     .carouselMobile {
-        visibility: visible;
-        height: auto;
-        width: auto;  
-        margin-top:-1em;
-    } 
-    .firstContentText {
-        margin-left: 6em;
-    }
-    .rightDiv{
-        background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 20%;
-        background-attachment:unset;
-        background-size:100% 74%;
-    }
-    .bottomDiv {
-        background-image: none;
-    }
-    .ttcTitle{
-        font-size:28px;
-    }
-}
-
-@media (min-width: 700px) and (max-width: 730px) { 
-    html.ttcHtml{
-        height:180vh;
-        overflow-y: auto;
-        overflow-x:hidden;
-    }
-    .ttcContent {
-        font-family: Calibri;
-        font-size: 1.5em;
-        margin-left: 3.8em;
-        height: fit-content;
-        width: 86%;
-        margin-top:2em;
-        overflow:hidden;
-        margin-bottom: 0;
-    }
-    img#carouselPic {
-        width: 70%;
-        margin-left: 11.3%;
-        margin-top: 0;
-        float:none;
-    }
-    body.ttcBody {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-repeat: no-repeat;  
-        background-position:5% bottom;
-        background-size:230%; 
-    }
-    .carouselDesktop {
-        visibility: hidden;
-        height: 0;
-        width: 0;
-    }
-     .carouselMobile {
-        visibility: visible;
-        height: auto;
-        width: auto;  
-        margin-top:-1.4em;
-    } 
-    .firstContentText {
-        margin-left: 6em;
-    }
-    .rightDiv{
-        background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 29%;
-        background-attachment:unset;
-        background-size:100% 65%;
-    }
-    .bottomDiv {
-        background-image: none;
-    }
-    .ttcTitle{
-        font-size:28px;
-        margin-top:1em;
-    }
-}
-
-@media (min-width: 631px) and (max-width: 700px) { 
-    html.ttcHtml{
-        height:170vh;
-        overflow-y: auto;
-        overflow-x:hidden;
-    }
-    .ttcTitle{
-        margin-top:1em;
-        font-size:28px;
-    }
-    .ttcContent {
-        font-family: Calibri;
-        font-size: 1.3em;
-        margin-left: 4.4em;
-        margin-top:2em;
-        height: fit-content;
-        width: 84%;
-        overflow:hidden; 
-        margin-bottom: 0;
-    } 
-    .firstContentText {
-        margin-left: 6em;
-    }
-    img#carouselPic {
-        width: 70%;
-        margin-left: 6em;
-        float:none;
-    }
-    body.ttcBody {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-repeat: no-repeat;  
-        background-position:5% bottom;
-        background-size:195%;
-    }
-    .carouselDesktop {
-        visibility: hidden;
-        height: 0;
-        width: 0;
-    }
-     .carouselMobile {
-        visibility: visible;
-        height: auto;
-        width: auto;  
-        margin-top: -0.6em;
-    } 
-    .rightDiv{
-        background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 25%;
-        background-attachment:unset;
-        background-size:100% 65%;
-    }
-    .bottomDiv {
-        background-image: none;
-    }
-    .ttcTitle{
-        font-size:24px;
-    }
-}
-
-@media (min-width: 528px) and (max-width: 630px) { 
-    html.ttcHtml{
-        height:190vh;
-        overflow-y: auto;
-        overflow-x:hidden;
-    }
-    .ttcContent {
-        font-family: Calibri;
-        font-size: 1.5em;
-        height: fit-content;
-        width: 82%;
-        overflow:hidden; 
-        margin-bottom: 0;
-        margin-top:2em;
-        margin-left:3.5em;
-    }
-    img#carouselPic {
-        width: 70%;
-        margin-left: 5.5em;
-        float:none;
-    }
-    body.ttcBody {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-repeat: no-repeat;  
-        background-position:5% bottom;
-        background-size:251%;
-    }
-    .firstContentText {
-        margin-left: 5.5em;
-    }
-    .carouselDesktop {
-        visibility: hidden;
-        height: 0;
-        width: 0;
-    }
-     .carouselMobile {
-        visibility: visible;
-        height: auto;
-        width: auto;  
-        margin-top: -1.3em;
-    } 
-    .rightDiv{
-        background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 28%;
-        background-attachment:unset;
-        background-size:100% 60%;
-    }
-    .bottomDiv {
-        background-image: none;
-    }
-    .ttcTitle {
-        margin-top: -1.5em;
-        font-size:24px;
-    }
-   
-}
-
-@media (min-width: 451px) and (max-width: 528px) {
-    html.ttcHtml{
-        height:180vh;
-        overflow-y:auto;
-        overflow-x:hidden;
-    }
-    .ttcContent {
-        font-family: Calibri;
-        font-size: 1.3em;
-        margin-left:70px;
-        height: fit-content;
-        width: 83%;
-        overflow:scroll; 
-        margin-bottom: 0;
-        margin-top:2em;
-    }
-    .firstContentText {
-        margin-left: 5em;
-    }
-    img#carouselPic {
-        width: 70%;
-        margin-left: 5em;
-        margin-top: 0;
-        float:none;
-    }
-    body.ttcBody {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-repeat: no-repeat;  
-        background-position:5% bottom;
-        background-size:280%;
-    }
-    .carouselDesktop {
-        visibility: hidden;
-        height: 0;
-        width: 0;
-    }
-     .carouselMobile {
-        visibility: visible;
-        height: auto;
-        width: auto;  
-        margin-top: -1.5em;
-    } 
-    .rightDiv{
-        background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 23%;
-        background-attachment:unset;
-        background-size:100% 55%;
-    }
-    .bottomDiv {
-        background-image: none;
-    }
-    .ttcTitle {
-        margin-top: -1.5em;
-    }
-    .title1,.title2,.ttcTitle{
-        font-size:24px;
-    }
-}
-
-@media (max-width: 451px) { 
-    html.ttcHtml{
-        height:220vh;
-        overflow-y: auto;
-        overflow-x:hidden;
-    }
-    .ttcContent {
-        font-family: Calibri;
-        font-size: 1.2em;
-        margin-left:70px;
-        height: fit-content;
-        width: 82%;
-        overflow:scroll; 
-        margin-bottom: 0;
-        margin-top:2em;
-    }
-    .firstContentText {
-        margin-left: 5em;
-    }
-    img#carouselPic {
-        width: 70%;
-        margin-left: 5em;
-        float:none;
-    }
-    body.ttcBody {
-        background-image: url("../../Assets/Images/AboutUs.png");
-        background-repeat: no-repeat;  
-        background-position:5% bottom;
-        background-size:auto;
-    }
-    .carouselDesktop {
-        visibility: hidden;
-        height: 0;
-        width: 0;
-    }
-     .carouselMobile {
-        visibility: visible;
-        height: auto;
-        width: auto;  
-        margin-top: -0.4em;
-    } 
-    .rightDiv{
-        background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 40%;
-        background-attachment:unset;
-        background-size:100% 55%;
-    }
-    .bottomDiv {
-        background-image: none;
-    }
-    #Title2 {
-        display: block;
-    }
-    .ttcTitle {
-        margin-top: -1.5em;
-    }
-    .title1,.title2,.ttcTitle{
-        font-size:1.6em;
-    }
-}
-
-@media (max-width: 435px) { 
-    html.ttcHtml{
-        height:155vh;
-        overflow-y: auto;
-        overflow-x:hidden;
-    }
-    .ttcContent {
-        font-family: Calibri;
-        font-size: 1.2em;
-        margin-left: 70px;
-        height: fit-content;
-        width: 80%;
-        overflow:hidden; 
-        margin-bottom: 0;
-        margin-top:2em;
-    }
-    img#carouselPic {
-        width: 70%;
-        margin-left: 5em;
-        margin-top: 0;
-        float:none;
-    }
-    .firstContentText {
-        margin-left: 5em;
-    }
-    body.ttcBody {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-repeat: no-repeat;  
-        background-position:5% bottom;
-        background-size:320%;
-    }
-    .carouselDesktop {
-        visibility: hidden;
-        height: 0;
-        width: 0;
-        margin-top:0.5em;
-    }
-     .carouselMobile {
-        visibility: visible;
-        height: auto;
-        width: auto;  
-        margin-top:-1em;
-    } 
-    .rightDiv{
-        background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 22%;
-        background-attachment:unset;
-        background-size:100% 40%;
-    }
-    .bottomDiv {
-        background-image: none;
-    }
-    .ttcTitle{
-        font-size:22.4px;
-    }
-}
-
-@media (max-width: 400px) { 
-    html.ttcHtml{
-        height:170vh;
-        overflow-y: auto;
-        overflow-x:hidden;
-    }
     .firstContentText {
         margin-left: 5em !important;
-        margin-top:-1em;
+        margin-top: -1em;
     }
+
     .ttcContent {
         font-family: Calibri;
         font-size: 1.2em;
         margin-left: 70px;
         height: fit-content;
         width: 80%;
-        overflow:hidden; 
+        overflow: hidden; 
         margin-bottom: 0;
-        margin-top:2em;
+        margin-top: 2em;
     }
+
     img#carouselPic {
         width: 70%;
         margin-left: 5em;
         margin-top: 0;
-        float:none;
+        float: none;
     }
+
     body.ttcBody {
         background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
-        background-position:5% bottom;
-        background-size:342%;
+        background-position: 5% bottom;
+        background-size: 342%;
     }
+
     .carouselDesktop {
         visibility: hidden;
         height: 0;
         width: 0;
     }
+
     .carouselMobile {
         visibility: visible;
         height: auto;
         width: auto;  
         margin-top: 0em;
-    } 
+    }
+
     .rightDiv{
         background-image: url("../../Assets/Images/brush1.png");
         background-position: 130% 28%;
-        background-attachment:unset;
-        background-size:100% 43%;
+        background-attachment: unset;
+        background-size: 100% 43%;
     }
+
     .bottomDiv {
         background-image: none;
     }
+
     .title1{
-        margin-top:-2em;
+        margin-top: -2em;
+        font-size: 22.4px;
     }
+
     .title2{
-        font-size:1.6em;
+        font-size: 1.6em;
     }
+
     .ttcTitle{
-        font-size:1.6em;
+        font-size: 1.6em;
     }
 }
-
-@media (max-width: 380px) { 
-    html.ttcHtml{
-        height:220vh;
-        overflow-y: auto;
-        overflow-x:hidden;
-    }
-    .ttcContent {
-        font-family: Calibri;
-        font-size: 1.2em;
-        margin-left: 70px;
-        height: fit-content;
-        width: 79%;
-        overflow:hidden; 
-        margin-bottom: 0;
-        margin-top:2em;
-    }
-    img#carouselPic {
-        width: 70%;
-        margin-left: 5em;
-        margin-top: 0;
-        float:none;
-    }
-    .bottomDiv {
-        background-image: none;
-    }
-    body.ttcBody {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-repeat: no-repeat;  
-        background-position:5% bottom;
-        background-size:342%;
-    }
-    .firstContentText {
-        margin-left: 5.5em;
-    }
-    .carouselDesktop {
-        visibility: hidden;
-        height: 0;
-        width: 0;
-    }
-     .carouselMobile {
-        visibility: visible;
-        height: auto;
-        width: auto;  
-        margin-top:-0.7em;
-    } 
-    .rightDiv{
-        background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 42%;
-        background-attachment:unset;
-        background-size:100% 50%;
-    }
-    .ttcTitle{
-        font-size:22.4px;
-    }
-}
-
-@media (max-width: 360px) { 
-    html.ttcHtml{
-        height:200vh;
-    }
-    .ttcContent {
-        font-family: Calibri;
-        font-size: 1.2em;
-        margin-left: 70px;
-        height: fit-content;
-        width: 78.5%;
-        overflow:hidden; 
-        margin-bottom: 0;
-        margin-top:2em;
-    }
-    img#carouselPic {
-        width: 70%;
-        margin-left: 5.1em;
-        margin-top: 0;
-        float:none;
-    }
-    .bottomDiv {
-        background-image: none;
-    }
-    .firstContentText {
-        margin-left: 5.5em;
-    }
-    body.ttcBody {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-repeat: no-repeat;  
-        background-position:5% bottom;
-        background-size:359%;
-    }
-    .carouselDesktop{
-        visibility: hidden;
-        height: 0;
-        width: 0;
-    }
-     .carouselMobile {
-        visibility: visible;
-        height: auto;
-        width: auto;  
-    } 
-    .ttcTitle{
-        font-size:22.4px;
-    }
-     .carouselMobile {
-        visibility: visible;
-        height: auto;
-        width: auto;  
-    } 
-    /* .ttcCarousel.carousel-indicators {
-        justify-content: right;
-        margin-left: 3em !important;
-        margin-right: 0;
-        margin-bottom: 0;
-    } */
-}
-
