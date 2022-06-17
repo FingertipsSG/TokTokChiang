@@ -54,9 +54,9 @@ html.wayangHtml {
 /* Mobile Devices */
 @media(max-width:765px){
     html.wayangHtml{
-        height:245vh;
-        overflow-y:auto;
-        overflow-x:hidden;
+        height: 270vh;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 
     .wayangContent {
@@ -83,13 +83,6 @@ html.wayangHtml {
         margin-top: 0;
         float:none;
     }
-
-    /* .rightDiv{
-        background-image: url("../../Assets/Images/brush1.png");
-        background-position: 130% 26%;
-        background-attachment:unset;
-        background-size:100% 39%;
-    } */
 
     .wayangTitle{
         font-size:22.4px;

@@ -132,7 +132,7 @@ body.homePageBody {
 /* Ipad and Tablet*/
 @media (min-width:766px) and (max-width: 1023px) { 
     html.homeHtml{
-        height: 180vh;
+        height: 200vh;
     }
 
     .homeTitle1{

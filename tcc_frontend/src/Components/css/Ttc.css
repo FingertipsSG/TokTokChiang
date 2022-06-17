@@ -114,7 +114,7 @@ img#carouselPic {
 @media (min-width: 1024px) {
     .ttcContent {
         height: 270px;
-        width:95%
+        width: 95%
     }
     .title1,.title2 {
         font-size: 28px;
@@ -139,7 +139,7 @@ img#carouselPic {
 /* Ipad air version */
 @media (min-width: 766px) and ( max-width:1023px){ 
     html.ttcHtml {
-      height: 170vh;
+      height: 160vh;
       overflow-y: auto;
       overflow-x: hidden;
     }
@@ -178,7 +178,7 @@ img#carouselPic {
 /* Mobile Devices */
 @media (max-width: 765px) { 
     html.ttcHtml{
-        height: 170vh;
+        height: 190vh;
         overflow-y: auto;
         overflow-x: hidden;
     }
