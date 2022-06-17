@@ -202,7 +202,7 @@ body.homePageBody {
 /* Mobile Devices*/
 @media (max-width: 765px) { 
     html.homeHtml{
-        height: 200vh;
+        height: 250vh;
     }
 
     .homeTitle1{
@@ -225,7 +225,7 @@ body.homePageBody {
     }
 
     .secondHeader{
-        margin-left: 2.5em;
+        margin-left: 3.2em;
     }
 
     body.homePageBody {
