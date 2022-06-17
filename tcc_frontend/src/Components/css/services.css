@@ -6,16 +6,18 @@
 }
 
 html,body {
-   margin:0;
-   padding:0;
+   margin: 0;
+   padding: 0;
 }
 
 html.servicesHtml {
     overflow: hidden;
 }
+
 body.servicesBody {
     overflow: hidden;
 }
+
 .leftDiv {
     background:  url("../../Assets/Images/bg-leftSide.png");
     background-repeat: no-repeat;
@@ -24,6 +26,7 @@ body.servicesBody {
     background-position: left top -0.5em;
     height: 100vh;
 }
+
 .bottomSection {
     background:  url("../../Assets/Images/bg-leftSide.png");
     background-repeat: no-repeat;
@@ -31,271 +34,31 @@ body.servicesBody {
     background-position: left;
     background-attachment: fixed;
 }
+
 .services-table>thead>tr>th{
-    font-size:15px;
+    font-size: 15px;
     color: #790c15;
 }
+
 .services-table>tbody>tr>td{
-    font-size:13px;
-}
-.services-table{
-    margin-left:25%;
-    margin-top:2%;
+    font-size: 13px;
 }
 
-/*Responsive*/
-@media (min-width:2101px){
+/* Desktop */
+@media (min-width:1024px){
     Table.services-table{
-        margin-left:30%;
-        margin-top:5.5em;
+        margin-left: 20%;
+        margin-top: 3.5%;
     }
-    .leftDiv {
-        background-image: url("../../Assets/Images/services-left.png");
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: left -0.7em top -8em;
-    }
-    .bottomSection{
-        background-image: url("../../Assets/Images/servicesPV.png");
-        background-repeat: no-repeat;
-        background-size: 80%;
-        background-position: left bottom;
-        background-attachment: fixed;
-    }
-    .services-table>thead>tr>th{
-        font-size:25px;
-    }
-    .services-table>tbody>tr>td{
-         font-size:20px;
-    }  
-    body.services-body {
-        background-image:none;
-    }
-    .servicesHeader{
-        display:none;
-       }
-}
-/* 1080px height */
-@media (min-width:1919px) and (max-width: 2100px){
-    Table.services-table{
-        margin-left:30%;
-        margin-top:5em;
-    }
-    .leftDiv {
-        background-image: url("../../Assets/Images/services-left.png");
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: left -0.7em top -3.5em;
-    }
-    .bottomSection{
-        background-image: url("../../Assets/Images/servicesPV.png");
-        background-repeat: no-repeat;
-        background-size: 80%;
-        background-position: left bottom;
-        background-attachment: fixed;
-    }
-    .services-table>thead>tr>th{
-        font-size:22px;
-    }
-    .services-table>tbody>tr>td{
-         font-size:18px;
-    }  
-    body.services-body {
-        background-image:none;
-    }
-    .servicesHeader{
-        display:none;
-       }
-}
 
-/* 900px height */
-@media (min-width:1600px) and (max-width: 1919px){
-    Table.services-table{
-        margin-left:30%;
-        margin-top:2.3em;
-    }
     .leftDiv {
         background-image: url("../../Assets/Images/services-left.png");
         background-size: 100%;
         background-repeat: no-repeat;
         background-attachment: fixed;
-        background-position: left -0.7em top -5em;
+        background-position: left -0.7em top 2.6%;
     }
-    .bottomSection{
-        background-image: url("../../Assets/Images/servicesPV.png");
-        background-repeat: no-repeat;
-        background-size: 80%;
-        background-position: left bottom;
-        background-attachment: fixed;
-    }
-    .services-table>thead>tr>th{
-        font-size:22px;
-    }
-    .services-table>tbody>tr>td{
-         font-size:17px;
-    }  
-    body.services-body {
-        background-image:none;
-    }
-    .servicesHeader{
-        display:none;
-       }
-}
 
-@media (min-width:1536px) and (max-width: 1600px){
-    Table.services-table{
-        margin-left:30%;
-        margin-top:2.8em;
-    }
-    .leftDiv {
-        background-image: url("../../Assets/Images/services-left.png");
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: left -1.5em top -2.5em;
-    }
-    .bottomSection{
-        background-image: url("../../Assets/Images/servicesPV.png");
-        background-repeat: no-repeat;
-        background-size: 80%;
-        background-position: left bottom;
-        background-attachment: fixed;
-    }
-    .services-table>thead>tr>th{
-        font-size:17px;
-    }
-    .services-table>tbody>tr>td{
-         font-size:14px;
-    }  
-    body.services-body {
-        background-image:none;
-    }
-    .servicesHeader{
-        display:none;
-       }
-}
-
-/* 13.9-14.9inch w height:796 */
-@media (min-width:1520px) and (max-width: 1535px){
-    Table.services-table{
-        margin-left:30%;
-        margin-top:2.5em;
-    }
-    .leftDiv {
-        background-image: url("../../Assets/Images/services-left.png");
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: left -1.4em top -2.5em;
-    }
-    .bottomSection{
-        background-image: url("../../Assets/Images/servicesPV.png");
-        background-repeat: no-repeat;
-        background-size: 80%;
-        background-position: left bottom;
-        background-attachment: fixed;
-    }
-    .services-table>thead>tr>th{
-        font-size:17px;
-    }
-    .services-table>tbody>tr>td{
-         font-size:14px;
-    }  
-    body.services-body {
-        background-image:none;
-    }
-    .servicesHeader{
-        display:none;
-     }
-    .servicesHeader{
-        display:none;
-    }
-}
-
-@media (min-width:1350px) and (max-width: 1520px){
-    Table.services-table{
-        margin-left:30%;
-        margin-top:0.9em;
-    }
-    .leftDiv {
-        background-image: url("../../Assets/Images/services-left.png");
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: left -1.3em top -3.3em;
-    }
-    .bottomSection{
-        background-image: url("../../Assets/Images/servicesPV.png");
-        background-repeat: no-repeat;
-        background-size: 80%;
-        background-position: left bottom;
-        background-attachment: fixed;
-    }
-    .services-table>thead>tr>th{
-        font-size:17px;
-    }
-    .services-table>tbody>tr>td{
-         font-size:14px;
-    }  
-    body.services-body {
-        background-image:none;
-    }
-    .servicesHeader{
-        display:none;
-    }
-    .servicesHeader{
-        display:none;
-     }
-    
-}
-
-@media (min-width:1281px) and (max-width: 1349px){
-    Table.services-table{
-        margin-left:30%;
-        margin-top:0.8em;
-    }
-    .leftDiv {
-        background-image: url("../../Assets/Images/services-left.png");
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: left -0.9em top -2.3em;
-    }
-    .bottomSection{
-        background-image: url("../../Assets/Images/servicesPV.png");
-        background-repeat: no-repeat;
-        background-size: 80%;
-        background-position: left bottom;
-        background-attachment: fixed;
-    }
-    .services-table>thead>tr>th{
-        font-size:17px;
-    }
-    .services-table>tbody>tr>td{
-         font-size:14px;
-    }  
-    body.services-body {
-        background-image:none;
-    }
-    .servicesHeader{
-        display:none;
-    }
-}
-
-@media (min-width:1278px) and (max-width: 1280px){
-    Table.services-table{
-        margin-left:30%;
-        margin-top:0.5em;
-    }
-    .leftDiv {
-        background-image: url("../../Assets/Images/services-left.png");
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: left -0.7em top -2.7em;
-    }
     .bottomSection{
         background-image: url("../../Assets/Images/servicesPV.png");
         background-repeat: no-repeat;
@@ -303,633 +66,112 @@ body.servicesBody {
         background-position: left bottom;
         background-attachment: fixed;
     }
-    .services-table>thead>tr>th{
-        font-size:16px;
-    }
-    .services-table>tbody>tr>td{
-         font-size:12px;
-    }  
-    body.services-body {
-        background-image:none;
-    }
-    .servicesHeader{
-        display:none;
-       }
-}
 
-@media (min-width:1224px) and (max-width: 1279px){
-    Table.services-table{
-        margin-left:30%;
-        margin-top:0.5em;
-    }
-    .leftDiv {
-        background-image: url("../../Assets/Images/services-left.png");
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: left -0.7em top -2.3em;
-    }
-    .bottomSection{
-        background-image: url("../../Assets/Images/servicesPV.png");
-        background-repeat: no-repeat;
-        background-size: 75%;
-        background-position: left bottom;
-        background-attachment: fixed;
-    }
     .services-table>thead>tr>th{
-        font-size:16px;
+        font-size: 16px;
     }
-    .services-table>tbody>tr>td{
-         font-size:13px;
-    }  
-    body.services-body {
-        background-image:none;
-    }
-    .servicesHeader{
-        display:none;
-       }
-}
 
-/*Tablet w min height 600*/
-@media (min-width:1093px) and (max-width: 1224px){
-    Table.services-table{
-        margin-left:30%;
-        margin-top:0.5em;
-    }
-    .leftDiv {
-        background-image: url("../../Assets/Images/services-left.png");
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: left -0.6em top -2.2em;
-    }
-    .bottomSection{
-        background-image: url("../../Assets/Images/servicesPV.png");
-        background-repeat: no-repeat;
-        background-size: 80%;
-        background-position: left bottom;
-        background-attachment: fixed;
-    }
-    .services-table>thead>tr>th{
-        font-size:16px;
-    }
     .services-table>tbody>tr>td{
-         font-size:12px;
+        font-size: 15px;
     }  
-    body.services-body {
-        background-image:none;
-    }
-    .servicesHeader{
-        display:none;
-       }
-}
 
-@media (min-width:1023px) and (max-width: 1092px){
-    Table.services-table{
-        margin-left:25%;
-        margin-top:0.5em;
-    }
-    .leftDiv {
-        background-image: url("../../Assets/Images/services-left.png");
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: left 0.1em top -0.7em;
-    }
-    .bottomSection{
-        background-image: url("../../Assets/Images/servicesPV.png");
-        background-repeat: no-repeat;
-        background-size: 80%;
-        background-position: left bottom;
-        background-attachment: fixed;
-    }
     body.services-body {
         background-image: none;
     }
-    .services-table>thead>tr>th{
-        font-size:16px;
-    }
-    .services-table>tbody>tr>td{
-         font-size:12px;
-    }
-    .servicesHeader{
-        display:none;
-       }
-}
 
-@media (min-width: 992px) and (max-width: 1022px){
-    Table.services-table{
-        margin-left:25%;
-        margin-top:1.2em;
-    }
-    body.services-body {
-        background-image: none;
-    }
-    .services-table>thead>tr>th{
-        font-size:12px;
-    }
-    .services-table>tbody>tr>td{
-         font-size:10px;
-    }
-    .leftDiv {
-        background-image: url("../../Assets/Images/services-left.png");
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: left 0.2em top 0.2em;
-    }
-    .bottomSection{
-        background-image: url("../../Assets/Images/servicesPV.png");
-        background-repeat: no-repeat;
-        background-size: 80%;
-        background-position: left bottom;
-        background-attachment: fixed;
-    }
     .servicesHeader{
-     display:none;
+        display: none;
     }
 }
 
-/*Ipad Air*/
-@media (min-width: 769px) and (max-width: 991px){
+/* Ipad */
+@media (min-width: 768px) and (max-width: 991px){
     html.servicesHtml{
-        height:110vh;
+        height: 110vh;
         overflow-y: auto;
-        overflow-x:hidden;
+        overflow-x: hidden;
     }
-    Table.services-table{
-        margin-left:21.5em;
-        margin-top:-3em;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-size:210%;
-        background-repeat: no-repeat;
-        background-position:5% bottom;
-    }
-    .services-table>tbody>tr>td{
-         font-size:1.3em;
-         padding-right:6em;
-    }
-    .servicesHeader{
-        color:#8d191d;;
-        font-family: AveNextBold;
-        font-size: 28px;
-        margin-left:2.2em;
-        letter-spacing: 0.1em;
-        margin-top:0.7em;
-    }
-    .services-table>thead>tr>th{
-        font-size:1.5em;
-        white-space:nowrap;
-    }
-    .services-row{
-        margin-left:-310px;
-        margin-top:50px;
-    }
-    .bottomSection,.leftDiv{
-        background-image:none;
-    }
-}
-/*Ipad Mini*/
-@media (min-width: 766px) and (max-width: 768px){
-    html.servicesHtml{
-        height:120vh;
-        overflow-y: auto;
-        overflow-x:hidden;
-    }
-    Table.services-table{
-        margin-left:23.5em;
-        margin-top:-3em;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-size:210%;
-        background-repeat: no-repeat;
-        background-position:5% bottom;
-    }
-    .services-table>tbody>tr>td{
-         font-size:1.3em;
-         padding-right:4.5em;
-    }
-    .servicesHeader{
-        color:#8d191d;;
-        font-family: AveNextBold;
-        font-size: 28px;
-        margin-left:2.2em;
-        letter-spacing: 0.1em;
-        margin-top:0.5em;
-    }
-    .services-table>thead>tr>th{
-        font-size:1.5em;
-        white-space:nowrap;
-    }
-    .services-row{
-        margin-left:-310px;
-        margin-top:50px;
-    }
-    .bottomSection,.leftDiv{
-        background-image:none;
-    }
-}
 
-@media (min-width: 731px) and (max-width: 765px) { 
-    html.servicesHtml{
-        height:140vh;
-        overflow-y: auto;
-        overflow-x:hidden;
-    }
     Table.services-table{
-        margin-left:17em;
-        margin-top:-3em;
+        word-wrap: break-word;
+        table-layout: fixed;
+        width: 85%;
+        margin-left: 3.5%;
     }
+
     body.services-body {
         background-image: url("../../Assets/Images/comingsoon.png");
-        background-size:220%;
+        background-size: 210%;
         background-repeat: no-repeat;
-        background-position:5% bottom;
+        background-position: 5% bottom;
     }
+
     .services-table>tbody>tr>td{
-         font-size:1.2em;
-         padding-right:6em;
+        font-size: 1.3em;
     }
-    .servicesHeader{
-        color:#8d191d;;
-        font-family: AveNextBold;
-        font-size: 28px;
-        margin-left:2em;
-        letter-spacing: 0.1em;
-        margin-top:0.6em;
+
+    .titleFormatIpad {
+        margin-left: 7.3%;
+        margin-top: 1.1em;
     }
+
     .services-table>thead>tr>th{
-        font-size:1.4em;
+        font-size: 1.5em;
         white-space: nowrap;
     }
-    .services-row{
-        margin-left:-310px;
-        margin-top:50px;
-    }
-    .bottomSection,.leftDiv{
-        background-image:none;
-    }
-} 
 
-@media (min-width: 700px) and (max-width: 730px) { 
-    html.servicesHtml{
-        height:140vh;
-        overflow-y: auto;
-        overflow-x:hidden;
-    }
-    Table.services-table{
-        margin-lefT:18em;
-        margin-top:-3em;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-size:230%;
-        background-repeat: no-repeat;
-        background-position:5% bottom;
-    }
-    .services-table>tbody>tr>td{
-         font-size:1.2em;
-         padding-right:5em;
-    }
-    .servicesHeader{
-        color:#8d191d;;
-        font-family: AveNextBold;
-        font-size: 28px;
-        margin-left:1.9em;
-        letter-spacing: 0.1em;
-        margin-top:0.6em;
-    }
-    .services-table>thead>tr>th{
-        font-size:1.4em;
-        white-space:nowrap;
-    }
     .services-row{
-        margin-left:-310px;
-        margin-top:50px;
+        margin-left: -20em;
     }
-    .bottomSection,.leftDiv{
-        background-image:none;
-    }
-} 
-@media (min-width: 631px) and (max-width: 700px) { 
-    html.servicesHtml{
-        height:130vh;
-        overflow-y: auto;
-        overflow-x:hidden;
-    }
-    Table.services-table{
-        margin-left:20.2em;
-        margin-top:-3em;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-size:195%;
-        background-repeat: no-repeat;
-        background-position:5% bottom;
-    }
-    .services-table>tbody>tr>td{
-         font-size:1.2em;
-         padding-right:3.6em;
-    }
-    .servicesHeader{
-        color:#8d191d;;
-        font-family: AveNextBold;
-        font-size: 24px;
-        margin-left:2em;
-        letter-spacing: 0.1em;
-        margin-top:0.7em;
-    }
-    .services-table>thead>tr>th{
-        font-size:1.3em;
-        white-space:nowrap;
-    }
-    .services-row{
-        margin-left:-310px;
-        margin-top:50px;
-    }
-    .bottomSection,.leftDiv{
-        background-image:none;
-    }
-} 
-@media (min-width: 528px) and (max-width: 630px) { 
-    html.servicesHtml{
-        height:120vh;
-        overflow-y: auto;
-        overflow-x:hidden;
-    }
-    Table.services-table{
-        margin-left:23.9em;
-        margin-top:-3em;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-size:251%;
-        background-repeat: no-repeat;
-        background-position:5% bottom;
-    }
-    .services-table>tbody>tr>td{
-         font-size:1em;
-    }
-    .servicesHeader{
-        color:#8d191d;;
-        font-family: AveNextBold;
-        font-size: 24px;
-        margin-left:1.8em;
-        letter-spacing: 0.1em;
-        margin-top: 0.7em;
-    }
-    .services-table>thead>tr>th{
-        font-size:1.2em;
-        white-space:nowrap;
-    }
-    .services-row{
-        margin-left:-310px;
-        margin-top:50px;
-    }
-    .bottomSection,.leftDiv{
-        background-image:none;
-    }
-} 
 
-@media (min-width: 451px) and (max-width: 528px) { 
-    html.servicesHtml{
-        height:120vh;
-        overflow-y: auto;
-        overflow-x:hidden;
-    }
-    Table.services-table{
-        margin-left:23.9em;
-        margin-top:-3em;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-size:280%;
-        background-repeat: no-repeat;
-        background-position:5% bottom;
-    }
-    .services-table>tbody>tr>td{
-         font-size:0.9em;
-    }
-    .servicesHeader{
-        color:#8d191d;;
-        font-family: AveNextBold;
-        font-size: 24px;
-        margin-left:1.8em;
-        letter-spacing: 0.1em;
-        margin-top: 0.8em;
-    }
-    .services-table>thead>tr>th{
-        font-size:1em;
-        white-space:nowrap;
-    }
-    .services-row{
-        margin-left:-310px;
-        margin-top:50px;
-    }
     .bottomSection,.leftDiv{
-        background-image:none;
-    }
-} 
-
-@media (max-width: 451px) { 
-    html.servicesHtml{
-        height:160vh;
-        overflow-y: auto;
-        overflow-x:hidden;
-    }
-    Table.services-table{
-        margin-left:23.6em;
-        margin-top:-4em;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-size:305%;
-        background-repeat: no-repeat;
-        background-position:5% bottom;
-    }
-    .services-table>tbody>tr>td{
-         font-size:0.9em;
-         padding-right:0.9em
-    }
-    .servicesHeader{
-        color:#8d191d;;
-        font-family: AveNextBold;
-        font-size: 1.6em;
-        margin-left:1.8em;
-        letter-spacing: 0.1em;
-        margin-top: 0.9em;
-    }
-    .services-table>thead>tr>th{
-        font-size:1em;
-    }
-    .services-row{
-        margin-left:-310px;
-        margin-top:50px;
-    }
-    .bottomSection,.leftDiv{
-        background-image:none;
-    }
-    .formTitle{
-        font-size:22.4px;
-    }
-} 
-
-@media (max-width: 435px) { 
-    html.servicesHtml{
-        height:116vh;
-        overflow-y: auto;
-        overflow-x:hidden;
-    }
-    Table.services-table{
-        margin-left:23.6em;
-        margin-top:-3.9em;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-size:320%;
-        background-repeat: no-repeat;
-        background-position:5% bottom;
-    }
-    .services-table>tbody>tr>td{
-         font-size:0.9em;
-    }
-    .servicesHeader{
-        color:#8d191d;;
-        font-family: AveNextBold;
-        font-size: 1.6em;
-        margin-left:1.8em;
-        letter-spacing: 0.1em;
-        margin-top:0.8em;
-    }
-    .services-table>thead>tr>th{
-        font-size:1em;
-    }
-    .services-row{
-        margin-left:-310px;
-        margin-top:50px;
-    }
-    .bottomSection,.leftDiv{
-        background-image:none;
-    }
-} 
-
- @media (max-width: 400px) { 
-    html.servicesHtml{
-        height:100vh;
-        overflow-y: auto;
-        overflow-x:hidden;
-    }
-    Table.services-table{
-        margin-left:23.6em;
-        margin-top:-3em;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-size:342%;
-        background-repeat: no-repeat;
-        background-position:5% bottom;
-    }
-    .services-table>tbody>tr>td{
-         font-size:0.8em;
-         padding-right:0.5em;
-    }
-    .servicesHeader{
-        color:#8d191d;;
-        font-family: AveNextBold;
-        font-size: 22.4px;
-        margin-left:1.8em;
-        letter-spacing: 0.1em;
-    }
-    .services-table>thead>tr>th{
-        font-size:0.9em;
-    }
-    .services-row{
-        margin-left:-310px;
-        margin-top:50px;
-    }
-    .bottomSection,.leftDiv{
-        background-image:none;
-    }
-} 
-/*Iphone SE*/
-@media (max-width: 380px) { 
-    html.servicesHtml{
-        height:160vh;
-    }
-    Table.services-table{
-        margin-left:101%;
-        margin-top:-2.5em;
-    }
-    body.services-body {
-        background-image: url("../../Assets/Images/comingsoon.png");
-        background-size:342%;
-        background-repeat: no-repeat;
-        background-position:5% bottom;
-    }
-      .services-table>tbody>tr>td{
-         font-size:0.85em;
-         padding-right:0.5em;
-    }
-    .services-table>thead>tr>th{
-        font-size:0.9em;
-    }
-    .services-row{
-        margin-left:-21.5em;
-        margin-top:35px;
-    }
-    .servicesHeader{
-        color:#8d191d;;
-        font-family: AveNextBold;
-        font-size: 1.6em;
-        margin-left:1.8em;
-        letter-spacing: 0.1em;
-        margin-top:0.2em;
-    }
-    .bottomSection,.leftDiv{
-        background-image:none;
+        background-image: none;
     }
 }
 
-@media (max-width: 360px) { 
+/* Mobile Devices */
+@media (max-width: 765px) { 
     html.servicesHtml{
-        height:140vh;
+        height: 120vh;
         overflow-y: auto;
-        overflow-x:hidden;
+        overflow-x: hidden;
     }
+
     Table.services-table{
-        margin-left:100%;
-        margin-top:-2.2em;
+        margin-left: 23.6em;
+        margin-top: -3em;
     }
+
     body.services-body {
         background-image: url("../../Assets/Images/comingsoon.png");
-        background-size:359%;
+        background-size: 342%;
         background-repeat: no-repeat;
-        background-position:5% 100%;
+        background-position: 5% bottom;
     }
-    .bottomSection,.leftDiv{
-        background-image:none;
+
+    .services-table>tbody>tr>td{
+        font-size: 0.8em;
+        padding-right: 0.5em;
     }
-      .services-table>tbody>tr>td{
-         font-size:0.8em;
-         padding-right:0.5em;
-    }
-    .services-table>thead>tr>th{
-        font-size:0.8em;
-    }
-    .services-row{
-        margin-left:-20.5em;
-        margin-top:35px;
-    }
+
     .servicesHeader{
-        color:#8d191d;;
+        color: #8d191d;;
         font-family: AveNextBold;
-        font-size: 1.6em;
-        margin-left:1.7em;
+        font-size: 22.4px;
+        margin-left: 1.8em;
         letter-spacing: 0.1em;
-        margin-top:0.1em;
     }
-    
+
+    .services-table>thead>tr>th{
+        font-size: 0.9em;
+    }
+
+    .services-row{
+        margin-left: -310px;
+        margin-top: 50px;
+    }
+
+    .bottomSection,.leftDiv{
+        background-image: none;
+    }
 }

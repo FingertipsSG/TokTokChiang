@@ -17,11 +17,11 @@ function Services() {
                  <div className="leftDiv">
                         <Navbar />
                         <div className="services-div">
-                            <p className="servicesHeader">SERVICES</p>
+                            <div className="titleFormatIpad">
+                                <p className="title1">SERVICES</p>
+                            </div>
                             <Container>
                                 <Row>
-                                    <Col className="services-row"  xs={11} >
-                                        <div className="services">
                                             <Table className="services-table" borderless >
                                                 <thead>
                                                     <tr>
@@ -78,8 +78,6 @@ function Services() {
                                                     </tr>
                                                 </tbody>
                                             </Table>
-                                        </div>
-                                    </Col>
                                 </Row>
                             </Container>
                         </div>
