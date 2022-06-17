@@ -14,8 +14,8 @@ function Home() {
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
             </head>
             <body className="homePageBody">
-             <div className="bottomDivision">
-                  <div className="rightDivision">
+             <div className="bottomDiv">
+                  <div className="rightDiv">
                         <Navbar />
                         <br />
                         <div className="firstContent">
@@ -26,7 +26,7 @@ function Home() {
                                 <h5 className="homeTitle"> How We Started </h5>
                             </div>
                             <div className="founderPicMobile">
-                                <img src={founder} className="homeFounderPic" />
+                                <img src={founder} className="homeFounderPic founderImage" />
                             </div>
                             <Row>
                                 <div className="col-lg-6 homescroll">

@@ -39,32 +39,41 @@ body.homePageBody {
     margin-top:2em;
     text-align: justify !important;
 }
+
 .founderMobile {
     visibility: hidden;
     height: 0;
     width: 0;
 }
-.homeFounderPic {
+
+/* .homeFounderPic {
     float: left;
     width: 70%;
     margin-right: 100px;
     margin-top: 8%;
-}
+} */
+
 .secondHeader {
     font-family: 'Avenext';
     font-size:22.96px;
 }
-.homeTitle {
-    font-family: AveNext;
-    font-size:22.96px;
-}
-.homeTitle1 {
+
+/* .homeTitle {
     font-family: AveNext;
     font-size:22.96px;
 }
 
-/* ipad and abv */
-@media (min-width: 1024px) { 
+.homeTitle1 {
+    font-family: AveNext;
+    font-size:22.96px;
+} */
+
+/* Laptop*/
+@media (min-width: 1024px) {
+    .homeHtml {
+        height: 100vh;
+    }
+
     .homeContent {
         font-family: Calibri;
         font-size: 16px;
@@ -75,95 +84,180 @@ body.homePageBody {
         margin-bottom: 0;
         margin-top:-0.1em;
     }
+
     .homeContent2 {
         font-family: Calibri;
         font-size: 16px;
-        margin-left:90px;
+        margin-left: 90px;
         height: fit-content;
         width: 83%;
-        overflow:hidden; 
+        overflow: hidden; 
         margin-bottom: 0;
-        margin-top:-0.1em;
+        margin-top: -0.1em;
     }
+
     .homeFounderPic {
         width: 70%;
-        margin-left:11%;
+        margin-left: 11%;
         margin-top: 0.5em;
-        float:none;
+        float: none;
     }
-    body.homePageBody {
-        background-image: none;
-    }
+    
     .homeTitle1{
-        margin-top:0.2em;
-        margin-left:3.3em;
-        font-size:27.1px;
+        margin-top: 0.2em;
+        margin-left: 3.3em;
+        font-size: 27.1px;
     }
+
     .secondHeader{
-        margin-top:0.2em;
-        margin-left:3.2em;
-        font-size:27.1px;
+        margin-top: 0.2em;
+        margin-left: 3.2em;
+        font-size: 27.1px;
     }
+
     .homeTitle{
-        display:none;
+        display: none;
     }
+
     .homescroll{
         height: 272px;
-        width:50%;
-        overflow:scroll; 
+        width: 50%;
+        overflow: scroll; 
         overflow-x: hidden;
+        padding-left: 0.4em;
+        margin-left: inherit;
     }
 }
 
-/* moblie and below*/
-@media (max-width: 1023px) { 
+/* Ipad and Tablet*/
+@media (min-width:766px) and (max-width: 1023px) { 
     html.homeHtml{
-        height: 200vh;
+        height: 180vh;
     }
+
     .homeTitle1{
-        display:none;
+        display: none;
     }
+
     .homeTitle{
-        margin-top:-0.25em;
-        font-size:22.4px;
-        margin-left:-0.12em;
-    }
-    .homeFounderPic {
-        margin-top:1em;
-        margin-left:5em;
-    }
-    .title1{
-        font-size:1.6em;
-    }
-    .secondHeader{
+        margin-top: -0.25em;
+        font-size: 28px;
         margin-left: -0.12em;
     }
+
+    .title1,.title2{
+        font-size: 28px;
+    }
+
+    .secondHeader{
+        margin-left: 3.9em;
+    }
+
+    .firstContent {
+        background-image: url("../../Assets/Images/brush1.png");
+        background-attachment: unset;
+        background-size: 125% auto;
+        background-position: right top -5em;
+        background-repeat: no-repeat;
+    }
+
     body.homePageBody {
         background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
-        background-position:5% bottom;
-        background-size:359%;
+        background-position: 5% bottom;
+        background-size: 210%;
     }
+
+    .homeFounderPic {
+        width: 80%;
+        margin-left: 10.5%;
+        float: none;
+    }
+
+    .homeContent {
+        font-family: Calibri;
+        font-size: 1.5em;
+        margin-left: 90px;
+        height: fit-content;
+        width: 85%;
+        overflow: hidden; 
+        margin-bottom: 0;
+        margin-top: 2em;
+        padding-right: 2em;
+    }
+
+    .homeContent2 {
+        font-family: Calibri;
+        font-size: 1.5em;
+        margin-left: 90px;
+        height: fit-content;
+        width: 85%;
+        overflow: hidden; 
+        margin-bottom: 0;
+        margin-top: 2em;
+        padding-right: 2em;
+    }
+}
+
+/* Mobile Devices*/
+@media (max-width: 765px) { 
+    html.homeHtml{
+        height: 200vh;
+    }
+
+    .homeTitle1{
+        display: none;
+    }
+
+    .homeTitle{
+        margin-top: -0.25em;
+        font-size: 22.4px;
+        margin-left: -0.12em;
+    }
+
+    .homeFounderPic {
+        margin-top: 1.9em;
+        margin-left: 5em;
+    }
+
+    .title1{
+        font-size: 1.6em;
+    }
+
+    .secondHeader{
+        margin-left: 2.5em;
+    }
+
+    body.homePageBody {
+        background-image: url("../../Assets/Images/comingsoon.png");
+        background-repeat: no-repeat;  
+        background-position: 5% bottom;
+        background-size: 359%;
+    }
+
     .homeContent {
         font-family: Calibri;
         font-size: 1.2em;
-        margin-left: 70px;
+        margin-left: 4.4em;
         height: fit-content;
-        width: 80%;
+        width: 82.5%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:2em;
-        padding-right: 1.5em;
     }
+
     .homeContent2 {
         font-family: Calibri;
         font-size: 1.2em;
-        margin-left: 70px;
+        margin-left: 4.3em;
         height: fit-content;
-        width: 80%;
+        width: 82.5%;
         overflow:hidden; 
         margin-bottom: 0;
         margin-top:1.3em;
-        padding-right: 1.5em;
+    }
+
+    .homescroll {
+        width: 90%;
     }
 }
