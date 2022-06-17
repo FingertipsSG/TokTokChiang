@@ -22,41 +22,43 @@ function Lsty() {
 						<br />
 						<div className="firstContent">
 							<div className="firstContentText">
-								<h2 className="lstyHeader">LAO SAI TAO YUAN</h2>
+								<h2 className="title1">LAO SAI TAO YUAN</h2>
 								<br/>
-								<h2 className="lstyHeader2">TEOCHEW OPERA TROUPES</h2>
+								<h2 className="title1">TEOCHEW OPERA TROUPES</h2>
 								<br />
 								<br />
-								<h3 className="lstyTitle"> 老赛桃源潮剧团 </h3>
+								<h3 className="founderTitle"> 老赛桃源潮剧团 </h3>
 							</div>
-							<div className="carouselMobile">
-								<Carousel variant="dark" className="slide lstyCarousel" fade>
-									<Carousel.Item>
-										<img
-											className="col-lg-6  col-sm-12"
-											id="lstyPic"
-											src={pic1}
-										/>
-									</Carousel.Item>
-									<Carousel.Item>
-										<img
-											className="col-lg-6  col-sm-12"
-											id="lstyPic"
-											src={pic2}
-										/>
-									</Carousel.Item>
-									<Carousel.Item>
-										<img
-											className="col-lg-6  col-sm-12"
-											id="lstyPic"
-											src={pic3}
-										/>
-									</Carousel.Item>
-								</Carousel>
+							<div className="lstyCarousel">
+								<div className="carouselMobile">
+									<Carousel variant="dark" className="slide" fade>
+										<Carousel.Item>
+											<img
+												className="col-lg-6  col-sm-12"
+												id="carouselPic"
+												src={pic1}
+											/>
+										</Carousel.Item>
+										<Carousel.Item>
+											<img
+												className="col-lg-6  col-sm-12"
+												id="carouselPic"
+												src={pic2}
+											/>
+										</Carousel.Item>
+										<Carousel.Item>
+											<img
+												className="col-lg-6  col-sm-12"
+												id="carouselPic"
+												src={pic3}
+											/>
+										</Carousel.Item>
+									</Carousel>
+								</div>
 							</div>
 							<Row>
 								<div className="col-lg-6">
-									<p className="lstyContent">
+									<p className="founderContent">
 										Founded in 1864, Lao Sai Tao Yuan Teochew Opera Troupe (老赛桃源潮剧团) is among the oldest and one of the few remaining iconic Chinese opera troupes in Singapore with 158 years of history.
 										In the 1920s, when there were over a hundred professional troupes in Singapore, Lao Sai Tao Yuan wielded a strong influence among the Chinese community, boasting hundreds of performers and attracting enormous crowds at its street performances.
 										It was – and still is - not only a feast to the senses but also an accessible form of entertainment for the migrant community Singapore once was.
@@ -77,25 +79,25 @@ function Lsty() {
 								</div>
 
 								<div className="col-lg-6 carouselDesktop">
-									<Carousel variant="dark" className="slide lstyCarousel" fade>
+									<Carousel variant="dark" className="slide forLandscape" fade>
 										<Carousel.Item>
 											<img
 												className="col-lg-6  col-sm-12"
-												id="lstyPic"
+												id="carouselPic"
 												src={pic1}
 											/>
 										</Carousel.Item>
 										<Carousel.Item>
 											<img
 												className="col-lg-6  col-sm-12"
-												id="lstyPic"
+												id="carouselPic"
 												src={pic2}
 											/>
 										</Carousel.Item>
 										<Carousel.Item>
 											<img
 												className="col-lg-6  col-sm-12"
-												id="lstyPic"
+												id="carouselPic"
 												src={pic3}
 											/>
 										</Carousel.Item>
