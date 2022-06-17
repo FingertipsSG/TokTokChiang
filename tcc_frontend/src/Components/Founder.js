@@ -12,9 +12,9 @@ function founder() {
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
             </head>
-            <body className="founderBody">
-                <div className="bottomDivision">
-                    <div className="rightDivision">
+            <body className="homePageBody">
+                <div className="bottomDiv">
+                    <div className="rightDiv">
                         <Navbar />
                         <br />
                         <div className="firstContent firstContentFounder">
@@ -26,7 +26,7 @@ function founder() {
                                 <h2 className="founderTitle">沈炜竣</h2>
                             </div>
                             < div className="founderPicMobile">
-                                    <img src={founderPic} className="founderImage" />
+                                <img src={founderPic} className="founderImage" />
                             </div>
                             <Row>
                                 <div className="col-lg-6">
@@ -58,8 +58,8 @@ function founder() {
                                         TiTouDao is aired on Channel 5, Channel 8, meWATCH, HBO Asia and Netflix Singapore & Malaysia.
                                     </p>
                                 </div>
-                                <div className="col-lg-6 founderPicDesktop">
-                                    <img src={founderPic} className="founderPic " />
+                                <div className="col-lg-6 founderPicDesktop forLandscape">
+                                    <img src={founderPic} className="founderPic forLandscape" />
                                 </div>
                             </Row>
                         </div>
