@@ -136,7 +136,7 @@ function Dolls() {
   const convertToBase64 = (imgData) => {
     const imageBuffer = Buffer.from(imgData);
     const imageBuffer64 = imageBuffer.toString("base64");
-    console.log(imageBuffer64);
+    // console.log(imageBuffer64);
     return imageBuffer64;
   };
 
