@@ -15,7 +15,7 @@ function Wayang() {
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
             </head>
-            <body className="wayangBody">
+            <body className="homePageBody">
              <div className="bottomDiv">
                   <div className="rightDiv">
                         <Navbar />
@@ -27,28 +27,28 @@ function Wayang() {
                                 <h2 className="title2" id="Title2">	CHIANG WAYANG</h2>
                                 <br />
                                 <br />
-                                <h3 className="wayangTitle"> How We Started </h3>
+                                <h3 className="homeTitle"> How We Started </h3>
                             </div>
                             <div className="carouselMobile">
-                                <Carousel variant="dark" className="slide wayangCarousel" fade>
+                                <Carousel variant="dark" className="slide" fade>
                                     <Carousel.Item>
                                         <img
                                             className="col-lg-6  col-sm-12"
-                                            id="wayangPic"
+                                            id="carouselPic"
                                             src={wayang1}
                                         />
                                     </Carousel.Item>
                                     <Carousel.Item>
                                         <img
                                             className="col-lg-6  col-sm-12"
-                                            id="wayangPic"
+                                            id="carouselPic"
                                             src={wayang2}
                                         />
                                     </Carousel.Item>
                                     <Carousel.Item>
                                         <img
                                             className="col-lg-6  col-sm-12"
-                                            id="wayangPic"
+                                            id="carouselPic"
                                             src={wayang3}
                                         />
                                     </Carousel.Item>
@@ -56,7 +56,7 @@ function Wayang() {
                             </div>
                             <Row>
                                 <div className="col-lg-6">
-                                    <p className="wayangContent">
+                                    <p className="founderContent">
                                         Nick has a deep affinity for Chinese opera and is adamant to keep this traditional art form alive
                                         in Singapore. He believes that Chinese opera is more than just a form of art. The stories portrayed
                                         in Chinese opera are very meaningful and steeped in moral values and life experiences.
@@ -84,25 +84,25 @@ function Wayang() {
                                     </p>
                                 </div>
                                 <div className="col-lg-6 carouselDesktop">
-                                    <Carousel variant="dark" className="slide wayangCarousel" fade>
+                                    <Carousel variant="dark" className="slide" fade>
                                         <Carousel.Item>
                                             <img
                                                 className="col-lg-6  col-sm-12"
-                                                id="wayangPic"
+                                                id="carouselPic"
                                                 src={wayang1}
                                             />
                                         </Carousel.Item>
                                         <Carousel.Item>
                                             <img
                                                 className="col-lg-6  col-sm-12"
-                                                id="wayangPic"
+                                                id="carouselPic"
                                                 src={wayang2}
                                             />
                                         </Carousel.Item>
                                         <Carousel.Item>
                                             <img
                                                 className="col-lg-6  col-sm-12"
-                                                id="wayangPic"
+                                                id="carouselPic"
                                                 src={wayang3}
                                             />
                                         </Carousel.Item>
