@@ -54,7 +54,7 @@ html.wayangHtml {
 /* Mobile Devices */
 @media(max-width:765px){
     html.wayangHtml{
-        height: 270vh;
+        height: 370vh;
         overflow-y: auto;
         overflow-x: hidden;
     }

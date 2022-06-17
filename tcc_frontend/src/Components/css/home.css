@@ -202,7 +202,7 @@ body.homePageBody {
 /* Mobile Devices*/
 @media (max-width: 765px) { 
     html.homeHtml{
-        height: 250vh;
+        height: 310vh;
     }
 
     .homeTitle1{

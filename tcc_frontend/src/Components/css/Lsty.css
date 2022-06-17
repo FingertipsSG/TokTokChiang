@@ -75,7 +75,7 @@ img#lstyPic {
 /* Mobile Devices */
 @media(max-width:765px){
     html.lstyHtml{
-        height: 250vh;
+        height: 330vh;
         overflow-y: auto;
         overflow-x: hidden;
     }

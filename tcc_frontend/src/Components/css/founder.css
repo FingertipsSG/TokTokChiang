@@ -95,7 +95,7 @@ body.founderBody {
 /*Phone Version*/
 @media (max-width:765px) { 
     html.founderHtml{
-        height: 350vh;
+        height: 450vh;
     }
 
     .founderContent {
