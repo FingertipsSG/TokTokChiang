@@ -2,16 +2,20 @@
   src: url(fonts/AvenirNext.ttf);
   font-family: AveNext;
 }
+
 body, html{
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
+
 html.contactUsHTML{
-  overflow:hidden;
+  overflow: hidden;
 }
+
 body.contactUsBody {
   overflow: hidden;
 }
+
 .leftSection {
   background:  url("../../Assets/Images/contactus-left.png");
   background-repeat: no-repeat;
@@ -20,6 +24,7 @@ body.contactUsBody {
   background-position: left top -0.5em;
   height: 100vh;
 }
+
 .bottomSection {
   background:  url("../../Assets/Images/phoneview.png");
   background-repeat: no-repeat;
@@ -27,6 +32,7 @@ body.contactUsBody {
   background-position: left;
   background-attachment: fixed;
 }
+
 .contactUs {
   margin-left: 50%;
   margin-top: 2.5%;
@@ -37,19 +43,21 @@ body.contactUsBody {
   font-weight: 400;
 }
 
-h1{
+h1 {
   color: #790C15;
-  font-size:30px;
+  font-size: 30px;
 }
 
-/*Form style*/
-p{
-  font-size:1.2em;
+/* Form Style */
+p {
+  font-size: 1.2em;
 }
-input{
+
+input {
   width: 450px;
-  height:30px;
+  height: 30px;
 }
+
 ::placeholder {
   font-size: 15px;
 }
@@ -57,7 +65,7 @@ input{
 button.ant-btn.ant-btn-primary.formBtn {
   background-color: #790C15;
   border: none;
-  width:130px;
+  width: 130px;
   border-radius: 3px;
 }
 
@@ -66,1050 +74,155 @@ textarea#basic_message {
   border-width: 2px;
 }
 
-button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: -4%;
-}
-
-
-/*RESPONSIVE*/
-@media (min-width:2101px) {
+/* Desktop */
+@media (min-width: 1024px) {
   html.contactUsHTML {
     overflow-x: hidden;
-}
-  body.contactUsBody {
-    background-image: none;
-}
-   .leftSection {
-    background-image: url("../../Assets/Images/contactus-left.png");
-    background-size: 82%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: left 1.6em top 0.5em;
-}
-  .bottomDiv{
-  background-image: url("../../Assets/Images/phoneview.png");
-  background-repeat: no-repeat;
-  background-size: 81%;
-  background-position: left bottom;
-  background-attachment: fixed;
-}
-.contactUs {
-  margin-left:49%;
-  margin-top: 7.5%;
-  width:75%;
-}
-button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: 5em;
-}
-.contactUsDiv{
-  margin-top: -5em;
-}
-.CuContent{
-  font-size:x-large;
-}
-.formTitle{
-  font-size: 3em;
-}
-.contactUsHeader{
-  display: none;
   }
-}  
 
-/* 1080px height */
-@media (min-width:1919px) and (max-width: 2100px) {
-  html.contactUsHTML {
-    overflow-x: hidden;
-}
   body.contactUsBody {
     background-image: none;
-}
-   .leftSection {
-    background-image: url("../../Assets/Images/contactus-left.png");
-    background-size: 82%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: left 1.6em top 1em;
-}
-  .bottomDiv{
-  background-image: url("../../Assets/Images/phoneview.png");
-  background-repeat: no-repeat;
-  background-size: 81%;
-  background-position: left bottom;
-  background-attachment: fixed;
-}
-.contactUs {
-  margin-left:49%;
-  margin-top: 7.5%;
-  width:75%;
-}
-button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: 5em;
-}
-.contactUsDiv{
-  margin-top: -5em;
-}
-.CuContent{
-  font-size:x-large;
-}
-.formTitle{
-  font-size: 3em;
-}
-.contactUsHeader{
-  display: none;
   }
-}  
-@media (min-width: 1600px) and (max-width: 1919px) {
-  html.contactUsHTML {
-    overflow-x: hidden;
-}
-  body.contactUsBody {
-    background-image: none;
-}
-   .leftSection {
-    background-image: url("../../Assets/Images/contactus-left.png");
-    background-size: 82%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: left 1.6em top -0.8em;
-}
-  .bottomDiv{
-  background-image: url("../../Assets/Images/phoneview.png");
-  background-repeat: no-repeat;
-  background-size: 81%;
-  background-position: left bottom;
-  background-attachment: fixed;
-}
-.contactUs {
-  margin-left:49%;
-  margin-top: 6%;
-  width:80%;
-}
-button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: 3.5em;
-}
-.contactUsDiv{
-  margin-top: -5em;
-}
-.CuContent{
-  font-size:x-large;
-}
-.formTitle{
-  font-size: 3em;
-}
-.contactUsHeader{
-  display: none;
-  }
-}  
 
-@media (min-width: 1536px) and (max-width: 1600px) {
-  html.contactUsHTML {
-    overflow-x: hidden;
-}
-  body.contactUsBody {
-    background-image: none;
-}
-   .leftSection {
-    background-image: url("../../Assets/Images/contactus-left.png");
-    background-size: 82%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: left 0.9em top 0.9em;
-}
-  .bottomDiv{
-  background-image: url("../../Assets/Images/phoneview.png");
-  background-repeat: no-repeat;
-  background-size: 81%;
-  background-position: left bottom;
-  background-attachment: fixed;
-}
-.contactUs {
-  margin-left:49%;
-  margin-top: 7.5%;
-  width:80%;
-}
-button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: 1.4em;
-}
-.contactUsDiv{
-  margin-top: -5em;
-}
-.CuContent{
-  font-size:large;
-}
-.formTitle{
-  font-size: xx-large;
-}
-.contactUsHeader{
-  display: none;
-  }
-}  
-
-
-@media (min-width: 1520px) and (max-width: 1535px) {
-  html.contactUsHTML {
-    overflow-x: hidden;
-}
-  body.contactUsBody {
-    background-image: none;
-}
-   .leftSection {
-    background-image: url("../../Assets/Images/contactus-left.png");
-    background-size: 82%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: left 0.9em top 1em;
-}
-  .bottomDiv{
-  background-image: url("../../Assets/Images/phoneview.png");
-  background-repeat: no-repeat;
-  background-size: 81%;
-  background-position: left bottom;
-  background-attachment: fixed;
-}
-.contactUs {
-  margin-left:49%;
-  margin-top: 7.5%;
-  width:80%;
-}
-button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: 1.4em;
-}
-.contactUsDiv{
-  margin-top: -5em;
-}
-.CuContent{
-  font-size:large;
-}
-.formTitle{
-  font-size: xx-large;
-}
-.contactUsHeader{
-  display: none;
-  }
-}  
-
-@media (min-width: 1350px) and (max-width: 1520px) {
-  html.contactUsHTML {
-    overflow-x: hidden;
-}
-  body.contactUsBody {
-    background-image: none;
-}
-   .leftSection {
-    background-image: url("../../Assets/Images/contactus-left.png");
-    background-size: 82%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: left 0.9em top 0.5em;
-}
-  .bottomDiv{
-  background-image: url("../../Assets/Images/phoneview.png");
-  background-repeat: no-repeat;
-  background-size: 81%;
-  background-position: left bottom;
-  background-attachment: fixed;
-}
-.contactUs {
-  margin-left:49%;
-  margin-top: 7%;
-  width:80%;
-}
-button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: 0.6em;
-}
-.contactUsDiv{
-  margin-top: -5em;
-}
-.CuContent{
-  font-size:medium;
-}
-.formTitle{
-  font-size: x-large;
-}
-.contactUsHeader{
-  display: none;
-  }
-}  
-
-@media (min-width: 1281px) and (max-width: 1349px) {
-  html.contactUsHTML {
-    overflow-x: hidden;
-}
-  body.contactUsBody {
-    background-image: none;
-}
-   .leftSection {
-    background-image: url("../../Assets/Images/contactus-left.png");
-    background-size: 82%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: left 1.2em top 0.5em;
-}
-  .bottomDiv{
-  background-image: url("../../Assets/Images/phoneview.png");
-  background-repeat: no-repeat;
-  background-size: 81%;
-  background-position: left bottom;
-  background-attachment: fixed;
-}
-.contactUs {
-  margin-left:49%;
-  margin-top: 7%;
-  width:80%;
-}
-button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: -0.5%;
-}
-.contactUsDiv{
-  margin-top: -5em;
-}
-.CuContent{
-  font-size:medium;
-}
-.formTitle{
-  font-size: x-large;
-}
-.contactUsHeader{
-  display: none;
-  }
-}
-@media (min-width: 1278px) and (max-width: 1280px) {
-  html.contactUsHTML {
-    overflow-x: hidden;
-}
-  body.contactUsBody {
-    background-image: none;
-}
-   .leftSection {
+  .leftSection {
     background-image: url("../../Assets/Images/contactus-left.png");
     background-size: 82%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: left 1.2em top 0.2em;
-}
-  .bottomDiv{
-  background-image: url("../../Assets/Images/phoneview.png");
-  background-repeat: no-repeat;
-  background-size: 81%;
-  background-position: left bottom;
-  background-attachment: fixed;
-}
-.contactUs {
-  margin-left:49%;
-  margin-top: 6.5%;
-  width:80%;
-}
-button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: -0.5%;
-}
-.contactUsDiv{
-  margin-top: -5em;
-}
-.CuContent{
-  font-size:medium;
-}
-.formTitle{
-  font-size: x-large;
-}
-.contactUsHeader{
-  display: none;
   }
-} 
 
-@media (min-width: 1224px) and (max-width: 1279px) {
-  html.contactUsHTML {
-    overflow-x: hidden;
-}
-  body.contactUsBody {
-    background-image: none;
-}
-   .leftSection {
-    background-image: url("../../Assets/Images/contactus-left.png");
-    background-size: 82%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: left 1.2em top 0.6em;
-}
   .bottomDiv{
-  background-image: url("../../Assets/Images/phoneview.png");
-  background-repeat: no-repeat;
-  background-size: 81%;
-  background-position: left bottom;
-  background-attachment: fixed;
-}
-.contactUs {
-  margin-left:49%;
-  margin-top: 6.8%;
-  width:80%;
-}
-button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: -1%;
-}
-.contactUsDiv{
-  margin-top: -5em;
-}
-.CuContent{
-  font-size:medium;
-}
-.formTitle{
-  font-size: x-large;
-}
-.contactUsHeader{
-  display: none;
-  }
-} 
-
-@media (min-width: 1093px) and (max-width: 1224px) {
-  html.contactUsHTML {
-    overflow-x: hidden;
-}
-  body.contactUsBody {
-    background-image: none;
-}
-   .leftSection {
-    background-image: url("../../Assets/Images/contactus-left.png");
-    background-size: 82%;
+    background-image: url("../../Assets/Images/phoneview.png");
     background-repeat: no-repeat;
+    background-size: 81%;
+    background-position: left bottom;
     background-attachment: fixed;
-    background-position: left 1.4em top 0.6em;
-}
-  .bottomDiv{
-  background-image: url("../../Assets/Images/phoneview.png");
-  background-repeat: no-repeat;
-  background-size: 81%;
-  background-position: left bottom;
-  background-attachment: fixed;
-}
-.contactUs {
-  margin-left:49%;
-  margin-top: 6.5%;
-  width:80%;
-}
-button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: -2%;
-}
-.contactUsDiv{
-  margin-top: -5em;
-}
-.CuContent{
-  font-size:medium;
-}
-.formTitle{
-  font-size: x-large;
-}
-.contactUsHeader{
-  display: none;
-  }
-}
-
-/*Tablet*/
-@media (min-width: 1023px) and (max-width: 1092px) {
-  html.contactUsHTML {
-    overflow-x: hidden;
-}
-  body.contactUsBody {
-    background-image: none;
-}
-   .leftSection {
-    background-image: url("../../Assets/Images/contactus-left.png");
-    background-size: 82%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: left 1.7em top 1.7em;
-}
-  .bottomDiv{
-  background-image: url("../../Assets/Images/phoneview.png");
-  background-repeat: no-repeat;
-  background-size: 81%;
-  background-position: left bottom;
-  background-attachment: fixed;
-}
-.contactUs {
-  margin-left:49%;
-  margin-top: 8%;
-  width:80%;
-}
-button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: -5%;
-}
-.contactUsDiv{
-  margin-top: -5em;
-}
-.CuContent{
-  font-size:medium;
-}
-.formTitle{
-  font-size: x-large;
-}
-.contactUsHeader{
-  display: none;
-  }
-}
-
-/*Tablet*/
-@media (min-width: 992px) and (max-width: 1022px) {
-    
-  .leftSection {
-    background-image: url("../../Assets/Images/contactus-left.png");
-    background-size: 82%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: left 1.7em top 2.5em;
-}
-  .bottomDiv{
-  background-image: url("../../Assets/Images/phoneview.png");
-  background-repeat: no-repeat;
-  background-size: 80%;
-  background-position: left bottom;
-  background-attachment: fixed;
-}
+    }
   .contactUs {
     margin-left:49%;
-    margin-top: 9%;
-    width:80%;
+    margin-top: 6.5%;
+    width: 80%;
   }
   button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-    margin-left: -6%;
+    margin-left: 1.7%;
   }
+
   .contactUsDiv{
     margin-top: -5em;
   }
+
   .CuContent{
-    font-size:medium;
+    font-size: medium;
   }
+
   .formTitle{
     font-size: x-large;
   }
-  body.contactUsBody {
-    background-image: none;
-  }
+
   .contactUsHeader{
-  display: none;
+    display: none;
   }
-}
+} 
 
 /* Ipad air version */
-@media (min-width: 769px) and ( max-width:990px){ 
+@media (min-width: 768px) and ( max-width:990px){ 
   html.contactUsHTML{
-    height:100vh;
+    height: 100vh;
     overflow-y: auto;
-    overflow-x:hidden;
-} 
+    overflow-x: hidden;
+  }
+
   .contactUs {
     padding: 10%;
     margin-left: -0.7%;
-    margin-top:-5em;
-  }
-  .ant-form-item {
-    width: 202%;
-  }
-  body.contactUsBody {
-    background-image: url("../../Assets/Images/comingsoon.png");
-    background-repeat: no-repeat;  
-    background-position:5% bottom;
-    background-size:210%;
-  }
-  .bottomDiv{
-    background-image:none;
-}
-.contactUsHeader{
-  display: inline;
-  color: #790c15;
-  font-family: AveNextBold;
-  font-size: 28px;
-  margin-top:0.7em;
-  margin-left:2.2em;
-  letter-spacing: 0.1em;
-}
-.leftSection {
-  background-image:none;
-}
-button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: 4%;
-}
-.formTitle{
-  font-size:28px;
-}
-.CuContent{
-  font-size:x-large;
-}
-}
-
-/*Ipad Mini*/
-@media (min-width: 766px) and (max-width: 768px) { 
-  html.contactUsHTML{
-    height:100vh;
-    overflow-y: auto;
-    overflow-x:hidden;
-} 
-  .contactUs {
-    padding: 10%;
-    margin-left: -0.4%;
-    margin-top:-4.5em;
-  }
-  .ant-form-item {
-    width: 202%;
-  }
-  body.contactUsBody {
-    background-image: url("../../Assets/Images/comingsoon.png");
-    background-repeat: no-repeat;  
-    background-position:5% bottom;
-    background-size:210%;
-  }
-  .bottomDiv{
-    background-image:none;
-}
-.contactUsHeader{
-  display: inline;
-  color: #790c15;
-  font-family: AveNextBold;
-  font-size: 28px;
-  margin-top:0.5em;
-  margin-left:2.3em;
-  letter-spacing: 0.1em;
-}
-.leftSection {
-  background-image:none;
-}
-button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: 3%;
-}
-.formTitle{
-  font-size: 28px;
-}
-.CuContent{
-  font-size:1.5em;
-}
-}
-
-@media (min-width: 731px) and (max-width: 765px) { 
-  html.contactUsHTML{
-    height:115vh;
-    overflow-y: auto;
-    overflow-x:hidden;
-} 
-  .contactUs {
-    padding: 10%;
-    margin-left:-0.8%;
-  }
-  .ant-form-item {
-    width: 205%;
-  }
-  .formTitle{
-    font-size: 28px;
-  }
-  .contactUs{
     margin-top: -5em;
   }
+
+  .ant-form-item {
+    width: 202%;
+  }
+
+  body.contactUsBody {
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% bottom;
+    background-size: 210%;
+  }
+
+  .bottomDiv{
+    background-image: none;
+  }
+
   .contactUsHeader{
     display: inline;
     color: #790c15;
     font-family: AveNextBold;
     font-size: 28px;
-    margin-top:0.7em;
-    margin-left:2em;
+    margin-top: 0.7em;
+    margin-left: 2.2em;
     letter-spacing: 0.1em;
   }
-  .leftSection {
-    background-image:none;
-}
-  body.contactUsBody {
-  background-image: url("../../Assets/Images/comingsoon.png");
-  background-repeat: no-repeat;  
-  background-position:5% bottom;
-  background-size:220%; ;
-}
-  .bottomDiv{
-    background-image:none;
-}
-button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: 3%;
-}
-}
 
-@media (min-width: 700px) and (max-width: 730px) { 
-  html.contactUsHTML{
-    height:115vh;
-    overflow-y: auto;
-    overflow-x:hidden;
-} 
-  .contactUs {
-    padding: 10%;
-    margin-left:-0.8%;
-    margin-top: -4.7em;
+  .leftSection {
+    background-image: none;
   }
-  .ant-form-item {
-    width: 205%;
+
+  button.ant-btn.ant-btn-primary.formBtn.mt-2 {
+    margin-left: 4%;
   }
+
   .formTitle{
     font-size: 28px;
   }
-  .contactUsHeader{
-    display: inline;
-    color: #790c15;
-    font-family: AveNextBold;
-    font-size: 28px;
-    margin-top:0.7em;
-    letter-spacing: 0.1em;
-    margin-left:1.9em;
+
+  .CuContent{
+    font-size: x-large;
   }
-  .leftSection {
-    background-image:none;
-}
-  body.contactUsBody {
-  background-image: url("../../Assets/Images/comingsoon.png");
-  background-repeat: no-repeat;  
-  background-position:5% bottom;
-  background-size:210%; 
-}
-  .bottomDiv{
-    background-image:none;
-}
-button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: 3%;
-}
 }
 
-@media (min-width: 631px) and (max-width: 700px) { 
-  html.contactUsHTML{
-    height:115vh;
-    overflow-y: auto;
-    overflow-x:hidden;
-} 
-  .contactUs {
-    padding: 10%;
-    margin-left:-0.5%;
-  }
-  .ant-form-item {
-    width: 200%;
-  }
-  .formTitle{
-    font-size: 24px;
-  }
-  .contactUs{
-    margin-top: -4em;
-  }
-  .contactUsHeader{
-    display: inline;
-    color: #790c15;
-    font-family: AveNextBold;
-    font-size: 24px;
-    margin-top:0.7em;
-    margin-left:2em;
-  }
-  .leftSection {
-    background-image:none;
-}
-  body.contactUsBody {
-  background-image: url("../../Assets/Images/comingsoon.png");
-  background-repeat: no-repeat;  
-  background-position:5% bottom;
-  background-size:195%;
-}
-  .bottomDiv{
-    background-image:none;
-}
-button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: 1%;
-}
-}
-@media (min-width: 528px) and (max-width: 630px) { 
-  html.contactUsHTML{
-    height:115vh;
-    overflow-y: auto;
-    overflow-x:hidden;
-} 
-  .contactUs {
-    padding: 10%;
-    margin-left:0.5%;
-    margin-top: -3.5em;
-  }
-  .ant-form-item {
-    width: 98%;
-  }
-  .formTitle{
-    font-size: 24px;
-  }
-  .contactUsHeader{
-    display: inline;
-    color: #790c15;
-    font-family: AveNextBold;
-    font-size: 24px;
-    margin-top:0.8em;
-    margin-left:2em;
-    letter-spacing:0.1em;
-  }
-  .leftSection {
-    background-image:none;
-}
-  body.contactUsBody {
-  background-image: url("../../Assets/Images/comingsoon.png");
-  background-repeat: no-repeat;  
-  background-position:5% bottom;
-  background-size:251%;
-}
-  .bottomDiv{
-    background-image:none;
-}
-button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: 0.6%;
-}
-}
-@media (min-width: 451px) and (max-width: 528px) {
-  html.contactUsHTML{
-    height:100vh;
-    overflow-y: auto;
-    overflow-x:hidden;
-} 
-  .contactUs {
-    padding: 10%;
-    margin-left:2%;
-  }
-  .ant-form-item {
-    width: 94%;
-  }
-  .formTitle{
-    font-size: 24px;
-  }
-  .contactUs{
-    margin-top: -3em;
-  }
-  .contactUsHeader{
-    display: inline;
-    color: #790c15;
-    font-family: AveNextBold;
-    font-size: 24px;
-    margin-top:0.8em;
-    margin-left:2em;
-    letter-spacing: 0.1em;
-  }
-  .leftSection {
-    background-image:none;
-}
-  body.contactUsBody {
-  background-image: url("../../Assets/Images/comingsoon.png");
-  background-repeat: no-repeat;  
-  background-position:5% bottom;
-  background-size:280%;
-}
-  .bottomDiv{
-    background-image:none;
-}
-button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: -3%;
-}
-}
-
-@media (max-width: 451px) { 
-  html.contactUsHTML{
-    height:120vh;
-    overflow-y: auto;
-    overflow-x:hidden;
-}
-  .contactUs {
-    padding: 10%;
-    margin-left:2%;
-  }
-  .ant-form-item {
-    width: 94%;
-  }
-  .formTitle{
-    font-size: 22.4px;
-  }
-  .contactUs{
-    margin-top: -2em;
-  }
-  .contactUsHeader{
-    display: inline;
-    color: #790c15;
-    font-family: AveNextBold;
-    font-size: 22.4px;
-    margin-top:0.9em;
-    margin-left:1.9em;
-  }
-  .leftSection {
-    background-image:none;
-}
-  body.contactUsBody {
-  background-image: url("../../Assets/Images/comingsoon.png");
-  background-repeat: no-repeat;  
-  background-position:5% bottom;
-  background-size:305%;
-}
-  .bottomDiv{
-    background-image:none;
-}
-button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: -7.7%;
-}
-}
-
-@media (max-width: 435px) { 
-  html.contactUsHTML{
-    height:100vh;
-    overflow-y: auto;
-    overflow-x:hidden;
-}
-  .contactUs {
-    padding: 10%;
-    margin-left:2%;
-  }
-  .ant-form-item {
-    width: 94%;
-  }
-  .formTitle{
-    font-size: 1.5em;
-  }
-  .contactUs{
-    margin-top: -1.7em;
-  }
-  .contactUsHeader{
-    display: inline;
-    color: #790c15;
-    font-family: AveNextBold;
-    font-size: 1.6em;
-    margin-top:0.8em;
-    margin-left:1.8em;
-    letter-spacing:0.1em;
-  }
-  .leftSection {
-    background-image:none;
-}
-  body.contactUsBody {
-  background-image: url("../../Assets/Images/comingsoon.png");
-  background-repeat: no-repeat;  
-  background-position:5% bottom;
-  background-size:320%;
-}
-  .bottomDiv{
-    background-image:none;
-}
-button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: -6%;
-}
-}
-
-@media (max-width: 400px) { 
+/* Mobile Devices */
+@media (max-width: 765px) { 
   .contactUs {
     padding: 10%;
     margin-left:3%;
     margin-top: -1em;
   }
+
   .ant-form-item {
     width: 93%;
   }
+
   .formTitle{
     font-size: 1.5em;
   }
+
   .contactUsHeader{
     display: inline;
     color: #790c15;
     font-family: AveNextBold;
     letter-spacing: 0.1em;
     font-size: 1.6em;
-    margin-top:1em;
+    margin-top: 0.2em;
     margin-left:1.8em;
   }
-  .leftSection {
-    background-image:none;
-}
-  body.contactUsBody {
-  background-image: url("../../Assets/Images/comingsoon.png");
-  background-repeat: no-repeat;  
-  background-position:5% bottom;
-  background-size:342%;
-}
-  .bottomDiv{
-    background-image:none;
-}
-button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: -8.2%;
-}
-}
 
-@media (max-width: 380px) { 
-  html.contactUsHTML{
-    height:120vh;
-    overflow-y: auto;
-    overflow-x:hidden;
-}
-  .contactUs {
-    padding: 10%;
-    margin-left:3%;
-    margin-top:-1.3em;
-  }
-  .ant-form-item {
-    width: 91%;
-  }
-  .formTitle{
-    font-size: 1.5em;
-  }
-  
-  .contactUsHeader{
-    display: inline;
-    color: #790c15;
-    font-family: AveNextBold;
-    font-size: 1.6em;
-    margin-top:0.2em;
-    margin-left:1.7em;
-    letter-spacing: 0.1em;
-  }
   .leftSection {
-    background-image:none;
-}
-  body.contactUsBody {
-  background-image: url("../../Assets/Images/comingsoon.png");
-  background-repeat: no-repeat;  
-  background-position:5% bottom;
-  background-size:342%
-}
-  .bottomDiv{
-    background-image:none;
-}
-  button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: -8.2%;
-}
-}
+    background-image: none;
+  }
 
-@media (max-width: 360px) { 
-  html.contactUsHTML{
-    height:115vh;
-    overflow-y: auto;
-    overflow-x:hidden;
-}
-  .contactUs {
-    padding: 10%;
-    margin-left:3%;
-    margin-top:-5%;
-  }
-  .ant-form-item {
-    width: 92%;
-  }
-  .formTitle{
-    font-size: 22.4px;
-  }
-  .contactUsHeader{
-    display: inline;
-    color: #790c15;
-    font-family: AveNextBold;
-    font-size: 22.4px;
-    margin-top:0.1em;
-    margin-left:1.7em;
-    letter-spacing:0.1em;
-  }
-  .leftSection {
-    background-image:none;
-}
   body.contactUsBody {
-  background-image: url("../../Assets/Images/comingsoon.png");
-  background-repeat: no-repeat;  
-  background-position:5% bottom;
-  background-size:359%
-}
+    background-image: url("../../Assets/Images/comingsoon.png");
+    background-repeat: no-repeat;  
+    background-position: 5% bottom;
+    background-size: 342%;
+  }
+
   .bottomDiv{
-    background-image:none;
-}
+    background-image: none;
+  }
+
   button.ant-btn.ant-btn-primary.formBtn.mt-2 {
-  margin-left: -9%;
-}
+    margin-left: -8.2%;
+  }
 }
