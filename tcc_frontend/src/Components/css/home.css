@@ -127,6 +127,13 @@ body.homePageBody {
         padding-left: 0.4em;
         margin-left: inherit;
     }
+    .shop-height{
+        height:0;
+        display:none;
+    }
+    .rightDiv{
+        height:100vh;
+    }
 }
 
 /* Ipad and Tablet*/
