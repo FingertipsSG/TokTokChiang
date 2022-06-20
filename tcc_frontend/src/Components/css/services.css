@@ -11,11 +11,11 @@ html,body {
 }
 
 html.servicesHtml {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 body.servicesBody {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .leftDiv {
@@ -24,7 +24,6 @@ body.servicesBody {
     background-size: contain;
     background-attachment: fixed;
     background-position: left top -0.5em;
-    height: 100vh;
 }
 
 .bottomSection {
@@ -48,15 +47,16 @@ body.servicesBody {
 @media (min-width:1024px){
     Table.services-table{
         margin-left: 20%;
-        margin-top: 3.5%;
+        margin-top: 1.6%;
     }
 
     .leftDiv {
         background-image: url("../../Assets/Images/services-left.png");
-        background-size: 100%;
+        background-size: 82%;
         background-repeat: no-repeat;
         background-attachment: fixed;
-        background-position: left -0.7em top 2.6%;
+        background-position: left 0.1em top 0.2em;
+        height: 100vh;
     }
 
     .bottomSection{
@@ -85,7 +85,7 @@ body.servicesBody {
 }
 
 /* Ipad */
-@media (min-width: 768px) and (max-width: 991px){
+@media (min-width: 766px) and (max-width: 1023px){
     html.servicesHtml{
         height: 110vh;
         overflow-y: auto;
@@ -105,6 +105,7 @@ body.servicesBody {
         background-repeat: no-repeat;
         background-position: 5% bottom;
     }
+    
 
     .services-table>tbody>tr>td{
         font-size: 1.3em;
@@ -127,15 +128,18 @@ body.servicesBody {
     .bottomSection,.leftDiv{
         background-image: none;
     }
+    .shop-height{
+        display:none;
+    }
 }
 
 /* Mobile Devices */
 @media (max-width: 765px) { 
-    html.servicesHtml{
+    /* html.servicesHtml{
         height: 120vh;
         overflow-y: auto;
         overflow-x: hidden;
-    }
+    } */
 
     Table.services-table{
         word-wrap: break-word;
@@ -149,6 +153,7 @@ body.servicesBody {
         background-size: 342%;
         background-repeat: no-repeat;
         background-position: 5% bottom;
+        height:fit-content;
     }
 
     .titleFormatIpad {
