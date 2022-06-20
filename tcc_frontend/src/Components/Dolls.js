@@ -28,6 +28,8 @@ function Dolls() {
     col: undefined,
   });
 
+  const [isWideScreen, setIsWideScreen] = useState(window.innerWidth >= 1023);
+
   // To format display into specified number of columns per row STEP
   const formatDisplay = (arr, colSize) => {
     const formattedArr = [];
@@ -140,6 +142,24 @@ function Dolls() {
     return imageBuffer64;
   };
 
+  // Function to update styles according to viewport's width STEP
+  const getRowStyles = () => {
+    if (window.innerWidth >= 1023) {
+      setIsWideScreen(true);
+    } else {
+      setIsWideScreen(false);
+    }
+  };
+
+  // Change Row styles according to viewport's width STEP
+  useEffect(() => {
+    window.addEventListener("resize", getRowStyles);
+
+    return () => {
+      window.removeEventListener("resize", getRowStyles);
+    };
+  });
+
   // Function to render columns content STEP
   const renderColContent = (arr, rowIndex) => {
     return arr.map((item, colIndex) => {
@@ -196,9 +216,9 @@ function Dolls() {
                 <div key={index} ref={lastRowElementRef}>
                   <Row
                     style={
-                      arr.length === 4
-                        ? { justifyContent: "center" }
-                        : { justifyContent: "flex-start" }
+                      isWideScreen && arr.length < 4
+                        ? { justifyContent: "flex-start" }
+                        : { justifyContent: "center" }
                     }
                   >
                     {renderColContent(arr, index)}
@@ -210,9 +230,9 @@ function Dolls() {
                 <div key={index}>
                   <Row
                     style={
-                      arr.length === 4
-                        ? { justifyContent: "center" }
-                        : { justifyContent: "flex-start" }
+                      isWideScreen && arr.length < 4
+                        ? { justifyContent: "flex-start" }
+                        : { justifyContent: "center" }
                     }
                   >
                     {renderColContent(arr, index)}
@@ -250,6 +270,7 @@ function Dolls() {
             {curDollSelectedIndex.row !== undefined &&
               curDollSelectedIndex.col !== undefined && (
                 <ProductModal
+                  isWideScreen={isWideScreen}
                   curItem={
                     dolls[curDollSelectedIndex.row][curDollSelectedIndex.col]
                   }

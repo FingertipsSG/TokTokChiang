@@ -11,12 +11,6 @@ function ProductModal(props) {
   // States
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [isWideScreen, setIsWideScreen] = useState(window.innerWidth >= 992);
-
-  // Check if screen is wide enough to display gallery STEP
-  const updateMedia = () => {
-    setIsWideScreen(window.innerWidth >= 992);
-  };
 
   // To convert BLOB to base64 encoded then load the base64 image STEP
   const convertToBase64 = (imgData) => {
@@ -78,15 +72,6 @@ function ProductModal(props) {
     getData();
   }, [props.curItem]);
 
-  // To check if screen is wide enough to render gallery STEP
-  useEffect(() => {
-    window.addEventListener("resize", updateMedia);
-
-    return () => {
-      window.removeEventListener("resize", updateMedia);
-    };
-  });
-
   return (
     <div id="myModal" className="modal fade productModal" role="dialog">
       <div className="modal-dialog productModalDialog modal-xl">
@@ -133,7 +118,7 @@ function ProductModal(props) {
                     <Row>
                       <div className="modal-side-images-container">
                         {images.length > 1 &&
-                          isWideScreen &&
+                          props.isWideScreen &&
                           images.map((img, index) => {
                             if (index === 0) {
                               return;
