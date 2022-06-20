@@ -186,13 +186,13 @@ function Dolls() {
             if (index === dolls.length - 1) {
               return (
                 <div key={index} ref={lastRowElementRef}>
-                  <Row>{renderColContent(arr, index)}</Row>
+                  <Row style={{justifyContent: 'center'}}>{renderColContent(arr, index)}</Row>
                 </div>
               );
             } else {
               return (
                 <div key={index}>
-                  <Row key={index}>{renderColContent(arr, index)}</Row>
+                  <Row key={index} style={{justifyContent: 'center'}}>{renderColContent(arr, index)}</Row>
                 </div>
               );
             }
@@ -202,19 +202,11 @@ function Dolls() {
               <Spin size="small" spinning={isLoadingMore} />
             </div>
           )}
-          {curDollSelectedIndex.row !== undefined &&
-            curDollSelectedIndex.col !== undefined && (
-              <ProductModal
-                curItem={
-                  dolls[curDollSelectedIndex.row][curDollSelectedIndex.col]
-                }
-              />
-            )}
         </Container>
       );
     }
   };
-
+  
   return (
     <html className="shop-html">
     <head>
@@ -230,6 +222,17 @@ function Dolls() {
         <br />
         <p className="shopHeader">DOLLS</p>
         <div className="shop-container">{renderController()}</div>
+        <div style={{ marginLeft: 'auto', marginRight: 'auto'}}>
+          {curDollSelectedIndex.row !== undefined &&
+            curDollSelectedIndex.col !== undefined && (
+              <ProductModal
+                curItem={
+                  dolls[curDollSelectedIndex.row][curDollSelectedIndex.col]
+                }
+              />
+            )
+          }
+        </div>
         <div className="shop-height"></div>
       </div>
     </body>

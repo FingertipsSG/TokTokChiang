@@ -35,8 +35,6 @@ body {
 /* for spinner */
 .centred {
   position: absolute;
-  top: 50%;
-  left: 50%;
 }
 
 .loadmore-centred {
@@ -47,12 +45,6 @@ body {
 
 .ant-spin-dot-item {
   background-color: #790c15;
-}
-
-.shop-container {
-  margin-left: 20%;
-  margin-top: -6%;
-  padding: 2%;
 }
 
 .renderRow {
@@ -104,8 +96,9 @@ body {
 
 /* for modal popup*/
 .modal {
-  position: absolute;
-  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
 }
 
 .shop-here {
@@ -166,14 +159,8 @@ button.close-button {
 }
 
 .productModalDialog {
-  height:100%;
-  margin: 0;
-}
-.productModalContent{
-  height:100%
-}
-.productModalBody{
-  height:100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* When screen is too small to display gallery, main image container should take up 100% of height */
@@ -296,71 +283,17 @@ body.shop-body {
   background-image: url("../../Assets/Images/framesBG2.png");
 }
 
-/* potrait */
-@media screen and (orientation: portrait) {
-  .modal {
-    top: 0%;
-    left: -12.5%;
-  }
 
-  /* different screen sizes */
-  @media (max-width: 590px) {
-    body.shop-body {
-      background-size: 100% 40%;
-    }
-
-    .modal {
-      overflow-y: scroll;
-      height: 650px;
-    }
-  }
-
-  @media (min-width: 590px) and (max-width: 850px) {
-    body.shop-body {
-      background-size: 100% 55%;
-    }
-  }
-
-  @media (min-width: 850px) and (max-width: 991.98px) {
-    body.shop-body {
-      background-size: 100% 70%;
-    }
-  }
-}
 
 /* landscape */
 @media screen and (orientation: landscape) {
-  .productModal {
-    top: -7%;
-    left: -12.5%;
-    margin-top: -6%;
-    overflow-y: scroll;
-  }
-
-  /* different screen sizes */
-  @media (max-height: 420px) {
-    body.shop-body {
-      background-position: 0px 75px;
-      background-attachment: unset;
-      background-size: 90% 25%;
-    }
-    .shopHeader {
-      margin-left: 7%;
-      margin-top: -5%;
-    }
-    .shop {
-      margin-top: 12%;
-    }
+  .shop-container {
+    margin-left: 12.5%;
+    margin-right: auto;
   }
 }
 
 @media (min-width: 1024px) {
-  .shop {
-    margin-top: 5%;
-  }
-  .shop-container {
-    margin-left: 15%;
-  }
   .shopHeader {
     font-size : 1.8em;
     font-family: AveNextBold;
@@ -510,9 +443,6 @@ body.shop-body {
 @media (max-width: 765px) {
   .shop {
     margin-top: 5%;
-  }
-  .shop-container {
-    margin-left: 15%;
   }
   .shopHeader {
     font-size : 22.4px;
