@@ -119,9 +119,9 @@ img#carouselPic {
         font-size: 28px;
     }
     .rightDiv { 
-        background-size: 60%;
+        background-size: 57%;
         background-attachment: fixed;
-        background-position: right top 1.5em;
+        background-position: right top 1.4em;
     }  
     .bottomDiv {
         background-size: contain;
