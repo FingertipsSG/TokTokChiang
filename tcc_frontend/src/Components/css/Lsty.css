@@ -63,6 +63,8 @@ img#lstyPic {
     }
     .carouselDesktop {
         visibility: hidden;
+        height:0;
+        width:0;
     }
     .carouselMobile {
         visibility: visible;

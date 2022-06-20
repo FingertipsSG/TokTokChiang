@@ -128,9 +128,6 @@ body.servicesBody {
     .bottomSection,.leftDiv{
         background-image: none;
     }
-    .shop-height{
-        display:none;
-    }
 }
 
 /* Mobile Devices */
