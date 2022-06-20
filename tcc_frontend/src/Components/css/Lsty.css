@@ -3,7 +3,7 @@ body, html{
     padding:0;
 }
 html.lstyHtml {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 .lstyContent {
     font-family: Calibri;
@@ -74,17 +74,18 @@ img#lstyPic {
 
 /* Mobile Devices */
 @media(max-width:765px){
-    html.lstyHtml{
+    /* html.lstyHtml{
         height: 330vh;
         overflow-y: auto;
         overflow-x: hidden;
-    }
+    } */
 
     body.lstyBody {
         background-image: url("../../Assets/Images/comingsoon.png");
         background-repeat: no-repeat;  
         background-position: 5% 100%;
         background-size: 342%;
+        height:fit-content;
     }
 
     .lstyContent {
