@@ -9,11 +9,11 @@ body, html{
 }
 
 html.contactUsHTML{
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 body.contactUsBody {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .leftSection {
@@ -22,7 +22,6 @@ body.contactUsBody {
   background-size: contain;
   background-attachment: fixed;
   background-position: left top -0.5em;
-  height: 100vh;
 }
 
 .bottomSection {
@@ -90,6 +89,7 @@ textarea#basic_message {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: left 1.2em top 0.2em;
+    height: 100vh;
   }
 
   .bottomDiv{
@@ -126,7 +126,7 @@ textarea#basic_message {
 } 
 
 /* Ipad air version */
-@media (min-width: 768px) and ( max-width:990px){ 
+@media (min-width: 766px) and ( max-width:1023px){ 
   html.contactUsHTML{
     height: 100vh;
     overflow-y: auto;
@@ -216,6 +216,7 @@ textarea#basic_message {
     background-repeat: no-repeat;  
     background-position: 5% bottom;
     background-size: 342%;
+    height:fit-content;
   }
 
   .bottomDiv{
