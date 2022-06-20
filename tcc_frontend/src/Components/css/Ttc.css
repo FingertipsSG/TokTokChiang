@@ -19,11 +19,11 @@ body, html{
 }
 
 html.ttcHtml {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 body.ttcBody {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .carouselMobile {
@@ -99,7 +99,6 @@ img#carouselPic {
     background-size: contain;
     background-attachment: fixed;
     background-position: right top 1em;
-    height: 100vh;
 }
 
 .bottomDiv {
@@ -177,11 +176,11 @@ img#carouselPic {
 
 /* Mobile Devices */
 @media (max-width: 765px) { 
-    html.ttcHtml{
+    /* html.ttcHtml{
         height: 250vh;
         overflow-y: auto;
         overflow-x: hidden;
-    }
+    } */
 
     .firstContentText {
         margin-left: 5em !important;
@@ -211,6 +210,7 @@ img#carouselPic {
         background-repeat: no-repeat;  
         background-position: 5% bottom;
         background-size: 342%;
+        height:fit-content;
     }
 
     .carouselDesktop {
