@@ -22,7 +22,7 @@ body, html{
 }
 
 html.wayangHtml {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 /* Desktop */
@@ -53,11 +53,11 @@ html.wayangHtml {
 
 /* Mobile Devices */
 @media(max-width:765px){
-    html.wayangHtml{
+    /* html.wayangHtml{
         height: 370vh;
         overflow-y: auto;
         overflow-x: hidden;
-    }
+    } */
 
     .wayangContent {
         font-family: Calibri;
@@ -75,6 +75,7 @@ html.wayangHtml {
         background-repeat: no-repeat;  
         background-position:5% bottom;
         background-size:342%;
+        height:fit-content;
     }
 
     .wayangCarousel{

@@ -112,6 +112,7 @@ function Wayang() {
                         </div>
                   </div>
              </div>
+             <div className="shop-height"></div>
             </body>
         </html>
     );
