@@ -9,11 +9,11 @@ body, html{
 }
 
 html.homeHtml {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 body.homePageBody {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .homeContent {
@@ -201,9 +201,9 @@ body.homePageBody {
 
 /* Mobile Devices*/
 @media (max-width: 765px) { 
-    html.homeHtml{
+    /* html.homeHtml{
         height: 310vh;
-    }
+    } */
 
     .homeTitle1{
         display: none;
@@ -233,6 +233,7 @@ body.homePageBody {
         background-repeat: no-repeat;  
         background-position: 5% bottom;
         background-size: 359%;
+        height: fit-content;
     }
 
     .homeContent {
