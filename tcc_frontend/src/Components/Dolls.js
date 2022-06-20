@@ -144,7 +144,15 @@ function Dolls() {
   const renderColContent = (arr, rowIndex) => {
     return arr.map((item, colIndex) => {
       return (
-        <Col xs={10} sm={9} md={5} lg={3} xl={3} key={colIndex} className="shopContent">
+        <Col
+          xs={10}
+          sm={9}
+          md={5}
+          lg={3}
+          xl={3}
+          key={colIndex}
+          className="shopContent"
+        >
           <div className="imagePlaceHolder">
             <a
               id="close-image"
@@ -186,13 +194,29 @@ function Dolls() {
             if (index === dolls.length - 1) {
               return (
                 <div key={index} ref={lastRowElementRef}>
-                  <Row style={{justifyContent: 'center'}}>{renderColContent(arr, index)}</Row>
+                  <Row
+                    style={
+                      arr.length === 4
+                        ? { justifyContent: "center" }
+                        : { justifyContent: "flex-start" }
+                    }
+                  >
+                    {renderColContent(arr, index)}
+                  </Row>
                 </div>
               );
             } else {
               return (
                 <div key={index}>
-                  <Row key={index} style={{justifyContent: 'center'}}>{renderColContent(arr, index)}</Row>
+                  <Row
+                    style={
+                      arr.length === 4
+                        ? { justifyContent: "center" }
+                        : { justifyContent: "flex-start" }
+                    }
+                  >
+                    {renderColContent(arr, index)}
+                  </Row>
                 </div>
               );
             }
@@ -206,37 +230,36 @@ function Dolls() {
       );
     }
   };
-  
+
   return (
     <html className="shop-html">
-    <head>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    </head>
+      <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      </head>
 
-    <body className="dolls-skyline">
-      <div className="dolls-body shop-body">
-        <Navbar />
-        <br />
-        <br />
-        <p className="shopHeader">DOLLS</p>
-        <div className="shop-container">{renderController()}</div>
-        <div style={{ marginLeft: 'auto', marginRight: 'auto'}}>
-          {curDollSelectedIndex.row !== undefined &&
-            curDollSelectedIndex.col !== undefined && (
-              <ProductModal
-                curItem={
-                  dolls[curDollSelectedIndex.row][curDollSelectedIndex.col]
-                }
-              />
-            )
-          }
+      <body className="dolls-skyline">
+        <div className="dolls-body shop-body">
+          <Navbar />
+          <br />
+          <br />
+          <p className="shopHeader">DOLLS</p>
+          <div className="shop-container">{renderController()}</div>
+          <div style={{ marginLeft: "auto", marginRight: "auto" }}>
+            {curDollSelectedIndex.row !== undefined &&
+              curDollSelectedIndex.col !== undefined && (
+                <ProductModal
+                  curItem={
+                    dolls[curDollSelectedIndex.row][curDollSelectedIndex.col]
+                  }
+                />
+              )}
+          </div>
+          <div className="shop-height"></div>
         </div>
-        <div className="shop-height"></div>
-      </div>
-    </body>
-  </html>
+      </body>
+    </html>
   );
 }
 

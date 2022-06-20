@@ -20,21 +20,29 @@ body {
   width: auto;
 }
 
-.masks-body, .puppets-body, .shirts-body, .framed-body, .dolls-body {
+.masks-body,
+.puppets-body,
+.shirts-body,
+.framed-body,
+.dolls-body {
   min-height: 100vh;
 }
 
 .shopHeader {
-  font-size : 28px;
+  font-size: 28px;
   font-family: AveNextDemiBold;
   color: #8d191d;
   letter-spacing: 0.1em;
   margin-top: -1%;
   margin-left: 4%;
-  }
+}
+
 /* for spinner */
 .centred {
-  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .loadmore-centred {
@@ -232,7 +240,7 @@ button.close-button {
 }
 
 /* When screen becomes too small to accomodate main image */
-@media (max-width: 300px) { 
+@media (max-width: 300px) {
   .popup-image {
     width: 90px;
     height: 90px;
@@ -283,8 +291,6 @@ body.shop-body {
   background-image: url("../../Assets/Images/framesBG2.png");
 }
 
-
-
 /* landscape */
 @media screen and (orientation: landscape) {
   .shop-container {
@@ -295,7 +301,7 @@ body.shop-body {
 
 @media (min-width: 1024px) {
   .shopHeader {
-    font-size : 1.8em;
+    font-size: 1.8em;
     font-family: AveNextBold;
     color: #8d191d;
     letter-spacing: 0.1em;
@@ -354,7 +360,7 @@ body.shop-body {
     margin-left: 15%;
   }
   .shopHeader {
-    font-size : 28px;
+    font-size: 28px;
     font-family: AveNextBold;
     color: #8d191d;
     letter-spacing: 0.1em;
@@ -402,35 +408,35 @@ body.shop-body {
   }
   body.masks-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
-    background-repeat: no-repeat;  
+    background-repeat: no-repeat;
     background-position: 5% 100%;
     background-size: auto 65.8%;
     height: fit-content;
   }
   body.puppets-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
-    background-repeat: no-repeat;  
+    background-repeat: no-repeat;
     background-position: 5% 100%;
     background-size: auto 68.4%;
     height: fit-content;
   }
   body.dolls-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
-    background-repeat: no-repeat;  
+    background-repeat: no-repeat;
     background-position: 5% 100%;
     background-size: auto 27.45%;
     height: fit-content;
   }
   body.shirts-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
-    background-repeat: no-repeat;  
+    background-repeat: no-repeat;
     background-position: 5% 100%;
     background-size: auto 63.7%;
     height: fit-content;
   }
   body.framed-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
-    background-repeat: no-repeat;  
+    background-repeat: no-repeat;
     background-position: 5% 100%;
     background-size: auto 43.1%;
     height: fit-content;
@@ -445,7 +451,7 @@ body.shop-body {
     margin-top: 5%;
   }
   .shopHeader {
-    font-size : 22.4px;
+    font-size: 22.4px;
     font-family: AveNextBold;
     color: #8d191d;
     letter-spacing: 0.1em;
@@ -493,37 +499,37 @@ body.shop-body {
   }
   body.masks-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
-    background-repeat: no-repeat;  
+    background-repeat: no-repeat;
     background-position: 5% 100%;
-    background-size:auto 46.95%;
+    background-size: auto 46.95%;
     height: fit-content;
   }
   body.puppets-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
-    background-repeat: no-repeat;  
+    background-repeat: no-repeat;
     background-position: 5% 100%;
-    background-size:auto 63%;
+    background-size: auto 63%;
     height: fit-content;
-  } 
+  }
   body.dolls-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
-    background-repeat: no-repeat;  
+    background-repeat: no-repeat;
     background-position: 5% 100%;
-    background-size:auto 18.3%;
+    background-size: auto 18.3%;
     height: fit-content;
   }
   body.shirts-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
-    background-repeat: no-repeat;  
+    background-repeat: no-repeat;
     background-position: 5% 100%;
-    background-size:auto 53.1%;
+    background-size: auto 53.1%;
     height: fit-content;
   }
   body.framed-skyline {
     background-image: url("../../Assets/Images/comingsoon.png");
-    background-repeat: no-repeat;  
+    background-repeat: no-repeat;
     background-position: 5% 100%;
-    background-size:auto 30.15%;
+    background-size: auto 30.15%;
     height: fit-content;
   }
   .shop-height {
